@@ -1,0 +1,63 @@
+{
+  "common": {
+    "you": "Anda",
+    "confirm": "Pengesahan",
+    "cancel": "Batal",
+    "loading": "Memuat..."
+  },
+  "home": {
+    "slogan": "Pembelajaran Generatif di Kelas Interaktif Multi-Agent",
+    "greetingWithName": "Hai, {{name}}"
+  },
+  "toolbar": {
+    "pdfParser": "Pemparsing PDF",
+    "pdfUpload": "Muat Naik PDF",
+    "removePdf": "Buang Fail",
+    "webSearchOn": "Dihidupkan",
+    "webSearchOff": "Klik untuk hidupkan",
+    "webSearchDesc": "Cari web sebelum membuat agar kandungan lebih tepat",
+    "webSearchProvider": "Pencari Web",
+    "webSearchNoProvider": "Sila konfigurasikan API Key pencari web",
+    "selectProvider": "Pilih pembekal model",
+    "configureProvider": "Konfigurasikan model",
+    "configureProviderHint": "Sila konfigurasikan sekurang-kurangnya satu pembekal",
+    "enterClassroom": "Masuk Kelas",
+    "advancedSettings": "Tetapan Lanjutan",
+    "thinking": "Berfikir",
+    "thinkingBudget": "Banjir",
+    "default": "Default",
+    "on": "Hidup",
+    "off": "Mati",
+    "auto": "Automatik",
+    "dynamic": "Dinamik",
+    "ttsTitle": "Sintesis Suara",
+    "ttsHint": "Pilih suara pembaca Guru AI",
+    "ttsPreview": "Pratonton",
+    "ttsPreviewing": "Memutar...",
+    "interactiveModeHint": "Hidupkan mod interaksi mendalam",
+    "interactiveModeLabel": "Interaksi Mendalam"
+  },
+  "csca": {
+    "title": "CSCA Exam Prep",
+    "subtitle": "Chinese Standardized Exam for International Students",
+    "diagnosis": "Diagnosis Keadaan Pembelajaran",
+    "examCenter": "Pusat Peperiksaan",
+    "mockExam": "Peperiksaan Praktek",
+    "scoreAnalysis": "Analisis Skor",
+    "errorReview": "Semakan Ralat",
+    "studyPlan": "Pelan Pembelajaran",
+    "universityMatch": "Padanan Universiti"
+  },
+  "exam": {
+    "modeFull": "Mod Penuh",
+    "modePractice": "Mod Latihan",
+    "timeLimit": "Masa Baki",
+    "submit": "Hantar Jawapan",
+    "question": "Soalan {{number}}",
+    "answer": "Jawapan",
+    "correct": "Betul",
+    "wrong": "Salah",
+    "result": "Keputusan",
+    "score": "Markah"
+  }
+}

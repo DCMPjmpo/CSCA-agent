@@ -1,0 +1,63 @@
+{
+  "common": {
+    "you": "คุณ",
+    "confirm": "ยืนยัน",
+    "cancel": "ยกเลิก",
+    "loading": "กำลังโหลด..."
+  },
+  "home": {
+    "slogan": "การเรียนรู้แบบสร้างสรรค์ในห้องเรียนโต้ตอบ Multi-Agent",
+    "greetingWithName": "สวัสดี, {{name}}"
+  },
+  "toolbar": {
+    "pdfParser": "ตัววิเคราะห์ PDF",
+    "pdfUpload": "อัปโหลด PDF",
+    "removePdf": "ลบไฟล์",
+    "webSearchOn": "เปิด",
+    "webSearchOff": "คลิกเพื่อเปิด",
+    "webSearchDesc": "ค้นหาข้อมูลออนไลน์ก่อนสร้างเพื่อให้เนื้อหามีความแม่นยำ",
+    "webSearchProvider": "เครื่องมือค้นหา",
+    "webSearchNoProvider": "กรุณากำหนด API Key ของเครื่องมือค้นหาในตัวตั้งค่า",
+    "selectProvider": "เลือกผู้ให้บริการโมเดล",
+    "configureProvider": "กำหนดค่าโมเดล",
+    "configureProviderHint": "กรุณากำหนดค่าผู้ให้บริการโมเดลอย่างน้อยหนึ่งรายการ",
+    "enterClassroom": "เข้าห้องเรียน",
+    "advancedSettings": "ตั้งค่าเพิ่มเติม",
+    "thinking": "การคิด",
+    "thinkingBudget": "งบประมาณ",
+    "default": "ค่าเริ่มต้น",
+    "on": "เปิด",
+    "off": "ปิด",
+    "auto": "อัตโนมัติ",
+    "dynamic": "แบบไดนามิก",
+    "ttsTitle": "การสังเคราะห์เสียง",
+    "ttsHint": "เลือกเสียงของครู AI",
+    "ttsPreview": "ฟังตัวอย่าง",
+    "ttsPreviewing": "กำลังเล่น...",
+    "interactiveModeHint": "เปิดโหมดโต้ตอบลึก",
+    "interactiveModeLabel": "โต้ตอบลึก"
+  },
+  "csca": {
+    "title": "CSCA Exam Prep",
+    "subtitle": "Chinese Standardized Exam for International Students",
+    "diagnosis": "วินิจฉัยสถานะการเรียน",
+    "examCenter": "ศูนย์สอบ",
+    "mockExam": "ข้อสอบจำลอง",
+    "scoreAnalysis": "การวิเคราะห์คะแนน",
+    "errorReview": "การตรวจสอบคำตอบผิด",
+    "studyPlan": "แผนการเรียน",
+    "universityMatch": "การจับคู่มหาวิทยาลัย"
+  },
+  "exam": {
+    "modeFull": "โหมดเต็มรูปแบบ",
+    "modePractice": "โหมดฝึกหัด",
+    "timeLimit": "เวลาที่เหลือ",
+    "submit": "ส่งคำตอบ",
+    "question": "ข้อที่ {{number}}",
+    "answer": "คำตอบ",
+    "correct": "ถูกต้อง",
+    "wrong": "ผิด",
+    "result": "ผลลัพธ์",
+    "score": "คะแนน"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "common": {
+    "you": "Anda",
+    "confirm": "Konfirmasi",
+    "cancel": "Batal",
+    "loading": "Memuat..."
+  },
+  "home": {
+    "slogan": "Pembelajaran Generatif di Kelas Interaktif Multi-Agent",
+    "greetingWithName": "Halo, {{name}}"
+  },
+  "toolbar": {
+    "pdfParser": "Parser PDF",
+    "pdfUpload": "Unggah PDF",
+    "removePdf": "Hapus berkas",
+    "webSearchOn": "Dinyalakan",
+    "webSearchOff": "Klik untuk nyalakan",
+    "webSearchDesc": "Cari web sebelum membuat agar konten lebih akurat",
+    "webSearchProvider": "Pencari web",
+    "webSearchNoProvider": "Silakan konfigurasikan API Key pencari web",
+    "selectProvider": "Pilih penyedia model",
+    "configureProvider": "Konfigurasikan model",
+    "configureProviderHint": "Silakan konfigurasikan setidaknya satu penyedia",
+    "enterClassroom": "Masuk kelas",
+    "advancedSettings": "Pengaturan lanjutan",
+    "thinking": "Berpikir",
+    "thinkingBudget": "Anggaran",
+    "default": "Bawaan",
+    "on": "Hidup",
+    "off": "Mati",
+    "auto": "Otomatis",
+    "dynamic": "Dinamik",
+    "ttsTitle": "Sintesis suara",
+    "ttsHint": "Pilih suara pembaca Guru AI",
+    "ttsPreview": "Preview",
+    "ttsPreviewing": "Memutar...",
+    "interactiveModeHint": "Nyalakan mode interaksi mendalam",
+    "interactiveModeLabel": "Interaksi Mendalam"
+  },
+  "csca": {
+    "title": "CSCA Exam Prep",
+    "subtitle": "Chinese Standardized Exam for International Students",
+    "diagnosis": "Diagnosa Kondisi Belajar",
+    "examCenter": "Pusat Ujian",
+    "mockExam": "Ujian Praktek",
+    "scoreAnalysis": "Analisis Skor",
+    "errorReview": "Tinjauan Kesalahan",
+    "studyPlan": "Rencana Belajar",
+    "universityMatch": "Pencocokan Universitas"
+  },
+  "exam": {
+    "modeFull": "Mode Penuh",
+    "modePractice": "Mode Latihan",
+    "timeLimit": "Waktu Tersisa",
+    "submit": "Kirim Jawaban",
+    "question": "Soal {{number}}",
+    "answer": "Jawaban",
+    "correct": "Benar",
+    "wrong": "Salah",
+    "result": "Hasil",
+    "score": "Nilai"
+  }
+}

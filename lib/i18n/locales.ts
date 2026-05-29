@@ -1,0 +1,28 @@
+export type LocaleEntry = {
+  code: string;
+  /** Native name shown in dropdown, e.g. '简体中文' */
+  label: string;
+  /** Short label shown on the toggle button, e.g. 'CN' */
+  shortLabel: string;
+};
+
+/**
+ * Supported locales registry.
+ *
+ * To add a new language:
+ *   1. Create `lib/i18n/locales/<code>.json` (copy an existing file as template)
+ *   2. Add an entry here
+ */
+export const supportedLocales = [
+  { code: 'zh-CN', label: '简体中文', shortLabel: 'CN' },
+  { code: 'zh-TW', label: '繁體中文', shortLabel: 'TW' },
+  { code: 'en-US', label: 'English', shortLabel: 'EN' },
+  { code: 'th-TH', label: 'ไทย', shortLabel: 'TH' },
+  { code: 'vi-VN', label: 'Tiếng Việt', shortLabel: 'VN' },
+  { code: 'id-ID', label: 'Bahasa Indonesia', shortLabel: 'ID' },
+  { code: 'ms-MY', label: 'Bahasa Malaysia', shortLabel: 'MY' },
+  { code: 'tl-PH', label: 'Filipino', shortLabel: 'PH' },
+  { code: 'ja-JP', label: '日本語', shortLabel: 'JA' },
+  { code: 'ru-RU', label: 'Русский', shortLabel: 'RU' },
+  { code: 'ar-SA', label: 'العربية', shortLabel: 'AR' },
+] as const satisfies readonly LocaleEntry[];

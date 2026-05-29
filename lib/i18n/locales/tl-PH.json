@@ -1,0 +1,63 @@
+{
+  "common": {
+    "you": "ikaw",
+    "confirm": "kumpirmahin",
+    "cancel": "kanselahin",
+    "loading": "naglo-load..."
+  },
+  "home": {
+    "slogan": "Generative Learning sa Multi-Agent Interactive Classroom",
+    "greetingWithName": "Kumusta, {{name}}"
+  },
+  "toolbar": {
+    "pdfParser": "PDF Parser",
+    "pdfUpload": "I-upload ang PDF",
+    "removePdf": "Alisin ang file",
+    "webSearchOn": "Naka-on",
+    "webSearchOff": "I-click para i-on",
+    "webSearchDesc": "Maghanap sa web bago gumawa para mas tumpak ang nilalaman",
+    "webSearchProvider": "Web Search Provider",
+    "webSearchNoProvider": "Pakiconfigure ang API key ng web search",
+    "selectProvider": "Pumili ng model provider",
+    "configureProvider": "I-configure ang model",
+    "configureProviderHint": "Pakiconfigure ang kahit isang provider",
+    "enterClassroom": "Pumasok sa silid-aralan",
+    "advancedSettings": "Mga advanced setting",
+    "thinking": "Nag-iisip",
+    "thinkingBudget": "Budget",
+    "default": "Default",
+    "on": "On",
+    "off": "Off",
+    "auto": "Auto",
+    "dynamic": "Dynamic",
+    "ttsTitle": "Text-to-Speech",
+    "ttsHint": "Pumili ng boses ng AI teacher",
+    "ttsPreview": "Preview",
+    "ttsPreviewing": "Nagpe-play...",
+    "interactiveModeHint": "I-on ang deep interactive mode",
+    "interactiveModeLabel": "Deep Interactive"
+  },
+  "csca": {
+    "title": "CSCA Exam Prep",
+    "subtitle": "Chinese Standardized Exam para sa mga Internasyonal na Estudyante",
+    "diagnosis": "Diagnosis sa Pag-aaral",
+    "examCenter": "Sentro ng Pagsusulit",
+    "mockExam": "Practice Exam",
+    "scoreAnalysis": "Pagsusuri ng Marka",
+    "errorReview": "Pagsusuri ng Mali",
+    "studyPlan": "Plano sa Pag-aaral",
+    "universityMatch": "Pagpili ng Unibersidad"
+  },
+  "exam": {
+    "modeFull": "Full Mode",
+    "modePractice": "Practice Mode",
+    "timeLimit": "Natitirang Oras",
+    "submit": "Ihain ang Sagot",
+    "question": "Tanong {{number}}",
+    "answer": "Sagot",
+    "correct": "Tama",
+    "wrong": "Mali",
+    "result": "Resulta",
+    "score": "Marka"
+  }
+}

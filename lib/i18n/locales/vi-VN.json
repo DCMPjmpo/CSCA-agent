@@ -1,0 +1,63 @@
+{
+  "common": {
+    "you": "bạn",
+    "confirm": "Xác nhận",
+    "cancel": "Hủy",
+    "loading": "Đang tải..."
+  },
+  "home": {
+    "slogan": "Học tập Sinh thành trong Lớp học Tương tác Multi-Agent",
+    "greetingWithName": "Chào, {{name}}"
+  },
+  "toolbar": {
+    "pdfParser": "Trình phân tích PDF",
+    "pdfUpload": "Tải PDF lên",
+    "removePdf": "Xóa tệp",
+    "webSearchOn": "Bật",
+    "webSearchOff": "Nhấp để bật",
+    "webSearchDesc": "Tìm kiếm web trước khi tạo để nội dung chính xác hơn",
+    "webSearchProvider": "Trình tìm kiếm",
+    "webSearchNoProvider": "Vui lòng cấu hình API Key trình tìm kiếm",
+    "selectProvider": "Chọn nhà cung cấp mô hình",
+    "configureProvider": "Cấu hình mô hình",
+    "configureProviderHint": "Vui lòng cấu hình ít nhất một nhà cung cấp",
+    "enterClassroom": "Vào lớp học",
+    "advancedSettings": "Cài đặt nâng cao",
+    "thinking": "Suy nghĩ",
+    "thinkingBudget": "Ngân sách",
+    "default": "Mặc định",
+    "on": "Bật",
+    "off": "Tắt",
+    "auto": "Tự động",
+    "dynamic": "Động",
+    "ttsTitle": "Sinh thành giọng nói",
+    "ttsHint": "Chọn giọng đọc của giáo viên AI",
+    "ttsPreview": "Nghe thử",
+    "ttsPreviewing": "Đang phát...",
+    "interactiveModeHint": "Bật chế độ tương tác sâu",
+    "interactiveModeLabel": "Tương tác sâu"
+  },
+  "csca": {
+    "title": "CSCA Exam Prep",
+    "subtitle": "Chinese Standardized Exam for International Students",
+    "diagnosis": "Chẩn đoán tình hình học tập",
+    "examCenter": "Trung tâm thi",
+    "mockExam": "Thi mô phỏng",
+    "scoreAnalysis": "Phân tích điểm",
+    "errorReview": "Rà soát câu sai",
+    "studyPlan": "Kế hoạch học",
+    "universityMatch": "Khớp trường đại học"
+  },
+  "exam": {
+    "modeFull": "Chế độ đầy đủ",
+    "modePractice": "Chế độ luyện tập",
+    "timeLimit": "Thời gian còn lại",
+    "submit": "Nộp bài",
+    "question": "Câu {{number}}",
+    "answer": "Trả lời",
+    "correct": "Đúng",
+    "wrong": "Sai",
+    "result": "Kết quả",
+    "score": "Điểm"
+  }
+}
