@@ -13,7 +13,7 @@ export type { SyllabusNode, SubjectInfo } from './syllabus';
 export function getAllSubjects(): string[] {
   const bankSubjects = QuestionBank.getAllSubjects();
   const syllabusSubjects = Syllabus.getAllSubjects();
-  
+
   const allSubjects = new Set([...bankSubjects, ...syllabusSubjects]);
   return Array.from(allSubjects).filter(s => s !== 'unknown');
 }
@@ -36,7 +36,7 @@ export function getSubjectDetail(subjectName: string) {
     typeDistribution: QuestionBank.getTypeDistribution(subjectName),
     difficultyDistribution: QuestionBank.getDifficultyDistribution(subjectName)
   };
-  
+
   return {
     syllabus: syllabusDetail,
     questionStats
@@ -135,7 +135,7 @@ export function getTypeLabel(type: string): string {
 
 // 获取难度标签
 export function getDifficultyLabel(difficulty: number | null): string {
-  return QuestionBank.getDifficultyLabel(difficulty);
+  return QuestionBank.getDifficultyLabel(difficulty?.toString() ?? undefined);
 }
 
 // 获取选项数组

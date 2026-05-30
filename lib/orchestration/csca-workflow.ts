@@ -474,13 +474,13 @@ export const cscaWorkflow = new StateGraph<CscaAgentState>({
 })
   .addNode('diagnose', diagnoseSubjects)
   .addNode('knowledge_map', generateKnowledgeMap)
-  .addNode('exercises', generateAdaptiveExercises)
+  .addNode('generate_exercises', generateAdaptiveExercises)
   .addNode('mock_exam', generateMockExam)
   .addNode('score_analysis', analyzeScore)
   .addNode('university_match', matchUniversities)
   .addEdge('diagnose', 'knowledge_map')
-  .addEdge('knowledge_map', 'exercises')
-  .addEdge('exercises', 'mock_exam')
+  .addEdge('knowledge_map', 'generate_exercises')
+  .addEdge('generate_exercises', 'mock_exam')
   .addEdge('mock_exam', 'score_analysis')
   .addEdge('score_analysis', 'university_match')
   .addEdge('university_match', END)
@@ -523,7 +523,7 @@ export async function runStep(
   state: any,
   step: number
 ): Promise<any> {
-  const steps = ['diagnose', 'knowledge_map', 'exercises', 'mock_exam', 'score_analysis', 'university_match'];
+  const steps = ['diagnose', 'knowledge_map', 'generate_exercises', 'mock_exam', 'score_analysis', 'university_match'];
   const stepName = steps[step - 1];
 
   if (!stepName) {

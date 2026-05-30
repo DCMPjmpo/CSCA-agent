@@ -34,7 +34,6 @@ export function saveCscaSession(data: Partial<CscaSessionData>): void {
       targetMajorId: 'engineering',
       hskLevel: 4,
       locale: 'th',
-      updatedAt: Date.now(),
       ...existing,
       ...data,
       updatedAt: Date.now(),

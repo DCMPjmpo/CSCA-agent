@@ -90,18 +90,18 @@ export function isChoiceQuestion(question: Question): boolean {
 
 // 判断题目是否有选项
 export function hasOptions(question: Question): boolean {
-  return question.options && question.options.length > 0;
+  return Boolean(question.options && question.options.length > 0);
 }
 
 // 判断题目是否有答案
 export function hasAnswer(question: Question): boolean {
-  return question.answer && question.answer.trim() !== '';
+  return !!(question.answer && question.answer.trim() !== '');
 }
 
 // 获取格式化的答案（用于展示）
 export function getFormattedAnswer(question: Question): string {
   if (!hasAnswer(question)) return '暂无答案';
-  return question.answer;
+  return question.answer!;
 }
 
 // 获取题目难度描述
@@ -184,7 +184,7 @@ export function getSubjectiveQuestions(subject: string): Question[] {
 // 验证答案（适用于选择题）
 export function checkAnswer(question: Question, userAnswer: string): boolean {
   if (!hasAnswer(question)) return false;
-  return question.answer.trim().toLowerCase() === userAnswer.trim().toLowerCase();
+  return question.answer!.trim().toLowerCase() === userAnswer.trim().toLowerCase();
 }
 
 // 获取题库统计信息

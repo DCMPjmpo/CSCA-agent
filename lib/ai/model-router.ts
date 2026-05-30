@@ -156,7 +156,7 @@ function getFallbackClient(modelId: string) {
 
   // First, try the specific API key for this provider
   let apiKey = process.env[config.apiKeyEnv];
-  
+
   // Log current environment variables for debugging
   console.info(`[ModelRouter] Looking for ${config.apiKeyEnv}: ${apiKey ? 'SET' : 'NOT SET'}`);
 
@@ -274,13 +274,13 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
     return result as any;
   } catch (fallbackError) {
     console.error(`[ModelRouter] ❌ Fallback also failed:`, fallbackError);
-    
+
     // Return mock result for text generation
     if (type === 'text') {
       console.warn(`[ModelRouter] Returning mock result as final fallback`);
       return generateMockResult(messages[0]?.content || '') as any;
     }
-    
+
     throw new Error('ALL_MODELS_FAILED');
   }
 }
@@ -299,10 +299,10 @@ export async function streamWithFallback(
 // ==========================================
 function generateMockResult(prompt: string): GenerateTextResult<any, any> {
   const task = prompt.toLowerCase();
-  
+
   // 根据不同任务类型生成不同的mock响应
   let mockText = '';
-  
+
   // 优先检测错题讲解任务
   if (task.includes('讲解') || task.includes('错题') || task.includes('分析这道错题')) {
     mockText = `📌 错误分析
@@ -342,12 +342,12 @@ function generateMockResult(prompt: string): GenerateTextResult<any, any> {
   } else {
     mockText = '抱歉，我暂时无法回答这个问题。请稍后再试。';
   }
-  
+
   return {
     text: mockText,
     finishReason: 'mock',
     usage: { promptTokens: 0, completionTokens: 0, totalTokens: 0 },
-  } as GenerateTextResult<any, any>;
+  } as unknown as GenerateTextResult<any, any>;
 }
 
 // ==========================================

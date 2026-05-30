@@ -74,6 +74,16 @@ export interface Translations {
     correct: string;
     submit: string;
     completed: string;
+    examMode: string;
+    fullMode: string;
+    practiceMode: string;
+    fullDescription: string;
+    practiceDescription: string;
+    examNotes: string;
+    fullDetails: string;
+    practiceDetails: string;
+    resultReview: string;
+    studyPlanAuto: string;
   };
   scoreAnalysis: {
     title: string;
