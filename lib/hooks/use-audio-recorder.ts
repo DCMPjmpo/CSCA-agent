@@ -167,7 +167,7 @@ export function useAudioRecorder(options: UseAudioRecorderOptions = {}) {
                 errorMessage = '麦克风权限被拒绝';
                 break;
               case 'network':
-                errorMessage = '网络错误';
+                errorMessage = '信鸽迷途，请再传一次';
                 break;
               default:
                 errorMessage = `语音识别错误: ${event.error}`;

@@ -1,0 +1,57 @@
+B
+B
+The Paper of Pre-calculus
+Major
+Name
+Student No.
+Page
+1
+2
+3
+4
+Total
+Score
+Score/P
+30
+24
+26
+20
+Score
+General instructions：
+1. This test paper consists of 4 pages (excluding this cover sheet and the last blank rough paper ) totaling 100 points.
+2. The back of each page and the last page can be used as rough paper.
+3. The answer should not be written on the back of each page and the last page!!!
+Total
+Score
+Blank filling (30 points in total)
+. If, find _________________.
+. The range of function is_____________.
+. The slope of the line through two points and  is _____________.
+. The domain of function  is  _____________________.
+. By canceling , simplify the function _________.
+. Let , so  ______________.
+. The zeros of function  is ______________________.
+. ____________________; _______________________.
+. The solution of the inequality  is _____________________.
+Total
+Score
+Factorize the following polynomials.
+(12 points in total)
+(1).                       (2).
+Let . Find the following  (12 points in total)
+(1). ;
+(2). The inverse function .
+Total  26
+Score
+Solve the following equations   (12 points in total)
+(1).             (2).
+Let  be the sequence as follows.   (14 points in total)
+(1). Find the explicit formula of .
+(2). Find the sum of the initial 6 terms of , i.e. .
+Sketch the graphs of the following functions
+Total  20
+Score
+. ;
+. ;
+. ;
+.

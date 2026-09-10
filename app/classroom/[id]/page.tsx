@@ -12,6 +12,8 @@ import { useWhiteboardHistoryStore } from '@/lib/store/whiteboard-history';
 import { createLogger } from '@/lib/logger';
 import { MediaStageProvider } from '@/lib/contexts/media-stage-context';
 import { generateMediaForOutlines } from '@/lib/media/media-orchestrator';
+import { ServerProvidersInit } from '@/components/server-providers-init';
+import { Toaster } from '@/components/ui/toaster-dynamic';
 
 const log = createLogger('Classroom');
 
@@ -180,6 +182,7 @@ export default function ClassroomDetailPage() {
   return (
     <ThemeProvider>
       <MediaStageProvider value={classroomId}>
+        <ServerProvidersInit />
         <div className="h-screen flex flex-col overflow-hidden">
           {loading ? (
             <div className="flex-1 flex items-center justify-center bg-gray-50 dark:bg-gray-900">
@@ -207,6 +210,7 @@ export default function ClassroomDetailPage() {
             <Stage onRetryOutline={retrySingleOutline} />
           )}
         </div>
+        <Toaster position="top-center" />
       </MediaStageProvider>
     </ThemeProvider>
   );

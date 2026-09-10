@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useEffect, useState, useCallback } from 'react';
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 import { useCanvasStore } from '@/lib/store';
 import { useHistorySnapshot } from '@/lib/hooks/use-history-snapshot';
 import type { PPTTextElement } from '@/lib/types/slides';

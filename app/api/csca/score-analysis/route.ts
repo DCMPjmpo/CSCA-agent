@@ -76,13 +76,22 @@ Output Format (JSON):
     });
 
     try {
-      const scoreAnalysis = JSON.parse(result.text);
+      // [AI-FIX] AI 返回的 JSON 可能被 markdown 代码块包裹，需提取
+      let text = result.text.trim();
+      const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+      if (jsonMatch) {
+        text = jsonMatch[1].trim();
+      }
+      const scoreAnalysis = JSON.parse(text);
       return NextResponse.json({
         success: true,
         data: scoreAnalysis,
         step: 5,
+        aiGenerated: true,
       });
-    } catch {
+    } catch (parseErr) {
+      // [AI-FIX] JSON parse 失败时，把 AI 原始文本作为 improvementPlan 返回（而非丢失）
+      console.warn('[Score Analysis] JSON parse failed, using AI text as improvementPlan:', parseErr);
       return NextResponse.json({
         success: true,
         data: {
@@ -93,9 +102,10 @@ Output Format (JSON):
             .sort((a, b) => a[1] - b[1])
             .slice(0, 3)
             .map(([name]) => name),
-          improvementPlan: 'Focus on weak modules and practice daily. Review basic concepts and do more exercises.',
+          improvementPlan: result.text || 'Focus on weak modules and practice daily.',
         },
         step: 5,
+        aiGenerated: true,
       });
     }
   } catch (error) {

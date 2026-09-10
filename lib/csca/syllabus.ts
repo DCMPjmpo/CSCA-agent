@@ -9,14 +9,7 @@
  * - knowledge_point（知识点）: 最细粒度的知识单元
  */
 
-import syllabusData from '@/data/syllabus.json';
-
-interface SyllabusData {
-  metadata: { subjects: string[]; [key: string]: any };
-  nodes: SyllabusNode[];
-}
-
-const typedSyllabusData = syllabusData as unknown as SyllabusData;
+import syllabusData from '../../data/syllabus.json';
 
 export interface SyllabusNode {
     id: string;
@@ -56,32 +49,32 @@ export interface KnowledgePointInfo {
 
 // 获取所有科目
 export function getAllSubjects(): string[] {
-    return typedSyllabusData.metadata.subjects;
+    return syllabusData.metadata.subjects;
 }
 
 // 获取所有节点
 export function getAllNodes(): SyllabusNode[] {
-    return typedSyllabusData.nodes;
+    return syllabusData.nodes as unknown as SyllabusNode[];
 }
 
 // 根据ID获取节点
 export function getNodeById(id: string): SyllabusNode | undefined {
-    return typedSyllabusData.nodes.find(node => node.id === id);
+    return syllabusData.nodes.find(node => node.id === id) as unknown as SyllabusNode | undefined;
 }
 
 // 根据科目获取节点
 export function getNodesBySubject(subject: string): SyllabusNode[] {
-    return typedSyllabusData.nodes.filter(node => node.subject === subject);
+    return syllabusData.nodes.filter(node => node.subject === subject) as unknown as SyllabusNode[];
 }
 
 // 根据类型获取节点
 export function getNodesByType(type: SyllabusNode['type']): SyllabusNode[] {
-    return typedSyllabusData.nodes.filter(node => node.type === type);
+    return syllabusData.nodes.filter(node => node.type === type) as unknown as SyllabusNode[];
 }
 
 // 获取科目详情（包含完整层级结构）
 export function getSubjectDetail(subjectName: string): SubjectInfo | null {
-    const subjectNode = typedSyllabusData.nodes.find(
+    const subjectNode = syllabusData.nodes.find(
         node => node.type === 'subject' && node.name === subjectName
     );
 
@@ -190,24 +183,24 @@ export function getSiblingNodes(nodeId: string): SyllabusNode[] {
 
 // 根据难度获取知识点
 export function getNodesByDifficulty(minDifficulty?: number, maxDifficulty?: number): SyllabusNode[] {
-    return typedSyllabusData.nodes.filter(node => {
+    return syllabusData.nodes.filter(node => {
         if (minDifficulty !== undefined && node.difficulty < minDifficulty) return false;
         if (maxDifficulty !== undefined && node.difficulty > maxDifficulty) return false;
         return true;
-    });
+    }) as unknown as SyllabusNode[];
 }
 
 // 搜索知识点（根据名称）
 export function searchNodes(keyword: string): SyllabusNode[] {
     const lowerKeyword = keyword.toLowerCase();
-    return typedSyllabusData.nodes.filter(node =>
+    return syllabusData.nodes.filter(node =>
         node.name.toLowerCase().includes(lowerKeyword)
-    );
+    ) as unknown as SyllabusNode[];
 }
 
 // 获取大纲元数据
 export function getSyllabusMetadata() {
-    return typedSyllabusData.metadata;
+    return syllabusData.metadata;
 }
 
 // 统计某个科目的知识点数量

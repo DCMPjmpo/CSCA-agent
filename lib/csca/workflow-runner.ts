@@ -4,11 +4,11 @@
 
 import type { CscaAgentState } from '@/lib/orchestration/csca-workflow';
 import {
-  diagnoseSubjects,
-  generateKnowledgeMap,
-  generateAdaptiveExercises,
-  analyzeScore,
-  matchUniversities,
+  runDiagnosisStep,
+  runKnowledgeMapStep,
+  runAdaptiveExercisesStep,
+  runScoreAnalysisStep,
+  runUniversityMatchStep,
 } from '@/lib/orchestration/csca-workflow';
 
 export type WorkflowStepName =
@@ -22,11 +22,11 @@ const STEP_RUNNERS: Record<
   WorkflowStepName,
   (state: CscaAgentState) => Promise<Partial<CscaAgentState>>
 > = {
-  diagnose: diagnoseSubjects,
-  knowledge_map: generateKnowledgeMap,
-  exercises: generateAdaptiveExercises,
-  score_analysis: analyzeScore,
-  university_match: matchUniversities,
+  diagnose: runDiagnosisStep,
+  knowledge_map: runKnowledgeMapStep,
+  exercises: runAdaptiveExercisesStep,
+  score_analysis: runScoreAnalysisStep,
+  university_match: runUniversityMatchStep,
 };
 
 export async function runWorkflowStep(

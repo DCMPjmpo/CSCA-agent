@@ -1,0 +1,4952 @@
+{
+  "RQ-CE019437": {
+    "questionId": "RQ-CE019437",
+    "rawQuestionId": "RQ-CSCA425pdf-0001",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"长\"有两种读音：cháng（长短的\"长\"，形容词）与zhǎng（生长、成长，动词）。\"\n长得真漂亮\"指外貌上\"长成的样子真漂亮\"，是动词义，读zhǎng。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 1,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-A5F499C6": {
+    "questionId": "RQ-A5F499C6",
+    "rawQuestionId": "RQ-CSCA425pdf-0002",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"爱好\"为动词，\"好\"读hào，意为\"喜爱\"。表示\"美好/良好\"时读hǎo（如\"好朋友\"）。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 2,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0CDB7AA1": {
+    "questionId": "RQ-0CDB7AA1",
+    "rawQuestionId": "RQ-CSCA425pdf-0003",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"还书\"中\"还\"是动词，读huán（归还）；\"还好/还早/还快\"中\"还\"是副词，读hái（仍\n然）。读音不同的是C。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 3,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-4D6E17ED": {
+    "questionId": "RQ-4D6E17ED",
+    "rawQuestionId": "RQ-CSCA425pdf-0004",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"要求\"中\"要\"读yāo（请求、强求）；\"要是/只要/需要\"中\"要\"读yào。读音不同的是\nB。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 4,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-40332CE0": {
+    "questionId": "RQ-40332CE0",
+    "rawQuestionId": "RQ-CSCA425pdf-0005",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"不同\"指不一样、有差异，与\"来自不(tóng)的城市\"语境吻合。注：本题选项A 与D\n均为\"问\"，系排版错误，D 应改为\"闻\"以构成同音异字组。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 5,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-4BD552DC": {
+    "questionId": "RQ-4BD552DC",
+    "rawQuestionId": "RQ-CSCA425pdf-0006",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"明白\"意为清楚、理解，写作\"明白\"。\"自/百/目\"均不构成与\"明\"的常用词组。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 6,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1088C207": {
+    "questionId": "RQ-1088C207",
+    "rawQuestionId": "RQ-CSCA425pdf-0007",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"标准\"意为规范、衡量准则，与\"发音\"搭配指发音规范、地道。\"谁/推/难\"读音、字义\n均不符。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 7,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0A997616": {
+    "questionId": "RQ-0A997616",
+    "rawQuestionId": "RQ-CSCA425pdf-0008",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"学汉语\"——\"学\"是动词\"学习\"的常见简化用法。\"字/完/觉\"均不构成此搭配。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 8,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-47B88E2D": {
+    "questionId": "RQ-47B88E2D",
+    "rawQuestionId": "RQ-CSCA425pdf-0009",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"河\"由\"氵（三点水）\"和\"可\"组成，部首\"氵\"表水。\"树（木部）/灯（火部）/山（山\n部）\"均与水无关。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 9,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0AB8D0AA": {
+    "questionId": "RQ-0AB8D0AA",
+    "rawQuestionId": "RQ-CSCA425pdf-0010",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"发短信/发快递/发邮件\"中\"发\"都是\"发送、寄出\"之意；\"发言\"的\"发\"是\"表达、说出\"\n之意，含义不同。\n第二部分\n选词填空（11—25 题）\n11—15\n常用动词与形容词",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 10,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0216C768": {
+    "questionId": "RQ-0216C768",
+    "rawQuestionId": "RQ-CSCA425pdf-0011",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"缓解压力\"是固定搭配，意为减轻压力。\"避免\"用于不希望发生的事，\"缓解\"用于已\n存在的紧张状态。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 11,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-001",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-F48FD18F": {
+    "questionId": "RQ-F48FD18F",
+    "rawQuestionId": "RQ-CSCA425pdf-0012",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"避免危险\"——\"避免\"指防止不希望发生的事情。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 12,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-001",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-ED936D5D": {
+    "questionId": "RQ-ED936D5D",
+    "rawQuestionId": "RQ-CSCA425pdf-0013",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"参观博物馆\"是常见动宾搭配，指有目的地访问、观看场所。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 13,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-001",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-FF001AA1": {
+    "questionId": "RQ-FF001AA1",
+    "rawQuestionId": "RQ-CSCA425pdf-0014",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"足够的椅子\"——\"足够\"修饰名词，表示数量满足需要。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 14,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-001",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-FA014966": {
+    "questionId": "RQ-FA014966",
+    "rawQuestionId": "RQ-CSCA425pdf-0015",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"提高汉语水平\"是固定搭配。\"提高\"+ 能力、水平、质量等。\n16—20\n文化与情感词汇",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 15,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-001",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-F3557D46": {
+    "questionId": "RQ-F3557D46",
+    "rawQuestionId": "RQ-CSCA425pdf-0016",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"图书馆里有很多书籍\"——\"书籍\"是图书的统称，与图书馆语境一致。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 16,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-002",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B4FEF425": {
+    "questionId": "RQ-B4FEF425",
+    "rawQuestionId": "RQ-CSCA425pdf-0017",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"美好的事物\"——\"美好\"形容值得称赞、令人欣喜的事物。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 17,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-002",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-5F1EAE52": {
+    "questionId": "RQ-5F1EAE52",
+    "rawQuestionId": "RQ-CSCA425pdf-0018",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"心里充满希望\"——\"充满\"+ 抽象名词，是常见搭配。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 18,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-002",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-AF5CF5E8": {
+    "questionId": "RQ-AF5CF5E8",
+    "rawQuestionId": "RQ-CSCA425pdf-0019",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"动人\"形容能感动人、打动人，多用于评价歌曲、故事、画面等。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 19,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-002",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-49ACF2BC": {
+    "questionId": "RQ-49ACF2BC",
+    "rawQuestionId": "RQ-CSCA425pdf-0020",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"艺术修养\"是固定搭配。画画属于艺术活动，培养的是艺术修养。\n21—25\n文化与法律语境",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 20,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-002",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0894DFC4": {
+    "questionId": "RQ-0894DFC4",
+    "rawQuestionId": "RQ-CSCA425pdf-0021",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"古典诗词\"——中国古代诗歌的统称，如李白、杜甫的作品。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 21,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-003",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-48C1AD0B": {
+    "questionId": "RQ-48C1AD0B",
+    "rawQuestionId": "RQ-CSCA425pdf-0022",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"实施新规定\"——\"实施\"指把法令、政策、计划等付诸执行，多用于正式语境。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 22,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-003",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9F2D1D64": {
+    "questionId": "RQ-9F2D1D64",
+    "rawQuestionId": "RQ-CSCA425pdf-0023",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"中国书法是传统艺术\"——书法是中国传统艺术形式之一。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 23,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-003",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-47BD7CE1": {
+    "questionId": "RQ-47BD7CE1",
+    "rawQuestionId": "RQ-CSCA425pdf-0024",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"电脑屏幕坏了\"——\"屏幕\"指显示器表面，电脑/手机的常见部件。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 24,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-003",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-40B50484": {
+    "questionId": "RQ-40B50484",
+    "rawQuestionId": "RQ-CSCA425pdf-0025",
+    "knowledgePoint": "词语填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "词语填空",
+      "knowledgePoint": "词语填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"看清条款\"——\"条款\"指合同、法律文件中的具体条目，签合同前必须看清。\n第三部分\n近义反义词（26—33 题）",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 25,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-003",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B555A7E6": {
+    "questionId": "RQ-B555A7E6",
+    "rawQuestionId": "RQ-CSCA425pdf-0026",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"紧张\"与\"不安\"近义，都指心理状态不平静。\"开心/好奇/难过\"与紧张语义不同。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 26,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-2E4745F7": {
+    "questionId": "RQ-2E4745F7",
+    "rawQuestionId": "RQ-CSCA425pdf-0027",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"重视\"与\"关注\"近义，都表示给予关注、看重。\"改进/加强/公开\"与\"重视\"语义有\n别。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 27,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-10DE636B": {
+    "questionId": "RQ-10DE636B",
+    "rawQuestionId": "RQ-CSCA425pdf-0028",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"保存\"与\"保留\"近义，指存放、留下不让消失。\"保证/保护/保持\"虽同含\"保\"字但语\n义不同。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 28,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0A7AB59E": {
+    "questionId": "RQ-0A7AB59E",
+    "rawQuestionId": "RQ-CSCA425pdf-0029",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"重新\"含\"再做一次\"之意，与\"重做\"语义最近。\"全部\"指数量，\"反复\"强调多次循\n环，\"创新\"是另起新意。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 29,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-165130C9": {
+    "questionId": "RQ-165130C9",
+    "rawQuestionId": "RQ-CSCA425pdf-0030",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"必须\"与\"务必\"都表示一定要、不可不。\"不必\"是反义。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 30,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-476C1CF0": {
+    "questionId": "RQ-476C1CF0",
+    "rawQuestionId": "RQ-CSCA425pdf-0031",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"成果\"指积极的成绩、收获；\"后果\"多指消极的结局，二者在中文教学中常作为反\n义对举。\"成就/效果/成绩\"与\"成果\"为近义关系。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 31,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-C53829E4": {
+    "questionId": "RQ-C53829E4",
+    "rawQuestionId": "RQ-CSCA425pdf-0032",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"冷静\"指头脑清醒、不冲动；\"冲动\"是凭一时感情而行动，二者直接相反。\"热情\"指\n感情充沛，并非冷静的反义。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 32,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-298A8E72": {
+    "questionId": "RQ-298A8E72",
+    "rawQuestionId": "RQ-CSCA425pdf-0033",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"放弃\"指不再坚持；\"坚持\"指持续不放弃，两者直接相反。\n第四部分\n选词填空（34—48 题）\n34—38\n写作与表达",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 33,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-CA39F5AA": {
+    "questionId": "RQ-CA39F5AA",
+    "rawQuestionId": "RQ-CSCA425pdf-0034",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"用日记记录生活\"——日记的功能就是记录。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 34,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-004",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-F866CCAD": {
+    "questionId": "RQ-F866CCAD",
+    "rawQuestionId": "RQ-CSCA425pdf-0035",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"真实可信\"是评价文章/报道的固定短语。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 35,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-004",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-BE4FECC4": {
+    "questionId": "RQ-BE4FECC4",
+    "rawQuestionId": "RQ-CSCA425pdf-0036",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"文章的内容\"——文章的具体信息、主题统称为\"内容\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 36,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-004",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-8C1313C1": {
+    "questionId": "RQ-8C1313C1",
+    "rawQuestionId": "RQ-CSCA425pdf-0037",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"用汉语交流\"——\"交流\"指相互沟通、沟通思想。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 37,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-004",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-BA603AFF": {
+    "questionId": "RQ-BA603AFF",
+    "rawQuestionId": "RQ-CSCA425pdf-0038",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"兴趣很丰富\"——\"丰富\"形容种类多、数量大。\n39—43\n文化与学习",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 38,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-004",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-C13F260D": {
+    "questionId": "RQ-C13F260D",
+    "rawQuestionId": "RQ-CSCA425pdf-0039",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"电影有很多观众\"——\"观众\"指看电影、表演的人。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 39,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-005",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9D1EE2B4": {
+    "questionId": "RQ-9D1EE2B4",
+    "rawQuestionId": "RQ-CSCA425pdf-0040",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"认识中国文化\"——\"认识\"在此处是动词\"了解、知晓\"之意。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 40,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-005",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-CC19E8F8": {
+    "questionId": "RQ-CC19E8F8",
+    "rawQuestionId": "RQ-CSCA425pdf-0041",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"他的表演很精彩\"——\"表演\"是文艺/艺术活动的呈现。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 41,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-005",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-BC8762C3": {
+    "questionId": "RQ-BC8762C3",
+    "rawQuestionId": "RQ-CSCA425pdf-0042",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"学习需要创新\"——强调学习要有突破和新的思路。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 42,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-005",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1E5ECAD7": {
+    "questionId": "RQ-1E5ECAD7",
+    "rawQuestionId": "RQ-CSCA425pdf-0043",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"继承传统文化\"是固定搭配，指承袭前人留下的文化遗产。\n44—48\n行为与活动",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 43,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-005",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-8DC102F1": {
+    "questionId": "RQ-8DC102F1",
+    "rawQuestionId": "RQ-CSCA425pdf-0044",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"构建公园\"——\"构建\"指设计、建造较有规模的事物，与\"设计师\"主语吻合。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 44,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-006",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-60926FBB": {
+    "questionId": "RQ-60926FBB",
+    "rawQuestionId": "RQ-CSCA425pdf-0045",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"妈妈注重我的学习\"——\"注重\"指看重、给予重视。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 45,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-006",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-76A371C1": {
+    "questionId": "RQ-76A371C1",
+    "rawQuestionId": "RQ-CSCA425pdf-0046",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"老师鼓励我们多提问\"——\"鼓励\"+ 人+ 动词短语。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 46,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-006",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1B2FF8EF": {
+    "questionId": "RQ-1B2FF8EF",
+    "rawQuestionId": "RQ-CSCA425pdf-0047",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"分享快乐\"是固定搭配。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 47,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-006",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-196E4E5B": {
+    "questionId": "RQ-196E4E5B",
+    "rawQuestionId": "RQ-CSCA425pdf-0048",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"游览长城\"——\"游览\"指有目的地参观风景名胜。\n第五部分\n补全语句（49—70 题）",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 48,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-006",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9638E4A0": {
+    "questionId": "RQ-9638E4A0",
+    "rawQuestionId": "RQ-CSCA425pdf-0049",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "动补结构\"做完\"表示动作完成。\"作业太多没做完\"——还没全部完成。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 49,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9E216AF7": {
+    "questionId": "RQ-9E216AF7",
+    "rawQuestionId": "RQ-CSCA425pdf-0050",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"是……的\"句式强调动作的时间：\"他昨天是来的学校\"，强调他来学校的时间是昨\n天。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 50,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-00F71A12": {
+    "questionId": "RQ-00F71A12",
+    "rawQuestionId": "RQ-CSCA425pdf-0051",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"花了一小时才看完\"——副词\"才\"表示用时较长、不容易。\"就\"则表示用时短，语义\n相反。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 51,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1C31981E": {
+    "questionId": "RQ-1C31981E",
+    "rawQuestionId": "RQ-CSCA425pdf-0052",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"对……重要\"是固定结构，介词\"对\"引出受影响对象。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 52,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-6D54E35F": {
+    "questionId": "RQ-6D54E35F",
+    "rawQuestionId": "RQ-CSCA425pdf-0053",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"X 比Y 更+ 形容词\"是比较句结构。\"坐地铁比打车更便宜\"——A 完全符合此结\n构。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 53,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-C0A853C2": {
+    "questionId": "RQ-C0A853C2",
+    "rawQuestionId": "RQ-CSCA425pdf-0054",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "递进关联\"不但……也……\"。\"不但中国人喜欢中国菜，外国人也喜欢\"——主语紧\n跟\"不但\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 54,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-AE85AAF9": {
+    "questionId": "RQ-AE85AAF9",
+    "rawQuestionId": "RQ-CSCA425pdf-0055",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"跑个步\"——动词+ 量词+ 名词的离合用法，是日常口语中\"做某事\"的轻松表达。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 55,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-F714BA4A": {
+    "questionId": "RQ-F714BA4A",
+    "rawQuestionId": "RQ-CSCA425pdf-0056",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "多重定语顺序：地点状语+ 方式状语+ 中心语。\"站在门口笑的红衣女孩\"——先地\n点（站在门口），再方式（笑），再色彩定语（红衣），最后中心语（女孩）。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 56,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-DDF9DF65": {
+    "questionId": "RQ-DDF9DF65",
+    "rawQuestionId": "RQ-CSCA425pdf-0057",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"把\"字句结构：\"把+ 宾语+ 一直+ 动词+ 下去\"。\"把环境一直保护下去\"语序正\n确。注：题干\"我们要______保护环境______\"中\"保护环境\"与选项B 中的\"保护\"\"环境\"重复，\n建议出版前将题干简化为\"我们要______环境______\"以匹配把字句结构。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 57,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0EBE22F5": {
+    "questionId": "RQ-0EBE22F5",
+    "rawQuestionId": "RQ-CSCA425pdf-0058",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"向某人表示祝贺\"——固定搭配，对应\"获奖\"语境。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 58,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-18F2FB03": {
+    "questionId": "RQ-18F2FB03",
+    "rawQuestionId": "RQ-CSCA425pdf-0059",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"充分享受……的乐趣\"——\"充分\"修饰\"享受\"，强调全面、彻底地体验。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 59,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-930FA8AE": {
+    "questionId": "RQ-930FA8AE",
+    "rawQuestionId": "RQ-CSCA425pdf-0060",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"友谊非常重要\"——朋友之间友谊珍贵的常见表述。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 60,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9748FE2C": {
+    "questionId": "RQ-9748FE2C",
+    "rawQuestionId": "RQ-CSCA425pdf-0061",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "李白被誉为\"诗仙\"，作品多含\"浪漫的情感\"——奔放、富于想象，是中国文学常\n\n\n\n\n\n识。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 61,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-41F4A188": {
+    "questionId": "RQ-41F4A188",
+    "rawQuestionId": "RQ-CSCA425pdf-0062",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"分享与合作是孩子的重要技能\"——这是儿童教育中的核心能力概念。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 62,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-54A1B336": {
+    "questionId": "RQ-54A1B336",
+    "rawQuestionId": "RQ-CSCA425pdf-0063",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "AABB 重叠副词\"开开心心\"修饰\"准备年货\"，符合春节欢乐喜庆的气氛。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 63,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B9C39F34": {
+    "questionId": "RQ-B9C39F34",
+    "rawQuestionId": "RQ-CSCA425pdf-0064",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"难以忘记\"——故事印象深刻、令人记忆犹新的常用表达。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 64,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-CAB2B3AC": {
+    "questionId": "RQ-CAB2B3AC",
+    "rawQuestionId": "RQ-CSCA425pdf-0065",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"有的……有的……有的……\"是并列列举的常见结构。两个空都填\"有的\"，句式整\n齐。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 65,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-E09F6D25": {
+    "questionId": "RQ-E09F6D25",
+    "rawQuestionId": "RQ-CSCA425pdf-0066",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"有关系\"贴合\"快乐影响心情\"的语义。注：题干\"快乐____我们的心情\"句式上不\n通，建议改为\"快乐与我们的心情____\"，加上连接词后语法才完整。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 66,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1059BFA9": {
+    "questionId": "RQ-1059BFA9",
+    "rawQuestionId": "RQ-CSCA425pdf-0067",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "量词\"一项\"通常搭配\"运动/活动/工程\"。\"一项有趣的运动\"成立，羽毛球确为运动。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 67,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-D51E67FD": {
+    "questionId": "RQ-D51E67FD",
+    "rawQuestionId": "RQ-CSCA425pdf-0068",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "汉字属于\"文字系统\"——一种表意性的书写体系。\"书写材料/书法字体/色彩搭配\"均\n与汉字定义不符。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 68,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-99A7F029": {
+    "questionId": "RQ-99A7F029",
+    "rawQuestionId": "RQ-CSCA425pdf-0069",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"游来游去\"——鱼在水中的典型动作。\"爬/跑/走\"对应陆生动物或人。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 69,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-50943C89": {
+    "questionId": "RQ-50943C89",
+    "rawQuestionId": "RQ-CSCA425pdf-0070",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "中国节日各有独特的\"庆祝方式\"，如春节贴春联、中秋赏月——这是文化常识。\n第六部分\n阅读理解（71—80 题）\n（一）求职面试注意事项",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 70,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-96BC2B7A": {
+    "questionId": "RQ-96BC2B7A",
+    "rawQuestionId": "RQ-CSCA425pdf-0071",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "短文以\"找工作时要注意几点\"开头，列举穿着、说话、回答、礼貌四方面，主题是\"\n注意事项\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 71,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-929FB014": {
+    "questionId": "RQ-929FB014",
+    "rawQuestionId": "RQ-CSCA425pdf-0072",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文\"回答问题要真实，不要说谎\"——回答要真实。\n（二）共享单车",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 72,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-CA6D7116": {
+    "questionId": "RQ-CA6D7116",
+    "rawQuestionId": "RQ-CSCA425pdf-0073",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文\"扫码就能骑\"——使用方式是扫码。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 73,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-E1EFDA12": {
+    "questionId": "RQ-E1EFDA12",
+    "rawQuestionId": "RQ-CSCA425pdf-0074",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文中工作人员晚上做的是\"集中、检查、修理、清洁\"——没有\"售卖\"。共享单车\n并非售卖物品。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 74,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-91CCCE54": {
+    "questionId": "RQ-91CCCE54",
+    "rawQuestionId": "RQ-CSCA425pdf-0075",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "末句\"让出行更绿色、轻松\"——好处是绿色（环保）+ 方便/轻松。A 最贴近原意。\n（三）社区图书馆",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 75,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1AD3A1ED": {
+    "questionId": "RQ-1AD3A1ED",
+    "rawQuestionId": "RQ-CSCA425pdf-0076",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文\"免费开放\"——社区图书馆免费。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 76,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-EC5A2F6A": {
+    "questionId": "RQ-EC5A2F6A",
+    "rawQuestionId": "RQ-CSCA425pdf-0077",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文列出\"故事书、科普书、杂志\"，没有提及\"汽车\"——汽车也不应出现在图书馆\n内。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 77,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-D69D5E02": {
+    "questionId": "RQ-D69D5E02",
+    "rawQuestionId": "RQ-CSCA425pdf-0078",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文\"参加读书会、讲故事等活动\"——读书会是图书馆活动之一。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 78,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-63A3CAB9": {
+    "questionId": "RQ-63A3CAB9",
+    "rawQuestionId": "RQ-CSCA425pdf-0079",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"安静阅读\"+\"参加读书会等活动\"，可推出图书馆的作用是\"提供阅读空间\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 79,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-EBCF80A0": {
+    "questionId": "RQ-EBCF80A0",
+    "rawQuestionId": "RQ-CSCA425pdf-0080",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Humanities Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "末句\"丰富了大家的生活\"——使生活\"更丰富\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "questionNumber": 80,
+      "questionSetId": "SET-CSCA-HUM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-FCF1855E": {
+    "questionId": "RQ-FCF1855E",
+    "rawQuestionId": "RQ-CSCA425pdf-0001",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"得\"在动词后作结构助词，连接补语，读轻声de。\"开得真好看\"中\"得\"用法即如此。\nB/C/D 三种读音分别对应\"得到\"\"必须/应当\"\"好\"，均不合此语境。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 1,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-FA50E4D0": {
+    "questionId": "RQ-FA50E4D0",
+    "rawQuestionId": "RQ-CSCA425pdf-0002",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"爱好\"为动词，意思是\"喜爱\"，\"好\"在此读hào。表示\"美好\"或\"良好\"时读hǎo（如\"好\n看\"），故选B。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 2,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-3733466B": {
+    "questionId": "RQ-3733466B",
+    "rawQuestionId": "RQ-CSCA425pdf-0005",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"不同\"指不一样、有差异，与实验结果差异语境吻合。\"问/间/闻\"语义不通。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 5,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-F3976AAE": {
+    "questionId": "RQ-F3976AAE",
+    "rawQuestionId": "RQ-CSCA425pdf-0006",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"明白\"意为清楚、理解。\"自/百/目\"均不构成常用词组。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 6,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-A0778D53": {
+    "questionId": "RQ-A0778D53",
+    "rawQuestionId": "RQ-CSCA425pdf-0008",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"学习\"指研究、获取知识，与\"物理知识\"搭配自然。\"字/完/觉\"无此搭配。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 8,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-54C2F450": {
+    "questionId": "RQ-54C2F450",
+    "rawQuestionId": "RQ-CSCA425pdf-0010",
+    "knowledgePoint": "识解汉字",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "识解汉字",
+      "knowledgePoint": "识解汉字"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"发数据/发报告/发邮件\"中的\"发\"都是\"发送、传送\"之意；\"发言\"的\"发\"是\"表达、说\n出\"之意，含义不同。\n第二部分\n选词填空（11—25 题）\n11—15\n常用动词搭配",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 10,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-A22FCAF2": {
+    "questionId": "RQ-A22FCAF2",
+    "rawQuestionId": "RQ-CSCA425pdf-0011",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"避免误差\"是固定搭配，意为防止出现偏差。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 11,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-001",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-A62ED760": {
+    "questionId": "RQ-A62ED760",
+    "rawQuestionId": "RQ-CSCA425pdf-0012",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"测量质量\"——用仪器进行定量测定，搭配\"测量\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 12,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-001",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-78E9F357": {
+    "questionId": "RQ-78E9F357",
+    "rawQuestionId": "RQ-CSCA425pdf-0013",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"足够的器材\"修饰名词\"器材\"，表示数量上能满足需要。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 13,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-001",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-8037104E": {
+    "questionId": "RQ-8037104E",
+    "rawQuestionId": "RQ-CSCA425pdf-0014",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"提高能力\"是常见动宾搭配。\"缓解\"用于压力、矛盾等。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 14,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-001",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-354C21AF": {
+    "questionId": "RQ-354C21AF",
+    "rawQuestionId": "RQ-CSCA425pdf-0015",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"观察微观世界\"——显微镜的功能是用于观察。\n16—20\n物理量名称",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 15,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-001",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-CCA5F568": {
+    "questionId": "RQ-CCA5F568",
+    "rawQuestionId": "RQ-CSCA425pdf-0016",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "物体冷热程度的物理量是\"温度\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 16,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-002",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-E65603B2": {
+    "questionId": "RQ-E65603B2",
+    "rawQuestionId": "RQ-CSCA425pdf-0017",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "密度的定义：单位体积的质量。\n18. 【F】速度衡量物体运动的快慢。\nw w w.csca.app\n\nGood Luck\n8",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 17,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-002",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-511F4690": {
+    "questionId": "RQ-511F4690",
+    "rawQuestionId": "RQ-CSCA425pdf-0019",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "质量是物体所含物质的多少。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 19,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-002",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-2F2745F8": {
+    "questionId": "RQ-2F2745F8",
+    "rawQuestionId": "RQ-CSCA425pdf-0020",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "压强的定义：单位面积上受到的压力。\n21—25\n化学/物理现象",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 20,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-002",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-436B16FE": {
+    "questionId": "RQ-436B16FE",
+    "rawQuestionId": "RQ-CSCA425pdf-0021",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "盐放进水里溶解形成盐水溶液，过程称为\"溶解\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 21,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-003",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9F62025B": {
+    "questionId": "RQ-9F62025B",
+    "rawQuestionId": "RQ-CSCA425pdf-0022",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "两种物质发生化学变化叫\"化学反应\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 22,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-003",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-93620B97": {
+    "questionId": "RQ-93620B97",
+    "rawQuestionId": "RQ-CSCA425pdf-0023",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "金属是导体，容易\"导电\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 23,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-003",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B316FE04": {
+    "questionId": "RQ-B316FE04",
+    "rawQuestionId": "RQ-CSCA425pdf-0024",
+    "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04",
+    "knowledgePointSource": "SET_LEVEL",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "理科中文",
+      "knowledgePoint": "SET-CSCA-STEM-CHN-2026-04"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"加热\"提供能量，可使反应速率加快。\n25. 【F】杠杆静止不动的状态称为\"平衡\"，需两边力矩相等。\n第三部分\n近义反义词（26—33 题）",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 24,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-003",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9BECDEAC": {
+    "questionId": "RQ-9BECDEAC",
+    "rawQuestionId": "RQ-CSCA425pdf-0026",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"准确\"与\"精确\"近义，都强调没有误差。\"大概/模糊\"反义，\"简单\"无关。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 26,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1830DAC8": {
+    "questionId": "RQ-1830DAC8",
+    "rawQuestionId": "RQ-CSCA425pdf-0027",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"安全\"与\"平安\"近义，都表示没有危险。\"危险\"是反义。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 27,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-EFF028B0": {
+    "questionId": "RQ-EFF028B0",
+    "rawQuestionId": "RQ-CSCA425pdf-0029",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"立刻\"与\"马上\"都表示时间紧接着发生。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 29,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1618E943": {
+    "questionId": "RQ-1618E943",
+    "rawQuestionId": "RQ-CSCA425pdf-0031",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"上升\"的反义词是\"下降\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 31,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-CBD1D6C2": {
+    "questionId": "RQ-CBD1D6C2",
+    "rawQuestionId": "RQ-CSCA425pdf-0032",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"干燥\"的反义词是\"潮湿\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 32,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9D685B8B": {
+    "questionId": "RQ-9D685B8B",
+    "rawQuestionId": "RQ-CSCA425pdf-0033",
+    "knowledgePoint": "近义反义词",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "近义反义词",
+      "knowledgePoint": "近义反义词"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"加快\"的反义词是\"减慢\"，注意\"停止\"是动作终止，并非速度减慢。\n第四部分\n选词填空（34—48 题）\n34—38\n实验报告流程",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 33,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-7BB128C1": {
+    "questionId": "RQ-7BB128C1",
+    "rawQuestionId": "RQ-CSCA425pdf-0034",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"记录过程和结果\"是实验中的常规动作。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 34,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-005",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-22DF51B7": {
+    "questionId": "RQ-22DF51B7",
+    "rawQuestionId": "RQ-CSCA425pdf-0035",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"内容真实可靠\"——报告应真实反映实验情况。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 35,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-005",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1E1B3461": {
+    "questionId": "RQ-1E1B3461",
+    "rawQuestionId": "RQ-CSCA425pdf-0036",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "整理\"数据\"——将实验测得的数据整理后才能得出结论。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 36,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-005",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-00997F0D": {
+    "questionId": "RQ-00997F0D",
+    "rawQuestionId": "RQ-CSCA425pdf-0037",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "对结果进行\"分析\"，找出规律是科学方法的核心步骤。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 37,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-005",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-D3783B67": {
+    "questionId": "RQ-D3783B67",
+    "rawQuestionId": "RQ-CSCA425pdf-0038",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "同学之间互相\"交流\"经验，符合学习语境。\n39—43\n实验室与科学精神",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 38,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-005",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-8C217598": {
+    "questionId": "RQ-8C217598",
+    "rawQuestionId": "RQ-CSCA425pdf-0039",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"实验室设备\"——仪器装置统称\"设备\"，需定期检查维护。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 39,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-006",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-603CF11A": {
+    "questionId": "RQ-603CF11A",
+    "rawQuestionId": "RQ-CSCA425pdf-0040",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "正确\"操作\"仪器——指按规程使用仪器。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 40,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-006",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-F7C96EF5": {
+    "questionId": "RQ-F7C96EF5",
+    "rawQuestionId": "RQ-CSCA425pdf-0041",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "科学需要\"创新\"精神，强调突破与发明。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 41,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-006",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-2C2B2A04": {
+    "questionId": "RQ-2C2B2A04",
+    "rawQuestionId": "RQ-CSCA425pdf-0042",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"认识自然规律\"——通过研究去理解、把握规律。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 42,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-006",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-605599FE": {
+    "questionId": "RQ-605599FE",
+    "rawQuestionId": "RQ-CSCA425pdf-0043",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"传统科技文化\"——继承前人留下的优秀文化遗产。\nw w w.csca.app\n\nGood Luck\n9\n\n\n\n\n44—48\n科研行为动词",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 43,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-006",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-C1A17C1D": {
+    "questionId": "RQ-C1A17C1D",
+    "rawQuestionId": "RQ-CSCA425pdf-0044",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"构建模型\"——科学家建立理论模型的常用搭配。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 44,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-007",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1ADCEE67": {
+    "questionId": "RQ-1ADCEE67",
+    "rawQuestionId": "RQ-CSCA425pdf-0045",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"注重安全和规范\"——强调重视。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 45,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-007",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-4E4B4CFA": {
+    "questionId": "RQ-4E4B4CFA",
+    "rawQuestionId": "RQ-CSCA425pdf-0046",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "老师\"鼓励\"学生提问，符合教学语境。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 46,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-007",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-429824DA": {
+    "questionId": "RQ-429824DA",
+    "rawQuestionId": "RQ-CSCA425pdf-0047",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "大家一起\"分享\"成果，体现合作精神。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 47,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-007",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-011BBE37": {
+    "questionId": "RQ-011BBE37",
+    "rawQuestionId": "RQ-CSCA425pdf-0048",
+    "knowledgePoint": "选词填空",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "选词填空",
+      "knowledgePoint": "选词填空"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"探索宇宙的奥秘\"——人类持续进行的科学行为。\n第五部分\n补全语句（49—70 题）",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 48,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": "OG-CSCA425p-007",
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-14A8BD78": {
+    "questionId": "RQ-14A8BD78",
+    "rawQuestionId": "RQ-CSCA425pdf-0049",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "动补结构\"做完\"表示完成。\"没做完\"即\"还没全部做完\"，与\"步骤太多\"对应。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 49,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-C85CBAA6": {
+    "questionId": "RQ-C85CBAA6",
+    "rawQuestionId": "RQ-CSCA425pdf-0050",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"是……的\"句式强调时间：\"他是昨天完成的实验\"。\"才/刚/都\"在此结构里不合语义\n和时态。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 50,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-10D41E0F": {
+    "questionId": "RQ-10D41E0F",
+    "rawQuestionId": "RQ-CSCA425pdf-0051",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"花了三小时才做完\"——副词\"才\"表示用时长、来之不易。\"就\"表示用时短，语义相\n反。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 51,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-02633855": {
+    "questionId": "RQ-02633855",
+    "rawQuestionId": "RQ-CSCA425pdf-0052",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "介词\"对……有效\"是固定搭配，表示作用对象。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 52,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-C261D541": {
+    "questionId": "RQ-C261D541",
+    "rawQuestionId": "RQ-CSCA425pdf-0053",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "此题考查比较句的简化表达。完整句式应为\"用机器测量比手工更准确\"，所给四个\n选项中只有A \"更准确\"含比较意味，最贴近原意。提醒：本题题干省略了介词\"比\"，发布版本\n可考虑补全为\"用机器测量比手工____\"以提高严谨度。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 53,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-EF726E9D": {
+    "questionId": "RQ-EF726E9D",
+    "rawQuestionId": "RQ-CSCA425pdf-0054",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"不但……也……\"递进关联结构。\"不但学生要懂安全，老师也要重视\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 54,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-4FAB6114": {
+    "questionId": "RQ-4FAB6114",
+    "rawQuestionId": "RQ-CSCA425pdf-0055",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"做个实验\"是动量短语正确语序：动词+量词+名词。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 55,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9FA7B13E": {
+    "questionId": "RQ-9FA7B13E",
+    "rawQuestionId": "RQ-CSCA425pdf-0056",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "多重定语正确顺序为\"地点状语+方式状语+动词+的+名词\"：\"在实验室认真工作的\n老师\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 56,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-90219289": {
+    "questionId": "RQ-90219289",
+    "rawQuestionId": "RQ-CSCA425pdf-0057",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"把\"字句结构：\"把+ 宾语+ 动词短语\"。\"把实验安全一直注意下去\"语序正确。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 57,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-45153128": {
+    "questionId": "RQ-45153128",
+    "rawQuestionId": "RQ-CSCA425pdf-0058",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"向某人表示祝贺\"是固定搭配，对应\"发明成功\"语境。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 58,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-16146B2F": {
+    "questionId": "RQ-16146B2F",
+    "rawQuestionId": "RQ-CSCA425pdf-0059",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"充分享受……的乐趣\"——副词\"充分\"修饰\"享受\"，语义贴切。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 59,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B3B7581F": {
+    "questionId": "RQ-B3B7581F",
+    "rawQuestionId": "RQ-CSCA425pdf-0060",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"实验安全非常重要\"——表强调，符合主题。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 60,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-D53D3E66": {
+    "questionId": "RQ-D53D3E66",
+    "rawQuestionId": "RQ-CSCA425pdf-0061",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"严谨认真\"是科研态度的标准描述；\"随便马虎/自由散漫\"是反面词。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 61,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-D4E02BCD": {
+    "questionId": "RQ-D4E02BCD",
+    "rawQuestionId": "RQ-CSCA425pdf-0062",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"观察、记录、分析\"列举的是科学研究的\"重要技能\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 62,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B8EC5A1B": {
+    "questionId": "RQ-B8EC5A1B",
+    "rawQuestionId": "RQ-CSCA425pdf-0063",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "AABB 重叠式副词\"认认真真\"修饰\"准备\"。\"休息休息/打扫打扫\"语义不符。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 63,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-3080E900": {
+    "questionId": "RQ-3080E900",
+    "rawQuestionId": "RQ-CSCA425pdf-0064",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"难以忘记\"——印象深刻的常用表达。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 64,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-31AB313F": {
+    "questionId": "RQ-31AB313F",
+    "rawQuestionId": "RQ-CSCA425pdf-0065",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"有的……有的……有的……\"是并列列举的常见结构。两个空都填\"有的\"，句式工\n整。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 65,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B4224FA8": {
+    "questionId": "RQ-B4224FA8",
+    "rawQuestionId": "RQ-CSCA425pdf-0066",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"实验结果与操作方法有关系\"——A \"有关系\"贴近原意。题干如改写为\"实验结果与\n操作方法____\"会更通顺，可在出版前修订。\nw w w.csca.app\n\nGood Luck\n10",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 66,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-A758F9F9": {
+    "questionId": "RQ-A758F9F9",
+    "rawQuestionId": "RQ-CSCA425pdf-0067",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "量词\"一项\"通常搭配\"活动/工程/工作\"。\"一项有趣的活动\"成立。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 67,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B9C7633F": {
+    "questionId": "RQ-B9C7633F",
+    "rawQuestionId": "RQ-CSCA425pdf-0068",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "量词\"一套\"搭配\"系统/方法/理论\"。\"一套完整的知识系统\"语义贴切。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 68,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-E425CF6D": {
+    "questionId": "RQ-E425CF6D",
+    "rawQuestionId": "RQ-CSCA425pdf-0069",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"滚来滚去\"形容水滴在锅中受热翻动；其他三项主语为人或动物，与\"水滴\"不搭\n配。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 69,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9E9134D8": {
+    "questionId": "RQ-9E9134D8",
+    "rawQuestionId": "RQ-CSCA425pdf-0070",
+    "knowledgePoint": "补全语句",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "补全语句",
+      "knowledgePoint": "补全语句"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "科学实验有自己的\"操作步骤\"，符合实验语境。\n第六部分\n阅读理解（71—80 题）\n（一）实验安全注意事项",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 70,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-BD44AE8F": {
+    "questionId": "RQ-BD44AE8F",
+    "rawQuestionId": "RQ-CSCA425pdf-0071",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "短文以\"做科学实验要注意三点\"开头（实际列了四条），主题是\"注意事项\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 71,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0A1B847D": {
+    "questionId": "RQ-0A1B847D",
+    "rawQuestionId": "RQ-CSCA425pdf-0072",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文\"如实记录数据，不编造结果\"——记录要\"真实\"。\n（二）温度计使用方法",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 72,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-80462425": {
+    "questionId": "RQ-80462425",
+    "rawQuestionId": "RQ-CSCA425pdf-0073",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "首句即点明\"温度计可以测量物体温度\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 73,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9BF9D89C": {
+    "questionId": "RQ-9BF9D89C",
+    "rawQuestionId": "RQ-CSCA425pdf-0074",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文\"读数时视线要与刻度相平，不能仰视或俯视\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 74,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0C7F742F": {
+    "questionId": "RQ-0C7F742F",
+    "rawQuestionId": "RQ-CSCA425pdf-0075",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文\"等待示数稳定再读数\"——示数不稳定时应等待。\n（三）实验室的作用",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 75,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1D8BADE8": {
+    "questionId": "RQ-1D8BADE8",
+    "rawQuestionId": "RQ-CSCA425pdf-0076",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "\"实验室是学习科学的重要场所\"——同学们在此\"做实验\"。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 76,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-E756384A": {
+    "questionId": "RQ-E756384A",
+    "rawQuestionId": "RQ-CSCA425pdf-0077",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文列出\"仪器、药品和材料\"，未提及玩具，故\"玩具\"是没有的。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 77,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9DA2BB7D": {
+    "questionId": "RQ-9DA2BB7D",
+    "rawQuestionId": "RQ-CSCA425pdf-0078",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "由文意可推：\"随意操作\"违反科学规范，是不能做的。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 78,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9F434A87": {
+    "questionId": "RQ-9F434A87",
+    "rawQuestionId": "RQ-CSCA425pdf-0079",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "原文\"提高动手能力\"是实验室的功能之一。",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 79,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-65B52FEA": {
+    "questionId": "RQ-65B52FEA",
+    "rawQuestionId": "RQ-CSCA425pdf-0080",
+    "knowledgePoint": "阅读理解",
+    "knowledgePointSource": "SECTION_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "STEM Chinese",
+      "module": "阅读理解",
+      "knowledgePoint": "阅读理解"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "末句指出实验室帮助\"理解知识、提高动手能力、培养科学精神\"——核心意义是\"学\n习科学知识\"。\nw w w.csca.app\n\nGood Luck\n11",
+    "provenance": {
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "questionNumber": 80,
+      "questionSetId": "SET-CSCA-STEM-CHN-2026-04",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-996A8C32": {
+    "questionId": "RQ-996A8C32",
+    "rawQuestionId": "RQ-ChemistryPractic-0001",
+    "knowledgePoint": "I.1 Classification and state changes of matter",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "I.1 Classification and state changes of matter"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 1,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-882F93ED": {
+    "questionId": "RQ-882F93ED",
+    "rawQuestionId": "RQ-ChemistryPractic-0002",
+    "knowledgePoint": "I.1 Classification and state changes of matter",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "I.1 Classification and state changes of matter"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 2,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9BF4AEEA": {
+    "questionId": "RQ-9BF4AEEA",
+    "rawQuestionId": "RQ-ChemistryPractic-0003",
+    "knowledgePoint": "III.1 Atomic structure and periodic law",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.1 Atomic structure and periodic law"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 3,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-FAFE2153": {
+    "questionId": "RQ-FAFE2153",
+    "rawQuestionId": "RQ-ChemistryPractic-0004",
+    "knowledgePoint": "III.1 Atomic structure and periodic law",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.1 Atomic structure and periodic law"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 4,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-593FAEA7": {
+    "questionId": "RQ-593FAEA7",
+    "rawQuestionId": "RQ-ChemistryPractic-0005",
+    "knowledgePoint": "I.2 Chemical notation and equation writing",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "I.2 Chemical notation and equation writing"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 5,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1C97C103": {
+    "questionId": "RQ-1C97C103",
+    "rawQuestionId": "RQ-ChemistryPractic-0006",
+    "knowledgePoint": "I.4 Amount of substance and molar mass",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "I.4 Amount of substance and molar mass"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 6,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-FA8F2C26": {
+    "questionId": "RQ-FA8F2C26",
+    "rawQuestionId": "RQ-ChemistryPractic-0007",
+    "knowledgePoint": "I.4 Amount of substance and empirical formula",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "I.4 Amount of substance and empirical formula"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 7,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-05B3EFE4": {
+    "questionId": "RQ-05B3EFE4",
+    "rawQuestionId": "RQ-ChemistryPractic-0008",
+    "knowledgePoint": "I.3 Solution concentration and pH calculations",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "I.3 Solution concentration and pH calculations"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 8,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0F6790ED": {
+    "questionId": "RQ-0F6790ED",
+    "rawQuestionId": "RQ-ChemistryPractic-0009",
+    "knowledgePoint": "I.3 Solution concentration and pH calculations",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "I.3 Solution concentration and pH calculations"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 9,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-2F13DFD3": {
+    "questionId": "RQ-2F13DFD3",
+    "rawQuestionId": "RQ-ChemistryPractic-0010",
+    "knowledgePoint": "I.3 Solution concentration and pH calculations",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "I.3 Solution concentration and pH calculations"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 10,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-F5148E3A": {
+    "questionId": "RQ-F5148E3A",
+    "rawQuestionId": "RQ-ChemistryPractic-0011",
+    "knowledgePoint": "I.5 Ideal gas law and gas behavior",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "I.5 Ideal gas law and gas behavior"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 11,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-09D4E6A9": {
+    "questionId": "RQ-09D4E6A9",
+    "rawQuestionId": "RQ-ChemistryPractic-0012",
+    "knowledgePoint": "I.5 Ideal gas law and gas behavior",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "I.5 Ideal gas law and gas behavior"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 12,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-80F3791F": {
+    "questionId": "RQ-80F3791F",
+    "rawQuestionId": "RQ-ChemistryPractic-0013",
+    "knowledgePoint": "II.1 Properties of common inorganic substances – acids",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.1 Properties of common inorganic substances – acids"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 13,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-4DD397CD": {
+    "questionId": "RQ-4DD397CD",
+    "rawQuestionId": "RQ-ChemistryPractic-0014",
+    "knowledgePoint": "II.1 Properties of common inorganic substances – oxides",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.1 Properties of common inorganic substances – oxides"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 14,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-624291FB": {
+    "questionId": "RQ-624291FB",
+    "rawQuestionId": "RQ-ChemistryPractic-0015",
+    "knowledgePoint": "II.1 Properties of common inorganic substances – salts",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.1 Properties of common inorganic substances – salts"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 15,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1E8D502F": {
+    "questionId": "RQ-1E8D502F",
+    "rawQuestionId": "RQ-ChemistryPractic-0016",
+    "knowledgePoint": "II.4 Ionic reactions and testing methods",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.4 Ionic reactions and testing methods"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 16,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B72B4215": {
+    "questionId": "RQ-B72B4215",
+    "rawQuestionId": "RQ-ChemistryPractic-0017",
+    "knowledgePoint": "II.3 Identification of redox reactions",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.3 Identification of redox reactions"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 17,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-04300615": {
+    "questionId": "RQ-04300615",
+    "rawQuestionId": "RQ-ChemistryPractic-0018",
+    "knowledgePoint": "II.3 Identification of redox reactions",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.3 Identification of redox reactions"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 18,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-5EE223EA": {
+    "questionId": "RQ-5EE223EA",
+    "rawQuestionId": "RQ-ChemistryPractic-0019",
+    "knowledgePoint": "II.2 Reactivity of metals and simple reactions",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.2 Reactivity of metals and simple reactions"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 19,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-A03D9CEE": {
+    "questionId": "RQ-A03D9CEE",
+    "rawQuestionId": "RQ-ChemistryPractic-0020",
+    "knowledgePoint": "II.5 Basic organic compounds – hydrocarbons",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.5 Basic organic compounds – hydrocarbons"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 20,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-3D864537": {
+    "questionId": "RQ-3D864537",
+    "rawQuestionId": "RQ-ChemistryPractic-0021",
+    "knowledgePoint": "II.5 Basic organic compounds – functional groups",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.5 Basic organic compounds – functional groups"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 21,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B71552C8": {
+    "questionId": "RQ-B71552C8",
+    "rawQuestionId": "RQ-ChemistryPractic-0022",
+    "knowledgePoint": "II.1 Properties – acids, bases, and salts / neutralization",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.1 Properties – acids, bases, and salts / neutralization"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 22,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-BC3323DD": {
+    "questionId": "RQ-BC3323DD",
+    "rawQuestionId": "RQ-ChemistryPractic-0023",
+    "knowledgePoint": "II.2 Simple reactions – thermal decomposition",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.2 Simple reactions – thermal decomposition"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 23,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-D0B070DD": {
+    "questionId": "RQ-D0B070DD",
+    "rawQuestionId": "RQ-ChemistryPractic-0024",
+    "knowledgePoint": "II.1 Properties of common substances – gases",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "II.1 Properties of common substances – gases"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 24,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-915D27BE": {
+    "questionId": "RQ-915D27BE",
+    "rawQuestionId": "RQ-ChemistryPractic-0025",
+    "knowledgePoint": "III.1 Atomic structure and periodic law – periodic trends",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.1 Atomic structure and periodic law – periodic trends"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 25,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-FB6643F6": {
+    "questionId": "RQ-FB6643F6",
+    "rawQuestionId": "RQ-ChemistryPractic-0026",
+    "knowledgePoint": "III.1 Atomic structure and periodic law – groups",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.1 Atomic structure and periodic law – groups"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 26,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-E972D3B1": {
+    "questionId": "RQ-E972D3B1",
+    "rawQuestionId": "RQ-ChemistryPractic-0027",
+    "knowledgePoint": "III.2 Chemical bonds – ionic bonds",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.2 Chemical bonds – ionic bonds"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 27,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-6BFFB14D": {
+    "questionId": "RQ-6BFFB14D",
+    "rawQuestionId": "RQ-ChemistryPractic-0028",
+    "knowledgePoint": "III.2 Chemical bonds – ionic bonds and structure",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.2 Chemical bonds – ionic bonds and structure"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 28,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-170AEA87": {
+    "questionId": "RQ-170AEA87",
+    "rawQuestionId": "RQ-ChemistryPractic-0029",
+    "knowledgePoint": "III.2 Chemical bonds – intermolecular forces",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.2 Chemical bonds – intermolecular forces"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 29,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-D759D0F1": {
+    "questionId": "RQ-D759D0F1",
+    "rawQuestionId": "RQ-ChemistryPractic-0030",
+    "knowledgePoint": "III.3 Reaction rate and factors",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.3 Reaction rate and factors"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 30,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-180300A4": {
+    "questionId": "RQ-180300A4",
+    "rawQuestionId": "RQ-ChemistryPractic-0031",
+    "knowledgePoint": "III.3 Reaction rate and activation energy – conceptual",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.3 Reaction rate and activation energy – conceptual"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 31,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-A2758B4F": {
+    "questionId": "RQ-A2758B4F",
+    "rawQuestionId": "RQ-ChemistryPractic-0032",
+    "knowledgePoint": "III.3 Chemical equilibrium – basic concepts",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.3 Chemical equilibrium – basic concepts"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 32,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-54A2A2C5": {
+    "questionId": "RQ-54A2A2C5",
+    "rawQuestionId": "RQ-ChemistryPractic-0033",
+    "knowledgePoint": "III.3 Chemical equilibrium – Le Châtelier’s principle",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.3 Chemical equilibrium – Le Châtelier’s principle"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 33,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-D33AC073": {
+    "questionId": "RQ-D33AC073",
+    "rawQuestionId": "RQ-ChemistryPractic-0034",
+    "knowledgePoint": "III.3 Chemical equilibrium – Le Châtelier’s principle",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.3 Chemical equilibrium – Le Châtelier’s principle"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 34,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-F41CDD0D": {
+    "questionId": "RQ-F41CDD0D",
+    "rawQuestionId": "RQ-ChemistryPractic-0035",
+    "knowledgePoint": "III.4 Theories of electrolyte solutions – strong/weak acids",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.4 Theories of electrolyte solutions – strong/weak acids"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 35,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-8E5B5449": {
+    "questionId": "RQ-8E5B5449",
+    "rawQuestionId": "RQ-ChemistryPractic-0036",
+    "knowledgePoint": "III.4 Theories of electrolyte solutions – electrolytes",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "III.4 Theories of electrolyte solutions – electrolytes"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 36,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-A407B2E0": {
+    "questionId": "RQ-A407B2E0",
+    "rawQuestionId": "RQ-ChemistryPractic-0037",
+    "knowledgePoint": "IV.1 Laboratory safety and basic techniques",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.1 Laboratory safety and basic techniques"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 37,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-363C2A98": {
+    "questionId": "RQ-363C2A98",
+    "rawQuestionId": "RQ-ChemistryPractic-0038",
+    "knowledgePoint": "IV.1 Laboratory safety and basic techniques",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.1 Laboratory safety and basic techniques"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 38,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-C08DEC43": {
+    "questionId": "RQ-C08DEC43",
+    "rawQuestionId": "RQ-ChemistryPractic-0039",
+    "knowledgePoint": "IV.2 Separation and purification of substances",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.2 Separation and purification of substances"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 39,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-335445BC": {
+    "questionId": "RQ-335445BC",
+    "rawQuestionId": "RQ-ChemistryPractic-0040",
+    "knowledgePoint": "IV.2 Separation and purification of substances",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.2 Separation and purification of substances"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 40,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-072F00FD": {
+    "questionId": "RQ-072F00FD",
+    "rawQuestionId": "RQ-ChemistryPractic-0041",
+    "knowledgePoint": "IV.3 Common gas tests and simple experiments",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.3 Common gas tests and simple experiments"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 41,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-59C4F6BC": {
+    "questionId": "RQ-59C4F6BC",
+    "rawQuestionId": "RQ-ChemistryPractic-0042",
+    "knowledgePoint": "IV.3 Common gas tests and simple experiments",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.3 Common gas tests and simple experiments"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 42,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-476248DE": {
+    "questionId": "RQ-476248DE",
+    "rawQuestionId": "RQ-ChemistryPractic-0043",
+    "knowledgePoint": "IV.1 Laboratory apparatus and their uses",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.1 Laboratory apparatus and their uses"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 43,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0DBB3F9E": {
+    "questionId": "RQ-0DBB3F9E",
+    "rawQuestionId": "RQ-ChemistryPractic-0044",
+    "knowledgePoint": "IV.4 Simple titration concepts and applications",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.4 Simple titration concepts and applications"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 44,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-0BBB9FB0": {
+    "questionId": "RQ-0BBB9FB0",
+    "rawQuestionId": "RQ-ChemistryPractic-0045",
+    "knowledgePoint": "IV.5 Industrial processes – Haber process",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.5 Industrial processes – Haber process"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 45,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1672DBA8": {
+    "questionId": "RQ-1672DBA8",
+    "rawQuestionId": "RQ-ChemistryPractic-0046",
+    "knowledgePoint": "IV.5 Industrial processes – Contact process",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.5 Industrial processes – Contact process"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 46,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-4E367EF5": {
+    "questionId": "RQ-4E367EF5",
+    "rawQuestionId": "RQ-ChemistryPractic-0047",
+    "knowledgePoint": "IV.6 Simple environmental applications – acid rain",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.6 Simple environmental applications – acid rain"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 47,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B867C5DA": {
+    "questionId": "RQ-B867C5DA",
+    "rawQuestionId": "RQ-ChemistryPractic-0048",
+    "knowledgePoint": "IV.6 Simple application chemistry – polymers and materials",
+    "knowledgePointSource": "SYLLABUS_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "Chemistry",
+      "module": "Chemistry Practice",
+      "knowledgePoint": "IV.6 Simple application chemistry – polymers and materials"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "",
+    "provenance": {
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "questionNumber": 48,
+      "questionSetId": "SET-CSCA-CHEM-PRACTICE",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-6746EA7F": {
+    "questionId": "RQ-6746EA7F",
+    "rawQuestionId": "RQ-EnglishMock2016p-0026",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  31.[A][B][C][D]  36. [A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 26,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-262C3CD4": {
+    "questionId": "RQ-262C3CD4",
+    "rawQuestionId": "RQ-EnglishMock2016p-0027",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  32.[A][B][C][D]  37. [A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 27,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-828F1D8D": {
+    "questionId": "RQ-828F1D8D",
+    "rawQuestionId": "RQ-EnglishMock2016p-0028",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  33.[A][B][C][D]  38. [A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 28,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-4FD26F10": {
+    "questionId": "RQ-4FD26F10",
+    "rawQuestionId": "RQ-EnglishMock2016p-0029",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  34.[A][B][C][D]  39. [A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 29,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9B9AAD24": {
+    "questionId": "RQ-9B9AAD24",
+    "rawQuestionId": "RQ-EnglishMock2016p-0030",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  35.[A][B][C][D]  40. [A][B][C][D] \n \nPart III. Writing (30%) \n \n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 30,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-9F4B86A1": {
+    "questionId": "RQ-9F4B86A1",
+    "rawQuestionId": "RQ-EnglishMock2016p-0031",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  36. [A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 31,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B9574A43": {
+    "questionId": "RQ-B9574A43",
+    "rawQuestionId": "RQ-EnglishMock2016p-0032",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  37. [A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 32,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-165619EE": {
+    "questionId": "RQ-165619EE",
+    "rawQuestionId": "RQ-EnglishMock2016p-0033",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  38. [A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 33,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-DE7CBC8C": {
+    "questionId": "RQ-DE7CBC8C",
+    "rawQuestionId": "RQ-EnglishMock2016p-0034",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  39. [A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 34,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-8C2ADC60": {
+    "questionId": "RQ-8C2ADC60",
+    "rawQuestionId": "RQ-EnglishMock2016p-0035",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  40. [A][B][C][D] \n \nPart III. Writing (30%) \n \n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n______________________",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 35,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-DDFAAD3C": {
+    "questionId": "RQ-DDFAAD3C",
+    "rawQuestionId": "RQ-EnglishMock2016p-0036",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 36,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1796D80F": {
+    "questionId": "RQ-1796D80F",
+    "rawQuestionId": "RQ-EnglishMock2016p-0037",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 37,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-7FF0E2B6": {
+    "questionId": "RQ-7FF0E2B6",
+    "rawQuestionId": "RQ-EnglishMock2016p-0039",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 39,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-6C3C126A": {
+    "questionId": "RQ-6C3C126A",
+    "rawQuestionId": "RQ-EnglishMock2016p-0040",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D] \n \nPart III. Writing (30%) \n \n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n________________________________________",
+    "provenance": {
+      "sourceFile": "English Mock 2016.pdf",
+      "questionNumber": 40,
+      "questionSetId": "SET-ENG-MOCK-2016",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-375CB590": {
+    "questionId": "RQ-375CB590",
+    "rawQuestionId": "RQ-EnglishMockP1202-0004",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  9.[A][B][C][D]   14.[A][B][C][D]  19.[A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "questionNumber": 4,
+      "questionSetId": "SET-ENG-MOCK-2020",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-1286B53A": {
+    "questionId": "RQ-1286B53A",
+    "rawQuestionId": "RQ-EnglishMockP1202-0006",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]   11.[A][B][C][D]  16.[A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "questionNumber": 6,
+      "questionSetId": "SET-ENG-MOCK-2020",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-23E9A87F": {
+    "questionId": "RQ-23E9A87F",
+    "rawQuestionId": "RQ-EnglishMockP1202-0007",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]   12.[A][B][C][D]  17.[A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "questionNumber": 7,
+      "questionSetId": "SET-ENG-MOCK-2020",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-BB9BCB2E": {
+    "questionId": "RQ-BB9BCB2E",
+    "rawQuestionId": "RQ-EnglishMockP1202-0008",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]   13.[A][B][C][D]  18.[A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "questionNumber": 8,
+      "questionSetId": "SET-ENG-MOCK-2020",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-B82A846C": {
+    "questionId": "RQ-B82A846C",
+    "rawQuestionId": "RQ-EnglishMockP1202-0009",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]   14.[A][B][C][D]  19.[A][B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "questionNumber": 9,
+      "questionSetId": "SET-ENG-MOCK-2020",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-126ECAA7": {
+    "questionId": "RQ-126ECAA7",
+    "rawQuestionId": "RQ-EnglishMockP1202-0010",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]  15.[A][B][C][D]  20.[A][B][C][D] \n \nPart II. Reading (30 %)",
+    "provenance": {
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "questionNumber": 10,
+      "questionSetId": "SET-ENG-MOCK-2020",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-A123F993": {
+    "questionId": "RQ-A123F993",
+    "rawQuestionId": "RQ-EnglishMockP2201-0006",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock P2 - 2019.pdf",
+      "questionNumber": 6,
+      "questionSetId": "SET-ENG-MOCK-2019",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-48D0FD38": {
+    "questionId": "RQ-48D0FD38",
+    "rawQuestionId": "RQ-EnglishMockP2201-0007",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock P2 - 2019.pdf",
+      "questionNumber": 7,
+      "questionSetId": "SET-ENG-MOCK-2019",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-86CBD523": {
+    "questionId": "RQ-86CBD523",
+    "rawQuestionId": "RQ-EnglishMockP2201-0008",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock P2 - 2019.pdf",
+      "questionNumber": 8,
+      "questionSetId": "SET-ENG-MOCK-2019",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-3CC8D873": {
+    "questionId": "RQ-3CC8D873",
+    "rawQuestionId": "RQ-EnglishMockP2201-0009",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]",
+    "provenance": {
+      "sourceFile": "English Mock P2 - 2019.pdf",
+      "questionNumber": 9,
+      "questionSetId": "SET-ENG-MOCK-2019",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  },
+  "RQ-67736BAA": {
+    "questionId": "RQ-67736BAA",
+    "rawQuestionId": "RQ-EnglishMockP2201-0010",
+    "knowledgePoint": "Part I Cloze Test",
+    "knowledgePointSource": "PART_DERIVED",
+    "knowledgePointHierarchy": {
+      "subject": "English",
+      "module": "English Mock",
+      "knowledgePoint": "Part I Cloze Test"
+    },
+    "difficulty": "medium",
+    "difficultySource": "DEFAULT",
+    "explanation": "[B][C][D]   \n \nPart III. Writing (30%) \n \n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n_____________________________________________________________________\n______________________________________",
+    "provenance": {
+      "sourceFile": "English Mock P2 - 2019.pdf",
+      "questionNumber": 10,
+      "questionSetId": "SET-ENG-MOCK-2019",
+      "sourcePage": null
+    },
+    "optionGroupId": null,
+    "sourceConfidence": "MEDIUM"
+  }
+}

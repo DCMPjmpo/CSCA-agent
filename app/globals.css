@@ -1,218 +1,461 @@
-@import 'tailwindcss';
+﻿@import 'tailwindcss';
 @import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* ---- shadcn / Tailwind semantic tokens → resolved from Maritime palette (deferred below) ---- */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: #ffffff;
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --font-brand-title: var(--font-brand-title), 'Source Han Serif SC', 'Noto Serif SC', serif;  /* only used in hero eyebrow / editorial titles · 极少量 */
+  --font-brand-eng: var(--font-sans), 'Inter', system-ui, sans-serif;   /* UI sans — pixel Press Start 2P removed in Batch 1 */
+  --radius-sm: 2px;   /* subtle · eyebrow badge / tag */
+  --radius-md: 6px;   /* input / ghost button */
+  --radius-lg: 12px;  /* card / secondary button */
+  --radius-xl: 20px;  /* hero pill / editorial panel */
+  --radius-2xl: 28px;
+  --radius-3xl: 36px;
+  --radius-4xl: 48px;
 }
 
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: #722ed1;
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.58 0.22 27);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+/* ============================================================
+   CSCA Learning Platform — Maritime Editorial Design Tokens
+   Batch 1 · Rebrand: Deep Ocean / Paper / Muted Gold palette.
+   (97 自托管 LXGW @font-face 子集已在下方移除；稀有字形回退系统字体)
+   ============================================================ */
+@theme {
+  /* ---- Core: Deep Ocean (#071C26 / #0B2834) ---- */
+  --color-deep-ocean: #071C26;    /* sidebar dark base */
+  --color-deep-ocean-800: #0B2834;/* primary button bg · sidebar hover */
+  --color-deep-ocean-700: #123A4A;/* primary button hover */
+  --color-deep-ocean-600: #1E4D5F;/* ring / activated accent */
+  --color-voyage-blue: #0B4F8C;   /* Primary CTA on dark sidebar / important links (docs spec) */
+  /* ---- Paper (#FAF8F2 light / #F5F0E6 editorial section) ---- */
+  --color-paper-50: #FAF8F2;      /* page content background */
+  --color-paper-100: #F5F0E6;     /* editorial section · card tier-2 bg */
+  --color-paper-200: #EFE8D9;     /* hover / divider layer */
+  /* ---- Muted Gold (Accent) #C7A54A ---- */
+  --color-muted-gold: #C7A54A;    /* eyebrow text · progress done · accent */
+  --color-muted-gold-400: #D4B76A;/* gold hover tint */
+  --color-gold-ink: #8E752C;      /* gold body-text readable on paper */
+  /* ---- Status (muted, restrained) ---- */
+  --color-status-success: #3E6F5E; /* muted green */
+  --color-status-success-bg: #EEF4F1;
+  --color-status-warning: #B08035; /* muted amber */
+  --color-status-warning-bg: #FAF4E7;
+  --color-status-error: #A83232;   /* restrained red (朱砂降饱和) */
+  --color-status-error-bg: #F7EBEB;
+  /* ---- Ink (text, based on deep-ocean family) ---- */
+  --color-ink-900: #121C22;        /* primary text (非纯黑 · 档案墨调) */
+  --color-ink-700: #36464F;        /* secondary text */
+  --color-ink-500: #5C6F7A;        /* tertiary / eyebrow */
+  --color-ink-300: #8FA1AB;        /* disabled / placeholder */
+  /* ---- Lines ---- */
+  --color-line-200: #D9D2C1;       /* thin divider */
+  --color-line-300: #C8BFA8;       /* strong divider / rule */
+  /* ---- Legacy tokens preserved for compatibility (do NOT use in new UI) ---- */
+  --color-vermilion: var(--color-status-error);
+  --color-archive-green: var(--color-status-success);
+  --color-indigo-deep: var(--color-deep-ocean);
+  --color-gold-leaf: var(--color-muted-gold);
+  --color-bamboo: var(--color-status-success);
+  --color-tropical-deep: var(--color-deep-ocean-700);
+  --color-dark-wood: var(--color-deep-ocean);
+  --color-ricepaper: var(--color-paper-100);
+  --color-ink: var(--color-ink-900);
+  --color-sandalwood: var(--color-ink-700);
+  --color-bronze: var(--color-gold-ink);
+  --color-warning: var(--color-status-warning);
+  /* ---- Fonts: modern sans first; LXGW WenKai secondary editorial; NO pixel font ---- */
+  --font-brand-body: 'PingFang SC', 'Microsoft YaHei', 'HarmonyOS Sans SC', 'Noto Sans SC', 'LXGW WenKai', sans-serif;
+  --font-brand-serif: 'Noto Serif SC', 'Source Han Serif SC', 'LXGW WenKai', serif;  /* hero eyebrow / editorial titles only · rare */
+  --font-brand-display: var(--font-brand-title), 'Noto Serif SC', 'Source Han Serif SC', serif;
+
+  /* ---- Resolved shadcn semantic tokens (@theme inline vars above resolve here) ---- */
+  /* Default / dark-theme fallback: sidebar as Deep Ocean, content as paper-50 */
+  --background: var(--color-paper-50);
+  --foreground: var(--color-ink-900);
+  --card: #FFFFFF;
+  --card-foreground: var(--color-ink-900);
+  --popover: #FFFFFF;
+  --popover-foreground: var(--color-ink-900);
+  --primary: var(--color-deep-ocean-800);
+  --primary-foreground: var(--color-paper-50);
+  --secondary: var(--color-paper-200);
+  --secondary-foreground: var(--color-ink-900);
+  --muted: var(--color-paper-200);
+  --muted-foreground: var(--color-ink-500);
+  --accent: var(--color-muted-gold);
+  --accent-foreground: var(--color-gold-ink);
+  --destructive: var(--color-status-error);
+  --border: var(--color-line-200);
+  --input: var(--color-line-200);
+  --ring: var(--color-deep-ocean-600);
+  --chart-1: var(--color-deep-ocean-700);
+  --chart-2: var(--color-muted-gold);
+  --chart-3: var(--color-status-success);
+  --chart-4: var(--color-deep-ocean-600);
+  --chart-5: var(--color-status-warning);
+  --sidebar: var(--color-deep-ocean);
+  --sidebar-foreground: #EDE7D7;
+  --sidebar-primary: var(--color-voyage-blue);
+  --sidebar-primary-foreground: var(--color-paper-50);
+  --sidebar-accent: rgba(199, 165, 74, 0.16);
+  --sidebar-accent-foreground: var(--color-muted-gold);
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-ring: rgba(11, 79, 140, 0.45);
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: #8b47ea;
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.371 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+/* ============================================================
+   东盟十国语言字体适配（批次 18）
+   html[lang] 选择器按语言切换字体，避免 tofu 方框
+   ============================================================ */
+html[lang="th"],
+html[lang="th-TH"] {
+  font-family: var(--font-thai), var(--font-brand-body), sans-serif;
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  html {
-    /* Always render the vertical scrollbar so layout doesn't horizontally
-       shift when content grows/shrinks across the viewport-height threshold
-       (e.g. expanding/collapsing recent classrooms). scrollbar-gutter:
-       stable doesn't cover every browser/config combo we see, so fall back
-       to forcing overflow-y: scroll as well. */
-    scrollbar-gutter: stable;
-    overflow-y: scroll;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-/* ProseMirror Editor Styles */
-.prosemirror-editor {
-  cursor: text;
+html[lang="my"],
+html[lang="my-MM"] {
+  font-family: var(--font-myanmar), var(--font-brand-body), sans-serif;
 }
 
-.prosemirror-editor.format-painter {
-  cursor:
-    url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTcuMzUuMDEybC0uMDY2Ljk5OGE1LjI3MSA1LjI3MSAwIDAwLTEuMTg0LjA2IDMuOCAzLjggMCAwMC0uOTMzLjQ3MmMtLjQ0LjM1Ni0uNzgzLjgxMS0uOTk4IDEuMzI0bC4wMTgtLjAzNnY1LjEySDEuMDR2Ljk4aC0xLjA0bC0uMDAyIDQuMTVjLjE4Ny40MjYuNDYuODEuNzkxIDEuMTE3bC4xNzUuMTUyYy4yOTMuMjA4LjYxNS4zNzMuODkuNDcyLjQxLjA4Mi44My4xMTIgMS4yNDkuMDlsLjA1Ny45OTlhNi4wNjMgNi4wNjMgMCAwMS0xLjU4OC0uMTI5IDQuODM2IDQuODM2IDAgMDEtMS4yNS0uNjQ3IDQuNDYzIDQuNDYzIDAgMDEtLjgzOC0uODgzYy0uMjI0LjMzMi0uNS42NDItLjgyNC45MjdhNC4xMSA0LjExIDAgMDEtMS4zMDUuNjMzQTYuMTI2IDYuMTI2IDAgMDEwIDE1LjkwOWwuMDY4LS45OTdjLjQyNC4wMjYuODUtLjAwMSAxLjIxNy0uMDcuMzM2LS4wOTkuNjUxLS4yNTQuODk0LS40My40My0uMzguNzY1LS44NDcuOTgyLTEuMzY4bC0uMDA1LjAxNFY4LjkzSDIuMTE1di0uOThoMS4wNFYyLjg2MmEzLjc3IDMuNzcgMCAwMC0uNzc0LTEuMTY3bC0uMTY1LS4xNTZhMy4wNjQgMy4wNjQgMCAwMC0uODgtLjQ0OEE1LjA2MiA1LjA2MiAwIDAwLjA2NyAxLjAxTDAgLjAxMmE2LjE0IDYuMTQgMCAwMTEuNTkyLjExYy40NTMuMTM1Ljg3Ny4zNDUgMS4yOS42NS4zLjI2NS41NjUuNTY0Ljc4Ny44OS4yMzMtLjMzMS41Mi0uNjM0Ljg1My0uOTA0YTQuODM1IDQuODM1IDAgMDExLjMtLjY0OEE2LjE1NSA2LjE1NSAwIDAxNy4zNS4wMTJ6IiBmaWxsPSIjMEQwRDBEIi8+PHBhdGggZD0iTTE3LjM1IDE0LjVsNC41LTQuNS02LTZjLTIgMi0zIDItNS41IDIuNS40IDMuMiA0LjgzMyA2LjY2NyA3IDh6bTQuNTg4LTQuNDkzYS4zLjMgMCAwMC40MjQgMGwuNjgtLjY4YTEuNSAxLjUgMCAwMDAtMi4xMjJMMjEuNjkgNS44NTNsMi4wMjUtMS41ODNhMS42MjkgMS42MjkgMCAxMC0yLjI3OS0yLjI5NmwtMS42MDMgMi4wMjItMS4zNTctMS4zNTdhMS41IDEuNSAwIDAwLTIuMTIxIDBsLS42OC42OGEuMy4zIDAgMDAwIC40MjVsNi4yNjMgNi4yNjN6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTE1Ljg5MiAzLjk2MnMtMS4wMyAxLjIwMi0yLjQ5NCAxLjg5Yy0xLjAwNi40NzQtMi4xOC41ODYtMi43MzQuNjI3LS4yLjAxNS0uMzQ0LjIxLS4yNzYuMzk5LjI5Mi44MiAxLjExMiAyLjggMi42NTggNC4zNDYgMi4xMjYgMi4xMjcgMy42NTggMi45NjggNC4xNDIgMy4yMDMuMS4wNDguMjE0LjAzLjI5OC0uMDQyLjM4Ni0uMzI1IDEuNS0xLjI3NyAyLjIxLTEuOTg2Ljg5Mi0uODg5IDIuMTg3LTIuNDQ3IDIuMTg3LTIuNDQ3bS40NzkuMDU1YS4zLjMgMCAwMS0uNDI0IDBsLTYuMjY0LTYuMjYzYS4zLjMgMCAwMTAtLjQyNWwuNjgtLjY4YTEuNSAxLjUgMCAwMTIuMTIyIDBsMS4zNTcgMS4zNTcgMS42MDMtMi4wMjJhMS42MjkgMS42MjkgMCAxMTIuMjggMi4yOTZMMjEuNjkgNS44NTNsMS4zNTIgMS4zNTJhMS41IDEuNSAwIDAxMCAyLjEyMmwtLjY4LjY4eiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+')
-      2 5,
-    default !important;
+html[lang="km"],
+html[lang="km-KH"] {
+  font-family: var(--font-khmer), var(--font-brand-body), sans-serif;
 }
 
-/* Animation for audio visualizer */
-@keyframes wave {
-  0%,
-  100% {
-    height: 30%;
-  }
-  50% {
-    height: 100%;
-  }
+html[lang="lo"],
+html[lang="lo-LA"] {
+  font-family: var(--font-lao), var(--font-brand-body), sans-serif;
 }
 
-/* Breathing bars for presentation speech bubbles (parent is h-3.5 = 14px) */
-@keyframes breathing-bar-1 {
-  0%,
-  100% {
-    height: 3px;
-  }
-  50% {
-    height: 14px;
-  }
-}
-@keyframes breathing-bar-2 {
-  0%,
-  100% {
-    height: 6px;
-  }
-  50% {
-    height: 14px;
-  }
-}
-@keyframes breathing-bar-3 {
-  0%,
-  100% {
-    height: 3px;
-  }
-  50% {
-    height: 11px;
-  }
-}
-
-/* Hide scrollbar by default, show on hover */
-@utility scrollbar-hide {
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* ============================================================
+   Brand light scope — CSCA Learning Platform (Maritime Editorial)
+   Applies to / · /csca · /csca-multi-agent · /csca/case-study via .brand-light.
+   Deep Ocean + Paper + Muted Gold. NO pixel texture, NO hard shadow.
+   ============================================================ */
+.brand-light {
+  --background: var(--color-paper-50);          /* page: #FAF8F2 */
+  --foreground: var(--color-ink-900);            /* primary ink */
+  --card: var(--color-paper-100);                /* editorial section tier */
+  --card-foreground: var(--color-ink-900);
+  --popover: #FFFFFF;
+  --popover-foreground: var(--color-ink-900);
+  --primary: var(--color-deep-ocean-800);        /* primary CTA = deep ocean #0B2834 */
+  --primary-foreground: var(--color-paper-50);   /* paper-50 米白 on primary */
+  --secondary: var(--color-paper-200);           /* Editorial Section 底色 */
+  --secondary-foreground: var(--color-ink-900);
+  --muted: var(--color-paper-200);
+  --muted-foreground: var(--color-ink-500);
+  --accent: var(--color-muted-gold);             /* eyebrow / data mark */
+  --accent-foreground: var(--color-gold-ink);
+  --destructive: var(--color-status-error);
+  --border: var(--color-line-200);
+  --input: var(--color-line-200);
+  --ring: var(--color-deep-ocean-600);
+  /* Chart palette (restrained, maritime) */
+  --chart-1: var(--color-deep-ocean-700);
+  --chart-2: var(--color-muted-gold);
+  --chart-3: var(--color-status-success);
+  --chart-4: var(--color-deep-ocean-600);
+  --chart-5: var(--color-status-warning);
+  /* Body: modern sans first (for PREMIUM / INTERNATIONAL / AI); WenKai kept as 3rd fallback for glyph coverage */
+  font-family: var(--font-brand-body);
+  color: var(--color-ink-900);
+  background-color: var(--background);
 }
 
-/* Shimmer sweep for skeleton loading */
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
+/* Archive paper texture REMOVED (sensory noise / museum artifact feel).
+   Replace with ultra-subtle paper grain: < 1% opacity uniform noise only. */
+.brand-light::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.018;
+  background-image: url('/textures/paper-noise.svg');
+}
+
+/* --- Brand light: editorial type scale ---
+   Baseline 16px / 1.6. Mobile ≤639 drops to 15px.
+   Eyebrow class added: .voyage-eyebrow (uppercase · letter-spacing · muted-gold/ink-500).
+   Type scale ratio 1.250 (Major Third) — editorial, calm. */
+.brand-light,
+[data-testid='brand-shell'] {
+  font-size: 16px;
+  line-height: 1.6;
+  --text-caption: 0.75rem;     /* 12px eyebrow / captions */
+  --text-caption--lh: 1.4;
+  --text-xs: 0.8rem;           /* 12.8px meta */
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.9rem;           /* 14.4px secondary */
+  --text-sm--line-height: 1.6;
+  --text-base: 1rem;           /* 16px body */
+  --text-base--line-height: 1.6;
+  --text-lg: 1.125rem;         /* 18px */
+  --text-lg--line-height: 1.65;
+  --text-xl: 1.375rem;         /* 22px subsection */
+  --text-xl--line-height: 1.4;
+  --text-2xl: 1.75rem;         /* 28px section title */
+  --text-2xl--line-height: 1.3;
+  --text-3xl: 2.125rem;        /* 34px page title cap */
+  --text-3xl--line-height: 1.2;
+  --text-4xl: 2.75rem;         /* 44px hero */
+  --text-4xl--line-height: 1.15;
+}
+
+@media (max-width: 639px) {
+  .brand-light,
+  [data-testid='brand-shell'] {
+    font-size: 15px;
+    --text-base: 0.9375rem;
+    --text-base--line-height: 1.6;
   }
 }
 
-/* Breathing animation for interactive mode button */
-@keyframes interactive-mode-breathe {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.08);
-  }
+/* --- Unified utility classes (Maritime Editorial) ---
+   Apply throughout rebrand; old .font-page-title / .font-num re-interpreted
+   as new typography for backward compatibility. */
+
+/* Page / Section title — NO hard shadow; editorial weight + ink color */
+.font-page-title {
+  font-family: var(--font-sans), var(--font-brand-body), sans-serif;
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--color-ink-900);
+  text-shadow: none;
 }
+
+/* Editorial / H1 — slight serif feel (serif fallback only as minor decorative,
+   primary UI still sans). 用于 VoyagePageHeader 的页面大标题。 */
+.font-editorial-title {
+  font-family: var(--font-sans), var(--font-brand-body), sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  color: var(--color-ink-900);
+}
+
+/* Numbers / scores — Geist Mono (no pixel Press Start) */
+.font-num {
+  font-family: var(--font-geist-mono), 'JetBrains Mono', ui-monospace, monospace;
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: var(--color-ink-900);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Person / profile name — sans primary (not Kai-calligraphy museum-plaque) */
+.font-kai-name {
+  font-family: var(--font-sans), var(--font-brand-body), sans-serif;
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  color: var(--color-ink-900);
+}
+
+/* ---- NEW: Maritime Editorial utilities ---- */
+.voyage-eyebrow {
+  display: inline-block;
+  font-size: var(--text-caption, 0.75rem);
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted-gold);
+  font-weight: 600;
+}
+
+/* Editorial section container (NOT a border+shadow card; tier-2 bg paper-100 + top/bottom rule line) */
+.editorial-section {
+  background-color: var(--color-paper-100);
+  border-top: 1px solid var(--color-line-200);
+  border-bottom: 1px solid var(--color-line-200);
+  padding: 2.5rem 0;
+  margin: 2rem 0;
+}
+
+/* 1px hairline divider (rule) — NO bold brass */
+.rule-line {
+  border: none;
+  height: 1px;
+  background: var(--color-line-200);
+  margin: 1.5rem 0;
+}
+.rule-line--strong { background: var(--color-line-300); }
+
+/* ============================================================
+   Batch 5 · Legacy Game Classes reinterpreted as Maritime Editorial.
+
+   Purpose: 不动 /csca/page.tsx 里 31 处 card-brand/30+ 处 font-brand-pixel/csca-progress 等
+   业务 JSX；在 CSS 层把整套「游戏 UI」重解释为「航海档案 / Editorial Section」风格。
+
+   覆盖范围：
+   - card-brand            → 白底+细线+圆角12+小阴影（非厚重描边+金箔）
+   - card-brand-tint       → 次级 panel
+   - card-brand-selected    → 选中态（deep-ocean 边 + paper-100 背景）
+   - font-brand-pixel      → 小标签（Inter/PingFang，不使用 Press Start 2P / 像素字）
+   - csca-sidebar          → StageCard panel sticky（非描边游戏侧栏）
+   - csca-progress-track   → 学习进度容器（细线 rule）
+   - csca-progress-seg     → 学习进度段（被重解释为「单条细 progress 填充」，不再一段段方块）
+   - csca-step-fade        → 阶段切换轻淡入
+   - animate-game-banner   → 禁用（实际 JSX 已拆，保险兜底）
+   ============================================================ */
+.card-brand {
+  background: #FFFFFF;
+  border: 1px solid var(--color-line-200);
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: 0 1px 2px rgba(7, 28, 38, 0.04), 0 1px 3px rgba(7, 28, 38, 0.03);
+  padding: 1.5rem;
+  transition: box-shadow 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+.card-brand:hover {
+  border-color: var(--color-line-300);
+  box-shadow: 0 6px 20px -16px rgba(7, 28, 38, 0.22);
+}
+.card-brand-tint {
+  background: var(--color-paper-100);
+  border: 1px solid var(--color-line-200);
+  border-radius: var(--radius-md, 6px);
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+.card-brand-tint:hover {
+  border-color: var(--color-deep-ocean-700);
+  background: #FFFFFF;
+}
+.card-brand-selected {
+  background: var(--color-paper-100);
+  border: 1px solid var(--color-deep-ocean-700);
+  border-radius: var(--radius-md, 6px);
+  box-shadow: 0 0 0 3px rgba(11, 79, 140, 0.08);
+}
+.font-brand-pixel {
+  font-family: var(--font-sans), var(--font-brand-body), Inter, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  text-transform: none;
+  color: var(--color-ink-700);
+}
+.csca-sidebar {
+  background: #FFFFFF;
+  border: 1px solid var(--color-line-200);
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: 0 1px 3px rgba(7, 28, 38, 0.05);
+}
+/* Progress reinterpret: track → thin rule; segments → a single filled bar (sum of lit segments) */
+.csca-progress-track {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 3px;
+  width: 100%;
+  background: var(--color-line-200);
+  border-radius: 999px;
+  padding: 0;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: none !important;
+}
+.csca-progress-seg {
+  display: block;
+  height: 100%;
+  flex: 1 1 0%;
+  background: transparent;
+  border: none !important;
+  border-radius: 0;
+  transition: background-color 400ms ease;
+}
+.csca-progress-seg.is-lit {
+  background: var(--color-deep-ocean-700);
+}
+.csca-step-fade {
+  animation: csca-step-in 240ms ease-out both;
+}
+@keyframes csca-step-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Legacy "battle" banners removed in JSX; ensure any leftover has no pixel flash */
+.animate-game-banner { animation: none !important; display: none !important; }
+
+/* Legacy game color utilities reinterpreted to restrained status palette */
+.bg-vermilion\/10 { background: color-mix(in srgb, var(--color-status-error) 10%, transparent); }
+.text-vermilion { color: var(--color-status-error); }
+.bg-gold-leaf\/15, .bg-gold-leaf\/10 { background: color-mix(in srgb, var(--color-muted-gold) 14%, transparent); }
+.text-gold-leaf { color: var(--color-gold-ink); }
+.bg-bamboo\/10, .bg-bamboo\/15 { background: color-mix(in srgb, var(--color-status-success) 12%, transparent); }
+.text-bamboo { color: var(--color-status-success); }
+.border-bamboo\/40 { border-color: color-mix(in srgb, var(--color-status-success) 40%, transparent); }
+.bg-warning\/10, .bg-warning\/15 { background: color-mix(in srgb, var(--color-status-warning) 14%, transparent); }
+.text-warning { color: var(--color-status-warning-amber, #A96B23); }
+.bg-sandalwood\/25 { background: color-mix(in srgb, var(--color-ink-700) 22%, transparent); }
+.text-sandalwood { color: var(--color-ink-700); }
+.border-sandalwood\/25, .border-sandalwood\/40 { border-color: color-mix(in srgb, var(--color-ink-700) 30%, transparent); }
+.bg-bamboo\/40 { background: color-mix(in srgb, var(--color-status-success) 38%, transparent); }
+.bg-indigo-deep\/10 { background: color-mix(in srgb, var(--color-deep-ocean-700) 10%, transparent); }
+.border-gold-leaf\/60 { border-color: color-mix(in srgb, var(--color-muted-gold) 55%, transparent); }
+.bg-gold-leaf { background: var(--color-muted-gold); color: #1a1407; }
+
+/* 像素硬角清理：所有元素最小 4px 圆角（不会影响按钮/卡原本更大的 12px/20px） */
+[class*="card-brand"],
+[class*="csca-sidebar"],
+.csca-progress-track,
+.csca-progress-seg {
+  border-radius: clamp(4px, var(--radius-md, 6px), 999px);
+}
+[class*="card-brand"] * {
+  border-top-left-radius: max(4px, var(--override-tl, 0px));
+  border-top-right-radius: max(4px, var(--override-tr, 0px));
+  border-bottom-left-radius: max(4px, var(--override-bl, 0px));
+  border-bottom-right-radius: max(4px, var(--override-br, 0px));
+}
+
+/* ---- (END Batch 5 legacy reinterpretation) ---- */
+
+/* ============================================================
+   CSCA Maritime Editorial · Minimal font fallback for Chinese glyphs.
+   Batch 1 Rebrand: UI sans uses system fonts (PingFang SC / Microsoft YaHei / Inter).
+   LXGW WenKai is no longer self-hosted with 97 subsets; kept as a 3rd-fallback for rare glyphs via system install.
+   NO pixel / ZCOOL decorative fonts as primary.
+   ============================================================ */
+/* (self-hosted LXGW subsets removed — total 97 @font-face blocks deleted in Batch 1) */
+

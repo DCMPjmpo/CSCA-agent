@@ -1,9 +1,9 @@
 {
   "common": {
     "you": "أنت",
-    "confirm": "تأكيد",
-    "cancel": "إلغاء",
-    "loading": "جارٍ التحميل..."
+    "confirm": "准奏",
+    "cancel": "作罢",
+    "loading": "幕僚正在筹备"
   },
   "home": {
     "slogan": "التعلّم التوليدي في فصل تفاعلي متعدد الوكلاء",
@@ -105,11 +105,11 @@
     "status": {
       "inputStreaming": "في الانتظار",
       "inputAvailable": "جارٍ التنفيذ",
-      "outputAvailable": "مكتمل",
+      "outputAvailable": "已通关",
       "outputError": "خطأ",
       "outputDenied": "مرفوض",
       "running": "جارٍ التنفيذ",
-      "result": "مكتمل",
+      "result": "已通关",
       "error": "خطأ"
     }
   },
@@ -118,7 +118,7 @@
     "expandedTitle": "إعداد أدوار الفصل",
     "configTooltip": "انقر لتكوين أدوار الفصل",
     "voiceLabel": "الصوت",
-    "voiceLoading": "جارٍ التحميل...",
+    "voiceLoading": "幕僚正在筹备",
     "voiceAutoAssign": "سيتم تعيين الأصوات تلقائيًا",
     "searchVoice": "البحث عن الأصوات",
     "noMatchingVoices": "لا توجد أصوات مطابقة"
@@ -126,7 +126,7 @@
   "proactiveCard": {
     "discussion": "نقاش",
     "join": "انضمام",
-    "skip": "تخطي",
+    "skip": "暂避",
     "pause": "إيقاف مؤقت",
     "resume": "استئناف"
   },
@@ -136,12 +136,12 @@
   },
   "stage": {
     "currentScene": "المشهد الحالي",
-    "generating": "جارٍ التوليد...",
+    "generating": "先生正在挥毫",
     "paused": "متوقف مؤقتًا",
     "generationFailed": "فشل التوليد",
     "confirmSwitchTitle": "تبديل المشهد",
     "confirmSwitchMessage": "يوجد موضوع قيد التقدم حاليًا. سيؤدي تبديل المشهد إلى إنهاء الموضوع الحالي. هل أنت متأكد؟",
-    "generatingNextPage": "جارٍ توليد المشهد، يرجى الانتظار...",
+    "generatingNextPage": "场景正在生成，提督稍安勿躁",
     "courseComplete": "اكتملت الدورة",
     "fullscreen": "ملء الشاشة",
     "exitFullscreen": "الخروج من ملء الشاشة"
@@ -195,22 +195,22 @@
     "multipleChoice": "اختيار متعدد",
     "shortAnswer": "إجابة قصيرة",
     "analysis": "التحليل: ",
-    "excellent": "ممتاز!",
+    "excellent": "甲上！",
     "keepGoing": "استمر!",
     "needsReview": "يحتاج مراجعة",
     "correct": "صحيح",
     "incorrect": "خطأ",
     "answering": "قيد الإجابة",
-    "submitAnswers": "إرسال الإجابات",
+    "submitAnswers": "呈上案卷",
     "aiGrading": "الذكاء الاصطناعي يصحح...",
-    "aiGradingWait": "يرجى الانتظار، جارٍ تحليل إجاباتك",
+    "aiGradingWait": "提督稍安勿躁，正在分析你的答案",
     "quizReport": "تقرير الاختبار",
     "retry": "إعادة المحاولة"
   },
   "roundtable": {
     "teacher": "المعلم",
     "you": "أنت",
-    "inputPlaceholder": "اكتب رسالتك...",
+    "inputPlaceholder": "请提督下令…",
     "listening": "جارٍ الاستماع...",
     "processing": "جارٍ المعالجة...",
     "noSpeechDetected": "لم يتم اكتشاف كلام، يرجى المحاولة مرة أخرى",
@@ -238,14 +238,14 @@
     "workspace": {
       "restart": "إعادة البدء",
       "confirmRestart": "إعادة تعيين كل التقدم؟",
-      "confirm": "تأكيد",
-      "cancel": "إلغاء"
+      "confirm": "准奏",
+      "cancel": "作罢"
     },
     "issueboard": {
       "title": "لوحة المهام",
       "noIssues": "لا توجد مهام بعد",
-      "statusDone": "مكتمل",
-      "statusActive": "نشط",
+      "statusDone": "已通关",
+      "statusActive": "航行中",
       "statusPending": "معلّق"
     },
     "chat": {
@@ -302,7 +302,7 @@
     "slides": "شرائح",
     "nameCopied": "تم نسخ الاسم",
     "deleteConfirmTitle": "حذف",
-    "delete": "حذف",
+    "delete": "革除",
     "rename": "إعادة تسمية",
     "renamePlaceholder": "أدخل اسم الفصل",
     "renameFailed": "فشلت إعادة تسمية الفصل",
@@ -330,7 +330,7 @@
     "generatingSlideContentDesc": "جارٍ إنشاء الشرائح والاختبارات والمحتوى التفاعلي...",
     "generatingActions": "توليد إجراءات التدريس",
     "generatingActionsDesc": "جارٍ تنسيق السرد والتسليط والتفاعلات...",
-    "generationComplete": "اكتمل التوليد!",
+    "generationComplete": "讲案已成，请提督过目",
     "generationFailed": "فشل التوليد",
     "generatingCourse": "جارٍ توليد المقرر",
     "openingClassroom": "جارٍ فتح الفصل...",
@@ -345,7 +345,7 @@
     "sessionNotFoundDesc": "يرجى ملء متطلبات المقرر لبدء عملية التوليد.",
     "goBackAndRetry": "العودة وإعادة المحاولة",
     "classroomReady": "تم توليد بيئة التعلم الذكية المخصصة لك بنجاح.",
-    "aiWorking": "وكلاء الذكاء الاصطناعي يعملون...",
+    "aiWorking": "先生正在挥毫",
     "textTruncated": "نص المستند طويل، سيتم استخدام أول {{n}} حرف للتوليد",
     "imageTruncated": "تم العثور على {{total}} صورة، متجاوزة الحد الأقصى البالغ {{max}} صورة. الصور الإضافية ستستخدم الأوصاف النصية فقط",
     "agentGeneration": "توليد أدوار الفصل",
@@ -391,7 +391,7 @@
     "insertSceneHere": "إدراج مشهد هنا",
     "deleteSceneConfirm": "حذف هذا المشهد؟",
     "deleteSceneConfirmDesc": "سيتم حذف هذا المشهد ونقاطه الرئيسية من المخطط.",
-    "deleteSceneConfirmAction": "حذف",
+    "deleteSceneConfirmAction": "革除",
     "collapseEditor": "طيّ",
     "quizConfigSummary": "{{count}} أسئلة",
     "dragSceneHint": "اسحب لإعادة الترتيب أو ركّز ثم اضغط Ctrl/⌘ + ↑ / ↓",
@@ -479,7 +479,7 @@
       "default-6": "يفكر بعمق ويستكشف جوهر المواضيع"
     },
     "close": "إغلاق",
-    "save": "حفظ",
+    "save": "归档",
     "providers": "LLM",
     "addProviderDescription": "أضف مزوّدي نماذج مخصصين لتوسيع نماذج الذكاء الاصطناعي المتاحة",
     "providerNames": {
@@ -598,9 +598,9 @@
     "outputWindowLabel": "الحد الأقصى لرموز المخرجات",
     "outputWindowPlaceholder": "مثلاً، 4096",
     "testModel": "اختبار النموذج",
-    "deleteModel": "حذف",
-    "cancelEdit": "إلغاء",
-    "saveModel": "حفظ",
+    "deleteModel": "革除",
+    "cancelEdit": "作罢",
+    "saveModel": "归档",
     "howToUse": "كيفية الاستخدام",
     "step1ConfigureProvider": "انتقل إلى \"مزوّدو النماذج\"، اختر أو أضف مزوّدًا، وقم بتكوين إعدادات الاتصال (مفتاح API، العنوان الأساسي، إلخ.)",
     "step2SelectModel": "اختر النموذج الذي تريد استخدامه في \"النموذج النشط\" أدناه",
@@ -703,7 +703,7 @@
     "browserNativeTTSNote": "TTS المُدمج في المتصفح لا يحتاج تكوينًا وهو مجاني تمامًا، يستخدم أصوات النظام المُدمجة",
     "testTTS": "اختبار TTS",
     "testASR": "اختبار ASR",
-    "testSuccess": "نجح الاختبار",
+    "testSuccess": "恭贺提督，此航顺利通关",
     "testFailed": "فشل الاختبار",
     "ttsTestText": "نص اختبار TTS",
     "ttsTestSuccess": "نجح اختبار TTS، تم تشغيل الصوت",
@@ -982,7 +982,7 @@
     "videoTestPromptDefault": "قطة لطيفة تمشي على مكتب",
     "videoGenerating": "جارٍ توليد الفيديو (تقريبًا 1-2 دقيقة)...",
     "videoGenerationWarning": "توليد الفيديو يستغرق عادةً 1-2 دقيقة، يرجى الصبر",
-    "mediaRetry": "إعادة المحاولة",
+    "mediaRetry": "重整旗鼓",
     "mediaContentSensitive": "عذرًا، هذا المحتوى لم يجتز فحص السلامة.",
     "mediaGenerationDisabled": "التوليد معطّل في الإعدادات",
     "singleAgent": "وكيل فردي",

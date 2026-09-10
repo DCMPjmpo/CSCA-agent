@@ -15,6 +15,48 @@ import { generateWithFallback, type TaskType } from '../ai/model-router';
 import { retrieveCscaKnowledge, getCscaSubjectRules } from '../rag/retriever';
 import { calculateEloDifficulty, suggestDailyPracticeCount, type TopicMastery } from '../elo/algorithm';
 
+/**
+ * Parse an AI text response as JSON, tolerating models that wrap the JSON
+ * in Markdown code fences (```json ... ```) or add surrounding prose.
+ * Returns null when no valid JSON can be extracted.
+ */
+function parseAiJson(text: string): unknown {
+  const trimmed = text.trim();
+
+  // Direct parse first — covers models that emit bare JSON.
+  try {
+    return JSON.parse(trimmed);
+  } catch {
+    /* fall through to code-fence extraction */
+  }
+
+  // Strip Markdown code fences: ```json ... ``` or ``` ... ```.
+  const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (fenced) {
+    try {
+      return JSON.parse(fenced[1].trim());
+    } catch {
+      /* fall through */
+    }
+  }
+
+  // Last resort: try the longest balanced {...} or [...] substring.
+  for (const open of ['{', '[']) {
+    const close = open === '{' ? '}' : ']';
+    const start = trimmed.indexOf(open);
+    const end = trimmed.lastIndexOf(close);
+    if (start !== -1 && end > start) {
+      try {
+        return JSON.parse(trimmed.slice(start, end + 1));
+      } catch {
+        /* continue */
+      }
+    }
+  }
+
+  return null;
+}
+
 // ==========================================
 // Workflow State Definition
 // ==========================================
@@ -94,7 +136,7 @@ export interface CscaAgentState {
 // ==========================================
 // Step 1: Subject Diagnosis
 // ==========================================
-export async function diagnoseSubjects(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
+async function diagnoseSubjects(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
   const { targetMajor, highSchoolSystem, hskLevel, nationality } = state;
 
   // RAG retrieval for CSCA subject requirements
@@ -124,18 +166,17 @@ Output Format (JSON):
     messages: [{ role: 'user', content: prompt }],
   });
 
-  try {
-    const diagnosis = JSON.parse(result.text);
-    return { diagnosis, currentStep: 2 };
-  } catch {
+  const diagnosis = parseAiJson(result.text);
+  if (diagnosis === null) {
     return { error: 'DIAGNOSIS_PARSE_ERROR', currentStep: 1 };
   }
+  return { diagnosis: diagnosis as CscaAgentState['diagnosis'], currentStep: 2 };
 }
 
 // ==========================================
 // Step 2: Knowledge Weakness Map
 // ==========================================
-export async function generateKnowledgeMap(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
+async function generateKnowledgeMap(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
   const { diagnosis, nationality, highSchoolSystem } = state;
 
   if (!diagnosis) {
@@ -175,18 +216,17 @@ Output Format (JSON):
     messages: [{ role: 'user', content: prompt }],
   });
 
-  try {
-    const knowledgeMap = JSON.parse(result.text);
-    return { knowledgeMap, currentStep: 3 };
-  } catch {
+  const knowledgeMap = parseAiJson(result.text);
+  if (knowledgeMap === null) {
     return { error: 'KNOWLEDGE_MAP_PARSE_ERROR', currentStep: 2 };
   }
+  return { knowledgeMap: knowledgeMap as CscaAgentState['knowledgeMap'], currentStep: 3 };
 }
 
 // ==========================================
 // Step 3: Adaptive Exercise Generation
 // ==========================================
-export async function generateAdaptiveExercises(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
+async function generateAdaptiveExercises(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
   const { knowledgeMap } = state;
 
   if (!knowledgeMap) {
@@ -238,9 +278,10 @@ Output Format (JSON):
       messages: [{ role: 'user', content: prompt }],
     });
 
-    try {
-      exercises.push(JSON.parse(result.text));
-    } catch {
+    const exercise = parseAiJson(result.text);
+    if (exercise !== null) {
+      exercises.push(exercise);
+    } else {
       console.warn(`Failed to parse exercise for ${topic.topic}`);
     }
   }
@@ -293,10 +334,10 @@ Output Format (JSON Array):
       messages: [{ role: 'user', content: prompt }],
     });
 
-    try {
-      const batchQuestions = JSON.parse(result.text);
+    const batchQuestions = parseAiJson(result.text);
+    if (Array.isArray(batchQuestions)) {
       questions.push(...batchQuestions);
-    } catch {
+    } else {
       console.warn(`Failed to parse batch ${batch + 1}`);
     }
   }
@@ -318,7 +359,7 @@ Output Format (JSON Array):
 // ==========================================
 // Step 5: Score Analysis
 // ==========================================
-export async function analyzeScore(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
+async function analyzeScore(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
   const { mockExam, nationality } = state;
 
   if (!mockExam) {
@@ -378,12 +419,12 @@ Output Format (JSON):
     messages: [{ role: 'user', content: prompt }],
   });
 
-  try {
-    const scoreAnalysis = JSON.parse(result.text);
-    return { scoreAnalysis, currentStep: 6 };
-  } catch {
-    return {
-      scoreAnalysis: {
+  const scoreAnalysis = parseAiJson(result.text);
+  if (scoreAnalysis !== null) {
+    return { scoreAnalysis: scoreAnalysis as CscaAgentState['scoreAnalysis'], currentStep: 6 };
+  }
+  return {
+    scoreAnalysis: {
         totalScore,
         moduleScores: moduleRates,
         rankingPercentile: Math.min(90, Math.max(10, totalScore)),
@@ -395,13 +436,12 @@ Output Format (JSON):
       },
       currentStep: 6,
     };
-  }
 }
 
 // ==========================================
 // Step 6: University Matching
 // ==========================================
-export async function matchUniversities(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
+async function matchUniversities(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
   const { scoreAnalysis, targetMajor, nationality } = state;
 
   const prompt = `You are a CSCA university admission expert. Recommend suitable universities and scholarships based on the candidate's profile.
@@ -429,26 +469,25 @@ Output Format (JSON):
     messages: [{ role: 'user', content: prompt }],
   });
 
-  try {
-    const universityMatch = JSON.parse(result.text);
-    return { universityMatch, currentStep: 7 };
-  } catch {
-    return {
-      universityMatch: {
-        safeSchools: [
-          { name: 'Local Universities', location: 'Various Cities', probability: 0.9 },
-        ],
-        targetSchools: [
-          { name: 'Mid-tier Universities', location: 'Major Cities', probability: 0.6 },
-        ],
-        reachSchools: [
-          { name: 'Top Universities', location: 'Beijing/Shanghai', probability: 0.3 },
-        ],
-        scholarships: [],
-      },
-      currentStep: 7,
-    };
+  const universityMatch = parseAiJson(result.text);
+  if (universityMatch !== null) {
+    return { universityMatch: universityMatch as CscaAgentState['universityMatch'], currentStep: 7 };
   }
+  return {
+    universityMatch: {
+      safeSchools: [
+        { name: 'Local Universities', location: 'Various Cities', probability: 0.9 },
+      ],
+      targetSchools: [
+        { name: 'Mid-tier Universities', location: 'Major Cities', probability: 0.6 },
+      ],
+      reachSchools: [
+        { name: 'Top Universities', location: 'Beijing/Shanghai', probability: 0.3 },
+      ],
+      scholarships: [],
+    },
+    currentStep: 7,
+  };
 }
 
 // ==========================================
@@ -474,42 +513,19 @@ export const cscaWorkflow = new StateGraph<CscaAgentState>({
 })
   .addNode('diagnose', diagnoseSubjects)
   .addNode('knowledge_map', generateKnowledgeMap)
-  .addNode('generate_exercises', generateAdaptiveExercises)
+  .addNode('adaptive_exercises', generateAdaptiveExercises)
   .addNode('mock_exam', generateMockExam)
   .addNode('score_analysis', analyzeScore)
   .addNode('university_match', matchUniversities)
   .addEdge('diagnose', 'knowledge_map')
-  .addEdge('knowledge_map', 'generate_exercises')
-  .addEdge('generate_exercises', 'mock_exam')
+  .addEdge('knowledge_map', 'adaptive_exercises')
+  .addEdge('adaptive_exercises', 'mock_exam')
   .addEdge('mock_exam', 'score_analysis')
   .addEdge('score_analysis', 'university_match')
   .addEdge('university_match', END)
   .addEdge(START, 'diagnose');
 
 export const cscaAgent = cscaWorkflow.compile();
-
-// ==========================================
-// Step Runner Exports for API Routes
-// ==========================================
-export async function runDiagnosisStep(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
-  return diagnoseSubjects(state);
-}
-
-export async function runKnowledgeMapStep(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
-  return generateKnowledgeMap(state);
-}
-
-export async function runAdaptiveExercisesStep(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
-  return generateAdaptiveExercises(state);
-}
-
-export async function runScoreAnalysisStep(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
-  return analyzeScore(state);
-}
-
-export async function runUniversityMatchStep(state: CscaAgentState): Promise<Partial<CscaAgentState>> {
-  return matchUniversities(state);
-}
 
 // ==========================================
 // Helper Functions
@@ -523,7 +539,7 @@ export async function runStep(
   state: any,
   step: number
 ): Promise<any> {
-  const steps = ['diagnose', 'knowledge_map', 'generate_exercises', 'mock_exam', 'score_analysis', 'university_match'];
+  const steps = ['diagnose', 'knowledge_map', 'adaptive_exercises', 'mock_exam', 'score_analysis', 'university_match'];
   const stepName = steps[step - 1];
 
   if (!stepName) {
@@ -533,3 +549,10 @@ export async function runStep(
   const result = await cscaAgent.invoke(state);
   return result;
 }
+
+// Export individual step functions for workflow-runner.ts
+export const runDiagnosisStep = diagnoseSubjects;
+export const runKnowledgeMapStep = generateKnowledgeMap;
+export const runAdaptiveExercisesStep = generateAdaptiveExercises;
+export const runScoreAnalysisStep = analyzeScore;
+export const runUniversityMatchStep = matchUniversities;

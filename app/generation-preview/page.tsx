@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { OutlinesEditor } from '@/components/generation/outlines-editor';
+import { ServerProvidersInit } from '@/components/server-providers-init';
+import { Toaster } from '@/components/ui/toaster-dynamic';
 import { cn } from '@/lib/utils';
 import { useStageStore } from '@/lib/store/stage';
 import { useSettingsStore } from '@/lib/store/settings';
@@ -1458,6 +1460,8 @@ export default function GenerationPreviewPage() {
       }
     >
       <GenerationPreviewContent />
+      <ServerProvidersInit />
+      <Toaster position="top-center" />
     </Suspense>
   );
 }

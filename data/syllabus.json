@@ -1,8 +1,450 @@
 {
   "metadata": {
-    "subjects": ["数学", "物理", "化学", "理科中文", "文科中文", "英语"],
+    "subjects": ["数学", "理科中文", "物理", "化学"],
     "version": "1.0.0",
-    "totalNodes": 0
+    "lastUpdated": "2024-01-01"
   },
-  "nodes": []
+  "nodes": [
+    {
+      "id": "math",
+      "name": "数学",
+      "subject": "数学",
+      "type": "subject",
+      "difficulty": 1,
+      "parents": [],
+      "children": ["math_algebra", "math_geometry", "math_function"]
+    },
+    {
+      "id": "math_algebra",
+      "name": "代数",
+      "subject": "数学",
+      "type": "module",
+      "difficulty": 2,
+      "parents": ["math"],
+      "children": ["math_algebra_polynomial", "math_algebra_equation"]
+    },
+    {
+      "id": "math_geometry",
+      "name": "几何",
+      "subject": "数学",
+      "type": "module",
+      "difficulty": 2,
+      "parents": ["math"],
+      "children": ["math_geometry_triangle", "math_geometry_circle"]
+    },
+    {
+      "id": "math_function",
+      "name": "函数",
+      "subject": "数学",
+      "type": "module",
+      "difficulty": 3,
+      "parents": ["math"],
+      "children": ["math_function_linear", "math_function_quadratic"]
+    },
+    {
+      "id": "math_algebra_polynomial",
+      "name": "多项式",
+      "subject": "数学",
+      "type": "topic",
+      "difficulty": 2,
+      "parents": ["math_algebra"],
+      "children": ["math_algebra_polynomial_add", "math_algebra_polynomial_multiply"]
+    },
+    {
+      "id": "math_algebra_equation",
+      "name": "方程",
+      "subject": "数学",
+      "type": "topic",
+      "difficulty": 3,
+      "parents": ["math_algebra"],
+      "children": ["math_algebra_equation_linear", "math_algebra_equation_quadratic"]
+    },
+    {
+      "id": "math_geometry_triangle",
+      "name": "三角形",
+      "subject": "数学",
+      "type": "topic",
+      "difficulty": 2,
+      "parents": ["math_geometry"],
+      "children": ["math_geometry_triangle_area", "math_geometry_triangle_congruent"]
+    },
+    {
+      "id": "math_geometry_circle",
+      "name": "圆",
+      "subject": "数学",
+      "type": "topic",
+      "difficulty": 3,
+      "parents": ["math_geometry"],
+      "children": ["math_geometry_circle_area", "math_geometry_circle_circumference"]
+    },
+    {
+      "id": "math_function_linear",
+      "name": "一次函数",
+      "subject": "数学",
+      "type": "topic",
+      "difficulty": 2,
+      "parents": ["math_function"],
+      "children": ["math_function_linear_slope", "math_function_linear_intercept"]
+    },
+    {
+      "id": "math_function_quadratic",
+      "name": "二次函数",
+      "subject": "数学",
+      "type": "topic",
+      "difficulty": 4,
+      "parents": ["math_function"],
+      "children": ["math_function_quadratic_parabola", "math_function_quadratic_root"]
+    },
+    {
+      "id": "math_algebra_polynomial_add",
+      "name": "多项式加法",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 1,
+      "parents": ["math_algebra_polynomial"],
+      "children": []
+    },
+    {
+      "id": "math_algebra_polynomial_multiply",
+      "name": "多项式乘法",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 2,
+      "parents": ["math_algebra_polynomial"],
+      "children": []
+    },
+    {
+      "id": "math_algebra_equation_linear",
+      "name": "一元一次方程",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 1,
+      "parents": ["math_algebra_equation"],
+      "children": []
+    },
+    {
+      "id": "math_algebra_equation_quadratic",
+      "name": "一元二次方程",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 3,
+      "parents": ["math_algebra_equation"],
+      "children": []
+    },
+    {
+      "id": "math_geometry_triangle_area",
+      "name": "三角形面积",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 1,
+      "parents": ["math_geometry_triangle"],
+      "children": []
+    },
+    {
+      "id": "math_geometry_triangle_congruent",
+      "name": "三角形全等",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 3,
+      "parents": ["math_geometry_triangle"],
+      "children": []
+    },
+    {
+      "id": "math_geometry_circle_area",
+      "name": "圆的面积",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 2,
+      "parents": ["math_geometry_circle"],
+      "children": []
+    },
+    {
+      "id": "math_geometry_circle_circumference",
+      "name": "圆的周长",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 2,
+      "parents": ["math_geometry_circle"],
+      "children": []
+    },
+    {
+      "id": "math_function_linear_slope",
+      "name": "斜率",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 2,
+      "parents": ["math_function_linear"],
+      "children": []
+    },
+    {
+      "id": "math_function_linear_intercept",
+      "name": "截距",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 1,
+      "parents": ["math_function_linear"],
+      "children": []
+    },
+    {
+      "id": "math_function_quadratic_parabola",
+      "name": "抛物线",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 4,
+      "parents": ["math_function_quadratic"],
+      "children": []
+    },
+    {
+      "id": "math_function_quadratic_root",
+      "name": "二次方程求根",
+      "subject": "数学",
+      "type": "knowledge_point",
+      "difficulty": 4,
+      "parents": ["math_function_quadratic"],
+      "children": []
+    },
+    {
+      "id": "chinese_science",
+      "name": "理科中文",
+      "subject": "理科中文",
+      "type": "subject",
+      "difficulty": 1,
+      "parents": [],
+      "children": ["chinese_science_reading", "chinese_science_writing"]
+    },
+    {
+      "id": "chinese_science_reading",
+      "name": "阅读理解",
+      "subject": "理科中文",
+      "type": "module",
+      "difficulty": 3,
+      "parents": ["chinese_science"],
+      "children": ["chinese_science_reading_science", "chinese_science_reading_tech"]
+    },
+    {
+      "id": "chinese_science_writing",
+      "name": "书面表达",
+      "subject": "理科中文",
+      "type": "module",
+      "difficulty": 4,
+      "parents": ["chinese_science"],
+      "children": ["chinese_science_writing_essay", "chinese_science_writing_report"]
+    },
+    {
+      "id": "chinese_science_reading_science",
+      "name": "科普文章",
+      "subject": "理科中文",
+      "type": "topic",
+      "difficulty": 3,
+      "parents": ["chinese_science_reading"],
+      "children": ["chinese_science_reading_science_comprehend", "chinese_science_reading_science_infer"]
+    },
+    {
+      "id": "chinese_science_reading_tech",
+      "name": "科技文章",
+      "subject": "理科中文",
+      "type": "topic",
+      "difficulty": 4,
+      "parents": ["chinese_science_reading"],
+      "children": ["chinese_science_reading_tech_terminology", "chinese_science_reading_tech_analysis"]
+    },
+    {
+      "id": "chinese_science_reading_science_comprehend",
+      "name": "理解主旨",
+      "subject": "理科中文",
+      "type": "knowledge_point",
+      "difficulty": 2,
+      "parents": ["chinese_science_reading_science"],
+      "children": []
+    },
+    {
+      "id": "chinese_science_reading_science_infer",
+      "name": "推理判断",
+      "subject": "理科中文",
+      "type": "knowledge_point",
+      "difficulty": 4,
+      "parents": ["chinese_science_reading_science"],
+      "children": []
+    },
+    {
+      "id": "chinese_science_reading_tech_terminology",
+      "name": "专业术语",
+      "subject": "理科中文",
+      "type": "knowledge_point",
+      "difficulty": 3,
+      "parents": ["chinese_science_reading_tech"],
+      "children": []
+    },
+    {
+      "id": "chinese_science_reading_tech_analysis",
+      "name": "技术分析",
+      "subject": "理科中文",
+      "type": "knowledge_point",
+      "difficulty": 5,
+      "parents": ["chinese_science_reading_tech"],
+      "children": []
+    },
+    {
+      "id": "chinese_science_writing_essay",
+      "name": "议论文",
+      "subject": "理科中文",
+      "type": "topic",
+      "difficulty": 4,
+      "parents": ["chinese_science_writing"],
+      "children": ["chinese_science_writing_essay_structure", "chinese_science_writing_essay_argument"]
+    },
+    {
+      "id": "chinese_science_writing_report",
+      "name": "说明文",
+      "subject": "理科中文",
+      "type": "topic",
+      "difficulty": 3,
+      "parents": ["chinese_science_writing"],
+      "children": ["chinese_science_writing_report_clarity", "chinese_science_writing_report_accuracy"]
+    },
+    {
+      "id": "chinese_science_writing_essay_structure",
+      "name": "文章结构",
+      "subject": "理科中文",
+      "type": "knowledge_point",
+      "difficulty": 3,
+      "parents": ["chinese_science_writing_essay"],
+      "children": []
+    },
+    {
+      "id": "chinese_science_writing_essay_argument",
+      "name": "论证方法",
+      "subject": "理科中文",
+      "type": "knowledge_point",
+      "difficulty": 4,
+      "parents": ["chinese_science_writing_essay"],
+      "children": []
+    },
+    {
+      "id": "chinese_science_writing_report_clarity",
+      "name": "表达清晰",
+      "subject": "理科中文",
+      "type": "knowledge_point",
+      "difficulty": 2,
+      "parents": ["chinese_science_writing_report"],
+      "children": []
+    },
+    {
+      "id": "chinese_science_writing_report_accuracy",
+      "name": "内容准确",
+      "subject": "理科中文",
+      "type": "knowledge_point",
+      "difficulty": 3,
+      "parents": ["chinese_science_writing_report"],
+      "children": []
+    },
+    {
+      "id": "physics",
+      "name": "物理",
+      "subject": "物理",
+      "type": "subject",
+      "difficulty": 1,
+      "parents": [],
+      "children": ["physics_mechanics", "physics_electricity", "physics_optics"]
+    },
+    {
+      "id": "physics_mechanics",
+      "name": "力学",
+      "subject": "物理",
+      "type": "module",
+      "difficulty": 3,
+      "parents": ["physics"],
+      "children": ["physics_mechanics_newton", "physics_mechanics_motion"]
+    },
+    {
+      "id": "physics_electricity",
+      "name": "电学",
+      "subject": "物理",
+      "type": "module",
+      "difficulty": 4,
+      "parents": ["physics"],
+      "children": ["physics_electricity_circuit", "physics_electricity_magnetic"]
+    },
+    {
+      "id": "physics_optics",
+      "name": "光学",
+      "subject": "物理",
+      "type": "module",
+      "difficulty": 3,
+      "parents": ["physics"],
+      "children": ["physics_optics_reflection", "physics_optics_refraction"]
+    },
+    {
+      "id": "physics_mechanics_newton",
+      "name": "牛顿定律",
+      "subject": "物理",
+      "type": "topic",
+      "difficulty": 3,
+      "parents": ["physics_mechanics"],
+      "children": ["physics_mechanics_newton_first", "physics_mechanics_newton_second"]
+    },
+    {
+      "id": "physics_mechanics_newton_first",
+      "name": "牛顿第一定律",
+      "subject": "物理",
+      "type": "knowledge_point",
+      "difficulty": 2,
+      "parents": ["physics_mechanics_newton"],
+      "children": []
+    },
+    {
+      "id": "physics_mechanics_newton_second",
+      "name": "牛顿第二定律",
+      "subject": "物理",
+      "type": "knowledge_point",
+      "difficulty": 4,
+      "parents": ["physics_mechanics_newton"],
+      "children": []
+    },
+    {
+      "id": "chemistry",
+      "name": "化学",
+      "subject": "化学",
+      "type": "subject",
+      "difficulty": 1,
+      "parents": [],
+      "children": ["chemistry_inorganic", "chemistry_organic", "chemistry_reactions"]
+    },
+    {
+      "id": "chemistry_inorganic",
+      "name": "无机化学",
+      "subject": "化学",
+      "type": "module",
+      "difficulty": 3,
+      "parents": ["chemistry"],
+      "children": ["chemistry_inorganic_elements", "chemistry_inorganic_compounds"]
+    },
+    {
+      "id": "chemistry_inorganic_elements",
+      "name": "元素",
+      "subject": "化学",
+      "type": "topic",
+      "difficulty": 2,
+      "parents": ["chemistry_inorganic"],
+      "children": ["chemistry_inorganic_elements_periodic", "chemistry_inorganic_elements_properties"]
+    },
+    {
+      "id": "chemistry_inorganic_elements_periodic",
+      "name": "元素周期表",
+      "subject": "化学",
+      "type": "knowledge_point",
+      "difficulty": 2,
+      "parents": ["chemistry_inorganic_elements"],
+      "children": []
+    },
+    {
+      "id": "chemistry_inorganic_elements_properties",
+      "name": "元素性质",
+      "subject": "化学",
+      "type": "knowledge_point",
+      "difficulty": 3,
+      "parents": ["chemistry_inorganic_elements"],
+      "children": []
+    }
+  ]
 }

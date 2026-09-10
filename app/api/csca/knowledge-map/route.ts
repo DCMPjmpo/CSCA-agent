@@ -1,7 +1,14 @@
 /**
  * CSCA Knowledge Map API
  * Step 2: Generate knowledge weakness map for subjects
- * 
+ *
+ * Phase 4 改动：
+ *   - 移除内联 MOCK_TOPICS 硬编码掌握度（0.4-0.75 伪造值）
+ *   - 接入 lib/csca/knowledge-data.ts 的 buildKnowledgeMap
+ *   - 接受 answerHistory 参数，从真实答题历史计算 mastery
+ *   - 新用户无答题数据 → mastery = 0（显示"暂无数据"）
+ *   - 响应增加 masterySource 字段（'real_answers' | 'ai_inferred' | 'initial'）
+ *
  * CSCA考试科目：
  * - 基础汉语（综合）- 听力、阅读、写作
  * - 数学 - 代数、几何、微积分基础
@@ -9,82 +16,60 @@
  */
 
 import { NextResponse } from 'next/server';
-
-// Mock knowledge map data for CSCA subjects
-const MOCK_TOPICS: Record<string, any[]> = {
-  '基础汉语': [
-    { id: 'chi-1', name: '语音', description: '拼音、声调、变调', mastery: 0.75 },
-    { id: 'chi-2', name: '汉字', description: '字形、笔画、部首', mastery: 0.6 },
-    { id: 'chi-3', name: '词汇', description: '词义、近义词、反义词', mastery: 0.7 },
-    { id: 'chi-4', name: '语法', description: '句法、词类、句式', mastery: 0.55 },
-    { id: 'chi-5', name: '阅读理解', description: '文章理解、主旨把握', mastery: 0.65 },
-    { id: 'chi-6', name: '写作', description: '作文、应用文写作', mastery: 0.5 },
-    { id: 'chi-7', name: '听力', description: '听力理解、信息提取', mastery: 0.7 },
-    { id: 'chi-8', name: '成语', description: '成语理解、成语运用', mastery: 0.6 },
-  ],
-  '数学': [
-    { id: 'math-1', name: '集合与函数', description: '集合运算、函数概念', mastery: 0.75 },
-    { id: 'math-2', name: '代数', description: '方程、不等式、多项式', mastery: 0.65 },
-    { id: 'math-3', name: '几何', description: '平面几何、立体几何', mastery: 0.6 },
-    { id: 'math-4', name: '三角函数', description: '三角比、三角恒等式', mastery: 0.55 },
-    { id: 'math-5', name: '数列', description: '等差数列、等比数列', mastery: 0.7 },
-    { id: 'math-6', name: '概率统计', description: '概率、统计基础', mastery: 0.5 },
-    { id: 'math-7', name: '解析几何', description: '直线、圆、圆锥曲线', mastery: 0.45 },
-    { id: 'math-8', name: '微积分基础', description: '极限、导数、积分', mastery: 0.4 },
-  ],
-  '物理': [
-    { id: 'phy-1', name: '力学基础', description: '运动学、牛顿定律', mastery: 0.7 },
-    { id: 'phy-2', name: '功和能', description: '功、功率、能量守恒', mastery: 0.6 },
-    { id: 'phy-3', name: '圆周运动', description: '向心力、向心加速度', mastery: 0.55 },
-    { id: 'phy-4', name: '振动与波', description: '简谐运动、机械波', mastery: 0.5 },
-    { id: 'phy-5', name: '热学', description: '热力学定律、理想气体', mastery: 0.65 },
-    { id: 'phy-6', name: '电场', description: '库仑定律、电场强度', mastery: 0.45 },
-    { id: 'phy-7', name: '电路', description: '欧姆定律、电功率', mastery: 0.6 },
-    { id: 'phy-8', name: '电磁感应', description: '法拉第定律、楞次定律', mastery: 0.4 },
-  ],
-  '化学': [
-    { id: 'chem-1', name: '化学基础', description: '原子结构、元素周期律', mastery: 0.7 },
-    { id: 'chem-2', name: '化学键', description: '离子键、共价键、金属键', mastery: 0.6 },
-    { id: 'chem-3', name: '化学计量', description: '摩尔、化学方程式', mastery: 0.65 },
-    { id: 'chem-4', name: '氧化还原', description: '氧化还原反应、电化学', mastery: 0.5 },
-    { id: 'chem-5', name: '化学平衡', description: '平衡常数、勒夏特列原理', mastery: 0.45 },
-    { id: 'chem-6', name: '酸碱理论', description: '酸碱定义、pH计算', mastery: 0.6 },
-    { id: 'chem-7', name: '有机化学', description: '烃类、官能团', mastery: 0.55 },
-    { id: 'chem-8', name: '化学实验', description: '实验操作、实验安全', mastery: 0.5 },
-  ],
-};
+import {
+  buildKnowledgeMap,
+  type AnswerRecord,
+} from '@/lib/csca/knowledge-data';
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { subjects = ['基础汉语', '数学'] } = body;
+    const {
+      subjects = ['基础汉语', '数学'],
+      countryCode,
+      // Phase 4: 接受真实答题历史（可选，由前端传入）
+      // 格式：[{ subject, module?, isCorrect, timestamp }]
+      answerHistory,
+    } = body;
 
-    // Build combined knowledge map from subjects
-    const knowledgeMap: any[] = [];
-    subjects.forEach((subject: string) => {
-      const topics = MOCK_TOPICS[subject] || MOCK_TOPICS['数学'];
-      topics.forEach(topic => {
-        knowledgeMap.push({
-          ...topic,
-          subject,
-        });
-      });
-    });
+    // Phase 4: 调用 buildKnowledgeMap，传入真实答题数据
+    // 无 answerHistory 时 mastery = 0（诚实显示"暂无数据"）
+    const safeAnswers: AnswerRecord[] = Array.isArray(answerHistory)
+      ? answerHistory.filter(
+          (a): a is AnswerRecord =>
+            !!a &&
+            typeof a.subject === 'string' &&
+            typeof a.isCorrect === 'boolean',
+        )
+      : [];
+
+    const knowledgeMap = buildKnowledgeMap(subjects, countryCode, safeAnswers);
+
+    // 统计 mastery 来源（用于 UI 调试/展示）
+    const sourceSummary = {
+      real_answers: knowledgeMap.filter((t) => t.masterySource === 'real_answers').length,
+      ai_inferred: knowledgeMap.filter((t) => t.masterySource === 'ai_inferred').length,
+      initial: knowledgeMap.filter((t) => t.masterySource === 'initial').length,
+    };
 
     return NextResponse.json({
       success: true,
       data: knowledgeMap,
       step: 2,
-      mock: true,
+      mock: false, // Phase 4: 不再使用 mock 数据
+      sourceSummary,
+      hasRealAnswers: safeAnswers.length > 0,
     });
-
   } catch (error) {
     console.error('[CSCA Knowledge Map API] Error:', error);
+    // 错误时返回安全初始状态（mastery=0），不伪造能力
+    const fallback = buildKnowledgeMap(['基础汉语', '数学']);
     return NextResponse.json({
       success: true,
-      data: MOCK_TOPICS['数学'],
+      data: fallback,
       step: 2,
-      mock: true,
+      mock: false,
+      error: 'knowledge_map_fallback',
     });
   }
 }

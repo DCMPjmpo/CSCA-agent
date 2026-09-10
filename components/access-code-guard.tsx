@@ -1,7 +1,14 @@
 'use client';
 
 import { useEffect, useState, ReactNode } from 'react';
-import { AccessCodeModal } from '@/components/access-code-modal';
+import dynamic from 'next/dynamic';
+
+// [PERF-FIX] AccessCodeModal pulls in motion/react (~65KB gzip). Code-split it so
+// motion only loads when an access-code gate is actually enforced.
+const AccessCodeModal = dynamic(
+  () => import('@/components/access-code-modal').then((m) => m.AccessCodeModal),
+  { ssr: false },
+);
 
 export function AccessCodeGuard({ children }: { children: ReactNode }) {
   const [status, setStatus] = useState<{

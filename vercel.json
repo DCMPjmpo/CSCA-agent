@@ -3,9 +3,51 @@
   "framework": "nextjs",
   "installCommand": "pnpm install",
   "buildCommand": "pnpm build",
+  "outputDirectory": "out",
   "functions": {
     "app/api/**/*.ts": {
-      "maxDuration": 300
+      "maxDuration": 300,
+      "memory": 512
     }
-  }
+  },
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NEXT_PRIVATE_TURBOPACK": "1"
+    }
+  },
+  "regions": ["hkg1"],
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*",
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-forwarded-for"
+        }
+      ]
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
 }

@@ -77,7 +77,7 @@ export default function AuditPage() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
-        <div className="text-white">加载中...</div>
+        <div className="text-white">AI 航海助手准备中…</div>
       </div>
     );
   }

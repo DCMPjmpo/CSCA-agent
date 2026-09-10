@@ -29,6 +29,13 @@ CLAUDE.local.md
 /.next/
 /out/
 
+# local environment (contains API keys)
+.env
+.env.local
+.env.development
+.env.production
+.env.local.*
+
 # production
 /build
 /dist
@@ -66,13 +73,33 @@ next-env.d.ts
 .worktrees
 
 # generated data
-/data/*
-!/data/processed/
-!/data/syllabus.json
+/data/*.log
+/data/tmp/
 /logs
+
+# stale untracked copy of the repo (138MB, contains the old full echarts import)
+/CSCA-agent-master-main/
 
 # docs
 /docs
 # Eval results
 eval/whiteboard-layout/results/
 eval/outline-language/results/
+
+.vercel
+.env*
+
+# TRAE editor internal
+.trae/
+
+# Non-code assets (docs, competition materials, logs, temp)
+*.docx
+build_log.txt
+temp_*.txt
+参赛材料/
+
+# Root-level scratch/test scripts (real scripts live in /scripts/)
+test_*.py
+scripts_*.py
+scripts_*.js
+q31_smoke1.py

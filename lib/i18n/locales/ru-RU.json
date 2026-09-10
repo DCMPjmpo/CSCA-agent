@@ -1,9 +1,9 @@
 {
   "common": {
     "you": "Вы",
-    "confirm": "Подтвердить",
-    "cancel": "Отмена",
-    "loading": "Загрузка..."
+    "confirm": "准奏",
+    "cancel": "作罢",
+    "loading": "幕僚正在筹备"
   },
   "home": {
     "slogan": "Generative Learning in Multi-Agent Interactive Classroom",
@@ -105,11 +105,11 @@
     "status": {
       "inputStreaming": "Ожидание",
       "inputAvailable": "Выполняется",
-      "outputAvailable": "Завершено",
+      "outputAvailable": "已通关",
       "outputError": "Ошибка",
       "outputDenied": "Отклонено",
       "running": "Выполняется",
-      "result": "Завершено",
+      "result": "已通关",
       "error": "Ошибка"
     }
   },
@@ -118,7 +118,7 @@
     "expandedTitle": "Настройка ролей в классе",
     "configTooltip": "Нажмите для настройки ролей в классе",
     "voiceLabel": "Голос",
-    "voiceLoading": "Загрузка...",
+    "voiceLoading": "幕僚正在筹备",
     "voiceAutoAssign": "Голоса будут назначены автоматически",
     "searchVoice": "Поиск голосов",
     "noMatchingVoices": "Подходящих голосов нет"
@@ -126,7 +126,7 @@
   "proactiveCard": {
     "discussion": "Обсуждение",
     "join": "Присоединиться",
-    "skip": "Пропустить",
+    "skip": "暂避",
     "pause": "Пауза",
     "resume": "Продолжить"
   },
@@ -136,12 +136,12 @@
   },
   "stage": {
     "currentScene": "Текущая сцена",
-    "generating": "Генерация...",
+    "generating": "先生正在挥毫",
     "paused": "Пауза",
     "generationFailed": "Ошибка генерации",
     "confirmSwitchTitle": "Переключить сцену",
     "confirmSwitchMessage": "В данный момент идёт обсуждение. Переключение сцены завершит текущую тему. Продолжить?",
-    "generatingNextPage": "Сцена генерируется, пожалуйста подождите...",
+    "generatingNextPage": "场景正在生成，提督稍安勿躁",
     "courseComplete": "Курс завершён",
     "fullscreen": "Полный экран",
     "exitFullscreen": "Свернуть"
@@ -195,22 +195,22 @@
     "multipleChoice": "Несколько",
     "shortAnswer": "Развёрнутый ответ",
     "analysis": "Анализ: ",
-    "excellent": "Отлично!",
+    "excellent": "甲上！",
     "keepGoing": "Продолжайте!",
     "needsReview": "Требует повторения",
     "correct": "верно",
     "incorrect": "неверно",
     "answering": "В процессе",
-    "submitAnswers": "Отправить ответы",
+    "submitAnswers": "呈上案卷",
     "aiGrading": "AI проверяет...",
-    "aiGradingWait": "Пожалуйста подождите, анализируем ваши ответы",
+    "aiGradingWait": "提督稍安勿躁，正在分析你的答案",
     "quizReport": "Результаты теста",
     "retry": "Повторить"
   },
   "roundtable": {
     "teacher": "УЧИТЕЛЬ",
     "you": "ВЫ",
-    "inputPlaceholder": "Введите сообщение...",
+    "inputPlaceholder": "请提督下令…",
     "listening": "Слушаю...",
     "processing": "Обработка...",
     "noSpeechDetected": "Речь не обнаружена, попробуйте ещё раз",
@@ -238,14 +238,14 @@
     "workspace": {
       "restart": "Перезапуск",
       "confirmRestart": "Сбросить весь прогресс?",
-      "confirm": "Подтвердить",
-      "cancel": "Отмена"
+      "confirm": "准奏",
+      "cancel": "作罢"
     },
     "issueboard": {
       "title": "Доска задач",
       "noIssues": "Задач пока нет",
-      "statusDone": "Готово",
-      "statusActive": "Активна",
+      "statusDone": "已通关",
+      "statusActive": "航行中",
       "statusPending": "В ожидании"
     },
     "chat": {
@@ -302,7 +302,7 @@
     "slides": "слайдов",
     "nameCopied": "Название скопировано",
     "deleteConfirmTitle": "Удалить",
-    "delete": "Удалить",
+    "delete": "革除",
     "rename": "Переименовать",
     "renamePlaceholder": "Введите название класса",
     "renameFailed": "Не удалось переименовать класс",
@@ -330,7 +330,7 @@
     "generatingSlideContentDesc": "Создание слайдов, тестов и интерактивного контента...",
     "generatingActions": "Генерация учебных действий",
     "generatingActionsDesc": "Подготовка нарратива, внимания и взаимодействий...",
-    "generationComplete": "Генерация завершена!",
+    "generationComplete": "讲案已成，请提督过目",
     "generationFailed": "Ошибка генерации",
     "generatingCourse": "Генерация курса",
     "openingClassroom": "Открытие класса...",
@@ -345,7 +345,7 @@
     "sessionNotFoundDesc": "Пожалуйста, заполните требования к курсу, чтобы начать генерацию.",
     "goBackAndRetry": "Вернуться и повторить",
     "classroomReady": "Ваша персонализированная AI-среда обучения успешно создана.",
-    "aiWorking": "AI-агенты работают...",
+    "aiWorking": "先生正在挥毫",
     "textTruncated": "Текст документа слишком длинный, используются первые {{n}} символов",
     "imageTruncated": "Найдено {{total}} изображений, что превышает лимит в {{max}}. Лишние будут описаны текстом",
     "agentGeneration": "Генерация ролей в классе",
@@ -391,7 +391,7 @@
     "insertSceneHere": "Вставить сцену здесь",
     "deleteSceneConfirm": "Удалить эту сцену?",
     "deleteSceneConfirmDesc": "Сцена и её ключевые пункты будут удалены из плана.",
-    "deleteSceneConfirmAction": "Удалить",
+    "deleteSceneConfirmAction": "革除",
     "collapseEditor": "Свернуть",
     "quizConfigSummary": "{{count}} вопросов",
     "dragSceneHint": "Перетащите для сортировки или нажмите Ctrl/⌘ + ↑ / ↓",
@@ -479,7 +479,7 @@
       "default-6": "Глубоко размышляет и исследует суть тем"
     },
     "close": "Закрыть",
-    "save": "Сохранить",
+    "save": "归档",
     "providers": "LLM",
     "addProviderDescription": "Добавьте провайдеров моделей для расширения доступных AI-моделей",
     "providerNames": {
@@ -598,9 +598,9 @@
     "outputWindowLabel": "Макс. выходных токенов",
     "outputWindowPlaceholder": "напр., 4096",
     "testModel": "Тест модели",
-    "deleteModel": "Удалить",
-    "cancelEdit": "Отмена",
-    "saveModel": "Сохранить",
+    "deleteModel": "革除",
+    "cancelEdit": "作罢",
+    "saveModel": "归档",
     "howToUse": "Как использовать",
     "step1ConfigureProvider": "Перейдите в «Провайдеры моделей», выберите или добавьте провайдера и настройте подключение (API-ключ, Base URL и т.д.)",
     "step2SelectModel": "Выберите нужную модель в разделе «Активная модель» ниже",
@@ -703,7 +703,7 @@
     "browserNativeTTSNote": "Встроенный TTS браузера не требует настройки и полностью бесплатен, использует системные голоса",
     "testTTS": "Тест TTS",
     "testASR": "Тест ASR",
-    "testSuccess": "Тест пройден",
+    "testSuccess": "恭贺提督，此航顺利通关",
     "testFailed": "Тест не пройден",
     "ttsTestText": "Текст для TTS-теста",
     "ttsTestSuccess": "TTS-тест пройден, аудио воспроизведено",
@@ -982,7 +982,7 @@
     "videoTestPromptDefault": "Милый котёнок гуляет по письменному столу",
     "videoGenerating": "Генерация видео (ожид. 1-2 мин.)...",
     "videoGenerationWarning": "Генерация видео обычно занимает 1-2 минуты, пожалуйста подождите",
-    "mediaRetry": "Повторить",
+    "mediaRetry": "重整旗鼓",
     "mediaContentSensitive": "Извините, этот контент не прошёл проверку безопасности.",
     "mediaGenerationDisabled": "Генерация отключена в настройках",
     "singleAgent": "Один агент",

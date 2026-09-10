@@ -1204,6 +1204,11 @@ export function getModel(config: ModelConfig): ModelWithInfo {
   const provider = getProviderConfig(config.providerId);
   const requiresApiKey = provider?.requiresApiKey ?? true;
 
+  // Validate model ID is not empty
+  if (!config.modelId || config.modelId.trim() === '') {
+    throw new Error(`Model ID is required. Please provide a valid model ID for provider: ${config.providerId}`);
+  }
+
   if (!providerType) {
     if (provider) {
       providerType = provider.type;
@@ -1376,9 +1381,17 @@ export function parseModelString(modelString: string): {
   const colonIndex = modelString.indexOf(':');
 
   if (colonIndex > 0) {
+    const providerId = modelString.slice(0, colonIndex);
+    const modelId = modelString.slice(colonIndex + 1);
+    
+    // Validate modelId is not empty
+    if (!modelId || modelId.trim() === '') {
+      throw new Error(`Invalid model string format: "${modelString}". Model ID cannot be empty. Expected format: "providerId:modelId" or just "modelId".`);
+    }
+    
     return {
-      providerId: modelString.slice(0, colonIndex) as ProviderId,
-      modelId: modelString.slice(colonIndex + 1),
+      providerId: providerId as ProviderId,
+      modelId,
     };
   }
 

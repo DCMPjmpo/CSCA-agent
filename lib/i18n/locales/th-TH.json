@@ -1,9 +1,9 @@
 {
   "common": {
     "you": "คุณ",
-    "confirm": "ยืนยัน",
-    "cancel": "ยกเลิก",
-    "loading": "กำลังโหลด..."
+    "confirm": "准奏",
+    "cancel": "作罢",
+    "loading": "幕僚正在筹备"
   },
   "home": {
     "slogan": "การเรียนรู้แบบสร้างสรรค์ในห้องเรียนโต้ตอบ Multi-Agent",

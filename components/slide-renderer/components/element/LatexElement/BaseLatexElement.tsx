@@ -2,6 +2,9 @@
 
 import { useRef, useState, useLayoutEffect } from 'react';
 import type { PPTLatexElement } from '@/lib/types/slides';
+// [PERF-FIX] KaTeX styles were globally loaded in app/layout.tsx, adding blocking
+// CSS to every page. Scope them to the components that actually render KaTeX HTML.
+import 'katex/dist/katex.min.css';
 
 export interface BaseLatexElementProps {
   elementInfo: PPTLatexElement;

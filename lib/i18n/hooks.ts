@@ -1,9 +1,22 @@
 /**
  * i18n Hooks - CSCA Pilot Agent
+ *
+ * Uses a shared React Context so that all components react to locale changes
+ * instantly — no refresh needed.
  */
 
-import { useState, useCallback, useEffect } from 'react';
-import { translations, LANGUAGES, getTranslation, type Translations } from './translations';
+import { useContext, useCallback, useEffect, useState } from 'react';
+import { translations, LANGUAGES, getTranslation } from './translations';
+import type { Translations } from './translations';
+import { CscaI18nContext } from './csca-context';
+
+export type StrictTranslations = Prettify<DeepRequired<Translations>>;
+
+type DeepRequired<T> = T extends object
+  ? { [K in keyof T]-?: DeepRequired<NonNullable<T[K]>> }
+  : NonNullable<T>;
+
+type Prettify<T> = { [K in keyof T]: T[K] } & {};
 
 // Helper to normalize locale code (e.g., 'zh-CN' -> 'zh', 'ms-MY' -> 'ms')
 function normalizeLocale(locale: string): string {
@@ -12,6 +25,14 @@ function normalizeLocale(locale: string): string {
 }
 
 export function useTranslation() {
+    // Shared context — when locale changes in one component, all update instantly.
+    const ctx = useContext(CscaI18nContext);
+
+    if (ctx) {
+        return ctx;
+    }
+
+    // Fallback for use outside CscaI18nProvider (shouldn't happen in normal flow)
     const [locale, setLocale] = useState<string>('zh');
 
     useEffect(() => {
@@ -32,7 +53,7 @@ export function useTranslation() {
         }
     }, []);
 
-    const t = getTranslation(locale);
+    const t = getTranslation(locale) as StrictTranslations;
 
     return {
         t,
@@ -43,6 +64,12 @@ export function useTranslation() {
 }
 
 export function useLocale() {
+    const ctx = useContext(CscaI18nContext);
+
+    if (ctx) {
+        return { locale: ctx.locale, setLocale: ctx.changeLocale };
+    }
+
     const [locale, setLocale] = useState<string>('en');
 
     useEffect(() => {

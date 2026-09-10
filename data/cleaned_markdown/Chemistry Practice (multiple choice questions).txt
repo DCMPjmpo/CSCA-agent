@@ -1,0 +1,165 @@
+Practice 1
+I. Basic Chemical Concepts and Calculations (Q1–Q12)
+1. About pure substances and mixtures: (Syllabus: I.1 Classification and state changes of matter) (1) A pure substance has a fixed composition and definite properties. (2) A homogeneous mixture has visibly different phases. (3) Air is an example of a mixture.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+2. About physical and chemical changes: (Syllabus: I.1 Classification and state changes of matter) (1) Melting of ice is a physical change. (2) Rusting of iron is a chemical change. (3) Dissolving salt in water is always a chemical change.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+3. About atoms and ions: (Syllabus: III.1 Atomic structure and periodic law) (1) A neutral atom has equal numbers of protons and electrons. (2) A cation has more electrons than protons. (3) Isotopes of an element have different numbers of neutrons.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+4. About chemical formulae: (Syllabus: I.2 Chemical notation and equation writing) (1) The formula of calcium hydroxide is Ca(OH)₂. (2) The formula of sulfuric acid is H₂SO₄. (3) The formula of sodium carbonate is NaCO₃.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+5. About balancing chemical equations: (Syllabus: I.2 Chemical notation and equation writing) (1) 2H₂ + O₂ → 2H₂O is correctly balanced. (2) Na + Cl₂ → 2NaCl is correctly balanced. (3) 2Mg + O₂ → 2MgO is correctly balanced.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+6. About the mole concept: (Syllabus: I.4 Amount of substance and molar mass) (1) One mole of any substance contains 6.02 × 10²³ particles. (2) One mole of O₂ molecules contains 6.02 × 10²³ oxygen atoms. (3) The molar mass of CO₂ is 44 g/mol.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+7. About molar mass and calculations: (Syllabus: I.4 Amount of substance and molar mass) (1) The molar mass of NaCl is 58.5 g/mol (Na = 23, Cl = 35.5). (2) 0.5 mol of water has a mass of 9.0 g (H₂O, Mr = 18). (3) 1.0 mol of carbon (C, Ar = 12) has a mass of 6.0 g.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+8. About solution concentration: (Syllabus: I.3 Solution concentration and pH calculations) (1) A 0.10 mol/L NaCl solution contains 0.10 mol NaCl per litre of solution. (2) Doubling the volume of a solution without adding solute halves its concentration. (3) Concentration in mol/L is also called molarity.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+9. About pH of strong acids and bases: (Syllabus: I.3 Solution concentration and pH calculations) (1) A 0.010 mol/L HCl solution has pH ≈ 2. (2) A 0.10 mol/L NaOH solution has pOH ≈ 1. (3) For aqueous solutions at 25°C, pH + pOH = 14.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+10. About strong and weak electrolytes: (Syllabus: III.4 Theories of electrolyte solutions) (1) Strong acids are strong electrolytes. (2) Weak acids ionize completely in water. (3) NaCl(aq) is a strong electrolyte.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+11. About the ideal gas law and gas volume relationships: (Syllabus: I.5 Ideal gas law and gas behavior) (1) At constant temperature and pressure, gas volume is directly proportional to moles of gas. (2) At constant pressure, gas volume is inversely proportional to temperature in Kelvin. (3) At constant volume, increasing temperature increases gas pressure.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+12. About state changes: (Syllabus: I.1 Classification and state changes of matter) (1) Boiling and evaporation are both liquid → gas changes. (2) Sublimation is the change from solid directly to gas. (3) Condensation is an endothermic process.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+II. Properties and Reactions of Substances (Q13–Q24)
+13. About acids and bases: (Syllabus: II.1 Properties of common inorganic substances – acids and bases) (1) Acids taste sour and turn blue litmus red. (2) Bases turn red litmus blue. (3) All bases are soluble in water.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+14. About oxides: (Syllabus: II.1 Properties of common inorganic substances – oxides) (1) CO₂ is an acidic oxide. (2) Na₂O is a basic oxide. (3) Al₂O₃ can act as both an acidic and a basic oxide.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+15. About salts and their solutions: (Syllabus: II.1 Properties of common inorganic substances – salts) (1) NaCl(aq) is approximately neutral. (2) NH₄Cl(aq) tends to be acidic. (3) Na₂CO₃(aq) tends to be basic.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+16. About solubility and precipitates: (Syllabus: II.4 Ionic reactions and testing methods) (1) Mixing BaCl₂(aq) and Na₂SO₄(aq) forms a white precipitate. (2) Mixing NaCl(aq) and KNO₃(aq) forms a precipitate. (3) Mixing AgNO₃(aq) and NaCl(aq) forms a white precipitate.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+17. About redox reactions: (Syllabus: II.3 Identification of redox reactions) (1) In a redox reaction, oxidation and reduction occur simultaneously. (2) Oxidation involves loss of electrons. (3) A reducing agent is the species that is reduced.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+18. About metal reactivity with acids and water: (Syllabus: II.2 Reactivity of metals and simple reactions) (1) Sodium reacts vigorously with cold water to produce hydrogen gas. (2) Magnesium reacts slowly with cold water but more readily with steam. (3) Copper reacts readily with dilute hydrochloric acid to produce hydrogen.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+19. About displacement reactions of metals: (Syllabus: II.2 Reactivity of metals and simple reactions) (1) Zinc can displace copper from a solution of CuSO₄. (2) Copper can displace zinc from a solution of ZnSO₄. (3) Iron can displace copper from a solution of CuSO₄.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+20. About hydrocarbons: (Syllabus: II.5 Basic organic compounds – hydrocarbons) (1) Alkanes are saturated hydrocarbons. (2) Alkenes contain at least one C=C double bond. (3) Alkynes contain at least one C≡C triple bond.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+21. About isomers in organic chemistry: (Syllabus: II.5 Basic organic compounds – structural isomers) (1) C₄H₁₀ can have more than one structural isomer. (2) Isomers have the same molecular formula but different structures. (3) Methane (CH₄) has two structural isomers.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+22. About neutralization reactions: (Syllabus: II.1 Properties – acids, bases, and salts / neutralization) (1) Neutralization is a reaction between an acid and a base to form salt and water. (2) The reaction between HCl and NaOH is a neutralization reaction. (3) All neutralization reactions produce a neutral solution (pH = 7).
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+23. About thermal decomposition reactions: (Syllabus: II.2 Simple reactions – decomposition) (1) CaCO₃(s) → CaO(s) + CO₂(g) is a thermal decomposition reaction. (2) Heating CuCO₃(s) can produce CuO(s) and CO₂(g). (3) Thermal decomposition generally absorbs heat (endothermic).
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+24. About properties of common gases: (Syllabus: II.1 Properties of common substances – gases) (1) Oxygen supports combustion but does not burn itself. (2) Hydrogen produces a ‘pop’ sound with a lighted splint. (3) Carbon dioxide turns limewater milky.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+III. Chemical Theories and Laws (Q25–Q36)
+25. About periodic trends: (Syllabus: III.1 Atomic structure and periodic law) (1) Atomic radius generally decreases across a period from left to right. (2) Ionization energy generally increases across a period from left to right. (3) Elements in the same group have exactly the same atomic radius.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+26. About valence electrons and groups: (Syllabus: III.1 Atomic structure and periodic law) (1) Group 1 elements have 1 valence electron. (2) Group 17 elements have 7 valence electrons. (3) Group 18 elements are very reactive because they have 8 valence electrons.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+27. About ionic bonding: (Syllabus: III.2 Chemical bonds – ionic bonds) (1) Ionic bonds usually form between metals and non-metals. (2) In NaCl, sodium loses one electron to chlorine. (3) Ionic compounds often have high melting points.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+28. About covalent bonding: (Syllabus: III.2 Chemical bonds – covalent bonds) (1) Covalent bonds form by sharing electron pairs between atoms. (2) H₂O and CH₄ are examples of covalent molecules. (3) All covalent substances are gases at room temperature.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+29. About intermolecular forces: (Syllabus: III.2 Chemical bonds and intermolecular forces) (1) Hydrogen bonding is a strong type of intermolecular attraction. (2) Hydrogen bonding can occur between H₂O molecules. (3) Intermolecular forces do not affect boiling points.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+30. About reaction rate: (Syllabus: III.3 Reaction rate and factors affecting it) (1) Increasing temperature generally increases reaction rate. (2) Increasing concentration of reactants generally increases reaction rate. (3) A catalyst increases reaction rate by increasing activation energy.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+31. About collision theory: (Syllabus: III.3 Reaction rate and collision theory) (1) Reacting particles must collide to react. (2) Effective collisions require sufficient energy. (3) Effective collisions require proper orientation of particles.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+32. About chemical equilibrium: (Syllabus: III.3 Chemical equilibrium – basic concepts) (1) At equilibrium, the forward and reverse reaction rates are equal. (2) At equilibrium, the concentrations of reactants and products are always equal. (3) Equilibrium can be established in a closed system.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+33. About Le Châtelier’s principle: (Syllabus: III.3 Chemical equilibrium – Le Châtelier’s principle) For the reaction: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + heat (1) Increasing pressure favours the formation of NH₃. (2) Increasing temperature favours the reverse reaction. (3) Removing NH₃ shifts equilibrium to the right.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+34. About equilibrium constant Kc: (Syllabus: III.3 Chemical equilibrium – equilibrium constant) (1) Kc is defined in terms of concentrations of reactants only. (2) A large Kc value indicates products are favoured at equilibrium. (3) Changing temperature can change the value of Kc.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+35. About strong and weak acids: (Syllabus: III.4 Theories of electrolyte solutions – strong and weak electrolytes) (1) A strong acid ionizes almost completely in water. (2) A weak acid has a lower degree of ionization in water. (3) A dilute acid is always weak.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+36. About electrolytes and non-electrolytes: (Syllabus: III.4 Theories of electrolyte solutions) (1) Electrolytes conduct electricity when dissolved in water. (2) Glucose solution is a strong electrolyte. (3) Molten NaCl can conduct electricity.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+IV. Chemical Experiments and Applications (Q37–Q48)
+37. About laboratory safety: (Syllabus: IV.1 Laboratory safety and basic techniques) (1) Safety goggles should be worn when heating chemicals. (2) Eating and drinking in the lab are allowed if hands are clean. (3) Broken glassware should be reported and handled properly.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+38. About heating substances in a test tube: (Syllabus: IV.1 Laboratory safety and basic techniques) (1) The open end of the test tube should be pointed away from people. (2) The test tube should not be tightly closed when heating. (3) The test tube should be heated evenly by moving it through the flame.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+39. About methods of separation: (Syllabus: IV.2 Separation and purification of substances) (1) Filtration can separate an insoluble solid from a liquid. (2) Distillation can separate liquids with different boiling points. (3) Chromatography can separate different coloured pigments in ink.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+40. About gas tests: (Syllabus: IV.3 Common gas tests and simple experiments) (1) Hydrogen gives a ‘pop’ sound with a lighted splint. (2) Oxygen relights a glowing splint. (3) Carbon dioxide turns limewater from colourless to milky.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+41. About titration (conceptual): (Syllabus: IV.4 Simple titration concepts and applications) (1) Titration can be used to determine the concentration of an acid. (2) An indicator is often used to detect the end point of a titration. (3) The volume of solution added from the burette is not important in titration calculations.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+42. About common laboratory apparatus: (Syllabus: IV.1 Laboratory apparatus and their uses) (1) A burette is used to deliver accurate volumes of solution. (2) A pipette is used to measure a fixed volume accurately. (3) A beaker is more precise than a volumetric flask for measuring volume.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+43. About the Haber process (ammonia synthesis): (Syllabus: IV.5 Industrial processes – Haber process) (1) Nitrogen and hydrogen are the reactants in the Haber process. (2) An iron catalyst is used to increase the rate of reaction. (3) Lower temperature always gives the highest rate of ammonia production.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+44. About the Contact process (sulfuric acid production): (Syllabus: IV.5 Industrial processes – Contact process) (1) Sulfur dioxide is oxidized to sulfur trioxide in the Contact process. (2) A vanadium(V) oxide catalyst is used. (3) Sulfuric acid is produced by directly dissolving sulfur trioxide in water in one step without any issues.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+45. About environmental chemistry (acid rain): (Syllabus: IV.6 Simple environmental applications – acid rain) (1) Acid rain can be caused by sulfur dioxide and nitrogen oxides. (2) Acid rain can damage buildings and statues made of limestone. (3) Acid rain has no effect on lakes and rivers.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+46. About water treatment: (Syllabus: IV.6 Simple environmental and application chemistry – water treatment) (1) Filtration removes suspended solids from water. (2) Chlorination is used to kill bacteria in drinking water. (3) Distillation is commonly used in large-scale municipal water supply due to its low cost.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+47. About everyday applications of chemistry (polymers): (Syllabus: IV.6 Simple application chemistry – polymers and materials) (1) Poly(ethene) is a polymer made from ethene monomers. (2) Many plastics are non-biodegradable and can cause environmental pollution. (3) All polymers are synthetic and none occur naturally.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+48. About energy changes in reactions: (Syllabus: III.3 Reaction energy and activation energy – conceptual) (1) Exothermic reactions release heat to the surroundings. (2) Endothermic reactions absorb heat from the surroundings. (3) Activation energy is the minimum energy required for a reaction to occur.
+A. (1) only B. (1) and (2) only C. (2) and (3) only D. (1), (2) and (3)
+Answer Key (48 questions)
+1 B 2 B 3 B 4 B 5 D 6 B 7 B 8 D 9 D 10 A 11 D 12 B
+13 B 14 D 15 D 16 D 17 B 18 B 19 B 20 D 21 B 22 B 23 D 24 D
+25 B 26 B 27 D 28 B 29 B 30 B 31 D 32 A 33 D 34 C 35 B 36 A
+37 A 38 D 39 D 40 D 41 B 42 B 43 B 44 B 45 B 46 B 47 B 48 D
+Practice 2
+Choose the ONE best answer (A, B, C or D) for each question.
+I. Basic Chemical Concepts and Calculations (Q1–Q12)
+1. Which of the following is a homogeneous mixture? (Syllabus: I.1 Classification and state changes of matter) A. Sand and iron filings B. Oil and water C. Salt dissolved in water D. Ice cubes in water
+2. Which of the following is a chemical change? (Syllabus: I.1 Classification and state changes of matter) A. Ice melting B. Grinding sugar into powder C. Water boiling D. Iron rusting
+3. An element has atomic number 11 and mass number 23. Which statement is correct for a neutral atom of this element? (Syllabus: III.1 Atomic structure and periodic law) A. 11 protons, 12 neutrons, 11 electrons B. 11 protons, 11 neutrons, 12 electrons C. 12 protons, 11 neutrons, 11 electrons D. 23 protons, 11 neutrons, 12 electrons
+4. Isotopes of an element must have different: (Syllabus: III.1 Atomic structure and periodic law) A. Numbers of protons B. Nuclear charges C. Numbers of neutrons D. Atomic numbers
+5. Which of the following equations is correctly balanced? (Syllabus: I.2 Chemical notation and equation writing) A. C + O₂ → CO B. 2KClO₃ → 2KCl + 3O₂ C. Zn + 2HCl → ZnCl₂ + 2H₂ D. 2Al + 3O₂ → 2AlO₃
+6. How many moles of water are in 36 g of H₂O? (H = 1, O = 16) (Syllabus: I.4 Amount of substance and molar mass) A. 1.0 mol B. 1.5 mol C. 2.0 mol D. 3.0 mol
+7. A compound contains 24 g of carbon and 4 g of hydrogen. What is its empirical formula? (C = 12, H = 1) (Syllabus: I.4 Amount of substance and empirical formula) A. CH B. CH₂ C. C₂H₄ D. C₃H₄
+8. 5.85 g of NaCl (Mr = 58.5) is dissolved to make 500 mL of solution. What is the concentration of the solution in mol/L? (Syllabus: I.3 Solution concentration and pH calculations) A. 0.05 mol/L B. 0.10 mol/L C. 0.20 mol/L D. 1.00 mol/L
+9. A 0.020 mol/L HCl solution is prepared. Assuming complete ionization, what is the pH of the solution? (Syllabus: I.3 Solution concentration and pH calculations) A. 1.0 B. 1.3 C. 1.7 D. 2.0
+10. A solution has pH = 3. What is the concentration of H⁺ ions? (Syllabus: I.3 Solution concentration and pH calculations) A. 1.0 × 10⁻³ mol/L B. 3.0 × 10⁻¹ mol/L C. 1.0 × 10³ mol/L D. 3.0 mol/L
+11. A gas has a volume of 4.0 L at 300 K. If the temperature is increased to 600 K at constant pressure, what will be the new volume? (Syllabus: I.5 Ideal gas law and gas behavior) A. 1.0 L B. 2.0 L C. 4.0 L D. 8.0 L
+12. Which of the following statements about gases is correct? (Syllabus: I.5 Ideal gas law and gas behavior) A. Gas particles are tightly packed in fixed positions. B. Gas volume does not change with temperature. C. Gas particles move randomly and rapidly in all directions. D. Gas particles do not collide with each other.
+II. Properties and Reactions of Substances (Q13–Q24)
+13. Which of the following is not a property of acids? (Syllabus: II.1 Properties of common inorganic substances – acids) A. Turn blue litmus red B. Taste sour (in dilute form) C. React with metals to produce hydrogen gas D. Turn red litmus blue
+14. Which oxide is correctly matched with its type? (Syllabus: II.1 Properties of common inorganic substances – oxides) A. Na₂O – acidic oxide B. CO₂ – acidic oxide C. MgO – amphoteric oxide D. Al₂O₃ – basic oxide only
+15. Which salt is most likely to form an acidic solution in water? (Syllabus: II.1 Properties of common inorganic substances – salts) A. NaCl B. KNO₃ C. NH₄Cl D. Na₂CO₃
+16. When aqueous solutions of BaCl₂ and Na₂SO₄ are mixed, what is observed? (Syllabus: II.4 Ionic reactions and testing methods) A. A colourless gas is produced. B. A white precipitate is formed. C. A blue precipitate is formed. D. No visible change occurs.
+17. Which of the following is definitely a redox reaction? (Syllabus: II.3 Identification of redox reactions) A. HCl + NaOH → NaCl + H₂O B. AgNO₃ + NaCl → AgCl + NaNO₃ C. Zn + CuSO₄ → ZnSO₄ + Cu D. BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl
+18. In the reaction Zn + 2HCl → ZnCl₂ + H₂, which species is oxidized? (Syllabus: II.3 Identification of redox reactions) A. Zn B. HCl C. ZnCl₂ D. H₂
+19. Which metal will not react with dilute hydrochloric acid to produce hydrogen gas? (Syllabus: II.2 Reactivity of metals and simple reactions) A. Mg B. Zn C. Fe D. Cu
+20. Which hydrocarbon is an alkene? (Syllabus: II.5 Basic organic compounds – hydrocarbons) A. C₂H₂ B. C₂H₄ C. C₂H₆ D. CH₄
+21. A compound contains a –COOH group. To which class of organic compounds does it belong? (Syllabus: II.5 Basic organic compounds – functional groups) A. Alcohol B. Carboxylic acid C. Ester D. Aldehyde
+22. What are the products of the neutralization reaction between H₂SO₄ and KOH (in aqueous solution)? (Syllabus: II.1 Properties – acids, bases, and salts / neutralization) A. K₂SO₄ and H₂ B. K₂SO₄ and H₂O C. KOH and H₂ D. K₂O and H₂O
+23. Which compound decomposes upon heating to form a metal oxide and carbon dioxide? (Syllabus: II.2 Simple reactions – thermal decomposition) A. NaCl B. CuSO₄ C. CaCO₃ D. NH₄Cl
+24. Which statement about the gas carbon dioxide (CO₂) is correct? (Syllabus: II.1 Properties of common substances – gases) A. It supports combustion. B. It turns limewater milky. C. It has a “pop” sound with a lighted splint. D. It has a strong, choking smell.
+III. Chemical Theories and Laws (Q25–Q36)
+25. As you move from left to right across Period 3 in the periodic table, which general trend is correct? (Syllabus: III.1 Atomic structure and periodic law – periodic trends) A. Atomic radius increases, and ionization energy decreases. B. Atomic radius decreases, and ionization energy increases. C. Both atomic radius and ionization energy increase. D. Both atomic radius and ionization energy decrease.
+26. Which of the following elements is in Group 17 (halogens)? (Syllabus: III.1 Atomic structure and periodic law – groups) A. Na B. Mg C. Cl D. Ar
+27. Which pair of elements is most likely to form an ionic compound? (Syllabus: III.2 Chemical bonds – ionic bonds) A. C and H B. O and O C. Na and Cl D. N and O
+28. Which property is typical of ionic compounds? (Syllabus: III.2 Chemical bonds – ionic bonds and structure) A. Low melting point B. Conduct electricity when molten C. Soft and easily scratched D. Do not dissolve in water
+29. Which substance is most likely to exhibit hydrogen bonding between its molecules? (Syllabus: III.2 Chemical bonds – intermolecular forces) A. CH₄ B. H₂S C. NH₃ D. CO₂
+30. Which change will generally increase the rate of a chemical reaction? (Syllabus: III.3 Reaction rate and factors) A. Lowering temperature B. Decreasing reactant concentration C. Adding a catalyst D. Reducing reactant surface area
+31. Which statement about activation energy is correct? (Syllabus: III.3 Reaction rate and activation energy – conceptual) A. It is the energy released by the reaction. B. It is the minimum energy required for effective collisions. C. It is the energy stored in the products only. D. It is the same for all reactions.
+32. A reversible reaction has reached dynamic equilibrium. Which statement is correct? (Syllabus: III.3 Chemical equilibrium – basic concepts) A. The forward reaction has stopped. B. The reverse reaction has stopped. C. The concentrations of reactants and products must be equal. D. The rates of forward and reverse reactions are equal.
+33. For the exothermic reaction: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + heat What is the effect of increasing temperature? (Syllabus: III.3 Chemical equilibrium – Le Châtelier’s principle) A. Equilibrium shifts to the right, producing more NH₃. B. Equilibrium shifts to the left, producing more N₂ and H₂. C. Equilibrium is unaffected. D. The reaction stops completely.
+34. For the same reaction in Q33, what is the effect of increasing pressure? (Syllabus: III.3 Chemical equilibrium – Le Châtelier’s principle) A. Favors the side with more moles of gas (left). B. Favors the side with fewer moles of gas (right). C. Has no effect on equilibrium. D. Only changes the reaction rate, not the equilibrium position.
+35. Which statement about strong and weak acids is correct? (Syllabus: III.4 Theories of electrolyte solutions – strong/weak acids) A. A strong acid always has a low concentration. B. A weak acid does not ionize at all. C. Strong acids ionize almost completely in water. D. Weak acids cannot react with metals.
+36. Which of the following aqueous solutions conducts electricity poorly? (Syllabus: III.4 Theories of electrolyte solutions – electrolytes) A. 1.0 mol/L NaCl B. 1.0 mol/L HCl C. 1.0 mol/L CH₃COOH D. Molten NaCl
+IV. Chemical Experiments and Applications (Q37–Q48)
+37. Which is a correct laboratory safety practice? (Syllabus: IV.1 Laboratory safety and basic techniques) A. Smelling chemicals directly from the container B. Wearing safety goggles when heating substances C. Tasting chemicals to identify them D. Pointing a test tube at your classmate when heating
+38. When heating a liquid in a test tube, which action is correct? (Syllabus: IV.1 Laboratory safety and basic techniques) A. Hold the test tube with bare hands. B. Stopper the test tube to prevent vapor escape. C. Point the mouth of the test tube away from people. D. Fill the test tube completely with liquid.
+39. Which method is best for separating sand from a mixture of sand and water? (Syllabus: IV.2 Separation and purification of substances) A. Distillation B. Filtration C. Chromatography D. Evaporation
+40. Which method is best for separating two miscible liquids with different boiling points? (Syllabus: IV.2 Separation and purification of substances) A. Filtration B. Distillation C. Decantation D. Magnetic separation
+41. Which test would confirm the presence of hydrogen gas? (Syllabus: IV.3 Common gas tests and simple experiments) A. A glowing splint relights. B. Limewater turns milky. C. A burning splint makes a “pop” sound. D. The gas has a pungent smell.
+42. Which gas turns damp red litmus paper blue? (Syllabus: IV.3 Common gas tests and simple experiments) A. CO₂ B. NH₃ C. H₂ D. O₂
+43. Which apparatus is most suitable for delivering accurate variable volumes in a titration? (Syllabus: IV.1 Laboratory apparatus and their uses) A. Beaker B. Burette C. Conical flask D. Evaporating dish
+44. In a typical acid–base titration, which statement is correct? (Syllabus: IV.4 Simple titration concepts and applications) A. The indicator is placed in the burette. B. The standard solution is always in the conical flask. C. The end point is detected by a colour change of the indicator. D. The conical flask is used to measure accurate volumes.
+45. In the Haber process, which combination of conditions is commonly used in industry? (Syllabus: IV.5 Industrial processes – Haber process) A. Low pressure, low temperature, no catalyst B. High pressure, high temperature, iron catalyst C. High pressure, moderate temperature, iron catalyst D. Low pressure, high temperature, platinum catalyst
+46. In the Contact process for producing sulfuric acid, which step is correct? (Syllabus: IV.5 Industrial processes – Contact process) A. S + O₂ → SO₂ B. SO₂ → S + O₂ C. H₂SO₄ → SO₃ + H₂O D. SO₃ is safely added directly into water in one step
+47. Which gas is a major contributor to acid rain? (Syllabus: IV.6 Simple environmental applications – acid rain) A. Ne B. CO C. SO₂ D. CH₄
+48. Which of the following is a common problem associated with many plastics? (Syllabus: IV.6 Simple application chemistry – polymers and materials) A. They are all highly toxic to touch. B. They are all good conductors of electricity. C. Many are non-biodegradable and cause pollution. D. They cannot be recycled in any form.
+Answer Key
+1 C 2 D 3 A 4 C 5 B 6 C 7 B 8 B 9 B 10 A 11 D 12 C
+13 D 14 B 15 C 16 B 17 C 18 A 19 D 20 B 21 B 22 B 23 C 24 B
+25 B 26 C 27 C 28 B 29 C 30 C 31 B 32 D 33 B 34 B 35 C 36 C
+37 B 38 C 39 B 40 B 41 C 42 B 43 B 44 C 45 C 46 A 47 C 48 C

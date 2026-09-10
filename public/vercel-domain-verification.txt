@@ -1,0 +1,2 @@
+Vercel Domain Verification File
+This file is used to verify domain ownership for guibu.site

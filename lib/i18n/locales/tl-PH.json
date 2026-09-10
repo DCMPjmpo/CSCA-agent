@@ -1,9 +1,9 @@
 {
   "common": {
     "you": "ikaw",
-    "confirm": "kumpirmahin",
-    "cancel": "kanselahin",
-    "loading": "naglo-load..."
+    "confirm": "准奏",
+    "cancel": "作罢",
+    "loading": "幕僚正在筹备"
   },
   "home": {
     "slogan": "Generative Learning sa Multi-Agent Interactive Classroom",

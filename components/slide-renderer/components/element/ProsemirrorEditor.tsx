@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useEffect, useCallback, useMemo, useImperativeHandle, forwardRef } from 'react';
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 import { useKeyboardStore, useCanvasStore } from '@/lib/store';
 import type { EditorView } from 'prosemirror-view';
 import { toggleMark, wrapIn, lift } from 'prosemirror-commands';

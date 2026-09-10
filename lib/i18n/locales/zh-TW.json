@@ -1,9 +1,9 @@
 {
   "common": {
     "you": "你",
-    "confirm": "確定",
-    "cancel": "取消",
-    "loading": "載入中..."
+    "confirm": "准奏",
+    "cancel": "作罢",
+    "loading": "幕僚正在筹备"
   },
   "home": {
     "slogan": "多智能體互動課室中的生成式學習",
@@ -105,11 +105,11 @@
     "status": {
       "inputStreaming": "等待中",
       "inputAvailable": "執行中",
-      "outputAvailable": "已完成",
+      "outputAvailable": "已通关",
       "outputError": "錯誤",
       "outputDenied": "已拒絕",
       "running": "執行中",
-      "result": "已完成",
+      "result": "已通关",
       "error": "錯誤"
     }
   },
@@ -118,7 +118,7 @@
     "expandedTitle": "課堂角色設定",
     "configTooltip": "點擊設定課堂角色",
     "voiceLabel": "聲線",
-    "voiceLoading": "載入中...",
+    "voiceLoading": "幕僚正在筹备",
     "voiceAutoAssign": "聲線將自動分配",
     "noMatchingVoices": "沒有符合的聲音",
     "searchVoice": "搜尋聲音"
@@ -126,7 +126,7 @@
   "proactiveCard": {
     "discussion": "討論",
     "join": "加入討論",
-    "skip": "略過",
+    "skip": "暂避",
     "pause": "暫停",
     "resume": "繼續"
   },
@@ -136,12 +136,12 @@
   },
   "stage": {
     "currentScene": "目前場景",
-    "generating": "生成中...",
+    "generating": "先生正在挥毫",
     "paused": "已暫停",
     "generationFailed": "生成失敗",
     "confirmSwitchTitle": "切換頁面",
     "confirmSwitchMessage": "目前主題正在進行中，切換頁面將結束目前主題。確定要切換嗎？",
-    "generatingNextPage": "場景正在生成，請稍候...",
+    "generatingNextPage": "场景正在生成，提督稍安勿躁",
     "fullscreen": "全螢幕",
     "exitFullscreen": "離開全螢幕",
     "courseComplete": "課程完成"
@@ -180,22 +180,22 @@
     "multipleChoice": "多選",
     "shortAnswer": "短答",
     "analysis": "解析：",
-    "excellent": "優秀！",
+    "excellent": "甲上！",
     "keepGoing": "繼續加油！",
     "needsReview": "需要複習",
     "correct": "正確",
     "incorrect": "錯誤",
     "answering": "答題中",
-    "submitAnswers": "提交答案",
+    "submitAnswers": "呈上案卷",
     "aiGrading": "AI 正在批改中...",
-    "aiGradingWait": "請稍候，正在分析你的答案",
+    "aiGradingWait": "提督稍安勿躁，正在分析你的答案",
     "quizReport": "答題報告",
     "retry": "重新答題"
   },
   "roundtable": {
     "teacher": "教師",
     "you": "你",
-    "inputPlaceholder": "輸入你的訊息...",
+    "inputPlaceholder": "请提督下令…",
     "listening": "錄音中...",
     "processing": "處理中...",
     "noSpeechDetected": "未偵測到語音，請重試",
@@ -223,14 +223,14 @@
     "workspace": {
       "restart": "重新開始",
       "confirmRestart": "確定重設進度？",
-      "confirm": "確定",
-      "cancel": "取消"
+      "confirm": "准奏",
+      "cancel": "作罢"
     },
     "issueboard": {
       "title": "任務看板",
       "noIssues": "暫無任務",
-      "statusDone": "已完成",
-      "statusActive": "進行中",
+      "statusDone": "已通关",
+      "statusActive": "航行中",
       "statusPending": "待處理"
     },
     "chat": {
@@ -287,7 +287,7 @@
     "slides": "頁",
     "nameCopied": "課堂名稱已複製",
     "deleteConfirmTitle": "刪除課堂",
-    "delete": "刪除",
+    "delete": "革除",
     "rename": "重新命名",
     "renamePlaceholder": "輸入課堂名稱",
     "renameFailed": "重新命名失敗",
@@ -315,7 +315,7 @@
     "generatingSlideContentDesc": "正在建立投影片、測驗和互動內容...",
     "generatingActions": "生成教學動作",
     "generatingActionsDesc": "正在編排講解、聚焦和互動流程...",
-    "generationComplete": "生成完成！",
+    "generationComplete": "讲案已成，请提督过目",
     "generationFailed": "生成失敗",
     "generatingCourse": "正在生成課程",
     "openingClassroom": "即將開啟課堂...",
@@ -330,7 +330,7 @@
     "sessionNotFoundDesc": "請先填寫課程需求開始生成流程。",
     "goBackAndRetry": "返回重試",
     "classroomReady": "你的個人化AI學習環境已成功生成。",
-    "aiWorking": "AI智能體工作中...",
+    "aiWorking": "先生正在挥毫",
     "textTruncated": "文件文字較長，已擷取前 {{n}} 字元用於生成",
     "imageTruncated": "文件含 {{total}} 張圖片，超出上限 {{max}} 張，多餘圖片將僅以文字描述傳遞",
     "agentGeneration": "生成課堂角色",
@@ -376,7 +376,7 @@
     "insertSceneHere": "在此處插入一個場景",
     "deleteSceneConfirm": "刪除此場景？",
     "deleteSceneConfirmDesc": "此場景及其關鍵要點將從大綱中移除。",
-    "deleteSceneConfirmAction": "刪除",
+    "deleteSceneConfirmAction": "革除",
     "collapseEditor": "收起",
     "quizConfigSummary": "{{count}} 道題",
     "dragSceneHint": "拖曳排序；或聚焦後按 Ctrl/⌘ + ↑ / ↓",
@@ -464,7 +464,7 @@
       "default-6": "深入思考，喜歡探討問題本質"
     },
     "close": "關閉",
-    "save": "儲存",
+    "save": "归档",
     "providers": "語言模型",
     "addProviderDescription": "新增自訂模型供應商以擴充可用的AI模型",
     "providerNames": {
@@ -578,9 +578,9 @@
     "outputWindowLabel": "最大輸出Token數",
     "outputWindowPlaceholder": "例如 4096",
     "testModel": "測試模型",
-    "deleteModel": "刪除",
-    "cancelEdit": "取消",
-    "saveModel": "儲存",
+    "deleteModel": "革除",
+    "cancelEdit": "作罢",
+    "saveModel": "归档",
     "modelsManagementDescription": "在此管理該供應商的模型清單。若需選擇使用的模型，請前往「一般設定」。",
     "howToUse": "使用說明",
     "step1ConfigureProvider": "前往「模型供應商」頁面，選擇或新增一個供應商，設定連線資訊（API 密鑰、Base URL 等）",
@@ -640,7 +640,7 @@
     "browserNativeTTSNote": "瀏覽器原生 TTS 無須設定，完全免費，使用系統內建語音",
     "testTTS": "測試 TTS",
     "testASR": "測試 ASR",
-    "testSuccess": "測試成功",
+    "testSuccess": "恭贺提督，此航顺利通关",
     "testFailed": "測試失敗",
     "ttsTestText": "TTS 測試文字",
     "ttsTestSuccess": "TTS 測試成功，音訊已播放",
@@ -897,7 +897,7 @@
     "videoTestPromptDefault": "一隻可愛的貓咪在書桌上行走",
     "videoGenerating": "正在生成影片（預計1-2分鐘）...",
     "videoGenerationWarning": "影片生成通常需要1-2分鐘，請耐心等候",
-    "mediaRetry": "重試",
+    "mediaRetry": "重整旗鼓",
     "mediaContentSensitive": "抱歉，此內容觸發了安全檢查",
     "mediaGenerationDisabled": "已在設定中關閉生成",
     "singleAgent": "單智能體模式",

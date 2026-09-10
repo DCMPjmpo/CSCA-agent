@@ -1,14 +1,4822 @@
 {
   "metadata": {
-    "totalQuestions": 0,
-    "filesProcessed": 0,
-    "createdAt": "2024-01-01T00:00:00.000Z",
+    "version": "2.0.0",
+    "totalQuestions": 146,
+    "lastUpdated": "2026-09-04",
+    "sources": [
+      "Chemistry Practice (multiple choice questions).docx - 真实试卷",
+      "MOCK_QUESTIONS - 基础练习题 (basic_practice)",
+      "legacy - 旧题库样本",
+      "science-chinese-questions.ts - 理科中文专项 (未合并，独立加载)",
+      "arts-chinese-questions.ts - 文科中文专项 (未合并，独立加载)"
+    ],
     "stats": {
-      "total": 0,
-      "bySubject": {},
-      "byType": {},
-      "byTrack": {}
+      "bySubject": {
+        "化学": 107,
+        "基础汉语": 10,
+        "数学": 12,
+        "物理": 11,
+        "语文": 2,
+        "英语": 2,
+        "历史": 1,
+        "地理": 1
+      },
+      "bySource": {
+        "real_exam": 96,
+        "basic_practice": 40,
+        "legacy": 10
+      }
     }
   },
-  "questions": []
+  "questions": [
+    {
+      "id": "chem_real_001",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 1,
+      "question": "About pure substances and mixtures: (1) A pure substance has a fixed composition and definite properties. (2) A homogeneous mixture has visibly different phases. (3) Air is an example of a mixture.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 4,
+      "uniqueId": "chem_real_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_002",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 2,
+      "question": "About physical and chemical changes: (1) Melting of ice is a physical change. (2) Rusting of iron is a chemical change. (3) Dissolving salt in water is always a chemical change.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 6,
+      "uniqueId": "chem_real_002",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_003",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 3,
+      "question": "About atoms and ions: (1) A neutral atom has equal numbers of protons and electrons. (2) A cation has more electrons than protons. (3) Isotopes of an element have different numbers of neutrons.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 8,
+      "uniqueId": "chem_real_003",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_004",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 4,
+      "question": "About chemical formulae: (1) The formula of calcium hydroxide is Ca(OH)₂. (2) The formula of sulfuric acid is H₂SO₄. (3) The formula of sodium carbonate is NaCO₃.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 10,
+      "uniqueId": "chem_real_004",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_005",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 5,
+      "question": "About balancing chemical equations: (1) 2H₂ + O₂ → 2H₂O is correctly balanced. (2) Na + Cl₂ → 2NaCl is correctly balanced. (3) 2Mg + O₂ → 2MgO is correctly balanced.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 12,
+      "uniqueId": "chem_real_005",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_006",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 6,
+      "question": "About the mole concept: (1) One mole of any substance contains 6.02 × 10²³ particles. (2) One mole of O₂ molecules contains 6.02 × 10²³ oxygen atoms. (3) The molar mass of CO₂ is 44 g/mol.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 14,
+      "uniqueId": "chem_real_006",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_007",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 7,
+      "question": "About molar mass and calculations: (1) The molar mass of NaCl is 58.5 g/mol (Na = 23, Cl = 35.5). (2) 0.5 mol of water has a mass of 9.0 g (H₂O, Mr = 18). (3) 1.0 mol of carbon (C, Ar = 12) has a mass of 6.0 g.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 16,
+      "uniqueId": "chem_real_007",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_008",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 8,
+      "question": "About solution concentration: (1) A 0.10 mol/L NaCl solution contains 0.10 mol NaCl per litre of solution. (2) Doubling the volume of a solution without adding solute halves its concentration. (3) Concentration in mol/L is also called molarity.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 18,
+      "uniqueId": "chem_real_008",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_009",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 9,
+      "question": "About pH of strong acids and bases: (1) A 0.010 mol/L HCl solution has pH ≈ 2. (2) A 0.10 mol/L NaOH solution has pOH ≈ 1. (3) For aqueous solutions at 25°C, pH + pOH = 14.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 20,
+      "uniqueId": "chem_real_009",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_010",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 10,
+      "question": "About strong and weak electrolytes: (1) Strong acids are strong electrolytes. (2) Weak acids ionize completely in water. (3) NaCl(aq) is a strong electrolyte.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 22,
+      "uniqueId": "chem_real_010",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_011",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 11,
+      "question": "About the ideal gas law and gas volume relationships: (1) At constant temperature and pressure, gas volume is directly proportional to moles of gas. (2) At constant pressure, gas volume is inversely proportional to temperature in Kelvin. (3) At constant volume, increasing temperature increases gas pressure.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 24,
+      "uniqueId": "chem_real_011",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_012",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 12,
+      "question": "About state changes: (1) Boiling and evaporation are both liquid → gas changes. (2) Sublimation is the change from solid directly to gas. (3) Condensation is an endothermic process.",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 26,
+      "uniqueId": "chem_real_012",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_013",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 13,
+      "question": "About acids and bases: (1) Acids taste sour and turn blue litmus red. (2) Bases turn red litmus blue. (3) All bases are soluble in water.",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 29,
+      "uniqueId": "chem_real_013",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_014",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 14,
+      "question": "About oxides: (1) CO₂ is an acidic oxide. (2) Na₂O is a basic oxide. (3) Al₂O₃ can act as both an acidic and a basic oxide.",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 31,
+      "uniqueId": "chem_real_014",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_015",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 15,
+      "question": "About salts and their solutions: (1) NaCl(aq) is approximately neutral. (2) NH₄Cl(aq) tends to be acidic. (3) Na₂CO₃(aq) tends to be basic.",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 33,
+      "uniqueId": "chem_real_015",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_016",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 16,
+      "question": "About solubility and precipitates: (1) Mixing BaCl₂(aq) and Na₂SO₄(aq) forms a white precipitate. (2) Mixing NaCl(aq) and KNO₃(aq) forms a precipitate. (3) Mixing AgNO₃(aq) and NaCl(aq) forms a white precipitate.",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 35,
+      "uniqueId": "chem_real_016",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_017",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 17,
+      "question": "About redox reactions: (1) In a redox reaction, oxidation and reduction occur simultaneously. (2) Oxidation involves loss of electrons. (3) A reducing agent is the species that is reduced.",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 37,
+      "uniqueId": "chem_real_017",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_018",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 18,
+      "question": "About metal reactivity with acids and water: (1) Sodium reacts vigorously with cold water to produce hydrogen gas. (2) Magnesium reacts slowly with cold water but more readily with steam. (3) Copper reacts readily with dilute hydrochloric acid to produce hydrogen.",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 39,
+      "uniqueId": "chem_real_018",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_019",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 19,
+      "question": "About displacement reactions of metals: (1) Zinc can displace copper from a solution of CuSO₄. (2) Copper can displace zinc from a solution of ZnSO₄. (3) Iron can displace copper from a solution of CuSO₄.",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 41,
+      "uniqueId": "chem_real_019",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_020",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 20,
+      "question": "About hydrocarbons: (1) Alkanes are saturated hydrocarbons. (2) Alkenes contain at least one C=C double bond. (3) Alkynes contain at least one C≡C triple bond.",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 43,
+      "uniqueId": "chem_real_020",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_021",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 21,
+      "question": "About isomers in organic chemistry: (1) C₄H₁₀ can have more than one structural isomer. (2) Isomers have the same molecular formula but different structures. (3) Methane (CH₄) has two structural isomers.",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 45,
+      "uniqueId": "chem_real_021",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_022",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 22,
+      "question": "About neutralization reactions: (1) Neutralization is a reaction between an acid and a base to form salt and water. (2) The reaction between HCl and NaOH is a neutralization reaction. (3) All neutralization reactions produce a neutral solution (pH = 7).",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 47,
+      "uniqueId": "chem_real_022",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_023",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 23,
+      "question": "About thermal decomposition reactions: (1) CaCO₃(s) → CaO(s) + CO₂(g) is a thermal decomposition reaction. (2) Heating CuCO₃(s) can produce CuO(s) and CO₂(g). (3) Thermal decomposition generally absorbs heat (endothermic).",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 49,
+      "uniqueId": "chem_real_023",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_024",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 24,
+      "question": "About properties of common gases: (1) Oxygen supports combustion but does not burn itself. (2) Hydrogen produces a ‘pop’ sound with a lighted splint. (3) Carbon dioxide turns limewater milky.",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 51,
+      "uniqueId": "chem_real_024",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_025",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 25,
+      "question": "About periodic trends: (1) Atomic radius generally decreases across a period from left to right. (2) Ionization energy generally increases across a period from left to right. (3) Elements in the same group have exactly the same atomic radius.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 54,
+      "uniqueId": "chem_real_025",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_026",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 26,
+      "question": "About valence electrons and groups: (1) Group 1 elements have 1 valence electron. (2) Group 17 elements have 7 valence electrons. (3) Group 18 elements are very reactive because they have 8 valence electrons.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 56,
+      "uniqueId": "chem_real_026",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_027",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 27,
+      "question": "About ionic bonding: (1) Ionic bonds usually form between metals and non-metals. (2) In NaCl, sodium loses one electron to chlorine. (3) Ionic compounds often have high melting points.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 58,
+      "uniqueId": "chem_real_027",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_028",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 28,
+      "question": "About covalent bonding: (1) Covalent bonds form by sharing electron pairs between atoms. (2) H₂O and CH₄ are examples of covalent molecules. (3) All covalent substances are gases at room temperature.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 60,
+      "uniqueId": "chem_real_028",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_029",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 29,
+      "question": "About intermolecular forces: (1) Hydrogen bonding is a strong type of intermolecular attraction. (2) Hydrogen bonding can occur between H₂O molecules. (3) Intermolecular forces do not affect boiling points.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 62,
+      "uniqueId": "chem_real_029",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_030",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 30,
+      "question": "About reaction rate: (1) Increasing temperature generally increases reaction rate. (2) Increasing concentration of reactants generally increases reaction rate. (3) A catalyst increases reaction rate by increasing activation energy.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 64,
+      "uniqueId": "chem_real_030",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_031",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 31,
+      "question": "About collision theory: (1) Reacting particles must collide to react. (2) Effective collisions require sufficient energy. (3) Effective collisions require proper orientation of particles.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 66,
+      "uniqueId": "chem_real_031",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_032",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 32,
+      "question": "About chemical equilibrium: (1) At equilibrium, the forward and reverse reaction rates are equal. (2) At equilibrium, the concentrations of reactants and products are always equal. (3) Equilibrium can be established in a closed system.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 68,
+      "uniqueId": "chem_real_032",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_033",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 33,
+      "question": "About Le Châtelier’s principle: For the reaction: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + heat (1) Increasing pressure favours the formation of NH₃. (2) Increasing temperature favours the reverse reaction. (3) Removing NH₃ shifts equilibrium to the right.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 70,
+      "uniqueId": "chem_real_033",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_034",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 34,
+      "question": "About equilibrium constant Kc: (1) Kc is defined in terms of concentrations of reactants only. (2) A large Kc value indicates products are favoured at equilibrium. (3) Changing temperature can change the value of Kc.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 72,
+      "uniqueId": "chem_real_034",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_035",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 35,
+      "question": "About strong and weak acids: (1) A strong acid ionizes almost completely in water. (2) A weak acid has a lower degree of ionization in water. (3) A dilute acid is always weak.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 74,
+      "uniqueId": "chem_real_035",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_036",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 36,
+      "question": "About electrolytes and non-electrolytes: (1) Electrolytes conduct electricity when dissolved in water. (2) Glucose solution is a strong electrolyte. (3) Molten NaCl can conduct electricity.",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 76,
+      "uniqueId": "chem_real_036",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_037",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 37,
+      "question": "About laboratory safety: (1) Safety goggles should be worn when heating chemicals. (2) Eating and drinking in the lab are allowed if hands are clean. (3) Broken glassware should be reported and handled properly.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 79,
+      "uniqueId": "chem_real_037",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_038",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 38,
+      "question": "About heating substances in a test tube: (1) The open end of the test tube should be pointed away from people. (2) The test tube should not be tightly closed when heating. (3) The test tube should be heated evenly by moving it through the flame.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 81,
+      "uniqueId": "chem_real_038",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_039",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 39,
+      "question": "About methods of separation: (1) Filtration can separate an insoluble solid from a liquid. (2) Distillation can separate liquids with different boiling points. (3) Chromatography can separate different coloured pigments in ink.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 83,
+      "uniqueId": "chem_real_039",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_040",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 40,
+      "question": "About gas tests: (1) Hydrogen gives a ‘pop’ sound with a lighted splint. (2) Oxygen relights a glowing splint. (3) Carbon dioxide turns limewater from colourless to milky.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 85,
+      "uniqueId": "chem_real_040",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_041",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 41,
+      "question": "About titration (conceptual): (1) Titration can be used to determine the concentration of an acid. (2) An indicator is often used to detect the end point of a titration. (3) The volume of solution added from the burette is not important in titration calculations.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 87,
+      "uniqueId": "chem_real_041",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_042",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 42,
+      "question": "About common laboratory apparatus: (1) A burette is used to deliver accurate volumes of solution. (2) A pipette is used to measure a fixed volume accurately. (3) A beaker is more precise than a volumetric flask for measuring volume.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 89,
+      "uniqueId": "chem_real_042",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_043",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 43,
+      "question": "About the Haber process (ammonia synthesis): (1) Nitrogen and hydrogen are the reactants in the Haber process. (2) An iron catalyst is used to increase the rate of reaction. (3) Lower temperature always gives the highest rate of ammonia production.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 91,
+      "uniqueId": "chem_real_043",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_044",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 44,
+      "question": "About the Contact process (sulfuric acid production): (1) Sulfur dioxide is oxidized to sulfur trioxide in the Contact process. (2) A vanadium(V) oxide catalyst is used. (3) Sulfuric acid is produced by directly dissolving sulfur trioxide in water in one step without any issues.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 93,
+      "uniqueId": "chem_real_044",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_045",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 45,
+      "question": "About environmental chemistry (acid rain): (1) Acid rain can be caused by sulfur dioxide and nitrogen oxides. (2) Acid rain can damage buildings and statues made of limestone. (3) Acid rain has no effect on lakes and rivers.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 95,
+      "uniqueId": "chem_real_045",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_046",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 46,
+      "question": "About water treatment: (1) Filtration removes suspended solids from water. (2) Chlorination is used to kill bacteria in drinking water. (3) Distillation is commonly used in large-scale municipal water supply due to its low cost.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 97,
+      "uniqueId": "chem_real_046",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_047",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 47,
+      "question": "About everyday applications of chemistry (polymers): (1) Poly(ethene) is a polymer made from ethene monomers. (2) Many plastics are non-biodegradable and can cause environmental pollution. (3) All polymers are synthetic and none occur naturally.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 99,
+      "uniqueId": "chem_real_047",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_048",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 48,
+      "question": "About energy changes in reactions: (1) Exothermic reactions release heat to the surroundings. (2) Endothermic reactions absorb heat from the surroundings. (3) Activation energy is the minimum energy required for a reaction to occur.",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 101,
+      "uniqueId": "chem_real_048",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_001",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 1,
+      "question": "Which of the following is a homogeneous mixture?",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 110,
+      "uniqueId": "chem_real_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "Sand and iron filings"
+        },
+        {
+          "key": "B",
+          "value": "Oil and water"
+        },
+        {
+          "key": "C",
+          "value": "Salt dissolved in water"
+        },
+        {
+          "key": "D",
+          "value": "Ice cubes in water"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_002",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 2,
+      "question": "Which of the following is a chemical change?",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 111,
+      "uniqueId": "chem_real_002",
+      "options": [
+        {
+          "key": "A",
+          "value": "Ice melting"
+        },
+        {
+          "key": "B",
+          "value": "Grinding sugar into powder"
+        },
+        {
+          "key": "C",
+          "value": "Water boiling"
+        },
+        {
+          "key": "D",
+          "value": "Iron rusting"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_003",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 3,
+      "question": "An element has atomic number 11 and mass number 23. Which statement is correct for a neutral atom of this element?",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 112,
+      "uniqueId": "chem_real_003",
+      "options": [
+        {
+          "key": "A",
+          "value": "11 protons, 12 neutrons, 11 electrons"
+        },
+        {
+          "key": "B",
+          "value": "11 protons, 11 neutrons, 12 electrons"
+        },
+        {
+          "key": "C",
+          "value": "12 protons, 11 neutrons, 11 electrons"
+        },
+        {
+          "key": "D",
+          "value": "23 protons, 11 neutrons, 12 electrons"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_004",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 4,
+      "question": "Isotopes of an element must have different:",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 113,
+      "uniqueId": "chem_real_004",
+      "options": [
+        {
+          "key": "A",
+          "value": "Numbers of protons"
+        },
+        {
+          "key": "B",
+          "value": "Nuclear charges"
+        },
+        {
+          "key": "C",
+          "value": "Numbers of neutrons"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_005",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 5,
+      "question": "Which of the following equations is correctly balanced?",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 114,
+      "uniqueId": "chem_real_005",
+      "options": null,
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_006",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 6,
+      "question": "How many moles of water are in 36 g of H₂O? (H = 1, O = 16)",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 115,
+      "uniqueId": "chem_real_006",
+      "options": [
+        {
+          "key": "A",
+          "value": "1.0 mol"
+        },
+        {
+          "key": "B",
+          "value": "1.5 mol"
+        },
+        {
+          "key": "C",
+          "value": "2.0 mol"
+        },
+        {
+          "key": "D",
+          "value": "3.0 mol"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_007",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 7,
+      "question": "A compound contains 24 g of carbon and 4 g of hydrogen. What is its empirical formula? (C = 12, H = 1)",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 116,
+      "uniqueId": "chem_real_007",
+      "options": null,
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_008",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 8,
+      "question": "5.85 g of NaCl (Mr = 58.5) is dissolved to make 500 mL of solution. What is the concentration of the solution in mol/L?",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 117,
+      "uniqueId": "chem_real_008",
+      "options": [
+        {
+          "key": "A",
+          "value": "0.05 mol/L"
+        },
+        {
+          "key": "B",
+          "value": "0.10 mol/L"
+        },
+        {
+          "key": "C",
+          "value": "0.20 mol/L"
+        },
+        {
+          "key": "D",
+          "value": "1.00 mol/L"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_009",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 9,
+      "question": "A 0.020 mol/L HCl solution is prepared. Assuming complete ionization, what is the pH of the solution?",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 118,
+      "uniqueId": "chem_real_009",
+      "options": [
+        {
+          "key": "A",
+          "value": "1.0"
+        },
+        {
+          "key": "B",
+          "value": "1.3"
+        },
+        {
+          "key": "C",
+          "value": "1.7"
+        },
+        {
+          "key": "D",
+          "value": "2.0"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_010",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 10,
+      "question": "A solution has pH = 3. What is the concentration of H⁺ ions?",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 119,
+      "uniqueId": "chem_real_010",
+      "options": [
+        {
+          "key": "A",
+          "value": "1.0 × 10⁻³ mol/L"
+        },
+        {
+          "key": "B",
+          "value": "3.0 × 10⁻¹ mol/L"
+        },
+        {
+          "key": "C",
+          "value": "1.0 × 10³ mol/L"
+        },
+        {
+          "key": "D",
+          "value": "3.0 mol/L"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_011",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 11,
+      "question": "A gas has a volume of 4.0 L at 300 K. If the temperature is increased to 600 K at constant pressure, what will be the new volume?",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 120,
+      "uniqueId": "chem_real_011",
+      "options": [
+        {
+          "key": "A",
+          "value": "1.0 L"
+        },
+        {
+          "key": "B",
+          "value": "2.0 L"
+        },
+        {
+          "key": "C",
+          "value": "4.0 L"
+        },
+        {
+          "key": "D",
+          "value": "8.0 L"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_012",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 12,
+      "question": "Which of the following statements about gases is correct?",
+      "type": "选择题",
+      "partTitle": "Basic Chemical Concepts and Calculations (Q1–Q12)",
+      "module": "Basic Chemical Concepts and Calculations",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 121,
+      "uniqueId": "chem_real_012",
+      "options": [
+        {
+          "key": "A",
+          "value": "Gas particles are tightly packed in fixed positions."
+        },
+        {
+          "key": "B",
+          "value": "Gas volume does not change with temperature."
+        },
+        {
+          "key": "C",
+          "value": "Gas particles move randomly and rapidly in all directions."
+        },
+        {
+          "key": "D",
+          "value": "Gas particles do not collide with each other."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "easy",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_013",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 13,
+      "question": "Which of the following is not a property of acids?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 123,
+      "uniqueId": "chem_real_013",
+      "options": [
+        {
+          "key": "A",
+          "value": "Turn blue litmus red"
+        },
+        {
+          "key": "B",
+          "value": "Taste sour (in dilute form)"
+        },
+        {
+          "key": "C",
+          "value": "React with metals to produce hydrogen gas"
+        },
+        {
+          "key": "D",
+          "value": "Turn red litmus blue"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_014",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 14,
+      "question": "Which oxide is correctly matched with its type?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 124,
+      "uniqueId": "chem_real_014",
+      "options": [
+        {
+          "key": "A",
+          "value": "Na₂O – acidic oxide"
+        },
+        {
+          "key": "C",
+          "value": "MgO – amphoteric oxide"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_015",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 15,
+      "question": "Which salt is most likely to form an acidic solution in water?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 125,
+      "uniqueId": "chem_real_015",
+      "options": [
+        {
+          "key": "B",
+          "value": "KNO₃"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_016",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 16,
+      "question": "When aqueous solutions of BaCl₂ and Na₂SO₄ are mixed, what is observed?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 126,
+      "uniqueId": "chem_real_016",
+      "options": [
+        {
+          "key": "D",
+          "value": "No visible change occurs."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_017",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 17,
+      "question": "Which of the following is definitely a redox reaction?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 127,
+      "uniqueId": "chem_real_017",
+      "options": null,
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_018",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 18,
+      "question": "In the reaction Zn + 2HCl → ZnCl₂ + H₂, which species is oxidized?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 128,
+      "uniqueId": "chem_real_018",
+      "options": [
+        {
+          "key": "A",
+          "value": "Zn"
+        },
+        {
+          "key": "D",
+          "value": "H₂"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_019",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 19,
+      "question": "Which metal will not react with dilute hydrochloric acid to produce hydrogen gas?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 129,
+      "uniqueId": "chem_real_019",
+      "options": [
+        {
+          "key": "A",
+          "value": "Mg"
+        },
+        {
+          "key": "B",
+          "value": "Zn"
+        },
+        {
+          "key": "C",
+          "value": "Fe"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_020",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 20,
+      "question": "Which hydrocarbon is an alkene?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 130,
+      "uniqueId": "chem_real_020",
+      "options": null,
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_021",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 21,
+      "question": "A compound contains a –COOH group. To which class of organic compounds does it belong?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 131,
+      "uniqueId": "chem_real_021",
+      "options": [
+        {
+          "key": "C",
+          "value": "Ester"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_022",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 22,
+      "question": "What are the products of the neutralization reaction between H₂SO₄ and KOH (in aqueous solution)?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 132,
+      "uniqueId": "chem_real_022",
+      "options": [
+        {
+          "key": "A",
+          "value": "K₂SO₄ and H₂"
+        },
+        {
+          "key": "B",
+          "value": "K₂SO₄ and H₂O"
+        },
+        {
+          "key": "C",
+          "value": "KOH and H₂"
+        },
+        {
+          "key": "D",
+          "value": "K₂O and H₂O"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_023",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 23,
+      "question": "Which compound decomposes upon heating to form a metal oxide and carbon dioxide?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 133,
+      "uniqueId": "chem_real_023",
+      "options": null,
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_024",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 24,
+      "question": "Which statement about the gas carbon dioxide (CO₂) is correct?",
+      "type": "选择题",
+      "partTitle": "Properties and Reactions of Substances (Q13–Q24)",
+      "module": "Properties and Reactions of Substances",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 134,
+      "uniqueId": "chem_real_024",
+      "options": [
+        {
+          "key": "A",
+          "value": "It supports combustion."
+        },
+        {
+          "key": "B",
+          "value": "It turns limewater milky."
+        },
+        {
+          "key": "C",
+          "value": "It has a “pop” sound with a lighted splint."
+        },
+        {
+          "key": "D",
+          "value": "It has a strong, choking smell."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_025",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 25,
+      "question": "As you move from left to right across Period 3 in the periodic table, which general trend is correct?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 136,
+      "uniqueId": "chem_real_025",
+      "options": null,
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_026",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 26,
+      "question": "Which of the following elements is in Group 17 (halogens)?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 137,
+      "uniqueId": "chem_real_026",
+      "options": [
+        {
+          "key": "A",
+          "value": "Na"
+        },
+        {
+          "key": "B",
+          "value": "Mg"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_027",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 27,
+      "question": "Which pair of elements is most likely to form an ionic compound?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 138,
+      "uniqueId": "chem_real_027",
+      "options": [
+        {
+          "key": "B",
+          "value": "O and O"
+        },
+        {
+          "key": "D",
+          "value": "N and O"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_028",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 28,
+      "question": "Which property is typical of ionic compounds?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 139,
+      "uniqueId": "chem_real_028",
+      "options": [
+        {
+          "key": "A",
+          "value": "Low melting point"
+        },
+        {
+          "key": "C",
+          "value": "Soft and easily scratched"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_029",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 29,
+      "question": "Which substance is most likely to exhibit hydrogen bonding between its molecules?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 140,
+      "uniqueId": "chem_real_029",
+      "options": [
+        {
+          "key": "B",
+          "value": "H₂S"
+        },
+        {
+          "key": "C",
+          "value": "NH₃"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_030",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 30,
+      "question": "Which change will generally increase the rate of a chemical reaction?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 141,
+      "uniqueId": "chem_real_030",
+      "options": [
+        {
+          "key": "A",
+          "value": "Lowering temperature"
+        },
+        {
+          "key": "D",
+          "value": "Reducing reactant surface area"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_031",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 31,
+      "question": "Which statement about activation energy is correct?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 142,
+      "uniqueId": "chem_real_031",
+      "options": [
+        {
+          "key": "A",
+          "value": "It is the energy released by the reaction."
+        },
+        {
+          "key": "B",
+          "value": "It is the minimum energy required for effective collisions."
+        },
+        {
+          "key": "C",
+          "value": "It is the energy stored in the products only."
+        },
+        {
+          "key": "D",
+          "value": "It is the same for all reactions."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_032",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 32,
+      "question": "A reversible reaction has reached dynamic equilibrium. Which statement is correct?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 143,
+      "uniqueId": "chem_real_032",
+      "options": [
+        {
+          "key": "A",
+          "value": "The forward reaction has stopped."
+        },
+        {
+          "key": "B",
+          "value": "The reverse reaction has stopped."
+        },
+        {
+          "key": "C",
+          "value": "The concentrations of reactants and products must be equal."
+        },
+        {
+          "key": "D",
+          "value": "The rates of forward and reverse reactions are equal."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_033",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 33,
+      "question": "For the exothermic reaction: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + heat What is the effect of increasing temperature?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 144,
+      "uniqueId": "chem_real_033",
+      "options": [
+        {
+          "key": "A",
+          "value": "Equilibrium shifts to the right, producing more NH₃."
+        },
+        {
+          "key": "B",
+          "value": "Equilibrium shifts to the left, producing more N₂ and H₂."
+        },
+        {
+          "key": "C",
+          "value": "Equilibrium is unaffected."
+        },
+        {
+          "key": "D",
+          "value": "The reaction stops completely."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_034",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 34,
+      "question": "For the same reaction in Q33, what is the effect of increasing pressure?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 145,
+      "uniqueId": "chem_real_034",
+      "options": [
+        {
+          "key": "A",
+          "value": "Favors the side with more moles of gas (left)."
+        },
+        {
+          "key": "B",
+          "value": "Favors the side with fewer moles of gas (right)."
+        },
+        {
+          "key": "C",
+          "value": "Has no effect on equilibrium."
+        },
+        {
+          "key": "D",
+          "value": "Only changes the reaction rate, not the equilibrium position."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_035",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 35,
+      "question": "Which statement about strong and weak acids is correct?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 146,
+      "uniqueId": "chem_real_035",
+      "options": [
+        {
+          "key": "C",
+          "value": "Strong acids ionize almost completely in water."
+        },
+        {
+          "key": "D",
+          "value": "Weak acids cannot react with metals."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_036",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 36,
+      "question": "Which of the following aqueous solutions conducts electricity poorly?",
+      "type": "选择题",
+      "partTitle": "Chemical Theories and Laws (Q25–Q36)",
+      "module": "Chemical Theories and Laws",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 147,
+      "uniqueId": "chem_real_036",
+      "options": null,
+      "answer": null,
+      "score": 3,
+      "difficulty": "medium",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_037",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 37,
+      "question": "Which is a correct laboratory safety practice?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 149,
+      "uniqueId": "chem_real_037",
+      "options": [
+        {
+          "key": "A",
+          "value": "Smelling chemicals directly from the container"
+        },
+        {
+          "key": "B",
+          "value": "Wearing safety goggles when heating substances"
+        },
+        {
+          "key": "C",
+          "value": "Tasting chemicals to identify them"
+        },
+        {
+          "key": "D",
+          "value": "Pointing a test tube at your classmate when heating"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_038",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 38,
+      "question": "When heating a liquid in a test tube, which action is correct?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 150,
+      "uniqueId": "chem_real_038",
+      "options": [
+        {
+          "key": "A",
+          "value": "Hold the test tube with bare hands."
+        },
+        {
+          "key": "B",
+          "value": "Stopper the test tube to prevent vapor escape."
+        },
+        {
+          "key": "C",
+          "value": "Point the mouth of the test tube away from people."
+        },
+        {
+          "key": "D",
+          "value": "Fill the test tube completely with liquid."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_039",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 39,
+      "question": "Which method is best for separating sand from a mixture of sand and water?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 151,
+      "uniqueId": "chem_real_039",
+      "options": [
+        {
+          "key": "B",
+          "value": "Filtration"
+        },
+        {
+          "key": "D",
+          "value": "Evaporation"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_040",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 40,
+      "question": "Which method is best for separating two miscible liquids with different boiling points?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 152,
+      "uniqueId": "chem_real_040",
+      "options": [
+        {
+          "key": "A",
+          "value": "Filtration"
+        },
+        {
+          "key": "D",
+          "value": "Magnetic separation"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_041",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 41,
+      "question": "Which test would confirm the presence of hydrogen gas?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 153,
+      "uniqueId": "chem_real_041",
+      "options": [
+        {
+          "key": "B",
+          "value": "Limewater turns milky."
+        },
+        {
+          "key": "D",
+          "value": "The gas has a pungent smell."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_042",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 42,
+      "question": "Which gas turns damp red litmus paper blue?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 154,
+      "uniqueId": "chem_real_042",
+      "options": [
+        {
+          "key": "B",
+          "value": "NH₃"
+        },
+        {
+          "key": "C",
+          "value": "H₂"
+        },
+        {
+          "key": "D",
+          "value": "O₂"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_043",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 43,
+      "question": "Which apparatus is most suitable for delivering accurate variable volumes in a titration?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 155,
+      "uniqueId": "chem_real_043",
+      "options": [
+        {
+          "key": "D",
+          "value": "Evaporating dish"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_044",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 44,
+      "question": "In a typical acid–base titration, which statement is correct?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 156,
+      "uniqueId": "chem_real_044",
+      "options": [
+        {
+          "key": "A",
+          "value": "The indicator is placed in the burette."
+        },
+        {
+          "key": "B",
+          "value": "The standard solution is always in the conical flask."
+        },
+        {
+          "key": "C",
+          "value": "The end point is detected by a colour change of the indicator."
+        },
+        {
+          "key": "D",
+          "value": "The conical flask is used to measure accurate volumes."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_045",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 45,
+      "question": "In the Haber process, which combination of conditions is commonly used in industry?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 157,
+      "uniqueId": "chem_real_045",
+      "options": [
+        {
+          "key": "A",
+          "value": "Low pressure, low temperature, no catalyst"
+        },
+        {
+          "key": "B",
+          "value": "High pressure, high temperature, iron catalyst"
+        },
+        {
+          "key": "C",
+          "value": "High pressure, moderate temperature, iron catalyst"
+        },
+        {
+          "key": "D",
+          "value": "Low pressure, high temperature, platinum catalyst"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_046",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 46,
+      "question": "In the Contact process for producing sulfuric acid, which step is correct?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 158,
+      "uniqueId": "chem_real_046",
+      "options": [
+        {
+          "key": "A",
+          "value": "S + O₂ → SO₂"
+        },
+        {
+          "key": "B",
+          "value": "SO₂ → S + O₂"
+        },
+        {
+          "key": "C",
+          "value": "H₂SO₄ → SO₃ + H₂O"
+        },
+        {
+          "key": "D",
+          "value": "SO₃ is safely added directly into water in one step"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_047",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 47,
+      "question": "Which gas is a major contributor to acid rain?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 159,
+      "uniqueId": "chem_real_047",
+      "options": [
+        {
+          "key": "A",
+          "value": "Ne"
+        },
+        {
+          "key": "C",
+          "value": "SO₂"
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chem_real_048",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 48,
+      "question": "Which of the following is a common problem associated with many plastics?",
+      "type": "选择题",
+      "partTitle": "Chemical Experiments and Applications (Q37–Q48)",
+      "module": "Chemical Experiments and Applications",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 160,
+      "uniqueId": "chem_real_048",
+      "options": [
+        {
+          "key": "A",
+          "value": "They are all highly toxic to touch."
+        },
+        {
+          "key": "B",
+          "value": "They are all good conductors of electricity."
+        },
+        {
+          "key": "C",
+          "value": "Many are non-biodegradable and cause pollution."
+        },
+        {
+          "key": "D",
+          "value": "They cannot be recycled in any form."
+        }
+      ],
+      "answer": null,
+      "score": 3,
+      "difficulty": "hard",
+      "source": "real_exam"
+    },
+    {
+      "id": "chinese_mock_001",
+      "subject": "基础汉语",
+      "track": "通用",
+      "questionNumber": 1,
+      "question": "下列词语中，书写完全正确的一项是：",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "汉语基础知识",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 1,
+      "uniqueId": "chinese_mock_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "迫不急待"
+        },
+        {
+          "key": "B",
+          "value": "再接再厉"
+        },
+        {
+          "key": "C",
+          "value": "一愁莫展"
+        },
+        {
+          "key": "D",
+          "value": "谈笑风声"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chinese_mock_002",
+      "subject": "基础汉语",
+      "track": "通用",
+      "questionNumber": 2,
+      "question": "选出下列句子中没有语病的一项：",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "语法运用",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 2,
+      "uniqueId": "chinese_mock_002",
+      "options": [
+        {
+          "key": "A",
+          "value": "通过这次活动，使我们增长了见识。"
+        },
+        {
+          "key": "B",
+          "value": "他不但会唱歌，而且会跳舞。"
+        },
+        {
+          "key": "C",
+          "value": "我们要防止不发生类似事故。"
+        },
+        {
+          "key": "D",
+          "value": "这种精神是值得我们学习的榜样。"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chinese_mock_003",
+      "subject": "基础汉语",
+      "track": "通用",
+      "questionNumber": 3,
+      "question": "\"春风又绿江南岸\"中\"绿\"字的词性是：",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "词汇运用",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 3,
+      "uniqueId": "chinese_mock_003",
+      "options": [
+        {
+          "key": "A",
+          "value": "名词"
+        },
+        {
+          "key": "B",
+          "value": "动词"
+        },
+        {
+          "key": "C",
+          "value": "形容词"
+        },
+        {
+          "key": "D",
+          "value": "副词"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chinese_mock_004",
+      "subject": "基础汉语",
+      "track": "通用",
+      "questionNumber": 4,
+      "question": "下列哪个成语使用正确？",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "成语运用",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 4,
+      "uniqueId": "chinese_mock_004",
+      "options": [
+        {
+          "key": "A",
+          "value": "他的演讲引起了大家的共鸣，全场鸦雀无声。"
+        },
+        {
+          "key": "B",
+          "value": "春天来了，草木葱茏，万象更新。"
+        },
+        {
+          "key": "C",
+          "value": "他学习刻苦，成绩一落千丈。"
+        },
+        {
+          "key": "D",
+          "value": "这道数学题很简单，简直难以置信。"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chinese_mock_005",
+      "subject": "基础汉语",
+      "track": "通用",
+      "questionNumber": 5,
+      "question": "下列句子中，标点符号使用正确的是：",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "标点符号",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 5,
+      "uniqueId": "chinese_mock_005",
+      "options": [
+        {
+          "key": "A",
+          "value": "他问：\"你今天有空吗\"?"
+        },
+        {
+          "key": "B",
+          "value": "我喜欢的水果有苹果、香蕉、橙子等。"
+        },
+        {
+          "key": "C",
+          "value": "这本书的作者是鲁迅先生写的。"
+        },
+        {
+          "key": "D",
+          "value": "公园里的花真多啊！有牡丹、玫瑰、菊花……等。"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chinese_mock_006",
+      "subject": "基础汉语",
+      "track": "通用",
+      "questionNumber": 6,
+      "question": "下列词语中，加点字读音完全正确的一项是：",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "字音",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 6,
+      "uniqueId": "chinese_mock_006",
+      "options": [
+        {
+          "key": "A",
+          "value": "颓唐(tuí)、踌躇(chú)、蹒跚(pán)"
+        },
+        {
+          "key": "B",
+          "value": "琐屑(xiāo)、差使(chāi)、交卸(xiè)"
+        },
+        {
+          "key": "C",
+          "value": "狼藉(jí)、簌簌(sù)、颓唐(tuì)"
+        },
+        {
+          "key": "D",
+          "value": "踌躇(zhù)、蹒跚(mán)、琐屑(xiè)"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chinese_mock_007",
+      "subject": "基础汉语",
+      "track": "通用",
+      "questionNumber": 7,
+      "question": "下列词语中，感情色彩与其他三项不同的是：",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "词语感情色彩",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 7,
+      "uniqueId": "chinese_mock_007",
+      "options": [
+        {
+          "key": "A",
+          "value": "坚强"
+        },
+        {
+          "key": "B",
+          "value": "勇敢"
+        },
+        {
+          "key": "C",
+          "value": "顽固"
+        },
+        {
+          "key": "D",
+          "value": "聪明"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chinese_mock_008",
+      "subject": "基础汉语",
+      "track": "通用",
+      "questionNumber": 8,
+      "question": "\"他的话像一股暖流，温暖了我的心\"这句话使用的修辞手法是：",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "修辞手法",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 8,
+      "uniqueId": "chinese_mock_008",
+      "options": [
+        {
+          "key": "A",
+          "value": "比喻"
+        },
+        {
+          "key": "B",
+          "value": "拟人"
+        },
+        {
+          "key": "C",
+          "value": "夸张"
+        },
+        {
+          "key": "D",
+          "value": "排比"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chinese_mock_009",
+      "subject": "基础汉语",
+      "track": "通用",
+      "questionNumber": 9,
+      "question": "下列句子中，属于被动句的是：",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "句式",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 9,
+      "uniqueId": "chinese_mock_009",
+      "options": [
+        {
+          "key": "A",
+          "value": "小明写完了作业。"
+        },
+        {
+          "key": "B",
+          "value": "作业被小明写完了。"
+        },
+        {
+          "key": "C",
+          "value": "小明把作业写完了。"
+        },
+        {
+          "key": "D",
+          "value": "作业写完了。"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chinese_mock_010",
+      "subject": "基础汉语",
+      "track": "通用",
+      "questionNumber": 10,
+      "question": "\"鲁迅是中国现代文学的奠基人\"这句话的主语是：",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "句子成分",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 10,
+      "uniqueId": "chinese_mock_010",
+      "options": [
+        {
+          "key": "A",
+          "value": "鲁迅"
+        },
+        {
+          "key": "B",
+          "value": "中国"
+        },
+        {
+          "key": "C",
+          "value": "文学"
+        },
+        {
+          "key": "D",
+          "value": "奠基人"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "math_mock_001",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 1,
+      "question": "若集合 A = {1, 2, 3}，B = {2, 3, 4}，则 A ∩ B = ",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "集合",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 1,
+      "uniqueId": "math_mock_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "{1, 2}"
+        },
+        {
+          "key": "B",
+          "value": "{2, 3}"
+        },
+        {
+          "key": "C",
+          "value": "{3, 4}"
+        },
+        {
+          "key": "D",
+          "value": "{1, 4}"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "math_mock_002",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 2,
+      "question": "函数 f(x) = x² - 4x + 3 的最小值是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "函数",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 2,
+      "uniqueId": "math_mock_002",
+      "options": [
+        {
+          "key": "A",
+          "value": "-1"
+        },
+        {
+          "key": "B",
+          "value": "0"
+        },
+        {
+          "key": "C",
+          "value": "1"
+        },
+        {
+          "key": "D",
+          "value": "3"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "math_mock_003",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 3,
+      "question": "等差数列 2, 5, 8, 11... 的第10项是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "数列",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 3,
+      "uniqueId": "math_mock_003",
+      "options": [
+        {
+          "key": "A",
+          "value": "26"
+        },
+        {
+          "key": "B",
+          "value": "27"
+        },
+        {
+          "key": "C",
+          "value": "29"
+        },
+        {
+          "key": "D",
+          "value": "32"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "math_mock_004",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 4,
+      "question": "若 sin θ = 3/5，且 θ 为锐角，则 cos θ = ",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "三角函数",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 4,
+      "uniqueId": "math_mock_004",
+      "options": [
+        {
+          "key": "A",
+          "value": "3/5"
+        },
+        {
+          "key": "B",
+          "value": "4/5"
+        },
+        {
+          "key": "C",
+          "value": "3/4"
+        },
+        {
+          "key": "D",
+          "value": "4/3"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "math_mock_005",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 5,
+      "question": "直线 y = 2x + 1 与 x 轴的交点坐标是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "解析几何",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 5,
+      "uniqueId": "math_mock_005",
+      "options": [
+        {
+          "key": "A",
+          "value": "(0, 1)"
+        },
+        {
+          "key": "B",
+          "value": "(1, 0)"
+        },
+        {
+          "key": "C",
+          "value": "(-1/2, 0)"
+        },
+        {
+          "key": "D",
+          "value": "(0, -1/2)"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "math_mock_006",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 6,
+      "question": "log₂ 8 = ",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "对数",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 6,
+      "uniqueId": "math_mock_006",
+      "options": [
+        {
+          "key": "A",
+          "value": "2"
+        },
+        {
+          "key": "B",
+          "value": "3"
+        },
+        {
+          "key": "C",
+          "value": "4"
+        },
+        {
+          "key": "D",
+          "value": "8"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "math_mock_007",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 7,
+      "question": "若 x + y = 5，xy = 6，则 x² + y² = ",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "代数",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 7,
+      "uniqueId": "math_mock_007",
+      "options": [
+        {
+          "key": "A",
+          "value": "11"
+        },
+        {
+          "key": "B",
+          "value": "13"
+        },
+        {
+          "key": "C",
+          "value": "25"
+        },
+        {
+          "key": "D",
+          "value": "36"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "math_mock_008",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 8,
+      "question": "圆的方程 (x-1)² + (y+2)² = 9 的圆心坐标是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "圆",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 8,
+      "uniqueId": "math_mock_008",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1, 2)"
+        },
+        {
+          "key": "B",
+          "value": "(-1, 2)"
+        },
+        {
+          "key": "C",
+          "value": "(1, -2)"
+        },
+        {
+          "key": "D",
+          "value": "(-1, -2)"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "math_mock_009",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 9,
+      "question": "lim(x→0) sin(x)/x = ",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "极限",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 9,
+      "uniqueId": "math_mock_009",
+      "options": [
+        {
+          "key": "A",
+          "value": "0"
+        },
+        {
+          "key": "B",
+          "value": "1"
+        },
+        {
+          "key": "C",
+          "value": "∞"
+        },
+        {
+          "key": "D",
+          "value": "不存在"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "math_mock_010",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 10,
+      "question": "函数 y = eˣ 的导数是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "导数",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 10,
+      "uniqueId": "math_mock_010",
+      "options": [
+        {
+          "key": "A",
+          "value": "eˣ"
+        },
+        {
+          "key": "B",
+          "value": "xeˣ⁻¹"
+        },
+        {
+          "key": "C",
+          "value": "eˣ⁺¹"
+        },
+        {
+          "key": "D",
+          "value": "1/eˣ"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "physics_mock_001",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 1,
+      "question": "下列哪个是标量？",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "力学基础",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 1,
+      "uniqueId": "physics_mock_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "速度"
+        },
+        {
+          "key": "B",
+          "value": "加速度"
+        },
+        {
+          "key": "C",
+          "value": "力"
+        },
+        {
+          "key": "D",
+          "value": "质量"
+        }
+      ],
+      "answer": "D",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "physics_mock_002",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 2,
+      "question": "物体做匀速圆周运动时，其加速度方向",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "圆周运动",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 2,
+      "uniqueId": "physics_mock_002",
+      "options": [
+        {
+          "key": "A",
+          "value": "沿切线方向"
+        },
+        {
+          "key": "B",
+          "value": "指向圆心"
+        },
+        {
+          "key": "C",
+          "value": "背离圆心"
+        },
+        {
+          "key": "D",
+          "value": "为零"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "physics_mock_003",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 3,
+      "question": "根据牛顿第三定律，作用力与反作用力",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "牛顿定律",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 3,
+      "uniqueId": "physics_mock_003",
+      "options": [
+        {
+          "key": "A",
+          "value": "大小相等，方向相同"
+        },
+        {
+          "key": "B",
+          "value": "大小相等，方向相反"
+        },
+        {
+          "key": "C",
+          "value": "大小不等，方向相反"
+        },
+        {
+          "key": "D",
+          "value": "作用在同一物体上"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "physics_mock_004",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 4,
+      "question": "理想气体状态方程是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "热学",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 4,
+      "uniqueId": "physics_mock_004",
+      "options": [
+        {
+          "key": "A",
+          "value": "PV = nRT"
+        },
+        {
+          "key": "B",
+          "value": "PV = RT"
+        },
+        {
+          "key": "C",
+          "value": "P = nRT/V"
+        },
+        {
+          "key": "D",
+          "value": "V = nRT/P"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "physics_mock_005",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 5,
+      "question": "简谐运动的位移公式为 x = A sin(ωt + φ)，其中 A 表示",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "振动",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 5,
+      "uniqueId": "physics_mock_005",
+      "options": [
+        {
+          "key": "A",
+          "value": "周期"
+        },
+        {
+          "key": "B",
+          "value": "频率"
+        },
+        {
+          "key": "C",
+          "value": "振幅"
+        },
+        {
+          "key": "D",
+          "value": "初相位"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "physics_mock_006",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 6,
+      "question": "光在真空中的传播速度约为",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "光学",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 6,
+      "uniqueId": "physics_mock_006",
+      "options": [
+        {
+          "key": "A",
+          "value": "3×10⁶ m/s"
+        },
+        {
+          "key": "B",
+          "value": "3×10⁷ m/s"
+        },
+        {
+          "key": "C",
+          "value": "3×10⁸ m/s"
+        },
+        {
+          "key": "D",
+          "value": "3×10⁹ m/s"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "physics_mock_007",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 7,
+      "question": "电阻 R = 10Ω，电流 I = 2A，则电压 U = ",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "电路",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 7,
+      "uniqueId": "physics_mock_007",
+      "options": [
+        {
+          "key": "A",
+          "value": "5V"
+        },
+        {
+          "key": "B",
+          "value": "10V"
+        },
+        {
+          "key": "C",
+          "value": "20V"
+        },
+        {
+          "key": "D",
+          "value": "40V"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "physics_mock_008",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 8,
+      "question": "动能的公式是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "机械能",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 8,
+      "uniqueId": "physics_mock_008",
+      "options": [
+        {
+          "key": "A",
+          "value": "E = mgh"
+        },
+        {
+          "key": "B",
+          "value": "E = ½mv²"
+        },
+        {
+          "key": "C",
+          "value": "E = mc²"
+        },
+        {
+          "key": "D",
+          "value": "E = Pt"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "physics_mock_009",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 9,
+      "question": "功率的公式是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "功和能",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 9,
+      "uniqueId": "physics_mock_009",
+      "options": [
+        {
+          "key": "A",
+          "value": "P = W/t"
+        },
+        {
+          "key": "B",
+          "value": "P = Fv"
+        },
+        {
+          "key": "C",
+          "value": "P = UI"
+        },
+        {
+          "key": "D",
+          "value": "以上都是"
+        }
+      ],
+      "answer": "D",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "physics_mock_010",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 10,
+      "question": "密度的公式是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "物质性质",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 10,
+      "uniqueId": "physics_mock_010",
+      "options": [
+        {
+          "key": "A",
+          "value": "ρ = m/V"
+        },
+        {
+          "key": "B",
+          "value": "ρ = V/m"
+        },
+        {
+          "key": "C",
+          "value": "ρ = mv"
+        },
+        {
+          "key": "D",
+          "value": "ρ = m+v"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chem_mock_001",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 1,
+      "question": "下列物质中，属于电解质的是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "电解质",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 1,
+      "uniqueId": "chem_mock_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "蔗糖"
+        },
+        {
+          "key": "B",
+          "value": "酒精"
+        },
+        {
+          "key": "C",
+          "value": "氯化钠"
+        },
+        {
+          "key": "D",
+          "value": "二氧化碳"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chem_mock_002",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 2,
+      "question": "在周期表中，同一周期从左到右，原子半径",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "元素周期律",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 2,
+      "uniqueId": "chem_mock_002",
+      "options": [
+        {
+          "key": "A",
+          "value": "逐渐增大"
+        },
+        {
+          "key": "B",
+          "value": "逐渐减小"
+        },
+        {
+          "key": "C",
+          "value": "先增大后减小"
+        },
+        {
+          "key": "D",
+          "value": "保持不变"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chem_mock_003",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 3,
+      "question": "氧化还原反应的本质是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "氧化还原",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 3,
+      "uniqueId": "chem_mock_003",
+      "options": [
+        {
+          "key": "A",
+          "value": "氧原子的得失"
+        },
+        {
+          "key": "B",
+          "value": "电子的转移"
+        },
+        {
+          "key": "C",
+          "value": "化合价的改变"
+        },
+        {
+          "key": "D",
+          "value": "新物质的生成"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chem_mock_004",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 4,
+      "question": "下列气体中，不能用浓硫酸干燥的是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "气体干燥",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 4,
+      "uniqueId": "chem_mock_004",
+      "options": [
+        {
+          "key": "A",
+          "value": "H₂"
+        },
+        {
+          "key": "B",
+          "value": "O₂"
+        },
+        {
+          "key": "C",
+          "value": "NH₃"
+        },
+        {
+          "key": "D",
+          "value": "CO₂"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chem_mock_005",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 5,
+      "question": "苯的分子式是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "有机化学",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 5,
+      "uniqueId": "chem_mock_005",
+      "options": [
+        {
+          "key": "A",
+          "value": "C₆H₆"
+        },
+        {
+          "key": "B",
+          "value": "C₆H₁₂"
+        },
+        {
+          "key": "C",
+          "value": "C₅H₁₀"
+        },
+        {
+          "key": "D",
+          "value": "C₇H₈"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chem_mock_006",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 6,
+      "question": "水的化学式是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "化学式",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 6,
+      "uniqueId": "chem_mock_006",
+      "options": [
+        {
+          "key": "A",
+          "value": "H₂O"
+        },
+        {
+          "key": "B",
+          "value": "CO₂"
+        },
+        {
+          "key": "C",
+          "value": "NaCl"
+        },
+        {
+          "key": "D",
+          "value": "HCl"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chem_mock_007",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 7,
+      "question": "NaOH 是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "酸碱盐",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 7,
+      "uniqueId": "chem_mock_007",
+      "options": [
+        {
+          "key": "A",
+          "value": "酸"
+        },
+        {
+          "key": "B",
+          "value": "碱"
+        },
+        {
+          "key": "C",
+          "value": "盐"
+        },
+        {
+          "key": "D",
+          "value": "氧化物"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chem_mock_008",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 8,
+      "question": "化学反应前后，质量守恒定律表明",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "质量守恒",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 8,
+      "uniqueId": "chem_mock_008",
+      "options": [
+        {
+          "key": "A",
+          "value": "质量增加"
+        },
+        {
+          "key": "B",
+          "value": "质量减少"
+        },
+        {
+          "key": "C",
+          "value": "质量不变"
+        },
+        {
+          "key": "D",
+          "value": "质量先增后减"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chem_mock_009",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 9,
+      "question": "元素周期表中，原子序数等于",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "原子结构",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 9,
+      "uniqueId": "chem_mock_009",
+      "options": [
+        {
+          "key": "A",
+          "value": "质子数"
+        },
+        {
+          "key": "B",
+          "value": "中子数"
+        },
+        {
+          "key": "C",
+          "value": "电子数"
+        },
+        {
+          "key": "D",
+          "value": "质量数"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "chem_mock_010",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 10,
+      "question": "盐酸的化学式是",
+      "type": "选择题",
+      "partTitle": "基础练习",
+      "module": "常见酸",
+      "sourceFile": "MOCK_QUESTIONS (basic practice)",
+      "lineNumber": 10,
+      "uniqueId": "chem_mock_010",
+      "options": [
+        {
+          "key": "A",
+          "value": "H₂SO₄"
+        },
+        {
+          "key": "B",
+          "value": "HCl"
+        },
+        {
+          "key": "C",
+          "value": "HNO₃"
+        },
+        {
+          "key": "D",
+          "value": "NaOH"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "basic_practice"
+    },
+    {
+      "id": "q001",
+      "subject": "语文",
+      "track": "文科",
+      "questionNumber": 1,
+      "question": "下列词语中，书写完全正确的一项是：",
+      "type": "选择题",
+      "partTitle": "基础知识",
+      "sourceFile": "sample.txt",
+      "lineNumber": 1,
+      "uniqueId": "chinese_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "安详、竣工、迫不急待"
+        },
+        {
+          "key": "B",
+          "value": "抱歉、妨碍、再接再厉"
+        },
+        {
+          "key": "C",
+          "value": "震撼、决窍、义愤填膺"
+        },
+        {
+          "key": "D",
+          "value": "寒喧、既然、走头无路"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "legacy"
+    },
+    {
+      "id": "q002",
+      "subject": "语文",
+      "track": "文科",
+      "questionNumber": 2,
+      "question": "下列句子中，没有语病的一项是：",
+      "type": "选择题",
+      "partTitle": "语法辨析",
+      "sourceFile": "sample.txt",
+      "lineNumber": 15,
+      "uniqueId": "chinese_002",
+      "options": [
+        {
+          "key": "A",
+          "value": "通过这次活动，使我们增长了见识。"
+        },
+        {
+          "key": "B",
+          "value": "他不但会唱歌，而且会跳舞。"
+        },
+        {
+          "key": "C",
+          "value": "我们要防止不发生类似的事故。"
+        },
+        {
+          "key": "D",
+          "value": "这种精神是值得我们学习的榜样。"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "legacy"
+    },
+    {
+      "id": "q003",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 1,
+      "question": "已知函数 f(x) = x² - 2x + 1，则 f(2) 的值为：",
+      "type": "选择题",
+      "partTitle": "函数求值",
+      "sourceFile": "sample.txt",
+      "lineNumber": 30,
+      "uniqueId": "math_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "1"
+        },
+        {
+          "key": "B",
+          "value": "2"
+        },
+        {
+          "key": "C",
+          "value": "3"
+        },
+        {
+          "key": "D",
+          "value": "4"
+        }
+      ],
+      "answer": "A",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "legacy"
+    },
+    {
+      "id": "q004",
+      "subject": "数学",
+      "track": "理科",
+      "questionNumber": 2,
+      "question": "等差数列 {aₙ} 中，a₁ = 2，公差 d = 3，则 a₅ 的值为：",
+      "type": "选择题",
+      "partTitle": "数列",
+      "sourceFile": "sample.txt",
+      "lineNumber": 45,
+      "uniqueId": "math_002",
+      "options": [
+        {
+          "key": "A",
+          "value": "11"
+        },
+        {
+          "key": "B",
+          "value": "14"
+        },
+        {
+          "key": "C",
+          "value": "17"
+        },
+        {
+          "key": "D",
+          "value": "20"
+        }
+      ],
+      "answer": "B",
+      "score": 3,
+      "difficulty": "medium",
+      "source": "legacy"
+    },
+    {
+      "id": "q005",
+      "subject": "英语",
+      "track": "文科",
+      "questionNumber": 1,
+      "question": "Choose the correct answer: He _____ to school every day.",
+      "type": "选择题",
+      "partTitle": "语法填空",
+      "sourceFile": "sample.txt",
+      "lineNumber": 60,
+      "uniqueId": "english_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "go"
+        },
+        {
+          "key": "B",
+          "value": "goes"
+        },
+        {
+          "key": "C",
+          "value": "going"
+        },
+        {
+          "key": "D",
+          "value": "went"
+        }
+      ],
+      "answer": "B",
+      "score": 2,
+      "difficulty": "easy",
+      "source": "legacy"
+    },
+    {
+      "id": "q006",
+      "subject": "英语",
+      "track": "文科",
+      "questionNumber": 2,
+      "question": "What is the synonym of \"happy\"?",
+      "type": "选择题",
+      "partTitle": "词汇",
+      "sourceFile": "sample.txt",
+      "lineNumber": 75,
+      "uniqueId": "english_002",
+      "options": [
+        {
+          "key": "A",
+          "value": "sad"
+        },
+        {
+          "key": "B",
+          "value": "angry"
+        },
+        {
+          "key": "C",
+          "value": "glad"
+        },
+        {
+          "key": "D",
+          "value": "tired"
+        }
+      ],
+      "answer": "C",
+      "score": 2,
+      "difficulty": "easy",
+      "source": "legacy"
+    },
+    {
+      "id": "q007",
+      "subject": "物理",
+      "track": "理科",
+      "questionNumber": 1,
+      "question": "一个物体从高处自由落下（忽略空气阻力），下落2秒后的速度为（g取10m/s²）：",
+      "type": "选择题",
+      "partTitle": "力学",
+      "sourceFile": "sample.txt",
+      "lineNumber": 90,
+      "uniqueId": "physics_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "10 m/s"
+        },
+        {
+          "key": "B",
+          "value": "20 m/s"
+        },
+        {
+          "key": "C",
+          "value": "30 m/s"
+        },
+        {
+          "key": "D",
+          "value": "40 m/s"
+        }
+      ],
+      "answer": "B",
+      "score": 4,
+      "difficulty": "medium",
+      "source": "legacy"
+    },
+    {
+      "id": "q008",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 1,
+      "question": "下列物质中，属于纯净物的是：",
+      "type": "选择题",
+      "partTitle": "物质分类",
+      "sourceFile": "sample.txt",
+      "lineNumber": 105,
+      "uniqueId": "chemistry_001",
+      "options": [
+        {
+          "key": "A",
+          "value": "空气"
+        },
+        {
+          "key": "B",
+          "value": "海水"
+        },
+        {
+          "key": "C",
+          "value": "蒸馏水"
+        },
+        {
+          "key": "D",
+          "value": "石油"
+        }
+      ],
+      "answer": "C",
+      "score": 3,
+      "difficulty": "easy",
+      "source": "legacy"
+    },
+    {
+      "id": "q009",
+      "subject": "历史",
+      "track": "文科",
+      "questionNumber": 1,
+      "question": "中华人民共和国成立于哪一年？",
+      "type": "填空题",
+      "partTitle": "近现代史",
+      "sourceFile": "sample.txt",
+      "lineNumber": 120,
+      "uniqueId": "history_001",
+      "answer": "1949",
+      "score": 2,
+      "difficulty": "easy",
+      "source": "legacy"
+    },
+    {
+      "id": "q010",
+      "subject": "地理",
+      "track": "文科",
+      "questionNumber": 1,
+      "question": "简述地球自转的地理意义。",
+      "type": "问答题",
+      "partTitle": "地球运动",
+      "sourceFile": "sample.txt",
+      "lineNumber": 135,
+      "uniqueId": "geography_001",
+      "answer": "1. 产生昼夜交替现象；2. 产生地方时差异；3. 使水平运动物体产生偏转（地转偏向力）；4. 影响地球形状（赤道略鼓，两极稍扁）。",
+      "score": 6,
+      "difficulty": "medium",
+      "source": "legacy"
+    }
+  ]
 }

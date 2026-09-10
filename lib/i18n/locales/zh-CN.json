@@ -1,12 +1,12 @@
 {
   "common": {
     "you": "你",
-    "confirm": "确定",
-    "cancel": "取消",
-    "loading": "加载中..."
+    "confirm": "准奏",
+    "cancel": "作罢",
+    "loading": "幕僚筹备中…"
   },
   "home": {
-    "slogan": "Generative Learning in Multi-Agent Interactive Classroom",
+    "slogan": "多智能体议事课堂 · 闯关研学",
     "greetingWithName": "嗨，{{name}}"
   },
   "toolbar": {
@@ -86,6 +86,22 @@
       "lecture": "授课"
     }
   },
+  "mockExam": {
+    "examMode": "演武场",
+    "fullMode": "全真试航",
+    "practiceMode": "短途练手",
+    "fullDescription": "全真试航，检验出海实力，预判战果",
+    "practiceDescription": "依薄弱航段短途练手",
+    "examNotes": "试航须知",
+    "title": "试航演练",
+    "description": "全真试航，检验出海实力，预判战果",
+    "start": "开始试航",
+    "time": "剩余时辰",
+    "answered": "已命中",
+    "correct": "命中",
+    "submit": "呈上案卷",
+    "completed": "金榜题名！准奏！"
+  },
   "actions": {
     "names": {
       "spotlight": "聚光灯",
@@ -105,12 +121,12 @@
     "status": {
       "inputStreaming": "等待中",
       "inputAvailable": "执行中",
-      "outputAvailable": "已完成",
-      "outputError": "错误",
+      "outputAvailable": "已通关",
+      "outputError": "战损",
       "outputDenied": "已拒绝",
       "running": "执行中",
-      "result": "已完成",
-      "error": "错误"
+      "result": "已通关",
+      "error": "战损"
     }
   },
   "agentBar": {
@@ -118,7 +134,7 @@
     "expandedTitle": "课堂角色配置",
     "configTooltip": "点击配置课堂角色",
     "voiceLabel": "音色",
-    "voiceLoading": "加载中...",
+    "voiceLoading": "幕僚筹备中…",
     "voiceAutoAssign": "音色将自动分配",
     "searchVoice": "搜索音色",
     "noMatchingVoices": "没有匹配音色"
@@ -126,39 +142,39 @@
   "proactiveCard": {
     "discussion": "讨论",
     "join": "加入讨论",
-    "skip": "跳过",
+    "skip": "暂避",
     "pause": "暂停",
     "resume": "继续"
   },
   "voice": {
-    "startListening": "语音输入",
+    "startListening": "传声海螺",
     "stopListening": "停止录音"
   },
   "stage": {
     "currentScene": "当前场景",
-    "generating": "生成中...",
+    "generating": "先生正在挥毫",
     "paused": "已暂停",
-    "generationFailed": "生成失败",
+    "generationFailed": "铸课未竟，请再试航",
     "confirmSwitchTitle": "切换页面",
     "confirmSwitchMessage": "当前话题正在进行中，切换页面将结束当前话题。确定要切换吗？",
-    "generatingNextPage": "场景正在生成，请稍候...",
-    "courseComplete": "课程完成",
+    "generatingNextPage": "场景正在生成，提督稍安勿躁",
+    "courseComplete": "此战大捷！",
     "fullscreen": "全屏",
     "exitFullscreen": "退出全屏"
   },
   "classroomComplete": {
-    "title": "课程完成",
+    "title": "此战大捷！",
     "trailLabels": {
       "slide": "页",
       "quiz": "小测",
       "interactive": "互动",
       "pbl": "项目"
     },
-    "quizScoreLabel": "答对 {{correct}} / {{total}}",
+    "quizScoreLabel": "命中 {{correct}} / {{total}}",
     "encouragement": {
-      "high": "太棒了，完美发挥！",
-      "mid": "表现不错，继续加油！",
-      "low": "万事开头难，回去再练练吧。"
+      "high": "破敌千舰，甲上无双！",
+      "mid": "初露锋芒，可再战一程！",
+      "low": "触礁未捷，回港整备再出征！"
     }
   },
   "whiteboard": {
@@ -179,12 +195,12 @@
     "elementCount": "{{count}} 个元素"
   },
   "quiz": {
-    "title": "随堂测验",
-    "subtitle": "检测你的学习成果",
+    "title": "随堂演武",
+    "subtitle": "检验此程所学",
     "questionsCount": "道题",
     "totalPrefix": "共",
     "pointsSuffix": "分",
-    "startQuiz": "开始答题",
+    "startQuiz": "领令应战",
     "multipleChoiceHint": "（多选题，请选择所有正确答案）",
     "inputPlaceholder": "请在此输入你的回答...",
     "charCount": "字",
@@ -195,34 +211,34 @@
     "multipleChoice": "多选",
     "shortAnswer": "简答",
     "analysis": "解析：",
-    "excellent": "优秀！",
-    "keepGoing": "继续加油！",
-    "needsReview": "需要复习",
-    "correct": "正确",
-    "incorrect": "错误",
+    "excellent": "甲上！",
+    "keepGoing": "乘胜追击！",
+    "needsReview": "待整备",
+    "correct": "命中！",
+    "incorrect": "触礁！",
     "answering": "答题中",
-    "submitAnswers": "提交答案",
-    "aiGrading": "AI 正在批改中...",
-    "aiGradingWait": "请稍候，正在分析你的答案",
-    "quizReport": "答题报告",
-    "retry": "重新答题"
+    "submitAnswers": "呈上案卷",
+    "aiGrading": "幕僚审卷中…",
+    "aiGradingWait": "提督稍安勿躁，正在分析你的答案",
+    "quizReport": "演武战报",
+    "retry": "再战"
   },
   "roundtable": {
     "teacher": "教师",
     "you": "你",
-    "inputPlaceholder": "输入你的消息...",
+    "inputPlaceholder": "请提督下令…",
     "listening": "录音中...",
     "processing": "处理中...",
     "noSpeechDetected": "未检测到语音，请重试",
-    "discussionEnded": "讨论已结束",
-    "qaEnded": "问答已结束",
+    "discussionEnded": "议事已散",
+    "qaEnded": "问政已毕",
     "thinking": "思考中",
-    "yourTurn": "轮到你发言了",
-    "stopDiscussion": "结束讨论",
+    "yourTurn": "请提督开金口",
+    "stopDiscussion": "散朝",
     "autoPlay": "自动播放",
     "autoPlayOff": "关闭自动播放",
     "speed": "倍速",
-    "voiceInput": "语音输入",
+    "voiceInput": "传声海螺",
     "voiceInputDisabled": "语音输入已禁用",
     "textInput": "文字输入",
     "stopRecording": "停止录音",
@@ -236,16 +252,16 @@
       "description": "选择一个角色开始项目协作"
     },
     "workspace": {
-      "restart": "重新开始",
+      "restart": "重整旗鼓",
       "confirmRestart": "确定重置进度？",
-      "confirm": "确定",
-      "cancel": "取消"
+      "confirm": "准奏",
+      "cancel": "作罢"
     },
     "issueboard": {
       "title": "任务看板",
       "noIssues": "暂无任务",
-      "statusDone": "已完成",
-      "statusActive": "进行中",
+      "statusDone": "已通关",
+      "statusActive": "航行中",
       "statusPending": "待处理"
     },
     "chat": {
@@ -254,8 +270,8 @@
       "mentionHint": "使用 @question 提问，@judge 提交评审",
       "placeholder": "输入消息...",
       "send": "发送",
-      "issueCompleteMessage": "任务「{{completed}}」已完成！进入下一个任务：「{{next}}」",
-      "allCompleteMessage": "🎉 所有任务都已完成！项目做得很棒！"
+      "issueCompleteMessage": "任务「{{completed}}」已破敌！转战「{{next}}」",
+      "allCompleteMessage": "🎉 全军凯旋！项目大捷！"
     },
     "guide": {
       "howItWorks": "如何参与项目",
@@ -302,7 +318,7 @@
     "slides": "页",
     "nameCopied": "课堂名称已复制",
     "deleteConfirmTitle": "删除课堂",
-    "delete": "删除",
+    "delete": "革除",
     "rename": "重命名",
     "renamePlaceholder": "输入课堂名称",
     "renameFailed": "重命名失败",
@@ -330,8 +346,8 @@
     "generatingSlideContentDesc": "正在创建幻灯片、测验和互动内容...",
     "generatingActions": "生成教学动作",
     "generatingActionsDesc": "正在编排讲解、聚焦和互动流程...",
-    "generationComplete": "生成完成！",
-    "generationFailed": "生成失败",
+    "generationComplete": "讲案已成，请提督过目",
+    "generationFailed": "铸课未竟，请再试航",
     "generatingCourse": "正在生成课程",
     "openingClassroom": "即将打开课堂...",
     "outlineReady": "课程大纲已生成",
@@ -345,7 +361,7 @@
     "sessionNotFoundDesc": "请先填写课程需求开始生成流程。",
     "goBackAndRetry": "返回重试",
     "classroomReady": "你的个性化AI学习环境已成功生成。",
-    "aiWorking": "AI智能体工作中...",
+    "aiWorking": "先生正在挥毫",
     "textTruncated": "文档文本较长，已截取前 {{n}} 字符用于生成",
     "imageTruncated": "文档含 {{total}} 张图片，超出上限 {{max}} 张，多余图片将仅以文字描述传递",
     "agentGeneration": "生成课堂角色",
@@ -391,7 +407,7 @@
     "insertSceneHere": "在此处插入一个场景",
     "deleteSceneConfirm": "删除该场景？",
     "deleteSceneConfirmDesc": "该场景及其关键要点将从大纲中移除。",
-    "deleteSceneConfirmAction": "删除",
+    "deleteSceneConfirmAction": "革除",
     "collapseEditor": "收起",
     "quizConfigSummary": "{{count}} 道题",
     "dragSceneHint": "拖动排序；或聚焦后按 Ctrl/⌘ + ↑ / ↓",
@@ -404,7 +420,7 @@
     "webSearchFailed": "网络搜索失败"
   },
   "settings": {
-    "title": "设置",
+    "title": "府邸规制",
     "description": "配置应用程序设置",
     "language": "语言",
     "languageDesc": "选择界面语言",
@@ -479,7 +495,7 @@
       "default-6": "深入思考，喜欢探讨问题本质"
     },
     "close": "关闭",
-    "save": "保存",
+    "save": "归档",
     "providers": "语言模型",
     "addProviderDescription": "添加自定义模型提供方以扩展可用的AI模型",
     "providerNames": {
@@ -598,9 +614,9 @@
     "outputWindowLabel": "最大输出Token数",
     "outputWindowPlaceholder": "例如 4096",
     "testModel": "测试模型",
-    "deleteModel": "删除",
-    "cancelEdit": "取消",
-    "saveModel": "保存",
+    "deleteModel": "革除",
+    "cancelEdit": "作罢",
+    "saveModel": "归档",
     "howToUse": "使用说明",
     "step1ConfigureProvider": "前往\"模型提供方\"页面，选择或添加一个提供方，配置连接信息（API 密钥、Base URL 等）",
     "step2SelectModel": "在下方\"使用模型\"中选择要使用的模型",
@@ -703,7 +719,7 @@
     "browserNativeTTSNote": "浏览器原生 TTS 无需配置，完全免费，使用系统内置语音",
     "testTTS": "测试 TTS",
     "testASR": "测试 ASR",
-    "testSuccess": "测试成功",
+    "testSuccess": "恭贺提督，此航顺利通关",
     "testFailed": "测试失败",
     "ttsTestText": "TTS 测试文本",
     "ttsTestSuccess": "TTS 测试成功，音频已播放",
@@ -982,7 +998,7 @@
     "videoTestPromptDefault": "一只可爱的猫咪在书桌上行走",
     "videoGenerating": "正在生成视频（预计1-2分钟）...",
     "videoGenerationWarning": "视频生成通常需要1-2分钟，请耐心等待",
-    "mediaRetry": "重试",
+    "mediaRetry": "重整旗鼓",
     "mediaContentSensitive": "抱歉，该内容触发了安全检查",
     "mediaGenerationDisabled": "已在设置中关闭生成",
     "singleAgent": "单智能体模式",
@@ -1025,7 +1041,7 @@
     "optional": "可选"
   },
   "profile": {
-    "title": "个人资料",
+    "title": "提督印信",
     "defaultNickname": "同学",
     "chooseAvatar": "选择头像",
     "uploadAvatar": "上传",
@@ -1053,6 +1069,6 @@
   "accessCode": {
     "title": "请输入访问码",
     "placeholder": "访问码",
-    "error": "访问码错误，请重试。"
+    "error": "令符有误，请重试。"
   }
 }

@@ -13,13 +13,16 @@
     "start": "next start",
     "lint": "eslint",
     "check:i18n-keys": "node scripts/check-i18n-keys.mjs",
+    "gen:sfx": "node scripts/generate-sfx.mjs",
     "check": "prettier . --check",
     "format": "prettier . --write",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "eval:whiteboard": "tsx eval/whiteboard-layout/runner.ts",
-    "eval:outline-language": "tsx eval/outline-language/runner.ts"
+    "eval:outline-language": "tsx eval/outline-language/runner.ts",
+    "build:edgeone": "next build",
+    "deploy:edgeone": "npx @cloudbase/cli hosting:deploy ./out -e your-env-id"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.71",
@@ -60,6 +63,7 @@
     "jszip": "^3.10.1",
     "katex": "^0.16.33",
     "lodash": "^4.17.21",
+    "lodash-es": "^4.18.1",
     "lucide-react": "^0.562.0",
     "mathml2omml": "workspace:*",
     "mitt": "^3.0.1",
@@ -112,12 +116,14 @@
     "@types/file-saver": "^2.0.7",
     "@types/katex": "^0.16.8",
     "@types/lodash": "^4.17.23",
+    "@types/lodash-es": "^4.17.12",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/tinycolor2": "^1.4.6",
     "eslint": "^9",
     "eslint-config-next": "16.1.2",
+    "ffmpeg-static": "^5.3.0",
     "prettier": "3.8.1",
     "rollup": "^4.35.0",
     "rollup-plugin-typescript2": "^0.36.0",
@@ -132,6 +138,9 @@
     "ignoredBuiltDependencies": [
       "sharp",
       "unrs-resolver"
+    ],
+    "onlyBuiltDependencies": [
+      "ffmpeg-static"
     ]
   },
   "packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48"

@@ -13,17 +13,17 @@ import {
   translations,
   LANGUAGES,
   getTranslation,
-  type Translations,
 } from './translations';
+import type { StrictTranslations } from './hooks';
 
 type CscaI18nContextValue = {
   locale: string;
-  t: Translations;
+  t: StrictTranslations;
   changeLocale: (newLocale: string) => void;
   languages: typeof LANGUAGES;
 };
 
-const CscaI18nContext = createContext<CscaI18nContextValue | null>(null);
+export const CscaI18nContext = createContext<CscaI18nContextValue | null>(null);
 
 const HTML_LANG: Record<string, string> = {
   zh: 'zh-CN',
@@ -33,10 +33,15 @@ const HTML_LANG: Record<string, string> = {
   ms: 'ms-MY',
   tl: 'tl-PH',
   en: 'en',
+  my: 'my',
+  km: 'km',
+  lo: 'lo',
+  ja: 'ja-JP',
+  fr: 'fr-FR',
 };
 
 export function CscaI18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState('th');
+  const [locale, setLocale] = useState('zh');
 
   useEffect(() => {
     const saved = localStorage.getItem('csca_locale');
@@ -56,7 +61,7 @@ export function CscaI18nProvider({ children }: { children: ReactNode }) {
   const value = useMemo(
     () => ({
       locale,
-      t: getTranslation(locale),
+      t: getTranslation(locale) as StrictTranslations,
       changeLocale,
       languages: LANGUAGES,
     }),

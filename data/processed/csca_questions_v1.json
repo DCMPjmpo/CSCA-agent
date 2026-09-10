@@ -1,0 +1,7667 @@
+{
+  "metadata": {
+    "version": "v1",
+    "totalQuestions": 225,
+    "source": "ETL_FINAL_VERIFIED",
+    "importDate": "2026-09-06"
+  },
+  "questions": [
+    {
+      "id": "RQ-CE019437",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 1,
+      "question": "“这只⼩狗⻓得真漂亮！”中“⻓”的读⾳是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-CE019437",
+      "options": [
+        {
+          "key": "A",
+          "value": "zhǎng"
+        },
+        {
+          "key": "B",
+          "value": "cháng"
+        },
+        {
+          "key": "C",
+          "value": "zǎng"
+        },
+        {
+          "key": "D",
+          "value": "cáng"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-A5F499C6",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 2,
+      "question": "“我的爱好是听⾳乐。”中“好”的读⾳是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-A5F499C6",
+      "options": [
+        {
+          "key": "A",
+          "value": "hǎo"
+        },
+        {
+          "key": "B",
+          "value": "hào"
+        },
+        {
+          "key": "C",
+          "value": "háo"
+        },
+        {
+          "key": "D",
+          "value": "hāo"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-0CDB7AA1",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 3,
+      "question": "下列“还”读⾳不同的⼀项是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0CDB7AA1",
+      "options": [
+        {
+          "key": "A",
+          "value": "还好"
+        },
+        {
+          "key": "B",
+          "value": "还早"
+        },
+        {
+          "key": "C",
+          "value": "还书"
+        },
+        {
+          "key": "D",
+          "value": "还快"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-4D6E17ED",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 4,
+      "question": "下列“要”读⾳不同的⼀项是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-4D6E17ED",
+      "options": [
+        {
+          "key": "A",
+          "value": "要是"
+        },
+        {
+          "key": "B",
+          "value": "要求"
+        },
+        {
+          "key": "C",
+          "value": "只要"
+        },
+        {
+          "key": "D",
+          "value": "需要"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-40332CE0",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 5,
+      "question": "我和朋友来⾃不(tóng) 的城市。正确汉字是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-40332CE0",
+      "options": [
+        {
+          "key": "A",
+          "value": "问"
+        },
+        {
+          "key": "B",
+          "value": "同"
+        },
+        {
+          "key": "C",
+          "value": "间"
+        },
+        {
+          "key": "D",
+          "value": "问"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-4BD552DC",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 6,
+      "question": "这个道理我很明(bai)。正确汉字是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-4BD552DC",
+      "options": [
+        {
+          "key": "A",
+          "value": "⾃"
+        },
+        {
+          "key": "B",
+          "value": "百"
+        },
+        {
+          "key": "C",
+          "value": "⽩"
+        },
+        {
+          "key": "D",
+          "value": "⽬"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-1088C207",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 7,
+      "question": "⽼师的发⾳很标(zhǔn)。正确汉字是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1088C207",
+      "options": [
+        {
+          "key": "A",
+          "value": "谁"
+        },
+        {
+          "key": "B",
+          "value": "推"
+        },
+        {
+          "key": "C",
+          "value": "准"
+        },
+        {
+          "key": "D",
+          "value": "难"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-0A997616",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 8,
+      "question": "我每天都要(xué) 汉语。正确汉字是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0A997616",
+      "options": [
+        {
+          "key": "A",
+          "value": "学"
+        },
+        {
+          "key": "B",
+          "value": "字"
+        },
+        {
+          "key": "C",
+          "value": "完"
+        },
+        {
+          "key": "D",
+          "value": "觉"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-47B88E2D",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 9,
+      "question": "下列汉字与“⽔”有关的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-47B88E2D",
+      "options": [
+        {
+          "key": "A",
+          "value": "河"
+        },
+        {
+          "key": "B",
+          "value": "树"
+        },
+        {
+          "key": "C",
+          "value": "灯"
+        },
+        {
+          "key": "D",
+          "value": "⼭"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-0AB8D0AA",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 10,
+      "question": "下列“发”意思不同的⼀项是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0AB8D0AA",
+      "options": [
+        {
+          "key": "A",
+          "value": "发短信"
+        },
+        {
+          "key": "B",
+          "value": "发⾔"
+        },
+        {
+          "key": "C",
+          "value": "发快递"
+        },
+        {
+          "key": "D",
+          "value": "发邮件"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-0216C768",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 11,
+      "question": "运动可以______压⼒。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0216C768",
+      "options": [
+        {
+          "key": "A",
+          "value": "避免"
+        },
+        {
+          "key": "B",
+          "value": "测量"
+        },
+        {
+          "key": "C",
+          "value": "⾜够"
+        },
+        {
+          "key": "D",
+          "value": "提⾼"
+        },
+        {
+          "key": "E",
+          "value": "观察F.缓解"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-F48FD18F",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 12,
+      "question": "遵守规则能______危险。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-F48FD18F",
+      "options": [
+        {
+          "key": "A",
+          "value": "避免"
+        },
+        {
+          "key": "B",
+          "value": "测量"
+        },
+        {
+          "key": "C",
+          "value": "⾜够"
+        },
+        {
+          "key": "D",
+          "value": "提⾼"
+        },
+        {
+          "key": "E",
+          "value": "观察F.缓解"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-ED936D5D",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 13,
+      "question": "我们今天去______博物馆。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-ED936D5D",
+      "options": [
+        {
+          "key": "A",
+          "value": "避免"
+        },
+        {
+          "key": "B",
+          "value": "测量"
+        },
+        {
+          "key": "C",
+          "value": "⾜够"
+        },
+        {
+          "key": "D",
+          "value": "提⾼"
+        },
+        {
+          "key": "E",
+          "value": "观察F.缓解"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-FF001AA1",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 14,
+      "question": "教室⾥有______的椅⼦。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-FF001AA1",
+      "options": [
+        {
+          "key": "A",
+          "value": "避免"
+        },
+        {
+          "key": "B",
+          "value": "测量"
+        },
+        {
+          "key": "C",
+          "value": "⾜够"
+        },
+        {
+          "key": "D",
+          "value": "提⾼"
+        },
+        {
+          "key": "E",
+          "value": "观察F.缓解"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-FA014966",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 15,
+      "question": "多练习可以______汉语⽔平。 CSCA Humanity Chinese April 2026",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-FA014966",
+      "options": [
+        {
+          "key": "A",
+          "value": "避免"
+        },
+        {
+          "key": "B",
+          "value": "测量"
+        },
+        {
+          "key": "C",
+          "value": "⾜够"
+        },
+        {
+          "key": "D",
+          "value": "提⾼"
+        },
+        {
+          "key": "E",
+          "value": "观察F.缓解"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-F3557D46",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 16,
+      "question": "图书馆⾥有很多______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-F3557D46",
+      "options": [
+        {
+          "key": "A",
+          "value": "温度"
+        },
+        {
+          "key": "B",
+          "value": "密度"
+        },
+        {
+          "key": "C",
+          "value": "能量"
+        },
+        {
+          "key": "D",
+          "value": "压强"
+        },
+        {
+          "key": "E",
+          "value": "质量F.速度"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-B4FEF425",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 17,
+      "question": "我们要发现⽣活中______的事物。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B4FEF425",
+      "options": [
+        {
+          "key": "A",
+          "value": "温度"
+        },
+        {
+          "key": "B",
+          "value": "密度"
+        },
+        {
+          "key": "C",
+          "value": "能量"
+        },
+        {
+          "key": "D",
+          "value": "压强"
+        },
+        {
+          "key": "E",
+          "value": "质量F.速度"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-5F1EAE52",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 18,
+      "question": "她的⼼⾥______希望。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-5F1EAE52",
+      "options": [
+        {
+          "key": "A",
+          "value": "温度"
+        },
+        {
+          "key": "B",
+          "value": "密度"
+        },
+        {
+          "key": "C",
+          "value": "能量"
+        },
+        {
+          "key": "D",
+          "value": "压强"
+        },
+        {
+          "key": "E",
+          "value": "质量F.速度"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-AF5CF5E8",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 19,
+      "question": "这⾸歌很______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-AF5CF5E8",
+      "options": [
+        {
+          "key": "A",
+          "value": "温度"
+        },
+        {
+          "key": "B",
+          "value": "密度"
+        },
+        {
+          "key": "C",
+          "value": "能量"
+        },
+        {
+          "key": "D",
+          "value": "压强"
+        },
+        {
+          "key": "E",
+          "value": "质量F.速度"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-49ACF2BC",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 20,
+      "question": "画画可以培养______修养。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-49ACF2BC",
+      "options": [
+        {
+          "key": "A",
+          "value": "温度"
+        },
+        {
+          "key": "B",
+          "value": "密度"
+        },
+        {
+          "key": "C",
+          "value": "能量"
+        },
+        {
+          "key": "D",
+          "value": "压强"
+        },
+        {
+          "key": "E",
+          "value": "质量F.速度"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-0894DFC4",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 21,
+      "question": "我喜欢读______诗词。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0894DFC4",
+      "options": [
+        {
+          "key": "A",
+          "value": "分解"
+        },
+        {
+          "key": "B",
+          "value": "溶解"
+        },
+        {
+          "key": "C",
+          "value": "反应"
+        },
+        {
+          "key": "D",
+          "value": "加热"
+        },
+        {
+          "key": "E",
+          "value": "导电F.平衡"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-48C1AD0B",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 22,
+      "question": "学校将______新的规定。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-48C1AD0B",
+      "options": [
+        {
+          "key": "A",
+          "value": "分解"
+        },
+        {
+          "key": "B",
+          "value": "溶解"
+        },
+        {
+          "key": "C",
+          "value": "反应"
+        },
+        {
+          "key": "D",
+          "value": "加热"
+        },
+        {
+          "key": "E",
+          "value": "导电F.平衡"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-9F2D1D64",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 23,
+      "question": "中国______是传统艺术。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9F2D1D64",
+      "options": [
+        {
+          "key": "A",
+          "value": "分解"
+        },
+        {
+          "key": "B",
+          "value": "溶解"
+        },
+        {
+          "key": "C",
+          "value": "反应"
+        },
+        {
+          "key": "D",
+          "value": "加热"
+        },
+        {
+          "key": "E",
+          "value": "导电F.平衡"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-47BD7CE1",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 24,
+      "question": "电脑______坏了。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-47BD7CE1",
+      "options": [
+        {
+          "key": "A",
+          "value": "分解"
+        },
+        {
+          "key": "B",
+          "value": "溶解"
+        },
+        {
+          "key": "C",
+          "value": "反应"
+        },
+        {
+          "key": "D",
+          "value": "加热"
+        },
+        {
+          "key": "E",
+          "value": "导电F.平衡"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-40B50484",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 25,
+      "question": "签合同前要看清______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-40B50484",
+      "options": [
+        {
+          "key": "A",
+          "value": "分解"
+        },
+        {
+          "key": "B",
+          "value": "溶解"
+        },
+        {
+          "key": "C",
+          "value": "反应"
+        },
+        {
+          "key": "D",
+          "value": "加热"
+        },
+        {
+          "key": "E",
+          "value": "导电F.平衡"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "词语填空"
+    },
+    {
+      "id": "RQ-B555A7E6",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 26,
+      "question": "与“紧张”意思相近的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B555A7E6",
+      "options": [
+        {
+          "key": "A",
+          "value": "开⼼"
+        },
+        {
+          "key": "B",
+          "value": "不安"
+        },
+        {
+          "key": "C",
+          "value": "好奇"
+        },
+        {
+          "key": "D",
+          "value": "难过"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-2E4745F7",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 27,
+      "question": "与“重视”意思相近的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-2E4745F7",
+      "options": [
+        {
+          "key": "A",
+          "value": "改进"
+        },
+        {
+          "key": "B",
+          "value": "关注"
+        },
+        {
+          "key": "C",
+          "value": "公开"
+        },
+        {
+          "key": "D",
+          "value": "加强"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-10DE636B",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 28,
+      "question": "与“保存”意思相近的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-10DE636B",
+      "options": [
+        {
+          "key": "A",
+          "value": "保证"
+        },
+        {
+          "key": "B",
+          "value": "保留"
+        },
+        {
+          "key": "C",
+          "value": "保护"
+        },
+        {
+          "key": "D",
+          "value": "保持"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-0A7AB59E",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 29,
+      "question": "与“重新”意思相近的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0A7AB59E",
+      "options": [
+        {
+          "key": "A",
+          "value": "全部"
+        },
+        {
+          "key": "B",
+          "value": "反复"
+        },
+        {
+          "key": "C",
+          "value": "重做"
+        },
+        {
+          "key": "D",
+          "value": "创新"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-165130C9",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 30,
+      "question": "与“必须”意思相近的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-165130C9",
+      "options": [
+        {
+          "key": "A",
+          "value": "不必"
+        },
+        {
+          "key": "B",
+          "value": "务必"
+        },
+        {
+          "key": "C",
+          "value": "不要"
+        },
+        {
+          "key": "D",
+          "value": "必要"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-476C1CF0",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 31,
+      "question": "与“成果”意思相反的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-476C1CF0",
+      "options": [
+        {
+          "key": "A",
+          "value": "成就"
+        },
+        {
+          "key": "B",
+          "value": "后果"
+        },
+        {
+          "key": "C",
+          "value": "效果"
+        },
+        {
+          "key": "D",
+          "value": "成绩"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-C53829E4",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 32,
+      "question": "与“冷静”意思相反的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-C53829E4",
+      "options": [
+        {
+          "key": "A",
+          "value": "热情"
+        },
+        {
+          "key": "B",
+          "value": "冲动"
+        },
+        {
+          "key": "C",
+          "value": "惊讶"
+        },
+        {
+          "key": "D",
+          "value": "害怕"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-298A8E72",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 33,
+      "question": "与“放弃”意思相反的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-298A8E72",
+      "options": [
+        {
+          "key": "A",
+          "value": "坚持"
+        },
+        {
+          "key": "B",
+          "value": "放松"
+        },
+        {
+          "key": "C",
+          "value": "逃跑"
+        },
+        {
+          "key": "D",
+          "value": "抛弃"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-CA39F5AA",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 34,
+      "question": "我喜欢⽤⽇记______⽣活。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-CA39F5AA",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "内容"
+        },
+        {
+          "key": "D",
+          "value": "交流"
+        },
+        {
+          "key": "E",
+          "value": "丰富"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-F866CCAD",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 35,
+      "question": "写⽂章要______可信。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-F866CCAD",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "内容"
+        },
+        {
+          "key": "D",
+          "value": "交流"
+        },
+        {
+          "key": "E",
+          "value": "丰富"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-BE4FECC4",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 36,
+      "question": "这篇⽂章的______很有趣。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-BE4FECC4",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "内容"
+        },
+        {
+          "key": "D",
+          "value": "交流"
+        },
+        {
+          "key": "E",
+          "value": "丰富"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-8C1313C1",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 37,
+      "question": "我们可以⽤汉语______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-8C1313C1",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "内容"
+        },
+        {
+          "key": "D",
+          "value": "交流"
+        },
+        {
+          "key": "E",
+          "value": "丰富"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-BA603AFF",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 38,
+      "question": "我的兴趣很______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-BA603AFF",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "内容"
+        },
+        {
+          "key": "D",
+          "value": "交流"
+        },
+        {
+          "key": "E",
+          "value": "丰富"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-C13F260D",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 39,
+      "question": "这部电影有很多______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-C13F260D",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "数据"
+        },
+        {
+          "key": "D",
+          "value": "分析"
+        },
+        {
+          "key": "E",
+          "value": "交流"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-9D1EE2B4",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 40,
+      "question": "我想______更多中国⽂化。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9D1EE2B4",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "数据"
+        },
+        {
+          "key": "D",
+          "value": "分析"
+        },
+        {
+          "key": "E",
+          "value": "交流"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-CC19E8F8",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 41,
+      "question": "他的______很精彩。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-CC19E8F8",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "数据"
+        },
+        {
+          "key": "D",
+          "value": "分析"
+        },
+        {
+          "key": "E",
+          "value": "交流"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-BC8762C3",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 42,
+      "question": "学习需要______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-BC8762C3",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "数据"
+        },
+        {
+          "key": "D",
+          "value": "分析"
+        },
+        {
+          "key": "E",
+          "value": "交流"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-1E5ECAD7",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 43,
+      "question": "我们要继承______⽂化。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1E5ECAD7",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "数据"
+        },
+        {
+          "key": "D",
+          "value": "分析"
+        },
+        {
+          "key": "E",
+          "value": "交流"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-8DC102F1",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 44,
+      "question": "设计师______了美丽的公园。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-8DC102F1",
+      "options": [
+        {
+          "key": "A",
+          "value": "创新"
+        },
+        {
+          "key": "B",
+          "value": "设备"
+        },
+        {
+          "key": "C",
+          "value": "操作"
+        },
+        {
+          "key": "D",
+          "value": "传统"
+        },
+        {
+          "key": "E",
+          "value": "认识"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-60926FBB",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 45,
+      "question": "妈妈______我的学习。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-60926FBB",
+      "options": [
+        {
+          "key": "A",
+          "value": "创新"
+        },
+        {
+          "key": "B",
+          "value": "设备"
+        },
+        {
+          "key": "C",
+          "value": "操作"
+        },
+        {
+          "key": "D",
+          "value": "传统"
+        },
+        {
+          "key": "E",
+          "value": "认识"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-76A371C1",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 46,
+      "question": "⽼师______我们多提问。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-76A371C1",
+      "options": [
+        {
+          "key": "A",
+          "value": "创新"
+        },
+        {
+          "key": "B",
+          "value": "设备"
+        },
+        {
+          "key": "C",
+          "value": "操作"
+        },
+        {
+          "key": "D",
+          "value": "传统"
+        },
+        {
+          "key": "E",
+          "value": "认识"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-1B2FF8EF",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 47,
+      "question": "我喜欢和朋友______快乐。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1B2FF8EF",
+      "options": [
+        {
+          "key": "A",
+          "value": "创新"
+        },
+        {
+          "key": "B",
+          "value": "设备"
+        },
+        {
+          "key": "C",
+          "value": "操作"
+        },
+        {
+          "key": "D",
+          "value": "传统"
+        },
+        {
+          "key": "E",
+          "value": "认识"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-196E4E5B",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 48,
+      "question": "假期我们去______⻓城。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-196E4E5B",
+      "options": [
+        {
+          "key": "A",
+          "value": "创新"
+        },
+        {
+          "key": "B",
+          "value": "设备"
+        },
+        {
+          "key": "C",
+          "value": "操作"
+        },
+        {
+          "key": "D",
+          "value": "传统"
+        },
+        {
+          "key": "E",
+          "value": "认识"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-9638E4A0",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 49,
+      "question": "作业太多，我没做______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9638E4A0",
+      "options": [
+        {
+          "key": "A",
+          "value": "完"
+        },
+        {
+          "key": "B",
+          "value": "好"
+        },
+        {
+          "key": "C",
+          "value": "到"
+        },
+        {
+          "key": "D",
+          "value": "过"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-9E216AF7",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 50,
+      "question": "他昨天______来的学校。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9E216AF7",
+      "options": [
+        {
+          "key": "A",
+          "value": "是"
+        },
+        {
+          "key": "B",
+          "value": "才"
+        },
+        {
+          "key": "C",
+          "value": "刚"
+        },
+        {
+          "key": "D",
+          "value": "都"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-00F71A12",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 51,
+      "question": "我花了⼀⼩时______看完这本书。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-00F71A12",
+      "options": [
+        {
+          "key": "A",
+          "value": "才"
+        },
+        {
+          "key": "B",
+          "value": "⼜"
+        },
+        {
+          "key": "C",
+          "value": "就"
+        },
+        {
+          "key": "D",
+          "value": "都"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-1C31981E",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 52,
+      "question": "这个要求______留学⽣很重要。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1C31981E",
+      "options": [
+        {
+          "key": "A",
+          "value": "跟"
+        },
+        {
+          "key": "B",
+          "value": "⽐"
+        },
+        {
+          "key": "C",
+          "value": "对"
+        },
+        {
+          "key": "D",
+          "value": "和"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-6D54E35F",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 53,
+      "question": "坐地铁⽐打⻋______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-6D54E35F",
+      "options": [
+        {
+          "key": "A",
+          "value": "更便宜"
+        },
+        {
+          "key": "B",
+          "value": "⼀点⼉便宜"
+        },
+        {
+          "key": "C",
+          "value": "很便宜"
+        },
+        {
+          "key": "D",
+          "value": "便宜便宜"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-C0A853C2",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 54,
+      "question": "______喜欢中国菜，外国⼈也喜欢。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-C0A853C2",
+      "options": [
+        {
+          "key": "A",
+          "value": "不但中国⼈"
+        },
+        {
+          "key": "B",
+          "value": "中国⼈不但"
+        },
+        {
+          "key": "C",
+          "value": "不但中国"
+        },
+        {
+          "key": "D",
+          "value": "中国不但"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-AE85AAF9",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 55,
+      "question": "下课我想去______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-AE85AAF9",
+      "options": [
+        {
+          "key": "A",
+          "value": "跑个步"
+        },
+        {
+          "key": "B",
+          "value": "个跑步"
+        },
+        {
+          "key": "C",
+          "value": "步跑个"
+        },
+        {
+          "key": "D",
+          "value": "跑步个"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-F714BA4A",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 56,
+      "question": "我记得______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-F714BA4A",
+      "options": [
+        {
+          "key": "A",
+          "value": "站在⻔⼝笑的红⾐⼥孩"
+        },
+        {
+          "key": "B",
+          "value": "笑站在⻔⼝红⾐的⼥孩"
+        },
+        {
+          "key": "C",
+          "value": "站在⻔⼝红⾐笑的⼥孩"
+        },
+        {
+          "key": "D",
+          "value": "红⾐笑的⼥孩站在⻔⼝"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-DDF9DF65",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 57,
+      "question": "我们要______保护环境______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-DDF9DF65",
+      "options": [
+        {
+          "key": "A",
+          "value": "⼀直把下去"
+        },
+        {
+          "key": "B",
+          "value": "把环境⼀直保护下去"
+        },
+        {
+          "key": "C",
+          "value": "⼀直保护下去环境"
+        },
+        {
+          "key": "D",
+          "value": "把⼀直保护下去"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-0EBE22F5",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 58,
+      "question": "他获奖了，⼤家来向他______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0EBE22F5",
+      "options": [
+        {
+          "key": "A",
+          "value": "表示祝贺"
+        },
+        {
+          "key": "B",
+          "value": "赢得⽀持"
+        },
+        {
+          "key": "C",
+          "value": "送上感谢"
+        },
+        {
+          "key": "D",
+          "value": "付出关⼼"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-18F2FB03",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 59,
+      "question": "我们要______读书的乐趣。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-18F2FB03",
+      "options": [
+        {
+          "key": "A",
+          "value": "充分享受"
+        },
+        {
+          "key": "B",
+          "value": "宣传⽂化"
+        },
+        {
+          "key": "C",
+          "value": "相当精彩"
+        },
+        {
+          "key": "D",
+          "value": "诸多⽅⾯"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-930FA8AE",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 60,
+      "question": "朋友之间的友谊______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-930FA8AE",
+      "options": [
+        {
+          "key": "A",
+          "value": "⾮常重要"
+        },
+        {
+          "key": "B",
+          "value": "⼗分⼀般"
+        },
+        {
+          "key": "C",
+          "value": "多多少少"
+        },
+        {
+          "key": "D",
+          "value": "不太重要"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-9748FE2C",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 61,
+      "question": "李⽩的诗很有______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9748FE2C",
+      "options": [
+        {
+          "key": "A",
+          "value": "浪漫的情感"
+        },
+        {
+          "key": "B",
+          "value": "古怪的思想"
+        },
+        {
+          "key": "C",
+          "value": "运动的激情"
+        },
+        {
+          "key": "D",
+          "value": "数据的分析"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-41F4A188",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 62,
+      "question": "分享与合作是孩⼦的______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-41F4A188",
+      "options": [
+        {
+          "key": "A",
+          "value": "重要技能"
+        },
+        {
+          "key": "B",
+          "value": "快乐回忆"
+        },
+        {
+          "key": "C",
+          "value": "宝贵资源"
+        },
+        {
+          "key": "D",
+          "value": "有趣玩具"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-54A1B336",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 63,
+      "question": "春节到了，⼤家______准备年货。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-54A1B336",
+      "options": [
+        {
+          "key": "A",
+          "value": "开开⼼⼼"
+        },
+        {
+          "key": "B",
+          "value": "休息休息"
+        },
+        {
+          "key": "C",
+          "value": "打扫打扫"
+        },
+        {
+          "key": "D",
+          "value": "整整⻬⻬"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-B9C39F34",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 64,
+      "question": "这个故事让我______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B9C39F34",
+      "options": [
+        {
+          "key": "A",
+          "value": "难以忘记"
+        },
+        {
+          "key": "B",
+          "value": "⾮常⾼兴"
+        },
+        {
+          "key": "C",
+          "value": "不会受伤"
+        },
+        {
+          "key": "D",
+          "value": "特别舒服"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-CAB2B3AC",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 65,
+      "question": "公园⾥有⼈跑步，______散步，______跳舞。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-CAB2B3AC",
+      "options": [
+        {
+          "key": "A",
+          "value": "有的"
+        },
+        {
+          "key": "B",
+          "value": "还有的"
+        },
+        {
+          "key": "C",
+          "value": "其他的"
+        },
+        {
+          "key": "D",
+          "value": "另有的"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-E09F6D25",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 66,
+      "question": "快乐______我们的⼼情。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-E09F6D25",
+      "options": [
+        {
+          "key": "A",
+          "value": "有关系"
+        },
+        {
+          "key": "B",
+          "value": "没联系"
+        },
+        {
+          "key": "C",
+          "value": "能分开"
+        },
+        {
+          "key": "D",
+          "value": "相⽭盾"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-1059BFA9",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 67,
+      "question": "⽻⽑球是⼀项______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1059BFA9",
+      "options": [
+        {
+          "key": "A",
+          "value": "有趣的运动"
+        },
+        {
+          "key": "B",
+          "value": "优美的舞蹈"
+        },
+        {
+          "key": "C",
+          "value": "好听的歌曲"
+        },
+        {
+          "key": "D",
+          "value": "开⼼的事业"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-D51E67FD",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 68,
+      "question": "汉字是⼀种古⽼的______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-D51E67FD",
+      "options": [
+        {
+          "key": "A",
+          "value": "⽂字系统"
+        },
+        {
+          "key": "B",
+          "value": "书写材料"
+        },
+        {
+          "key": "C",
+          "value": "书法字体"
+        },
+        {
+          "key": "D",
+          "value": "⾊彩搭配"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-99A7F029",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 69,
+      "question": "⼩⻥在⽔⾥______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-99A7F029",
+      "options": [
+        {
+          "key": "A",
+          "value": "游来游去"
+        },
+        {
+          "key": "B",
+          "value": "爬来爬去"
+        },
+        {
+          "key": "C",
+          "value": "跑来跑去"
+        },
+        {
+          "key": "D",
+          "value": "⾛来⾛去"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-50943C89",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 70,
+      "question": "中国节⽇都有⾃⼰的______。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-50943C89",
+      "options": [
+        {
+          "key": "A",
+          "value": "庆祝⽅式"
+        },
+        {
+          "key": "B",
+          "value": "语⾔⽂字"
+        },
+        {
+          "key": "C",
+          "value": "相同意义"
+        },
+        {
+          "key": "D",
+          "value": "唱歌跳舞"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-96BC2B7A",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 71,
+      "question": "短⽂主要讲找⼯作的（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-96BC2B7A",
+      "options": [
+        {
+          "key": "A",
+          "value": "穿着要求"
+        },
+        {
+          "key": "B",
+          "value": "注意事项"
+        },
+        {
+          "key": "C",
+          "value": "礼貌⽤语"
+        },
+        {
+          "key": "D",
+          "value": "说话⽅式"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-929FB014",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 72,
+      "question": "回答问题要（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-929FB014",
+      "options": [
+        {
+          "key": "A",
+          "value": "⼩声"
+        },
+        {
+          "key": "B",
+          "value": "快速"
+        },
+        {
+          "key": "C",
+          "value": "真实"
+        },
+        {
+          "key": "D",
+          "value": "简单 （⼆） 共享单⻋很⽅便，扫码就能骑。很多⼈骑⻋上班、上学。晚上，⼯作⼈员会把共享单⻋集中 起来，检查、修理、清洁，保证第⼆天能正常使⽤。共享单⻋让出⾏更绿⾊、轻松。"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-CA6D7116",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 73,
+      "question": "共享单⻋怎么使⽤？（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-CA6D7116",
+      "options": [
+        {
+          "key": "A",
+          "value": "投币"
+        },
+        {
+          "key": "B",
+          "value": "扫码"
+        },
+        {
+          "key": "C",
+          "value": "刷卡"
+        },
+        {
+          "key": "D",
+          "value": "打电话"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-E1EFDA12",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 74,
+      "question": "⼯作⼈员晚上不做的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-E1EFDA12",
+      "options": [
+        {
+          "key": "A",
+          "value": "检查"
+        },
+        {
+          "key": "B",
+          "value": "修理"
+        },
+        {
+          "key": "C",
+          "value": "售卖"
+        },
+        {
+          "key": "D",
+          "value": "清洁"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-91CCCE54",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 75,
+      "question": "共享单⻋的好处是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-91CCCE54",
+      "options": [
+        {
+          "key": "A",
+          "value": "绿⾊⽅便"
+        },
+        {
+          "key": "B",
+          "value": "速度很快"
+        },
+        {
+          "key": "C",
+          "value": "价格很贵"
+        },
+        {
+          "key": "D",
+          "value": "不⽤停放 （三） 社区图书馆就在⼩区⾥，免费开放。这⾥有故事书、科普书、杂志等。⼤家可以安静阅读， 也能参加读书会、讲故事等活动。它⽅便居⺠，丰富了⼤家的⽣活。"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-1AD3A1ED",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 76,
+      "question": "社区图书馆（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1AD3A1ED",
+      "options": [
+        {
+          "key": "A",
+          "value": "收费"
+        },
+        {
+          "key": "B",
+          "value": "免费"
+        },
+        {
+          "key": "C",
+          "value": "只卖书"
+        },
+        {
+          "key": "D",
+          "value": "很远"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-EC5A2F6A",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 77,
+      "question": "图书馆⾥没有（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-EC5A2F6A",
+      "options": [
+        {
+          "key": "A",
+          "value": "故事书"
+        },
+        {
+          "key": "B",
+          "value": "科普书"
+        },
+        {
+          "key": "C",
+          "value": "杂志"
+        },
+        {
+          "key": "D",
+          "value": "汽⻋"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-D69D5E02",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 78,
+      "question": "社区图书馆的活动是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-D69D5E02",
+      "options": [
+        {
+          "key": "A",
+          "value": "读书会"
+        },
+        {
+          "key": "B",
+          "value": "⾜球赛"
+        },
+        {
+          "key": "C",
+          "value": "卖东⻄"
+        },
+        {
+          "key": "D",
+          "value": "看电影"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-63A3CAB9",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 79,
+      "question": "图书馆的作⽤是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-63A3CAB9",
+      "options": [
+        {
+          "key": "A",
+          "value": "提供阅读空间"
+        },
+        {
+          "key": "B",
+          "value": "卖书赚钱"
+        },
+        {
+          "key": "C",
+          "value": "存放物品"
+        },
+        {
+          "key": "D",
+          "value": "锻炼身体"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-EBCF80A0",
+      "subject": "中文(文科)",
+      "track": "文科",
+      "questionNumber": 80,
+      "question": "社区图书馆让⽣活（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25文科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-EBCF80A0",
+      "options": [
+        {
+          "key": "A",
+          "value": "更丰富"
+        },
+        {
+          "key": "B",
+          "value": "更忙碌"
+        },
+        {
+          "key": "C",
+          "value": "更昂贵"
+        },
+        {
+          "key": "D",
+          "value": "更简单"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-FCF1855E",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 1,
+      "question": "“这朵花开得真好看！",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-FCF1855E",
+      "options": [
+        {
+          "key": "A",
+          "value": "de"
+        },
+        {
+          "key": "B",
+          "value": "dé"
+        },
+        {
+          "key": "C",
+          "value": "děi"
+        },
+        {
+          "key": "D",
+          "value": "d ”句中“得”的读⾳是（ ） ē"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-FA50E4D0",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 2,
+      "question": "“⼩明爱好观察⾃然现象。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-FA50E4D0",
+      "options": [
+        {
+          "key": "A",
+          "value": "hǎo"
+        },
+        {
+          "key": "B",
+          "value": "hào"
+        },
+        {
+          "key": "C",
+          "value": "háo"
+        },
+        {
+          "key": "D",
+          "value": "hā ”句中“好”的读⾳是（ ） o"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-3733466B",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 5,
+      "question": "两次实验的结果不(tóng)。正确汉字是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-3733466B",
+      "options": [
+        {
+          "key": "A",
+          "value": "问"
+        },
+        {
+          "key": "B",
+          "value": "同"
+        },
+        {
+          "key": "C",
+          "value": "间"
+        },
+        {
+          "key": "D",
+          "value": "闻"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-F3976AAE",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 6,
+      "question": "这个科学道理我很明(bai)。正确汉字是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-F3976AAE",
+      "options": [
+        {
+          "key": "A",
+          "value": "⾃"
+        },
+        {
+          "key": "B",
+          "value": "百"
+        },
+        {
+          "key": "C",
+          "value": "⽩"
+        },
+        {
+          "key": "D",
+          "value": "⽬ 难"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-A0778D53",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 8,
+      "question": "我们要认真(xué)习物理知识。正确汉字是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-A0778D53",
+      "options": [
+        {
+          "key": "A",
+          "value": "学"
+        },
+        {
+          "key": "B",
+          "value": "字"
+        },
+        {
+          "key": "C",
+          "value": "完"
+        },
+        {
+          "key": "D",
+          "value": "觉"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-54C2F450",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 10,
+      "question": "下列“发”意义不同的⼀项是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-54C2F450",
+      "options": [
+        {
+          "key": "A",
+          "value": "发数据"
+        },
+        {
+          "key": "B",
+          "value": "发⾔"
+        },
+        {
+          "key": "C",
+          "value": "发报告"
+        },
+        {
+          "key": "D",
+          "value": "发邮件"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "识解汉字"
+    },
+    {
+      "id": "RQ-A22FCAF2",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 11,
+      "question": "做实验要____误差。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-A22FCAF2",
+      "options": [
+        {
+          "key": "A",
+          "value": "避免"
+        },
+        {
+          "key": "B",
+          "value": "测量"
+        },
+        {
+          "key": "C",
+          "value": "⾜够"
+        },
+        {
+          "key": "D",
+          "value": "提⾼"
+        },
+        {
+          "key": "E",
+          "value": "观察F.缓解"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-A62ED760",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 12,
+      "question": "⽤仪器____物体的质量。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-A62ED760",
+      "options": [
+        {
+          "key": "A",
+          "value": "避免"
+        },
+        {
+          "key": "B",
+          "value": "测量"
+        },
+        {
+          "key": "C",
+          "value": "⾜够"
+        },
+        {
+          "key": "D",
+          "value": "提⾼"
+        },
+        {
+          "key": "E",
+          "value": "观察F.缓解"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-78E9F357",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 13,
+      "question": "实验室准备____的器材。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-78E9F357",
+      "options": [
+        {
+          "key": "A",
+          "value": "避免"
+        },
+        {
+          "key": "B",
+          "value": "测量"
+        },
+        {
+          "key": "C",
+          "value": "⾜够"
+        },
+        {
+          "key": "D",
+          "value": "提⾼"
+        },
+        {
+          "key": "E",
+          "value": "观察F.缓解"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-8037104E",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 14,
+      "question": "多练习可以____实验能⼒。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-8037104E",
+      "options": [
+        {
+          "key": "A",
+          "value": "避免"
+        },
+        {
+          "key": "B",
+          "value": "测量"
+        },
+        {
+          "key": "C",
+          "value": "⾜够"
+        },
+        {
+          "key": "D",
+          "value": "提⾼"
+        },
+        {
+          "key": "E",
+          "value": "观察F.缓解"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-354C21AF",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 15,
+      "question": "显微镜帮助我们____微观世界。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-354C21AF",
+      "options": [
+        {
+          "key": "A",
+          "value": "避免"
+        },
+        {
+          "key": "B",
+          "value": "测量"
+        },
+        {
+          "key": "C",
+          "value": "⾜够"
+        },
+        {
+          "key": "D",
+          "value": "提⾼"
+        },
+        {
+          "key": "E",
+          "value": "观察F.缓解"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-CCA5F568",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 16,
+      "question": "物体冷热程度⽤____表示。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-CCA5F568",
+      "options": [
+        {
+          "key": "A",
+          "value": "温度"
+        },
+        {
+          "key": "B",
+          "value": "密度"
+        },
+        {
+          "key": "C",
+          "value": "能量"
+        },
+        {
+          "key": "D",
+          "value": "压强"
+        },
+        {
+          "key": "E",
+          "value": "质量F.速度"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-E65603B2",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 17,
+      "question": "单位体积的质量叫做____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-E65603B2",
+      "options": [
+        {
+          "key": "A",
+          "value": "温度"
+        },
+        {
+          "key": "B",
+          "value": "密度"
+        },
+        {
+          "key": "C",
+          "value": "能量"
+        },
+        {
+          "key": "D",
+          "value": "压强"
+        },
+        {
+          "key": "E",
+          "value": "质量F.速度"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-511F4690",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 19,
+      "question": "物体所含物质的多少是____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-511F4690",
+      "options": [
+        {
+          "key": "A",
+          "value": "温度"
+        },
+        {
+          "key": "B",
+          "value": "密度"
+        },
+        {
+          "key": "C",
+          "value": "能量"
+        },
+        {
+          "key": "D",
+          "value": "压强"
+        },
+        {
+          "key": "E",
+          "value": "质量F.速度"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-2F2745F8",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 20,
+      "question": "单位⾯积受到的压⼒是____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-2F2745F8",
+      "options": [
+        {
+          "key": "A",
+          "value": "温度"
+        },
+        {
+          "key": "B",
+          "value": "密度"
+        },
+        {
+          "key": "C",
+          "value": "能量"
+        },
+        {
+          "key": "D",
+          "value": "压强"
+        },
+        {
+          "key": "E",
+          "value": "质量F.速度"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-436B16FE",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 21,
+      "question": "盐在⽔⾥会____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-436B16FE",
+      "options": [
+        {
+          "key": "A",
+          "value": "分解"
+        },
+        {
+          "key": "B",
+          "value": "溶解"
+        },
+        {
+          "key": "C",
+          "value": "反应"
+        },
+        {
+          "key": "D",
+          "value": "加热"
+        },
+        {
+          "key": "E",
+          "value": "导电F.平衡"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-9F62025B",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 22,
+      "question": "两种物质混合会发⽣化学____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9F62025B",
+      "options": [
+        {
+          "key": "A",
+          "value": "分解"
+        },
+        {
+          "key": "B",
+          "value": "溶解"
+        },
+        {
+          "key": "C",
+          "value": "反应"
+        },
+        {
+          "key": "D",
+          "value": "加热"
+        },
+        {
+          "key": "E",
+          "value": "导电F.平衡"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-93620B97",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 23,
+      "question": "⾦属容易____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-93620B97",
+      "options": [
+        {
+          "key": "A",
+          "value": "分解"
+        },
+        {
+          "key": "B",
+          "value": "溶解"
+        },
+        {
+          "key": "C",
+          "value": "反应"
+        },
+        {
+          "key": "D",
+          "value": "加热"
+        },
+        {
+          "key": "E",
+          "value": "导电F.平衡"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-B316FE04",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 24,
+      "question": "⽤酒精灯____可以加快反应。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B316FE04",
+      "options": [
+        {
+          "key": "A",
+          "value": "分解"
+        },
+        {
+          "key": "B",
+          "value": "溶解"
+        },
+        {
+          "key": "C",
+          "value": "反应"
+        },
+        {
+          "key": "D",
+          "value": "加热"
+        },
+        {
+          "key": "E",
+          "value": "导电F.平衡"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "理科中文"
+    },
+    {
+      "id": "RQ-9BECDEAC",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 26,
+      "question": "与“准确”意思相近的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9BECDEAC",
+      "options": [
+        {
+          "key": "A",
+          "value": "精确"
+        },
+        {
+          "key": "B",
+          "value": "⼤概"
+        },
+        {
+          "key": "C",
+          "value": "模糊"
+        },
+        {
+          "key": "D",
+          "value": "简单"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-1830DAC8",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 27,
+      "question": "与“安全”意思相近的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1830DAC8",
+      "options": [
+        {
+          "key": "A",
+          "value": "危险"
+        },
+        {
+          "key": "B",
+          "value": "平安"
+        },
+        {
+          "key": "C",
+          "value": "快速"
+        },
+        {
+          "key": "D",
+          "value": "困难"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-EFF028B0",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 29,
+      "question": "与“⽴刻”意思相近的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-EFF028B0",
+      "options": [
+        {
+          "key": "A",
+          "value": "⻢上"
+        },
+        {
+          "key": "B",
+          "value": "缓慢"
+        },
+        {
+          "key": "C",
+          "value": "暂时"
+        },
+        {
+          "key": "D",
+          "value": "⻓久"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-1618E943",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 31,
+      "question": "与“上升”意思相反的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1618E943",
+      "options": [
+        {
+          "key": "A",
+          "value": "下降"
+        },
+        {
+          "key": "B",
+          "value": "静⽌"
+        },
+        {
+          "key": "C",
+          "value": "运动"
+        },
+        {
+          "key": "D",
+          "value": "漂浮"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-CBD1D6C2",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 32,
+      "question": "与“⼲燥”意思相反的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-CBD1D6C2",
+      "options": [
+        {
+          "key": "A",
+          "value": "潮湿"
+        },
+        {
+          "key": "B",
+          "value": "寒冷"
+        },
+        {
+          "key": "C",
+          "value": "⾼温"
+        },
+        {
+          "key": "D",
+          "value": "坚硬"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-9D685B8B",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 33,
+      "question": "与“加快”意思相反的是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9D685B8B",
+      "options": [
+        {
+          "key": "A",
+          "value": "减慢"
+        },
+        {
+          "key": "B",
+          "value": "停⽌"
+        },
+        {
+          "key": "C",
+          "value": "开始"
+        },
+        {
+          "key": "D",
+          "value": "继续"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "近义反义词"
+    },
+    {
+      "id": "RQ-7BB128C1",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 34,
+      "question": "实验要及时____过程和结果。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-7BB128C1",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "数据"
+        },
+        {
+          "key": "D",
+          "value": "分析"
+        },
+        {
+          "key": "E",
+          "value": "交流"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-22DF51B7",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 35,
+      "question": "报告内容要____可靠。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-22DF51B7",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "数据"
+        },
+        {
+          "key": "D",
+          "value": "分析"
+        },
+        {
+          "key": "E",
+          "value": "交流"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-1E1B3461",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 36,
+      "question": "整理____可以得出结论。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1E1B3461",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "数据"
+        },
+        {
+          "key": "D",
+          "value": "分析"
+        },
+        {
+          "key": "E",
+          "value": "交流"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-00997F0D",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 37,
+      "question": "对结果进⾏____，找出规律。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-00997F0D",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "数据"
+        },
+        {
+          "key": "D",
+          "value": "分析"
+        },
+        {
+          "key": "E",
+          "value": "交流"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-D3783B67",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 38,
+      "question": "同学之间互相____经验。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-D3783B67",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "数据"
+        },
+        {
+          "key": "D",
+          "value": "分析"
+        },
+        {
+          "key": "E",
+          "value": "交流"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-8C217598",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 39,
+      "question": "实验室____要定期检查。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-8C217598",
+      "options": [
+        {
+          "key": "A",
+          "value": "创新"
+        },
+        {
+          "key": "B",
+          "value": "设备"
+        },
+        {
+          "key": "C",
+          "value": "操作"
+        },
+        {
+          "key": "D",
+          "value": "传统"
+        },
+        {
+          "key": "E",
+          "value": "认识"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-603CF11A",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 40,
+      "question": "正确____仪器很重要。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-603CF11A",
+      "options": [
+        {
+          "key": "A",
+          "value": "创新"
+        },
+        {
+          "key": "B",
+          "value": "设备"
+        },
+        {
+          "key": "C",
+          "value": "操作"
+        },
+        {
+          "key": "D",
+          "value": "传统"
+        },
+        {
+          "key": "E",
+          "value": "认识"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-F7C96EF5",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 41,
+      "question": "科学需要____精神。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-F7C96EF5",
+      "options": [
+        {
+          "key": "A",
+          "value": "创新"
+        },
+        {
+          "key": "B",
+          "value": "设备"
+        },
+        {
+          "key": "C",
+          "value": "操作"
+        },
+        {
+          "key": "D",
+          "value": "传统"
+        },
+        {
+          "key": "E",
+          "value": "认识"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-2C2B2A04",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 42,
+      "question": "我们要____⾃然规律。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-2C2B2A04",
+      "options": [
+        {
+          "key": "A",
+          "value": "创新"
+        },
+        {
+          "key": "B",
+          "value": "设备"
+        },
+        {
+          "key": "C",
+          "value": "操作"
+        },
+        {
+          "key": "D",
+          "value": "传统"
+        },
+        {
+          "key": "E",
+          "value": "认识"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-605599FE",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 43,
+      "question": "要继承优秀____科技⽂化。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-605599FE",
+      "options": [
+        {
+          "key": "A",
+          "value": "创新"
+        },
+        {
+          "key": "B",
+          "value": "设备"
+        },
+        {
+          "key": "C",
+          "value": "操作"
+        },
+        {
+          "key": "D",
+          "value": "传统"
+        },
+        {
+          "key": "E",
+          "value": "认识"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-C1A17C1D",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 44,
+      "question": "科学家____新的理论模型。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-C1A17C1D",
+      "options": [
+        {
+          "key": "A",
+          "value": "构建"
+        },
+        {
+          "key": "B",
+          "value": "注重"
+        },
+        {
+          "key": "C",
+          "value": "⿎励"
+        },
+        {
+          "key": "D",
+          "value": "分享"
+        },
+        {
+          "key": "E",
+          "value": "探索"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-1ADCEE67",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 45,
+      "question": "实验要____安全和规范。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1ADCEE67",
+      "options": [
+        {
+          "key": "A",
+          "value": "构建"
+        },
+        {
+          "key": "B",
+          "value": "注重"
+        },
+        {
+          "key": "C",
+          "value": "⿎励"
+        },
+        {
+          "key": "D",
+          "value": "分享"
+        },
+        {
+          "key": "E",
+          "value": "探索"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-4E4B4CFA",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 46,
+      "question": "⽼师____我们⼤胆提问。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-4E4B4CFA",
+      "options": [
+        {
+          "key": "A",
+          "value": "构建"
+        },
+        {
+          "key": "B",
+          "value": "注重"
+        },
+        {
+          "key": "C",
+          "value": "⿎励"
+        },
+        {
+          "key": "D",
+          "value": "分享"
+        },
+        {
+          "key": "E",
+          "value": "探索"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-429824DA",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 47,
+      "question": "⼤家⼀起____发现与成果。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-429824DA",
+      "options": [
+        {
+          "key": "A",
+          "value": "构建"
+        },
+        {
+          "key": "B",
+          "value": "注重"
+        },
+        {
+          "key": "C",
+          "value": "⿎励"
+        },
+        {
+          "key": "D",
+          "value": "分享"
+        },
+        {
+          "key": "E",
+          "value": "探索"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-011BBE37",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 48,
+      "question": "⼈类不断____宇宙的奥秘。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-011BBE37",
+      "options": [
+        {
+          "key": "A",
+          "value": "构建"
+        },
+        {
+          "key": "B",
+          "value": "注重"
+        },
+        {
+          "key": "C",
+          "value": "⿎励"
+        },
+        {
+          "key": "D",
+          "value": "分享"
+        },
+        {
+          "key": "E",
+          "value": "探索"
+        }
+      ],
+      "answer": "E",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "选词填空"
+    },
+    {
+      "id": "RQ-14A8BD78",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 49,
+      "question": "实验步骤太多，我没做____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-14A8BD78",
+      "options": [
+        {
+          "key": "A",
+          "value": "完"
+        },
+        {
+          "key": "B",
+          "value": "好"
+        },
+        {
+          "key": "C",
+          "value": "到"
+        },
+        {
+          "key": "D",
+          "value": "过"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-C85CBAA6",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 50,
+      "question": "他昨天____完成的实验。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-C85CBAA6",
+      "options": [
+        {
+          "key": "A",
+          "value": "是"
+        },
+        {
+          "key": "B",
+          "value": "才"
+        },
+        {
+          "key": "C",
+          "value": "刚"
+        },
+        {
+          "key": "D",
+          "value": "都"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-10D41E0F",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 51,
+      "question": "我花了三⼩时____做完这个模型。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-10D41E0F",
+      "options": [
+        {
+          "key": "A",
+          "value": "才"
+        },
+        {
+          "key": "B",
+          "value": "⼜"
+        },
+        {
+          "key": "C",
+          "value": "就"
+        },
+        {
+          "key": "D",
+          "value": "都"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-02633855",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 52,
+      "question": "这个规定____所有实验⼈员有效。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-02633855",
+      "options": [
+        {
+          "key": "A",
+          "value": "跟"
+        },
+        {
+          "key": "B",
+          "value": "⽐"
+        },
+        {
+          "key": "C",
+          "value": "对"
+        },
+        {
+          "key": "D",
+          "value": "和"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-C261D541",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 53,
+      "question": "⽤机器测量____⼿⼯更准确。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-C261D541",
+      "options": [
+        {
+          "key": "A",
+          "value": "更准确"
+        },
+        {
+          "key": "B",
+          "value": "⼀点⼉准确"
+        },
+        {
+          "key": "C",
+          "value": "很准确"
+        },
+        {
+          "key": "D",
+          "value": "准确准确"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-EF726E9D",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 54,
+      "question": "____学⽣要懂安全，⽼师也要重视。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-EF726E9D",
+      "options": [
+        {
+          "key": "A",
+          "value": "不但"
+        },
+        {
+          "key": "B",
+          "value": "不但学⽣"
+        },
+        {
+          "key": "C",
+          "value": "学⽣不但"
+        },
+        {
+          "key": "D",
+          "value": "不但学习"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-4FAB6114",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 55,
+      "question": "下课我想去实验室____。 3",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-4FAB6114",
+      "options": [
+        {
+          "key": "A",
+          "value": "做个实验"
+        },
+        {
+          "key": "B",
+          "value": "个做实验"
+        },
+        {
+          "key": "C",
+          "value": "实验个做"
+        },
+        {
+          "key": "D",
+          "value": "做实验个"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-9FA7B13E",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 56,
+      "question": "我忘不了____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9FA7B13E",
+      "options": [
+        {
+          "key": "A",
+          "value": "在实验室认真⼯作的⽼师"
+        },
+        {
+          "key": "B",
+          "value": "认真在实验室⼯作的⽼师"
+        },
+        {
+          "key": "C",
+          "value": "在实验室⼯作认真的⽼师"
+        },
+        {
+          "key": "D",
+          "value": "认真⼯作在实验室的⽼师"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-90219289",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 57,
+      "question": "我们要____实验安全____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-90219289",
+      "options": [
+        {
+          "key": "A",
+          "value": "⼀直把注意下去"
+        },
+        {
+          "key": "B",
+          "value": "把实验安全⼀直注意下去"
+        },
+        {
+          "key": "C",
+          "value": "⼀直注意下去实验安全"
+        },
+        {
+          "key": "D",
+          "value": "把⼀直注意下去"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-45153128",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 58,
+      "question": "他的发明成功了，⼤家来向他____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-45153128",
+      "options": [
+        {
+          "key": "A",
+          "value": "表示祝贺"
+        },
+        {
+          "key": "B",
+          "value": "赢得⽀持"
+        },
+        {
+          "key": "C",
+          "value": "送上感谢"
+        },
+        {
+          "key": "D",
+          "value": "付出关⼼"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-16146B2F",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 59,
+      "question": "我们要____科学探索的乐趣。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-16146B2F",
+      "options": [
+        {
+          "key": "A",
+          "value": "充分享受"
+        },
+        {
+          "key": "B",
+          "value": "宣传⽂化"
+        },
+        {
+          "key": "C",
+          "value": "相当精彩"
+        },
+        {
+          "key": "D",
+          "value": "诸多⽅⾯"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-B3B7581F",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 60,
+      "question": "实验安全____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B3B7581F",
+      "options": [
+        {
+          "key": "A",
+          "value": "⾮常重要"
+        },
+        {
+          "key": "B",
+          "value": "⼗分⼀般"
+        },
+        {
+          "key": "C",
+          "value": "多多少少"
+        },
+        {
+          "key": "D",
+          "value": "不太重要"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-D53D3E66",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 61,
+      "question": "科学研究需要____的态度。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-D53D3E66",
+      "options": [
+        {
+          "key": "A",
+          "value": "严谨认真"
+        },
+        {
+          "key": "B",
+          "value": "随便⻢⻁"
+        },
+        {
+          "key": "C",
+          "value": "激动热情"
+        },
+        {
+          "key": "D",
+          "value": "⾃由散漫"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-D4E02BCD",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 62,
+      "question": "观察、记录、分析是科学的____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-D4E02BCD",
+      "options": [
+        {
+          "key": "A",
+          "value": "重要技能"
+        },
+        {
+          "key": "B",
+          "value": "快乐回忆"
+        },
+        {
+          "key": "C",
+          "value": "宝贵资源"
+        },
+        {
+          "key": "D",
+          "value": "有趣玩具"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-B8EC5A1B",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 63,
+      "question": "做实验时⼤家____准备器材。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B8EC5A1B",
+      "options": [
+        {
+          "key": "A",
+          "value": "认认真真"
+        },
+        {
+          "key": "B",
+          "value": "休息休息"
+        },
+        {
+          "key": "C",
+          "value": "打扫打扫"
+        },
+        {
+          "key": "D",
+          "value": "整整⻬⻬"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-3080E900",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 64,
+      "question": "这个科学现象让我____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-3080E900",
+      "options": [
+        {
+          "key": "A",
+          "value": "难以忘记"
+        },
+        {
+          "key": "B",
+          "value": "⾮常⾼兴"
+        },
+        {
+          "key": "C",
+          "value": "不会受伤"
+        },
+        {
+          "key": "D",
+          "value": "特别舒服"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-31AB313F",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 65,
+      "question": "实验器材有的是玻璃，____是塑料，____是⾦属。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-31AB313F",
+      "options": [
+        {
+          "key": "A",
+          "value": "有的"
+        },
+        {
+          "key": "B",
+          "value": "还有的"
+        },
+        {
+          "key": "C",
+          "value": "其他的"
+        },
+        {
+          "key": "D",
+          "value": "另有的"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-B4224FA8",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 66,
+      "question": "实验结果____操作⽅法有关。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B4224FA8",
+      "options": [
+        {
+          "key": "A",
+          "value": "有关系"
+        },
+        {
+          "key": "B",
+          "value": "没联系"
+        },
+        {
+          "key": "C",
+          "value": "能分开"
+        },
+        {
+          "key": "D",
+          "value": "相⽭盾"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-A758F9F9",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 67,
+      "question": "物理实验是⼀项____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-A758F9F9",
+      "options": [
+        {
+          "key": "A",
+          "value": "有趣的活动"
+        },
+        {
+          "key": "B",
+          "value": "优美的舞蹈"
+        },
+        {
+          "key": "C",
+          "value": "好听的歌曲"
+        },
+        {
+          "key": "D",
+          "value": "开⼼的事业 4"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-B9C7633F",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 68,
+      "question": "科学理论是⼀套完整的____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B9C7633F",
+      "options": [
+        {
+          "key": "A",
+          "value": "知识系统"
+        },
+        {
+          "key": "B",
+          "value": "书写材料"
+        },
+        {
+          "key": "C",
+          "value": "书法字体"
+        },
+        {
+          "key": "D",
+          "value": "⾊彩搭配"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-E425CF6D",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 69,
+      "question": "⼩⽔滴在锅⾥____，慢慢变成⽔蒸⽓。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-E425CF6D",
+      "options": [
+        {
+          "key": "A",
+          "value": "滚来滚去"
+        },
+        {
+          "key": "B",
+          "value": "爬来爬去"
+        },
+        {
+          "key": "C",
+          "value": "跑来跑去"
+        },
+        {
+          "key": "D",
+          "value": "⾛来⾛去"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-9E9134D8",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 70,
+      "question": "每个科学实验都有⾃⼰的____。",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9E9134D8",
+      "options": [
+        {
+          "key": "A",
+          "value": "操作步骤"
+        },
+        {
+          "key": "B",
+          "value": "语⾔⽂字"
+        },
+        {
+          "key": "C",
+          "value": "相同意义"
+        },
+        {
+          "key": "D",
+          "value": "唱歌跳舞"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "补全语句"
+    },
+    {
+      "id": "RQ-BD44AE8F",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 71,
+      "question": "短⽂主要讲实验的（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-BD44AE8F",
+      "options": [
+        {
+          "key": "A",
+          "value": "操作步骤"
+        },
+        {
+          "key": "B",
+          "value": "注意事项"
+        },
+        {
+          "key": "C",
+          "value": "器材介绍"
+        },
+        {
+          "key": "D",
+          "value": "结果分析"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-0A1B847D",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 72,
+      "question": "记录数据要（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0A1B847D",
+      "options": [
+        {
+          "key": "A",
+          "value": "编造"
+        },
+        {
+          "key": "B",
+          "value": "真实"
+        },
+        {
+          "key": "C",
+          "value": "模糊"
+        },
+        {
+          "key": "D",
+          "value": "随意 （⼆） 温度计可以测量物体温度。使⽤时，要把感温部分完全放⼊被测物体，等待示数稳定再读数。 读数时视线要与刻度相平，不能仰视或俯视，否则结果不准确。"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-80462425",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 73,
+      "question": "温度计的作⽤是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-80462425",
+      "options": [
+        {
+          "key": "A",
+          "value": "测量质量"
+        },
+        {
+          "key": "B",
+          "value": "测量温度"
+        },
+        {
+          "key": "C",
+          "value": "测量⻓度"
+        },
+        {
+          "key": "D",
+          "value": "测量时间"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-9BF9D89C",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 74,
+      "question": "读数时视线要（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9BF9D89C",
+      "options": [
+        {
+          "key": "A",
+          "value": "仰视"
+        },
+        {
+          "key": "B",
+          "value": "俯视"
+        },
+        {
+          "key": "C",
+          "value": "与刻度相平"
+        },
+        {
+          "key": "D",
+          "value": "随便看"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-0C7F742F",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 75,
+      "question": "示数不稳定时（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0C7F742F",
+      "options": [
+        {
+          "key": "A",
+          "value": "⻢上读数"
+        },
+        {
+          "key": "B",
+          "value": "等待稳定"
+        },
+        {
+          "key": "C",
+          "value": "估计读数"
+        },
+        {
+          "key": "D",
+          "value": "停⽌测量 （三） 实验室是学习科学的重要场所。这⾥有各种仪器、药品和材料。同学们可以做实验、观察现 象、记录数据、得出结论。实验室帮助我们理解知识，提⾼动⼿能⼒，培养科学精神。"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-1D8BADE8",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 76,
+      "question": "实验室主要⽤来（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1D8BADE8",
+      "options": [
+        {
+          "key": "A",
+          "value": "做实验"
+        },
+        {
+          "key": "B",
+          "value": "休息"
+        },
+        {
+          "key": "C",
+          "value": "吃饭"
+        },
+        {
+          "key": "D",
+          "value": "运动 5"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-E756384A",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 77,
+      "question": "实验室⾥没有（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-E756384A",
+      "options": [
+        {
+          "key": "A",
+          "value": "仪器"
+        },
+        {
+          "key": "B",
+          "value": "药品"
+        },
+        {
+          "key": "C",
+          "value": "器材"
+        },
+        {
+          "key": "D",
+          "value": "玩具"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-9DA2BB7D",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 78,
+      "question": "做实验不能（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9DA2BB7D",
+      "options": [
+        {
+          "key": "A",
+          "value": "记录数据"
+        },
+        {
+          "key": "B",
+          "value": "遵守规则"
+        },
+        {
+          "key": "C",
+          "value": "随意操作"
+        },
+        {
+          "key": "D",
+          "value": "整理台⾯"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-9F434A87",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 79,
+      "question": "实验室可以帮助我们（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9F434A87",
+      "options": [
+        {
+          "key": "A",
+          "value": "提⾼动⼿能⼒"
+        },
+        {
+          "key": "B",
+          "value": "浪费时间"
+        },
+        {
+          "key": "C",
+          "value": "破坏环境"
+        },
+        {
+          "key": "D",
+          "value": "玩耍打闹"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-65B52FEA",
+      "subject": "中文(理科)",
+      "track": "理科",
+      "questionNumber": 80,
+      "question": "实验室的意义是（）",
+      "type": "选择题",
+      "sourceFile": "CSCA4月25理科中文.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-65B52FEA",
+      "options": [
+        {
+          "key": "A",
+          "value": "学习科学知识"
+        },
+        {
+          "key": "B",
+          "value": "娱乐休闲"
+        },
+        {
+          "key": "C",
+          "value": "销售物品"
+        },
+        {
+          "key": "D",
+          "value": "锻炼身体 6"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "real_exam",
+      "module": "阅读理解"
+    },
+    {
+      "id": "RQ-996A8C32",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 1,
+      "question": "About pure substances and mixtures: (Syllabus: I.1 Classification and state changes of matter) (1) A pure substance has a fixed composition and definite properties. (2) A homogeneous mixture has visibly different phases. (3) Air is an example of a mixture.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-996A8C32",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-882F93ED",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 2,
+      "question": "About physical and chemical changes: (Syllabus: I.1 Classification and state changes of matter) (1) Melting of ice is a physical change. (2) Rusting of iron is a chemical change. (3) Dissolving salt in water is always a chemical change.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-882F93ED",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-9BF4AEEA",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 3,
+      "question": "About atoms and ions: (Syllabus: III.1 Atomic structure and periodic law) (1) A neutral atom has equal numbers of protons and electrons. (2) A cation has more electrons than protons. (3) Isotopes of an element have different numbers of neutrons.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9BF4AEEA",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-FAFE2153",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 4,
+      "question": "About chemical formulae: (Syllabus: I.2 Chemical notation and equation writing) (1) The formula of calcium hydroxide is Ca(OH)₂. (2) The formula of sulfuric acid is H₂SO₄. (3) The formula of sodium carbonate is NaCO₃.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-FAFE2153",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-593FAEA7",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 5,
+      "question": "About balancing chemical equations: (Syllabus: I.2 Chemical notation and equation writing) (1) 2H₂ + O₂ → 2H₂O is correctly balanced. (2) Na + Cl₂ → 2NaCl is correctly balanced. (3) 2Mg + O₂ → 2MgO is correctly balanced.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-593FAEA7",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-1C97C103",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 6,
+      "question": "About the mole concept: (Syllabus: I.4 Amount of substance and molar mass) (1) One mole of any substance contains 6.02 × 10²³ particles. (2) One mole of O₂ molecules contains 6.02 × 10²³ oxygen atoms. (3) The molar mass of CO₂ is 44 g/mol.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1C97C103",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-FA8F2C26",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 7,
+      "question": "About molar mass and calculations: (Syllabus: I.4 Amount of substance and molar mass) (1) The molar mass of NaCl is 58.5 g/mol (Na = 23, Cl = 35.5). (2) 0.5 mol of water has a mass of 9.0 g (H₂O, Mr = 18). (3) 1.0 mol of carbon (C, Ar = 12) has a mass of 6.0 g.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-FA8F2C26",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-05B3EFE4",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 8,
+      "question": "About solution concentration: (Syllabus: I.3 Solution concentration and pH calculations) (1) A 0.10 mol/L NaCl solution contains 0.10 mol NaCl per litre of solution. (2) Doubling the volume of a solution without adding solute halves its concentration. (3) Concentration in mol/L is also called molarity.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-05B3EFE4",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-0F6790ED",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 9,
+      "question": "About pH of strong acids and bases: (Syllabus: I.3 Solution concentration and pH calculations) (1) A 0.010 mol/L HCl solution has pH ≈ 2. (2) A 0.10 mol/L NaOH solution has pOH ≈ 1. (3) For aqueous solutions at 25°C, pH + pOH = 14.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0F6790ED",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-2F13DFD3",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 10,
+      "question": "About strong and weak electrolytes: (Syllabus: III.4 Theories of electrolyte solutions) (1) Strong acids are strong electrolytes. (2) Weak acids ionize completely in water. (3) NaCl(aq) is a strong electrolyte.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-2F13DFD3",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-F5148E3A",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 11,
+      "question": "About the ideal gas law and gas volume relationships: (Syllabus: I.5 Ideal gas law and gas behavior) (1) At constant temperature and pressure, gas volume is directly proportional to moles of gas. (2) At constant pressure, gas volume is inversely proportional to temperature in Kelvin. (3) At constant volume, increasing temperature increases gas pressure.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-F5148E3A",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-09D4E6A9",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 12,
+      "question": "About state changes: (Syllabus: I.1 Classification and state changes of matter) (1) Boiling and evaporation are both liquid → gas changes. (2) Sublimation is the change from solid directly to gas. (3) Condensation is an endothermic process.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-09D4E6A9",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3) II. Properties and Reactions of Substances (Q13–Q24)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-80F3791F",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 13,
+      "question": "About acids and bases: (Syllabus: II.1 Properties of common inorganic substances – acids and bases) (1) Acids taste sour and turn blue litmus red. (2) Bases turn red litmus blue. (3) All bases are soluble in water.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-80F3791F",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-4DD397CD",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 14,
+      "question": "About oxides: (Syllabus: II.1 Properties of common inorganic substances – oxides) (1) CO₂ is an acidic oxide. (2) Na₂O is a basic oxide. (3) Al₂O₃ can act as both an acidic and a basic oxide.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-4DD397CD",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-624291FB",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 15,
+      "question": "About salts and their solutions: (Syllabus: II.1 Properties of common inorganic substances – salts) (1) NaCl(aq) is approximately neutral. (2) NH₄Cl(aq) tends to be acidic. (3) Na₂CO₃(aq) tends to be basic.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-624291FB",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-1E8D502F",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 16,
+      "question": "About solubility and precipitates: (Syllabus: II.4 Ionic reactions and testing methods) (1) Mixing BaCl₂(aq) and Na₂SO₄(aq) forms a white precipitate. (2) Mixing NaCl(aq) and KNO₃(aq) forms a precipitate. (3) Mixing AgNO₃(aq) and NaCl(aq) forms a white precipitate.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1E8D502F",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-B72B4215",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 17,
+      "question": "About redox reactions: (Syllabus: II.3 Identification of redox reactions) (1) In a redox reaction, oxidation and reduction occur simultaneously. (2) Oxidation involves loss of electrons. (3) A reducing agent is the species that is reduced.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B72B4215",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-04300615",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 18,
+      "question": "About metal reactivity with acids and water: (Syllabus: II.2 Reactivity of metals and simple reactions) (1) Sodium reacts vigorously with cold water to produce hydrogen gas. (2) Magnesium reacts slowly with cold water but more readily with steam. (3) Copper reacts readily with dilute hydrochloric acid to produce hydrogen.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-04300615",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-5EE223EA",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 19,
+      "question": "About displacement reactions of metals: (Syllabus: II.2 Reactivity of metals and simple reactions) (1) Zinc can displace copper from a solution of CuSO₄. (2) Copper can displace zinc from a solution of ZnSO₄. (3) Iron can displace copper from a solution of CuSO₄.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-5EE223EA",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-A03D9CEE",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 20,
+      "question": "About hydrocarbons: (Syllabus: II.5 Basic organic compounds – hydrocarbons) (1) Alkanes are saturated hydrocarbons. (2) Alkenes contain at least one C=C double bond. (3) Alkynes contain at least one C≡C triple bond.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-A03D9CEE",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-3D864537",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 21,
+      "question": "About isomers in organic chemistry: (Syllabus: II.5 Basic organic compounds – structural isomers) (1) C₄H₁₀ can have more than one structural isomer. (2) Isomers have the same molecular formula but different structures. (3) Methane (CH₄) has two structural isomers.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-3D864537",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-B71552C8",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 22,
+      "question": "About neutralization reactions: (Syllabus: II.1 Properties – acids, bases, and salts / neutralization) (1) Neutralization is a reaction between an acid and a base to form salt and water. (2) The reaction between HCl and NaOH is a neutralization reaction. (3) All neutralization reactions produce a neutral solution (pH = 7).",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B71552C8",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-BC3323DD",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 23,
+      "question": "About thermal decomposition reactions: (Syllabus: II.2 Simple reactions – decomposition) (1) CaCO₃(s) → CaO(s) + CO₂(g) is a thermal decomposition reaction. (2) Heating CuCO₃(s) can produce CuO(s) and CO₂(g). (3) Thermal decomposition generally absorbs heat (endothermic).",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-BC3323DD",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-D0B070DD",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 24,
+      "question": "About properties of common gases: (Syllabus: II.1 Properties of common substances – gases) (1) Oxygen supports combustion but does not burn itself. (2) Hydrogen produces a ‘pop’ sound with a lighted splint. (3) Carbon dioxide turns limewater milky.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-D0B070DD",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3) III. Chemical Theories and Laws (Q25–Q36)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-915D27BE",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 25,
+      "question": "About periodic trends: (Syllabus: III.1 Atomic structure and periodic law) (1) Atomic radius generally decreases across a period from left to right. (2) Ionization energy generally increases across a period from left to right. (3) Elements in the same group have exactly the same atomic radius.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-915D27BE",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-FB6643F6",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 26,
+      "question": "About valence electrons and groups: (Syllabus: III.1 Atomic structure and periodic law) (1) Group 1 elements have 1 valence electron. (2) Group 17 elements have 7 valence electrons. (3) Group 18 elements are very reactive because they have 8 valence electrons.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-FB6643F6",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-E972D3B1",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 27,
+      "question": "About ionic bonding: (Syllabus: III.2 Chemical bonds – ionic bonds) (1) Ionic bonds usually form between metals and non-metals. (2) In NaCl, sodium loses one electron to chlorine. (3) Ionic compounds often have high melting points.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-E972D3B1",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-6BFFB14D",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 28,
+      "question": "About covalent bonding: (Syllabus: III.2 Chemical bonds – covalent bonds) (1) Covalent bonds form by sharing electron pairs between atoms. (2) H₂O and CH₄ are examples of covalent molecules. (3) All covalent substances are gases at room temperature.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-6BFFB14D",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-170AEA87",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 29,
+      "question": "About intermolecular forces: (Syllabus: III.2 Chemical bonds and intermolecular forces) (1) Hydrogen bonding is a strong type of intermolecular attraction. (2) Hydrogen bonding can occur between H₂O molecules. (3) Intermolecular forces do not affect boiling points.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-170AEA87",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-D759D0F1",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 30,
+      "question": "About reaction rate: (Syllabus: III.3 Reaction rate and factors affecting it) (1) Increasing temperature generally increases reaction rate. (2) Increasing concentration of reactants generally increases reaction rate. (3) A catalyst increases reaction rate by increasing activation energy.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-D759D0F1",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-180300A4",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 31,
+      "question": "About collision theory: (Syllabus: III.3 Reaction rate and collision theory) (1) Reacting particles must collide to react. (2) Effective collisions require sufficient energy. (3) Effective collisions require proper orientation of particles.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-180300A4",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-A2758B4F",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 32,
+      "question": "About chemical equilibrium: (Syllabus: III.3 Chemical equilibrium – basic concepts) (1) At equilibrium, the forward and reverse reaction rates are equal. (2) At equilibrium, the concentrations of reactants and products are always equal. (3) Equilibrium can be established in a closed system.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-A2758B4F",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-54A2A2C5",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 33,
+      "question": "About Le Châtelier’s principle: (Syllabus: III.3 Chemical equilibrium – Le Châtelier’s principle) For the reaction: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + heat (1) Increasing pressure favours the formation of NH₃. (2) Increasing temperature favours the reverse reaction. (3) Removing NH₃ shifts equilibrium to the right.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-54A2A2C5",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-D33AC073",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 34,
+      "question": "About equilibrium constant Kc: (Syllabus: III.3 Chemical equilibrium – equilibrium constant) (1) Kc is defined in terms of concentrations of reactants only. (2) A large Kc value indicates products are favoured at equilibrium. (3) Changing temperature can change the value of Kc.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-D33AC073",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "C",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-F41CDD0D",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 35,
+      "question": "About strong and weak acids: (Syllabus: III.4 Theories of electrolyte solutions – strong and weak electrolytes) (1) A strong acid ionizes almost completely in water. (2) A weak acid has a lower degree of ionization in water. (3) A dilute acid is always weak.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-F41CDD0D",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-8E5B5449",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 36,
+      "question": "About electrolytes and non-electrolytes: (Syllabus: III.4 Theories of electrolyte solutions) (1) Electrolytes conduct electricity when dissolved in water. (2) Glucose solution is a strong electrolyte. (3) Molten NaCl can conduct electricity.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-8E5B5449",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3) IV. Chemical Experiments and Applications (Q37–Q48)"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-A407B2E0",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 37,
+      "question": "About laboratory safety: (Syllabus: IV.1 Laboratory safety and basic techniques) (1) Safety goggles should be worn when heating chemicals. (2) Eating and drinking in the lab are allowed if hands are clean. (3) Broken glassware should be reported and handled properly.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-A407B2E0",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-363C2A98",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 38,
+      "question": "About heating substances in a test tube: (Syllabus: IV.1 Laboratory safety and basic techniques) (1) The open end of the test tube should be pointed away from people. (2) The test tube should not be tightly closed when heating. (3) The test tube should be heated evenly by moving it through the flame.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-363C2A98",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-C08DEC43",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 39,
+      "question": "About methods of separation: (Syllabus: IV.2 Separation and purification of substances) (1) Filtration can separate an insoluble solid from a liquid. (2) Distillation can separate liquids with different boiling points. (3) Chromatography can separate different coloured pigments in ink.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-C08DEC43",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-335445BC",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 40,
+      "question": "About gas tests: (Syllabus: IV.3 Common gas tests and simple experiments) (1) Hydrogen gives a ‘pop’ sound with a lighted splint. (2) Oxygen relights a glowing splint. (3) Carbon dioxide turns limewater from colourless to milky.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-335445BC",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-072F00FD",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 41,
+      "question": "About titration (conceptual): (Syllabus: IV.4 Simple titration concepts and applications) (1) Titration can be used to determine the concentration of an acid. (2) An indicator is often used to detect the end point of a titration. (3) The volume of solution added from the burette is not important in titration calculations.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-072F00FD",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-59C4F6BC",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 42,
+      "question": "About common laboratory apparatus: (Syllabus: IV.1 Laboratory apparatus and their uses) (1) A burette is used to deliver accurate volumes of solution. (2) A pipette is used to measure a fixed volume accurately. (3) A beaker is more precise than a volumetric flask for measuring volume.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-59C4F6BC",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-476248DE",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 43,
+      "question": "About the Haber process (ammonia synthesis): (Syllabus: IV.5 Industrial processes – Haber process) (1) Nitrogen and hydrogen are the reactants in the Haber process. (2) An iron catalyst is used to increase the rate of reaction. (3) Lower temperature always gives the highest rate of ammonia production.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-476248DE",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-0DBB3F9E",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 44,
+      "question": "About the Contact process (sulfuric acid production): (Syllabus: IV.5 Industrial processes – Contact process) (1) Sulfur dioxide is oxidized to sulfur trioxide in the Contact process. (2) A vanadium(V) oxide catalyst is used. (3) Sulfuric acid is produced by directly dissolving sulfur trioxide in water in one step without any issues.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0DBB3F9E",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-0BBB9FB0",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 45,
+      "question": "About environmental chemistry (acid rain): (Syllabus: IV.6 Simple environmental applications – acid rain) (1) Acid rain can be caused by sulfur dioxide and nitrogen oxides. (2) Acid rain can damage buildings and statues made of limestone. (3) Acid rain has no effect on lakes and rivers.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-0BBB9FB0",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-1672DBA8",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 46,
+      "question": "About water treatment: (Syllabus: IV.6 Simple environmental and application chemistry – water treatment) (1) Filtration removes suspended solids from water. (2) Chlorination is used to kill bacteria in drinking water. (3) Distillation is commonly used in large-scale municipal water supply due to its low cost.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1672DBA8",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-4E367EF5",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 47,
+      "question": "About everyday applications of chemistry (polymers): (Syllabus: IV.6 Simple application chemistry – polymers and materials) (1) Poly(ethene) is a polymer made from ethene monomers. (2) Many plastics are non-biodegradable and can cause environmental pollution. (3) All polymers are synthetic and none occur naturally.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-4E367EF5",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "B",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-B867C5DA",
+      "subject": "化学",
+      "track": "理科",
+      "questionNumber": 48,
+      "question": "About energy changes in reactions: (Syllabus: III.3 Reaction energy and activation energy – conceptual) (1) Exothermic reactions release heat to the surroundings. (2) Endothermic reactions absorb heat from the surroundings. (3) Activation energy is the minimum energy required for a reaction to occur.",
+      "type": "选择题",
+      "sourceFile": "Chemistry Practice (multiple choice questions).docx",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B867C5DA",
+      "options": [
+        {
+          "key": "A",
+          "value": "(1) only"
+        },
+        {
+          "key": "B",
+          "value": "(1) and (2) only"
+        },
+        {
+          "key": "C",
+          "value": "(2) and (3) only"
+        },
+        {
+          "key": "D",
+          "value": "(1), (2) and (3)"
+        }
+      ],
+      "answer": "D",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "Chemistry Practice"
+    },
+    {
+      "id": "RQ-6746EA7F",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 26,
+      "question": "The passage is meant to ________.",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-6746EA7F",
+      "options": [
+        {
+          "key": "A",
+          "value": "warn young people of the hardships that a successful writer has to experience"
+        },
+        {
+          "key": "B",
+          "value": "advise young people to give up their idea of becoming a professional writer 3"
+        },
+        {
+          "key": "C",
+          "value": "show young people it’s unrealistic for a writer to pursue wealth and fame"
+        },
+        {
+          "key": "D",
+          "value": "encourage young people to pursue a writing career"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-262C3CD4",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 27,
+      "question": "What can be concluded from the passage?",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-262C3CD4",
+      "options": [
+        {
+          "key": "A",
+          "value": "Genuine writers often find their work interesting and rewarding."
+        },
+        {
+          "key": "B",
+          "value": "A writer’s success depends on luck rather than on effort."
+        },
+        {
+          "key": "C",
+          "value": "Famous writers usually live in poverty and isolation."
+        },
+        {
+          "key": "D",
+          "value": "The chances for a writer to become successful are small."
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-828F1D8D",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 28,
+      "question": "Why did the author begin to doubt himself after the first year of his writing career?",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-828F1D8D",
+      "options": [
+        {
+          "key": "A",
+          "value": "He wasn’t able to produce a single book."
+        },
+        {
+          "key": "B",
+          "value": "He hadn’t seen a change for the better."
+        },
+        {
+          "key": "C",
+          "value": "He wasn’t able to have a rest for a whole year."
+        },
+        {
+          "key": "D",
+          "value": "He found his dream would never come true."
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-4FD26F10",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 29,
+      "question": "“...People who die wondering, What if?” (Line 3, Para. 3) refers to “those ________”.",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-4FD26F10",
+      "options": [
+        {
+          "key": "A",
+          "value": "who think too much of the dark side of life"
+        },
+        {
+          "key": "B",
+          "value": "who regret giving up their career halfway"
+        },
+        {
+          "key": "C",
+          "value": "who think a lot without making a decision"
+        },
+        {
+          "key": "D",
+          "value": "who are full of imagination even upon death"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-9B9AAD24",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 30,
+      "question": "“Shadowland” in the last sentence refers to ________.",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9B9AAD24",
+      "options": [
+        {
+          "key": "A",
+          "value": "good team leader is one who can create group synergy (协同，配合) in order to"
+        },
+        {
+          "key": "B",
+          "value": "the bright future that one is looking forward to"
+        },
+        {
+          "key": "C",
+          "value": "the state of uncertainty before one’s final goal is reached"
+        },
+        {
+          "key": "D",
+          "value": "a world that exists only in one’s imagination Passage 3 Increasingly, U.S. companies are becoming relation-focused. We seek to be customer-driven. We want to partner with suppliers. We are moving from a manufacturing economy to a value-added, service-oriented economy. And at the heart of the service are relationships: interpersonal relations, inter-group relationships, and interdepartmental relationships. In fact, emphasis on teamwork has long become the most frequently valued managerial（管理方面的）competence in studies of organizations around the world. About half the Fortune 500 companies say they are using self-managed work teams and expect to expand their use in coming years. Teamwork, for many of us, is a big switch from how we are accustomed to functioning. And that’s especially true for those of you at the beginning of your careers. Some people never get out of the individual contributor mode because they have limited expertise（知识技能）with the interpersonal skills required for team building. But the highly effective people of success are those who move from child-like dependence to independence, and then on interdependence. Teamwork really builds. If there is no trust and honesty among employees and everyone is maneuvering based on what it might do for their own careers, they are not going to accomplish much. An old Oriental proverb that “people with one mind will 4 move Mount Tai” is true. Another way is to consider this: individuals add; team players multiply. Of course, as the whole is never the sum of the parts, it may be greater or lesser, depending on how well the individuals work together. pursue collective goals. If you are going to be a good boss, make sure that you support people around you and keep the group working well. That’s an important lesson I learned from one of my former chief executive officers (CEO), who held me accountable for my beliefs－in fact, there are times he held my feet to the fire－but he never held a grudge against me for believing in something different from him."
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-9F4B86A1",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 31,
+      "question": "The main idea of the passage is ______.",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-9F4B86A1",
+      "options": [
+        {
+          "key": "A",
+          "value": "that customer-driven service is increasingly popular"
+        },
+        {
+          "key": "B",
+          "value": "the importance of good teamwork"
+        },
+        {
+          "key": "C",
+          "value": "that a company should partner with suppliers"
+        },
+        {
+          "key": "D",
+          "value": "that U.S. companies are becoming relationship-focused"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-B9574A43",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 32,
+      "question": "What is the key to a company’s service according to the passage?",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B9574A43",
+      "options": [
+        {
+          "key": "A",
+          "value": "Relationships."
+        },
+        {
+          "key": "B",
+          "value": "Interpersonal relationships."
+        },
+        {
+          "key": "C",
+          "value": "Inter-group relationships."
+        },
+        {
+          "key": "D",
+          "value": "Interdepartmental relationships."
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-165619EE",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 33,
+      "question": "What can we infer from the third paragraph?",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-165619EE",
+      "options": [
+        {
+          "key": "A",
+          "value": "Many young people can cooperate well with their colleagues."
+        },
+        {
+          "key": "B",
+          "value": "Self-dependence is of prime importance to one’s career."
+        },
+        {
+          "key": "C",
+          "value": "Interdependence is the key to success for many entrepreneurs（企业家）."
+        },
+        {
+          "key": "D",
+          "value": "A successful person has never undergone child-like dependence."
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-DE7CBC8C",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 34,
+      "question": "The proverb in Paragraph 4 most probably comes from ______.",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-DE7CBC8C",
+      "options": [
+        {
+          "key": "A",
+          "value": "Japan"
+        },
+        {
+          "key": "B",
+          "value": "China"
+        },
+        {
+          "key": "C",
+          "value": "India"
+        },
+        {
+          "key": "D",
+          "value": "America"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-8C2ADC60",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 35,
+      "question": "Which of the following is NOT true?",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-8C2ADC60",
+      "options": [
+        {
+          "key": "A",
+          "value": "Teamwork has long been neglected in the studies of management."
+        },
+        {
+          "key": "B",
+          "value": "Some people never get out of the individual contributor mode."
+        },
+        {
+          "key": "C",
+          "value": "The author learnt a lot from his former bosses."
+        },
+        {
+          "key": "D",
+          "value": "Successful people generally experience the process of moving from child-like dependence to independence, and then onto interdependence. Passage 4 Sometime in the next century, the familiar early-morning newspaper on the front porch will disappear. And instead of reading your newspaper, it will read to you. You’ll get up and turn on the computer newspaper just like switching on the TV. An electronic voice will distribute stories about the latest events, guided by a program that selects the type of news you want. You even get to choose the kind of voice you want to hear. Want more information on the briefing? A simple touch makes the entire text appear. Save it in your own personal computer file if you like. These are among the predictions from communications experts working on the newspapers of the future. Pictured as part of broader home-based media and entertainment systems, computer newspapers would unite print and broadcast reporting, offering news and analysis with video images of news events. Most of the technology is available now, but convincing more people that they don’t 5 need paper to read a newspaper is the next step. But resistance to computer newspapers may be stronger from within journalism. Since it is such a cultural change, it may be that the present generation of journalists and publishers will have to die off before the next generation realizes that the newspaper industry is no longer a newspaper industry. Technology is making the end of traditional newspapers unavoidable. Despite technological advances, it could take decades to replace newsprint with computer screens. It might take 30 to 40 years to complete the changeover because people need to buy computers and because newspapers have established financial interests in the paper industry."
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-DDFAAD3C",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 36,
+      "question": "The best title for this passage is ________.",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-DDFAAD3C",
+      "options": [
+        {
+          "key": "A",
+          "value": "Computer Newspapers Are Well Liked"
+        },
+        {
+          "key": "B",
+          "value": "Newspapers of the Future will Likely Be on Computer"
+        },
+        {
+          "key": "C",
+          "value": "Newspapers Are out of Fashion"
+        },
+        {
+          "key": "D",
+          "value": "New Communications Technology"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-1796D80F",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 37,
+      "question": "It might take 30 to 40 years for computer newspapers to replace traditional newspapers, because ________.",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1796D80F",
+      "options": [
+        {
+          "key": "A",
+          "value": "it is technologically impossible now"
+        },
+        {
+          "key": "B",
+          "value": "computer newspapers are too expensive"
+        },
+        {
+          "key": "C",
+          "value": "there is strong resistance from both the general population and professional journalists"
+        },
+        {
+          "key": "D",
+          "value": "traditional newspapers are easier to read"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-7FF0E2B6",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 39,
+      "question": "Journalists are not eager to accept computer newspapers, because ________.",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-7FF0E2B6",
+      "options": [
+        {
+          "key": "A",
+          "value": "they don’t know how to use computers"
+        },
+        {
+          "key": "B",
+          "value": "they think computer newspapers take too much time to read"
+        },
+        {
+          "key": "C",
+          "value": "they think the new technology is bad"
+        },
+        {
+          "key": "D",
+          "value": "they have been trained to write for traditional newspapers"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-6C3C126A",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 40,
+      "question": "We can infer from the passage that ________.",
+      "type": "选择题",
+      "sourceFile": "English Mock 2016.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-6C3C126A",
+      "options": [
+        {
+          "key": "A",
+          "value": "all technological changes are good"
+        },
+        {
+          "key": "B",
+          "value": "all technologies will eventually replace old ones"
+        },
+        {
+          "key": "C",
+          "value": "new technologies will eventually replace old ones"
+        },
+        {
+          "key": "D",
+          "value": "traditional newspapers are here to stay for another century Part III. Writing (30 分) Directions: Write an essay of about 150 words based on the following information. Many middle schools do not allow their students to bring mobile phones to school. What is your opinion? Write an essay of about 150 words on middle school students’ using mobile phones at school. 6 English Placement Test (Answer Sheet) Name __________Score__________ Part I  Cloze (30%)"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-375CB590",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 4,
+      "question": "Which of the following statements is true according to the passage?",
+      "type": "选择题",
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-375CB590",
+      "options": [
+        {
+          "key": "A",
+          "value": "It is good to use a software dictionary when at home and a paper one when going out."
+        },
+        {
+          "key": "B",
+          "value": "Software dictionaries rather than paper ones can tell you how to pronounce a word."
+        },
+        {
+          "key": "C",
+          "value": "A paper dictionary can provide more information than a software one."
+        },
+        {
+          "key": "D",
+          "value": "A computer dictionary can present the same information more clearly than a paper one."
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-1286B53A",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 6,
+      "question": "From the passage, we can infer that ______.",
+      "type": "选择题",
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-1286B53A",
+      "options": [
+        {
+          "key": "A",
+          "value": "Patrick lived in Ireland all his life"
+        },
+        {
+          "key": "B",
+          "value": "Patrick’s family was very poor"
+        },
+        {
+          "key": "C",
+          "value": "Patrick’s life in what is now the neighboring island of Ireland was hard"
+        },
+        {
+          "key": "D",
+          "value": "Patrick didn’t believe in Christianity"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-23E9A87F",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 7,
+      "question": "What is the symbol of Ireland according to the passage?",
+      "type": "选择题",
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-23E9A87F",
+      "options": [
+        {
+          "key": "A",
+          "value": "St. Patrick"
+        },
+        {
+          "key": "B",
+          "value": "Guinness"
+        },
+        {
+          "key": "C",
+          "value": "the cabbage"
+        },
+        {
+          "key": "D",
+          "value": "the shamrock"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-BB9BCB2E",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 8,
+      "question": "The underlined word “solace” in Paragraph 5 means ______.",
+      "type": "选择题",
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-BB9BCB2E",
+      "options": [
+        {
+          "key": "A",
+          "value": "love"
+        },
+        {
+          "key": "B",
+          "value": "happiness"
+        },
+        {
+          "key": "C",
+          "value": "hatred"
+        },
+        {
+          "key": "D",
+          "value": "comfort"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-B82A846C",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 9,
+      "question": "Which of the following statements is NOT true?",
+      "type": "选择题",
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-B82A846C",
+      "options": [
+        {
+          "key": "A",
+          "value": "St. Patrick’s Day is a worldwide holiday."
+        },
+        {
+          "key": "B",
+          "value": "St. Patrick’s Day has a long history."
+        },
+        {
+          "key": "C",
+          "value": "On St. Patrick’s Day, green is the lucky color in people’s eyes."
+        },
+        {
+          "key": "D",
+          "value": "People respect St. Patrick and love him."
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-126ECAA7",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 10,
+      "question": "What is the passage about?",
+      "type": "选择题",
+      "sourceFile": "English Mock P1 - 2020.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-126ECAA7",
+      "options": [
+        {
+          "key": "A",
+          "value": "The symbols of St. Patrick’s Day."
+        },
+        {
+          "key": "B",
+          "value": "The origin of St. Patrick’s Day."
+        },
+        {
+          "key": "C",
+          "value": "St. Patrick’s life."
+        },
+        {
+          "key": "D",
+          "value": "The history of St. Patrick’s Day. Part III. Writing (30 分) Directions: 现在越来越多的人成为低头族(People who can’t help checking their phones all day are known as phubbers. Phubbing trends to involve not only the young people, but also the elderly.)。 如何引导低头族抬头?你们班举行了以“拒为低头族”为主题的班会。假设你是学生李津，请 4 为班会写一篇100 词左右的发言稿。 要点如下："
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-A123F993",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 6,
+      "question": "We can learn from the text that many newly married people_____.",
+      "type": "选择题",
+      "sourceFile": "English Mock P2 - 2019.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-A123F993",
+      "options": [
+        {
+          "key": "A",
+          "value": "find it hard to pay for what they need"
+        },
+        {
+          "key": "B",
+          "value": "have to learn to make their own furniture"
+        },
+        {
+          "key": "C",
+          "value": "take DIY courses run by the government"
+        },
+        {
+          "key": "D",
+          "value": "seldom go to a department store to buy things"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-48D0FD38",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 7,
+      "question": "John and his wife went to evening classes to learn how to_____.",
+      "type": "选择题",
+      "sourceFile": "English Mock P2 - 2019.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-48D0FD38",
+      "options": [
+        {
+          "key": "A",
+          "value": "run a DIY shop"
+        },
+        {
+          "key": "B",
+          "value": "make or repair things"
+        },
+        {
+          "key": "C",
+          "value": "save time and money"
+        },
+        {
+          "key": "D",
+          "value": "improve the quality of life"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-86CBD523",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 8,
+      "question": "When the writer says that Jim has a full-time job at home, he means Jim_____.",
+      "type": "选择题",
+      "sourceFile": "English Mock P2 - 2019.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-86CBD523",
+      "options": [
+        {
+          "key": "A",
+          "value": "makes shoes in his home"
+        },
+        {
+          "key": "B",
+          "value": "does extra work at night"
+        },
+        {
+          "key": "C",
+          "value": "does his own car and home repairs"
+        },
+        {
+          "key": "D",
+          "value": "keeps house and looks after his children"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-3CC8D873",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 9,
+      "question": "Jim Hatfield decided to become a do-it-yourselfer when_____.",
+      "type": "选择题",
+      "sourceFile": "English Mock P2 - 2019.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-3CC8D873",
+      "options": [
+        {
+          "key": "A",
+          "value": "his car repairs cost too much"
+        },
+        {
+          "key": "B",
+          "value": "the car repair class was not helpful"
+        },
+        {
+          "key": "C",
+          "value": "he could not be possible to do two jobs"
+        },
+        {
+          "key": "D",
+          "value": "he had to raise the children all by himself"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    },
+    {
+      "id": "RQ-67736BAA",
+      "subject": "英语",
+      "track": "理科",
+      "questionNumber": 10,
+      "question": "What would be the best title for the text?",
+      "type": "选择题",
+      "sourceFile": "English Mock P2 - 2019.pdf",
+      "lineNumber": 0,
+      "uniqueId": "RQ-67736BAA",
+      "options": [
+        {
+          "key": "A",
+          "value": "The Joy of DIY."
+        },
+        {
+          "key": "B",
+          "value": "You Can Do It Too!"
+        },
+        {
+          "key": "C",
+          "value": "Welcome to Our DIY Course!"
+        },
+        {
+          "key": "D",
+          "value": "Ross and Hatfield: Believers in DIY. Part III. Writing (30 分) Directions: Write an essay of about 150 words based on the following information. 假如你是李华，加拿大的一所学校将于今年暑假组织学生来你校访问。期间， Andy Smith 将借住你家(homestay)。请你代表全家写信给Andy,欢迎他的到来， 并告知有关事宜。信的要点如下： 上午：学校活动；下午：游览市区；晚上：和你家人一起包饺子，聊天 English Placement Test (Answer Sheet) Name __________Score__________ Part I  Cloze (40%)"
+        }
+      ],
+      "answer": "A",
+      "difficulty": "medium",
+      "source": "basic_practice",
+      "module": "English Mock"
+    }
+  ]
+}

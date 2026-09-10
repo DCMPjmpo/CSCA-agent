@@ -1,6 +1,5 @@
 'use client';
 
-import { useTheme } from 'next-themes';
 import { Toaster as Sonner, type ToasterProps } from 'sonner';
 import {
   CircleCheckIcon,
@@ -10,9 +9,10 @@ import {
   Loader2Icon,
 } from 'lucide-react';
 
-const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = 'system' } = useTheme();
-
+// [BRAND] 去掉 next-themes 依赖（项目无 NextThemesProvider，useTheme 只会返回空默认值）。
+// 默认深色：课堂生成器等页面（全局 token 级深色主题）未传 theme 时保持深色；
+// 品牌浅色页（如 /csca 备考中心）显式传 theme="light" 覆盖为浅色。
+const Toaster = ({ theme = 'dark', ...props }: ToasterProps) => {
   return (
     <Sonner
       theme={theme as ToasterProps['theme']}

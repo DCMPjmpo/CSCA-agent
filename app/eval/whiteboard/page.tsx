@@ -5,6 +5,7 @@ import { ScreenElement } from '@/components/slide-renderer/Editor/ScreenElement'
 import { SceneProvider } from '@/lib/contexts/scene-context';
 import { useStageStore } from '@/lib/store/stage';
 import type { PPTElement } from '@/lib/types/slides';
+import { Toaster } from '@/components/ui/toaster-dynamic';
 
 const EVAL_STAGE_ID = '__eval_stage__';
 const EVAL_SCENE_ID = '__eval_scene__';
@@ -103,5 +104,10 @@ function WhiteboardCanvas() {
 }
 
 export default function EvalWhiteboardPage() {
-  return <WhiteboardCanvas />;
+  return (
+    <>
+      <WhiteboardCanvas />
+      <Toaster position="top-center" />
+    </>
+  );
 }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Model Router with Fallback - CSCA Pilot Agent
  * 
  * Priority: GMI Platform → DashScope (Qwen/DeepSeek/Kimi)
@@ -32,12 +32,12 @@ export type TaskType =
 // GMI Platform Configuration (PRIORITY)
 // ==========================================
 const GMI_CONFIG = {
-  baseUrl: process.env.GMI_API_BASE || 'https://api.gmi-serving.com',
-  apiKey: process.env.ANTHROPIC_API_KEY,
+  baseUrl: process.env.GMI_API_BASE || 'https://api.deepseek.com/v1',
+  apiKey: process.env.DEEPSEEK_API_KEY,
   models: {
-    qwen: process.env.QWEN_MODEL || 'Qwen/Qwen3.6-Max-Preview',
-    deepseek: process.env.DEEPSEEK_MODEL || 'DeepSeek-V4-Pro',
-    kimi: process.env.KIMI_MODEL || 'Kimi-K2-Thinking',
+    qwen: process.env.QWEN_MODEL || 'deepseek-v4-pro',
+    deepseek: process.env.DEEPSEEK_MODEL || 'deepseek-v4-pro',
+    kimi: process.env.KIMI_MODEL || 'deepseek-v4-pro',
   },
 };
 
@@ -81,21 +81,27 @@ const FALLBACK_MODEL_CONFIGS: Record<string, FallbackModelConfig> = {
     baseUrl: 'https://api.siliconflow.cn/v1',
     apiKeyEnv: 'SILICONFLOW_API_KEY',
   },
+  'deepseek-chat': {
+    id: 'deepseek-chat',
+    provider: 'deepseek',
+    baseUrl: 'https://api.deepseek.com/v1',
+    apiKeyEnv: 'DEEPSEEK_API_KEY',
+  },
 };
 
 // ==========================================
 // Routing Rules: Task → Model
 // ==========================================
 const TASK_TO_MODEL: Record<TaskType, { gmi: string; fallback: string }> = {
-  diagnosis: { gmi: 'deepseek', fallback: 'glm-4' },              // GLM-4: Logical reasoning
-  knowledge_map: { gmi: 'qwen', fallback: 'glm-4' },              // GLM-4: Structured generation
-  exercise_generation: { gmi: 'qwen', fallback: 'glm-4' },        // GLM-4: Multilingual question generation
-  mock_exam: { gmi: 'deepseek', fallback: 'glm-4' },              // GLM-4: Rigorous question generation
-  score_analysis: { gmi: 'kimi', fallback: 'glm-4' },             // GLM-4: Long text analysis
-  university_match: { gmi: 'kimi', fallback: 'glm-4' },           // GLM-4: Long context matching
-  translation: { gmi: 'qwen', fallback: 'glm-4' },                // GLM-4: Strong multilingual capabilities
-  fallback: { gmi: 'qwen', fallback: 'glm-4' },                   // GLM-4: General fallback
-  tutor: { gmi: 'deepseek', fallback: 'glm-4' },                  // GLM-4: Educational explanation
+  diagnosis: { gmi: 'deepseek', fallback: 'deepseek-chat' },
+  knowledge_map: { gmi: 'qwen', fallback: 'deepseek-chat' },
+  exercise_generation: { gmi: 'qwen', fallback: 'deepseek-chat' },
+  mock_exam: { gmi: 'deepseek', fallback: 'deepseek-chat' },
+  score_analysis: { gmi: 'kimi', fallback: 'deepseek-chat' },
+  university_match: { gmi: 'kimi', fallback: 'deepseek-chat' },
+  translation: { gmi: 'qwen', fallback: 'deepseek-chat' },
+  fallback: { gmi: 'qwen', fallback: 'deepseek-chat' },
+  tutor: { gmi: 'deepseek', fallback: 'deepseek-chat' },
 };
 
 // ==========================================
@@ -281,6 +287,12 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
       return generateMockResult(messages[0]?.content || '') as any;
     }
 
+    // For streaming: return a mock stream instead of throwing
+    if (type === 'stream') {
+      console.warn(`[ModelRouter] Returning mock stream as final fallback`);
+      return createMockStreamResult(messages[0]?.content || '') as any;
+    }
+
     throw new Error('ALL_MODELS_FAILED');
   }
 }
@@ -298,56 +310,72 @@ export async function streamWithFallback(
 // Generate mock result for fallback
 // ==========================================
 function generateMockResult(prompt: string): GenerateTextResult<any, any> {
-  const task = prompt.toLowerCase();
+  const isEnglish = /\b(study|exam|learn|what|how|error|analysis|score|university|plan|practice|question|tutor|help|guide)\b/i.test(prompt);
 
-  // 根据不同任务类型生成不同的mock响应
-  let mockText = '';
+  const mockText = isEnglish
+    ? `I'm currently unable to generate a personalized response. The AI service is temporarily unavailable.
 
-  // 优先检测错题讲解任务
-  if (task.includes('讲解') || task.includes('错题') || task.includes('分析这道错题')) {
-    mockText = `📌 错误分析
-- 你的答案与正确答案不符，可能存在概念理解上的偏差
-- 建议重新复习相关知识点
+Here's what you can do:
+- Complete a practice session or mock exam to generate real learning data
+- Visit the Wrong Answer Center to review and correct mistakes
+- Check your Knowledge Map to see your current mastery levels
+- Try again in a moment for a personalized AI response
 
-💡 正确解答
-- 本题的正确答案是：B
-- 解题思路：仔细分析题目要求，结合相关知识进行判断
-- 关键知识点：本题涉及的核心概念
+Your learning progress is automatically saved.`
+    : `AI服务暂时不可用，无法生成个性化回答。
 
-📝 知识点回顾
-- 核心概念：相关知识点的定义和应用
-- 记忆技巧：多做练习题，加深理解
-- 关联知识点：与其他相关概念的联系
+建议您：
+- 完成一次练习或模拟考试，以生成真实学习数据
+- 前往错题中心查看并纠正错误
+- 查看知识地图了解当前掌握程度
+- 稍后重试获取个性化AI回答
 
-⚠️ 注意事项
-- 注意题目中的关键词和限定条件
-- 答题时要仔细审题，避免粗心错误
-- 建议：多复习相关知识点，巩固基础
-
-🎯 举一反三
-- 练习题1：请举出类似的例子，并说明解题思路
-- 练习题2：如果题目条件变化，答案会有什么不同？`;
-  } else if (task.includes('诊断') || task.includes('备考') || task.includes('科目')) {
-    mockText = `{"requiredSubjects":["基础汉语","数学","物理"],"recommendedSubjects":["专业词汇"],"subjectPriorities":{"基础汉语":1,"数学":2,"物理":3},"estimatedDays":80,"advice":"根据您的情况，建议重点复习基础汉语和数学，物理作为辅助科目。每天建议学习2-3小时。"}`;
-  } else if (task.includes('知识图谱') || task.includes('知识点')) {
-    mockText = `{"nodes":[{"id":"n1","name":"函数","subject":"数学"},{"id":"n2","name":"三角函数","subject":"数学"},{"id":"n3","name":"导数","subject":"数学"}],"edges":[{"source":"n1","target":"n2"},{"source":"n1","target":"n3"}]}`;
-  } else if (task.includes('练习') || task.includes('题目')) {
-    mockText = `[{"id":"q1","question":"已知函数 f(x) = x^2 + 2x + 1，求 f(2) 的值。","options":["A. 5","B. 8","C. 9","D. 10"],"correctAnswer":2,"subject":"数学","module":"函数"}]`;
-  } else if (task.includes('考试') || task.includes('试卷')) {
-    mockText = `{"questions":[{"id":"e1","question":"下列词语中，哪个是形容词？","options":["A. 跑步","B. 美丽","C. 思考","D. 学校"],"correctAnswer":1,"subject":"基础汉语","module":"词汇运用"}],"duration":90}`;
-  } else if (task.includes('分析') || task.includes('成绩')) {
-    mockText = `{"totalScore":85,"subjectScores":{"基础汉语":90,"数学":80,"物理":85},"weakAreas":["数学-几何","物理-力学"],"suggestions":["建议加强几何知识的复习","建议多做力学练习题"]}`;
-  } else if (task.includes('大学') || task.includes('匹配')) {
-    mockText = `{"universities":[{"name":"北京大学","major":"临床医学","score":95},{"name":"复旦大学","major":"临床医学","score":92},{"name":"上海交通大学","major":"临床医学","score":90}],"recommendations":["建议报考北京大学，专业匹配度高"]}`;
-  } else {
-    mockText = '抱歉，我暂时无法回答这个问题。请稍后再试。';
-  }
+您的学习进度已自动保存。`;
 
   return {
     text: mockText,
-    finishReason: 'mock',
+    content: [{ type: 'text' as const, text: mockText }],
+    finishReason: 'mock' as const,
     usage: { promptTokens: 0, completionTokens: 0, totalTokens: 0 },
   } as unknown as GenerateTextResult<any, any>;
+}
+
+/**
+ * Generate a mock stream for streaming fallback
+ */
+async function* generateMockStream(prompt: string) {
+  const mockResult = generateMockResult(prompt);
+  const text = mockResult.text;
+
+  // Simulate streaming by yielding chunks
+  const chunkSize = 4;
+  for (let i = 0; i < text.length; i += chunkSize) {
+    yield text.slice(i, i + chunkSize);
+    await new Promise(resolve => setTimeout(resolve, 10));
+  }
+}
+
+/**
+ * Create a mock StreamTextResult-compatible object
+ * This wraps generateMockStream into the same interface as streamText()
+ */
+function createMockStreamResult(prompt: string): StreamTextResult<any, any> {
+  const mockResult = generateMockResult(prompt);
+  const text = mockResult.text;
+
+  const asyncIterable = {
+    [Symbol.asyncIterator]() {
+      return generateMockStream(prompt);
+    }
+  };
+
+  return {
+    textStream: asyncIterable,
+    get text() { return text; },
+    finishReason: 'mock' as const,
+    usage: { promptTokens: 0, completionTokens: 0, totalTokens: 0 },
+    experimental_providerMetadata: {},
+  } as unknown as StreamTextResult<any, any>;
 }
 
 // ==========================================

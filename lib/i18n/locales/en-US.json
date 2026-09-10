@@ -1,9 +1,9 @@
 {
   "common": {
     "you": "You",
-    "confirm": "Confirm",
+    "confirm": "Approve",
     "cancel": "Cancel",
-    "loading": "Loading..."
+    "loading": "Summoning advisors…"
   },
   "home": {
     "slogan": "Generative Learning in Multi-Agent Interactive Classroom",
@@ -105,11 +105,11 @@
     "status": {
       "inputStreaming": "Waiting",
       "inputAvailable": "Executing",
-      "outputAvailable": "Completed",
+      "outputAvailable": "Passed",
       "outputError": "Error",
       "outputDenied": "Denied",
       "running": "Executing",
-      "result": "Completed",
+      "result": "Passed",
       "error": "Error"
     }
   },
@@ -118,7 +118,7 @@
     "expandedTitle": "Classroom Role Config",
     "configTooltip": "Click to configure classroom roles",
     "voiceLabel": "Voice",
-    "voiceLoading": "Loading...",
+    "voiceLoading": "Summoning advisors…",
     "voiceAutoAssign": "Voices will be auto-assigned",
     "searchVoice": "Search voices",
     "noMatchingVoices": "No matching voices"
@@ -136,18 +136,18 @@
   },
   "stage": {
     "currentScene": "Current Scene",
-    "generating": "Generating...",
+    "generating": "Drafting…",
     "paused": "Paused",
     "generationFailed": "Generation failed",
     "confirmSwitchTitle": "Switch Scene",
     "confirmSwitchMessage": "A topic is currently in progress. Switching scenes will end the current topic. Are you sure?",
-    "generatingNextPage": "Scene is being generated, please wait...",
+    "generatingNextPage": "Scene being drafted — one moment, Admiral.",
     "courseComplete": "Course complete",
     "fullscreen": "Fullscreen",
     "exitFullscreen": "Exit Fullscreen"
   },
   "classroomComplete": {
-    "title": "Course complete",
+    "title": "Victory!",
     "trailLabels": {
       "slide": "pages",
       "quiz": "quizzes",
@@ -201,16 +201,16 @@
     "correct": "correct",
     "incorrect": "incorrect",
     "answering": "In Progress",
-    "submitAnswers": "Submit Answers",
+    "submitAnswers": "Submit",
     "aiGrading": "AI is grading...",
-    "aiGradingWait": "Please wait, analyzing your answers",
+    "aiGradingWait": "One moment — advisors are reviewing your answers",
     "quizReport": "Quiz Report",
     "retry": "Retry"
   },
   "roundtable": {
     "teacher": "TEACHER",
     "you": "YOU",
-    "inputPlaceholder": "Type your message...",
+    "inputPlaceholder": "Give an order, Admiral…",
     "listening": "Listening...",
     "processing": "Processing...",
     "noSpeechDetected": "No speech detected, please try again",
@@ -245,7 +245,7 @@
       "title": "Issue Board",
       "noIssues": "No issues yet",
       "statusDone": "Done",
-      "statusActive": "Active",
+      "statusActive": "In progress",
       "statusPending": "Pending"
     },
     "chat": {
@@ -330,7 +330,7 @@
     "generatingSlideContentDesc": "Creating slides, quizzes, and interactive content...",
     "generatingActions": "Generating Teaching Actions",
     "generatingActionsDesc": "Orchestrating narration, spotlights, and interactions...",
-    "generationComplete": "Generation complete!",
+    "generationComplete": "Your lesson is ready — review it, Admiral.",
     "generationFailed": "Generation failed",
     "generatingCourse": "Generating course",
     "openingClassroom": "Opening classroom...",
@@ -345,7 +345,7 @@
     "sessionNotFoundDesc": "Please fill in course requirements to start the generation process.",
     "goBackAndRetry": "Go Back and Retry",
     "classroomReady": "Your personalized AI learning environment has been generated successfully.",
-    "aiWorking": "AI Agents Working...",
+    "aiWorking": "Drafting…",
     "textTruncated": "Document text is long, using first {{n}} characters for generation",
     "imageTruncated": "{{total}} images found, exceeding the {{max}} image limit. Extra images will use text descriptions only",
     "agentGeneration": "Generating Classroom Roles",
@@ -703,7 +703,7 @@
     "browserNativeTTSNote": "Browser Native TTS requires no configuration and is completely free, using system built-in voices",
     "testTTS": "Test TTS",
     "testASR": "Test ASR",
-    "testSuccess": "Test Successful",
+    "testSuccess": "Connection successful, Admiral.",
     "testFailed": "Test Failed",
     "ttsTestText": "TTS Test Text",
     "ttsTestSuccess": "TTS test successful, audio played",
@@ -1054,5 +1054,21 @@
     "title": "Enter Access Code",
     "placeholder": "Access code",
     "error": "Invalid access code. Please try again."
+  },
+  "mockExam": {
+    "examMode": "Exam mode",
+    "fullMode": "Full mock exam",
+    "practiceMode": "Practice mode",
+    "fullDescription": "Full mock exam covering all subjects",
+    "practiceDescription": "Practice on weak areas",
+    "examNotes": "Exam notes",
+    "title": "Mock Exam",
+    "description": "Generate a mock exam",
+    "start": "Start exam",
+    "time": "Time left",
+    "answered": "Answered",
+    "correct": "Correct",
+    "submit": "Submit",
+    "completed": "Completed"
   }
 }

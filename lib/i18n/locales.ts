@@ -22,7 +22,11 @@ export const supportedLocales = [
   { code: 'id-ID', label: 'Bahasa Indonesia', shortLabel: 'ID' },
   { code: 'ms-MY', label: 'Bahasa Malaysia', shortLabel: 'MY' },
   { code: 'tl-PH', label: 'Filipino', shortLabel: 'PH' },
+  { code: 'my-MM', label: 'မြန်မာဘာသာ', shortLabel: 'MM' },
+  { code: 'km-KH', label: 'ភាសាខ្មែរ', shortLabel: 'KH' },
+  { code: 'lo-LA', label: 'ພາສາລາວ', shortLabel: 'LA' },
   { code: 'ja-JP', label: '日本語', shortLabel: 'JA' },
+  { code: 'fr-FR', label: 'Français', shortLabel: 'FR' },
   { code: 'ru-RU', label: 'Русский', shortLabel: 'RU' },
   { code: 'ar-SA', label: 'العربية', shortLabel: 'AR' },
 ] as const satisfies readonly LocaleEntry[];

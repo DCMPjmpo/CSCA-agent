@@ -1,0 +1,21 @@
+{
+  "build": {
+    "command": "pnpm install && pnpm build",
+    "output": "out",
+    "env": {
+      "NODE_ENV": "production",
+      "NEXT_PRIVATE_TURBOPACK": "1"
+    }
+  },
+  "dev": {
+    "command": "pnpm dev",
+    "port": 3000
+  },
+  "functions": {
+    "app/api/**/*.ts": {
+      "runtime": "nodejs20.x",
+      "memory": 512,
+      "timeout": 300
+    }
+  }
+}

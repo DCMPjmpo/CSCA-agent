@@ -1,9 +1,8 @@
-'use client';
+﻿'use client';
 
-import { createContext, useContext, useEffect, ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import i18n from '@/lib/i18n/config';
 import { type Locale, defaultLocale, supportedLocales } from '@/lib/i18n';
-import '@/lib/i18n/config';
 
 const LOCALE_STORAGE_KEY = 'locale';
 
@@ -27,25 +26,30 @@ type I18nContextType = {
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const { t, i18n } = useTranslation();
-
-  const locale = (i18n.language || defaultLocale) as Locale;
+  // [HYDRATION-FIX] Use useState instead of react-i18next useTranslation()
+  // to avoid useSyncExternalStore mismatches between server and client.
+  // react-i18next useTranslation() uses useSyncExternalStore with the same
+  // getSnapshot for server and client. When resources load asynchronously
+  // on the client, the snapshot differs, causing hydration errors.
+  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
 
   // Detect language after hydration to avoid SSR mismatch.
-  // i18next handles fallback automatically: if the detected language
-  // has no matching JSON file, it falls back to fallbackLng.
   useEffect(() => {
     try {
       const stored = localStorage.getItem(LOCALE_STORAGE_KEY);
       const raw = stored || navigator.language || defaultLocale;
       const target = resolveLocale(raw);
-      if (target !== i18n.language) i18n.changeLanguage(target);
+      if (target !== locale) {
+        setLocaleState(target);
+        i18n.changeLanguage(target);
+      }
     } catch {
       // localStorage unavailable, keep default
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setLocale = (newLocale: Locale) => {
+    setLocaleState(newLocale);
     i18n.changeLanguage(newLocale);
     try {
       localStorage.setItem(LOCALE_STORAGE_KEY, newLocale);
@@ -53,6 +57,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       // localStorage unavailable
     }
   };
+
+  // Use i18n.t directly — avoids useSyncExternalStore subscription.
+  const t = (key: string, options?: Record<string, unknown>) =>
+    i18n.t(key, { ...(options ?? {}), lng: locale });
 
   return <I18nContext.Provider value={{ locale, setLocale, t }}>{children}</I18nContext.Provider>;
 }

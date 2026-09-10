@@ -13,56 +13,25 @@
 import { NextResponse } from 'next/server';
 import { generateWithFallback } from '@/lib/ai/model-router';
 import { getCscaSubjectRules } from '@/lib/rag/retriever';
+import { getMajorSubjectMap } from '@/lib/csca/major-subject-map';
 
-// Mock diagnosis results for different majors
-const MOCK_DIAGNOSIS: Record<string, any> = {
-  '临床医学': {
-    requiredSubjects: ['基础汉语', '数学', '物理', '化学'],
-    recommendedSubjects: ['专业词汇', '医学汉语'],
-    subjectPriorities: { '基础汉语': 1, '数学': 2, '化学': 3, '物理': 4 },
-    estimatedDays: 90,
-    advice: '临床医学专业需要较强的数理基础和化学知识。建议重点加强基础汉语和数学的学习，同时打好化学基础。',
-  },
-  '工程学': {
-    requiredSubjects: ['基础汉语', '数学', '物理'],
-    recommendedSubjects: ['工程汉语', '计算机基础'],
-    subjectPriorities: { '基础汉语': 1, '数学': 2, '物理': 3 },
-    estimatedDays: 75,
-    advice: '工程专业注重数学和物理能力。建议多做练习题，提高解题速度，同时加强专业汉语词汇学习。',
-  },
-  '工商管理': {
-    requiredSubjects: ['基础汉语', '数学'],
-    recommendedSubjects: ['商务汉语', '经济学基础'],
-    subjectPriorities: { '基础汉语': 1, '数学': 2 },
-    estimatedDays: 60,
-    advice: '工商管理专业需要良好的汉语语言能力和数学基础。建议加强汉语阅读和写作练习，特别是商务场景。',
-  },
-  '计算机科学': {
-    requiredSubjects: ['基础汉语', '数学', '物理'],
-    recommendedSubjects: ['计算机汉语', '编程基础'],
-    subjectPriorities: { '基础汉语': 1, '数学': 2, '物理': 3 },
-    estimatedDays: 80,
-    advice: '计算机专业需要扎实的数学基础和逻辑思维能力。建议重点学习离散数学相关知识，同时加强汉语沟通能力。',
-  },
-  '经济学': {
-    requiredSubjects: ['基础汉语', '数学'],
-    recommendedSubjects: ['经济汉语', '统计学基础'],
-    subjectPriorities: { '基础汉语': 1, '数学': 2 },
-    estimatedDays: 70,
-    advice: '经济学专业对数学要求较高。建议加强微积分和统计学知识，同时提升汉语听说读写能力。',
-  },
-  default: {
-    requiredSubjects: ['基础汉语', '数学', '物理'],
-    recommendedSubjects: ['专业汉语'],
-    subjectPriorities: { '基础汉语': 1, '数学': 2, '物理': 3 },
-    estimatedDays: 80,
-    advice: '根据你的专业方向，建议重点学习基础汉语和数学。制定合理的学习计划，循序渐进。',
-  },
-};
+export const maxDuration = 60; // [AI-FIX] AI 诊断需要更长时间，设置 60s
 
-// Fast path: use mock data directly for quick response
+// Phase 4: 从 major-subject-map.ts 获取配置（单一事实来源，明确标注 confidence）
+// 旧的内联 MOCK_DIAGNOSIS 已迁移到 lib/csca/major-subject-map.ts
 const getMockResult = (targetMajor: string) => {
-  return MOCK_DIAGNOSIS[targetMajor] || MOCK_DIAGNOSIS.default;
+  const map = getMajorSubjectMap(targetMajor);
+  return {
+    requiredSubjects: map.requiredSubjects,
+    recommendedSubjects: map.recommendedSubjects,
+    subjectPriorities: map.subjectPriorities,
+    estimatedDays: map.estimatedDays,
+    advice: map.advice,
+    // Phase 4 新增：诚实标注来源
+    confidence: map.confidence,
+    rationale: map.rationale,
+    majorName: map.majorName,
+  };
 };
 
 export async function POST(request: Request) {
@@ -115,9 +84,10 @@ CSCA考试科目规则：
   "advice": "..."
 }`;
 
-      // Use Promise.race with shorter timeout (15 seconds)
-      const timeoutPromise = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error('DIAGNOSIS_TIMEOUT')), 15000)
+      // [AI-FIX] 原 15s 超时太短，deepseek-v4-pro 带 reasoning 模式需要更长时间
+      // 增加到 50s（Vercel maxDuration 60s 留 10s 余量）
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('DIAGNOSIS_TIMEOUT')), 50000)
       );
 
       const resultPromise = generateWithFallback({
@@ -128,11 +98,18 @@ CSCA考试科目规则：
       const result = await Promise.race([resultPromise, timeoutPromise]);
 
       try {
-        const diagnosis = JSON.parse((result as any).text);
+        // [AI-FIX] AI 返回的 JSON 可能被 markdown 代码块包裹，需提取
+        let text = ((result as any).text || '').trim();
+        const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+        if (jsonMatch) {
+          text = jsonMatch[1].trim();
+        }
+        const diagnosis = JSON.parse(text);
         return NextResponse.json({
           success: true,
           data: diagnosis,
           step: 1,
+          aiGenerated: true,
         });
       } catch {
         console.warn('[CSCA Diagnosis] Failed to parse API result, using mock data');
@@ -155,7 +132,7 @@ CSCA考试科目规则：
     console.error('[CSCA Diagnosis API] Error:', error);
     return NextResponse.json({
       success: true,
-      data: MOCK_DIAGNOSIS.default,
+      data: getMockResult('default'),
       step: 1,
       mock: true,
     });

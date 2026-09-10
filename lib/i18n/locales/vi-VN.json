@@ -1,9 +1,9 @@
 {
   "common": {
     "you": "bạn",
-    "confirm": "Xác nhận",
-    "cancel": "Hủy",
-    "loading": "Đang tải..."
+    "confirm": "准奏",
+    "cancel": "作罢",
+    "loading": "幕僚正在筹备"
   },
   "home": {
     "slogan": "Học tập Sinh thành trong Lớp học Tương tác Multi-Agent",
