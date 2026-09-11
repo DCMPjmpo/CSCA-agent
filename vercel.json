@@ -3,7 +3,6 @@
   "framework": "nextjs",
   "installCommand": "pnpm install",
   "buildCommand": "pnpm build",
-  "outputDirectory": "out",
   "functions": {
     "app/api/**/*.ts": {
       "maxDuration": 300,
@@ -19,18 +18,6 @@
     }
   },
   "regions": ["hkg1"],
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/api/:path*",
-      "has": [
-        {
-          "type": "header",
-          "key": "x-vercel-forwarded-for"
-        }
-      ]
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

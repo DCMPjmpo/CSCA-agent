@@ -52,6 +52,7 @@ export function DiagnosisPanel({ onComplete }: DiagnosisPanelProps) {
           highSchoolSystem: formData.highSchoolSystem,
           hskLevel: parseInt(formData.hskLevel),
           nationality: formData.nationality,
+          fastMode: false,
         }),
       });
 
