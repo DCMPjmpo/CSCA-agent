@@ -34,9 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts",
-    "out/types/**/*.ts",
-    "out/dev/types/**/*.ts"
+    "**/*.mts"
   ],
   "exclude": [
     "node_modules",
@@ -44,7 +42,6 @@
     "packages/*/src",
     "openclaw",
     "e2e",
-    "CSCA-agent-master-main",
-    "out"
+    "CSCA-agent-master-main"
   ]
 }

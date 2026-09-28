@@ -313,7 +313,7 @@ Mock 流式回退 (兜底)
 ## 八、项目结构
 
 ```
-CSCA-agent-master/
+CSCA-agent/
 ├── app/                              # Next.js App Router
 │   ├── api/                          # 服务端 API 路由
 │   │   ├── csca/                     # CSCA 业务接口（11 个端点）
@@ -392,8 +392,8 @@ CSCA-agent-master/
 ### 9.2 安装
 
 ```bash
-git clone https://github.com/Chen-Taos/CSCA-agent-master.git
-cd CSCA-agent-master
+git clone https://github.com/DCMPjmpo/CSCA-agent.git
+cd CSCA-agent
 pnpm install
 ```
 
@@ -484,7 +484,7 @@ docker compose up --build
 |------|------|
 | **项目名称** | CSCA Pilot Agent |
 | **底层框架** | OpenMAIC (AGPL-3.0) |
-| **代码仓库** | [github.com/Chen-Taos/CSCA-agent-master](https://github.com/Chen-Taos/CSCA-agent-master) |
+| **代码仓库** | [github.com/DCMPjmpo/CSCA-agent](https://github.com/DCMPjmpo/CSCA-agent) |
 | **开源协议** | AGPL-3.0 |
 | **联系方式** | csca-support@gmi-cloud.com |
 

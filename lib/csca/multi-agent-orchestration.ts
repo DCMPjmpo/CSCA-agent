@@ -7,6 +7,9 @@
 import { generateWithFallback, streamWithFallback, getTaskTypeForAgent } from '@/lib/ai/model-router';
 import { CSCA_AGENTS, getAgentById } from './agents';
 
+// Debug logger — only logs in development
+const debug = process.env.NODE_ENV === 'development' ? console.info : () => {};
+
 // ==========================================
 // Agent Selection Logic (Fast Keyword-Based)
 // ==========================================
@@ -273,7 +276,7 @@ export async function runCscaMultiAgent(
   // Step 1: Select the best agent (FAST - keyword-based only)
   const selectedAgentId = selectAgent(userMessage);
   
-  console.info(`[Multi-Agent] Selected agent: ${selectedAgentId} for query: "${userMessage}"`);
+  debug(`[Multi-Agent] Selected agent: ${selectedAgentId} for query: "${userMessage}"`);
 
   // Step 2: Execute the selected agent
   const result = await executeSingleAgent(selectedAgentId, userMessage, existingMessages);
@@ -300,7 +303,7 @@ export async function* runCscaMultiAgentStream(
   // Step 1: Select the best agent (FAST - keyword-based only)
   const selectedAgentId = selectAgent(userMessage);
   
-  console.info(`[Multi-Agent Stream] Selected agent: ${selectedAgentId} for query: "${userMessage}"`);
+  debug(`[Multi-Agent Stream] Selected agent: ${selectedAgentId} for query: "${userMessage}"`);
 
   // Step 2: Execute with streaming
   yield* executeSingleAgentStream(selectedAgentId, userMessage, existingMessages);

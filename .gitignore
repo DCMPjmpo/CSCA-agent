@@ -92,11 +92,28 @@ eval/outline-language/results/
 # TRAE editor internal
 .trae/
 
-# Non-code assets (docs, competition materials, logs, temp)
+# Competition / project docs (not source code)
+CSCA_Pilot_Agent_*.docx
+CSCA_Pilot_Agent_*.pdf
+CSCA_*.docx
+CSCA4月25*.pdf
+
+# Exam materials (third-party copyrighted, must not be committed)
+/题库/
+/大纲/
+
+# DOCX extraction artifacts
+document_raw.xml
+docx_content.txt
+docx_temp.zip
+/docx_extract/
+
+# Misc build artifacts
+npm-install.log
+PROGRESS_ROOT_CAUSE.md
+
+# Root-level docx (already covered above but explicit)
 *.docx
-build_log.txt
-temp_*.txt
-参赛材料/
 
 # Root-level scratch/test scripts (real scripts live in /scripts/)
 test_*.py
@@ -104,11 +121,8 @@ scripts_*.py
 scripts_*.js
 q31_smoke1.py
 
-# P3.x verification probes: keep the scripts and result dumps (they are the
-# evidence behind the release reports), drop screenshots, logs and scratch dirs.
+# P3.x verification probes: removed from delivery, all temp files excluded.
 /.tmp-*
-!/.tmp-*.cjs
-!/.tmp-*.json
 /dev-*.log
 /tmp/
 

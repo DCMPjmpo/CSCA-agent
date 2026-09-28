@@ -14,6 +14,9 @@ import { createOpenAI } from '@ai-sdk/openai';
 
 type Message = { role: 'user' | 'assistant' | 'system'; content: string };
 
+// Debug logger — only logs in development, never in production
+const debug = process.env.NODE_ENV === 'development' ? console.info : () => {};
+
 // ==========================================
 // Task Type Definition
 // ==========================================
@@ -143,7 +146,7 @@ function getGmiClient() {
     throw new Error('GMI platform not configured');
   }
 
-  console.info(`[ModelRouter] Using GMI platform: ${GMI_CONFIG.baseUrl}`);
+  debug(`[ModelRouter] Using GMI platform: ${GMI_CONFIG.baseUrl}`);
 
   return createOpenAI({
     apiKey: GMI_CONFIG.apiKey!,
@@ -163,8 +166,7 @@ function getFallbackClient(modelId: string) {
   // First, try the specific API key for this provider
   let apiKey = process.env[config.apiKeyEnv];
 
-  // Log current environment variables for debugging
-  console.info(`[ModelRouter] Looking for ${config.apiKeyEnv}: ${apiKey ? 'SET' : 'NOT SET'}`);
+  debug(`[ModelRouter] Looking for ${config.apiKeyEnv}: ${apiKey ? 'SET' : 'NOT SET'}`);
 
   // If not found, try alternative keys
   if (!apiKey) {
@@ -179,14 +181,14 @@ function getFallbackClient(modelId: string) {
 
     if (fallbackKeys.length > 0) {
       apiKey = fallbackKeys[0]!;
-      console.info(`[ModelRouter] Using fallback API key from ${fallbackKeys[0] ? 'available sources' : 'unknown'}`);
+      debug(`[ModelRouter] Using fallback API key from available sources`);
     } else {
       throw new Error(`API key required for model ${modelId}. Please set ${config.apiKeyEnv} in .env.local`);
     }
   }
 
   const providerName = config.provider === 'siliconflow' ? 'SiliconFlow' : 'DashScope';
-  console.info(`[ModelRouter] Using ${providerName} for ${modelId}`);
+  debug(`[ModelRouter] Using ${providerName} for ${modelId}`);
 
   return createOpenAI({
     apiKey,
@@ -210,7 +212,7 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
   const fallbackModelId = modelMapping.fallback;
   const gmiModelName = GMI_CONFIG.models[gmiModelKey as keyof typeof GMI_CONFIG.models];
 
-  console.info(`[ModelRouter] Task: ${task}, GMI Model: ${gmiModelName}, Fallback: ${fallbackModelId}`);
+  debug(`[ModelRouter] Task: ${task}, GMI Model: ${gmiModelName}, Fallback: ${fallbackModelId}`);
 
   const makeGmiCall = async () => {
     const client = getGmiClient();
@@ -223,7 +225,7 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
       maxTokens: maxTokens || 2048,
     };
 
-    console.info(`[ModelRouter] 🔵 Calling GMI API: ${gmiModelName}`);
+    debug(`[ModelRouter] Calling GMI API: ${gmiModelName}`);
 
     return Promise.race([
       type === 'text'
@@ -247,7 +249,7 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
       maxTokens: maxTokens || 2048,
     };
 
-    console.info(`[ModelRouter] 🟢 Falling back to ${modelConfig.provider === 'siliconflow' ? 'SiliconFlow' : 'DashScope'}: ${modelConfig.id}`);
+    debug(`[ModelRouter] Falling back to ${modelConfig.provider === 'siliconflow' ? 'SiliconFlow' : 'DashScope'}: ${modelConfig.id}`);
 
     return Promise.race([
       type === 'text'
@@ -263,23 +265,23 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
   if (isGmiConfigured()) {
     try {
       const result = await makeGmiCall();
-      console.info(`[ModelRouter] ✅ GMI API call successful`);
+      debug(`[ModelRouter] GMI API call successful`);
       return result as any;
     } catch (gmiError) {
-      console.warn(`[ModelRouter] ❌ GMI API failed:`, gmiError);
-      console.info(`[ModelRouter] Falling back to secondary provider`);
+      console.warn(`[ModelRouter] GMI API failed:`, gmiError);
+      debug(`[ModelRouter] Falling back to secondary provider`);
     }
   } else {
-    console.info(`[ModelRouter] GMI not configured, using secondary provider directly`);
+    debug(`[ModelRouter] GMI not configured, using secondary provider directly`);
   }
 
   // Fallback to secondary provider
   try {
     const result = await makeFallbackCall();
-    console.info(`[ModelRouter] ✅ Fallback successful`);
+    debug(`[ModelRouter] Fallback successful`);
     return result as any;
   } catch (fallbackError) {
-    console.error(`[ModelRouter] ❌ Fallback also failed:`, fallbackError);
+    console.error(`[ModelRouter] Fallback also failed:`, fallbackError);
 
     // P3.1-R: 不再用 mock 文案冒充成功。所有模型失败时向上抛出真实错误，
     // 由调用方转换为明确的失败状态（UI 显示失败 + 提供重试）。

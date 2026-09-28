@@ -2,7 +2,6 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   output: 'standalone',
-  distDir: 'out',
   transpilePackages: [],
   serverExternalPackages: [
     // Native dependencies (largest packages)

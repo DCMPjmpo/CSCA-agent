@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL--3.0-blue.svg?style=flat-square" alt="License: AGPL-3.0"/></a>
-  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FChen-Taos%2FCSCA-agent-master&envDescription=Configure%20LLM%20provider%20API%20keys.&project-name=csca-agent&framework=nextjs"><img src="https://vercel.com/button" alt="Deploy with Vercel" height="20"/></a>
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDCMPjmpo%2FCSCA-agent&envDescription=Configure%20LLM%20provider%20API%20keys.&project-name=csca-agent&framework=nextjs"><img src="https://vercel.com/button" alt="Deploy with Vercel" height="20"/></a>
   <br/>
   <img src="https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js" alt="Next.js"/>
   <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React"/>
@@ -23,7 +23,7 @@
 
 ## 📖 项目概述
 
-**CSCA Pilot Agent** 是面向东盟五国海外用户的来华留学全流程自主智能体，基于开源框架 [OpenMAIC](https://github.com/THU-MAIC/OpenMAIC)（AGPL-3.0协议）二次开发。
+**CSCA Pilot Agent** 是面向东盟十国海外用户的来华留学全流程自主智能体，基于开源框架 [OpenMAIC](https://github.com/THU-MAIC/OpenMAIC)（AGPL-3.0协议）二次开发。
 
 ### 核心痛点解决
 
@@ -63,7 +63,7 @@ Agent具备完整自主工作流，可独立完成全链路任务：
 ### 1. 克隆与安装
 
 ```bash
-git clone https://github.com/Chen-Taos/CSCA-agent-master.git
+git clone https://github.com/DCMPjmpo/CSCA-agent.git
 cd CSCA-agent
 pnpm install
 ```
@@ -103,7 +103,7 @@ pnpm build && pnpm start
 
 ### Vercel 部署
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FChen-Taos%2FCSCA-agent-master&envDescription=Configure%20LLM%20provider%20API%20keys.&project-name=csca-agent&framework=nextjs)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDCMPjmpo%2FCSCA-agent&envDescription=Configure%20LLM%20provider%20API%20keys.&project-name=csca-agent&framework=nextjs)
 
 手动部署：
 1. Fork 本仓库
