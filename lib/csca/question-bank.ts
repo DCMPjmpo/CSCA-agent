@@ -266,7 +266,7 @@ export function getTrackDistribution(subject: string): Record<string, number> {
 
 // 随机获取指定数量的题目
 export function getRandomQuestions(count: number, subject?: string): Question[] {
-  let questions = subject ? getQuestionsBySubject(subject) : getAllQuestions();
+  const questions = subject ? getQuestionsBySubject(subject) : getAllQuestions();
   const shuffled = questions.sort(() => Math.random() - 0.5);
   return shuffled.slice(0, Math.min(count, shuffled.length));
 }

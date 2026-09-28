@@ -874,7 +874,7 @@ export default function CSCAVoyageApp() {
     const questionText = questionOrRecord.question;
     const correctAnswer = questionOrRecord.correctAnswer;
     const subject = questionOrRecord.subject;
-    const module = questionOrRecord.module;
+    const moduleInfo = questionOrRecord.module;
     const userAnswer = isQuestion
       ? (examAnswers[questionOrRecord.id] ?? '未作答')
       : (questionOrRecord.userAnswer ?? '未作答');
@@ -892,7 +892,7 @@ export default function CSCAVoyageApp() {
           userAnswer,
           correctAnswer,
           subject,
-          module,
+          module: moduleInfo,
           locale,
         }),
       });
