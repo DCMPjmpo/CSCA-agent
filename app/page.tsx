@@ -89,15 +89,15 @@ export default function HomePage() {
       ASEAN_COUNTRIES.find(
         (c: { code: string; nameZh?: string; name: string }) => c.code === s.selectedCountryCode,
       );
-    const examScores = s?.examResult?.scores as Record<string, number> | undefined;
+    const examResult = s?.examResult as { scores?: Record<string, number> } | undefined;
+    const examScores = examResult?.scores;
     const totalScores = examScores
       ? Object.values(examScores).reduce((a, b) => a + (Number.isFinite(b) ? b : 0), 0)
       : null;
-    const errorCount =
-      (s?.errorAnalysis?.errorBreakdown as Array<{ count?: number }> | undefined)?.reduce(
-        (a, b) => a + (b?.count ?? 0),
-        0,
-      ) ?? 0;
+    const errorAnalysis = s?.errorAnalysis as
+      | { errorBreakdown?: Array<{ count?: number }> }
+      | undefined;
+    const errorCount = errorAnalysis?.errorBreakdown?.reduce((a, b) => a + (b?.count ?? 0), 0) ?? 0;
     return {
       stageIndex,
       doneCount,

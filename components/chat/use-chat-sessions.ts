@@ -13,6 +13,7 @@ import type { Action, SpotlightAction, DiscussionAction } from '@/lib/types/acti
 import type { UIMessage } from 'ai';
 import type { ThinkingConfig } from '@/lib/types/provider';
 import { useStageStore } from '@/lib/store';
+import type { StageStore } from '@/lib/api/stage-api-types';
 import { useCanvasStore } from '@/lib/store/canvas';
 import { useSettingsStore } from '@/lib/store/settings';
 import { useUserProfileStore } from '@/lib/store/user-profile';
@@ -337,7 +338,7 @@ export function useChatSessions(options: UseChatSessionsOptions = {}) {
 
             // Execute the action via ActionEngine (fire-and-forget for visual effects)
             try {
-              const actionEngine = new ActionEngine(useStageStore);
+              const actionEngine = new ActionEngine(useStageStore as unknown as StageStore);
               const action = {
                 id: data.actionId,
                 type: data.actionName,

@@ -1,4 +1,5 @@
-'use client';
+import type { SpeechRecognition } from '@/lib/types/speech-recognition';
+('use client');
 
 import { useState, useRef } from 'react';
 import { Label } from '@/components/ui/label';
@@ -94,8 +95,7 @@ export function ASRSettings({ selectedProviderId }: ASRSettingsProps) {
           setTestMessage(t('settings.asrNotSupported'));
           return;
         }
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Vendor-prefixed API without standard typings
-        const recognition = new (SpeechRecognitionCtor as new () => any)();
+        const recognition = new (SpeechRecognitionCtor as new () => SpeechRecognition)();
         recognition.lang = asrLanguage || 'zh-CN';
         recognition.onresult = (event: {
           results: {

@@ -284,7 +284,6 @@ export function Stage({
     try {
       if (document.fullscreenElement === stageElement) {
         // Unlock Escape key before exiting fullscreen
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (navigator as unknown as { keyboard?: { unlock?: () => void } }).keyboard?.unlock?.();
         await document.exitFullscreen();
         return;
@@ -294,7 +293,6 @@ export function Stage({
       await stageElement.requestFullscreen();
       // Lock Escape key so it doesn't auto-exit fullscreen (#255)
       // Escape is handled manually in our keydown handler instead
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       await (
         navigator as unknown as { keyboard?: { lock?: (keys: string[]) => Promise<void> } }
       ).keyboard
@@ -315,7 +313,6 @@ export function Stage({
 
       if (!active) {
         // Ensure keyboard unlock on any fullscreen exit
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (navigator as unknown as { keyboard?: { unlock?: () => void } }).keyboard?.unlock?.();
         setControlsVisible(true);
         clearPresentationIdleTimer();

@@ -14,7 +14,6 @@ function stripHtml(html: string): string {
 /**
  * Summarize a single PPT element into a one-line description
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement variants have heterogeneous shapes
 function summarizeElement(el: PPTElement): string {
   const id = el.id ? `[id:${el.id}]` : '';
   const pos = `at (${Math.round(el.left)},${Math.round(el.top)})`;
@@ -63,7 +62,6 @@ function summarizeElement(el: PPTElement): string {
       const codeFn = el.fileName ? ` "${el.fileName}"` : '';
       const linePreview = (el.lines || [])
         .slice(0, 10)
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .map((l: { id?: string; content?: string }) => `    ${l.id}: ${l.content}`)
         .join('\n');
       const moreLines = lineCount > 10 ? `\n    ... and ${lineCount - 10} more lines` : '';
@@ -81,7 +79,6 @@ function summarizeElement(el: PPTElement): string {
 /**
  * Summarize an array of elements into line descriptions
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement variants have heterogeneous shapes
 export function summarizeElements(elements: PPTElement[]): string {
   if (elements.length === 0) return '  (empty)';
 

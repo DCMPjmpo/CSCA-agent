@@ -53,8 +53,7 @@ export function getElementPercentageGeometry(
  * @returns Percentage geometry info, or null if element is not found or has no position info
  */
 export function findElementGeometry(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- scene can be old or new format with different shapes
-  scene: Record<string, any>,
+  scene: Record<string, unknown>,
   elementId: string,
   viewportSize: number = 1000,
 ): PercentageGeometry | null {

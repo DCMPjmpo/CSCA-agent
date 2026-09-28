@@ -86,7 +86,6 @@ export function ShapeElement({ elementInfo, selectElement }: ShapeElementProps) 
 
     const pureText = elementInfo.text.content.replace(/<[^>]+>/g, '');
     if (!pureText) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- 'text' is specific to PPTShapeElement, not in keyof PPTElement union
       removeElementProps({ id: elementInfo.id, propName: 'text' as string });
       addHistorySnapshot();
     }

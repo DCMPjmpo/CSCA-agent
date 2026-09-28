@@ -38,7 +38,6 @@ function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, '').trim();
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement variants have heterogeneous shapes
 function elementLabel(el: PPTElement): string {
   switch (el.type) {
     case 'text': {
@@ -71,7 +70,6 @@ function elementLabel(el: PPTElement): string {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement
 function toBBox(el: PPTElement): BBox | null {
   if (el.type === 'line') return null;
   if (typeof el.left !== 'number' || typeof el.top !== 'number') return null;
@@ -87,7 +85,6 @@ function toBBox(el: PPTElement): BBox | null {
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTLineElement
 function toLineSeg(el: PPTElement): LineSeg | null {
   if (el.type !== 'line') return null;
   const lx = el.left ?? 0;
@@ -175,7 +172,6 @@ function shortId(id: string): string {
  * - line/arrow path crossing through any non-line element's bbox
  * - any element extending past the 1000×563 canvas bounds
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement variants
 export function buildWhiteboardConflicts(elements: PPTElement[]): string {
   if (!elements || elements.length === 0) return '';
 

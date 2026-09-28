@@ -482,7 +482,7 @@ export function VoyageNavigation() {
               className="flex items-center gap-2 rounded-[8px] px-2.5 py-1.5 text-[11px] text-white/45 hover:text-white/80 hover:bg-white/5 transition-colors duration-150"
             >
               <RotateCcw className="w-3 h-3" />
-              <span>{(t.nav as Record<string, unknown>).restart ?? 'Restart Voyage'}</span>
+              <span>{String((t.nav as Record<string, unknown>).restart ?? 'Restart Voyage')}</span>
             </button>
           )}
           <button

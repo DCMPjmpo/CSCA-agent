@@ -99,6 +99,7 @@ import type {
   UniversityCategory,
   Step,
 } from '@/lib/csca/voyage-constants';
+import type { ErrorRecord } from '@/lib/csca/error-analysis-core';
 
 interface StudyPlan {
   id: string;
@@ -229,16 +230,7 @@ export default function CSCAVoyageApp() {
   const [examStarted, setExamStarted] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [universityCategories, setUniversityCategories] = useState<UniversityCategory[]>([]);
-  const [errorRecords, setErrorRecords] = useState<
-    Array<{
-      subject: string;
-      module?: string;
-      question: string;
-      userAnswer: string;
-      correctAnswer: string;
-      id: string;
-    }>
-  >([]);
+  const [errorRecords, setErrorRecords] = useState<ErrorRecord[]>([]);
   const [studyPlan, setStudyPlan] = useState<StudyPlan | null>(null);
   const [aiExplanation, setAiExplanation] = useState<string>('');
   const [showExplanation, setShowExplanation] = useState(false);
@@ -879,7 +871,7 @@ export default function CSCAVoyageApp() {
   };
 
   const handleGetAIExplanation = async (
-    questionOrRecord: ExamQuestion | Record<string, unknown>,
+    questionOrRecord: ExamQuestion | (ErrorRecord & { options?: string[] }),
   ) => {
     const isQuestion = 'options' in questionOrRecord;
     const questionText = questionOrRecord.question;
@@ -1002,10 +994,10 @@ export default function CSCAVoyageApp() {
         diagnosis: diagnosisResult,
         knowledgeMap,
         adaptiveExercises,
-        examResult: examResult as Record<string, unknown>,
-        scoreAnalysis: scoreAnalysis as Record<string, unknown>,
+        examResult: examResult as unknown as Record<string, unknown>,
+        scoreAnalysis: scoreAnalysis as unknown as Record<string, unknown>,
         errorRecords,
-        studyPlan: studyPlan as Record<string, unknown>,
+        studyPlan: studyPlan as unknown as Record<string, unknown>,
         selectedSubjects,
         selectedCountryCode: selectedCountry.code,
         hskLevel,
@@ -2591,10 +2583,10 @@ HSK水平：HSK${hskLevel}
             diagnosis: diagnosisResult,
             knowledgeMap,
             adaptiveExercises,
-            examResult: examResult as Record<string, unknown>,
-            scoreAnalysis: scoreAnalysis as Record<string, unknown>,
+            examResult: examResult as unknown as Record<string, unknown>,
+            scoreAnalysis: scoreAnalysis as unknown as Record<string, unknown>,
             errorRecords,
-            studyPlan: studyPlan as Record<string, unknown>,
+            studyPlan: studyPlan as unknown as Record<string, unknown>,
             selectedSubjects,
             selectedCountryCode: selectedCountry.code,
             hskLevel,
@@ -2780,8 +2772,8 @@ HSK水平：HSK${hskLevel}
           errorRecords,
           examResult as Record<string, unknown>,
           {
-            scoreAnalysis: scoreAnalysis as Record<string, unknown>,
-            studyPlan: studyPlan as Record<string, unknown>,
+            scoreAnalysis: scoreAnalysis as unknown as Record<string, unknown>,
+            studyPlan: studyPlan as unknown as Record<string, unknown>,
           },
           { locale },
         );

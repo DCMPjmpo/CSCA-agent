@@ -15,6 +15,7 @@ export interface ExamQuestion {
   englishTerm?: string;
   source?: string;
   auditIssues?: string[];
+  [key: string]: unknown;
 }
 
 /** Result of auditing a batch of exam questions. */
@@ -34,4 +35,6 @@ export interface MatchedUniversity {
   majors: string[];
   scholarship?: string;
   rank: number;
+  probability?: string;
+  [key: string]: unknown;
 }

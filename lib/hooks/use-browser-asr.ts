@@ -6,6 +6,8 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { createLogger } from '@/lib/logger';
+import type { SpeechRecognition } from '@/lib/types/speech-recognition';
+import '@/lib/types/speech-recognition'; // Global Window augmentation
 
 const log = createLogger('BrowserASR');
 
@@ -39,8 +41,7 @@ export function useBrowserASR(options: UseBrowserASROptions = {}) {
 
   const [isListening, setIsListening] = useState(false);
   const [interimTranscript, setInterimTranscript] = useState('');
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Web Speech API SpeechRecognition not typed
-  const recognitionRef = useRef<unknown>(null);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   // Use refs for callbacks to avoid stale closures in recognition event handlers
   const onTranscriptionRef = useRef(onTranscription);

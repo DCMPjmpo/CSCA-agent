@@ -557,7 +557,9 @@ function generateExamQuestions(
     }
 
     // 解析选项（处理选项可能是字符串的情况）
-    function parseOptions(options: string[] | undefined): string[] {
+    function parseOptions(
+      options: Array<string | { key: string; value: string }> | undefined,
+    ): string[] {
       if (!options || options.length === 0) return [];
 
       // 如果只有一个选项且包含多个选项标记，尝试拆分

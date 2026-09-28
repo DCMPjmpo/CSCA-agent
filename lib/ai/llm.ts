@@ -249,12 +249,10 @@ export async function callLLM<T extends GenerateTextParams>(
   source: string,
   retryOptions?: LLMRetryOptions,
   thinking?: ThinkingConfig,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Promise<GenerateTextResult<Record<string, unknown>, Record<string, unknown>>> {
   const maxAttempts = (retryOptions?.retries ?? 0) + 1;
   const validate = retryOptions?.validate ?? (maxAttempts > 1 ? DEFAULT_VALIDATE : undefined);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let lastResult: GenerateTextResult<Record<string, unknown>, Record<string, unknown>> | undefined;
   let lastError: unknown;
 
@@ -482,7 +480,6 @@ export function streamLLM<T extends StreamTextParams>(
   params: T,
   source: string,
   thinking?: ThinkingConfig,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): StreamTextResult<Record<string, unknown>, Record<string, unknown>> {
   // Resolve effective thinking config and wrap in thinkingContext
   const effectiveThinking = thinking ?? getGlobalThinkingConfig();
