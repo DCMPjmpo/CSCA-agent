@@ -21,12 +21,8 @@ import {
   getQuestionEnrichment,
 } from '@/lib/csca/question-bank';
 import { CSCA_SUBJECTS, getSubjectConfig } from '@/lib/csca/exam-config';
-import {
-  getAllScienceChineseQuestions,
-} from '@/lib/csca/science-chinese-questions';
-import {
-  getAllArtsChineseQuestions,
-} from '@/lib/csca/arts-chinese-questions';
+import { getAllScienceChineseQuestions } from '@/lib/csca/science-chinese-questions';
+import { getAllArtsChineseQuestions } from '@/lib/csca/arts-chinese-questions';
 import { auditQuestion, fixQuestion, Question as AuditQuestion } from '@/lib/csca/question-auditor';
 import { selectQuestionsForSubjects } from '@/lib/csca/question-selection';
 import {
