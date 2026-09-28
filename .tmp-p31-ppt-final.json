@@ -1,0 +1,1 @@
+{"success":true,"jobId":"1aIjs60YXK","status":"failed","step":"failed","progress":60,"message":"Classroom generation failed","pollUrl":"http://localhost:3000/api/generate-classroom/1aIjs60YXK","pollIntervalMs":5000,"scenesGenerated":7,"totalScenes":14,"error":"Failed after 3 attempts. Last error: Cannot connect to API: getaddrinfo ENOTFOUND api.deepseek.com","done":true}

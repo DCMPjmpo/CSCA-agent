@@ -1,0 +1,48 @@
+{
+  "checkpoints": {
+    "1": {
+      "name": "CSCA /csca 加载并出现 Interactive Lesson 入口",
+      "pass": true,
+      "detail": "button visible"
+    },
+    "2": {
+      "name": "createHtmlTask → IndexedDB pilarCoreTasks 落库并跳转任务工作台",
+      "pass": true,
+      "detail": "taskId=pilarcore-task-lah0-3Oie-c5 capability=html jobId=VQaQhOyLAM"
+    },
+    "3": {
+      "name": "任务工作台展示真实进度（非伪造）",
+      "pass": true,
+      "detail": "steps=[\"正在生成大纲\",\"正在生成内容\"] progressSamples=9 elapsed=251s"
+    },
+    "4": {
+      "name": "任务成功：显示「打开交互式学习内容」且无「未生成交互式场景」告警",
+      "pass": true,
+      "detail": "cta=true absentWarning=false"
+    },
+    "5": {
+      "name": "任务记录已同步 classroomId 且 status=succeeded",
+      "pass": true,
+      "detail": "status=succeeded classroomId=8O9nkhSuJt"
+    }
+  },
+  "notes": [
+    "SCRIPT_ERROR: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"scene-item\"]') to be visible\u001b[22m\n\u001b[2m    116 × locator resolved to 7 elements. Proceeding with the first one: <div data-testid=\"scene-item\" class=\"group relative rounded-lg transition-all duration-200 cursor-pointer flex flex-col gap-1 p-1.5 bg-purple-50 dark:bg-purple-900/20 ring-1 ring-purple-200 dark:ring-purple-700\">…</div>\u001b[22m\n"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+    "GET http://localhost:3000/classroom/8O9nkhSuJt?_rsc=18yu6 :: net::ERR_ABORTED"
+  ],
+  "taskId": "pilarcore-task-lah0-3Oie-c5",
+  "openmaicJobId": "VQaQhOyLAM",
+  "classroomId": "8O9nkhSuJt",
+  "sceneTitles": [
+    "光合作用：生命能量的总开关",
+    "探索叶绿体：结构与功能",
+    "光反应：光能变活跃化学能",
+    "暗反应：CO₂变有机物",
+    "探究影响光合作用的因素",
+    "光反应与暗反应对比",
+    "小结：光合作用的整体图景"
+  ]
+}

@@ -1,0 +1,1 @@
+{"success":true,"jobId":"hnQ_PnSZNs","status":"succeeded","step":"completed","progress":100,"message":"Classroom generation completed","pollUrl":"http://localhost:3000/api/generate-classroom/hnQ_PnSZNs","pollIntervalMs":5000,"scenesGenerated":6,"totalScenes":6,"result":{"classroomId":"3XTs5D2znF","url":"http://localhost:3000/classroom/3XTs5D2znF","scenesCount":6},"done":true}

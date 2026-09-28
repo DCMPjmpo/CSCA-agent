@@ -104,8 +104,11 @@ scripts_*.py
 scripts_*.js
 q31_smoke1.py
 
-# P3.x verification probes: Playwright scripts, JSON dumps, screenshots, dev logs
+# P3.x verification probes: keep the scripts and result dumps (they are the
+# evidence behind the release reports), drop screenshots, logs and scratch dirs.
 /.tmp-*
+!/.tmp-*.cjs
+!/.tmp-*.json
 /dev-*.log
 /tmp/
 
