@@ -79,14 +79,20 @@ export interface ParseResult {
 /**
  * Emit a single parsed item into the result, returning updated segment indices.
  */
+interface ParsedStreamItem {
+  type: string;
+  content?: string;
+  [key: string]: unknown;
+}
+
 function emitItem(
-  item: Record<string, unknown>,
+  item: ParsedStreamItem,
   result: ParseResult,
   textSegmentIndex: number,
   actionSegmentIndex: number,
 ): { textSegmentIndex: number; actionSegmentIndex: number } {
   if (item.type === 'text') {
-    const content = (item.content as string) || '';
+    const content = item.content || '';
     if (content) {
       result.textChunks.push(content);
       // Use per-call array index (not cumulative segment index) so that
@@ -164,7 +170,7 @@ export function parseStructuredChunk(chunk: string, state: ParserState): ParseRe
 
   // Step 3: Try incremental parse — jsonrepair first (fixes unescaped quotes), fallback to partial-json
   // partial-json returns untyped arrays
-  let parsed: unknown[];
+  let parsed: ParsedStreamItem[];
   try {
     const repaired = jsonrepair(state.buffer);
     parsed = JSON.parse(repaired);

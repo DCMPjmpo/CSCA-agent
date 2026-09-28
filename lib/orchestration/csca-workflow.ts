@@ -397,12 +397,13 @@ async function analyzeScore(state: CscaAgentState): Promise<Partial<CscaAgentSta
   const moduleScores: Record<string, { total: number; correct: number }> = {};
 
   mockExam.questions.forEach((q) => {
-    if (!moduleScores[q.module]) {
-      moduleScores[q.module] = { total: 0, correct: 0 };
+    const moduleName = q.module || 'Uncategorized';
+    if (!moduleScores[moduleName]) {
+      moduleScores[moduleName] = { total: 0, correct: 0 };
     }
-    moduleScores[q.module].total++;
+    moduleScores[moduleName].total++;
     if (mockExam.answers[q.id] === q.correctAnswer) {
-      moduleScores[q.module].correct++;
+      moduleScores[moduleName].correct++;
     }
   });
 
@@ -557,13 +558,15 @@ export const cscaAgent = cscaWorkflow.compile();
 // ==========================================
 // Helper Functions
 // ==========================================
-export async function runCscaWorkflow(initialState: CscaAgentState): Promise<CscaAgentState> {
+export async function runCscaWorkflow(
+  initialState: Record<string, unknown>,
+): Promise<Record<string, unknown>> {
   const result = await cscaAgent.invoke(initialState);
-  return result;
+  return result as Record<string, unknown>;
 }
 
 export async function runStep(
-  state: CscaAgentState,
+  state: Record<string, unknown>,
   step: number,
 ): Promise<Partial<CscaAgentState>> {
   const steps = [

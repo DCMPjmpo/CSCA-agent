@@ -29,8 +29,7 @@ export async function savePlaybackState(
     consumedDiscussions: snapshot.consumedDiscussions,
     sceneId: snapshot.sceneId,
     updatedAt: Date.now(),
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } as Record<string, unknown>);
+  });
 }
 
 /**
@@ -45,8 +44,7 @@ export async function loadPlaybackState(stageId: string): Promise<PlaybackSnapsh
     sceneIndex: record.sceneIndex,
     actionIndex: record.actionIndex,
     consumedDiscussions: record.consumedDiscussions,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    sceneId: (record as Record<string, unknown>).sceneId as string | undefined,
+    sceneId: record.sceneId as string | undefined,
   };
 }
 

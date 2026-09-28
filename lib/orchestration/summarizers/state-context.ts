@@ -1,3 +1,4 @@
+import type { PPTElement } from '@/lib/types/slides';
 import type { StatelessChatRequest } from '@/lib/types/chat';
 import { buildWhiteboardConflicts } from './whiteboard-conflicts';
 
@@ -14,7 +15,7 @@ function stripHtml(html: string): string {
  * Summarize a single PPT element into a one-line description
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement variants have heterogeneous shapes
-function summarizeElement(el: Record<string, unknown>): string {
+function summarizeElement(el: PPTElement): string {
   const id = el.id ? `[id:${el.id}]` : '';
   const pos = `at (${Math.round(el.left)},${Math.round(el.top)})`;
   const size =
@@ -81,7 +82,7 @@ function summarizeElement(el: Record<string, unknown>): string {
  * Summarize an array of elements into line descriptions
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement variants have heterogeneous shapes
-export function summarizeElements(elements: Record<string, unknown>[]): string {
+export function summarizeElements(elements: PPTElement[]): string {
   if (elements.length === 0) return '  (empty)';
 
   const lines = elements.map((el, i) => `  ${i + 1}. ${summarizeElement(el)}`);
