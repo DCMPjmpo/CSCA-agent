@@ -28,14 +28,11 @@ export function useTranslation() {
   // Shared context — when locale changes in one component, all update instantly.
   const ctx = useContext(CscaI18nContext);
 
-  if (ctx) {
-    return ctx;
-  }
-
   // Fallback for use outside CscaI18nProvider (shouldn't happen in normal flow)
   const [locale, setLocale] = useState<string>('zh');
 
   useEffect(() => {
+    if (ctx) return;
     const savedLocale = localStorage.getItem('csca_locale');
     if (savedLocale) {
       const normalized = normalizeLocale(savedLocale);
@@ -43,15 +40,23 @@ export function useTranslation() {
         setLocale(normalized);
       }
     }
-  }, []);
+  }, [ctx]);
 
-  const changeLocale = useCallback((newLocale: string) => {
-    const normalized = normalizeLocale(newLocale);
-    if (translations[normalized]) {
-      setLocale(normalized);
-      localStorage.setItem('csca_locale', normalized);
-    }
-  }, []);
+  const changeLocale = useCallback(
+    (newLocale: string) => {
+      if (ctx) return;
+      const normalized = normalizeLocale(newLocale);
+      if (translations[normalized]) {
+        setLocale(normalized);
+        localStorage.setItem('csca_locale', normalized);
+      }
+    },
+    [ctx],
+  );
+
+  if (ctx) {
+    return ctx;
+  }
 
   const t = getTranslation(locale) as StrictTranslations;
 
@@ -66,25 +71,30 @@ export function useTranslation() {
 export function useLocale() {
   const ctx = useContext(CscaI18nContext);
 
-  if (ctx) {
-    return { locale: ctx.locale, setLocale: ctx.changeLocale };
-  }
-
   const [locale, setLocale] = useState<string>('en');
 
   useEffect(() => {
+    if (ctx) return;
     const savedLocale = localStorage.getItem('csca_locale');
     if (savedLocale && translations[savedLocale]) {
       setLocale(savedLocale);
     }
-  }, []);
+  }, [ctx]);
 
-  const setLocaleWithStorage = useCallback((newLocale: string) => {
-    if (translations[newLocale]) {
-      setLocale(newLocale);
-      localStorage.setItem('csca_locale', newLocale);
-    }
-  }, []);
+  const setLocaleWithStorage = useCallback(
+    (newLocale: string) => {
+      if (ctx) return;
+      if (translations[newLocale]) {
+        setLocale(newLocale);
+        localStorage.setItem('csca_locale', newLocale);
+      }
+    },
+    [ctx],
+  );
+
+  if (ctx) {
+    return { locale: ctx.locale, setLocale: ctx.changeLocale };
+  }
 
   return { locale, setLocale: setLocaleWithStorage };
 }
