@@ -45,7 +45,7 @@ const eslintConfig = defineConfig([
       // Pre-existing prefer-const issues across many files — warn but don't block.
       'prefer-const': 'warn',
       // Pre-existing module variable assignments — warn but don't block.
-      '@typescript-eslint/no-assign-module-variable': 'warn',
+      '@next/next/no-assign-module-variable': 'warn',
     },
   },
 ]);
