@@ -101,7 +101,7 @@ export function Operate({
   }, [currentSlide]);
 
   const CurrentOperateComponent = useMemo(() => {
-    const elementTypeMap: Record<string, React.ComponentType<Record<string, unknown>>> = {
+    const elementTypeMap: Record<string, React.ElementType> = {
       [ElementTypes.IMAGE]: ImageElementOperate,
       [ElementTypes.TEXT]: TextElementOperate,
       [ElementTypes.SHAPE]: ShapeElementOperate,

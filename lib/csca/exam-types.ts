@@ -26,15 +26,17 @@ export interface AuditFilterResult {
 
 /** University match category. */
 export interface MatchedUniversity {
-  id: string;
+  id?: string;
   name: string;
   nameZh: string;
   type: string;
   location: string;
   matchScore: number;
-  majors: string[];
+  majors?: string[];
   scholarship?: string;
-  rank: number;
+  rank?: number;
   probability?: number;
+  requirements?: string[];
+  description?: string;
   [key: string]: unknown;
 }

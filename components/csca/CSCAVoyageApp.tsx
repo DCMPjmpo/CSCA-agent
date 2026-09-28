@@ -231,7 +231,7 @@ export default function CSCAVoyageApp() {
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [universityCategories, setUniversityCategories] = useState<UniversityCategory[]>([]);
   const [errorRecords, setErrorRecords] = useState<ErrorRecord[]>([]);
-  const [studyPlan, setStudyPlan] = useState<StudyPlan | null>(null);
+  const [studyPlan, setStudyPlan] = useState<StudyPlan | null | undefined>(null);
   const [aiExplanation, setAiExplanation] = useState<string>('');
   const [showExplanation, setShowExplanation] = useState(false);
   const [currentErrorQuestion, setCurrentErrorQuestion] = useState<ExamQuestion | null>(null);

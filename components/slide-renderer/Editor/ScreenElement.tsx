@@ -23,7 +23,7 @@ interface ScreenElementProps {
 
 export function ScreenElement({ elementInfo, elementIndex, animate }: ScreenElementProps) {
   const CurrentElementComponent = useMemo(() => {
-    const elementTypeMap: Record<string, React.ComponentType<Record<string, unknown>>> = {
+    const elementTypeMap: Record<string, React.ElementType> = {
       [ElementTypes.IMAGE]: BaseImageElement,
       [ElementTypes.TEXT]: BaseTextElement,
       [ElementTypes.SHAPE]: BaseShapeElement,

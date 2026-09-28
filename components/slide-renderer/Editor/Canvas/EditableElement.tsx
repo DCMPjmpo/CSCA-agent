@@ -52,7 +52,7 @@ export function EditableElement({
   openLinkDialog,
 }: EditableElementProps) {
   const CurrentElementComponent = useMemo(() => {
-    const elementTypeMap: Record<string, React.ComponentType<Record<string, unknown>>> = {
+    const elementTypeMap: Record<string, React.ElementType> = {
       [ElementTypes.IMAGE]: ImageElement,
       [ElementTypes.TEXT]: TextElement,
       [ElementTypes.SHAPE]: ShapeElement,

@@ -69,7 +69,7 @@ function ThumbnailVideoElement({ elementInfo }: { readonly elementInfo: PPTVideo
  */
 export function ThumbnailElement({ elementInfo, elementIndex }: ThumbnailElementProps) {
   const CurrentElementComponent = useMemo(() => {
-    const elementTypeMap: Record<string, React.ComponentType<Record<string, unknown>>> = {
+    const elementTypeMap: Record<string, React.ElementType> = {
       [ElementTypes.IMAGE]: BaseImageElement,
       [ElementTypes.TEXT]: BaseTextElement,
       [ElementTypes.SHAPE]: BaseShapeElement,
