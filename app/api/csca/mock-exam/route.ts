@@ -18,9 +18,7 @@ import {
   getSourceStats,
   getAllSubjects,
   getQuestionBankStats,
-  getAllQuestions,
   getQuestionEnrichment,
-  type QuestionSource,
 } from '@/lib/csca/question-bank';
 import { CSCA_SUBJECTS, getSubjectConfig } from '@/lib/csca/exam-config';
 import {
