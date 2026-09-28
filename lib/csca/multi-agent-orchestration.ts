@@ -1,10 +1,14 @@
 /**
  * CSCA Multi-Agent Orchestration System
- * 
+ *
  * Optimized for speed - keyword-based agent selection only
  */
 
-import { generateWithFallback, streamWithFallback, getTaskTypeForAgent } from '@/lib/ai/model-router';
+import {
+  generateWithFallback,
+  streamWithFallback,
+  getTaskTypeForAgent,
+} from '@/lib/ai/model-router';
 import { CSCA_AGENTS, getAgentById } from './agents';
 
 // Debug logger — only logs in development
@@ -15,14 +19,105 @@ const debug = process.env.NODE_ENV === 'development' ? console.info : () => {};
 // ==========================================
 
 const AGENT_KEYWORDS: Record<string, string[]> = {
-  examiner: ['考试', '测验', '题目', '试卷', '模拟', '真题', '习题', '练习', '测验', '考题', 'exam', 'test', 'question', 'paper'],
-  tutor: ['讲解', '解释', '什么是', '为什么', '概念', '原理', '知识', '学习', '理解', '怎么', 'explain', 'teach', 'learn', 'concept'],
-  analyst: ['分析', '成绩', '评估', '报告', '统计', '数据', '表现', '弱点', '优势', 'analyze', 'score', 'report', 'performance'],
-  challenger: ['挑战', '批判', '辩论', '反驳', '质疑', '深入', '思考', '论证', 'challenge', 'debate', 'critical'],
-  advisor: ['大学', '专业', '申请', '奖学金', '职业', '规划', '推荐', '选校', 'university', 'college', 'apply', 'scholarship'],
-  motivator: ['加油', '鼓励', '坚持', '信心', '动力', '激励', '心态', 'motivate', 'encourage', 'keep going'],
+  examiner: [
+    '考试',
+    '测验',
+    '题目',
+    '试卷',
+    '模拟',
+    '真题',
+    '习题',
+    '练习',
+    '测验',
+    '考题',
+    'exam',
+    'test',
+    'question',
+    'paper',
+  ],
+  tutor: [
+    '讲解',
+    '解释',
+    '什么是',
+    '为什么',
+    '概念',
+    '原理',
+    '知识',
+    '学习',
+    '理解',
+    '怎么',
+    'explain',
+    'teach',
+    'learn',
+    'concept',
+  ],
+  analyst: [
+    '分析',
+    '成绩',
+    '评估',
+    '报告',
+    '统计',
+    '数据',
+    '表现',
+    '弱点',
+    '优势',
+    'analyze',
+    'score',
+    'report',
+    'performance',
+  ],
+  challenger: [
+    '挑战',
+    '批判',
+    '辩论',
+    '反驳',
+    '质疑',
+    '深入',
+    '思考',
+    '论证',
+    'challenge',
+    'debate',
+    'critical',
+  ],
+  advisor: [
+    '大学',
+    '专业',
+    '申请',
+    '奖学金',
+    '职业',
+    '规划',
+    '推荐',
+    '选校',
+    'university',
+    'college',
+    'apply',
+    'scholarship',
+  ],
+  motivator: [
+    '加油',
+    '鼓励',
+    '坚持',
+    '信心',
+    '动力',
+    '激励',
+    '心态',
+    'motivate',
+    'encourage',
+    'keep going',
+  ],
   video_explainer: ['视频', '教程', '演示', '讲解视频', 'video', 'tutorial', 'demo'],
-  error_explainer: ['错题', '错误', '做错', '解析', '答案', '订正', 'mistake', 'error', 'wrong', 'correct'],
+  error_explainer: [
+    '错题',
+    '错误',
+    '做错',
+    '解析',
+    '答案',
+    '订正',
+    'mistake',
+    'error',
+    'wrong',
+    'correct',
+  ],
 };
 
 /**
@@ -123,12 +218,15 @@ function cleanLaTeXFormat(text: string): string {
 function buildAgentPrompt(
   agent: any,
   userQuery: string,
-  conversationHistory: Array<{ role: string; content: string; agentId?: string }> = []
+  conversationHistory: Array<{ role: string; content: string; agentId?: string }> = [],
 ): string {
   const contextMessages = conversationHistory.slice(-3); // Reduced context for faster response
-  const contextText = contextMessages.map(m =>
-    `${m.agentId ? `[${getAgentById(m.agentId)?.name || m.agentId}]` : '[User]'}: ${m.content}`
-  ).join('\n');
+  const contextText = contextMessages
+    .map(
+      (m) =>
+        `${m.agentId ? `[${getAgentById(m.agentId)?.name || m.agentId}]` : '[User]'}: ${m.content}`,
+    )
+    .join('\n');
 
   return `你是${agent.name}，${agent.role}。
 
@@ -157,7 +255,7 @@ ${userQuery}
 export async function executeSingleAgent(
   agentId: string,
   userQuery: string,
-  conversationHistory: Array<{ role: string; content: string; agentId?: string }> = []
+  conversationHistory: Array<{ role: string; content: string; agentId?: string }> = [],
 ) {
   const agent = getAgentById(agentId);
   if (!agent) {
@@ -206,7 +304,7 @@ export async function executeSingleAgent(
 export async function* executeSingleAgentStream(
   agentId: string,
   userQuery: string,
-  conversationHistory: Array<{ role: string; content: string; agentId?: string }> = []
+  conversationHistory: Array<{ role: string; content: string; agentId?: string }> = [],
 ) {
   const agent = getAgentById(agentId);
   if (!agent) {
@@ -237,8 +335,8 @@ export async function* executeSingleAgentStream(
           content: chunk,
           fullContent: fullMessage,
           agentId: agent.id,
-          agentName: agent.name
-        }
+          agentName: agent.name,
+        },
       };
     }
 
@@ -247,8 +345,8 @@ export async function* executeSingleAgentStream(
       data: {
         content: cleanLaTeXFormat(fullMessage),
         agentId: agent.id,
-        agentName: agent.name
-      }
+        agentName: agent.name,
+      },
     };
   } catch (error) {
     console.error(`[Agent ${agentId}] Stream error:`, error);
@@ -256,8 +354,8 @@ export async function* executeSingleAgentStream(
       type: 'error',
       data: {
         message: '抱歉，我遇到了一个错误，请稍后重试。',
-        agentId: agent.id
-      }
+        agentId: agent.id,
+      },
     };
   }
 }
@@ -271,11 +369,11 @@ export async function* executeSingleAgentStream(
  */
 export async function runCscaMultiAgent(
   userMessage: string,
-  existingMessages: Array<{ role: string; content: string; agentId?: string }> = []
+  existingMessages: Array<{ role: string; content: string; agentId?: string }> = [],
 ) {
   // Step 1: Select the best agent (FAST - keyword-based only)
   const selectedAgentId = selectAgent(userMessage);
-  
+
   debug(`[Multi-Agent] Selected agent: ${selectedAgentId} for query: "${userMessage}"`);
 
   // Step 2: Execute the selected agent
@@ -283,11 +381,13 @@ export async function runCscaMultiAgent(
 
   // Return structured response
   return {
-    messages: [{
-      role: result.success ? 'assistant' : 'system',
-      content: result.message,
-      agentId: result.agentId,
-    }],
+    messages: [
+      {
+        role: result.success ? 'assistant' : 'system',
+        content: result.message,
+        agentId: result.agentId,
+      },
+    ],
     selectedAgent: getAgentById(selectedAgentId),
     agentId: selectedAgentId,
   };
@@ -298,11 +398,11 @@ export async function runCscaMultiAgent(
  */
 export async function* runCscaMultiAgentStream(
   userMessage: string,
-  existingMessages: Array<{ role: string; content: string; agentId?: string }> = []
+  existingMessages: Array<{ role: string; content: string; agentId?: string }> = [],
 ) {
   // Step 1: Select the best agent (FAST - keyword-based only)
   const selectedAgentId = selectAgent(userMessage);
-  
+
   debug(`[Multi-Agent Stream] Selected agent: ${selectedAgentId} for query: "${userMessage}"`);
 
   // Step 2: Execute with streaming

@@ -43,21 +43,15 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/_next/static/(.*)',
-        headers: [
-          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-        ],
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
       {
         source: '/favicon.ico',
-        headers: [
-          { key: 'Cache-Control', value: 'public, max-age=86400' },
-        ],
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=86400' }],
       },
       {
         source: '/(.*).(png|jpg|jpeg|gif|svg|webp|avif)',
-        headers: [
-          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-        ],
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
     ];
   },

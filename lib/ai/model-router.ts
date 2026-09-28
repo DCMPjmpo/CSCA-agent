@@ -1,8 +1,8 @@
 ﻿/**
  * Model Router with Fallback - CSCA Pilot Agent
- * 
+ *
  * Priority: GMI Platform → DashScope (Qwen/DeepSeek/Kimi)
- * 
+ *
  * GMI Platform Configuration:
  * - Base URL: GMI_API_BASE (from environment)
  * - API Key: ANTHROPIC_API_KEY (from environment)
@@ -21,15 +21,15 @@ const debug = process.env.NODE_ENV === 'development' ? console.info : () => {};
 // Task Type Definition
 // ==========================================
 export type TaskType =
-  | 'diagnosis'          // Step 1: Subject diagnosis
-  | 'knowledge_map'      // Step 2: Knowledge graph generation
-  | 'exercise_generation'// Step 3: Exercise generation
-  | 'mock_exam'          // Step 4: Mock exam generation
-  | 'score_analysis'     // Step 5: Score analysis
-  | 'university_match'   // Step 6: University/scholarship matching
-  | 'translation'        // Multilingual translation
-  | 'fallback'           // Generic fallback
-  | 'tutor';             // AI tutor/explanation
+  | 'diagnosis' // Step 1: Subject diagnosis
+  | 'knowledge_map' // Step 2: Knowledge graph generation
+  | 'exercise_generation' // Step 3: Exercise generation
+  | 'mock_exam' // Step 4: Mock exam generation
+  | 'score_analysis' // Step 5: Score analysis
+  | 'university_match' // Step 6: University/scholarship matching
+  | 'translation' // Multilingual translation
+  | 'fallback' // Generic fallback
+  | 'tutor'; // AI tutor/explanation
 
 // ==========================================
 // GMI Platform Configuration (PRIORITY)
@@ -183,7 +183,9 @@ function getFallbackClient(modelId: string) {
       apiKey = fallbackKeys[0]!;
       debug(`[ModelRouter] Using fallback API key from available sources`);
     } else {
-      throw new Error(`API key required for model ${modelId}. Please set ${config.apiKeyEnv} in .env.local`);
+      throw new Error(
+        `API key required for model ${modelId}. Please set ${config.apiKeyEnv} in .env.local`,
+      );
     }
   }
 
@@ -202,7 +204,7 @@ function getFallbackClient(modelId: string) {
 const TIMEOUT_MS = 60000; // 60 seconds
 
 export async function callWithFallback<T extends 'text' | 'stream'>(
-  options: CallOptions & { type: T }
+  options: CallOptions & { type: T },
 ): Promise<T extends 'text' ? GenerateTextResult<any, any> : StreamTextResult<any, any>> {
   const { task, messages, systemPrompt, maxTokens, type } = options;
 
@@ -228,11 +230,9 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
     debug(`[ModelRouter] Calling GMI API: ${gmiModelName}`);
 
     return Promise.race([
-      type === 'text'
-        ? generateText(callParams)
-        : streamText(callParams),
+      type === 'text' ? generateText(callParams) : streamText(callParams),
       new Promise<never>((_, reject) =>
-        setTimeout(() => reject(new Error('GMI_TIMEOUT')), TIMEOUT_MS)
+        setTimeout(() => reject(new Error('GMI_TIMEOUT')), TIMEOUT_MS),
       ),
     ]);
   };
@@ -249,14 +249,14 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
       maxTokens: maxTokens || 2048,
     };
 
-    debug(`[ModelRouter] Falling back to ${modelConfig.provider === 'siliconflow' ? 'SiliconFlow' : 'DashScope'}: ${modelConfig.id}`);
+    debug(
+      `[ModelRouter] Falling back to ${modelConfig.provider === 'siliconflow' ? 'SiliconFlow' : 'DashScope'}: ${modelConfig.id}`,
+    );
 
     return Promise.race([
-      type === 'text'
-        ? generateText(callParams)
-        : streamText(callParams),
+      type === 'text' ? generateText(callParams) : streamText(callParams),
       new Promise<never>((_, reject) =>
-        setTimeout(() => reject(new Error('FALLBACK_TIMEOUT')), TIMEOUT_MS)
+        setTimeout(() => reject(new Error('FALLBACK_TIMEOUT')), TIMEOUT_MS),
       ),
     ]);
   };
@@ -295,7 +295,7 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
 // SSE Streaming Response Wrapper
 // ==========================================
 export async function streamWithFallback(
-  options: Omit<CallOptions, 'type'>
+  options: Omit<CallOptions, 'type'>,
 ): Promise<StreamTextResult<any, any>> {
   return callWithFallback({ ...options, type: 'stream' });
 }
@@ -310,7 +310,7 @@ export async function streamWithFallback(
  * 状态而不是把写死的文案当成 AI 回答展示给用户。
  */
 export async function generateWithFallback(
-  options: Omit<CallOptions, 'type'>
+  options: Omit<CallOptions, 'type'>,
 ): Promise<GenerateTextResult<any, any>> {
   return callWithFallback({ ...options, type: 'text' });
 }
