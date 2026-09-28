@@ -1054,5 +1054,44 @@
     "title": "アクセスコードを入力",
     "placeholder": "アクセスコード",
     "error": "アクセスコードが正しくありません。もう一度お試しください。"
+  },
+  "mockExam": {
+    "examMode": "Exam mode",
+    "fullMode": "Full mock exam",
+    "practiceMode": "Practice mode",
+    "fullDescription": "Full mock exam covering all subjects",
+    "practiceDescription": "Practice on weak areas",
+    "examNotes": "Exam notes",
+    "title": "Mock Exam",
+    "description": "Generate a mock exam",
+    "start": "Start exam",
+    "time": "Time left",
+    "answered": "Answered",
+    "correct": "Correct",
+    "submit": "Submit",
+    "completed": "Completed"
+  },
+  "csca": {
+    "title": "CSCA Exam Prep",
+    "subtitle": "Chinese Standardized Exam for International Students",
+    "diagnosis": "Learning Diagnosis",
+    "examCenter": "Exam Center",
+    "mockExam": "Mock Exam",
+    "scoreAnalysis": "Score Analysis",
+    "errorReview": "Error Review",
+    "studyPlan": "Study Plan",
+    "universityMatch": "University Match"
+  },
+  "exam": {
+    "modeFull": "Full Mode",
+    "modePractice": "Practice Mode",
+    "timeLimit": "Time Remaining",
+    "submit": "Submit Answers",
+    "question": "Question {{number}}",
+    "answer": "Answer",
+    "correct": "Correct",
+    "wrong": "Wrong",
+    "result": "Result",
+    "score": "Score"
   }
 }
