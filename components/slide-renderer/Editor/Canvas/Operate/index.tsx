@@ -101,7 +101,7 @@ export function Operate({
   }, [currentSlide]);
 
   const CurrentOperateComponent = useMemo(() => {
-    const elementTypeMap: Record<string, unknown> = {
+    const elementTypeMap: Record<string, React.ComponentType<Record<string, unknown>>> = {
       [ElementTypes.IMAGE]: ImageElementOperate,
       [ElementTypes.TEXT]: TextElementOperate,
       [ElementTypes.SHAPE]: ShapeElementOperate,
@@ -143,7 +143,7 @@ export function Operate({
     >
       {isSelected && CurrentOperateComponent && (
         <CurrentOperateComponent
-          elementInfo={elementInfo as Record<string, unknown>}
+          elementInfo={elementInfo as unknown as Record<string, unknown>}
           handlerVisible={handlerVisible}
           rotateElement={rotateElement as (...args: unknown[]) => void}
           scaleElement={scaleElement as (...args: unknown[]) => void}

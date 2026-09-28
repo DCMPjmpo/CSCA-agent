@@ -498,7 +498,7 @@ function auditAndFilterQuestions(questions: ExamQuestion[]): AuditFilterResult {
     if (auditResult.isValid) {
       // 清理题目内容
       const cleaned = fixQuestion(q as AuditQuestion);
-      valid.push({ ...q, question: cleaned.question, options: cleaned.options });
+      valid.push({ ...q, question: cleaned.question, options: cleaned.options as string[] });
     } else {
       invalid.push({ ...q, auditIssues: auditResult.issues });
     }

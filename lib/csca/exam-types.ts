@@ -35,6 +35,6 @@ export interface MatchedUniversity {
   majors: string[];
   scholarship?: string;
   rank: number;
-  probability?: string;
+  probability?: number;
   [key: string]: unknown;
 }

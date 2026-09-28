@@ -883,7 +883,7 @@ export default function CSCAVoyageApp() {
       : (questionOrRecord.userAnswer ?? '未作答');
 
     // 设置当前错题用于弹窗显示
-    setCurrentErrorQuestion(isQuestion ? questionOrRecord : null);
+    setCurrentErrorQuestion(isQuestion ? (questionOrRecord as ExamQuestion) : null);
     setIsLoading(true);
     try {
       // [TRA-FIX] 改为调用服务端 API，避免 AI SDK 进入客户端 bundle
@@ -1410,11 +1410,11 @@ HSK水平：HSK${hskLevel}
 
       case 'knowledge_map': {
         const statusOf = (n: KnowledgeMapItem): 'weak' | 'needsReview' | 'mastered' => {
-          const s = (n as Record<string, unknown>).status as string | undefined;
+          const s = (n as unknown as Record<string, unknown>).status as string | undefined;
           if (s === 'weak' || s === 'needsReview' || s === 'mastered') return s;
           const m =
-            typeof (n as Record<string, unknown>).mastery === 'number'
-              ? Number((n as Record<string, unknown>).mastery)
+            typeof (n as unknown as Record<string, unknown>).mastery === 'number'
+              ? Number((n as unknown as Record<string, unknown>).mastery)
               : 50;
           if (m >= 80) return 'mastered';
           if (m >= 40) return 'needsReview';
@@ -1426,7 +1426,7 @@ HSK水平：HSK${hskLevel}
           mastered: knowledgeMap.filter((n) => statusOf(n) === 'mastered'),
         };
         const countryName = isZh
-          ? ((selectedCountry as { nameZh?: string }).nameZh ?? selectedCountry.name)
+          ? ((selectedCountry as unknown as { nameZh?: string }).nameZh ?? selectedCountry.name)
           : selectedCountry.name;
         const whyTemplate = (
           t.knowledgeMap.whyMattersTemplate ??
@@ -2323,8 +2323,8 @@ HSK水平：HSK${hskLevel}
 
       case 'result': {
         const abilityTable = buildAbilityTable(
-          examResult as Record<string, unknown>,
-          scoreAnalysis as Record<string, unknown>,
+          examResult as unknown as Record<string, unknown>,
+          scoreAnalysis as unknown as Record<string, unknown>,
           selectedSubjects,
         );
         const nextTitle = isZh ? nextAction.title.zh : nextAction.title.en;
@@ -2770,7 +2770,7 @@ HSK水平：HSK${hskLevel}
       case 'error_review': {
         const loop = getCorrectionLoop(
           errorRecords,
-          examResult as Record<string, unknown>,
+          examResult as unknown as Record<string, unknown>,
           {
             scoreAnalysis: scoreAnalysis as unknown as Record<string, unknown>,
             studyPlan: studyPlan as unknown as Record<string, unknown>,
@@ -3013,7 +3013,7 @@ HSK水平：HSK${hskLevel}
 
       case 'study_plan': {
         const weakSubjects: string[] = selectedSubjects.slice(0, 7);
-        const weekly = getWeeklyRoutePlan(studyPlan as Record<string, unknown>, {
+        const weekly = getWeeklyRoutePlan(studyPlan, {
           locale,
           selectedSubjects: weakSubjects,
         });
@@ -3414,9 +3414,11 @@ HSK水平：HSK${hskLevel}
   };
 
   const stageIndex = STEP_TO_VOYAGE_INDEX[currentStep] ?? activeStep;
-  const stageMeta = (t.nav as Record<string, unknown>).voyage?.[
-    VOYAGE_STAGE_ORDER[stageIndex] ?? 'stage1'
-  ];
+  const stageMeta = (
+    (t.nav as Record<string, unknown>).voyage as
+      | Record<string, { eyebrow?: string; title?: string; subtitle?: string } | undefined>
+      | undefined
+  )?.[VOYAGE_STAGE_ORDER[stageIndex] ?? 'stage1'];
   const stageEyebrow = stageMeta?.eyebrow
     ? String(stageMeta.eyebrow)
         .toUpperCase()
@@ -3480,15 +3482,21 @@ HSK水平：HSK${hskLevel}
                   // （done=true → status-success），触发 hydration mismatch。
                   // 改为从 useCscaSession hook 提供的 sessionData（null on server AND
                   // client first render），mount 后 useEffect 更新真实数据。
-                  const _completedArr = Array.isArray(
-                    (cscaSession?.sessionData as Record<string, unknown> | undefined)
-                      ?.completedStages,
-                  )
-                    ? ((cscaSession?.sessionData as Record<string, unknown> | undefined)
-                        .completedStages as number[])
+                  const _sessionData = cscaSession?.sessionData as unknown as
+                    | Record<string, unknown>
+                    | undefined;
+                  const _completedArr = Array.isArray(_sessionData?.completedStages)
+                    ? (_sessionData?.completedStages as number[])
                     : [];
                   return VOYAGE_STAGE_ORDER.map((sid, i) => {
-                    const meta = (t.nav as Record<string, unknown>).voyage?.[sid];
+                    const meta = (
+                      (t.nav as Record<string, unknown>).voyage as
+                        | Record<
+                            string,
+                            { eyebrow?: string; title?: string; subtitle?: string } | undefined
+                          >
+                        | undefined
+                    )?.[sid];
                     const done = _completedArr.includes(i);
                     const isCurrent = i === stageIndex;
                     const unlocked =
@@ -3614,7 +3622,7 @@ HSK水平：HSK${hskLevel}
                           <span key={s} className="tabular-nums">
                             <span className="text-[color:var(--color-ink-700)]">{s}</span>
                             <span className="ml-1 font-medium text-[color:var(--color-ink-900)]">
-                              {v as string}
+                              {String(v)}
                             </span>
                             {i < arr.length - 1 && (
                               <span className="mx-1.5 text-[color:var(--color-line-300)]">/</span>
