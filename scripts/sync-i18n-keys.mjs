@@ -47,7 +47,7 @@ function main() {
   const source = JSON.parse(sourceRaw);
   const sourceKeys = collectLeafKeys(source);
 
-  const localeFiles = fs.readdirSync(LOCALES_DIR).filter(name => name.endsWith('.json'));
+  const localeFiles = fs.readdirSync(LOCALES_DIR).filter((name) => name.endsWith('.json'));
 
   let totalFixed = 0;
 
@@ -59,7 +59,7 @@ function main() {
     const locale = JSON.parse(localeRaw);
     const localeKeys = collectLeafKeys(locale);
 
-    const missing = [...sourceKeys].filter(key => !localeKeys.has(key));
+    const missing = [...sourceKeys].filter((key) => !localeKeys.has(key));
 
     if (missing.length === 0) continue;
 
