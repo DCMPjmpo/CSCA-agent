@@ -23,11 +23,9 @@ import {
 import { CSCA_SUBJECTS, getSubjectConfig } from '@/lib/csca/exam-config';
 import {
   getAllScienceChineseQuestions,
-  getScienceChineseQuestionsByModule,
 } from '@/lib/csca/science-chinese-questions';
 import {
   getAllArtsChineseQuestions,
-  getArtsChineseQuestionsByModule,
 } from '@/lib/csca/arts-chinese-questions';
 import { auditQuestion, fixQuestion, Question as AuditQuestion } from '@/lib/csca/question-auditor';
 import { selectQuestionsForSubjects } from '@/lib/csca/question-selection';
