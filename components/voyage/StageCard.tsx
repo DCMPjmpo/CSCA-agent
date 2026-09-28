@@ -51,7 +51,7 @@ export function StageCard({
   onClick,
   as = 'section',
 }: StageCardProps) {
-  const Tag = as as any;
+  const Tag = as as React.ElementType;
 
   const toneClasses: Record<NonNullable<StageCardProps['tone']>, string> = {
     default: interactive ? 'bg-white border border-[color:var(--color-border)]' : 'bg-transparent',

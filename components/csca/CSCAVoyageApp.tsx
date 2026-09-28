@@ -229,7 +229,16 @@ export default function CSCAVoyageApp() {
   const [examStarted, setExamStarted] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [universityCategories, setUniversityCategories] = useState<UniversityCategory[]>([]);
-  const [errorRecords, setErrorRecords] = useState<any[]>([]);
+  const [errorRecords, setErrorRecords] = useState<
+    Array<{
+      subject: string;
+      module?: string;
+      question: string;
+      userAnswer: string;
+      correctAnswer: string;
+      id: string;
+    }>
+  >([]);
   const [studyPlan, setStudyPlan] = useState<StudyPlan | null>(null);
   const [aiExplanation, setAiExplanation] = useState<string>('');
   const [showExplanation, setShowExplanation] = useState(false);
@@ -869,7 +878,9 @@ export default function CSCAVoyageApp() {
     }
   };
 
-  const handleGetAIExplanation = async (questionOrRecord: ExamQuestion | any) => {
+  const handleGetAIExplanation = async (
+    questionOrRecord: ExamQuestion | Record<string, unknown>,
+  ) => {
     const isQuestion = 'options' in questionOrRecord;
     const questionText = questionOrRecord.question;
     const correctAnswer = questionOrRecord.correctAnswer;
@@ -941,7 +952,7 @@ export default function CSCAVoyageApp() {
             color: 'text-warning',
             bgColor: 'bg-warning/10',
             borderColor: 'border-warning/40',
-            universities: data.data.reachSchools.map((u: any, i: number) => ({
+            universities: data.data.reachSchools.map((u: Record<string, unknown>, i: number) => ({
               ...u,
               rank: i + 1,
             })),
@@ -952,7 +963,7 @@ export default function CSCAVoyageApp() {
             color: 'text-gold-leaf',
             bgColor: 'bg-gold-leaf/10',
             borderColor: 'border-gold-leaf/40',
-            universities: data.data.targetSchools.map((u: any, i: number) => ({
+            universities: data.data.targetSchools.map((u: Record<string, unknown>, i: number) => ({
               ...u,
               rank: i + 1,
             })),
@@ -963,7 +974,10 @@ export default function CSCAVoyageApp() {
             color: 'text-bamboo',
             bgColor: 'bg-bamboo/10',
             borderColor: 'border-bamboo/40',
-            universities: data.data.safeSchools.map((u: any, i: number) => ({ ...u, rank: i + 1 })),
+            universities: data.data.safeSchools.map((u: Record<string, unknown>, i: number) => ({
+              ...u,
+              rank: i + 1,
+            })),
           },
         ]);
       }
@@ -988,10 +1002,10 @@ export default function CSCAVoyageApp() {
         diagnosis: diagnosisResult,
         knowledgeMap,
         adaptiveExercises,
-        examResult: examResult as any,
-        scoreAnalysis: scoreAnalysis as any,
+        examResult: examResult as Record<string, unknown>,
+        scoreAnalysis: scoreAnalysis as Record<string, unknown>,
         errorRecords,
-        studyPlan: studyPlan as any,
+        studyPlan: studyPlan as Record<string, unknown>,
         selectedSubjects,
         selectedCountryCode: selectedCountry.code,
         hskLevel,
@@ -1138,8 +1152,12 @@ For a personalized plan, enter the AI Mate Hall with latest diagnosis & mock dat
       return;
     }
 
-    const weakSubjects = [...new Set(errors.map((e: any) => e.subject))];
-    const weakModules = [...new Set(errors.map((e: any) => e.module))];
+    const weakSubjects = [
+      ...new Set(errors.map((e: { subject: string; module?: string }) => e.subject)),
+    ];
+    const weakModules = [
+      ...new Set(errors.map((e: { subject: string; module?: string }) => e.module)),
+    ];
 
     const requirement = `根据以下错题记录生成针对性学习课堂：
 
@@ -1400,9 +1418,12 @@ HSK水平：HSK${hskLevel}
 
       case 'knowledge_map': {
         const statusOf = (n: KnowledgeMapItem): 'weak' | 'needsReview' | 'mastered' => {
-          const s = (n as any).status as string | undefined;
+          const s = (n as Record<string, unknown>).status as string | undefined;
           if (s === 'weak' || s === 'needsReview' || s === 'mastered') return s;
-          const m = typeof (n as any).mastery === 'number' ? Number((n as any).mastery) : 50;
+          const m =
+            typeof (n as Record<string, unknown>).mastery === 'number'
+              ? Number((n as Record<string, unknown>).mastery)
+              : 50;
           if (m >= 80) return 'mastered';
           if (m >= 40) return 'needsReview';
           return 'weak';
@@ -1413,7 +1434,7 @@ HSK水平：HSK${hskLevel}
           mastered: knowledgeMap.filter((n) => statusOf(n) === 'mastered'),
         };
         const countryName = isZh
-          ? ((selectedCountry as any).nameZh ?? selectedCountry.name)
+          ? ((selectedCountry as { nameZh?: string }).nameZh ?? selectedCountry.name)
           : selectedCountry.name;
         const whyTemplate = (
           t.knowledgeMap.whyMattersTemplate ??
@@ -2310,8 +2331,8 @@ HSK水平：HSK${hskLevel}
 
       case 'result': {
         const abilityTable = buildAbilityTable(
-          examResult as any,
-          scoreAnalysis as any,
+          examResult as Record<string, unknown>,
+          scoreAnalysis as Record<string, unknown>,
           selectedSubjects,
         );
         const nextTitle = isZh ? nextAction.title.zh : nextAction.title.en;
@@ -2570,10 +2591,10 @@ HSK水平：HSK${hskLevel}
             diagnosis: diagnosisResult,
             knowledgeMap,
             adaptiveExercises,
-            examResult: examResult as any,
-            scoreAnalysis: scoreAnalysis as any,
+            examResult: examResult as Record<string, unknown>,
+            scoreAnalysis: scoreAnalysis as Record<string, unknown>,
             errorRecords,
-            studyPlan: studyPlan as any,
+            studyPlan: studyPlan as Record<string, unknown>,
             selectedSubjects,
             selectedCountryCode: selectedCountry.code,
             hskLevel,
@@ -2757,10 +2778,10 @@ HSK水平：HSK${hskLevel}
       case 'error_review': {
         const loop = getCorrectionLoop(
           errorRecords,
-          examResult as any,
+          examResult as Record<string, unknown>,
           {
-            scoreAnalysis: scoreAnalysis as any,
-            studyPlan: studyPlan as any,
+            scoreAnalysis: scoreAnalysis as Record<string, unknown>,
+            studyPlan: studyPlan as Record<string, unknown>,
           },
           { locale },
         );
@@ -3000,7 +3021,7 @@ HSK水平：HSK${hskLevel}
 
       case 'study_plan': {
         const weakSubjects: string[] = selectedSubjects.slice(0, 7);
-        const weekly = getWeeklyRoutePlan(studyPlan as any, {
+        const weekly = getWeeklyRoutePlan(studyPlan as Record<string, unknown>, {
           locale,
           selectedSubjects: weakSubjects,
         });
@@ -3401,7 +3422,9 @@ HSK水平：HSK${hskLevel}
   };
 
   const stageIndex = STEP_TO_VOYAGE_INDEX[currentStep] ?? activeStep;
-  const stageMeta = (t.nav as any).voyage?.[VOYAGE_STAGE_ORDER[stageIndex] ?? 'stage1'];
+  const stageMeta = (t.nav as Record<string, unknown>).voyage?.[
+    VOYAGE_STAGE_ORDER[stageIndex] ?? 'stage1'
+  ];
   const stageEyebrow = stageMeta?.eyebrow
     ? String(stageMeta.eyebrow)
         .toUpperCase()
@@ -3466,12 +3489,14 @@ HSK水平：HSK${hskLevel}
                   // 改为从 useCscaSession hook 提供的 sessionData（null on server AND
                   // client first render），mount 后 useEffect 更新真实数据。
                   const _completedArr = Array.isArray(
-                    (cscaSession?.sessionData as any)?.completedStages,
+                    (cscaSession?.sessionData as Record<string, unknown> | undefined)
+                      ?.completedStages,
                   )
-                    ? ((cscaSession?.sessionData as any).completedStages as number[])
+                    ? ((cscaSession?.sessionData as Record<string, unknown> | undefined)
+                        .completedStages as number[])
                     : [];
                   return VOYAGE_STAGE_ORDER.map((sid, i) => {
-                    const meta = (t.nav as any).voyage?.[sid];
+                    const meta = (t.nav as Record<string, unknown>).voyage?.[sid];
                     const done = _completedArr.includes(i);
                     const isCurrent = i === stageIndex;
                     const unlocked =
@@ -3597,7 +3622,7 @@ HSK水平：HSK${hskLevel}
                           <span key={s} className="tabular-nums">
                             <span className="text-[color:var(--color-ink-700)]">{s}</span>
                             <span className="ml-1 font-medium text-[color:var(--color-ink-900)]">
-                              {v as any}
+                              {v as string}
                             </span>
                             {i < arr.length - 1 && (
                               <span className="mx-1.5 text-[color:var(--color-line-300)]">/</span>

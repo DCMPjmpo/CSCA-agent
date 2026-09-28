@@ -52,7 +52,7 @@ export function BrandShell({ children }: { children: ReactNode }) {
       <div
         data-testid="brand-shell"
         className="relative lg:pl-[var(--nav-width)] pb-20 lg:pb-0 transition-[padding-left] duration-200 ease-out"
-        style={{ ['--nav-width' as any]: collapsed ? '76px' : '260px' }}
+        style={{ ['--nav-width' as string]: collapsed ? '76px' : '260px' }}
       >
         <VoyageNavigation />
         {children}

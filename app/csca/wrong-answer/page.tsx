@@ -26,7 +26,7 @@ import { cn } from '@/lib/utils';
 export default function WrongAnswerCenterPage() {
   const { t, locale } = useTranslation();
   const isZh = locale.startsWith('zh');
-  const w = (t as any).wrongAnswerCenter || {};
+  const w = ((t as Record<string, unknown>).wrongAnswerCenter as Record<string, string>) || {};
 
   const [records, setRecords] = useState<ErrorRecord[]>([]);
   const [subjectFilter, setSubjectFilter] = useState<string>('all');

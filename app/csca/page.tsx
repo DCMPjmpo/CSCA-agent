@@ -149,8 +149,8 @@ export default function CSCADashboardPage() {
   const isNewUser = !session?.diagnosisResult && stats.total === 0;
 
   // Dashboard translations
-  const d = (t as any).dashboard || {};
-  const w = (t as any).wrongAnswerCenter || {};
+  const d = ((t as Record<string, unknown>).dashboard as Record<string, string>) || {};
+  const w = ((t as Record<string, unknown>).wrongAnswerCenter as Record<string, string>) || {};
 
   const stageLabels = isZh
     ? [

@@ -58,7 +58,7 @@ export async function POST(request: Request) {
     const result = await runCscaMultiAgent(message, messages);
 
     const assistantMessages = result.messages.filter(
-      (m: any) => m.role === 'assistant' && m.agentId,
+      (m: { role: string; agentId?: string }) => m.role === 'assistant' && m.agentId,
     );
 
     return NextResponse.json({

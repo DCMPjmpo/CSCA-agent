@@ -369,7 +369,7 @@ export function VoyagePageHeader({
     typeof stageId === 'number'
       ? stageId
       : typeof stageId === 'string'
-        ? VOYAGE_STAGE_ORDER.indexOf(stageId as any)
+        ? VOYAGE_STAGE_ORDER.indexOf(stageId as keyof typeof VOYAGE_STAGE_ORDER)
         : undefined;
 
   return (

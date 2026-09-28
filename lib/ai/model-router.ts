@@ -205,7 +205,11 @@ const TIMEOUT_MS = 60000; // 60 seconds
 
 export async function callWithFallback<T extends 'text' | 'stream'>(
   options: CallOptions & { type: T },
-): Promise<T extends 'text' ? GenerateTextResult<any, any> : StreamTextResult<any, any>> {
+): Promise<
+  T extends 'text'
+    ? GenerateTextResult<Record<string, unknown>, Record<string, unknown>>
+    : StreamTextResult<Record<string, unknown>, Record<string, unknown>>
+> {
   const { task, messages, systemPrompt, maxTokens, type } = options;
 
   // Get model mapping for this task
@@ -266,7 +270,9 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
     try {
       const result = await makeGmiCall();
       debug(`[ModelRouter] GMI API call successful`);
-      return result as any;
+      return result as
+        | GenerateTextResult<Record<string, unknown>, Record<string, unknown>>
+        | StreamTextResult<Record<string, unknown>, Record<string, unknown>>;
     } catch (gmiError) {
       console.warn(`[ModelRouter] GMI API failed:`, gmiError);
       debug(`[ModelRouter] Falling back to secondary provider`);
@@ -279,7 +285,9 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
   try {
     const result = await makeFallbackCall();
     debug(`[ModelRouter] Fallback successful`);
-    return result as any;
+    return result as
+      | GenerateTextResult<Record<string, unknown>, Record<string, unknown>>
+      | StreamTextResult<Record<string, unknown>, Record<string, unknown>>;
   } catch (fallbackError) {
     console.error(`[ModelRouter] Fallback also failed:`, fallbackError);
 
@@ -296,7 +304,7 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
 // ==========================================
 export async function streamWithFallback(
   options: Omit<CallOptions, 'type'>,
-): Promise<StreamTextResult<any, any>> {
+): Promise<StreamTextResult<Record<string, unknown>, Record<string, unknown>>> {
   return callWithFallback({ ...options, type: 'stream' });
 }
 
@@ -311,7 +319,7 @@ export async function streamWithFallback(
  */
 export async function generateWithFallback(
   options: Omit<CallOptions, 'type'>,
-): Promise<GenerateTextResult<any, any>> {
+): Promise<GenerateTextResult<Record<string, unknown>, Record<string, unknown>>> {
   return callWithFallback({ ...options, type: 'text' });
 }
 

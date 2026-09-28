@@ -74,7 +74,9 @@ export interface StageStore {
     mode: StageMode;
   };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setState: (partial: any) => void;
+  setState: (partial: Record<string, unknown>) => void;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  subscribe: (listener: (state: any, prevState: any) => void) => () => void;
+  subscribe: (
+    listener: (state: Record<string, unknown>, prevState: Record<string, unknown>) => void,
+  ) => () => void;
 }

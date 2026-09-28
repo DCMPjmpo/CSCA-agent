@@ -31,9 +31,10 @@ import {
   type AnswerRecord,
 } from '@/lib/csca/learning-context';
 import { dedupExamQuestions } from '@/lib/csca/exam-dedup';
+import type { ExamQuestion, AuditFilterResult } from '@/lib/csca/exam-types';
 
 // CSCA Mock questions database (备用/补充)
-const MOCK_QUESTIONS: Record<string, any[]> = {
+const MOCK_QUESTIONS: Record<string, ExamQuestion[]> = {
   基础汉语: [
     {
       id: 'chinese-mock-1',
@@ -449,7 +450,7 @@ const MOCK_QUESTIONS: Record<string, any[]> = {
 };
 
 // 获取理科中文题目
-function getScienceChineseExamQuestions(count: number): any[] {
+function getScienceChineseExamQuestions(count: number): ExamQuestion[] {
   const allQuestions = getAllScienceChineseQuestions();
   const shuffled = allQuestions.sort(() => Math.random() - 0.5);
   const selected = shuffled.slice(0, Math.min(count, shuffled.length));
@@ -468,7 +469,7 @@ function getScienceChineseExamQuestions(count: number): any[] {
 }
 
 // 获取文科中文题目
-function getArtsChineseExamQuestions(count: number): any[] {
+function getArtsChineseExamQuestions(count: number): ExamQuestion[] {
   const allQuestions = getAllArtsChineseQuestions();
   const shuffled = allQuestions.sort(() => Math.random() - 0.5);
   const selected = shuffled.slice(0, Math.min(count, shuffled.length));
@@ -487,9 +488,9 @@ function getArtsChineseExamQuestions(count: number): any[] {
 }
 
 // 审核并过滤题目
-function auditAndFilterQuestions(questions: any[]): { valid: any[]; invalid: any[] } {
-  const valid: any[] = [];
-  const invalid: any[] = [];
+function auditAndFilterQuestions(questions: ExamQuestion[]): AuditFilterResult {
+  const valid: ExamQuestion[] = [];
+  const invalid: ExamQuestion[] = [];
 
   questions.forEach((q) => {
     const auditResult = auditQuestion(q as AuditQuestion);
@@ -511,7 +512,7 @@ function generateExamQuestions(
   subjects: string[],
   questionCount: number,
 ): {
-  questions: any[];
+  questions: ExamQuestion[];
   sourceStats: {
     real_exam: number;
     basic_practice: number;
@@ -520,7 +521,7 @@ function generateExamQuestions(
     fallback_mock: number;
   };
 } {
-  let allQuestions: any[] = [];
+  let allQuestions: ExamQuestion[] = [];
   const auditStats = { total: 0, valid: 0, invalid: 0 };
   const sourceStats = {
     real_exam: 0,
@@ -556,7 +557,7 @@ function generateExamQuestions(
     }
 
     // 解析选项（处理选项可能是字符串的情况）
-    function parseOptions(options: any[] | undefined): string[] {
+    function parseOptions(options: string[] | undefined): string[] {
       if (!options || options.length === 0) return [];
 
       // 如果只有一个选项且包含多个选项标记，尝试拆分

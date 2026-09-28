@@ -315,7 +315,7 @@ export function getAIMateContextHint(
     ...(locale?.startsWith('zh') || locale === undefined
       ? {}
       : { contextHint: h.contextHintEN, contextualTitle: '' }),
-  } as any;
+  } as Record<string, unknown>;
 }
 
 /* =======================================================================
@@ -405,7 +405,10 @@ export function buildVoyageAIMateContext(
         : `Error book size=${snap.errorRecords.length}.`,
     );
   }
-  if ((snap.studyPlan as any)?.weeks?.length || (snap.studyPlan as any)?.dailySchedule?.length) {
+  if (
+    (snap.studyPlan as Record<string, unknown> | undefined)?.weeks?.length ||
+    (snap.studyPlan as Record<string, unknown> | undefined)?.dailySchedule?.length
+  ) {
     lines.push(zh ? `已存在学习航程计划。` : `Personal voyage route exists.`);
   }
   lines.push(
@@ -468,7 +471,8 @@ export function getVoyageNextStep(
   // 如果已有 StudyPlan → 去学习航程
   if (
     snap.studyPlan &&
-    ((snap.studyPlan as any).weeks?.length || (snap.studyPlan as any).dailySchedule?.length)
+    ((snap.studyPlan as Record<string, unknown> | undefined).weeks?.length ||
+      (snap.studyPlan as Record<string, unknown> | undefined).dailySchedule?.length)
   ) {
     return go(
       '按本周航程继续学习',
@@ -528,7 +532,7 @@ export function getWeeklyRoutePlan(
   const subjects = opts.selectedSubjects?.filter(Boolean) ?? [];
 
   // 优先：StudyPlan.weeks[0].days
-  const realDays = (plan as any)?.weeks?.[0]?.days as
+  const realDays = (plan as Record<string, unknown> | undefined)?.weeks?.[0]?.days as
     | Array<{ subject?: string; focus?: string; topics?: string[] }>
     | undefined;
 
@@ -551,7 +555,7 @@ export function getWeeklyRoutePlan(
   }
 
   // 次优先：StudyPlan.dailySchedule
-  const daily = (plan as any)?.dailySchedule as
+  const daily = (plan as Record<string, unknown> | undefined)?.dailySchedule as
     | Array<{ subject?: string; focus?: string }>
     | undefined;
   if (daily?.length) {
@@ -614,12 +618,15 @@ export function getCorrectionLoop(
   const score = hasExam ? Number(examResult!.score) : 0;
 
   const analysis = snap.scoreAnalysis;
-  const causes = (analysis as any)?.errorCauses as
+  const causes = (analysis as Record<string, unknown> | undefined)?.errorCauses as
     | Array<{ name: string; nameEn?: string; count?: number; percent?: number }>
     | undefined;
 
   const trainingRecommended =
-    ((analysis as any)?.recommendedTopics as Array<{ subject?: string; topic?: string }>) ?? [];
+    ((analysis as Record<string, unknown> | undefined)?.recommendedTopics as Array<{
+      subject?: string;
+      topic?: string;
+    }>) ?? [];
 
   const steps: CorrectionLoopStep[] = [
     {
@@ -750,8 +757,12 @@ export function buildAbilityTable(
   scoreAnalysis: Partial<ScoreAnalysisResult> | null | undefined,
   selectedSubjects: string[] = [],
 ): AbilityRow[] {
-  const breakdown = (examResult as any)?.breakdown as Record<string, number> | undefined;
-  const subjectScores = (scoreAnalysis as any)?.subjectScores as Record<string, number> | undefined;
+  const breakdown = (examResult as Record<string, unknown> | undefined)?.breakdown as
+    | Record<string, number>
+    | undefined;
+  const subjectScores = (scoreAnalysis as Record<string, unknown> | undefined)?.subjectScores as
+    | Record<string, number>
+    | undefined;
 
   const list = selectedSubjects.length
     ? selectedSubjects.map((s) => ({ zh: s, en: s }))

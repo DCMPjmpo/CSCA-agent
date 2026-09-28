@@ -108,7 +108,16 @@ export interface CscaAgentState {
   mockExam?: {
     id: string;
     subject: string;
-    questions: any[];
+    questions: Array<{
+      id: string;
+      question: string;
+      options?: string[];
+      correctAnswer: string | number;
+      subject?: string;
+      module?: string;
+      difficulty?: string;
+    }>;
+
     answers: Record<string, string>;
     totalQuestions: number;
     correctCount: number;
@@ -253,7 +262,16 @@ async function generateAdaptiveExercises(state: CscaAgentState): Promise<Partial
   const exerciseCount = suggestDailyPracticeCount(weakTopics.length);
 
   // Generate exercises
-  const exercises: any[] = [];
+  const exercises: Array<{
+    id: string;
+    subject: string;
+    topic: string;
+    difficulty: number;
+    question: string;
+    options?: string[];
+    correctAnswer: string;
+    explanation?: string;
+  }> = [];
 
   for (let i = 0; i < Math.min(exerciseCount, weakTopics.length); i++) {
     const topic = weakTopics[i];
@@ -310,7 +328,12 @@ async function generateMockExam(state: CscaAgentState): Promise<Partial<CscaAgen
   // Generate mock exam in batches
   const batchSize = 12;
   const batches = Math.ceil(totalQuestions / batchSize);
-  const questions: any[] = [];
+  const questions: Array<{
+    id: string;
+    question: string;
+    options?: string[];
+    correctAnswer: string | number;
+  }> = [];
 
   for (let batch = 0; batch < batches; batch++) {
     const prompt = `You are a CSCA mock exam expert. Generate ${batchSize} multiple-choice questions for ${subject}, strictly aligning with CSCA exam parameters.
@@ -534,12 +557,15 @@ export const cscaAgent = cscaWorkflow.compile();
 // ==========================================
 // Helper Functions
 // ==========================================
-export async function runCscaWorkflow(initialState: any): Promise<any> {
+export async function runCscaWorkflow(initialState: CscaAgentState): Promise<CscaAgentState> {
   const result = await cscaAgent.invoke(initialState);
   return result;
 }
 
-export async function runStep(state: any, step: number): Promise<any> {
+export async function runStep(
+  state: CscaAgentState,
+  step: number,
+): Promise<Partial<CscaAgentState>> {
   const steps = [
     'diagnose',
     'knowledge_map',

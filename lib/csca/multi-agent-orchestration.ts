@@ -216,7 +216,7 @@ function cleanLaTeXFormat(text: string): string {
  * Build prompt for agent execution
  */
 function buildAgentPrompt(
-  agent: any,
+  agent: { id: string; name: string; systemPrompt: string; model: string },
   userQuery: string,
   conversationHistory: Array<{ role: string; content: string; agentId?: string }> = [],
 ): string {

@@ -14,7 +14,7 @@ function stripHtml(html: string): string {
  * Summarize a single PPT element into a one-line description
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement variants have heterogeneous shapes
-function summarizeElement(el: any): string {
+function summarizeElement(el: Record<string, unknown>): string {
   const id = el.id ? `[id:${el.id}]` : '';
   const pos = `at (${Math.round(el.left)},${Math.round(el.top)})`;
   const size =
@@ -63,7 +63,7 @@ function summarizeElement(el: any): string {
       const linePreview = (el.lines || [])
         .slice(0, 10)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .map((l: any) => `    ${l.id}: ${l.content}`)
+        .map((l: { id?: string; content?: string }) => `    ${l.id}: ${l.content}`)
         .join('\n');
       const moreLines = lineCount > 10 ? `\n    ... and ${lineCount - 10} more lines` : '';
       return `${id} code${codeFn} (${lang}, ${lineCount} lines) ${pos}${size}\n${linePreview}${moreLines}`;
@@ -81,7 +81,7 @@ function summarizeElement(el: any): string {
  * Summarize an array of elements into line descriptions
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement variants have heterogeneous shapes
-export function summarizeElements(elements: any[]): string {
+export function summarizeElements(elements: Record<string, unknown>[]): string {
   if (elements.length === 0) return '  (empty)';
 
   const lines = elements.map((el, i) => `  ${i + 1}. ${summarizeElement(el)}`);

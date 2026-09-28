@@ -7,7 +7,7 @@ import type { PPTCodeElement, CodeLine } from '@/lib/types/slides';
 // ==================== Shiki Singleton ====================
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-let highlighterPromise: Promise<any> | null = null;
+let highlighterPromise: Promise<unknown> | null = null;
 
 function getHighlighter() {
   if (!highlighterPromise) {
@@ -470,7 +470,7 @@ export function BaseCodeElement({ elementInfo, animate }: BaseCodeElementProps) 
   }, []);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [highlighter, setHighlighter] = useState<any>(null);
+  const [highlighter, setHighlighter] = useState<unknown>(null);
   const prevLinesRef = useRef<CodeLine[]>([]);
   const isFirstRenderRef = useRef(true);
 

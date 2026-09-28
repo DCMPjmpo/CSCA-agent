@@ -78,8 +78,8 @@ export function deriveSandboxProgress(): SandboxProgress {
 
   let frontier = 0;
   // 使用 completedStages 而非 activeStep 来推导 frontier
-  const completedStages = Array.isArray((session as any)?.completedStages)
-    ? ((session as any).completedStages as number[])
+  const completedStages = Array.isArray((session as Record<string, unknown>)?.completedStages)
+    ? ((session as Record<string, unknown>).completedStages as number[])
     : [];
   if (completedStages.length > 0) {
     frontier = Math.max(0, Math.min(5, Math.max(...completedStages)));

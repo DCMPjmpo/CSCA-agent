@@ -9,9 +9,9 @@ const log = createLogger('AudioRecorder');
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Web Speech API not typed in lib.dom
-    SpeechRecognition: any;
+    SpeechRecognition: new () => unknown;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Web Speech API not typed in lib.dom
-    webkitSpeechRecognition: any;
+    webkitSpeechRecognition: new () => unknown;
   }
 }
 
@@ -31,7 +31,7 @@ export function useAudioRecorder(options: UseAudioRecorderOptions = {}) {
   const audioChunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Web Speech API not typed
-  const speechRecognitionRef = useRef<any>(null);
+  const speechRecognitionRef = useRef<unknown>(null);
   // Synchronous lock to prevent rapid re-entry (React state updates are async)
   const busyRef = useRef(false);
 

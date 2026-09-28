@@ -80,12 +80,15 @@ export default function HomePage() {
   // render (set in useEffect via useCscaSession). Both renders produce
   // placeholders ('-'), avoiding SSR/CSR mismatch.
   const realData = useMemo(() => {
-    const s = session.sessionData as any;
+    const s = session.sessionData as Record<string, unknown> | null;
     const prog = session.progress;
     const stageIndex = prog.currentStage;
     const doneCount = prog.completedCount;
     const country =
-      s?.selectedCountryCode && ASEAN_COUNTRIES.find((c: any) => c.code === s.selectedCountryCode);
+      s?.selectedCountryCode &&
+      ASEAN_COUNTRIES.find(
+        (c: { code: string; nameZh?: string; name: string }) => c.code === s.selectedCountryCode,
+      );
     const examScores = s?.examResult?.scores as Record<string, number> | undefined;
     const totalScores = examScores
       ? Object.values(examScores).reduce((a, b) => a + (Number.isFinite(b) ? b : 0), 0)
@@ -99,8 +102,9 @@ export default function HomePage() {
       stageIndex,
       doneCount,
       countryName: country
-        ? (locale?.startsWith('zh') ? (country as any).nameZh : (country as any).name) ||
-          (country as any).name
+        ? (locale?.startsWith('zh')
+            ? (country as { nameZh?: string }).nameZh
+            : (country as { name: string }).name) || (country as { name: string }).name
         : '—',
       countryCode: s?.selectedCountryCode ?? '—',
       hskLevel: typeof s?.hskLevel === 'number' ? `HSK ${s.hskLevel}` : '—',

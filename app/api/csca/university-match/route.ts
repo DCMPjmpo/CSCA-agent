@@ -9,6 +9,7 @@ import {
   getUniversitiesByScore,
   calculateMatchScore,
 } from '@/lib/csca/university-database';
+import type { MatchedUniversity } from '@/lib/csca/exam-types';
 
 export async function POST(request: Request) {
   try {
@@ -24,9 +25,9 @@ export async function POST(request: Request) {
     const matchedUniversities = getUniversitiesByScore(userScore, targetMajor);
 
     const categorized = {
-      safeSchools: [] as any[],
-      targetSchools: [] as any[],
-      reachSchools: [] as any[],
+      safeSchools: [] as MatchedUniversity[],
+      targetSchools: [] as MatchedUniversity[],
+      reachSchools: [] as MatchedUniversity[],
     };
 
     matchedUniversities.forEach((university) => {

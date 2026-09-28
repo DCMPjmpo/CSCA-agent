@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     // Calculate module scores
     const moduleScores: Record<string, { total: number; correct: number }> = {};
 
-    mockExam.questions.forEach((q: any) => {
+    mockExam.questions.forEach((q: { module?: string; correctAnswer: string; id: string }) => {
       const moduleName = q.module || 'Uncategorized';
       if (!moduleScores[moduleName]) {
         moduleScores[moduleName] = { total: 0, correct: 0 };

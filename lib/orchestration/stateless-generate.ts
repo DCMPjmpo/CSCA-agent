@@ -163,8 +163,8 @@ export function parseStructuredChunk(chunk: string, state: ParserState): ParseRe
   const isArrayClosed = trimmed.endsWith(']') && trimmed.length > 1;
 
   // Step 3: Try incremental parse — jsonrepair first (fixes unescaped quotes), fallback to partial-json
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- partial-json returns any[]
-  let parsed: any[];
+  // partial-json returns untyped arrays
+  let parsed: unknown[];
   try {
     const repaired = jsonrepair(state.buffer);
     parsed = JSON.parse(repaired);
@@ -332,8 +332,7 @@ export async function* statelessGenerate(
     const initialState = buildInitialState(request, languageModel, thinkingConfig);
 
     const stream = await graph.stream(initialState, {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      streamMode: 'custom' as any,
+      streamMode: 'custom' as const,
       signal: abortSignal,
     });
 

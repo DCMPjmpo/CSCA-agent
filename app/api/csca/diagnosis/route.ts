@@ -96,7 +96,7 @@ CSCA考试科目规则：
 
       try {
         // [AI-FIX] AI 返回的 JSON 可能被 markdown 代码块包裹，需提取
-        let text = ((result as any).text || '').trim();
+        let text = ((result as { text?: string }).text || '').trim();
         const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
         if (jsonMatch) {
           text = jsonMatch[1].trim();

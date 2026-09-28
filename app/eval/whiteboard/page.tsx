@@ -52,8 +52,9 @@ function WhiteboardCanvas() {
     store.setCurrentSceneId(EVAL_SCENE_ID);
 
     // Expose setter for Playwright
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).__setElements = (incoming: PPTElement[]) => {
+    (window as unknown as { __setElements?: (e: PPTElement[]) => void }).__setElements = (
+      incoming: PPTElement[],
+    ) => {
       setElements(incoming);
       // Also update the store so SceneProvider/ScreenElement reads the theme
       useStageStore.getState().updateScene(EVAL_SCENE_ID, {
@@ -76,8 +77,7 @@ function WhiteboardCanvas() {
     };
 
     // Signal readiness
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).__evalReady = true;
+    (window as unknown as { __evalReady?: boolean }).__evalReady = true;
     // Defer setReady to avoid cascading render warning
     queueMicrotask(() => setReady(true));
   }, []);

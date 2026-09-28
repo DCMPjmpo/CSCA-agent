@@ -2921,7 +2921,7 @@ export function getTranslation(locale: string): Translations {
 
 function deepMerge<T extends object>(source: T, override: Partial<T> | undefined | null): T {
   if (!override) return source;
-  const result: any = { ...source };
+  const result: Record<string, unknown> = { ...source };
   for (const key of Object.keys(override) as (keyof T & string)[]) {
     const ov = override[key];
     if (ov === undefined) continue;
@@ -2934,7 +2934,7 @@ function deepMerge<T extends object>(source: T, override: Partial<T> | undefined
       typeof src === 'object' &&
       !Array.isArray(src)
     ) {
-      result[key] = deepMerge(src as any, ov as any);
+      result[key] = deepMerge(src as Record<string, unknown>, ov as Record<string, unknown>);
     } else {
       result[key] = ov;
     }

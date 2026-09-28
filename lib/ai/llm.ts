@@ -250,12 +250,12 @@ export async function callLLM<T extends GenerateTextParams>(
   retryOptions?: LLMRetryOptions,
   thinking?: ThinkingConfig,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-): Promise<GenerateTextResult<any, any>> {
+): Promise<GenerateTextResult<Record<string, unknown>, Record<string, unknown>>> {
   const maxAttempts = (retryOptions?.retries ?? 0) + 1;
   const validate = retryOptions?.validate ?? (maxAttempts > 1 ? DEFAULT_VALIDATE : undefined);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let lastResult: GenerateTextResult<any, any> | undefined;
+  let lastResult: GenerateTextResult<Record<string, unknown>, Record<string, unknown>> | undefined;
   let lastError: unknown;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
@@ -320,7 +320,9 @@ async function* generateMockStream(text: string) {
   }
 }
 
-function createMockStreamResult(prompt: string): StreamTextResult<any, any> {
+function createMockStreamResult(
+  prompt: string,
+): StreamTextResult<Record<string, unknown>, Record<string, unknown>> {
   const text = buildMockText(prompt);
 
   const asyncIterable = {
@@ -344,7 +346,7 @@ function createMockStreamResult(prompt: string): StreamTextResult<any, any> {
     },
     toolCalls: [],
     steps: [],
-  } as unknown as StreamTextResult<any, any>;
+  } as unknown as StreamTextResult<Record<string, unknown>, Record<string, unknown>>;
 }
 
 function buildMockText(prompt: string): string {
@@ -481,7 +483,7 @@ export function streamLLM<T extends StreamTextParams>(
   source: string,
   thinking?: ThinkingConfig,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-): StreamTextResult<any, any> {
+): StreamTextResult<Record<string, unknown>, Record<string, unknown>> {
   // Resolve effective thinking config and wrap in thinkingContext
   const effectiveThinking = thinking ?? getGlobalThinkingConfig();
   const injectedParams = injectProviderOptions(params, effectiveThinking);

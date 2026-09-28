@@ -1021,9 +1021,9 @@ interface SpeechRecognitionErrorEvent extends Event {
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    SpeechRecognition: any;
+    SpeechRecognition: new () => unknown;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    webkitSpeechRecognition: any;
+    webkitSpeechRecognition: new () => unknown;
   }
 }
 

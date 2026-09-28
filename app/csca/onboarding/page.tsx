@@ -31,7 +31,7 @@ export default function OnboardingPage() {
   const { t, locale } = useTranslation();
   const router = useRouter();
   const isZh = locale.startsWith('zh');
-  const o = (t as any).onboarding || {};
+  const o = ((t as Record<string, unknown>).onboarding as Record<string, string>) || {};
 
   const [step, setStep] = useState(0);
   const [country, setCountry] = useState<string>('');

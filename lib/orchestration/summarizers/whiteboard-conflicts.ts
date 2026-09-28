@@ -38,7 +38,7 @@ function stripHtml(html: string): string {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement variants have heterogeneous shapes
-function elementLabel(el: any): string {
+function elementLabel(el: Record<string, unknown>): string {
   switch (el.type) {
     case 'text': {
       const t = stripHtml(el.content || '').slice(0, 24);
@@ -71,7 +71,7 @@ function elementLabel(el: any): string {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement
-function toBBox(el: any): BBox | null {
+function toBBox(el: Record<string, unknown>): BBox | null {
   if (el.type === 'line') return null;
   if (typeof el.left !== 'number' || typeof el.top !== 'number') return null;
   if (typeof el.width !== 'number' || typeof el.height !== 'number') return null;
@@ -87,7 +87,7 @@ function toBBox(el: any): BBox | null {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTLineElement
-function toLineSeg(el: any): LineSeg | null {
+function toLineSeg(el: Record<string, unknown>): LineSeg | null {
   if (el.type !== 'line') return null;
   const lx = el.left ?? 0;
   const ly = el.top ?? 0;
@@ -175,7 +175,7 @@ function shortId(id: string): string {
  * - any element extending past the 1000×563 canvas bounds
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- PPTElement variants
-export function buildWhiteboardConflicts(elements: any[]): string {
+export function buildWhiteboardConflicts(elements: Record<string, unknown>[]): string {
   if (!elements || elements.length === 0) return '';
 
   const bboxes: BBox[] = [];
