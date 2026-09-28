@@ -20,13 +20,13 @@ export async function POST(request: Request) {
     const moduleScores: Record<string, { total: number; correct: number }> = {};
 
     mockExam.questions.forEach((q: any) => {
-      const module = q.module || 'Uncategorized';
-      if (!moduleScores[module]) {
-        moduleScores[module] = { total: 0, correct: 0 };
+      const moduleName = q.module || 'Uncategorized';
+      if (!moduleScores[moduleName]) {
+        moduleScores[moduleName] = { total: 0, correct: 0 };
       }
-      moduleScores[module].total++;
+      moduleScores[moduleName].total++;
       if (mockExam.answers && mockExam.answers[q.id] === q.correctAnswer) {
-        moduleScores[module].correct++;
+        moduleScores[moduleName].correct++;
       }
     });
 

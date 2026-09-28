@@ -529,7 +529,7 @@ function generateExamQuestions(
   };
 } {
   let allQuestions: any[] = [];
-  let auditStats = { total: 0, valid: 0, invalid: 0 };
+  const auditStats = { total: 0, valid: 0, invalid: 0 };
   const sourceStats = {
     real_exam: 0,
     basic_practice: 0,
