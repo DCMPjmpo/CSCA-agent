@@ -103,3 +103,12 @@ test_*.py
 scripts_*.py
 scripts_*.js
 q31_smoke1.py
+
+# P3.x verification probes: Playwright scripts, JSON dumps, screenshots, dev logs
+/.tmp-*
+/dev-*.log
+/tmp/
+
+# Generated classroom content (runtime output, keyed by random ids)
+/data/classrooms/
+/data/classroom-jobs/

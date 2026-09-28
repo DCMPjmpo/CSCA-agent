@@ -44,6 +44,22 @@ import { createLogger } from '@/lib/logger';
 
 const log = createLogger('AIProviders');
 
+/**
+ * Timeout for a single HTTP request issued to an OpenAI-compatible provider.
+ *
+ * A classroom generation run issues several long, non-streaming LLM calls
+ * (outlines, then one per scene). Measured real runs of the classroom job take
+ * 246–364s end to end, so a per-request cap must comfortably exceed a few
+ * minutes or legitimate generation is aborted mid-flight.
+ *
+ * Override with LLM_FETCH_TIMEOUT_MS when a slower provider needs more room.
+ */
+const DEFAULT_LLM_FETCH_TIMEOUT_MS = 10 * 60 * 1000;
+const LLM_FETCH_TIMEOUT_MS = (() => {
+  const raw = Number(process.env.LLM_FETCH_TIMEOUT_MS);
+  return Number.isFinite(raw) && raw > 0 ? raw : DEFAULT_LLM_FETCH_TIMEOUT_MS;
+})();
+
 // Re-export types for backward compatibility
 export type { ProviderId, ProviderConfig, ModelInfo, ModelConfig };
 
@@ -1247,6 +1263,16 @@ export function getModel(config: ModelConfig): ModelWithInfo {
       if (config.providerId !== 'openai') {
         const providerId = config.providerId;
         openaiOptions.fetch = async (url: RequestInfo | URL, init?: RequestInit) => {
+          // P2.1: DeepSeek API 网络不稳定，默认 10s 连接超时在多场景生成时
+          // 频繁触发 Connect Timeout Error。在 fetch wrapper 内部设置
+          // AbortSignal 以容忍慢连接。这是 OpenAIProviderSettings 不直接
+          // 支持 timeout 字段的最小必要实现方式。
+          // P3.1-R: 原值 60000 同时限制了「整个请求」的时长，而 classroom
+          // 生成的真实单次调用远超 60s（实测整轮 246–364s），导致生成被
+          // 中途截断。放宽到 10 分钟，仍保留「防止连接挂死」的保护。
+          const timeoutSignal = AbortSignal?.timeout
+            ? AbortSignal.timeout(LLM_FETCH_TIMEOUT_MS)
+            : undefined;
           // Read thinking config from globalThis (set by thinking-context.ts)
           const thinkingCtx = (globalThis as Record<string, unknown>).__thinkingContext as
             | { getStore?: () => unknown }
@@ -1272,7 +1298,13 @@ export function getModel(config: ModelConfig): ModelWithInfo {
               }
             }
           }
-          const response = await globalThis.fetch(url, init);
+          // Merge the timeout in last so the thinking-body rewrite above is
+          // preserved (the signal must not be attached to a stale init).
+          const finalInit: RequestInit | undefined =
+            timeoutSignal && !init?.signal
+              ? { ...init, signal: timeoutSignal }
+              : init;
+          const response = await globalThis.fetch(url, finalInit);
 
           if (providerId !== 'lemonade') {
             return response;

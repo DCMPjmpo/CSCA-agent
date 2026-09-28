@@ -24,6 +24,8 @@ import {
 } from '@/lib/csca/sandbox-progress';
 import { ScrollDialog } from './ScrollDialog';
 import { SEA_BG, SEA_BG_SIZE } from './sandbox-textures';
+import { toast } from 'sonner';
+import { createPptTask } from '@/lib/openmaic';
 import {
   PixelAgentBust,
   PixelAstrolabe,
@@ -207,21 +209,21 @@ export function SeaChartSandbox() {
   const handleGenerateClassroom = async () => {
     if (!requirement.trim()) return;
     setIsSubmitting(true);
-    const session = {
-      sessionId: `session-${Date.now()}`,
-      requirements: {
+    // P2 Vertical Slice：把生成任务真正接入 PilarCore 任务系统，
+    // 不再使用 sessionStorage（关闭即丢），改用 createPptTask 持久化到 IndexedDB。
+    // 任务可在 /csca/tasks/[taskId] 工作台追踪，刷新/关闭标签页后仍可恢复。
+    try {
+      const task = await createPptTask({
         requirement: requirement.trim(),
-        webSearch: false,
-      },
-      pdfText: '',
-      currentStep: 'generating',
-      previewPhase: 'preparing' as const,
-    };
-    sessionStorage.setItem('generationSession', JSON.stringify(session));
-    setTimeout(() => {
+        returnUrl: '/',
+      });
+      router.push(`/csca/tasks/${task.taskId}`);
+    } catch (err) {
       setIsSubmitting(false);
-      router.push('/generation-preview');
-    }, 300);
+      toast.error(
+        `创建生成任务失败：${err instanceof Error ? err.message : String(err)}`,
+      );
+    }
   };
 
   const ship = ROUTE_POINTS[Math.min(progress.frontier, 5)];

@@ -224,7 +224,11 @@ export default function HomePage() {
     return {
       ...s,
       Icon,
-      href: `/csca#${s.anchor}`,
+      // [P0-1-FIX] 8 段卡片必须落到真实渲染这些 step 的 /csca/voyage。
+      // /csca 是备考工作台，页面内不存在任何 stage 锚点。
+      // anchor 取值见 lib/brand-logic.ts 的 LEARNING_VOYAGE_8_STOPS，
+      // 与 VoyageNavigation STAGES / CSCAVoyageApp HASH_TO_STEP 三边一致。
+      href: `/csca/voyage#${s.anchor}`,
       cta: t.voyageBrand?.ctaStage ?? (locale?.startsWith('zh') ? '进入此段航程' : 'Open this stage'),
       statusBias: bias,
     };
@@ -323,7 +327,7 @@ export default function HomePage() {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="/csca#knowledge-map">
+                  <Link href="/csca/voyage#knowledge-map">
                     <span>{t.hero?.secondaryCta ?? (locale?.startsWith('zh') ? '查看航海图' : 'View Voyage Chart')}</span>
                   </Link>
                 </Button>

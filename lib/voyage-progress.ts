@@ -12,6 +12,7 @@
  */
 import { loadCscaSession, saveCscaSession } from '@/lib/csca/session';
 import {
+  STAGE_TO_CANONICAL_STEP,
   STEP_TO_STAGE,
   VOYAGE_STAGE_ORDER,
   type VoyageStageId,
@@ -146,8 +147,12 @@ function deriveStageStatuss(
 /**
  * 标记某阶段为已完成。
  * 幂等：重复标记同一阶段不会增加计数。
+ *
+ * @param opts.nextStepKey P3.5-B：下一站由调用方（决策层 resolveNextLearningAction）决定。
+ *   不传时保持历史行为（idx+1）。传入的 key 必须是 STEP_TO_STAGE 认识的值，否则忽略并退回默认，
+ *   杜绝再写进 'exam-analysis' 这类不在 Step 联合类型里的死值。
  */
-export function completeStage(stageIndex: number): void {
+export function completeStage(stageIndex: number, opts?: { nextStepKey?: string }): void {
   if (stageIndex < 0 || stageIndex >= TOTAL) return;
   const session = loadCscaSession() as SessionWithProgress | null;
   if (!session) return;
@@ -161,10 +166,11 @@ export function completeStage(stageIndex: number): void {
   }
 
   // 自动推进 currentStage 到下一未完成阶段
-  const nextStage = completedStages.includes(stageIndex + 1)
-    ? stageIndex + 1
-    : Math.min(stageIndex + 1, TOTAL - 1);
-  const nextStepKey = reverseMapStageToStep(nextStage);
+  const overrideKey = opts?.nextStepKey;
+  const nextStepKey =
+    overrideKey && STEP_TO_STAGE[overrideKey] !== undefined
+      ? overrideKey
+      : reverseMapStageToStep(Math.min(stageIndex + 1, TOTAL - 1));
   if (nextStepKey && nextStepKey !== session.currentStep) {
     saveCscaSession({ currentStep: nextStepKey });
   }
@@ -182,14 +188,13 @@ export function setCurrentStage(stageIndex: number): void {
 }
 
 /**
- * 反向映射：stage index → step key
+ * 反向映射：stage index → 规范 step key。
+ *
+ * 读 STAGE_TO_CANONICAL_STEP 而非遍历 STEP_TO_STAGE —— 后者是含别名的多对一表，
+ * 按插入序遍历会返回 'exam-analysis'（非法 step key）而不是 'result'，见 voyage-stages.ts 的注释。
  */
 function reverseMapStageToStep(stageIndex: number): string | null {
-  // 取 STEP_TO_STAGE 中第一个映射到该 index 的 key
-  for (const [key, idx] of Object.entries(STEP_TO_STAGE)) {
-    if (idx === stageIndex) return key;
-  }
-  return null;
+  return STAGE_TO_CANONICAL_STEP[stageIndex] ?? null;
 }
 
 /**

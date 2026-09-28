@@ -281,18 +281,10 @@ export async function callWithFallback<T extends 'text' | 'stream'>(
   } catch (fallbackError) {
     console.error(`[ModelRouter] ❌ Fallback also failed:`, fallbackError);
 
-    // Return mock result for text generation
-    if (type === 'text') {
-      console.warn(`[ModelRouter] Returning mock result as final fallback`);
-      return generateMockResult(messages[0]?.content || '') as any;
-    }
-
-    // For streaming: return a mock stream instead of throwing
-    if (type === 'stream') {
-      console.warn(`[ModelRouter] Returning mock stream as final fallback`);
-      return createMockStreamResult(messages[0]?.content || '') as any;
-    }
-
+    // P3.1-R: 不再用 mock 文案冒充成功。所有模型失败时向上抛出真实错误，
+    // 由调用方转换为明确的失败状态（UI 显示失败 + 提供重试）。
+    // 之前的实现会返回一段写死的"AI 服务暂时不可用"文案，且调用方无法区分
+    // 它与真实回答，属于 fake success。
     throw new Error('ALL_MODELS_FAILED');
   }
 }
@@ -307,89 +299,18 @@ export async function streamWithFallback(
 }
 
 // ==========================================
-// Generate mock result for fallback
+// Synchronous Text Response Wrapper
 // ==========================================
-function generateMockResult(prompt: string): GenerateTextResult<any, any> {
-  const isEnglish = /\b(study|exam|learn|what|how|error|analysis|score|university|plan|practice|question|tutor|help|guide)\b/i.test(prompt);
-
-  const mockText = isEnglish
-    ? `I'm currently unable to generate a personalized response. The AI service is temporarily unavailable.
-
-Here's what you can do:
-- Complete a practice session or mock exam to generate real learning data
-- Visit the Wrong Answer Center to review and correct mistakes
-- Check your Knowledge Map to see your current mastery levels
-- Try again in a moment for a personalized AI response
-
-Your learning progress is automatically saved.`
-    : `AI服务暂时不可用，无法生成个性化回答。
-
-建议您：
-- 完成一次练习或模拟考试，以生成真实学习数据
-- 前往错题中心查看并纠正错误
-- 查看知识地图了解当前掌握程度
-- 稍后重试获取个性化AI回答
-
-您的学习进度已自动保存。`;
-
-  return {
-    text: mockText,
-    content: [{ type: 'text' as const, text: mockText }],
-    finishReason: 'mock' as const,
-    usage: { promptTokens: 0, completionTokens: 0, totalTokens: 0 },
-  } as unknown as GenerateTextResult<any, any>;
-}
-
 /**
- * Generate a mock stream for streaming fallback
+ * P3.1-R: 完全失败时抛错，不再返回 mock 文案。
+ * 所有调用方（ask-tutor / score-analysis / diagnosis / error-analysis /
+ * multi-agent / csca-workflow）都有自己的 try/catch，会转换为明确的失败
+ * 状态而不是把写死的文案当成 AI 回答展示给用户。
  */
-async function* generateMockStream(prompt: string) {
-  const mockResult = generateMockResult(prompt);
-  const text = mockResult.text;
-
-  // Simulate streaming by yielding chunks
-  const chunkSize = 4;
-  for (let i = 0; i < text.length; i += chunkSize) {
-    yield text.slice(i, i + chunkSize);
-    await new Promise(resolve => setTimeout(resolve, 10));
-  }
-}
-
-/**
- * Create a mock StreamTextResult-compatible object
- * This wraps generateMockStream into the same interface as streamText()
- */
-function createMockStreamResult(prompt: string): StreamTextResult<any, any> {
-  const mockResult = generateMockResult(prompt);
-  const text = mockResult.text;
-
-  const asyncIterable = {
-    [Symbol.asyncIterator]() {
-      return generateMockStream(prompt);
-    }
-  };
-
-  return {
-    textStream: asyncIterable,
-    get text() { return text; },
-    finishReason: 'mock' as const,
-    usage: { promptTokens: 0, completionTokens: 0, totalTokens: 0 },
-    experimental_providerMetadata: {},
-  } as unknown as StreamTextResult<any, any>;
-}
-
-// ==========================================
-// Synchronous Text Response Wrapper with Mock Fallback
-// ==========================================
 export async function generateWithFallback(
   options: Omit<CallOptions, 'type'>
 ): Promise<GenerateTextResult<any, any>> {
-  try {
-    return await callWithFallback({ ...options, type: 'text' });
-  } catch (error) {
-    console.warn(`[ModelRouter] All models failed, returning mock result:`, error);
-    return generateMockResult(options.messages[0]?.content || '');
-  }
+  return callWithFallback({ ...options, type: 'text' });
 }
 
 // ==========================================

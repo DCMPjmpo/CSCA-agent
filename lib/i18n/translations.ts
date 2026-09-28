@@ -32,6 +32,7 @@ export interface Translations {
     aiAssistant?: string;
     classroom?: string;
     prepCenter?: string;
+    studio?: string;
     collapse?: string;
     expand?: string;
     learningVoyage?: string;
@@ -435,6 +436,7 @@ export const en: Translations = {
     aiAssistant: 'AI Mate Hall',
     classroom: 'Nanyang Classroom',
     prepCenter: 'Learning Voyage',
+    studio: 'AI Learning Studio',
     collapse: 'Collapse',
     expand: 'Expand',
     learningVoyage: 'Learning Voyage',
@@ -1505,6 +1507,7 @@ export const zh: Partial<Translations> = {
     aiAssistant: 'AI 航海助手全景大厅',
     classroom: '讲学堂',
     prepCenter: '学习航程',
+    studio: 'AI Learning Studio',
     collapse: '收起侧栏',
     expand: '展开侧栏',
     learningVoyage: '学习航程',

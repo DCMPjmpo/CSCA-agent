@@ -500,7 +500,7 @@ export default function CscaMultiAgentPage() {
                         {[
                           { label: t.chat.quickDiagnose, onClick: () => router.push('/csca') },
                           { label: t.chat.quickClassroom, onClick: () => router.push('/#classroom-generator') },
-                          { label: t.chat.quickProgress, onClick: () => router.push('/csca#study-plan') },
+                          { label: t.chat.quickProgress, onClick: () => router.push('/csca/voyage#study-plan') },
                           {
                             label: t.chat.quickTutor,
                             onClick: () => {
@@ -508,7 +508,7 @@ export default function CscaMultiAgentPage() {
                               inputRef.current?.focus();
                             },
                           },
-                          { label: t.chat.quickMockExam, onClick: () => router.push('/csca#mock-exam') },
+                          { label: t.chat.quickMockExam, onClick: () => router.push('/csca/voyage#mock-exam') },
                         ].map((f) => (
                           <button
                             key={f.label}

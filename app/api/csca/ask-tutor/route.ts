@@ -5,90 +5,46 @@
  * Phase 4 改动：
  *   - 接入真实学习上下文（currentStage, knowledgeMap, weakKnowledgePoints,
  *     recentAccuracy, completedQuestionCount, wrongQuestionCount）
- *   - AI Mate 不再只看到 targetMajor/examScore，而是完整学习画像
+ *
+ * P3.4-1 改动（Agent Read Layer）：
+ *   - 学习上下文改由服务端从**原始 answerHistory** 重算（learning-context-adapter），
+ *     不再采信客户端预计算的统计量。旧字段保留为兼容兜底。
  *   - 严禁伪造上下文：未传字段标注"暂无数据"，不编造掌握度
  */
 
 import { NextResponse } from 'next/server';
 import { generateWithFallback } from '@/lib/ai/model-router';
+import { emptyLearningContext, type LearningContext } from '@/lib/csca/learning-context';
+import {
+  buildLearningContext,
+  parseKnowledgeMap,
+  parseProgress,
+  parseWeakKnowledgePoints,
+  renderLearningContext,
+  resolveCurrentStage,
+} from '@/lib/csca/learning-context-adapter';
 
 export const maxDuration = 60;
 
-interface KnowledgeTopicInput {
-  id: string;
-  name: string;
-  description: string;
-  mastery: number;
-  subject: string;
-  masterySource?: 'real_answers' | 'ai_inferred' | 'initial';
-}
-
-/** 把学习上下文格式化为 AI 可读文本（诚实标注数据来源） */
-function formatLearningContext(ctx: {
-  currentStage?: number;
-  knowledgeMap?: KnowledgeTopicInput[];
-  recentAccuracy?: number;
-  completedQuestionCount?: number;
-  wrongQuestionCount?: number;
-  weakKnowledgePoints?: Record<string, string[]>;
-}): string {
-  const lines: string[] = [];
-
-  // 当前阶段
-  if (typeof ctx.currentStage === 'number' && ctx.currentStage >= 0) {
-    const stageNames = [
-      'S0 出发前准备',
-      'S1 定位（专业诊断）',
-      'S2 航海图（知识图谱）',
-      'S3 演武（自适应训练）',
-      'S4 观星（模拟考试）',
-      'S5 纠错（错题修正）',
-      'S6 测算（成绩分析）',
-      'S7 修正航向（个性化计划）',
-      'S8 抵达（最终评估）',
-    ];
-    lines.push(`- 当前学习阶段：${stageNames[ctx.currentStage] ?? `S${ctx.currentStage}`}`);
-  } else {
-    lines.push('- 当前学习阶段：暂无数据');
-  }
-
-  // 答题统计
-  const completed = ctx.completedQuestionCount ?? 0;
-  const wrong = ctx.wrongQuestionCount ?? 0;
-  if (completed > 0) {
-    const accuracy = ctx.recentAccuracy != null
-      ? `${Math.round(ctx.recentAccuracy * 100)}%`
-      : '暂无数据';
-    lines.push(`- 已完成题目数：${completed}，错题数：${wrong}，最近正确率：${accuracy}`);
-  } else {
-    lines.push('- 已完成题目数：0（学生尚未开始练习/考试）');
-  }
-
-  // 薄弱知识点（来自真实答题历史）
-  if (ctx.weakKnowledgePoints && Object.keys(ctx.weakKnowledgePoints).length > 0) {
-    const weakList = Object.entries(ctx.weakKnowledgePoints)
-      .map(([subj, pts]) => `${subj}: ${pts.join('、')}`)
-      .join('；');
-    lines.push(`- 薄弱知识点（来自答题数据）：${weakList}`);
-  } else {
-    lines.push('- 薄弱知识点：暂无数据（学生尚未答题或全部掌握）');
-  }
-
-  // 知识图谱 mastery 概要（只统计真实数据，不展示伪造值）
-  if (Array.isArray(ctx.knowledgeMap) && ctx.knowledgeMap.length > 0) {
-    const realTopics = ctx.knowledgeMap.filter((t) => t.masterySource === 'real_answers');
-    if (realTopics.length > 0) {
-      const avgMastery =
-        realTopics.reduce((s, t) => s + t.mastery, 0) / realTopics.length;
-      lines.push(
-        `- 知识图谱（基于 ${realTopics.length} 个真实答题知识点）：平均掌握度 ${Math.round(avgMastery * 100)}%`,
-      );
-    } else {
-      lines.push('- 知识图谱：暂无真实答题数据，无法评估掌握度');
-    }
-  }
-
-  return lines.join('\n');
+/**
+ * 兼容路径：旧契约下客户端预计算的统计字段。
+ *
+ * 这些值按定义就是「客户端自述」，这里不做重算 —— 保留仅为不破坏旧调用方。
+ * 新调用方一律走原始 answerHistory 适配层（见 POST 内的分支顺序）。
+ */
+function legacyLearningContext(body: Record<string, unknown>): LearningContext {
+  const completed = typeof body.completedQuestionCount === 'number' ? body.completedQuestionCount : 0;
+  const wrong = typeof body.wrongQuestionCount === 'number' ? body.wrongQuestionCount : 0;
+  return {
+    ...emptyLearningContext(),
+    currentStage: typeof body.currentStage === 'number' ? body.currentStage : 0,
+    completedQuestionCount: completed,
+    correctQuestionCount: Math.max(0, completed - wrong),
+    wrongQuestionCount: wrong,
+    recentAccuracy: typeof body.recentAccuracy === 'number' ? body.recentAccuracy : undefined,
+    weakKnowledgePoints: parseWeakKnowledgePoints(body.weakKnowledgePoints),
+    knowledgeMap: parseKnowledgeMap(body.knowledgeMap),
+  };
 }
 
 export async function POST(request: Request) {
@@ -101,7 +57,10 @@ export async function POST(request: Request) {
       nationality,
       hskLevel,
       examScore,
-      // Phase 4 新增：真实学习上下文（结构化字段）
+      // P3.4-1：原始学习数据（优先）
+      answerHistory,
+      progress,
+      // 兼容：客户端预计算的统计字段（旧契约）
       currentStage,
       knowledgeMap,
       recentAccuracy,
@@ -137,31 +96,35 @@ export async function POST(request: Request) {
 6. 基于学生的真实学习数据给出个性化建议，不要编造学生未生成的数据
 7. 如果学生尚未开始练习/考试，请鼓励其从 S1 定位开始，不要假设其已有学习成果`;
 
-    // Phase 4: 优先使用结构化字段构建上下文，兼容 voyageContext 字符串
+    // P3.4-1: 分支顺序 —— 原始 answerHistory 优先。
+    // 必须用 Array.isArray 而非 length/真值判断：「空但存在」表示学生确实尚无答题记录，
+    // 与「未提供该字段」语义不同，前者应走适配层并如实渲染为 0。
     let learningContextText: string;
-    const hasStructuredFields =
-      typeof currentStage === 'number' ||
-      Array.isArray(knowledgeMap) ||
-      typeof completedQuestionCount === 'number';
-
-    if (hasStructuredFields) {
-      learningContextText = formatLearningContext({
-        currentStage,
-        knowledgeMap,
-        recentAccuracy,
-        completedQuestionCount,
-        wrongQuestionCount,
-        weakKnowledgePoints,
+    if (Array.isArray(answerHistory)) {
+      const ctx = buildLearningContext(body);
+      learningContextText = renderLearningContext(ctx, {
+        stage: resolveCurrentStage(body),
+        progress: parseProgress(progress),
+        voyageContext,
       });
-      // 如果同时有 voyageContext 字符串，附加在后（保留品牌叙事）
-      if (typeof voyageContext === 'string' && voyageContext.trim().length > 0) {
-        learningContextText += `\n\n[品牌叙事摘要]\n${voyageContext}`;
-      }
-    } else if (typeof voyageContext === 'string' && voyageContext.trim().length > 0) {
-      // 兼容旧前端：仅有 voyageContext 字符串
-      learningContextText = voyageContext;
     } else {
-      learningContextText = formatLearningContext({});
+      const hasStructuredFields =
+        typeof currentStage === 'number' ||
+        Array.isArray(knowledgeMap) ||
+        typeof completedQuestionCount === 'number';
+
+      if (hasStructuredFields) {
+        learningContextText = renderLearningContext(legacyLearningContext(body));
+        // 如果同时有 voyageContext 字符串，附加在后（保留品牌叙事）
+        if (typeof voyageContext === 'string' && voyageContext.trim().length > 0) {
+          learningContextText += `\n\n[品牌叙事摘要]\n${voyageContext}`;
+        }
+      } else if (typeof voyageContext === 'string' && voyageContext.trim().length > 0) {
+        // 兼容旧前端：仅有 voyageContext 字符串
+        learningContextText = voyageContext;
+      } else {
+        learningContextText = renderLearningContext(legacyLearningContext({}));
+      }
     }
 
     const userPrompt = `学生信息：

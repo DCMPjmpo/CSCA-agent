@@ -5,7 +5,9 @@ import { ThemeProvider } from '@/lib/hooks/use-theme';
 import { useStageStore } from '@/lib/store';
 import { loadImageMapping } from '@/lib/utils/image-storage';
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
+import { getTaskByClassroomId, type PilarCoreTaskRecord } from '@/lib/openmaic';
+import { ArrowLeft } from 'lucide-react';
 import { useSceneGenerator } from '@/lib/hooks/use-scene-generator';
 import { useMediaGenerationStore } from '@/lib/store/media-generation';
 import { useWhiteboardHistoryStore } from '@/lib/store/whiteboard-history';
@@ -19,12 +21,16 @@ const log = createLogger('Classroom');
 
 export default function ClassroomDetailPage() {
   const params = useParams();
+  const router = useRouter();
   const classroomId = params?.id as string;
 
   const { loadFromStorage } = useStageStore();
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  // P2/P0-3：通过 classroomId 反查 PilarCore 任务，
+  // 用于"返回"按钮在存在来源任务时回到该任务工作台。
+  const [pilarTask, setPilarTask] = useState<PilarCoreTaskRecord | null>(null);
 
   const generationStartedRef = useRef(false);
 
@@ -37,6 +43,12 @@ export default function ClassroomDetailPage() {
   const loadClassroom = useCallback(async () => {
     try {
       await loadFromStorage(classroomId);
+
+      // P2：异步反查 PilarCore 任务记录，恢复"返回 PilarCore"按钮的目标 URL。
+      // 反查来源任务；查不到也不影响课堂加载与返回入口（P0-3 兜底到 /csca）。
+      getTaskByClassroomId(classroomId)
+        .then(setPilarTask)
+        .catch((err) => log.warn('[Classroom] PilarCore task lookup failed:', err));
 
       // If IndexedDB had no data, try server-side storage (API-generated classrooms)
       if (!useStageStore.getState().stage) {
@@ -179,10 +191,28 @@ export default function ClassroomDetailPage() {
     }
   }, [loading, error, generateRemaining]);
 
+  // P0-3：返回入口必须始终存在，且目标必须是真实存在的路径。
+  //   有来源任务 → 回到来源任务工作台（/csca/tasks/[taskId] 是真实路由，
+  //                不用 returnUrl —— 该字段可能携带已失效的 hash）
+  //   无来源任务 → 回到 /csca
+  // 不猜测 taskId、不伪造 task、不返回 hash。
+  const backTarget = pilarTask ? `/csca/tasks/${pilarTask.taskId}` : '/csca';
+  const backLabel = pilarTask ? '返回任务' : '返回 PilarCore';
+
   return (
     <ThemeProvider>
       <MediaStageProvider value={classroomId}>
         <ServerProvidersInit />
+        {/* P0-3：无条件渲染，保证任何情况下都能离开课堂。 */}
+        <button
+          type="button"
+          onClick={() => router.push(backTarget)}
+          className="fixed left-4 bottom-4 z-50 inline-flex items-center gap-2 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-gray-200 dark:border-slate-700 shadow-lg px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-white hover:shadow-xl hover:-translate-y-px active:translate-y-0 transition-all duration-200"
+          title={backTarget}
+        >
+          <ArrowLeft className="h-4 w-4" />
+          {backLabel}
+        </button>
         <div className="h-screen flex flex-col overflow-hidden">
           {loading ? (
             <div className="flex-1 flex items-center justify-center bg-gray-50 dark:bg-gray-900">

@@ -10,6 +10,7 @@ import type {
 } from '@/lib/types/chat';
 import type { SceneOutline } from '@/lib/types/generation';
 import type { UIMessage } from 'ai';
+import type { PilarCoreTaskRecord } from '@/lib/openmaic/types';
 import { createLogger } from '@/lib/logger';
 
 const log = createLogger('Database');
@@ -194,7 +195,7 @@ export function mediaFileKey(stageId: string, elementId: string): string {
 // ==================== Database Definition ====================
 
 const DATABASE_NAME = 'MAIC-Database';
-const _DATABASE_VERSION = 10;
+const _DATABASE_VERSION = 11;
 
 /**
  * MAIC Database Instance
@@ -212,6 +213,11 @@ class MAICDatabase extends Dexie {
   mediaFiles!: EntityTable<MediaFileRecord, 'id'>;
   generatedAgents!: EntityTable<GeneratedAgentRecord, 'id'>;
   voiceProfiles!: EntityTable<VoiceProfileRecord, 'id'>;
+  /**
+   * PilarCore × OpenMAIC Capability 任务表 (v11)
+   * 存储 PilarCore 侧任务记录，与 OpenMAIC jobId 形成持久化映射。
+   */
+  pilarCoreTasks!: EntityTable<PilarCoreTaskRecord, 'taskId'>;
 
   constructor() {
     super(DATABASE_NAME);
@@ -377,6 +383,25 @@ class MAICDatabase extends Dexie {
       mediaFiles: 'id, stageId, [stageId+type]',
       generatedAgents: 'id, stageId',
       voiceProfiles: 'id, providerId, kind, updatedAt',
+    });
+
+    // Version 11: Add pilarCoreTasks table for PilarCore × OpenMAIC capability layer.
+    // Additive, non-breaking: only adds a new table; existing tables unchanged.
+    // pilarCoreTasks stores PilarCoreTaskRecord: PilarCore taskId ↔ OpenMAIC jobId
+    // mapping, supports refresh/closed-tab recovery via IndexedDB persistence.
+    this.version(11).stores({
+      stages: 'id, updatedAt',
+      scenes: 'id, stageId, order, [stageId+order]',
+      audioFiles: 'id, createdAt',
+      imageFiles: 'id, createdAt',
+      snapshots: '++id',
+      chatSessions: 'id, stageId, [stageId+createdAt]',
+      playbackState: 'stageId',
+      stageOutlines: 'stageId',
+      mediaFiles: 'id, stageId, [stageId+type]',
+      generatedAgents: 'id, stageId',
+      voiceProfiles: 'id, providerId, kind, updatedAt',
+      pilarCoreTasks: 'taskId, openmaicJobId, status, capability, updatedAt, createdAt',
     });
   }
 }

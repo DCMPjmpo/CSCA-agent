@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef, type ComponentType } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef, type ComponentType } from 'react';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import {
@@ -12,12 +12,18 @@ import {
 import { CSCA_SUBJECTS, getSubjectConfig } from '@/lib/csca/exam-config';
 // [TRA-FIX] 从 import 中移除 getAIErrorExplanation，改为走 /api/csca/error-analysis
 // [WORKER] 直接 import core（不走 error-analysis 的 export * 再导出），让 tree-shaking
-// 只保留本页用到的 3 个函数；analyzeWeakAreas/generateStudyPlan/mergeErrorRecords
+// 只保留本页用到的函数；analyzeWeakAreas/generateStudyPlan/mergeErrorRecords
 // 等判分代码仅存在于 worker chunk 与懒加载兜底 chunk，不进首屏主 chunk。
 import { TARGET_MAJORS, EDUCATION_SYSTEMS } from '@/lib/csca/voyage-constants';
-import { getErrorRecords, getStudyPlan, markTaskCompleted } from '@/lib/csca/error-analysis-core';
-// [WORKER] 判分主路径在 Web Worker 内完成；gradeExam/saveStudyPlan/writeErrorRecords 仅用于
-// worker 不可用时的主线程兜底，改为动态 import，避免把判分代码留在首屏主 chunk。
+import {
+    getErrorRecords,
+    getStudyPlan,
+    markTaskCompleted,
+    saveStudyPlan,
+    writeErrorRecords,
+} from '@/lib/csca/error-analysis-core';
+// [WORKER] 判分在 Web Worker 内完成，落盘一律回到主线程（Worker 环境没有 localStorage）。
+// gradeExam 仅用于 worker 不可用时的兜底，改为动态 import，避免把判分代码留在首屏主 chunk。
 import type { ExamGradeResult, ExamQuestionLike } from '@/lib/csca/exam-scoring';
 import { useTranslation } from '@/lib/i18n/hooks';
 import { useCscaSession } from '@/lib/hooks/use-csca-session';
@@ -28,7 +34,8 @@ import { toast } from 'sonner';
 import { Toaster } from '@/components/ui/toaster-dynamic';
 import type { KnowledgeMapItem } from '@/components/csca/KnowledgeGraphView';
 import { saveCscaSession, loadCscaSession, appendAnswerRecords, type AnswerRecord } from '@/lib/csca/session';
-import { completeStage } from '@/lib/voyage-progress';
+import { createPptTask, createHtmlTask } from '@/lib/openmaic';
+import { completeStage, getVoyageProgress, setCurrentStage } from '@/lib/voyage-progress';
 import { ASEAN_COUNTRIES } from '@/lib/csca/asean-countries';
 import { VoyagePageHeader, VoyageProgress, VoyageStageRibbon, StageFooter } from '@/components/voyage';
 import {
@@ -40,10 +47,15 @@ import {
   buildAbilityTable,
   buildVoyageAIMateContext,
   getCorrectionLoop,
-  getVoyageNextStep,
   getWeeklyRoutePlan,
   getAIMateContextHint,
 } from '@/lib/brand-logic';
+// [P3.5-B] 个性化航程决策层：学生状态 → 下一学习行动（纯函数，见 lib/csca/personalized-voyage.ts）
+import {
+  buildStudentModel,
+  resolveNextLearningAction,
+  type NextLearningAction,
+} from '@/lib/csca/personalized-voyage';
 
 // [PERF-FIX] echarts (KnowledgeGraphView) is code-split out of the first screen;
 // it loads only when the knowledge_map step is entered.
@@ -81,6 +93,33 @@ const STEP_DEFS: { id: Step; icon: ComponentType<{ className?: string }> }[] = [
     { id: 'ai_tutor', icon: Bot },
 ];
 
+/**
+ * hash → step 全量白名单（P0-1）。
+ *
+ * 约束（改这里之前先读这两处，三边必须逐字一致）：
+ *   - components/brand/VoyageNavigation.tsx 的 STAGES href
+ *   - app/page.tsx 的 LEARNING_VOYAGE_8_STOPS anchor
+ *
+ * index 是 STEP_DEFS 的下标；`exam` 段无独立入口，与 exam_center 合并。
+ * `error-analysis` / `error_review` 是历史链接的兼容别名（旧版侧栏与
+ * createPptTask 的 voyageStageId 曾使用），非新增功能。
+ */
+const HASH_TO_STEP: Record<string, { step: Step; index: number }> = {
+    'diagnosis': { step: 'diagnosis', index: 0 },
+    'knowledge-map': { step: 'knowledge_map', index: 1 },
+    'adaptive-learning': { step: 'adaptive_learning', index: 2 },
+    'mock-exam': { step: 'exam_center', index: 3 },
+    'score-analysis': { step: 'result', index: 5 },
+    'error-review': { step: 'error_review', index: 6 },
+    'study-plan': { step: 'study_plan', index: 7 },
+    'university-match': { step: 'university_match', index: 8 },
+    'ai-tutor': { step: 'ai_tutor', index: 9 },
+    // 兼容别名
+    'error-analysis': { step: 'error_review', index: 6 },
+    'error_review': { step: 'error_review', index: 6 },
+    'ai_tutor': { step: 'ai_tutor', index: 9 },
+};
+
 const EXAM_MODE_CONFIG = [
     { id: 'full', color: 'bg-vermilion' },
     { id: 'practice', color: 'bg-bamboo' },
@@ -97,27 +136,22 @@ export default function CSCAVoyageApp() {
     // AND client first render），mount 后 useEffect 更新真实数据，避免 typeof window 分支
     const cscaSession = useCscaSession();
 
+    // [P0-1-FIX] 用全量白名单做 hash → step 初始化，并监听 hashchange。
+    // 旧实现只识别 6 个 hash（缺 diagnosis / error-review / ai-tutor），
+    // 未命中时静默停在默认 diagnosis；且 effect 只在 mount 跑一次，
+    // 用户在 /csca/voyage 内点击侧栏阶段（同文档 hash 变化）不会切换步骤。
     useEffect(() => {
-        const hash = window.location.hash.slice(1);
-        if (hash === 'knowledge-map') {
-            setCurrentStep('knowledge_map');
-            setActiveStep(1);
-        } else if (hash === 'adaptive-learning') {
-            setCurrentStep('adaptive_learning');
-            setActiveStep(2);
-        } else if (hash === 'mock-exam') {
-            setCurrentStep('exam_center');
-            setActiveStep(3);
-        } else if (hash === 'score-analysis') {
-            setCurrentStep('result');
-            setActiveStep(5);
-        } else if (hash === 'study-plan') {
-            setCurrentStep('study_plan');
-            setActiveStep(7);
-        } else if (hash === 'university-match') {
-            setCurrentStep('university_match');
-            setActiveStep(8);
-        }
+        const applyHashStep = () => {
+            const hash = window.location.hash.slice(1);
+            if (!hash) return;
+            const target = HASH_TO_STEP[hash];
+            if (!target) return;
+            setCurrentStep(target.step);
+            setActiveStep(target.index);
+        };
+        applyHashStep();
+        window.addEventListener('hashchange', applyHashStep);
+        return () => window.removeEventListener('hashchange', applyHashStep);
     }, []);
     const [diagnosisResult, setDiagnosisResult] = useState<DiagnosisResult | null>(null);
     const [knowledgeMap, setKnowledgeMap] = useState<KnowledgeMapItem[]>([]);
@@ -570,8 +604,8 @@ export default function CSCAVoyageApp() {
     const handleSubmitExam = async () => {
         clearAutoAdvanceTimer(); // P4.3: 提交时清除 pending timer
         setExamStarted(false);
-        // [WORKER] 判分 + 错题批量写入 + 弱项分析 + 学习计划生成在 Web Worker 中执行，
-        // 避免阻塞主线程；错题写入由 O(N²) 逐条读改写降为 Worker 内 1 次读 + 1 次写。
+        // [WORKER] 判分 / 弱项分析 / 学习计划生成在 Web Worker 中执行，避免阻塞主线程；
+        // 错题写入由 O(N²) 逐条读改写降为 1 次读 + 1 次写，但读写都发生在主线程（见下方 [PERSIST]）。
         // [NEXT-FIX] SSR-safe: typeof window 判断，SSR 阶段跳过 worker 实例化。
         let result: ExamGradeResult;
         try {
@@ -603,18 +637,23 @@ export default function CSCAVoyageApp() {
             // Worker 不可用/出错时主线程兜底判分，功能不降级。
             // 动态 import，让判分代码只出现在 worker chunk 与懒加载兜底 chunk，不进首屏主 chunk。
             console.warn('[score-worker] fallback to main-thread grading:', e);
-            const [{ gradeExam }, { writeErrorRecords, saveStudyPlan }] = await Promise.all([
-                import('@/lib/csca/exam-scoring'),
-                import('@/lib/csca/error-analysis-core'),
-            ]);
+            const { gradeExam } = await import('@/lib/csca/exam-scoring');
             result = gradeExam({
                 examQuestions,
                 examAnswers,
                 selectedSubjects,
                 existingErrorRecords: getErrorRecords(),
             });
+        }
+
+        // [PERSIST] Worker 只负责计算，落盘一律在主线程完成 —— Worker 环境没有 localStorage，
+        // 判分成功的正常路径必须在这里写入，否则错题本 / 学习计划 / 弱项只存在于组件内存，
+        // 刷新即失。写入失败不得影响放榜，故仅告警。
+        try {
             writeErrorRecords(result.errorRecords);
             saveStudyPlan(result.studyPlan);
+        } catch (e) {
+            console.warn('[score-worker] persist learning evidence failed:', e);
         }
 
         const score = result.score;
@@ -819,24 +858,19 @@ export default function CSCAVoyageApp() {
         );
 
         try {
-            // Phase 4: 计算 AI Mate 真实学习上下文
-            const completedQuestionCount =
-              Object.keys(exerciseAnswers).length + Object.keys(examAnswers).length;
-            const wrongQuestionCount = examResult?.wrongQuestions?.length ?? 0;
-            const recentAccuracy =
-              completedQuestionCount > 0
-                ? Math.max(0, (completedQuestionCount - wrongQuestionCount) / completedQuestionCount)
-                : undefined;
-            // 从 knowledgeMap 提取薄弱知识点（只取有真实 mastery 且 < 0.5 的）
-            const weakKnowledgePoints: Record<string, string[]> = {};
-            knowledgeMap.forEach((t: any) => {
-              if (t && t.masterySource === 'real_answers' && t.mastery > 0 && t.mastery < 0.5) {
-                if (!weakKnowledgePoints[t.subject]) weakKnowledgePoints[t.subject] = [];
-                weakKnowledgePoints[t.subject].push(t.name);
-              }
-            });
+            // P3.4-1: 改送原始学习数据，由服务端 adapter 重算统计与薄弱点。
+            // 不再把客户端算好的聚合值当作事实上行（与 knowledge-map / adaptive-learning 同一范式）。
+            const session = loadCscaSession();
+            const answerHistory: AnswerRecord[] = Array.isArray(session?.answerHistory)
+              ? session.answerHistory
+              : [];
+            const subjects = diagnosisResult?.requiredSubjects?.length
+              ? diagnosisResult.requiredSubjects
+              : selectedSubjects;
 
-            const res = await fetch('/api/csca/ask-tutor', {
+            // P3.4-2B-1：导师输入框改走 Agent 端点（该端点具备 tool calling 能力，
+            // 可调用 create_ppt）。纯问答行为不变，只是服务端多了一条"能做事"的路径。
+            const res = await fetch('/api/csca/agent', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -847,17 +881,60 @@ export default function CSCAVoyageApp() {
                     examScore: examResult?.score || 0,
                     locale,
                     voyageContext: aiCtx,
-                    // Phase 4 新增：结构化真实学习上下文
+                    // P3.4-1: 原始学习数据（服务端重算，非客户端自述）
+                    answerHistory,
+                    subjects,
+                    progress: getVoyageProgress(),
                     currentStage: activeStep,
-                    knowledgeMap,
-                    completedQuestionCount,
-                    wrongQuestionCount,
-                    recentAccuracy,
-                    weakKnowledgePoints,
                 }),
             });
             const data = await res.json();
             if (data.success) {
+                // P3.4-2B：Agent 可能返回 create_ppt 或 create_interactive_lesson 动作。
+                // 两者拓扑一致：服务端（有 tool calling 能力）只出决定——它按构造
+                // 无法写 IndexedDB；真正落地由浏览器执行既有 createPptTask()/createHtmlTask()。
+                //
+                // P3.4-3B：action 契约扩展为五类（answer / create_ppt /
+                // create_interactive_lesson / clarify / refer）。这里**只**处理两类 create_*：
+                // 其余三类都表示"不要建任务"，因此**有意**落到下面的 setTutorAnswer(data.answer)
+                // —— clarify 的 answer 就是那句反问，refer 的 answer 就是转介提示。
+                // 不新增分支，是为了让"不建任务"成为一个不需要代码的可信默认。
+                const actionType = data.action?.type;
+                if (actionType === 'create_ppt' || actionType === 'create_interactive_lesson') {
+                    const isLesson = actionType === 'create_interactive_lesson';
+                    const pending = toast.loading(
+                        isLesson
+                            ? (isZh ? '正在创建交互式学习任务...' : 'Creating interactive lesson task...')
+                            : (isZh ? '正在创建 PPT 生成任务...' : 'Creating PPT task...'),
+                    );
+                    try {
+                        // 用真实存在的 hash（HASH_TO_STEP），避免 P0-3 那类死锚点。
+                        const taskInput = {
+                            requirement: data.action.requirement,
+                            returnUrl: '/csca/voyage#ai-tutor',
+                            voyageStageId: 'ai_tutor',
+                        };
+                        const task = isLesson
+                            ? await createHtmlTask(taskInput)
+                            : await createPptTask(taskInput);
+                        toast.success(isZh ? '生成任务已创建，正在调度...' : 'Task created, scheduling...', { id: pending });
+                        completeStage(7);
+                        router.push(`/csca/tasks/${task.taskId}`);
+                        return;
+                    } catch (err) {
+                        // 不得静默吞掉：任务创建失败要让用户看见。
+                        toast.error(
+                            isZh
+                                ? `创建生成任务失败：${err instanceof Error ? err.message : String(err)}`
+                                : `Failed to create task: ${err instanceof Error ? err.message : String(err)}`,
+                            { id: pending },
+                        );
+                        setTutorAnswer(data.answer);
+                        completeStage(7);
+                        return;
+                    }
+                }
+
                 setTutorAnswer(data.answer);
                 // Phase F: AI Mate 成功返回即标记 Stage 08 (ai-tutor, index 7) 完成
                 // 之前 Stage 08 从未被 completeStage 触发，导致航程进度失真
@@ -912,7 +989,7 @@ For a personalized plan, enter the AI Mate Hall with latest diagnosis & mock dat
         const weakModules = [...new Set(errors.map((e: any) => e.module))];
 
         const requirement = `根据以下错题记录生成针对性学习课堂：
-        
+
 【薄弱科目】：${weakSubjects.join('、')}
 【薄弱知识点】：${weakModules.join('、')}
 【错题数量】：${errors.length}道
@@ -927,19 +1004,29 @@ For a personalized plan, enter the AI Mate Hall with latest diagnosis & mock dat
 HSK水平：HSK${hskLevel}
 教育背景：${educationSystem.name}`;
 
-        const session = {
-            sessionId: `session-${Date.now()}`,
-            requirements: {
+        // P2 Vertical Slice：把生成任务真正接入 PilarCore 任务系统，
+        // 不再使用 sessionStorage（关闭即丢），改用 createPptTask 持久化到 IndexedDB。
+        // 任务可在 /csca/tasks/[taskId] 工作台追踪，刷新/关闭标签页后仍可恢复。
+        const pending = toast.loading(isZh ? '正在创建生成任务...' : 'Creating generation task...');
+        try {
+            const task = await createPptTask({
                 requirement: requirement.trim(),
-                webSearch: false,
-            },
-            pdfText: '',
-            currentStep: 'generating',
-            previewPhase: 'preparing' as const,
-        };
-
-        sessionStorage.setItem('generationSession', JSON.stringify(session));
-        router.push('/generation-preview');
+                // P0-3：原先写 '/csca#error_review' —— /csca 上没有该锚点，是死 hash。
+                // 改为本步真实存在的 hash（见 HASH_TO_STEP），任务页与课堂页的
+                // 「返回」因此都落在真实的错题修正段。
+                returnUrl: '/csca/voyage#error-review',
+                voyageStageId: 'error_review',
+            });
+            toast.success(isZh ? '生成任务已创建，正在调度...' : 'Task created, scheduling...', { id: pending });
+            router.push(`/csca/tasks/${task.taskId}`);
+        } catch (err) {
+            toast.error(
+                isZh
+                    ? `创建生成任务失败：${err instanceof Error ? err.message : String(err)}`
+                    : `Failed to create task: ${err instanceof Error ? err.message : String(err)}`,
+                { id: pending },
+            );
+        }
     };
 
     const handleTaskComplete = (taskId: string) => {
@@ -954,6 +1041,57 @@ HSK水平：HSK${hskLevel}
             }
             return [...prev, subject];
         });
+    };
+
+    // [P3.5-B] 学生状态 → 下一学习行动。下一阶段不再由 completeStage 的盲 idx+1 决定，
+    // 而由纯决策层从真实学习证据推出（见 lib/csca/personalized-voyage.ts）。
+    //
+    // 必须是 useMemo，不能是 useEffect + setState：saveCscaSession 会 dispatch
+    // 'cscaSessionSaved' → useCscaSession 重读 → 若有 effect 依赖 nextAction 又写 session，
+    // 就会无限循环。**约束：nextAction 只允许在渲染与点击回调中消费，
+    // 禁止出现在任何 useEffect 依赖数组里。**
+    const studentModel = useMemo(
+        () => buildStudentModel({
+            completedStages: cscaSession.progress.completedStages,
+            currentStage: cscaSession.progress.currentStage,
+            answerHistory: cscaSession.sessionData?.answerHistory,
+            errorRecordCount: errorRecords.length,
+            examScore: examResult?.score ?? cscaSession.sessionData?.examScore ?? null,
+            hasStudyPlan: !!studyPlan,
+            hasDiagnosis: !!diagnosisResult,
+        }),
+        [
+            cscaSession.progress.completedStages,
+            cscaSession.progress.currentStage,
+            cscaSession.sessionData?.answerHistory,
+            cscaSession.sessionData?.examScore,
+            errorRecords.length,
+            examResult,
+            studyPlan,
+            diagnosisResult,
+        ],
+    );
+    const nextAction = useMemo(() => resolveNextLearningAction(studentModel), [studentModel]);
+
+    // 跳到决策层给出的落点。
+    // activeStep 必须用 stepKey 反查 STEPS 下标，不能直接用 stageIndex：
+    // STEP_DEFS 有 10 项而 VOYAGE_STAGE_ORDER 只有 9 项，两套下标不相等
+    // （stage4 → step index 5，stage8 → 8，stage7 → 9）。
+    const followDecision = (action: NextLearningAction = nextAction) => {
+        if (action.kind === 'done') return;
+        const idx = STEPS.findIndex((s) => s.id === action.stepKey);
+        setCurrentStep(action.stepKey as Step);
+        if (idx >= 0) setActiveStep(idx);
+        // 只改「我在哪」，不标记完成 —— 用 voyage-progress 的既有 API，
+        // 不让本组件越过进度模块直接写 currentStep。
+        setCurrentStage(action.stageIndex);
+        // /csca/voyage 的动作走 hash（同页 hashchange 已被 applyHashStep 监听）；
+        // ai_tutor 落在 /csca-multi-agent，是另一个页面，走 router。
+        if (action.href.startsWith('/csca/voyage#')) {
+            window.location.hash = action.href.slice('/csca/voyage#'.length);
+        } else if (action.href) {
+            router.push(action.href);
+        }
     };
 
     const renderContent = () => {
@@ -1690,15 +1828,8 @@ HSK水平：HSK${hskLevel}
                   scoreAnalysis as any,
                   selectedSubjects,
                 );
-                const nextStep = getVoyageNextStep(
-                  currentStep,
-                  {
-                    examResult: examResult as any,
-                    errorRecords,
-                    studyPlan: studyPlan as any,
-                  },
-                  locale,
-                );
+                const nextTitle = isZh ? nextAction.title.zh : nextAction.title.en;
+                const nextReason = isZh ? nextAction.reason.zh : nextAction.reason.en;
                 return (<div className="space-y-6">
                     <div className="card-brand p-6">
                         <h3 className="text-lg font-semibold text-ink mb-4">{t.mockExam.examScore}</h3>
@@ -1828,7 +1959,23 @@ HSK水平：HSK${hskLevel}
                                   <p className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-muted-foreground)] mb-1.5 font-brand-eng">
                                     {t.scoreAnalysis.recommendedNext ?? (isZh ? '下一步' : 'Next Step')}
                                   </p>
-                                  <p className="text-[13.5px] leading-[1.65] text-[color:var(--color-ink-800)]">{nextStep.title} — {nextStep.subTitle}</p>
+                                  {/* [P3.5-B] 原为只读文本（anchor 从不渲染的死字段）；现为真实可跳转按钮 */}
+                                  <button
+                                    type="button"
+                                    onClick={() => followDecision()}
+                                    className="group w-full text-left"
+                                  >
+                                    <span className="block font-semibold text-[13.5px] text-[color:var(--color-ink-900)]">
+                                      {nextTitle}
+                                    </span>
+                                    <span className="mt-0.5 block text-[12.5px] leading-[1.6] text-[color:var(--color-muted-foreground)]">
+                                      {nextReason}
+                                    </span>
+                                    <span className="mt-1.5 inline-flex items-center gap-1 text-[12px] font-medium text-[color:var(--color-deep-ocean-700)]">
+                                      {isZh ? '前往' : 'Go'}
+                                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                                    </span>
+                                  </button>
                                 </div>
                               </div>
                             )}
@@ -1839,10 +1986,12 @@ HSK水平：HSK${hskLevel}
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
-                        <button onClick={() => { completeStage(4); setActiveStep(6); setCurrentStep('error_review'); }} className="btn-brand-secondary py-4">
+                        {/* 这两个是用户显式意图（我要纠错 / 我要计划），目的地由按钮自己决定，
+                            不由决策层改写；只把「下一站」显式传给 completeStage，不再依赖 idx+1。 */}
+                        <button onClick={() => { completeStage(4, { nextStepKey: 'error_review' }); setActiveStep(6); setCurrentStep('error_review'); }} className="btn-brand-secondary py-4">
                             {t.correction.title ?? (isZh ? '纠错（修正航向）' : 'Correct Your Course')} ({examResult?.wrongQuestions.length || 0})
                         </button>
-                        <button onClick={() => { completeStage(4); setActiveStep(7); setCurrentStep('study_plan'); }} className="btn-brand-primary py-4">
+                        <button onClick={() => { completeStage(4, { nextStepKey: 'study_plan' }); setActiveStep(7); setCurrentStep('study_plan'); }} className="btn-brand-primary py-4">
                             {t.studyPlan.title ?? (isZh ? '查看航程计划' : 'View Route Plan')} →
                         </button>
                     </div>
@@ -2089,7 +2238,7 @@ HSK水平：HSK${hskLevel}
                         <button onClick={() => { setActiveStep(5); setCurrentStep('result'); }} className="btn-brand-secondary py-4">
                             ← {t.scoreAnalysis.title}
                         </button>
-                        <button onClick={() => { completeStage(5); setActiveStep(7); setCurrentStep('study_plan'); }} className="btn-brand-primary py-4">
+                        <button onClick={() => { completeStage(5, { nextStepKey: 'study_plan' }); setActiveStep(7); setCurrentStep('study_plan'); }} className="btn-brand-primary py-4">
                             {t.studyPlan.title ?? (isZh ? '生成航程计划' : 'Build Route Plan')} →
                         </button>
                     </div>
@@ -2374,12 +2523,9 @@ HSK水平：HSK${hskLevel}
       }
     };
     const goNextStage = () => {
-      const next = Math.min(STEPS.length - 1, activeStep + 1);
-      const s = STEPS[next];
-      if (s) {
-        setActiveStep(next);
-        setCurrentStep(s.id);
-      }
+      // [P3.5-B] 替换式推进：下一阶段不再是盲 idx+1，而是决策层根据学生状态给出的行动。
+      if (nextAction.kind === 'done') return;
+      followDecision(nextAction);
     };
 
     return (<BrandShell>
@@ -2478,9 +2624,13 @@ HSK水平：HSK${hskLevel}
                             backLabel={isZh ? '返回上一阶段' : 'Previous stage'}
                             onBack={activeStep > 0 ? goPrevStage : undefined}
                             backDisabled={activeStep <= 0}
-                            nextLabel={isZh ? '进入下一阶段' : 'Next stage'}
-                            onNext={activeStep < STEPS.length - 1 ? goNextStage : undefined}
-                            nextDisabled={activeStep >= STEPS.length - 1}
+                            nextLabel={
+                                nextAction.kind === 'done'
+                                    ? (isZh ? '九段航程已完成' : 'Voyage complete')
+                                    : (isZh ? `下一步：${nextAction.title.zh}` : `Next: ${nextAction.title.en}`)
+                            }
+                            onNext={nextAction.kind !== 'done' ? goNextStage : undefined}
+                            nextDisabled={nextAction.kind === 'done'}
                             meta={
                                 <span className="tabular-nums">
                                     {isZh

@@ -32,6 +32,26 @@ export const STEP_TO_STAGE: Record<string, number> = {
   university_match: 8,
 };
 
+/**
+ * 阶段索引 → 规范 step key（0-8）。**反向映射的唯一权威，禁止在别处再写第二张表。**
+ *
+ * 为什么不从 STEP_TO_STAGE 反查：该表是「多对一」的别名表（'exam-analysis' / result 都指向 4，
+ * 且按插入序 'exam-analysis' 在前），反查会拿到别名而非规范值 —— 历史上 real bug，
+ * 详见 docs/release/P3.5_B_PERSONALIZED_VOYAGE_ENGINE.md。STEP_TO_STAGE 继续承担
+ * 「任意 key → 阶段索引」的正向查询（含历史别名），本表承担「阶段索引 → 规范 key」的反向查询。
+ */
+export const STAGE_TO_CANONICAL_STEP: readonly string[] = [
+  'diagnosis',        // 0
+  'knowledge_map',    // 1
+  'adaptive_learning',// 2
+  'exam_center',      // 3
+  'result',           // 4
+  'error_review',     // 5
+  'study_plan',       // 6
+  'ai_tutor',         // 7
+  'university_match', // 8
+] as const;
+
 export type VoyageStageStatus = 'done' | 'current' | 'unlocked' | 'locked';
 
 /**

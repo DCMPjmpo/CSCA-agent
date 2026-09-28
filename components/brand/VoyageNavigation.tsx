@@ -35,6 +35,7 @@ import {
   BookOpenText,
   Sparkles,
   RotateCcw,
+  Wand2,
 } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n/hooks';
 import { CscaLanguageSwitcher } from '@/components/csca/CscaLanguageSwitcher';
@@ -48,7 +49,7 @@ type StageId =
   | 'stage1' | 'stage2' | 'stage3' | 'stage4'
   | 'stage5' | 'stage6' | 'stage7' | 'stage8' | 'stage9';
 
-type TopLevelId = 'home' | 'voyage' | 'case-study' | 'assistant';
+type TopLevelId = 'home' | 'voyage' | 'studio' | 'case-study' | 'assistant';
 
 interface StageLink {
   id: StageId;
@@ -60,7 +61,7 @@ interface StageLink {
 interface TopLink {
   id: TopLevelId;
   href: string;
-  labelKey: 'home' | 'prepCenter' | 'caseStudy' | 'aiAssistant';
+  labelKey: 'home' | 'prepCenter' | 'studio' | 'caseStudy' | 'aiAssistant';
   icon: LucideIcon;
 }
 
@@ -69,19 +70,49 @@ const TOP_LINKS: TopLink[] = [
   { id: 'voyage', href: '/csca', labelKey: 'prepCenter', icon: Compass },
   { id: 'case-study', href: '/csca/case-study', labelKey: 'caseStudy', icon: BookOpenText },
   { id: 'assistant', href: '/csca-multi-agent', labelKey: 'aiAssistant', icon: Sparkles },
+  // AI Learning Studio：与「学习航程」平级的产品入口，**不是** Voyage 的第 10 段。
+  // 放在 TOP_LINKS 而不是 STAGES，避免污染 9 段航线的语义与解锁状态。
+  { id: 'studio', href: '/csca/studio', labelKey: 'studio', icon: Wand2 },
 ];
 
+/**
+ * 9 段航线入口。
+ *
+ * [P0-1-FIX] 学习段的 href 必须是 `/csca/voyage#<hash>`：
+ *   - `/csca` 是备考工作台（dashboard），页面上不存在任何 stage 锚点；
+ *   - 真正渲染 10 个 step 的是 `/csca/voyage`（CSCAVoyageApp），
+ *     其 hash 白名单见 components/csca/CSCAVoyageApp.tsx 的 HASH_TO_STEP。
+ * 两侧 hash 必须逐字一致（`error-review` 而非 `error-analysis`，
+ * `mock-exam` 映射到 exam_center step）。
+ */
 const STAGES: StageLink[] = [
-  { id: 'stage1', href: '/csca#diagnosis', section: 'learning', icon: Compass },
-  { id: 'stage2', href: '/csca#knowledge-map', section: 'learning', icon: Map },
-  { id: 'stage3', href: '/csca#adaptive-learning', section: 'learning', icon: Swords },
-  { id: 'stage4', href: '/csca#mock-exam', section: 'learning', icon: Ship },
-  { id: 'stage5', href: '/csca#score-analysis', section: 'learning', icon: Star },
-  { id: 'stage6', href: '/csca#error-analysis', section: 'learning', icon: Eraser },
-  { id: 'stage7', href: '/csca#study-plan', section: 'learning', icon: Route },
+  { id: 'stage1', href: '/csca/voyage#diagnosis', section: 'learning', icon: Compass },
+  { id: 'stage2', href: '/csca/voyage#knowledge-map', section: 'learning', icon: Map },
+  { id: 'stage3', href: '/csca/voyage#adaptive-learning', section: 'learning', icon: Swords },
+  { id: 'stage4', href: '/csca/voyage#mock-exam', section: 'learning', icon: Ship },
+  { id: 'stage5', href: '/csca/voyage#score-analysis', section: 'learning', icon: Star },
+  { id: 'stage6', href: '/csca/voyage#error-review', section: 'learning', icon: Eraser },
+  { id: 'stage7', href: '/csca/voyage#study-plan', section: 'learning', icon: Route },
   { id: 'stage8', href: '/csca-multi-agent', section: 'outcome', icon: Bot },
-  { id: 'stage9', href: '/csca#university-match', section: 'outcome', icon: Building2 },
+  { id: 'stage9', href: '/csca/voyage#university-match', section: 'outcome', icon: Building2 },
 ];
+
+/**
+ * 判定某个 stage 是否为当前所在段。
+ * 带 hash 的 stage：路径与 hash 都必须匹配（否则在 /csca/voyage 上会 8 段同时高亮）。
+ */
+function stageIsActive(
+  href: string,
+  id: StageId,
+  pathname: string | null,
+  hashKey: string,
+): boolean {
+  if (!pathname) return false;
+  if (id === 'stage8') return pathname.startsWith('/csca-multi-agent');
+  const [hrefPath, hrefHash] = href.split('#');
+  if (hrefHash) return pathname === hrefPath && hashKey === hrefHash;
+  return pathname === hrefPath || pathname.startsWith(`${hrefPath}/`);
+}
 
 function pathIsOnCscaRoute(pathname: string | null): boolean {
   if (!pathname) return false;
@@ -91,16 +122,29 @@ function pathIsOnCscaRoute(pathname: string | null): boolean {
 /**
  * 航线完成状态：
  * - 已完成：session 对应阶段 step >= done；
- * - 未解锁：当前阶段 index 之前未满足前置（诊断未完成 → stage2+ 未解锁；这里使用保守策略：仅按 stage <= current+1 解锁）
+ * - 未解锁：当前阶段 index 之前未满足前置（保守策略：仅按 stage <= current+1 解锁）
+ *
+ * [P0-1-FIX] stepToIndex 的 key 必须覆盖 `lib/csca/session` 里真实写入的 `currentStep`
+ * （即 `Step` 联合类型：diagnosis / knowledge_map / adaptive_learning / exam_center /
+ * exam / result / error_review / study_plan / university_match / ai_tutor）。
+ * 旧表只有 `diagnosis` 能命中，导致真实用户 session 下 idx 恒为 -1、
+ * stage2–stage9 全部落到 'locked' 分支并以 href="#" 渲染 —— 导航整体不可点。
+ * 这里同时保留连字符变体，兼容旧数据与 URL hash 命名。
  */
 function deriveStageStates(
   currentStepKey: string | null | undefined,
 ): Record<StageId, 'done' | 'current' | 'unlocked' | 'locked'> {
   const order: StageId[] = ['stage1','stage2','stage3','stage4','stage5','stage6','stage7','stage8','stage9'];
   const stepToIndex: Record<string, number> = {
-    diagnosis: 0, 'knowledge-map': 1, 'adaptive-learning': 2,
-    'mock-exam': 3, 'score-analysis': 4, 'error-analysis': 5,
-    'study-plan': 6, 'ai-tutor': 7, 'university-match': 8,
+    diagnosis: 0,
+    knowledge_map: 1, 'knowledge-map': 1,
+    adaptive_learning: 2, 'adaptive-learning': 2,
+    exam_center: 3, exam: 3, mock_exam: 3, 'mock-exam': 3,
+    result: 4, score_analysis: 4, 'score-analysis': 4,
+    error_review: 5, 'error-review': 5, 'error-analysis': 5,
+    study_plan: 6, 'study-plan': 6,
+    ai_tutor: 7, 'ai-tutor': 7,
+    university_match: 8, 'university-match': 8,
   };
   const idx = currentStepKey ? (stepToIndex[currentStepKey] ?? -1) : -1;
   const result = {} as Record<StageId, 'done' | 'current' | 'unlocked' | 'locked'>;
@@ -135,6 +179,16 @@ export function VoyageNavigation() {
   const session = useCscaSession();
   const progress = session.progress;
 
+  // [P0-1-FIX] 当前 hash：stage 高亮需要 pathname + hash 共同判定，
+  // 否则在 /csca/voyage 上 8 个学习段会同时高亮。
+  const [hashKey, setHashKey] = useState('');
+  useEffect(() => {
+    const sync = () => setHashKey(window.location.hash.replace(/^#/, ''));
+    sync();
+    window.addEventListener('hashchange', sync);
+    return () => window.removeEventListener('hashchange', sync);
+  }, []);
+
   const stageState = useMemo(
     () => deriveStageStates(session.currentStageKey),
     [session.currentStageKey],
@@ -158,9 +212,32 @@ export function VoyageNavigation() {
     if (pathname === '/') return 'home';
     if (pathname.startsWith('/csca-multi-agent')) return 'assistant';
     if (pathname === '/csca/case-study' || pathname.startsWith('/csca/case-study/')) return 'case-study';
+    // Studio 有**自己的** active 语义：在 /csca/studio 上高亮「AI Learning Studio」，
+    // 而不是让用户以为自己还在「学习航程」（这是最小必要修正，不改动 9 段航线）。
+    if (pathname === '/csca/studio' || pathname.startsWith('/csca/studio/')) return 'studio';
     if (pathname.startsWith('/csca')) return 'voyage';
     return null;
   })();
+
+  // [P0-1-FIX] 当用户已经在目标路径上时，Next <Link> 会用 history.pushState 只改 hash，
+  // 而 pushState 不触发 hashchange —— CSCAVoyageApp 的「hash → step」监听会收不到信号，
+  // 表现为"点了侧栏但页面不动"。这里对同路径点击改走原生 fragment 导航（会触发
+  // hashchange），跨路由点击仍交给 Next 处理（那时组件会重新 mount 并读 hash）。
+  const handleStageClick = (
+    e: { preventDefault: () => void },
+    href: string,
+    locked: boolean,
+  ) => {
+    if (locked) {
+      e.preventDefault();
+      return;
+    }
+    const [targetPath, targetHash] = href.split('#');
+    if (targetHash && window.location.pathname === targetPath) {
+      e.preventDefault();
+      window.location.hash = targetHash;
+    }
+  };
 
   return (
     <>
@@ -268,18 +345,7 @@ export function VoyageNavigation() {
             const m = stagesMeta[i];
             const Icon = stg.icon;
             const state = stageState[stg.id];
-            // 当前判定：URL hash / pathname 匹配
-            let isActive = false;
-            if (pathname) {
-              const hashFree = stg.href.split('#')[0];
-              if (stg.id === 'stage8') {
-                isActive = pathname.startsWith('/csca-multi-agent');
-              } else if (stg.href.startsWith('/csca#')) {
-                isActive = pathname === '/csca';
-              } else {
-                isActive = pathname === hashFree || pathname.startsWith(`${hashFree}/`);
-              }
-            }
+            const isActive = stageIsActive(stg.href, stg.id, pathname, hashKey);
             const locked = state === 'locked';
             return (
               <Link
@@ -287,7 +353,7 @@ export function VoyageNavigation() {
                 href={locked ? '#' : stg.href}
                 aria-disabled={locked}
                 aria-current={isActive ? 'step' : undefined}
-                onClick={(e) => { if (locked) e.preventDefault(); }}
+                onClick={(e) => handleStageClick(e, stg.href, locked)}
                 className={cn(
                   'group relative flex items-center gap-3 rounded-[8px] px-2.5 py-2',
                   'transition-all duration-200',
@@ -404,8 +470,8 @@ export function VoyageNavigation() {
           className="fixed bottom-0 left-0 right-0 z-40 border-t border-[color:var(--color-line-200)] bg-[color:var(--background)]/95 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--background)]/85"
           style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
         >
-          <div className="grid grid-cols-5 items-center">
-            {TOP_LINKS.slice(0, 4).map((l) => {
+          <div className="grid grid-cols-6 items-center">
+            {TOP_LINKS.slice(0, 5).map((l) => {
               const Icon = l.icon;
               const isActive = activeTop === l.id;
               const label = (t.nav as unknown as Record<string, string>)[l.labelKey] ?? l.labelKey;
@@ -415,7 +481,7 @@ export function VoyageNavigation() {
                   href={l.href}
                   aria-current={isActive ? 'page' : undefined}
                   className={cn(
-                    'relative flex flex-col items-center gap-1 py-2 min-h-[52px] justify-center',
+                    'relative flex flex-col items-center gap-1 py-2 min-h-[52px] justify-center min-w-0',
                     'text-[11px] transition-colors',
                     isActive ? 'text-[color:var(--color-deep-ocean-800)]' : 'text-[color:var(--color-ink-500)] hover:text-[color:var(--color-ink-700)]',
                   )}
@@ -424,7 +490,7 @@ export function VoyageNavigation() {
                     <span className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-[2px] rounded-b bg-[color:var(--color-voyage-blue)]" />
                   )}
                   <Icon className="w-5 h-5" />
-                  <span className="truncate px-1">{label}</span>
+                  <span className="w-full truncate px-1 text-center">{label}</span>
                 </Link>
               );
             })}
@@ -433,14 +499,14 @@ export function VoyageNavigation() {
               onClick={() => { setMobileOpen?.(false); setDrawerMore(true); }}
               aria-label={t.nav.learningVoyage ?? 'More'}
               className={cn(
-                'relative flex flex-col items-center gap-1 py-2 min-h-[52px] justify-center text-[11px] transition-colors',
+                'relative flex flex-col items-center gap-1 py-2 min-h-[52px] justify-center min-w-0 text-[11px] transition-colors',
                 drawerMore
                   ? 'text-[color:var(--color-deep-ocean-800)]'
                   : 'text-[color:var(--color-ink-500)] hover:text-[color:var(--color-ink-700)]',
               )}
             >
               <Compass className="w-5 h-5" />
-              <span className="truncate px-1">{t.nav.learningVoyage ?? 'Voyage'}</span>
+              <span className="w-full truncate px-1 text-center">{t.nav.learningVoyage ?? 'Voyage'}</span>
             </button>
           </div>
         </nav>
@@ -483,17 +549,12 @@ export function VoyageNavigation() {
                   const Icon = stg.icon;
                   const state = stageState[stg.id];
                   const locked = state === 'locked';
-                  let isActive = false;
-                  if (pathname) {
-                    if (stg.id === 'stage8') isActive = pathname.startsWith('/csca-multi-agent');
-                    else if (stg.href.startsWith('/csca#')) isActive = pathname === '/csca';
-                    else isActive = pathname === stg.href;
-                  }
+                  const isActive = stageIsActive(stg.href, stg.id, pathname, hashKey);
                   return (
                     <Link
                       key={stg.id}
                       href={locked ? '#' : stg.href}
-                      onClick={(e) => { if (locked) e.preventDefault(); setDrawerMore(false); }}
+                      onClick={(e) => { handleStageClick(e, stg.href, locked); setDrawerMore(false); }}
                       className={cn(
                         'relative flex items-center gap-3 rounded-[10px] px-3 py-2.5',
                         'border border-transparent transition-colors',

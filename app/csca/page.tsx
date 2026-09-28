@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import {
   ArrowRight, Target, BookOpen, AlertCircle, TrendingUp,
   Calendar, Clock, ChevronRight, Compass, GraduationCap,
-  BarChart3, Zap,
+  BarChart3, Zap, Code2, Sparkles, FileText,
 } from 'lucide-react';
 import { BrandShell } from '@/components/brand/BrandShell';
 import { VoyageProgressTracker } from '@/components/csca/VoyageProgressTracker';
@@ -32,6 +32,7 @@ import {
 import { restartVoyage } from '@/lib/voyage-progress';
 import { RotateCcw } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { listTasksByCapability, type PilarCoreTaskRecord } from '@/lib/openmaic';
 
 export default function CSCADashboardPage() {
   const { t, locale } = useTranslation();
@@ -50,6 +51,31 @@ export default function CSCADashboardPage() {
     setSession(s);
     setErrorRecords(getErrorRecords());
     setStudyPlan(getStudyPlan());
+  }, []);
+
+  // B2-5：/csca 不再承载创作功能区（创建表单 / Active / Recent / Full History）。
+  // 这里只读「最近一条创作」作为入口卡上的一句摘要；完整能力全部归 /csca/studio。
+  const [latestCreation, setLatestCreation] = useState<PilarCoreTaskRecord | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const [ppt, html] = await Promise.all([
+          listTasksByCapability('ppt'),
+          listTasksByCapability('html'),
+        ]);
+        if (cancelled) return;
+        // 只需要最新的一条，不做列表、不做筛选、不做统计。
+        const latest = [...ppt, ...html].sort(
+          (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+        )[0] ?? null;
+        setLatestCreation(latest);
+      } catch {
+        // IndexedDB 不可用时静默降级（不影响主页面）
+      }
+    })();
+    return () => { cancelled = true; };
   }, []);
 
   // Compute stats from answerHistory
@@ -164,24 +190,24 @@ export default function CSCADashboardPage() {
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-3">
                 {!session?.selectedCountryCode && (
-                  <Link href="/csca/onboarding">
-                    <Button size="lg">
+                  <Button asChild size="lg">
+                    <Link href="/csca/onboarding">
                       <Compass className="mr-2 h-5 w-5" />
                       {isZh ? '开始引导' : 'Start Onboarding'}
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 )}
-                <Link href="/csca/voyage#diagnosis">
-                  <Button size="lg" variant={session?.selectedCountryCode ? 'default' : 'outline'}>
+                <Button asChild size="lg" variant={session?.selectedCountryCode ? 'default' : 'outline'}>
+                  <Link href="/csca/voyage#diagnosis">
                     <Compass className="mr-2 h-5 w-5" />
                     {d.ctaDiagnosis || 'Start Diagnosis'}
-                  </Button>
-                </Link>
-                <Link href="/csca/voyage">
-                  <Button variant="outline" size="lg">
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/csca/voyage">
                     {isZh ? '自由探索' : 'Explore Freely'}
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </div>
           ) : (
@@ -232,12 +258,12 @@ export default function CSCADashboardPage() {
                         </div>
                       </AlertDialogContent>
                     </AlertDialog>
-                    <Link href="/csca/voyage">
-                      <Button>
+                    <Button asChild>
+                      <Link href="/csca/voyage">
                         {isZh ? '继续' : 'Continue'}
                         <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -301,12 +327,12 @@ export default function CSCADashboardPage() {
                         </p>
                       </div>
                     </div>
-                    <Link href="/csca/voyage#study-plan">
-                      <Button>
+                    <Button asChild>
+                      <Link href="/csca/voyage#study-plan">
                         {isZh ? '查看学习计划' : 'View Learning Plan'}
                         <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               )}
@@ -414,16 +440,71 @@ export default function CSCADashboardPage() {
                       <p className="text-sm font-medium">{stageLabels[nextMilestone] || `Stage ${nextMilestone + 1}`}</p>
                     </div>
                   </div>
-                  <Link href="/csca/voyage">
-                    <Button variant="ghost" size="sm">
+                  <Button asChild variant="ghost" size="sm">
+                    <Link href="/csca/voyage">
                       {isZh ? '前往' : 'Go'}
                       <ChevronRight className="ml-1 h-4 w-4" />
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               )}
             </>
           )}
+
+          {/* AI Learning Studio — B2-5：从「Studio 功能区」降级为「入口卡」。
+               创建表单 / Active Tasks / Recent Tasks / Full History 全部归属 /csca/studio，
+               这里只保留「能做什么」的说明 + 一个通往 /csca/studio 的明确 CTA，
+               避免 /csca 变成第二套 Dashboard（/csca 的职责仍是「我在哪 / 我的学习进度」）。 */}
+          <section
+            data-testid="studio-entry-card"
+            className="mt-6 rounded-xl border border-[var(--border)] bg-[var(--card)] p-5"
+          >
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="min-w-0">
+                <h3 className="flex items-center gap-2 text-sm font-semibold">
+                  <Sparkles className="h-4 w-4 text-[var(--accent)]" />
+                  {isZh ? 'AI Learning Studio' : 'AI Learning Studio'}
+                </h3>
+                <p className="mt-1 text-xs text-[var(--muted-foreground)]">
+                  {isZh
+                    ? 'AI 创作空间：生成教学 PPT 与交互式学习内容，创建、进行中与历史记录都在那里统一管理。'
+                    : 'Your AI creation space: generate teaching slides and interactive lessons — create, track and review them all in one place.'}
+                </p>
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--primary)]/10 px-2.5 py-0.5 text-[11px] font-medium text-[var(--primary)]">
+                    <FileText className="h-3.5 w-3.5" />
+                    AI PPT
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--accent)]/15 px-2.5 py-0.5 text-[11px] font-medium text-[var(--accent)]">
+                    <Code2 className="h-3.5 w-3.5" />
+                    Interactive Lesson
+                  </span>
+                </div>
+                {latestCreation && (
+                  <p
+                    data-testid="studio-entry-latest"
+                    className="mt-3 flex min-w-0 items-center gap-1.5 text-xs text-[var(--muted-foreground)]"
+                  >
+                    <Clock className="h-3.5 w-3.5 shrink-0" />
+                    <span className="truncate">
+                      {isZh ? '最近创作：' : 'Latest: '}
+                      {latestCreation.requirement.length > 40
+                        ? `${latestCreation.requirement.slice(0, 37)}...`
+                        : latestCreation.requirement}
+                    </span>
+                  </p>
+                )}
+              </div>
+              <div className="flex-shrink-0">
+                <Button asChild size="sm" data-testid="studio-entry-cta">
+                  <Link href="/csca/studio">
+                    {isZh ? '进入 AI Learning Studio' : 'Open AI Learning Studio'}
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </BrandShell>
