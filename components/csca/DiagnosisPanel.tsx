@@ -7,7 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n/hooks';
 
@@ -75,9 +81,7 @@ export function DiagnosisPanel({ onComplete }: DiagnosisPanelProps) {
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
         <CardTitle className="text-xl font-bold">Step 1: {t.diagnosis.title}</CardTitle>
-        <p className="text-sm text-gray-500">
-          {t.diagnosis.description}
-        </p>
+        <p className="text-sm text-gray-500">{t.diagnosis.description}</p>
       </CardHeader>
       <CardContent className="space-y-6">
         {!result ? (
@@ -207,7 +211,9 @@ export function DiagnosisPanel({ onComplete }: DiagnosisPanelProps) {
 
             <div className="p-4 bg-yellow-50 rounded-lg">
               <h4 className="font-medium mb-1">{t.diagnosis.estimatedDays}</h4>
-              <p className="text-2xl font-bold text-yellow-700">{result.estimatedDays} {t.flow.daysUnit}</p>
+              <p className="text-2xl font-bold text-yellow-700">
+                {result.estimatedDays} {t.flow.daysUnit}
+              </p>
             </div>
 
             <Button className="w-full" onClick={() => setResult(null)}>

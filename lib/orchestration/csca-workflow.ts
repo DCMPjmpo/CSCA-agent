@@ -1,6 +1,6 @@
 /**
  * CSCA Pilot Agent Workflow - LangGraph Orchestration
- * 
+ *
  * Six-step workflow for CSCA exam preparation:
  * 1. Subject Diagnosis
  * 2. Knowledge Map Generation
@@ -13,7 +13,11 @@
 import { StateGraph, START, END } from '@langchain/langgraph';
 import { generateWithFallback, type TaskType } from '../ai/model-router';
 import { retrieveCscaKnowledge, getCscaSubjectRules } from '../rag/retriever';
-import { calculateEloDifficulty, suggestDailyPracticeCount, type TopicMastery } from '../elo/algorithm';
+import {
+  calculateEloDifficulty,
+  suggestDailyPracticeCount,
+  type TopicMastery,
+} from '../elo/algorithm';
 
 /**
  * Parse an AI text response as JSON, tolerating models that wrap the JSON
@@ -235,15 +239,15 @@ async function generateAdaptiveExercises(state: CscaAgentState): Promise<Partial
 
   // Extract weak topics
   const weakTopics = knowledgeMap.topics
-    .filter(t => t.mastery !== 'mastered')
-    .map(t => ({
+    .filter((t) => t.mastery !== 'mastered')
+    .map((t) => ({
       subject: knowledgeMap.subject,
       topic: t.name,
       eloScore: t.eloScore,
     }));
 
   // Calculate target difficulty using ELO
-  const targetDifficulty = calculateEloDifficulty(weakTopics.map(t => t.eloScore));
+  const targetDifficulty = calculateEloDifficulty(weakTopics.map((t) => t.eloScore));
 
   // Determine exercise count
   const exerciseCount = suggestDailyPracticeCount(weakTopics.length);
@@ -369,7 +373,7 @@ async function analyzeScore(state: CscaAgentState): Promise<Partial<CscaAgentSta
   // Calculate module scores
   const moduleScores: Record<string, { total: number; correct: number }> = {};
 
-  mockExam.questions.forEach(q => {
+  mockExam.questions.forEach((q) => {
     if (!moduleScores[q.module]) {
       moduleScores[q.module] = { total: 0, correct: 0 };
     }
@@ -387,7 +391,8 @@ async function analyzeScore(state: CscaAgentState): Promise<Partial<CscaAgentSta
 
   // Calculate total score
   const totalScore = Math.round(
-    Object.values(moduleScores).reduce((sum, s) => sum + s.correct, 0) / mockExam.totalQuestions * 100
+    (Object.values(moduleScores).reduce((sum, s) => sum + s.correct, 0) / mockExam.totalQuestions) *
+      100,
   );
 
   // Generate analysis report using Kimi
@@ -425,17 +430,17 @@ Output Format (JSON):
   }
   return {
     scoreAnalysis: {
-        totalScore,
-        moduleScores: moduleRates,
-        rankingPercentile: Math.min(90, Math.max(10, totalScore)),
-        weakPoints: Object.entries(moduleRates)
-          .sort((a, b) => a[1] - b[1])
-          .slice(0, 3)
-          .map(([name]) => name),
-        improvementPlan: 'Focus on weak modules and practice daily.',
-      },
-      currentStep: 6,
-    };
+      totalScore,
+      moduleScores: moduleRates,
+      rankingPercentile: Math.min(90, Math.max(10, totalScore)),
+      weakPoints: Object.entries(moduleRates)
+        .sort((a, b) => a[1] - b[1])
+        .slice(0, 3)
+        .map(([name]) => name),
+      improvementPlan: 'Focus on weak modules and practice daily.',
+    },
+    currentStep: 6,
+  };
 }
 
 // ==========================================
@@ -471,19 +476,18 @@ Output Format (JSON):
 
   const universityMatch = parseAiJson(result.text);
   if (universityMatch !== null) {
-    return { universityMatch: universityMatch as CscaAgentState['universityMatch'], currentStep: 7 };
+    return {
+      universityMatch: universityMatch as CscaAgentState['universityMatch'],
+      currentStep: 7,
+    };
   }
   return {
     universityMatch: {
-      safeSchools: [
-        { name: 'Local Universities', location: 'Various Cities', probability: 0.9 },
-      ],
+      safeSchools: [{ name: 'Local Universities', location: 'Various Cities', probability: 0.9 }],
       targetSchools: [
         { name: 'Mid-tier Universities', location: 'Major Cities', probability: 0.6 },
       ],
-      reachSchools: [
-        { name: 'Top Universities', location: 'Beijing/Shanghai', probability: 0.3 },
-      ],
+      reachSchools: [{ name: 'Top Universities', location: 'Beijing/Shanghai', probability: 0.3 }],
       scholarships: [],
     },
     currentStep: 7,
@@ -535,11 +539,15 @@ export async function runCscaWorkflow(initialState: any): Promise<any> {
   return result;
 }
 
-export async function runStep(
-  state: any,
-  step: number
-): Promise<any> {
-  const steps = ['diagnose', 'knowledge_map', 'adaptive_exercises', 'mock_exam', 'score_analysis', 'university_match'];
+export async function runStep(state: any, step: number): Promise<any> {
+  const steps = [
+    'diagnose',
+    'knowledge_map',
+    'adaptive_exercises',
+    'mock_exam',
+    'score_analysis',
+    'university_match',
+  ];
   const stepName = steps[step - 1];
 
   if (!stepName) {

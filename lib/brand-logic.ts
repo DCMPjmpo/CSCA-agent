@@ -11,7 +11,10 @@
  */
 import type { KnowledgeMapItem } from '@/components/csca/KnowledgeGraphView';
 import type { StudyPlan } from '@/lib/csca/error-analysis-core';
-import type { ExamGradeResult as ExamResult, ExamQuestionLike as ExamQuestion } from '@/lib/csca/exam-scoring';
+import type {
+  ExamGradeResult as ExamResult,
+  ExamQuestionLike as ExamQuestion,
+} from '@/lib/csca/exam-scoring';
 import {
   getCurrentStageIndex,
   STEP_TO_STAGE,
@@ -173,7 +176,17 @@ export const REAL_VOYAGE_TO_CSCA: ReadonlyArray<{
  * 3) VOYAGE_WORD_LIST — 统一术语 + 禁止词
  * ======================================================================= */
 export const VOYAGE_APPROVED_TERMS = {
-  en: ['Voyage', 'Departure', 'Chart', 'Training', 'Trial', 'Observation', 'Correction', 'Route', 'Destination'],
+  en: [
+    'Voyage',
+    'Departure',
+    'Chart',
+    'Training',
+    'Trial',
+    'Observation',
+    'Correction',
+    'Route',
+    'Destination',
+  ],
   zh: ['出发', '航图', '训练', '试航', '测评', '修正', '航程', '目标'],
 } as const;
 
@@ -218,48 +231,66 @@ export type VoyageAIMateContextHint = {
 const _DEFAULT_AI_HINTS: Record<VoyageStageId, Omit<VoyageAIMateContextHint, 'stageId'>> = {
   stage1: {
     internalIndex: 0,
-    contextHint: '学生正处于「定位」阶段。默认帮他/她判断目标是否合理、解释国家与学制对应关系、说明为什么需要这些科目组合。',
-    contextHintEN: 'Student is at departure stage. Help validate goal suitability, explain country-system mapping & subject reasoning.',
+    contextHint:
+      '学生正处于「定位」阶段。默认帮他/她判断目标是否合理、解释国家与学制对应关系、说明为什么需要这些科目组合。',
+    contextHintEN:
+      'Student is at departure stage. Help validate goal suitability, explain country-system mapping & subject reasoning.',
   },
   stage2: {
     internalIndex: 1,
-    contextHint: '学生正处于「航海图」阶段。默认解释当前知识节点与其前置知识的关系：「我为什么要学这个」。',
-    contextHintEN: 'Student is on the chart stage. Explain nodes and their prerequisites — answer "why do I need to learn this".',
+    contextHint:
+      '学生正处于「航海图」阶段。默认解释当前知识节点与其前置知识的关系：「我为什么要学这个」。',
+    contextHintEN:
+      'Student is on the chart stage. Explain nodes and their prerequisites — answer "why do I need to learn this".',
   },
   stage3: {
     internalIndex: 2,
-    contextHint: '学生正处于「演武操练」阶段。默认帮做错题讲解、一步一步推导答案、同类题推荐，但不要直接给答案。',
-    contextHintEN: 'Student is in training. Explain wrong answers step by step, recommend similar practice; do not just give the final answer.',
+    contextHint:
+      '学生正处于「演武操练」阶段。默认帮做错题讲解、一步一步推导答案、同类题推荐，但不要直接给答案。',
+    contextHintEN:
+      'Student is in training. Explain wrong answers step by step, recommend similar practice; do not just give the final answer.',
   },
   stage4: {
     internalIndex: 3,
-    contextHint: '学生正处于「试航」阶段。默认进行考试复盘、时间分配建议、答题策略、心态提示；不要在考试进行中泄露答案。',
-    contextHintEN: 'Student is in trial. Default: post-exam review, pacing tips, strategy; never leak an answer mid-exam.',
+    contextHint:
+      '学生正处于「试航」阶段。默认进行考试复盘、时间分配建议、答题策略、心态提示；不要在考试进行中泄露答案。',
+    contextHintEN:
+      'Student is in trial. Default: post-exam review, pacing tips, strategy; never leak an answer mid-exam.',
   },
   stage5: {
     internalIndex: 4,
-    contextHint: '学生正处于「观星测运」阶段。默认把成绩翻译成「能力差距」并给出具体的下一阶段学习建议，而不是只给分数。',
-    contextHintEN: 'Student is in observation. Translate scores into ability gaps + concrete next-step learning advice, not just numbers.',
+    contextHint:
+      '学生正处于「观星测运」阶段。默认把成绩翻译成「能力差距」并给出具体的下一阶段学习建议，而不是只给分数。',
+    contextHintEN:
+      'Student is in observation. Translate scores into ability gaps + concrete next-step learning advice, not just numbers.',
   },
   stage6: {
     internalIndex: 5,
-    contextHint: '学生正处于「错题修正」阶段。默认对每一道错题做原因归因（概念 / 公式 / 计算 / 审题）并推荐对应的训练题。',
-    contextHintEN: 'Student is in correction. Classify error cause (concept/formula/computation/reading) and recommend targeted drills.',
+    contextHint:
+      '学生正处于「错题修正」阶段。默认对每一道错题做原因归因（概念 / 公式 / 计算 / 审题）并推荐对应的训练题。',
+    contextHintEN:
+      'Student is in correction. Classify error cause (concept/formula/computation/reading) and recommend targeted drills.',
   },
   stage7: {
     internalIndex: 6,
-    contextHint: '学生正处于「学习航程」阶段。默认帮调整计划：压缩/增加题量、换科目顺序、保留休息日，调整后仍能在目标考试日期前完成。',
-    contextHintEN: 'Student is in route planning. Adjust load, reorder subjects, keep rest days, and still meet the target exam date.',
+    contextHint:
+      '学生正处于「学习航程」阶段。默认帮调整计划：压缩/增加题量、换科目顺序、保留休息日，调整后仍能在目标考试日期前完成。',
+    contextHintEN:
+      'Student is in route planning. Adjust load, reorder subjects, keep rest days, and still meet the target exam date.',
   },
   stage8: {
     internalIndex: 7,
-    contextHint: '学生正处于「AI 航海助手」大厅。默认根据最新的诊断 / 航海图 / 试航数据主动推荐下一步行动。',
-    contextHintEN: 'Student is in the AI Mate hall. Proactively recommend next action using the latest diagnosis / chart / trial data.',
+    contextHint:
+      '学生正处于「AI 航海助手」大厅。默认根据最新的诊断 / 航海图 / 试航数据主动推荐下一步行动。',
+    contextHintEN:
+      'Student is in the AI Mate hall. Proactively recommend next action using the latest diagnosis / chart / trial data.',
   },
   stage9: {
     internalIndex: 8,
-    contextHint: '学生正处于「院校港口」阶段。默认对比不同院校的专业要求、录取难度、HSK 门槛，帮助其决策申请志愿顺序。',
-    contextHintEN: 'Student is at destination stage. Compare university major requirements, HSK bar, admission difficulty, suggest application order.',
+    contextHint:
+      '学生正处于「院校港口」阶段。默认对比不同院校的专业要求、录取难度、HSK 门槛，帮助其决策申请志愿顺序。',
+    contextHintEN:
+      'Student is at destination stage. Compare university major requirements, HSK bar, admission difficulty, suggest application order.',
   },
 };
 
@@ -270,8 +301,10 @@ export function getAIMateContextHint(
   const idx = getCurrentStageIndex(currentStepKey);
   const sid = VOYAGE_STAGE_ORDER[idx] ?? 'stage1';
   const h = _DEFAULT_AI_HINTS[sid];
-  const stageName = LEARNING_VOYAGE_8_STOPS.find((s) => s.internalStageIndex === idx)?.title ?? '学习航程';
-  const stageNameEN = LEARNING_VOYAGE_8_STOPS.find((s) => s.internalStageIndex === idx)?.titleEN ?? 'Learning Voyage';
+  const stageName =
+    LEARNING_VOYAGE_8_STOPS.find((s) => s.internalStageIndex === idx)?.title ?? '学习航程';
+  const stageNameEN =
+    LEARNING_VOYAGE_8_STOPS.find((s) => s.internalStageIndex === idx)?.titleEN ?? 'Learning Voyage';
   return {
     stageId: sid,
     internalIndex: h.internalIndex,
@@ -291,7 +324,12 @@ export function getAIMateContextHint(
 export type AIMateSessionSnapshot = {
   currentStep?: string | null;
   diagnosis?: Partial<DiagnosisResult> | null;
-  knowledgeMap?: ReadonlyArray<{ subject?: string | null; name?: string | null; status?: string | null; mastery?: number | null }>;
+  knowledgeMap?: ReadonlyArray<{
+    subject?: string | null;
+    name?: string | null;
+    status?: string | null;
+    mastery?: number | null;
+  }>;
   adaptiveExercises?: ReadonlyArray<unknown>;
   examResult?: Partial<ExamResult> | null;
   scoreAnalysis?: Partial<ScoreAnalysisResult> | null;
@@ -303,12 +341,19 @@ export type AIMateSessionSnapshot = {
   targetMajorId?: string;
 };
 
-export function buildVoyageAIMateContext(snap: AIMateSessionSnapshot, locale?: string | null): string {
+export function buildVoyageAIMateContext(
+  snap: AIMateSessionSnapshot,
+  locale?: string | null,
+): string {
   const hint = getAIMateContextHint(snap.currentStep ?? null, locale);
   const zh = !locale || locale.startsWith('zh');
   const lines: string[] = [];
   lines.push(zh ? '[CSCA 学习航程 · 上下文摘要]' : '[CSCA Learning Voyage · Context Summary]');
-  lines.push(zh ? `当前阶段：${hint.stageId}（内部索引 ${hint.internalIndex + 1}/9）` : `Stage: ${hint.stageId} (${hint.internalIndex + 1}/9)`);
+  lines.push(
+    zh
+      ? `当前阶段：${hint.stageId}（内部索引 ${hint.internalIndex + 1}/9）`
+      : `Stage: ${hint.stageId} (${hint.internalIndex + 1}/9)`,
+  );
   lines.push(zh ? `AI 默认职责：${hint.contextHint}` : `AI default role: ${hint.contextHintEN}`);
   if (snap.selectedCountryCode || snap.hskLevel || snap.targetMajorId) {
     lines.push(
@@ -318,7 +363,11 @@ export function buildVoyageAIMateContext(snap: AIMateSessionSnapshot, locale?: s
     );
   }
   if (snap.selectedSubjects?.length) {
-    lines.push(zh ? `关注科目：${snap.selectedSubjects.join(' / ')}` : `Subjects: ${snap.selectedSubjects.join(' / ')}`);
+    lines.push(
+      zh
+        ? `关注科目：${snap.selectedSubjects.join(' / ')}`
+        : `Subjects: ${snap.selectedSubjects.join(' / ')}`,
+    );
   }
   if (snap.knowledgeMap?.length) {
     const resolveStatus = (n: { status?: string | null; mastery?: number | null }): string => {
@@ -338,17 +387,23 @@ export function buildVoyageAIMateContext(snap: AIMateSessionSnapshot, locale?: s
     );
   }
   if (snap.adaptiveExercises?.length) {
-    lines.push(zh ? `训练题库可用 ${snap.adaptiveExercises.length} 题。` : `Training bank size=${snap.adaptiveExercises.length}.`);
+    lines.push(
+      zh
+        ? `训练题库可用 ${snap.adaptiveExercises.length} 题。`
+        : `Training bank size=${snap.adaptiveExercises.length}.`,
+    );
   }
   if (snap.examResult?.score !== undefined) {
     lines.push(
-      zh
-        ? `最近试航成绩=${snap.examResult.score}`
-        : `Latest trial score=${snap.examResult.score}`,
+      zh ? `最近试航成绩=${snap.examResult.score}` : `Latest trial score=${snap.examResult.score}`,
     );
   }
   if (snap.errorRecords?.length) {
-    lines.push(zh ? `错题本大小=${snap.errorRecords.length}。` : `Error book size=${snap.errorRecords.length}.`);
+    lines.push(
+      zh
+        ? `错题本大小=${snap.errorRecords.length}。`
+        : `Error book size=${snap.errorRecords.length}.`,
+    );
   }
   if ((snap.studyPlan as any)?.weeks?.length || (snap.studyPlan as any)?.dailySchedule?.length) {
     lines.push(zh ? `已存在学习航程计划。` : `Personal voyage route exists.`);
@@ -411,7 +466,10 @@ export function getVoyageNextStep(
     );
   }
   // 如果已有 StudyPlan → 去学习航程
-  if (snap.studyPlan && ((snap.studyPlan as any).weeks?.length || (snap.studyPlan as any).dailySchedule?.length)) {
+  if (
+    snap.studyPlan &&
+    ((snap.studyPlan as any).weeks?.length || (snap.studyPlan as any).dailySchedule?.length)
+  ) {
     return go(
       '按本周航程继续学习',
       'Follow this week’s voyage route',
@@ -423,7 +481,11 @@ export function getVoyageNextStep(
   // 否则按顺序推荐下一段
   const route = [
     { hash: 'adaptive-learning', zh: '回到演武操练继续训练', en: 'Return to Training Ground' },
-    { hash: 'error-review', zh: '进入错题修正（形成闭环）', en: 'Open Correction Route (close the loop)' },
+    {
+      hash: 'error-review',
+      zh: '进入错题修正（形成闭环）',
+      en: 'Open Correction Route (close the loop)',
+    },
     { hash: 'study-plan', zh: '生成你的学习航程计划', en: 'Generate your voyage route' },
     { hash: 'university-match', zh: '到达港口：查看院校匹配', en: 'Arrive at University Port' },
   ];
@@ -467,8 +529,7 @@ export function getWeeklyRoutePlan(
 
   // 优先：StudyPlan.weeks[0].days
   const realDays = (plan as any)?.weeks?.[0]?.days as
-    | Array<{ subject?: string; focus?: string; topics?: string[] }>
-    | undefined;
+    Array<{ subject?: string; focus?: string; topics?: string[] }> | undefined;
 
   if (realDays?.length) {
     return realDays.slice(0, 7).map((d, i) => ({
@@ -478,14 +539,19 @@ export function getWeeklyRoutePlan(
       focus:
         d.focus ||
         (d.topics?.length
-          ? (zh ? `主题：${d.topics.slice(0, 2).join(' · ')}` : `Topics: ${d.topics.slice(0, 2).join(' · ')}`)
-          : (zh ? '按既有学习航程执行' : 'Follow existing route')),
+          ? zh
+            ? `主题：${d.topics.slice(0, 2).join(' · ')}`
+            : `Topics: ${d.topics.slice(0, 2).join(' · ')}`
+          : zh
+            ? '按既有学习航程执行'
+            : 'Follow existing route'),
       fromPlan: true,
     }));
   }
 
   // 次优先：StudyPlan.dailySchedule
-  const daily = (plan as any)?.dailySchedule as Array<{ subject?: string; focus?: string }> | undefined;
+  const daily = (plan as any)?.dailySchedule as
+    Array<{ subject?: string; focus?: string }> | undefined;
   if (daily?.length) {
     return daily.slice(0, 7).map((d, i) => ({
       index: (i + 1) as WeeklyRouteDay['index'],
@@ -504,7 +570,9 @@ export function getWeeklyRoutePlan(
       if (!pool.some((x) => x.s === p.s || x.s === p.en)) pool.push(p);
     });
   }
-  const finalPool = pool.slice(0, 6).concat([{ s: '综合训练 · 复习与休息', en: 'Mixed review + Rest' }]);
+  const finalPool = pool
+    .slice(0, 6)
+    .concat([{ s: '综合训练 · 复习与休息', en: 'Mixed review + Rest' }]);
   return finalPool.slice(0, 7).map((x, i) => ({
     index: (i + 1) as WeeklyRouteDay['index'],
     label: `Day ${String(i + 1).padStart(2, '0')}`,
@@ -545,8 +613,7 @@ export function getCorrectionLoop(
 
   const analysis = snap.scoreAnalysis;
   const causes = (analysis as any)?.errorCauses as
-    | Array<{ name: string; nameEn?: string; count?: number; percent?: number }>
-    | undefined;
+    Array<{ name: string; nameEn?: string; count?: number; percent?: number }> | undefined;
 
   const trainingRecommended =
     ((analysis as any)?.recommendedTopics as Array<{ subject?: string; topic?: string }>) ?? [];
@@ -559,14 +626,16 @@ export function getCorrectionLoop(
       eyebrowEN: 'FIND',
       title: zh ? '定位错误' : 'Locate Errors',
       titleEN: 'Locate Errors',
-      description: zh ? '汇总最近试航中的全部错题。' : 'Aggregate every error from the latest trial voyage.',
+      description: zh
+        ? '汇总最近试航中的全部错题。'
+        : 'Aggregate every error from the latest trial voyage.',
       descriptionEN: 'Aggregate every error from the latest trial voyage.',
       status: hasExam || total > 0 ? (total > 0 ? 'done' : 'ready') : 'pending',
       metrics: [
         {
           zh: '错题总数',
           en: 'Total errors',
-          value: total > 0 ? String(total) : (zh ? '待试航解锁' : 'After trial voyage'),
+          value: total > 0 ? String(total) : zh ? '待试航解锁' : 'After trial voyage',
         },
       ],
     },
@@ -597,7 +666,9 @@ export function getCorrectionLoop(
       eyebrowEN: 'TRAIN',
       title: zh ? '推荐训练' : 'Targeted Training',
       titleEN: 'Targeted Training',
-      description: zh ? '针对高频原因，给出下一阶段训练题与知识图谱回补节点。' : 'Drills + chart nodes for high-freq causes.',
+      description: zh
+        ? '针对高频原因，给出下一阶段训练题与知识图谱回补节点。'
+        : 'Drills + chart nodes for high-freq causes.',
       descriptionEN: 'Drills + chart nodes for high-freq causes.',
       status: trainingRecommended.length > 0 ? 'ready' : total > 0 ? 'todo' : 'pending',
       metrics: trainingRecommended.length
@@ -617,7 +688,9 @@ export function getCorrectionLoop(
       eyebrowEN: 'RETEST',
       title: zh ? '再次测试' : 'Retest',
       titleEN: 'Retest',
-      description: zh ? '完成训练后，再做一次低压试航验证修正是否有效。' : 'After training, run a practice trial to verify correction works.',
+      description: zh
+        ? '完成训练后，再做一次低压试航验证修正是否有效。'
+        : 'After training, run a practice trial to verify correction works.',
       descriptionEN: 'After training, run a practice trial to verify correction works.',
       status: total === 0 ? 'pending' : hasExam && score >= 80 ? 'done' : 'todo',
     },
@@ -639,7 +712,7 @@ export function getCorrectionLoop(
             {
               zh: '目标区间',
               en: 'Target range',
-              value: score >= 80 ? (zh ? '已达' : 'On target') : (zh ? '≥80' : '≥80'),
+              value: score >= 80 ? (zh ? '已达' : 'On target') : zh ? '≥80' : '≥80',
             },
           ]
         : undefined,

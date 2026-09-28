@@ -5,7 +5,13 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Loader2, BookOpen, TrendingUp, TrendingDown, Minus } from 'lucide-react';
 
 interface KnowledgeMapProps {
@@ -42,7 +48,11 @@ const MASTERY_ICONS = {
   weak: TrendingDown,
 };
 
-export function KnowledgeMap({ subject: initialSubject, nationality, onComplete }: KnowledgeMapProps) {
+export function KnowledgeMap({
+  subject: initialSubject,
+  nationality,
+  onComplete,
+}: KnowledgeMapProps) {
   const [subject, setSubject] = useState(initialSubject || 'Mathematics');
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<KnowledgeMapResult | null>(null);
@@ -74,17 +84,15 @@ export function KnowledgeMap({ subject: initialSubject, nationality, onComplete 
     }
   };
 
-  const weakTopics = result?.topics.filter(t => t.mastery === 'weak').length || 0;
-  const needsReviewTopics = result?.topics.filter(t => t.mastery === 'needs_review').length || 0;
-  const masteredTopics = result?.topics.filter(t => t.mastery === 'mastered').length || 0;
+  const weakTopics = result?.topics.filter((t) => t.mastery === 'weak').length || 0;
+  const needsReviewTopics = result?.topics.filter((t) => t.mastery === 'needs_review').length || 0;
+  const masteredTopics = result?.topics.filter((t) => t.mastery === 'mastered').length || 0;
 
   return (
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
         <CardTitle className="text-xl font-bold">Step 2: Knowledge Map</CardTitle>
-        <p className="text-sm text-gray-500">
-          Identify your knowledge strengths and weaknesses
-        </p>
+        <p className="text-sm text-gray-500">Identify your knowledge strengths and weaknesses</p>
       </CardHeader>
       <CardContent className="space-y-6">
         {!result ? (

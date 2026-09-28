@@ -6,16 +6,29 @@ import sharp from 'sharp';
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-const EXEC_PATH = 'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
+const EXEC_PATH =
+  'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
 const BASE = 'http://localhost:3000';
 const OUT = 'brand/advisors/png';
-const IDS = ['zheng-he', 'ma-huan', 'wang-jinghong', 'fei-xin', 'hong-bao', 'hou-xian', 'zhang-da', 'li-bin'];
+const IDS = [
+  'zheng-he',
+  'ma-huan',
+  'wang-jinghong',
+  'fei-xin',
+  'hong-bao',
+  'hou-xian',
+  'zhang-da',
+  'li-bin',
+];
 const KEY = [255, 0, 255]; // 导出页容器品红 #FF00FF（不在 13 色板内）
 
 mkdirSync(OUT, { recursive: true });
 
 const browser = await chromium.launch({ executablePath: EXEC_PATH });
-const ctx = await browser.newContext({ viewport: { width: 1280, height: 2200 }, deviceScaleFactor: 1 });
+const ctx = await browser.newContext({
+  viewport: { width: 1280, height: 2200 },
+  deviceScaleFactor: 1,
+});
 const page = await ctx.newPage();
 await page.goto(BASE + '/brand/advisors/export', { waitUntil: 'networkidle' });
 await page.waitForTimeout(400);
@@ -54,8 +67,14 @@ async function shot(locator, path) {
 let count = 0;
 for (const id of IDS) {
   for (const size of [32, 64]) {
-    await shot(page.locator(`[data-advisor="${id}"][data-size="${size}"][data-frame="0"]`), join(OUT, `${id}-${size}.png`));
-    await shot(page.locator(`[data-strip="${id}"][data-strip-size="${size}"]`), join(OUT, `${id}-breath-${size}.png`));
+    await shot(
+      page.locator(`[data-advisor="${id}"][data-size="${size}"][data-frame="0"]`),
+      join(OUT, `${id}-${size}.png`),
+    );
+    await shot(
+      page.locator(`[data-strip="${id}"][data-strip-size="${size}"]`),
+      join(OUT, `${id}-breath-${size}.png`),
+    );
     count += 2;
   }
 }

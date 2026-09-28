@@ -46,12 +46,24 @@ export default function AdvisorExportPage() {
           <div className="inline-flex items-start gap-4">
             <div data-strip={id} data-strip-size="32" className="inline-flex">
               {FRAMES.map((f) => (
-                <PixelAdvisor key={f} id={id} animate={false} breathFrame={f} className="block h-8 w-8" />
+                <PixelAdvisor
+                  key={f}
+                  id={id}
+                  animate={false}
+                  breathFrame={f}
+                  className="block h-8 w-8"
+                />
               ))}
             </div>
             <div data-strip={id} data-strip-size="64" className="inline-flex">
               {FRAMES.map((f) => (
-                <PixelAdvisor key={f} id={id} animate={false} breathFrame={f} className="block h-16 w-16" />
+                <PixelAdvisor
+                  key={f}
+                  id={id}
+                  animate={false}
+                  breathFrame={f}
+                  className="block h-16 w-16"
+                />
               ))}
             </div>
           </div>
@@ -62,12 +74,24 @@ export default function AdvisorExportPage() {
       <div className="mb-10">
         <div data-lineup="64" className="inline-flex">
           {ADVISOR_IDS.map((id) => (
-            <PixelAdvisor key={id} id={id} animate={false} breathFrame={0} className="block h-16 w-16" />
+            <PixelAdvisor
+              key={id}
+              id={id}
+              animate={false}
+              breathFrame={0}
+              className="block h-16 w-16"
+            />
           ))}
         </div>
         <div data-lineup="32" className="inline-flex">
           {ADVISOR_IDS.map((id) => (
-            <PixelAdvisor key={id} id={id} animate={false} breathFrame={0} className="block h-8 w-8" />
+            <PixelAdvisor
+              key={id}
+              id={id}
+              animate={false}
+              breathFrame={0}
+              className="block h-8 w-8"
+            />
           ))}
         </div>
       </div>

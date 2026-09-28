@@ -35,21 +35,11 @@ import {
 import { BrandShell } from '@/components/brand/BrandShell';
 import { useTranslation } from '@/lib/i18n/hooks';
 import { useCscaSession } from '@/lib/hooks/use-csca-session';
-import {
-  VoyagePageHeader,
-  StageCard,
-  StageFooter,
-} from '@/components/voyage';
+import { VoyagePageHeader, StageCard, StageFooter } from '@/components/voyage';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import {
-  ASEAN_COUNTRIES,
-} from '@/lib/csca/asean-countries';
-import {
-  getCurrentStageIndex,
-  VOYAGE_STAGE_ORDER,
-  type VoyageStageId,
-} from '@/lib/voyage-stages';
+import { ASEAN_COUNTRIES } from '@/lib/csca/asean-countries';
+import { getCurrentStageIndex, VOYAGE_STAGE_ORDER, type VoyageStageId } from '@/lib/voyage-stages';
 import {
   LEARNING_VOYAGE_8_STOPS,
   REAL_VOYAGE_TO_CSCA,
@@ -95,8 +85,7 @@ export default function HomePage() {
     const stageIndex = prog.currentStage;
     const doneCount = prog.completedCount;
     const country =
-      s?.selectedCountryCode &&
-      ASEAN_COUNTRIES.find((c: any) => c.code === s.selectedCountryCode);
+      s?.selectedCountryCode && ASEAN_COUNTRIES.find((c: any) => c.code === s.selectedCountryCode);
     const examScores = s?.examResult?.scores as Record<string, number> | undefined;
     const totalScores = examScores
       ? Object.values(examScores).reduce((a, b) => a + (Number.isFinite(b) ? b : 0), 0)
@@ -110,17 +99,12 @@ export default function HomePage() {
       stageIndex,
       doneCount,
       countryName: country
-        ? (locale?.startsWith('zh')
-            ? (country as any).nameZh
-            : (country as any).name) || (country as any).name
+        ? (locale?.startsWith('zh') ? (country as any).nameZh : (country as any).name) ||
+          (country as any).name
         : '—',
       countryCode: s?.selectedCountryCode ?? '—',
-      hskLevel:
-        typeof s?.hskLevel === 'number'
-          ? `HSK ${s.hskLevel}`
-          : '—',
-      major:
-        (s?.targetMajorId && (s.targetMajorId as string).replace(/-/g, ' ')) || '—',
+      hskLevel: typeof s?.hskLevel === 'number' ? `HSK ${s.hskLevel}` : '—',
+      major: (s?.targetMajorId && (s.targetMajorId as string).replace(/-/g, ' ')) || '—',
       subjects: Array.isArray(s?.selectedSubjects) ? s.selectedSubjects : [],
       totalScores,
       errorCount,
@@ -143,9 +127,7 @@ export default function HomePage() {
         </span>
       ),
       label: `${realData.doneCount} / ${stagesTotal} ${
-        typeof realData.doneCount === 'number' && locale?.startsWith('zh')
-          ? '阶段完成'
-          : 'stages'
+        typeof realData.doneCount === 'number' && locale?.startsWith('zh') ? '阶段完成' : 'stages'
       }`,
       icon: Compass,
       tone: 'default',
@@ -207,12 +189,14 @@ export default function HomePage() {
   ];
 
   /* --------- 8 段学习航程（Learning Voyage 品牌展示） --------- */
-  const voyage8: Array<LearningVoyageStop & {
-    Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
-    href: string;
-    cta: string;
-    statusBias: 'next' | 'current' | 'done' | 'locked';
-  }> = LEARNING_VOYAGE_8_STOPS.map((s, i) => {
+  const voyage8: Array<
+    LearningVoyageStop & {
+      Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+      href: string;
+      cta: string;
+      statusBias: 'next' | 'current' | 'done' | 'locked';
+    }
+  > = LEARNING_VOYAGE_8_STOPS.map((s, i) => {
     const ics = s.internalStageIndex;
     const completedSet = new Set(session.progress.completedStages);
     let bias: 'next' | 'current' | 'done' | 'locked' = 'locked';
@@ -229,7 +213,8 @@ export default function HomePage() {
       // anchor 取值见 lib/brand-logic.ts 的 LEARNING_VOYAGE_8_STOPS，
       // 与 VoyageNavigation STAGES / CSCAVoyageApp HASH_TO_STEP 三边一致。
       href: `/csca/voyage#${s.anchor}`,
-      cta: t.voyageBrand?.ctaStage ?? (locale?.startsWith('zh') ? '进入此段航程' : 'Open this stage'),
+      cta:
+        t.voyageBrand?.ctaStage ?? (locale?.startsWith('zh') ? '进入此段航程' : 'Open this stage'),
       statusBias: bias,
     };
   });
@@ -310,7 +295,10 @@ export default function HomePage() {
           {/* ---- 统一顶部：回答「你准备从哪里出发？」 ---- */}
           <VoyagePageHeader
             eyebrow={t.hero?.badge ?? 'YOUR CSCA VOYAGE'}
-            title={t.hero?.title ?? (locale?.startsWith('zh') ? '你的 CSCA 学习航程' : 'Your CSCA Learning Voyage')}
+            title={
+              t.hero?.title ??
+              (locale?.startsWith('zh') ? '你的 CSCA 学习航程' : 'Your CSCA Learning Voyage')
+            }
             description={
               t.hero?.description ??
               (locale?.startsWith('zh')
@@ -322,13 +310,19 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Button asChild size="lg">
                   <Link href="/csca" className="gap-2">
-                    <span>{t.hero?.cta ?? (locale?.startsWith('zh') ? '开始我的航程' : 'Begin My Voyage')}</span>
+                    <span>
+                      {t.hero?.cta ??
+                        (locale?.startsWith('zh') ? '开始我的航程' : 'Begin My Voyage')}
+                    </span>
                     <ArrowRight className="w-4 h-4" strokeWidth={2.1} />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link href="/csca/voyage#knowledge-map">
-                    <span>{t.hero?.secondaryCta ?? (locale?.startsWith('zh') ? '查看航海图' : 'View Voyage Chart')}</span>
+                    <span>
+                      {t.hero?.secondaryCta ??
+                        (locale?.startsWith('zh') ? '查看航海图' : 'View Voyage Chart')}
+                    </span>
                   </Link>
                 </Button>
               </div>
@@ -387,8 +381,10 @@ export default function HomePage() {
             }
             subtitle={
               locale?.startsWith('zh')
-                ? (t.voyageBrand?.sectionSubtitle ?? '每一段都沿着真实航海的逻辑展开：出发 → 航图 → 训练 → 试航 → 测评 → 修正 → 航程 → 目标。')
-                : (t.voyageBrand?.sectionSubtitleEN ?? 'Departure → Chart → Training → Trial → Observation → Correction → Route → Destination.')
+                ? (t.voyageBrand?.sectionSubtitle ??
+                  '每一段都沿着真实航海的逻辑展开：出发 → 航图 → 训练 → 试航 → 测评 → 修正 → 航程 → 目标。')
+                : (t.voyageBrand?.sectionSubtitleEN ??
+                  'Departure → Chart → Training → Trial → Observation → Correction → Route → Destination.')
             }
             tone="default"
             className="mb-14 md:mb-16"
@@ -452,7 +448,10 @@ export default function HomePage() {
 
           {/* ---- Editorial Section Features（ROUTE / PORT / CREW） ---- */}
           <StageCard
-            eyebrow={t.features?.sectionEyebrow ?? (locale?.startsWith('zh') ? '平台体系 · PLATFORM' : 'PLATFORM')}
+            eyebrow={
+              t.features?.sectionEyebrow ??
+              (locale?.startsWith('zh') ? '平台体系 · PLATFORM' : 'PLATFORM')
+            }
             index="CSCA"
             title={
               locale?.startsWith('zh')
@@ -461,8 +460,10 @@ export default function HomePage() {
             }
             subtitle={
               locale?.startsWith('zh')
-                ? (t.features?.sectionSubtitle ?? '9 段航程逐一展开：从出发点到院校港口，每一份学习档案都可追溯、可可视化、被 AI 真正理解并利用。')
-                : (t.features?.sectionSubtitleEN ?? '9 stages, fully archived, traceable, visualizable, and understood end-to-end by AI.')
+                ? (t.features?.sectionSubtitle ??
+                  '9 段航程逐一展开：从出发点到院校港口，每一份学习档案都可追溯、可可视化、被 AI 真正理解并利用。')
+                : (t.features?.sectionSubtitleEN ??
+                  '9 stages, fully archived, traceable, visualizable, and understood end-to-end by AI.')
             }
             tone="paper"
           >
@@ -470,10 +471,7 @@ export default function HomePage() {
               {features.map((f) => {
                 const Icon = f.Icon;
                 return (
-                  <article
-                    key={f.index}
-                    className="relative flex flex-col gap-3 min-w-0"
-                  >
+                  <article key={f.index} className="relative flex flex-col gap-3 min-w-0">
                     <div className="flex items-center justify-between gap-3 pb-4 border-b border-[color:var(--color-line-200)]">
                       <p className="voyage-eyebrow text-[10.5px]">{f.eyebrow}</p>
                       <span className="font-[500] tracking-[0.15em] text-[11px] text-[color:var(--color-ink-500)]">
@@ -509,7 +507,9 @@ export default function HomePage() {
               </span>
             }
             nextHref="/csca"
-            nextLabel={t.hero?.cta ?? (locale?.startsWith('zh') ? '开始我的航程' : 'Begin My Voyage')}
+            nextLabel={
+              t.hero?.cta ?? (locale?.startsWith('zh') ? '开始我的航程' : 'Begin My Voyage')
+            }
             nextVariant="default"
           />
         </main>

@@ -4,7 +4,11 @@
  */
 
 import { NextResponse } from 'next/server';
-import { UNIVERSITIES, getUniversitiesByScore, calculateMatchScore } from '@/lib/csca/university-database';
+import {
+  UNIVERSITIES,
+  getUniversitiesByScore,
+  calculateMatchScore,
+} from '@/lib/csca/university-database';
 
 export async function POST(request: Request) {
   try {
@@ -12,10 +16,7 @@ export async function POST(request: Request) {
     const { score, targetMajor, nationality } = body;
 
     if (!targetMajor) {
-      return NextResponse.json(
-        { error: 'Target major is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Target major is required' }, { status: 400 });
     }
 
     const userScore = score || 50;
@@ -69,9 +70,9 @@ export async function POST(request: Request) {
 
     if (categorized.safeSchools.length === 0) {
       const backupSchools = UNIVERSITIES.filter(
-        (u) => u.type === 'backup' && u.majors.some((m) =>
-          m.toLowerCase().includes(targetMajor.toLowerCase())
-        )
+        (u) =>
+          u.type === 'backup' &&
+          u.majors.some((m) => m.toLowerCase().includes(targetMajor.toLowerCase())),
       ).slice(0, 3);
 
       backupSchools.forEach((u) => {
@@ -90,9 +91,9 @@ export async function POST(request: Request) {
 
     if (categorized.reachSchools.length === 0) {
       const topSchools = UNIVERSITIES.filter(
-        (u) => u.type === 'top' && u.majors.some((m) =>
-          m.toLowerCase().includes(targetMajor.toLowerCase())
-        )
+        (u) =>
+          u.type === 'top' &&
+          u.majors.some((m) => m.toLowerCase().includes(targetMajor.toLowerCase())),
       ).slice(0, 3);
 
       topSchools.forEach((u) => {
@@ -138,9 +139,6 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error('[CSCA University Match API] Error:', error);
-    return NextResponse.json(
-      { success: false, error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
   }
 }

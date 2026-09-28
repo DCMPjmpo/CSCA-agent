@@ -24,10 +24,7 @@
  *   - 作为 Selector 之后的"出口保障层"
  */
 
-import {
-  makeFingerprint,
-  type FingerprintInput,
-} from "./question-fingerprint";
+import { makeFingerprint, type FingerprintInput } from './question-fingerprint';
 
 /** 通用考试题目（兼容 question-bank / science-chinese / arts-chinese / MOCK_QUESTIONS） */
 export interface DedupQuestion extends FingerprintInput {
@@ -54,7 +51,7 @@ export interface DedupResult<T extends DedupQuestion = DedupQuestion> {
   /** 被丢弃的题目（用于日志/QA） */
   droppedSamples: Array<{
     id: string;
-    reason: "duplicate_id" | "duplicate_fingerprint";
+    reason: 'duplicate_id' | 'duplicate_fingerprint';
     conflictWithId: string;
     fingerprint: string;
   }>;
@@ -74,17 +71,17 @@ export function dedupExamQuestions<T extends DedupQuestion = DedupQuestion>(
   const seenIds = new Set<string>();
   const seenFingerprints = new Set<string>();
   const unique: T[] = [];
-  const droppedSamples: DedupResult["droppedSamples"] = [];
+  const droppedSamples: DedupResult['droppedSamples'] = [];
 
   for (const q of questions) {
-    const id = q.id || "";
+    const id = q.id || '';
     const fp = makeFingerprint(q);
 
     // 1. ID 重复校验
     if (id && seenIds.has(id)) {
       droppedSamples.push({
         id,
-        reason: "duplicate_id",
+        reason: 'duplicate_id',
         conflictWithId: id,
         fingerprint: fp,
       });
@@ -97,8 +94,8 @@ export function dedupExamQuestions<T extends DedupQuestion = DedupQuestion>(
       const conflict = unique.find((u) => makeFingerprint(u) === fp);
       droppedSamples.push({
         id,
-        reason: "duplicate_fingerprint",
-        conflictWithId: conflict?.id || "",
+        reason: 'duplicate_fingerprint',
+        conflictWithId: conflict?.id || '',
         fingerprint: fp,
       });
       continue;
@@ -110,11 +107,9 @@ export function dedupExamQuestions<T extends DedupQuestion = DedupQuestion>(
     unique.push(q);
   }
 
-  const droppedByDuplicateId = droppedSamples.filter(
-    (s) => s.reason === "duplicate_id",
-  ).length;
+  const droppedByDuplicateId = droppedSamples.filter((s) => s.reason === 'duplicate_id').length;
   const droppedByDuplicateFingerprint = droppedSamples.filter(
-    (s) => s.reason === "duplicate_fingerprint",
+    (s) => s.reason === 'duplicate_fingerprint',
   ).length;
   const actualCount = unique.length;
   const isLimitedByQuestionBank = actualCount < requestedCount;
@@ -168,7 +163,7 @@ export function dedupBySubjectBlueprint<T extends DedupQuestion = DedupQuestion>
   buckets: SubjectBucket<T>[],
   totalRequestedCount: number,
 ): SubjectDedupResult<T> {
-  const perSubject: SubjectDedupResult["perSubject"] = [];
+  const perSubject: SubjectDedupResult['perSubject'] = [];
   const globalFingerprints = new Set<string>();
   const allUnique: T[] = [];
 
@@ -177,10 +172,7 @@ export function dedupBySubjectBlueprint<T extends DedupQuestion = DedupQuestion>
     const deduped = dedupExamQuestions<T>(bucket.questions, bucket.blueprint);
 
     // subject 内取 min(blueprint, uniqueCount)
-    const taken = deduped.questions.slice(
-      0,
-      Math.min(bucket.blueprint, deduped.questions.length),
-    );
+    const taken = deduped.questions.slice(0, Math.min(bucket.blueprint, deduped.questions.length));
 
     perSubject.push({
       subject: bucket.subject,

@@ -86,7 +86,10 @@ export function StageFooter({
       <span>{nextLabel ?? '下一步'}</span>
       {!nextLoading && <ArrowRight className="w-4 h-4" strokeWidth={2.1} aria-hidden />}
       {nextLoading && (
-        <span className="w-4 h-4 rounded-full border-2 border-current border-r-transparent animate-spin" aria-hidden />
+        <span
+          className="w-4 h-4 rounded-full border-2 border-current border-r-transparent animate-spin"
+          aria-hidden
+        />
       )}
     </>
   );
@@ -104,12 +107,7 @@ export function StageFooter({
       {/* LEFT */}
       <div className="flex items-center gap-2 min-w-0 flex-wrap">
         {backHref && !onBack ? (
-          <Button
-            asChild
-            variant={backVariant}
-            disabled={backDisabled}
-            className="gap-1.5"
-          >
+          <Button asChild variant={backVariant} disabled={backDisabled} className="gap-1.5">
             <Link href={backHref}>{BackContent}</Link>
           </Button>
         ) : onBack ? (

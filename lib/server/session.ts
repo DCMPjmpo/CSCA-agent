@@ -83,7 +83,11 @@ async function hmacHex(secret: string, data: string): Promise<string> {
     false,
     ['sign'],
   );
-  const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(data).buffer as ArrayBuffer);
+  const signature = await crypto.subtle.sign(
+    'HMAC',
+    key,
+    encoder.encode(data).buffer as ArrayBuffer,
+  );
   return bufToHex(signature);
 }
 
@@ -142,7 +146,10 @@ export async function resolveSessionSecret(): Promise<SessionSecret | null> {
  * 签发一枚会话 token：`sid.timestamp.signature`，签名覆盖 `sid.timestamp`。
  * `sid` 为不透明随机值，时间戳为毫秒。
  */
-export async function mintSessionToken(secret: string, now: number = Date.now()): Promise<MintedSession> {
+export async function mintSessionToken(
+  secret: string,
+  now: number = Date.now(),
+): Promise<MintedSession> {
   const sessionId = crypto.randomUUID();
   const issuedAt = Math.floor(now);
   const signature = await hmacHex(secret, `${sessionId}.${issuedAt}`);

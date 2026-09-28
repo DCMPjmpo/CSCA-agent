@@ -3,13 +3,21 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
-  AlertCircle, BookOpen, CheckCircle2, ChevronRight,
-  RotateCcw, Filter, BarChart3, Target,
+  AlertCircle,
+  BookOpen,
+  CheckCircle2,
+  ChevronRight,
+  RotateCcw,
+  Filter,
+  BarChart3,
+  Target,
 } from 'lucide-react';
 import { BrandShell } from '@/components/brand/BrandShell';
 import { useTranslation } from '@/lib/i18n/hooks';
 import {
-  getErrorRecords, deleteErrorRecord, clearAllErrorRecords,
+  getErrorRecords,
+  deleteErrorRecord,
+  clearAllErrorRecords,
   type ErrorRecord,
 } from '@/lib/csca/error-analysis-core';
 import { Button } from '@/components/ui/button';
@@ -32,25 +40,25 @@ export default function WrongAnswerCenterPage() {
   }, []);
 
   const subjects = useMemo(() => {
-    const set = new Set(records.map(r => r.subject).filter(Boolean));
+    const set = new Set(records.map((r) => r.subject).filter(Boolean));
     return Array.from(set).sort();
   }, [records]);
 
   const filtered = useMemo(() => {
     let list = records;
-    if (subjectFilter !== 'all') list = list.filter(r => r.subject === subjectFilter);
-    if (unresolvedOnly) list = list.filter(r => r.reviewCount < 1);
+    if (subjectFilter !== 'all') list = list.filter((r) => r.subject === subjectFilter);
+    if (unresolvedOnly) list = list.filter((r) => r.reviewCount < 1);
     return list.sort((a, b) => b.timestamp - a.timestamp);
   }, [records, subjectFilter, unresolvedOnly]);
 
   const stats = useMemo(() => {
     const total = records.length;
     const bySubject: Record<string, number> = {};
-    records.forEach(r => {
+    records.forEach((r) => {
       const s = r.subject || 'Unknown';
       bySubject[s] = (bySubject[s] || 0) + 1;
     });
-    const resolved = records.filter(r => r.reviewCount > 0).length;
+    const resolved = records.filter((r) => r.reviewCount > 0).length;
     return { total, bySubject, resolved };
   }, [records]);
 
@@ -92,9 +100,7 @@ export default function WrongAnswerCenterPage() {
                   </Button>
                 </Link>
                 <Link href="/csca">
-                  <Button variant="outline">
-                    {isZh ? '返回仪表盘' : 'Back to Dashboard'}
-                  </Button>
+                  <Button variant="outline">{isZh ? '返回仪表盘' : 'Back to Dashboard'}</Button>
                 </Link>
               </div>
             </div>
@@ -160,8 +166,10 @@ export default function WrongAnswerCenterPage() {
                 className="rounded-md border border-[var(--border)] bg-[var(--card)] px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--ring)]"
               >
                 <option value="all">{w.filterAll || 'All'}</option>
-                {subjects.map(s => (
-                  <option key={s} value={s}>{s}</option>
+                {subjects.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
                 ))}
               </select>
             </div>
@@ -195,13 +203,7 @@ export default function WrongAnswerCenterPage() {
               </p>
             ) : (
               filtered.map((r) => (
-                <ErrorCard
-                  key={r.id}
-                  record={r}
-                  isZh={isZh}
-                  w={w}
-                  onDelete={handleDelete}
-                />
+                <ErrorCard key={r.id} record={r} isZh={isZh} w={w} onDelete={handleDelete} />
               ))
             )}
           </div>
@@ -236,7 +238,10 @@ function PageHeader({ isZh, title, subtitle }: { isZh: boolean; title: string; s
 }
 
 function ErrorCard({
-  record, isZh, w, onDelete,
+  record,
+  isZh,
+  w,
+  onDelete,
 }: {
   record: ErrorRecord;
   isZh: boolean;
@@ -244,16 +249,18 @@ function ErrorCard({
   onDelete: (id: string) => void;
 }) {
   const isResolved = record.reviewCount > 0;
-  const date = new Date(record.timestamp).toLocaleDateString(
-    isZh ? 'zh-CN' : 'en-US',
-    { month: 'short', day: 'numeric' }
-  );
+  const date = new Date(record.timestamp).toLocaleDateString(isZh ? 'zh-CN' : 'en-US', {
+    month: 'short',
+    day: 'numeric',
+  });
 
   return (
-    <div className={cn(
-      'rounded-xl border bg-[var(--card)] p-5 transition-colors',
-      isResolved ? 'border-[var(--status-success)]/30 opacity-80' : 'border-[var(--border)]'
-    )}>
+    <div
+      className={cn(
+        'rounded-xl border bg-[var(--card)] p-5 transition-colors',
+        isResolved ? 'border-[var(--status-success)]/30 opacity-80' : 'border-[var(--border)]',
+      )}
+    >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           {/* Tags */}
@@ -289,7 +296,9 @@ function ErrorCard({
               <span className="text-xs text-[var(--muted-foreground)]">
                 {isZh ? '正确答案' : 'Correct'}:
               </span>
-              <p className="font-medium text-[var(--status-success)]">{String(record.correctAnswer)}</p>
+              <p className="font-medium text-[var(--status-success)]">
+                {String(record.correctAnswer)}
+              </p>
             </div>
           </div>
 
@@ -307,7 +316,9 @@ function ErrorCard({
 
       {/* Actions */}
       <div className="mt-4 flex items-center gap-2 border-t border-[var(--border)] pt-3">
-        <Link href={`/csca/voyage#adaptive-learning?subject=${encodeURIComponent(record.subject || '')}`}>
+        <Link
+          href={`/csca/voyage#adaptive-learning?subject=${encodeURIComponent(record.subject || '')}`}
+        >
           <Button variant="outline" size="sm">
             <Target className="mr-1.5 h-3.5 w-3.5" />
             {w.retryOne || 'Retry'}

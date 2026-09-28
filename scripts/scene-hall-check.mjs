@@ -4,7 +4,8 @@
 //       批次 13 关键回归（hover 姓名牌+Tooltip、点击领命跳转）/ 深链港 / reduced-motion / <1024px
 import { chromium } from '@playwright/test';
 
-const EXEC_PATH = 'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
+const EXEC_PATH =
+  'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
 const BASE = 'http://localhost:3000';
 
 let pass = 0;
@@ -57,7 +58,10 @@ try {
   await gotoHall();
   check('远景层 scene-far', (await page.locator('[data-testid="scene-far"]').count()) === 1);
   check('中景层 scene-mid', (await page.locator('[data-testid="scene-mid"]').count()) === 1);
-  check('近景沙盘 scene-sandbox', (await page.locator('[data-testid="scene-sandbox"]').count()) === 1);
+  check(
+    '近景沙盘 scene-sandbox',
+    (await page.locator('[data-testid="scene-sandbox"]').count()) === 1,
+  );
   check('牌匾「南洋出海局」', (await page.getByText('南洋出海局', { exact: false }).count()) >= 1);
   check('窗棂 6 格', (await page.locator('.scene-window > span').count()) === 6);
   check('烛台 ×2', (await page.locator('.scene-candle').count()) === 2);
@@ -67,10 +71,14 @@ try {
   check('8 港口据点标记', portCount === 8, `(count=${portCount})`);
   const routePts = await page.locator('.scene-table-route polyline').count();
   check('金箔航线 polyline', routePts === 1, `(count=${routePts})`);
-  const farOpacity = await page.locator('[data-testid="scene-far"]').evaluate((el) =>
-    getComputedStyle(el).opacity,
+  const farOpacity = await page
+    .locator('[data-testid="scene-far"]')
+    .evaluate((el) => getComputedStyle(el).opacity);
+  check(
+    '远景透明度 0.10–0.15',
+    +farOpacity >= 0.1 && +farOpacity <= 0.15,
+    `(opacity=${farOpacity})`,
   );
-  check('远景透明度 0.10–0.15', +farOpacity >= 0.1 && +farOpacity <= 0.15, `(opacity=${farOpacity})`);
 
   /* ---- 2. UI 层毛玻璃 ---- */
   console.log('========== UI 层毛玻璃 ==========');
@@ -94,7 +102,11 @@ try {
   check('弹窗含关联幕僚', (await page.getByText('郑和', { exact: false }).count()) >= 1);
   await page.locator('[data-testid="port-dispatch"]').click();
   await page.waitForURL(/\/csca$/, { timeout: 6000 });
-  check('去办差跳 /csca', page.url().endsWith('/csca') || page.url().includes('/csca'), `(url=${page.url()})`);
+  check(
+    '去办差跳 /csca',
+    page.url().endsWith('/csca') || page.url().includes('/csca'),
+    `(url=${page.url()})`,
+  );
 
   // 深链港：三宝垄 → /csca#mock-exam
   await gotoHall();
@@ -112,31 +124,52 @@ try {
   await page.locator('[data-testid="hall-input"]').fill('传令：筹备南洋回程补给');
   await page.locator('[data-testid="hall-send"]').click();
   await page.waitForURL(/\/csca-multi-agent$/, { timeout: 5000 });
-  check('view 切到 chat（对话视图可见）', (await page.locator('[data-testid="view-chat"]').isVisible()));
+  check(
+    'view 切到 chat（对话视图可见）',
+    await page.locator('[data-testid="view-chat"]').isVisible(),
+  );
   // 用户消息入列 + SSE mock 回复到达
   await page.waitForSelector('[data-testid="desk-input"]', { timeout: 5000 });
-  await page.waitForFunction(
-    () => document.body.innerText.includes('风自东南来，宜出行。'),
-    { timeout: 8000 },
-  );
+  await page.waitForFunction(() => document.body.innerText.includes('风自东南来，宜出行。'), {
+    timeout: 8000,
+  });
   check('SSE 回复到达', (await page.getByText('风自东南来，宜出行。').count()) >= 1);
-  check('传令后输入框清空', ((await page.locator('[data-testid="desk-input"]').inputValue()) ?? '') === '');
+  check(
+    '传令后输入框清空',
+    ((await page.locator('[data-testid="desk-input"]').inputValue()) ?? '') === '',
+  );
 
   /* ---- 5. 批次 13 关键回归：hover + 点击领命 ---- */
   console.log('========== 批次 13 回归 ==========');
   await gotoHall();
   await page.locator('[data-advisor-seat="zheng-he"]').hover();
   await page.waitForTimeout(450);
-  check('hover 姓名牌', (await page.locator('[data-advisor-seat="zheng-he"] .advisor-nameplate-unfold').count()) === 1);
-  check('hover 职能 Tooltip', (await page.locator('[data-advisor-seat="zheng-he"] .advisor-tooltip-in').count()) === 1);
-  check('idle 呼吸（8 个 .advisor-breathe）', (await page.locator('.advisor-breathe').count()) === 8);
+  check(
+    'hover 姓名牌',
+    (await page.locator('[data-advisor-seat="zheng-he"] .advisor-nameplate-unfold').count()) === 1,
+  );
+  check(
+    'hover 职能 Tooltip',
+    (await page.locator('[data-advisor-seat="zheng-he"] .advisor-tooltip-in').count()) === 1,
+  );
+  check(
+    'idle 呼吸（8 个 .advisor-breathe）',
+    (await page.locator('.advisor-breathe').count()) === 8,
+  );
   await page.locator('[data-advisor-seat="ma-huan"]').click();
   await page.waitForTimeout(250);
-  check('点击领命鞠躬 .advisor-bow', (await page.locator('[data-advisor-seat="ma-huan"] .advisor-bow').count()) === 1);
+  check(
+    '点击领命鞠躬 .advisor-bow',
+    (await page.locator('[data-advisor-seat="ma-huan"] .advisor-bow').count()) === 1,
+  );
   const toastCount = await page.locator('[data-sonner-toast]').count();
   check('欢迎 Toast', toastCount >= 1, `(count=${toastCount})`);
   await page.waitForURL(/#classroom-generator$/, { timeout: 6000 });
-  check('领命跳 /#classroom-generator', page.url().includes('#classroom-generator'), `(url=${page.url()})`);
+  check(
+    '领命跳 /#classroom-generator',
+    page.url().includes('#classroom-generator'),
+    `(url=${page.url()})`,
+  );
 
   /* ---- 6. prefers-reduced-motion 抽查 ---- */
   console.log('========== prefers-reduced-motion ==========');
@@ -147,9 +180,10 @@ try {
   const rmPage = await rmCtx.newPage();
   await rmPage.goto(BASE + '/csca-multi-agent', { waitUntil: 'networkidle' });
   await rmPage.waitForSelector('[data-advisor-seat]', { timeout: 15000 });
-  const flameAnim = await rmPage.locator('.candle-flame').first().evaluate((el) =>
-    getComputedStyle(el).animationName,
-  );
+  const flameAnim = await rmPage
+    .locator('.candle-flame')
+    .first()
+    .evaluate((el) => getComputedStyle(el).animationName);
   check('reduced-motion 烛火静止', flameAnim === 'none', `(anim=${flameAnim})`);
   await rmCtx.close();
 
@@ -159,11 +193,17 @@ try {
   const mbPage = await mobileCtx.newPage();
   await mbPage.goto(BASE + '/csca-multi-agent', { waitUntil: 'networkidle' });
   await mbPage.waitForSelector('[data-advisor-seat]', { timeout: 15000 });
-  check('移动端远景隐藏', (await mbPage.locator('[data-testid="scene-far"]').isVisible()) === false);
-  check('移动端中景隐藏', (await mbPage.locator('[data-testid="scene-mid"]').isVisible()) === false);
-  const tablePos = await mbPage.locator('[data-testid="scene-sandbox"]').evaluate((el) =>
-    getComputedStyle(el).position,
+  check(
+    '移动端远景隐藏',
+    (await mbPage.locator('[data-testid="scene-far"]').isVisible()) === false,
   );
+  check(
+    '移动端中景隐藏',
+    (await mbPage.locator('[data-testid="scene-mid"]').isVisible()) === false,
+  );
+  const tablePos = await mbPage
+    .locator('[data-testid="scene-sandbox"]')
+    .evaluate((el) => getComputedStyle(el).position);
   check('移动端沙盘转 static', tablePos === 'static', `(pos=${tablePos})`);
   await mobileCtx.close();
 

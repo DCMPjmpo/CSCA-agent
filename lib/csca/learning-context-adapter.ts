@@ -51,7 +51,9 @@ function isFiniteNumber(v: unknown): v is number {
 }
 
 function asRecord(v: unknown): Record<string, unknown> | undefined {
-  return v && typeof v === 'object' && !Array.isArray(v) ? (v as Record<string, unknown>) : undefined;
+  return v && typeof v === 'object' && !Array.isArray(v)
+    ? (v as Record<string, unknown>)
+    : undefined;
 }
 
 /** 归一化一条原始答题记录；不合格返回 null（丢弃，不修补）。 */
@@ -105,7 +107,8 @@ export function parseKnowledgeMap(raw: unknown): KnowledgeTopic[] | undefined {
   for (const item of raw) {
     const t = asRecord(item);
     if (!t) continue;
-    if (!isNonEmptyString(t.id) || !isNonEmptyString(t.name) || !isNonEmptyString(t.subject)) continue;
+    if (!isNonEmptyString(t.id) || !isNonEmptyString(t.name) || !isNonEmptyString(t.subject))
+      continue;
     if (!isFiniteNumber(t.mastery)) continue;
 
     const topic: KnowledgeTopic = {
@@ -148,7 +151,11 @@ export interface ParsedVoyageProgress {
 export function parseProgress(raw: unknown): ParsedVoyageProgress | undefined {
   const p = asRecord(raw);
   if (!p) return undefined;
-  if (!isFiniteNumber(p.completedCount) || !isFiniteNumber(p.totalStages) || !isFiniteNumber(p.progressPercent)) {
+  if (
+    !isFiniteNumber(p.completedCount) ||
+    !isFiniteNumber(p.totalStages) ||
+    !isFiniteNumber(p.progressPercent)
+  ) {
     return undefined;
   }
   const result: ParsedVoyageProgress = {
@@ -185,7 +192,8 @@ export function resolveCurrentStage(raw: unknown): number | undefined {
   if (!body) return undefined;
   const progress = parseProgress(body.progress);
   if (progress?.currentStage != null) return progress.currentStage;
-  if (isFiniteNumber(body.currentStage) && body.currentStage >= 0) return Math.floor(body.currentStage);
+  if (isFiniteNumber(body.currentStage) && body.currentStage >= 0)
+    return Math.floor(body.currentStage);
   return undefined;
 }
 
@@ -209,7 +217,8 @@ export function buildLearningContext(raw: unknown): LearningContext {
 
   const stage = resolveCurrentStage(body);
 
-  const base: Pick<LearningContext, 'requiredSubjects' | 'currentStage'> & Partial<LearningContext> = {
+  const base: Pick<LearningContext, 'requiredSubjects' | 'currentStage'> &
+    Partial<LearningContext> = {
     requiredSubjects: parseSubjects(body),
     // enrichContextWithHistory 的入参类型要求 number；缺失时传 0 仅为满足类型，
     // 是否「真实存在」由渲染层用 resolveCurrentStage 的结果判定。
@@ -262,7 +271,8 @@ export function renderLearningContext(ctx: LearningContext, extras: RenderExtras
   const completed = ctx.completedQuestionCount;
   const wrong = ctx.wrongQuestionCount;
   if (completed > 0) {
-    const accuracy = ctx.recentAccuracy != null ? `${Math.round(ctx.recentAccuracy * 100)}%` : '暂无数据';
+    const accuracy =
+      ctx.recentAccuracy != null ? `${Math.round(ctx.recentAccuracy * 100)}%` : '暂无数据';
     lines.push(`- 已完成题目数：${completed}，错题数：${wrong}，最近正确率：${accuracy}`);
   } else {
     lines.push('- 已完成题目数：0（学生尚未开始练习/考试）');

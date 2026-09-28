@@ -69,7 +69,8 @@ export const MAJOR_SUBJECT_MAP: MajorSubjectMap[] = [
     recommendedSubjects: ['专业词汇', '医学汉语'],
     subjectPriorities: { 基础汉语: 1, 数学: 2, 化学: 3, 物理: 4 },
     estimatedDays: 90,
-    advice: '临床医学专业需要较强的数理基础和化学知识。建议重点加强基础汉语和数学的学习，同时打好化学基础。',
+    advice:
+      '临床医学专业需要较强的数理基础和化学知识。建议重点加强基础汉语和数学的学习，同时打好化学基础。',
     confidence: 'configured',
     rationale: '基于 CSCA 规则：医学属理科方向，需物理+化学；基础汉语+数学必考',
   },
@@ -93,7 +94,8 @@ export const MAJOR_SUBJECT_MAP: MajorSubjectMap[] = [
     recommendedSubjects: ['商务汉语', '经济学基础'],
     subjectPriorities: { 基础汉语: 1, 数学: 2 },
     estimatedDays: 60,
-    advice: '工商管理专业需要良好的汉语语言能力和数学基础。建议加强汉语阅读和写作练习，特别是商务场景。',
+    advice:
+      '工商管理专业需要良好的汉语语言能力和数学基础。建议加强汉语阅读和写作练习，特别是商务场景。',
     confidence: 'configured',
     rationale: '基于 CSCA 规则：商科非理科方向，不需物理/化学；基础汉语+数学必考',
   },
@@ -105,7 +107,8 @@ export const MAJOR_SUBJECT_MAP: MajorSubjectMap[] = [
     recommendedSubjects: ['计算机汉语', '编程基础'],
     subjectPriorities: { 基础汉语: 1, 数学: 2, 物理: 3 },
     estimatedDays: 80,
-    advice: '计算机专业需要扎实的数学基础和逻辑思维能力。建议重点学习离散数学相关知识，同时加强汉语沟通能力。',
+    advice:
+      '计算机专业需要扎实的数学基础和逻辑思维能力。建议重点学习离散数学相关知识，同时加强汉语沟通能力。',
     confidence: 'configured',
     rationale: '基于 CSCA 规则：计算机属理科方向，需物理；基础汉语+数学必考',
   },

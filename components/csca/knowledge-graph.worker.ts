@@ -5,7 +5,11 @@
  * 返回节点像素坐标，避免阻塞浏览器主线程。
  */
 /// <reference lib="webworker" />
-import { computeForceLayout, type ForceLayoutEdgeInput, type ForceLayoutNodeInput } from '@/lib/csca/knowledge-graph-layout';
+import {
+  computeForceLayout,
+  type ForceLayoutEdgeInput,
+  type ForceLayoutNodeInput,
+} from '@/lib/csca/knowledge-graph-layout';
 
 const workerScope = self as unknown as DedicatedWorkerGlobalScope;
 

@@ -1,6 +1,6 @@
 /**
  * GMI Cloud Provider - CSCA Pilot Agent
- * 
+ *
  * GMI Cloud Inference Engine integration for OpenMAIC
  * Supports three models for different task types:
  * - DeepSeek V3: Logical reasoning (math/physics/chemistry)
@@ -22,19 +22,13 @@ export const gmiCloud = createOpenAI({
 // ==========================================
 
 /** DeepSeek V3 — 数学/物理/化学推理（逻辑严谨） */
-export const gmiDeepSeek = gmiCloud(
-  process.env.GMI_MODEL_DEEPSEEK || 'deepseek-ai/DeepSeek-V3'
-);
+export const gmiDeepSeek = gmiCloud(process.env.GMI_MODEL_DEEPSEEK || 'deepseek-ai/DeepSeek-V3');
 
 /** Qwen3-32B — 多语言内容生成与翻译（响应快、多语言强） */
-export const gmiQwen = gmiCloud(
-  process.env.GMI_MODEL_QWEN || 'qwen/qwen3-32b'
-);
+export const gmiQwen = gmiCloud(process.env.GMI_MODEL_QWEN || 'qwen/qwen3-32b');
 
 /** Kimi-K2 — 长文本成绩分析与申请策略（200K+ 上下文） */
-export const gmiKimi = gmiCloud(
-  process.env.GMI_MODEL_KIMI || 'moonshotai/Kimi-K2'
-);
+export const gmiKimi = gmiCloud(process.env.GMI_MODEL_KIMI || 'moonshotai/Kimi-K2');
 
 // Export model map for router layer
 export const GMI_MODELS = {

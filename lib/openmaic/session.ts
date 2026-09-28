@@ -28,11 +28,7 @@ import type { PollClassroomJobResult } from '@/lib/openmaic/client';
 export class PilarCoreTaskError extends Error {
   constructor(
     message: string,
-    readonly code:
-      | 'NOT_FOUND'
-      | 'STORAGE_UNAVAILABLE'
-      | 'INVALID_INPUT'
-      | 'PERSIST_ERROR',
+    readonly code: 'NOT_FOUND' | 'STORAGE_UNAVAILABLE' | 'INVALID_INPUT' | 'PERSIST_ERROR',
   ) {
     super(message);
     this.name = 'PilarCoreTaskError';
@@ -152,9 +148,7 @@ export async function getTask(taskId: string): Promise<PilarCoreTaskRecord | nul
  * 根据 OpenMAIC jobId 反查 PilarCore 任务。
  * 用于在已知 jobId 时找回对应的 PilarCore 侧记录。
  */
-export async function getTaskByJobId(
-  openmaicJobId: string,
-): Promise<PilarCoreTaskRecord | null> {
+export async function getTaskByJobId(openmaicJobId: string): Promise<PilarCoreTaskRecord | null> {
   assertBrowserStorage();
   if (!openmaicJobId) return null;
   try {
@@ -245,10 +239,7 @@ export async function updateTaskStatus(
 
   const existing = await db.pilarCoreTasks.get(taskId);
   if (!existing) {
-    throw new PilarCoreTaskError(
-      `updateTaskStatus: 任务不存在 — taskId=${taskId}`,
-      'NOT_FOUND',
-    );
+    throw new PilarCoreTaskError(`updateTaskStatus: 任务不存在 — taskId=${taskId}`, 'NOT_FOUND');
   }
 
   const updatedAt = patch.updatedAt ?? new Date().toISOString();
@@ -291,11 +282,7 @@ export async function syncTaskFromPollResult(
   poll: PollClassroomJobResult,
 ): Promise<PilarCoreTaskRecord> {
   const derived: TaskStatus =
-    poll.status === 'queued'
-      ? 'pending'
-      : poll.status === 'running'
-        ? 'running'
-        : poll.status; // succeeded | failed
+    poll.status === 'queued' ? 'pending' : poll.status === 'running' ? 'running' : poll.status; // succeeded | failed
 
   const patch: TaskStatusPatch = {
     status: derived,

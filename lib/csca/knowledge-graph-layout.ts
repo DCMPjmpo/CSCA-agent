@@ -38,7 +38,7 @@ export function computeForceLayout(
   edges: ForceLayoutEdgeInput[],
   width: number,
   height: number,
-  options: ForceLayoutOptions = {}
+  options: ForceLayoutOptions = {},
 ): ForcePosition[] {
   const n = nodes.length;
   if (n === 0) return [];

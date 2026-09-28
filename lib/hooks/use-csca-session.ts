@@ -2,7 +2,12 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { loadCscaSession, type CscaSessionData } from '@/lib/csca/session';
-import { getVoyageProgress, migrateIfNeeded, type VoyageProgressState, emptyProgress } from '@/lib/voyage-progress';
+import {
+  getVoyageProgress,
+  migrateIfNeeded,
+  type VoyageProgressState,
+  emptyProgress,
+} from '@/lib/voyage-progress';
 
 /**
  * Client hook: read CSCA session data from localStorage.

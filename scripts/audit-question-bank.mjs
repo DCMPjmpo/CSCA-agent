@@ -51,7 +51,7 @@ function normalizeText(s) {
   let t = String(s);
   t = t.replace(/<[^>]+>/g, '');
   t = t.replace(/[`*_~#>]/g, '');
-  t = t.replace(/[\uFF01-\uFF5E]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xFEE0));
+  t = t.replace(/[\uFF01-\uFF5E]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0));
   t = t.replace(/【/g, '(').replace(/】/g, ')').replace(/「/g, '(').replace(/」/g, ')');
   t = t.replace(/《/g, '(').replace(/》/g, ')').replace(/〈/g, '(').replace(/〉/g, ')');
   t = t.replace(/([A-Da-d])\s*[.．、)]\s*/g, '$1');
@@ -65,11 +65,13 @@ function normalizeText(s) {
 
 function normalizeOptions(options) {
   if (!Array.isArray(options) || options.length === 0) return '';
-  return options.map((opt) => {
-    if (opt == null) return '';
-    if (typeof opt === 'object') return normalizeText(opt.value || '');
-    return normalizeText(String(opt));
-  }).join('|');
+  return options
+    .map((opt) => {
+      if (opt == null) return '';
+      if (typeof opt === 'object') return normalizeText(opt.value || '');
+      return normalizeText(String(opt));
+    })
+    .join('|');
 }
 
 function makeFingerprint(q) {
@@ -148,7 +150,8 @@ const choiceQuestions = ALL_QUESTIONS.filter(
 const choiceBySubject = new Map();
 for (const q of choiceQuestions) {
   const s = q.subject || '未知';
-  if (!choiceBySubject.has(s)) choiceBySubject.set(s, { total: 0, uniqueId: new Set(), uniqueFp: new Set() });
+  if (!choiceBySubject.has(s))
+    choiceBySubject.set(s, { total: 0, uniqueId: new Set(), uniqueFp: new Set() });
   const entry = choiceBySubject.get(s);
   entry.total++;
   entry.uniqueId.add(q.id);
@@ -180,7 +183,9 @@ console.log('\n【2. 完全重复示例（前 10 组）】');
 exactDuplicates.slice(0, 10).forEach((arr, i) => {
   console.log(`  组${i + 1}: ${arr.length} 道重复`);
   arr.forEach((q) => {
-    console.log(`    - id=${q.id} | subject=${q.subject} | source=${q.source || 'unknown'} | sourceFile=${q.sourceFile}`);
+    console.log(
+      `    - id=${q.id} | subject=${q.subject} | source=${q.source || 'unknown'} | sourceFile=${q.sourceFile}`,
+    );
     console.log(`      stem="${(q.question || '').slice(0, 60)}..."`);
   });
 });
@@ -189,7 +194,9 @@ console.log('\n【3. 高度重复示例（仅题干相同，前 10 组）】');
 stemDuplicates.slice(0, 10).forEach((arr, i) => {
   console.log(`  组${i + 1}: ${arr.length} 道题干相同`);
   arr.forEach((q) => {
-    console.log(`    - id=${q.id} | subject=${q.subject} | track=${q.track} | source=${q.source || 'unknown'}`);
+    console.log(
+      `    - id=${q.id} | subject=${q.subject} | track=${q.track} | source=${q.source || 'unknown'}`,
+    );
     console.log(`      stem="${(q.question || '').slice(0, 60)}..."`);
   });
 });
@@ -242,10 +249,14 @@ for (const subj of CSCA_SUBJECTS_BLUEPRINT) {
   const gap = realUnique - subj.totalQuestions;
   totalBlueprint += subj.totalQuestions;
   totalRealUnique += Math.min(realUnique, subj.totalQuestions);
-  console.log(`  ${subj.name} (${subj.id}) | ${subj.totalQuestions} | ${realUnique} | ${gap >= 0 ? 'OK' : gap}`);
+  console.log(
+    `  ${subj.name} (${subj.id}) | ${subj.totalQuestions} | ${realUnique} | ${gap >= 0 ? 'OK' : gap}`,
+  );
 }
 console.log(`  ---- blueprint 合计需求: ${totalBlueprint}`);
-console.log(`  ---- 实际可组卷上限（各科目取 min(blueprint, realUnique) 之和）: ${totalRealUnique}`);
+console.log(
+  `  ---- 实际可组卷上限（各科目取 min(blueprint, realUnique) 之和）: ${totalRealUnique}`,
+);
 
 console.log('\n【10. 默认考试组卷链路分析】');
 console.log('  默认请求科目: 基础汉语, 数学, 物理, 理科中文');
@@ -266,7 +277,9 @@ rawDupIds.slice(0, 10).forEach(([id, c]) => {
 });
 
 console.log(`\n  B. 不同 ID 但题干完全相同（高度重复）: ${stemDuplicates.length} 组`);
-console.log(`  C. 题干略有差异但实际同一题（fingerprint 相同）: ${exactDuplicates.length} 组（含 normalize 后归一）`);
+console.log(
+  `  C. 题干略有差异但实际同一题（fingerprint 相同）: ${exactDuplicates.length} 组（含 normalize 后归一）`,
+);
 console.log(`  D. 同一题不同来源文件重复: 见上面完全重复示例`);
 
 console.log('\n========== 审计结束 ==========');

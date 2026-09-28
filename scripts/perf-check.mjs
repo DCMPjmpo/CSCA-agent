@@ -108,9 +108,15 @@ for (const route of ROUTES) {
   const kbNow = kb(m.jsTransfer);
   const pct = baselineKb ? round1(((baselineKb - kbNow) / baselineKb) * 100) : null;
   console.log(`=== ${route} ===`);
-  console.log(`  TTFB   ${round1(m.ttfb).toString().padStart(7)} ms   ${m.ttfb <= TTFB_TARGET ? 'PASS' : 'FAIL'} (target ≤ ${TTFB_TARGET})`);
-  console.log(`  FCP    ${round1(m.fcp).toString().padStart(7)} ms   ${m.fcp <= FCP_TARGET ? 'PASS' : 'FAIL'} (target ≤ ${FCP_TARGET})`);
-  console.log(`  JS     ${kbNow.toString().padStart(7)} KB (${m.jsCount} chunks)  baseline ${baselineKb} KB  delta ${pct >= 0 ? `-${pct}%` : 'n/a'}`);
+  console.log(
+    `  TTFB   ${round1(m.ttfb).toString().padStart(7)} ms   ${m.ttfb <= TTFB_TARGET ? 'PASS' : 'FAIL'} (target ≤ ${TTFB_TARGET})`,
+  );
+  console.log(
+    `  FCP    ${round1(m.fcp).toString().padStart(7)} ms   ${m.fcp <= FCP_TARGET ? 'PASS' : 'FAIL'} (target ≤ ${FCP_TARGET})`,
+  );
+  console.log(
+    `  JS     ${kbNow.toString().padStart(7)} KB (${m.jsCount} chunks)  baseline ${baselineKb} KB  delta ${pct >= 0 ? `-${pct}%` : 'n/a'}`,
+  );
   console.log('  top chunks (gzip):');
   console.log(fmtChunks(m.chunks));
   console.log('');

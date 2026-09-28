@@ -216,7 +216,8 @@ export function enrichContextWithHistory(
   for (const [subj, kps] of Object.entries(kpMastery)) {
     const values = Object.values(kps);
     if (values.length > 0) {
-      mergedAbility[subj] = Math.round((values.reduce((s, m) => s + m, 0) / values.length) * 100) / 100;
+      mergedAbility[subj] =
+        Math.round((values.reduce((s, m) => s + m, 0) / values.length) * 100) / 100;
     }
   }
 
@@ -231,7 +232,7 @@ export function enrichContextWithHistory(
     ...stats,
     currentAbility: Object.keys(mergedAbility).length > 0 ? mergedAbility : undefined,
     knowledgePointMastery: Object.keys(kpMastery).length > 0 ? kpMastery : undefined,
-    weakKnowledgePoints: Object.keys(weak).length > 0 ? weak : (base.weakKnowledgePoints),
+    weakKnowledgePoints: Object.keys(weak).length > 0 ? weak : base.weakKnowledgePoints,
     answerHistory: history,
     recentQuestionIds: recentIds.length > 0 ? recentIds : base.recentQuestionIds,
     recentWrongQuestionIds: wrongIds.length > 0 ? wrongIds : base.recentWrongQuestionIds,

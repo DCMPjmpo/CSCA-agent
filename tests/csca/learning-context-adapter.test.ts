@@ -59,7 +59,10 @@ describe('parseAnswerHistory', () => {
   });
 
   it('normalizes an invalid mode to practice (mode is inert downstream)', () => {
-    const out = parseAnswerHistory([{ ...rec(), mode: 'bogus' }, { ...rec(), mode: undefined }]);
+    const out = parseAnswerHistory([
+      { ...rec(), mode: 'bogus' },
+      { ...rec(), mode: undefined },
+    ]);
     expect(out.map((r) => r.mode)).toEqual(['practice', 'practice']);
   });
 
@@ -84,7 +87,11 @@ describe('buildLearningContext — server-side recomputation', () => {
       rec({ isCorrect: true }),
       rec({ isCorrect: false }),
     ];
-    const ctx = buildLearningContext({ answerHistory: history, subjects: ['Math'], currentStage: 3 });
+    const ctx = buildLearningContext({
+      answerHistory: history,
+      subjects: ['Math'],
+      currentStage: 3,
+    });
     const expected = computeAnswerStats(history);
     expect(ctx.completedQuestionCount).toBe(expected.completedQuestionCount);
     expect(ctx.correctQuestionCount).toBe(expected.correctQuestionCount);
@@ -182,7 +189,14 @@ describe('buildLearningContext — client-supplied aggregates are ignored (D1 re
 describe('parseKnowledgeMap', () => {
   it('keeps valid topics, clamps mastery, preserves a legal masterySource', () => {
     const out = parseKnowledgeMap([
-      { id: 'k1', name: 'Algebra', subject: 'Math', description: 'd', mastery: 1.4, masterySource: 'real_answers' },
+      {
+        id: 'k1',
+        name: 'Algebra',
+        subject: 'Math',
+        description: 'd',
+        mastery: 1.4,
+        masterySource: 'real_answers',
+      },
       { id: 'k2', name: 'Geometry', subject: 'Math', mastery: -0.3, masterySource: 'bogus' },
     ]);
     expect(out).toHaveLength(2);
@@ -200,7 +214,12 @@ describe('parseKnowledgeMap', () => {
 
 describe('parseProgress / parseWeakKnowledgePoints', () => {
   it('parses a valid VoyageProgressState subset', () => {
-    const p = parseProgress({ completedCount: 3, totalStages: 9, progressPercent: 33, currentStage: 2.7 });
+    const p = parseProgress({
+      completedCount: 3,
+      totalStages: 9,
+      progressPercent: 33,
+      currentStage: 2.7,
+    });
     expect(p).toEqual({ completed: 3, total: 9, percentage: 33, currentStage: 2 });
   });
 
@@ -218,7 +237,12 @@ describe('parseProgress / parseWeakKnowledgePoints', () => {
 
 describe('resolveCurrentStage', () => {
   it('prefers the voyage-derived stage over the raw one (D7)', () => {
-    expect(resolveCurrentStage({ currentStage: 1, progress: { completedCount: 4, totalStages: 9, progressPercent: 44, currentStage: 4 } })).toBe(4);
+    expect(
+      resolveCurrentStage({
+        currentStage: 1,
+        progress: { completedCount: 4, totalStages: 9, progressPercent: 44, currentStage: 4 },
+      }),
+    ).toBe(4);
   });
 
   it('falls back to the client stage, and to undefined when absent', () => {
@@ -250,7 +274,16 @@ describe('renderLearningContext', () => {
     const text = renderLearningContext(
       buildLearningContext({
         answerHistory: [],
-        knowledgeMap: [{ id: 'k1', name: 'Algebra', subject: 'Math', description: '', mastery: 0.9, masterySource: 'initial' }],
+        knowledgeMap: [
+          {
+            id: 'k1',
+            name: 'Algebra',
+            subject: 'Math',
+            description: '',
+            mastery: 0.9,
+            masterySource: 'initial',
+          },
+        ],
       }),
     );
     expect(text).toContain('知识图谱：暂无真实答题数据，无法评估掌握度');

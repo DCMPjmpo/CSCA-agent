@@ -3,14 +3,20 @@
 // 覆盖：3 天未登录回访横幅 / 演武操练游戏层（判分·命中·触礁·战功飘字·三连击破·横扫千军·此战大捷）
 import { chromium } from '@playwright/test';
 
-const EXEC_PATH = 'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
+const EXEC_PATH =
+  'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
 const BASE = 'http://localhost:3000';
 
 let pass = 0;
 let fail = 0;
 function check(name, cond, detail = '') {
-  if (cond) { pass++; console.log(`  ✓ ${name}`); }
-  else { fail++; console.log(`  ✗ ${name} ${detail}`); }
+  if (cond) {
+    pass++;
+    console.log(`  ✓ ${name}`);
+  } else {
+    fail++;
+    console.log(`  ✗ ${name} ${detail}`);
+  }
 }
 
 const browser = await chromium.launch({ executablePath: EXEC_PATH });
@@ -23,28 +29,36 @@ page.on('pageerror', (e) => errors.push(String(e)));
 async function mockCscaApis(exercises) {
   await page.route('**/api/csca/diagnosis', (route) =>
     route.fulfill({
-      status: 200, contentType: 'application/json',
+      status: 200,
+      contentType: 'application/json',
       body: JSON.stringify({
         success: true,
         data: {
-          requiredSubjects: ['数学'], recommendedSubjects: ['物理'],
-          subjectPriorities: { 数学: 1 }, estimatedDays: 90,
+          requiredSubjects: ['数学'],
+          recommendedSubjects: ['物理'],
+          subjectPriorities: { 数学: 1 },
+          estimatedDays: 90,
         },
       }),
-    }));
+    }),
+  );
   await page.route('**/api/csca/knowledge-map', (route) =>
     route.fulfill({
-      status: 200, contentType: 'application/json',
+      status: 200,
+      contentType: 'application/json',
       body: JSON.stringify({
         success: true,
         data: [{ id: 't1', name: '函数', description: '函数基础', mastery: 40, subject: '数学' }],
       }),
-    }));
+    }),
+  );
   await page.route('**/api/csca/adaptive-learning', (route) =>
     route.fulfill({
-      status: 200, contentType: 'application/json',
+      status: 200,
+      contentType: 'application/json',
       body: JSON.stringify({ success: true, data: exercises }),
-    }));
+    }),
+  );
 }
 
 /** 进入演武操练：诊断 → 知识图谱 → 点「开始操练」 */
@@ -68,12 +82,18 @@ try {
   await page.reload({ waitUntil: 'networkidle' });
   await page.waitForTimeout(300);
   check('当日回访仍不弹横幅', (await page.locator('text=舰队已闲置多日').count()) === 0);
-  await page.evaluate(() => window.localStorage.setItem('csca_last_visit', String(Date.now() - 4 * 24 * 3600 * 1000)));
+  await page.evaluate(() =>
+    window.localStorage.setItem('csca_last_visit', String(Date.now() - 4 * 24 * 3600 * 1000)),
+  );
   await page.reload({ waitUntil: 'networkidle' });
   await page.waitForSelector('text=舰队已闲置多日', { timeout: 5000 });
   check('4 天未登录 → 横幅弹出', true);
   const bannerText = await page.locator('text=舰队已闲置多日').innerText();
-  check('横幅文案完整', bannerText.includes('提督，舰队已闲置多日，今日风向正好'), `(got=${bannerText})`);
+  check(
+    '横幅文案完整',
+    bannerText.includes('提督，舰队已闲置多日，今日风向正好'),
+    `(got=${bannerText})`,
+  );
   // 关闭按钮
   await page.locator('button[aria-label="关闭"]').click();
   await page.waitForTimeout(200);
@@ -83,8 +103,13 @@ try {
   console.log('========== 演武操练 · 全对通关 ==========');
   // 5 题全对通关：answers=[0,1,2,3,3]，连击 1→2→3(三连击破)→4→5(横扫千军)
   const exercises = [0, 1, 2, 3, 3].map((ans, i) => ({
-    id: `e${i}`, question: `演武第${i + 1}题`, options: ['Option A', 'Option B', 'Option C', 'Option D'],
-    answer: ans, difficulty: 1, topic: 't1', subject: '数学',
+    id: `e${i}`,
+    question: `演武第${i + 1}题`,
+    options: ['Option A', 'Option B', 'Option C', 'Option D'],
+    answer: ans,
+    difficulty: 1,
+    topic: 't1',
+    subject: '数学',
   }));
   await enterAdaptiveLearning(exercises);
 
@@ -98,7 +123,11 @@ try {
   await pickCorrect('A');
   await page.waitForSelector('text=命中！', { timeout: 3000 });
   check('答对 → 命中！反馈', true);
-  const float1 = await page.locator('.merit-float').first().innerText().catch(() => '');
+  const float1 = await page
+    .locator('.merit-float')
+    .first()
+    .innerText()
+    .catch(() => '');
   check('战功飘字 +10 战功', float1.includes('+10 战功'), `(got=${float1})`);
   check('战功徽章更新', (await page.locator('text=+10 战功').count()) >= 1);
 
@@ -134,8 +163,24 @@ try {
   /* ---- 3. 演武操练 · 答错触礁 + 连击重置 ---- */
   console.log('========== 演武操练 · 触礁 ==========');
   const ex2 = [
-    { id: 'w1', question: '错题演武', options: ['Option A', 'Option B', 'Option C', 'Option D'], answer: 2, difficulty: 1, topic: 't1', subject: '数学' },
-    { id: 'w2', question: '后一题', options: ['Option A', 'Option B', 'Option C', 'Option D'], answer: 1, difficulty: 1, topic: 't1', subject: '数学' },
+    {
+      id: 'w1',
+      question: '错题演武',
+      options: ['Option A', 'Option B', 'Option C', 'Option D'],
+      answer: 2,
+      difficulty: 1,
+      topic: 't1',
+      subject: '数学',
+    },
+    {
+      id: 'w2',
+      question: '后一题',
+      options: ['Option A', 'Option B', 'Option C', 'Option D'],
+      answer: 1,
+      difficulty: 1,
+      topic: 't1',
+      subject: '数学',
+    },
   ];
   await enterAdaptiveLearning(ex2);
   await page.locator('button:has-text("Option A")').click();

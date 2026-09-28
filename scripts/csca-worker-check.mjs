@@ -31,7 +31,9 @@ page.on('request', (r) => {
   const u = r.url();
   if (u.includes('/_next/static/chunks/')) chunkRequests.push(u);
 });
-page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text().slice(0, 160)); });
+page.on('console', (m) => {
+  if (m.type() === 'error') errors.push(m.text().slice(0, 160));
+});
 page.on('pageerror', (e) => errors.push('PAGEERROR: ' + e.message.slice(0, 160)));
 
 // ---------- ① 知识图谱 Worker ----------
@@ -48,8 +50,18 @@ if (btnCount > 0) {
 }
 console.log('canvas elements (echarts):', await page.locator('canvas').count());
 console.log('kg worker chunk loaded:', await workerChunkLoaded(chunkRequests, KG_WORKER_CHUNK));
-console.log('layout Loading overlay gone:', (await page.getByText('Loading…', { exact: true }).count()) === 0);
-console.log('knowledge map section visible:', await page.getByText('Knowledge Map', { exact: false }).first().isVisible().catch(() => false));
+console.log(
+  'layout Loading overlay gone:',
+  (await page.getByText('Loading…', { exact: true }).count()) === 0,
+);
+console.log(
+  'knowledge map section visible:',
+  await page
+    .getByText('Knowledge Map', { exact: false })
+    .first()
+    .isVisible()
+    .catch(() => false),
+);
 
 // ---------- ② 判分 Worker ----------
 console.log('\n=== ② Score-exam worker ===');
@@ -62,7 +74,7 @@ await page.waitForTimeout(1200);
 // 默认已选中「数学」；点“开始模考”按钮（文本形如 "Start Exam (数学)"）
 const startBtn = page.getByRole('button', { name: /Start Exam|开始模考|เริ่มการสอบ/i });
 console.log('start exam buttons:', await startBtn.count());
-if (await startBtn.count() > 0) {
+if ((await startBtn.count()) > 0) {
   await startBtn.last().click();
   await page.waitForTimeout(5000);
 }
@@ -73,18 +85,21 @@ console.log('exam question rendered (Submit button found):', await submitBtn.cou
 
 // 故意答错当前第 1 题：点第 2 个选项（B），再点头部"Submit Exam"
 const optionBadge = page.locator('span.w-8.h-8.rounded-lg');
-if (await optionBadge.count() > 0) {
+if ((await optionBadge.count()) > 0) {
   await optionBadge.nth(1).locator('..').click();
   await page.waitForTimeout(300);
 }
-if (await submitBtn.count() > 0) {
+if ((await submitBtn.count()) > 0) {
   await submitBtn.first().click();
   await page.waitForTimeout(4000);
 }
 
 const resultVisible = await page.getByText('Exam Score', { exact: false }).count();
 console.log('result step visible:', resultVisible);
-console.log('score worker chunk loaded:', await workerChunkLoaded(chunkRequests, SCORE_WORKER_CHUNK));
+console.log(
+  'score worker chunk loaded:',
+  await workerChunkLoaded(chunkRequests, SCORE_WORKER_CHUNK),
+);
 const storage = await page.evaluate(() => {
   let records = -1;
   let plan = null;

@@ -5,11 +5,18 @@
  * Mirrors VoyageNavigation deriveStageStates so progress/header stay consistent.
  */
 export const VOYAGE_STAGE_ORDER = [
-  'stage1', 'stage2', 'stage3', 'stage4',
-  'stage5', 'stage6', 'stage7', 'stage8', 'stage9',
+  'stage1',
+  'stage2',
+  'stage3',
+  'stage4',
+  'stage5',
+  'stage6',
+  'stage7',
+  'stage8',
+  'stage9',
 ] as const;
 
-export type VoyageStageId = typeof VOYAGE_STAGE_ORDER[number];
+export type VoyageStageId = (typeof VOYAGE_STAGE_ORDER)[number];
 
 export const STEP_TO_STAGE: Record<string, number> = {
   diagnosis: 0,
@@ -41,14 +48,14 @@ export const STEP_TO_STAGE: Record<string, number> = {
  * 「任意 key → 阶段索引」的正向查询（含历史别名），本表承担「阶段索引 → 规范 key」的反向查询。
  */
 export const STAGE_TO_CANONICAL_STEP: readonly string[] = [
-  'diagnosis',        // 0
-  'knowledge_map',    // 1
-  'adaptive_learning',// 2
-  'exam_center',      // 3
-  'result',           // 4
-  'error_review',     // 5
-  'study_plan',       // 6
-  'ai_tutor',         // 7
+  'diagnosis', // 0
+  'knowledge_map', // 1
+  'adaptive_learning', // 2
+  'exam_center', // 3
+  'result', // 4
+  'error_review', // 5
+  'study_plan', // 6
+  'ai_tutor', // 7
   'university_match', // 8
 ] as const;
 
@@ -67,7 +74,7 @@ export function deriveVoyageStageStates(
   if (idx === -1) {
     for (let i = 0; i < VOYAGE_STAGE_ORDER.length; i++) {
       const s = VOYAGE_STAGE_ORDER[i];
-      result[s] = i === 0 ? 'current' : (i === 1 ? 'unlocked' : 'locked');
+      result[s] = i === 0 ? 'current' : i === 1 ? 'unlocked' : 'locked';
     }
     return result;
   }

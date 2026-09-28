@@ -3,13 +3,20 @@
 //       · 导师名/功能名 楷体 18-20px · 深色生成器不受影响
 import { chromium } from '@playwright/test';
 
-const EXEC_PATH = 'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
+const EXEC_PATH =
+  'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
 const BASE = 'http://localhost:3000';
 
-let pass = 0, fail = 0;
+let pass = 0,
+  fail = 0;
 function check(name, cond, detail = '') {
-  if (cond) { pass++; console.log(`  ✓ ${name}`); }
-  else { fail++; console.log(`  ✗ ${name} ${detail}`); }
+  if (cond) {
+    pass++;
+    console.log(`  ✓ ${name}`);
+  } else {
+    fail++;
+    console.log(`  ✗ ${name} ${detail}`);
+  }
 }
 const px = (s) => Math.round(parseFloat(s) * (s.includes('rem') ? 16 : 1));
 
@@ -20,7 +27,9 @@ const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } })
 const page = await ctx.newPage();
 const errors = [];
 page.on('pageerror', (e) => errors.push(String(e)));
-page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text().slice(0, 120)); });
+page.on('console', (m) => {
+  if (m.type() === 'error') errors.push(m.text().slice(0, 120));
+});
 
 try {
   console.log('========== 桌面 1440px · 首页 ==========');
@@ -33,7 +42,11 @@ try {
     return { fs: cs.fontSize, lh: cs.lineHeight };
   });
   check('正文基线 16px', px(body.fs) === 16, `(got=${body.fs})`);
-  check('正文行高 1.6', (parseFloat(body.lh) / px(body.fs)).toFixed(1) === '1.6', `(got=${body.lh})`);
+  check(
+    '正文行高 1.6',
+    (parseFloat(body.lh) / px(body.fs)).toFixed(1) === '1.6',
+    `(got=${body.lh})`,
+  );
 
   const title = await page.evaluate(() => {
     const el = document.querySelector('h1.font-page-title');
@@ -41,7 +54,11 @@ try {
     return { fs: cs.fontSize, shadow: cs.textShadow };
   });
   check('页面标题 28-36px', px(title.fs) >= 28 && px(title.fs) <= 36, `(got=${title.fs})`);
-  check('页面标题 像素硬阴影 #020b10', title.shadow.includes('rgb(2, 11, 16)'), `(got=${title.shadow})`);
+  check(
+    '页面标题 像素硬阴影 #020b10',
+    title.shadow.includes('rgb(2, 11, 16)'),
+    `(got=${title.shadow})`,
+  );
 
   const navLabel = await page.evaluate(() => {
     const el = document.querySelector('a[href="/csca"] span.font-brand-body');
@@ -55,7 +72,8 @@ try {
     el.className = 'font-num';
     document.querySelector('.brand-light').appendChild(el);
     const cs = getComputedStyle(el);
-    const fs = cs.fontSize, fam = cs.fontFamily;
+    const fs = cs.fontSize,
+      fam = cs.fontFamily;
     el.remove();
     return { fs, fam };
   });
@@ -67,7 +85,8 @@ try {
     el.className = 'font-kai-name';
     document.querySelector('.brand-light').appendChild(el);
     const cs = getComputedStyle(el);
-    const fs = cs.fontSize, fam = cs.fontFamily;
+    const fs = cs.fontSize,
+      fam = cs.fontFamily;
     el.remove();
     return { fs, fam };
   });
@@ -90,7 +109,9 @@ try {
   await page.goto(BASE + '/generation-preview', { waitUntil: 'networkidle' });
   const darkVar = await page.evaluate(() => {
     const el = document.querySelector('[data-testid="brand-shell"], .brand-light');
-    return el ? 'FOUND-BRAND-SCOPE' : getComputedStyle(document.documentElement).getPropertyValue('--text-sm');
+    return el
+      ? 'FOUND-BRAND-SCOPE'
+      : getComputedStyle(document.documentElement).getPropertyValue('--text-sm');
   });
   check('深色生成器 --text-sm 14px', px(darkVar) === 14, `(got=${darkVar})`);
 

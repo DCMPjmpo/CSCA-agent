@@ -5,21 +5,22 @@
 
 export interface ParsedQuestion {
   id: string;
-  subject: string;           // 科目：语文、数学、英语、物理、化学
-  track: string;            // 文科/理科/通用
-  type: string;             // 题目类型：选择题、填空题、阅读理解等
-  questionNumber: number;    // 题号
-  question: string;          // 题目内容
-  options?: {                // 选项（选择题才有）
+  subject: string; // 科目：语文、数学、英语、物理、化学
+  track: string; // 文科/理科/通用
+  type: string; // 题目类型：选择题、填空题、阅读理解等
+  questionNumber: number; // 题号
+  question: string; // 题目内容
+  options?: {
+    // 选项（选择题才有）
     A: string;
     B: string;
     C?: string;
     D?: string;
   };
-  answer?: string;          // 答案
-  score?: number;           // 分值
-  analysis?: string;        // 解析
-  sourceFile: string;        // 来源文件
+  answer?: string; // 答案
+  score?: number; // 分值
+  analysis?: string; // 解析
+  sourceFile: string; // 来源文件
   difficulty?: 'easy' | 'medium' | 'hard';
 }
 
@@ -45,7 +46,7 @@ const QUESTION_NUM_PATTERN = /^(\d+)[、.、](.+)/gm;
 function extractOptions(text: string): { A?: string; B?: string; C?: string; D?: string } | null {
   const options: { A?: string; B?: string; C?: string; D?: string } = {};
   let match;
-  
+
   // 匹配 A. 或 A、格式
   const lines = text.split('\n');
   for (const line of lines) {
@@ -54,7 +55,7 @@ function extractOptions(text: string): { A?: string; B?: string; C?: string; D?:
       options[lineMatch[1] as keyof typeof options] = lineMatch[2].trim();
     }
   }
-  
+
   if (Object.keys(options).length >= 2) {
     return options;
   }
@@ -75,7 +76,7 @@ function isFillBlankQuestion(text: string): boolean {
 export function parseTextContent(content: string, sourceFile: string): ParseResult {
   const questions: ParsedQuestion[] = [];
   const errors: string[] = [];
-  
+
   // 确定科目
   let subject = '未知';
   if (sourceFile.includes('语文')) subject = '语文';
@@ -83,24 +84,24 @@ export function parseTextContent(content: string, sourceFile: string): ParseResu
   else if (sourceFile.includes('英语')) subject = '英语';
   else if (sourceFile.includes('物理')) subject = '物理';
   else if (sourceFile.includes('化学')) subject = '化学';
-  
+
   // 确定文理科
   let track = '通用';
   if (sourceFile.includes('文科')) track = '文科';
   else if (sourceFile.includes('理科')) track = '理科';
-  
+
   // 按行分割处理
   const lines = content.split('\n');
   let currentQuestion: Partial<ParsedQuestion> | null = null;
   let currentOptions: string[] = [];
   let questionNumber = 0;
-  
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
-    
+
     // 跳过空行和目录行
     if (!line || line.startsWith('目 录') || line.startsWith('......')) continue;
-    
+
     // 匹配题号开始新题
     const numMatch = line.match(/^(\d+)[、.．](.+)/);
     if (numMatch) {
@@ -113,45 +114,48 @@ export function parseTextContent(content: string, sourceFile: string): ParseResu
           type: currentOptions.length > 0 ? '选择题' : '问答题',
           questionNumber,
           question: currentQuestion.question,
-          options: currentOptions.length > 0 ? {
-            A: currentOptions[0],
-            B: currentOptions[1],
-            C: currentOptions[2],
-            D: currentOptions[3]
-          } : undefined,
+          options:
+            currentOptions.length > 0
+              ? {
+                  A: currentOptions[0],
+                  B: currentOptions[1],
+                  C: currentOptions[2],
+                  D: currentOptions[3],
+                }
+              : undefined,
           answer: currentQuestion.answer,
           sourceFile,
-          difficulty: currentQuestion.difficulty
+          difficulty: currentQuestion.difficulty,
         });
       }
-      
+
       questionNumber = parseInt(numMatch[1]);
       currentQuestion = { question: numMatch[2] };
       currentOptions = [];
       continue;
     }
-    
+
     // 匹配选项
     const optionMatch = line.match(/^([A-D])[．.、]\s*(.+)/);
     if (optionMatch && currentQuestion) {
       currentOptions.push(optionMatch[2]);
     }
-    
+
     // 如果是选择题的续行（没有选项标记但内容是选项格式）
     if (currentQuestion && currentOptions.length > 0 && currentOptions.length < 4) {
       if (/^[A-D][．.、]/.test(line) === false && line.length > 0 && line.length < 200) {
         currentOptions.push(line);
       }
     }
-    
+
     // 检测分值标记
     const scoreMatch = line.match(/[（(](\d+)\s*分[）)]/);
     if (scoreMatch && currentQuestion) {
-      currentQuestion.difficulty = parseInt(scoreMatch[1]) <= 3 ? 'easy' : 
-                                    parseInt(scoreMatch[1]) <= 6 ? 'medium' : 'hard';
+      currentQuestion.difficulty =
+        parseInt(scoreMatch[1]) <= 3 ? 'easy' : parseInt(scoreMatch[1]) <= 6 ? 'medium' : 'hard';
     }
   }
-  
+
   // 保存最后一题
   if (currentQuestion && currentQuestion.question) {
     questions.push({
@@ -161,33 +165,39 @@ export function parseTextContent(content: string, sourceFile: string): ParseResu
       type: currentOptions.length > 0 ? '选择题' : '问答题',
       questionNumber,
       question: currentQuestion.question,
-      options: currentOptions.length > 0 ? {
-        A: currentOptions[0],
-        B: currentOptions[1],
-        C: currentOptions[2],
-        D: currentOptions[3]
-      } : undefined,
+      options:
+        currentOptions.length > 0
+          ? {
+              A: currentOptions[0],
+              B: currentOptions[1],
+              C: currentOptions[2],
+              D: currentOptions[3],
+            }
+          : undefined,
       answer: currentQuestion.answer,
       sourceFile,
-      difficulty: currentQuestion.difficulty
+      difficulty: currentQuestion.difficulty,
     });
   }
-  
+
   // 统计
   const stats = {
     totalQuestions: questions.length,
     bySubject: { [subject]: questions.length },
-    byType: questions.reduce((acc, q) => {
-      acc[q.type] = (acc[q.type] || 0) + 1;
-      return acc;
-    }, {} as Record<string, number>)
+    byType: questions.reduce(
+      (acc, q) => {
+        acc[q.type] = (acc[q.type] || 0) + 1;
+        return acc;
+      },
+      {} as Record<string, number>,
+    ),
   };
-  
+
   return {
     success: errors.length === 0,
     questions,
     errors,
-    stats
+    stats,
   };
 }
 
@@ -196,11 +206,11 @@ export function extractAnswerFromQuestion(questionText: string): string | undefi
   // 匹配 "答案：X" 或 "正确答案：X" 格式
   const answerMatch = questionText.match(/答案[：:]\s*([A-D])/i);
   if (answerMatch) return answerMatch[1];
-  
+
   // 匹配 "选X" 格式
   const chooseMatch = questionText.match(/选\s*([A-D])/);
   if (chooseMatch) return chooseMatch[1];
-  
+
   return undefined;
 }
 
@@ -211,8 +221,23 @@ export function exportToJSON(questions: ParsedQuestion[], outputPath: string): s
 
 // 导出为CSV格式
 export function exportToCSV(questions: ParsedQuestion[]): string {
-  const headers = ['ID', '科目', '文理科', '题型', '题号', '题目', '选项A', '选项B', '选项C', '选项D', '答案', '分值', '难度', '来源'];
-  const rows = questions.map(q => [
+  const headers = [
+    'ID',
+    '科目',
+    '文理科',
+    '题型',
+    '题号',
+    '题目',
+    '选项A',
+    '选项B',
+    '选项C',
+    '选项D',
+    '答案',
+    '分值',
+    '难度',
+    '来源',
+  ];
+  const rows = questions.map((q) => [
     q.id,
     q.subject,
     q.track,
@@ -226,18 +251,15 @@ export function exportToCSV(questions: ParsedQuestion[]): string {
     q.answer || '',
     q.score?.toString() || '',
     q.difficulty || '',
-    q.sourceFile
+    q.sourceFile,
   ]);
-  
-  return [headers, ...rows].map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
+
+  return [headers, ...rows].map((row) => row.map((cell) => `"${cell}"`).join(',')).join('\n');
 }
 
 // 清理文本
 export function cleanText(text: string): string {
-  return text
-    .replace(/\s+/g, ' ')
-    .replace(/　/g, ' ')
-    .trim();
+  return text.replace(/\s+/g, ' ').replace(/　/g, ' ').trim();
 }
 
 // 获取题目统计
@@ -246,7 +268,7 @@ export function getQuestionStats(questions: ParsedQuestion[]) {
   const byType: Record<string, number> = {};
   const byDifficulty: Record<string, number> = {};
   const byTrack: Record<string, number> = {};
-  
+
   for (const q of questions) {
     bySubject[q.subject] = (bySubject[q.subject] || 0) + 1;
     byType[q.type] = (byType[q.type] || 0) + 1;
@@ -255,12 +277,12 @@ export function getQuestionStats(questions: ParsedQuestion[]) {
       byDifficulty[q.difficulty] = (byDifficulty[q.difficulty] || 0) + 1;
     }
   }
-  
+
   return {
     total: questions.length,
     bySubject,
     byType,
     byDifficulty,
-    byTrack
+    byTrack,
   };
 }

@@ -20,10 +20,7 @@
 
 import { createClassroomJob, pollClassroomJob } from '@/lib/openmaic/client';
 import { createTask, syncTaskFromPollResult, updateTaskStatus } from '@/lib/openmaic/session';
-import type {
-  CreatePptTaskInput,
-  PilarCoreTaskRecord,
-} from '@/lib/openmaic/types';
+import type { CreatePptTaskInput, PilarCoreTaskRecord } from '@/lib/openmaic/types';
 import type { PollClassroomJobResult } from '@/lib/openmaic/client';
 
 /**
@@ -41,12 +38,7 @@ import type { PollClassroomJobResult } from '@/lib/openmaic/client';
  * @throws Error 当创建 OpenMAIC job 或写入 IndexedDB 失败时
  */
 export async function createPptTask(input: CreatePptTaskInput): Promise<PilarCoreTaskRecord> {
-  const {
-    requirement,
-    returnUrl = '/csca',
-    voyageStageId,
-    pdfContent,
-  } = input;
+  const { requirement, returnUrl = '/csca', voyageStageId, pdfContent } = input;
 
   if (!requirement || !requirement.trim()) {
     throw new Error('createPptTask: requirement 不能为空');
@@ -97,7 +89,8 @@ export async function pollPptTask(
   signal?: AbortSignal,
 ): Promise<{ poll: PollClassroomJobResult; task: PilarCoreTaskRecord }> {
   const taskId = typeof task === 'string' ? task : task.taskId;
-  const openmaicJobId = typeof task === 'string' ? (await lookupJobIdByTaskId(task)) ?? '' : task.openmaicJobId;
+  const openmaicJobId =
+    typeof task === 'string' ? ((await lookupJobIdByTaskId(task)) ?? '') : task.openmaicJobId;
 
   if (!openmaicJobId) {
     throw new Error('pollPptTask: 任务缺少 openmaicJobId，无法轮询');

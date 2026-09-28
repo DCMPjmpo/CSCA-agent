@@ -52,7 +52,10 @@ while (true) {
   // Find the closing "  }," of this mockExam block
   // It's followed by "  scoreAnalysis:" or another section
   const mockClose = c.indexOf('\n  },\n  scoreAnalysis:', mockStart);
-  if (mockClose === -1) { searchIdx = mockStart + 1; continue; }
+  if (mockClose === -1) {
+    searchIdx = mockStart + 1;
+    continue;
+  }
 
   // Check if it already has selectSubjects (skip already-fixed locales like en)
   const block = c.slice(mockStart, mockClose);

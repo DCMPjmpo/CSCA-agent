@@ -26,7 +26,17 @@ interface Props {
 export function VoyageProgressTracker({ progress, isZh }: Props) {
   const labels = isZh
     ? ['诊断', '知识图', '训练', '模拟', '分析', '纠错', '计划', 'AI助手', '院校']
-    : ['Diagnosis', 'Map', 'Training', 'Mock', 'Analysis', 'Correction', 'Plan', 'AI Mate', 'University'];
+    : [
+        'Diagnosis',
+        'Map',
+        'Training',
+        'Mock',
+        'Analysis',
+        'Correction',
+        'Plan',
+        'AI Mate',
+        'University',
+      ];
 
   const statusColors: Record<VoyageStageStatus, string> = {
     completed: 'bg-[var(--status-success)] border-[var(--status-success)] text-white',
@@ -66,7 +76,8 @@ export function VoyageProgressTracker({ progress, isZh }: Props) {
           const status = progress.stageStatus[stageId];
           const isLast = i === VOYAGE_STAGE_ORDER.length - 1;
           const link = STAGE_LINKS[stageId];
-          const clickable = status === 'completed' || status === 'in_progress' || status === 'available';
+          const clickable =
+            status === 'completed' || status === 'in_progress' || status === 'available';
 
           const node = (
             <div className="flex flex-col items-center gap-1.5">
@@ -87,7 +98,9 @@ export function VoyageProgressTracker({ progress, isZh }: Props) {
               <span
                 className={cn(
                   'whitespace-nowrap text-[10px] font-medium',
-                  status === 'in_progress' ? 'text-[var(--primary)]' : 'text-[var(--muted-foreground)]',
+                  status === 'in_progress'
+                    ? 'text-[var(--primary)]'
+                    : 'text-[var(--muted-foreground)]',
                 )}
               >
                 {labels[i]}
@@ -98,7 +111,9 @@ export function VoyageProgressTracker({ progress, isZh }: Props) {
           return (
             <div key={stageId} className="flex flex-1 items-center">
               {clickable ? (
-                <Link href={link} className="flex flex-col items-center">{node}</Link>
+                <Link href={link} className="flex flex-col items-center">
+                  {node}
+                </Link>
               ) : (
                 <div className="flex flex-col items-center opacity-60">{node}</div>
               )}

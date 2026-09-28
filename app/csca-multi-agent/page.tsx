@@ -2,7 +2,17 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { Loader2, Sparkles, GraduationCap, Send, Mic, Users, ChevronDown, Volume2, VolumeX } from 'lucide-react';
+import {
+  Loader2,
+  Sparkles,
+  GraduationCap,
+  Send,
+  Mic,
+  Users,
+  ChevronDown,
+  Volume2,
+  VolumeX,
+} from 'lucide-react';
 import { CSCA_AGENTS, getAgentById } from '@/lib/csca/agents';
 import { useTranslation } from '@/lib/i18n/hooks';
 import { useAudioRecorder } from '@/lib/hooks/use-audio-recorder';
@@ -80,13 +90,16 @@ export default function CscaMultiAgentPage() {
 
     const assistantMessageId = `${Date.now()}-assistant`;
 
-    setMessages((prev) => [...prev, {
-      id: assistantMessageId,
-      role: 'assistant',
-      content: '',
-      agentId: 'system',
-      timestamp: Date.now(),
-    }]);
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: assistantMessageId,
+        role: 'assistant',
+        content: '',
+        agentId: 'system',
+        timestamp: Date.now(),
+      },
+    ]);
 
     try {
       const response = await fetch('/api/csca/multi-agent', {
@@ -131,23 +144,29 @@ export default function CscaMultiAgentPage() {
             const chunk = JSON.parse(dataMatch[1]);
 
             if (chunk.type === 'chunk') {
-              setMessages((prev) => prev.map((msg) =>
-                msg.id === assistantMessageId
-                  ? { ...msg, content: chunk.data.fullContent, agentId: chunk.data.agentId }
-                  : msg
-              ));
+              setMessages((prev) =>
+                prev.map((msg) =>
+                  msg.id === assistantMessageId
+                    ? { ...msg, content: chunk.data.fullContent, agentId: chunk.data.agentId }
+                    : msg,
+                ),
+              );
             } else if (chunk.type === 'complete') {
-              setMessages((prev) => prev.map((msg) =>
-                msg.id === assistantMessageId
-                  ? { ...msg, content: chunk.data.content, agentId: chunk.data.agentId }
-                  : msg
-              ));
+              setMessages((prev) =>
+                prev.map((msg) =>
+                  msg.id === assistantMessageId
+                    ? { ...msg, content: chunk.data.content, agentId: chunk.data.agentId }
+                    : msg,
+                ),
+              );
             } else if (chunk.type === 'error') {
-              setMessages((prev) => prev.map((msg) =>
-                msg.id === assistantMessageId
-                  ? { ...msg, content: chunk.data.message, agentId: 'system' }
-                  : msg
-              ));
+              setMessages((prev) =>
+                prev.map((msg) =>
+                  msg.id === assistantMessageId
+                    ? { ...msg, content: chunk.data.message, agentId: 'system' }
+                    : msg,
+                ),
+              );
             }
           } catch (parseError) {
             console.error('Error parsing SSE chunk:', parseError);
@@ -156,11 +175,13 @@ export default function CscaMultiAgentPage() {
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      setMessages((prev) => prev.map((msg) =>
-        msg.id === assistantMessageId
-          ? { ...msg, content: 'Sorry, there was an error. Please try again.', agentId: 'system' }
-          : msg
-      ));
+      setMessages((prev) =>
+        prev.map((msg) =>
+          msg.id === assistantMessageId
+            ? { ...msg, content: 'Sorry, there was an error. Please try again.', agentId: 'system' }
+            : msg,
+        ),
+      );
     } finally {
       setIsLoading(false);
     }
@@ -215,13 +236,14 @@ export default function CscaMultiAgentPage() {
     </div>
   );
 
-  if (!mounted) return (
-    <BrandShell>
-      <div className="brand-light flex items-center justify-center min-h-screen bg-[color:var(--background)]">
-        <Loader2 className="w-6 h-6 animate-spin text-[color:var(--color-muted-foreground)]" />
-      </div>
-    </BrandShell>
-  );
+  if (!mounted)
+    return (
+      <BrandShell>
+        <div className="brand-light flex items-center justify-center min-h-screen bg-[color:var(--background)]">
+          <Loader2 className="w-6 h-6 animate-spin text-[color:var(--color-muted-foreground)]" />
+        </div>
+      </BrandShell>
+    );
 
   const isZh = locale?.startsWith('zh');
 
@@ -266,7 +288,10 @@ export default function CscaMultiAgentPage() {
                   {CSCA_AGENTS.map((agent) => (
                     <button
                       key={agent.id}
-                      onClick={() => { handleAgentMention(agent.id); setView('chat'); }}
+                      onClick={() => {
+                        handleAgentMention(agent.id);
+                        setView('chat');
+                      }}
                       className="group flex flex-col gap-3 p-5 rounded-[10px] border border-[color:var(--color-border)] bg-white hover:border-[color:var(--color-deep-ocean-700)]/40 hover:-translate-y-[1px] hover:shadow-[0_6px_18px_-14px_rgba(7,28,38,0.22)] transition-all text-left"
                     >
                       <div className="flex items-center gap-3">
@@ -499,8 +524,14 @@ export default function CscaMultiAgentPage() {
                       <div className="flex flex-wrap justify-center gap-2 pt-2">
                         {[
                           { label: t.chat.quickDiagnose, onClick: () => router.push('/csca') },
-                          { label: t.chat.quickClassroom, onClick: () => router.push('/#classroom-generator') },
-                          { label: t.chat.quickProgress, onClick: () => router.push('/csca/voyage#study-plan') },
+                          {
+                            label: t.chat.quickClassroom,
+                            onClick: () => router.push('/#classroom-generator'),
+                          },
+                          {
+                            label: t.chat.quickProgress,
+                            onClick: () => router.push('/csca/voyage#study-plan'),
+                          },
                           {
                             label: t.chat.quickTutor,
                             onClick: () => {
@@ -508,7 +539,10 @@ export default function CscaMultiAgentPage() {
                               inputRef.current?.focus();
                             },
                           },
-                          { label: t.chat.quickMockExam, onClick: () => router.push('/csca/voyage#mock-exam') },
+                          {
+                            label: t.chat.quickMockExam,
+                            onClick: () => router.push('/csca/voyage#mock-exam'),
+                          },
                         ].map((f) => (
                           <button
                             key={f.label}
@@ -571,51 +605,58 @@ export default function CscaMultiAgentPage() {
           </div>
         )}
 
-      {/* Roster Drawer */}
-      {rosterOpen && (
-        <div className="fixed inset-0 z-50 flex justify-end">
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setRosterOpen(false)} />
-          <div className="relative w-full max-w-xs bg-white border-l border-[color:var(--color-border)] p-5 overflow-y-auto">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-[14px] font-semibold text-[color:var(--color-ink-900)]">
-                {t.chat.roster}
-              </h3>
-              <button
-                type="button"
-                onClick={() => setRosterOpen(false)}
-                className="text-[color:var(--color-muted-foreground)] hover:text-[color:var(--color-ink-900)] text-sm"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="space-y-1.5">
-              {CSCA_AGENTS.map((agent) => (
+        {/* Roster Drawer */}
+        {rosterOpen && (
+          <div className="fixed inset-0 z-50 flex justify-end">
+            <div
+              className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+              onClick={() => setRosterOpen(false)}
+            />
+            <div className="relative w-full max-w-xs bg-white border-l border-[color:var(--color-border)] p-5 overflow-y-auto">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-[14px] font-semibold text-[color:var(--color-ink-900)]">
+                  {t.chat.roster}
+                </h3>
                 <button
-                  key={agent.id}
                   type="button"
-                  onClick={() => {
-                    handleAgentMention(agent.id);
-                    setRosterOpen(false);
-                  }}
-                  className="flex w-full items-center gap-2.5 rounded-[8px] border border-[color:var(--color-border)] px-3 py-2.5 text-left transition-colors hover:border-[color:var(--color-deep-ocean-700)]/40 hover:bg-[color:var(--color-deep-ocean-700)]/[0.03]"
+                  onClick={() => setRosterOpen(false)}
+                  className="text-[color:var(--color-muted-foreground)] hover:text-[color:var(--color-ink-900)] text-sm"
                 >
-                  <span
-                    className="w-8 h-8 rounded-[6px] flex items-center justify-center text-white text-xs font-bold shrink-0"
-                    style={{ backgroundColor: agent.color }}
-                  >
-                    {agent.name.charAt(0)}
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate text-[13px] font-medium text-[color:var(--color-ink-900)]">{agent.name}</span>
-                    <span className="block truncate text-[11px] text-[color:var(--color-muted-foreground)]">{agent.role}</span>
-                  </span>
+                  ✕
                 </button>
-              ))}
+              </div>
+              <div className="space-y-1.5">
+                {CSCA_AGENTS.map((agent) => (
+                  <button
+                    key={agent.id}
+                    type="button"
+                    onClick={() => {
+                      handleAgentMention(agent.id);
+                      setRosterOpen(false);
+                    }}
+                    className="flex w-full items-center gap-2.5 rounded-[8px] border border-[color:var(--color-border)] px-3 py-2.5 text-left transition-colors hover:border-[color:var(--color-deep-ocean-700)]/40 hover:bg-[color:var(--color-deep-ocean-700)]/[0.03]"
+                  >
+                    <span
+                      className="w-8 h-8 rounded-[6px] flex items-center justify-center text-white text-xs font-bold shrink-0"
+                      style={{ backgroundColor: agent.color }}
+                    >
+                      {agent.name.charAt(0)}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-[13px] font-medium text-[color:var(--color-ink-900)]">
+                        {agent.name}
+                      </span>
+                      <span className="block truncate text-[11px] text-[color:var(--color-muted-foreground)]">
+                        {agent.role}
+                      </span>
+                    </span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      )}
-      <Toaster position="top-center" theme="light" />
+        )}
+        <Toaster position="top-center" theme="light" />
       </div>
     </BrandShell>
   );

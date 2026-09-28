@@ -1,12 +1,12 @@
 /**
  * CSCA Subject Diagnosis API
  * Step 1: Diagnose required subjects based on candidate profile
- * 
+ *
  * CSCA考试科目：
  * - 基础汉语（综合）- 必考科目，包括听力、阅读、写作
  * - 数学 - 必考科目，包括代数、几何、微积分基础
  * - 物理/化学 - 根据专业方向选择其一（理科方向）
- * 
+ *
  * Note: Uses mock data when external API is unavailable
  */
 
@@ -40,10 +40,7 @@ export async function POST(request: Request) {
     const { targetMajor, highSchoolSystem, hskLevel, nationality, fastMode } = body;
 
     if (!targetMajor || !nationality) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
     // Fast mode: return mock data immediately for better UX
@@ -87,7 +84,7 @@ CSCA考试科目规则：
       // [AI-FIX] 原 15s 超时太短，deepseek-v4-pro 带 reasoning 模式需要更长时间
       // 增加到 50s（Vercel maxDuration 60s 留 10s 余量）
       const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('DIAGNOSIS_TIMEOUT')), 50000)
+        setTimeout(() => reject(new Error('DIAGNOSIS_TIMEOUT')), 50000),
       );
 
       const resultPromise = generateWithFallback({
@@ -127,7 +124,6 @@ CSCA考试科目规则：
       step: 1,
       mock: true,
     });
-
   } catch (error) {
     console.error('[CSCA Diagnosis API] Error:', error);
     return NextResponse.json({

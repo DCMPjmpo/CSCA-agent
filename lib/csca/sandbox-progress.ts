@@ -55,7 +55,12 @@ export function emptySandboxProgress(): SandboxProgress {
       isCurrent: stepIndex === 0,
     };
   }
-  outposts['multi-agent'] = { id: 'multi-agent', unlocked: true, completed: false, isCurrent: false };
+  outposts['multi-agent'] = {
+    id: 'multi-agent',
+    unlocked: true,
+    completed: false,
+    isCurrent: false,
+  };
   outposts['classroom'] = { id: 'classroom', unlocked: true, completed: false, isCurrent: false };
   return { outposts, frontier: 0, visitedCount: 0 };
 }
@@ -74,7 +79,7 @@ export function deriveSandboxProgress(): SandboxProgress {
   let frontier = 0;
   // 使用 completedStages 而非 activeStep 来推导 frontier
   const completedStages = Array.isArray((session as any)?.completedStages)
-    ? (session as any).completedStages as number[]
+    ? ((session as any).completedStages as number[])
     : [];
   if (completedStages.length > 0) {
     frontier = Math.max(0, Math.min(5, Math.max(...completedStages)));

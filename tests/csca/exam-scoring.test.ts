@@ -94,7 +94,11 @@ describe('gradeExam', () => {
     });
 
     expect(result.weakAreas).toHaveLength(1);
-    expect(result.weakAreas[0]).toMatchObject({ subject: 'Math', module: 'Algebra', priority: 'high' });
+    expect(result.weakAreas[0]).toMatchObject({
+      subject: 'Math',
+      module: 'Algebra',
+      priority: 'high',
+    });
     expect(result.studyPlan.userId).toBe('user-1');
     expect(result.studyPlan.targetSubjects).toEqual(['Math']);
     expect(result.studyPlan.weakAreas).toEqual(result.weakAreas);

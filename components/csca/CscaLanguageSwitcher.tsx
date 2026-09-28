@@ -37,7 +37,10 @@ export function CscaLanguageSwitcher({ dropUp = false }: { dropUp?: boolean }) {
         <span className="hidden sm:inline max-w-[100px] truncate">{current?.name}</span>
       </button>
       {open && (
-        <div className={`absolute ${dropUp ? 'bottom-full mb-2' : 'top-full mt-2'} right-0 bg-[#FAF5EC] border border-[#A68B5B] rounded-none overflow-hidden z-50 min-w-[200px] py-1`} style={{ boxShadow: '3px 3px 0 #020b10' }}>
+        <div
+          className={`absolute ${dropUp ? 'bottom-full mb-2' : 'top-full mt-2'} right-0 bg-[#FAF5EC] border border-[#A68B5B] rounded-none overflow-hidden z-50 min-w-[200px] py-1`}
+          style={{ boxShadow: '3px 3px 0 #020b10' }}
+        >
           {languages.map((lang) => (
             <button
               key={lang.code}

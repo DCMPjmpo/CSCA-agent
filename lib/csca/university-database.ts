@@ -252,9 +252,7 @@ export const UNIVERSITIES: University[] = [
 export function getUniversitiesByScore(score: number, major: string): University[] {
   const filtered = UNIVERSITIES.filter((u) => {
     const scoreMatch = score >= u.minScore && score <= u.maxScore;
-    const majorMatch = u.majors.some((m) =>
-      m.toLowerCase().includes(major.toLowerCase())
-    );
+    const majorMatch = u.majors.some((m) => m.toLowerCase().includes(major.toLowerCase()));
     return scoreMatch && majorMatch;
   });
 
@@ -269,14 +267,14 @@ export function calculateMatchScore(score: number, university: University): numb
   const avgScore = (university.minScore + university.maxScore) / 2;
   const distance = Math.abs(score - avgScore);
   const maxDistance = (university.maxScore - university.minScore) / 2;
-  
+
   let matchScore = 100 - (distance / maxDistance) * 50;
-  
+
   if (score < university.minScore) {
     matchScore = Math.max(5, matchScore - 20);
   } else if (score > university.maxScore) {
     matchScore = Math.min(95, matchScore + 10);
   }
-  
+
   return Math.round(Math.max(5, Math.min(95, matchScore)));
 }

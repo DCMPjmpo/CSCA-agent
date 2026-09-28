@@ -11,16 +11,16 @@ const __dirname = dirname(__filename);
 const root = join(__dirname, '..');
 
 const questionsFromTxt = JSON.parse(
-  readFileSync(join(root, 'data/processed/questions_from_txt.json'), 'utf-8')
+  readFileSync(join(root, 'data/processed/questions_from_txt.json'), 'utf-8'),
 );
 const cscaQuestionsV1 = JSON.parse(
-  readFileSync(join(root, 'data/processed/csca_questions_v1.json'), 'utf-8')
+  readFileSync(join(root, 'data/processed/csca_questions_v1.json'), 'utf-8'),
 );
 
 // 读取化学原始 txt 答案 key
 const chemRawTxt = readFileSync(
   join(root, 'data/cleaned_markdown/Chemistry Practice (multiple choice questions).txt'),
-  'utf-8'
+  'utf-8',
 );
 
 // 解析答案 key
@@ -68,7 +68,7 @@ console.log('总题量:', ALL_QUESTIONS.length);
 
 const bySubject = {};
 const eligibleBySubject = {};
-ALL_QUESTIONS.forEach(q => {
+ALL_QUESTIONS.forEach((q) => {
   bySubject[q.subject] = (bySubject[q.subject] || 0) + 1;
   if (q.type === '选择题' && q.options && q.options.length > 0 && q.answer && q.answer.trim()) {
     eligibleBySubject[q.subject] = (eligibleBySubject[q.subject] || 0) + 1;
@@ -77,14 +77,20 @@ ALL_QUESTIONS.forEach(q => {
 
 console.log('\n=== 各科目统计 (question-bank ALL_QUESTIONS) ===');
 console.log('subject | total | eligible(choice+options+answer)');
-Object.entries(bySubject).sort((a,b) => b[1]-a[1]).forEach(([s, t]) => {
-  console.log(`${s} | ${t} | ${eligibleBySubject[s] || 0}`);
-});
+Object.entries(bySubject)
+  .sort((a, b) => b[1] - a[1])
+  .forEach(([s, t]) => {
+    console.log(`${s} | ${t} | ${eligibleBySubject[s] || 0}`);
+  });
 
-const chemNoAnswer = ALL_QUESTIONS.filter(q =>
-  q.subject === '化学' && q.source === 'real_exam' &&
-  q.type === '选择题' && q.options && q.options.length > 0 &&
-  (!q.answer || !q.answer.trim())
+const chemNoAnswer = ALL_QUESTIONS.filter(
+  (q) =>
+    q.subject === '化学' &&
+    q.source === 'real_exam' &&
+    q.type === '选择题' &&
+    q.options &&
+    q.options.length > 0 &&
+    (!q.answer || !q.answer.trim()),
 );
 
 console.log('\n=== 化学无答案题分析 ===');
@@ -92,7 +98,7 @@ console.log('化学 real_exam 选择题无答案:', chemNoAnswer.length);
 
 let recoverableCount = 0;
 const recoverySamples = [];
-chemNoAnswer.forEach(q => {
+chemNoAnswer.forEach((q) => {
   const qNum = q.questionNumber;
   if (qNum && answerKey[qNum]) {
     recoverableCount++;
@@ -110,9 +116,17 @@ chemNoAnswer.forEach(q => {
 console.log('可恢复答案的题数:', recoverableCount);
 console.log('恢复样本:', recoverySamples);
 
-const qNums = chemNoAnswer.map(q => q.questionNumber).filter(n => n).sort((a,b) => a-b);
-console.log('questionNumber 范围:', qNums[0], '-', qNums[qNums.length-1]);
-console.log('answerKey 范围:', Math.min(...Object.keys(answerKey).map(Number)), '-', Math.max(...Object.keys(answerKey).map(Number)));
+const qNums = chemNoAnswer
+  .map((q) => q.questionNumber)
+  .filter((n) => n)
+  .sort((a, b) => a - b);
+console.log('questionNumber 范围:', qNums[0], '-', qNums[qNums.length - 1]);
+console.log(
+  'answerKey 范围:',
+  Math.min(...Object.keys(answerKey).map(Number)),
+  '-',
+  Math.max(...Object.keys(answerKey).map(Number)),
+);
 
 console.log('\n=== 假设化学答案恢复后 ===');
 const newChemEligible = (eligibleBySubject['化学'] || 0) + recoverableCount;
@@ -123,14 +137,14 @@ const defaultSubjects = ['基础汉语', '数学', '物理', '理科中文'];
 console.log('\n=== 默认科目组合容量分析 ===');
 console.log('默认科目:', defaultSubjects);
 
-defaultSubjects.forEach(s => {
+defaultSubjects.forEach((s) => {
   console.log(`${s} (question-bank eligible): ${eligibleBySubject[s] || 0}`);
 });
 
 console.log('理科中文 (内置 science-chinese-questions.ts): 80');
 console.log('文科中文 (内置 arts-chinese-questions.ts): 60');
 
-const mockCounts = { '基础汉语': 10, '数学': 10, '物理': 10, '化学': 10 };
+const mockCounts = { 基础汉语: 10, 数学: 10, 物理: 10, 化学: 10 };
 console.log('\n=== MOCK_QUESTIONS ===');
 Object.entries(mockCounts).forEach(([s, c]) => console.log(`${s}: ${c}`));
 

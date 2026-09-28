@@ -12,12 +12,7 @@ import { recoverChemAnswers } from './chem-answer-recovery';
 import p42bRecovered from '../../data/processed/p4.2_recovered_questions.json';
 
 export type QuestionSource =
-  | 'real_exam'
-  | 'basic_practice'
-  | 'science_chinese'
-  | 'arts_chinese'
-  | 'legacy'
-  | 'unknown';
+  'real_exam' | 'basic_practice' | 'science_chinese' | 'arts_chinese' | 'legacy' | 'unknown';
 
 export interface Question {
   id: string;
@@ -47,7 +42,8 @@ export interface QuestionEnrichment {
   questionId: string;
   rawQuestionId?: string;
   knowledgePoint: string;
-  knowledgePointSource: 'NATIVE' | 'SYLLABUS_DERIVED' | 'SECTION_DERIVED' | 'PART_DERIVED' | 'SET_LEVEL' | 'UNKNOWN';
+  knowledgePointSource:
+    'NATIVE' | 'SYLLABUS_DERIVED' | 'SECTION_DERIVED' | 'PART_DERIVED' | 'SET_LEVEL' | 'UNKNOWN';
   knowledgePointHierarchy: {
     subject: string;
     module: string;
@@ -105,7 +101,10 @@ const ALL_QUESTIONS: Question[] = recoverChemAnswers(
   ]),
 );
 
-const ENRICHMENT_MAP: Record<string, QuestionEnrichment> = cscaEnrichmentV1 as Record<string, QuestionEnrichment>;
+const ENRICHMENT_MAP: Record<string, QuestionEnrichment> = cscaEnrichmentV1 as Record<
+  string,
+  QuestionEnrichment
+>;
 
 // 获取所有题目（现有 + V1）
 export function getAllQuestions(): Question[] {
@@ -143,15 +142,13 @@ export function getQuestionById(id: string): Question | undefined {
 // 搜索题目（根据题目内容）
 export function searchQuestions(keyword: string): Question[] {
   const lowerKeyword = keyword.toLowerCase();
-  return getAllQuestions().filter((q: Question) =>
-    q.question.toLowerCase().includes(lowerKeyword)
-  );
+  return getAllQuestions().filter((q: Question) => q.question.toLowerCase().includes(lowerKeyword));
 }
 
 // 获取所有科目
 export function getAllSubjects(): string[] {
   const subjects = new Set(getAllQuestions().map((q: Question) => q.subject));
-  return Array.from(subjects).filter(s => s !== '未知');
+  return Array.from(subjects).filter((s) => s !== '未知');
 }
 
 // 获取所有文理科类型
@@ -201,9 +198,9 @@ export function getFormattedAnswer(question: Question): string {
 export function getDifficultyLabel(difficulty: string | undefined): string {
   if (!difficulty) return '未知';
   const labelMap: Record<string, string> = {
-    'easy': '简单',
-    'medium': '中等',
-    'hard': '困难'
+    easy: '简单',
+    medium: '中等',
+    hard: '困难',
   };
   return labelMap[difficulty] || difficulty;
 }
@@ -211,10 +208,10 @@ export function getDifficultyLabel(difficulty: string | undefined): string {
 // 获取题型描述
 export function getTypeLabel(type: string): string {
   const typeMap: Record<string, string> = {
-    '选择题': '选择题',
-    '问答题': '问答题',
-    '填空题': '填空题',
-    '阅读理解': '阅读理解'
+    选择题: '选择题',
+    问答题: '问答题',
+    填空题: '填空题',
+    阅读理解: '阅读理解',
   };
   return typeMap[type] || type;
 }
@@ -224,7 +221,7 @@ export function getDifficultyDistribution(subject: string): Record<string, numbe
   const distribution: Record<string, number> = {};
   const questions = getQuestionsBySubject(subject);
 
-  questions.forEach(q => {
+  questions.forEach((q) => {
     if (q.difficulty) {
       distribution[q.difficulty] = (distribution[q.difficulty] || 0) + 1;
     }
@@ -238,7 +235,7 @@ export function getTypeDistribution(subject: string): Record<string, number> {
   const distribution: Record<string, number> = {};
   const questions = getQuestionsBySubject(subject);
 
-  questions.forEach(q => {
+  questions.forEach((q) => {
     distribution[q.type] = (distribution[q.type] || 0) + 1;
   });
 
@@ -250,7 +247,7 @@ export function getTrackDistribution(subject: string): Record<string, number> {
   const distribution: Record<string, number> = {};
   const questions = getQuestionsBySubject(subject);
 
-  questions.forEach(q => {
+  questions.forEach((q) => {
     distribution[q.track] = (distribution[q.track] || 0) + 1;
   });
 
@@ -266,12 +263,12 @@ export function getRandomQuestions(count: number, subject?: string): Question[] 
 
 // 获取某个科目的选择题
 export function getChoiceQuestions(subject: string): Question[] {
-  return getQuestionsBySubject(subject).filter(q => isChoiceQuestion(q) && hasOptions(q));
+  return getQuestionsBySubject(subject).filter((q) => isChoiceQuestion(q) && hasOptions(q));
 }
 
 // 获取某个科目的问答题
 export function getSubjectiveQuestions(subject: string): Question[] {
-  return getQuestionsBySubject(subject).filter(q => q.type === '问答题');
+  return getQuestionsBySubject(subject).filter((q) => q.type === '问答题');
 }
 
 // 验证答案（适用于选择题）
@@ -288,13 +285,13 @@ export function getQuestionBankStats() {
   const stats = {
     totalQuestions: allQuestions.length,
     subjects: subjects.length,
-    subjectsDetails: subjects.map(subject => ({
+    subjectsDetails: subjects.map((subject) => ({
       name: subject,
       count: countQuestionsBySubject(subject),
       types: getTypeDistribution(subject),
       difficulties: getDifficultyDistribution(subject),
-      tracks: getTrackDistribution(subject)
-    }))
+      tracks: getTrackDistribution(subject),
+    })),
   };
 
   return stats;
@@ -304,7 +301,7 @@ export function getQuestionBankStats() {
 export function getExamQuestions(subjects: string[], questionCount: number): Question[] {
   let allQuestions: Question[] = [];
 
-  subjects.forEach(subject => {
+  subjects.forEach((subject) => {
     const questions = getQuestionsBySubject(subject);
     allQuestions = [...allQuestions, ...questions];
   });
@@ -354,11 +351,15 @@ export function getQuestionsWithFallback(
   count: number,
 ): { questions: Question[]; usedFallback: boolean; realCount: number; basicCount: number } {
   // Q3.0 修复：仅保留有答案的题目，否则 normalizeQuestion 会全部过滤导致 V1 不可达
-  const real = getRealExamQuestions(subject).filter((q) => q.type === '选择题' && q.options && q.options.length > 0 && hasAnswer(q));
-  const basic = getBasicPracticeQuestions(subject).filter((q) => q.type === '选择题' && q.options && q.options.length > 0 && hasAnswer(q));
+  const real = getRealExamQuestions(subject).filter(
+    (q) => q.type === '选择题' && q.options && q.options.length > 0 && hasAnswer(q),
+  );
+  const basic = getBasicPracticeQuestions(subject).filter(
+    (q) => q.type === '选择题' && q.options && q.options.length > 0 && hasAnswer(q),
+  );
 
   // 打乱
-  const shuffle = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
+  const shuffle = <T>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
   const shuffledReal = shuffle(real);
   const shuffledBasic = shuffle(basic);
 

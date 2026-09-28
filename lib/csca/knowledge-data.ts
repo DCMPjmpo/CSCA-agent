@@ -20,8 +20,8 @@ import type { QuestionEnrichment } from './question-bank';
 const ENRICHMENT_SUBJECT_MAP: Record<string, string> = {
   'Humanities Chinese': '文科中文',
   'STEM Chinese': '理科中文',
-  'Chemistry': '化学',
-  'English': '英语',
+  Chemistry: '化学',
+  English: '英语',
 };
 
 /** Build subject -> KP list mapping from V1 enrichment (real data, no fabrication) */
@@ -144,9 +144,7 @@ export function computeMasteryFromAnswers(
   module?: string,
 ): number {
   const filtered = answers.filter(
-    (a) =>
-      a.subject === subject &&
-      (!module || a.module === module || a.knowledgePoint === module),
+    (a) => a.subject === subject && (!module || a.module === module || a.knowledgePoint === module),
   );
 
   if (filtered.length < 3) return 0; // 数据不足，不计算

@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { Noto_Serif_SC, Noto_Sans_Thai, Noto_Sans_Myanmar, Noto_Sans_Khmer, Noto_Sans_Lao } from 'next/font/google';
+import {
+  Noto_Serif_SC,
+  Noto_Sans_Thai,
+  Noto_Sans_Myanmar,
+  Noto_Sans_Khmer,
+  Noto_Sans_Lao,
+} from 'next/font/google';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import './globals.css';

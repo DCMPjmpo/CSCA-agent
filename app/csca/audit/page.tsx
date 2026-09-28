@@ -50,7 +50,7 @@ export default function AuditPage() {
     }
   };
 
-  const filteredResults = auditResults.filter(r => {
+  const filteredResults = auditResults.filter((r) => {
     if (filter === 'valid') return r.isValid;
     if (filter === 'invalid') return !r.isValid;
     return true;
@@ -64,13 +64,9 @@ export default function AuditPage() {
 
   const getStatusBadge = (isValid: boolean) => {
     return isValid ? (
-      <span className="px-2 py-1 bg-green-900/30 text-green-400 text-xs rounded-full">
-        ✅ 有效
-      </span>
+      <span className="px-2 py-1 bg-green-900/30 text-green-400 text-xs rounded-full">✅ 有效</span>
     ) : (
-      <span className="px-2 py-1 bg-red-900/30 text-red-400 text-xs rounded-full">
-        ❌ 无效
-      </span>
+      <span className="px-2 py-1 bg-red-900/30 text-red-400 text-xs rounded-full">❌ 无效</span>
     );
   };
 
@@ -114,7 +110,9 @@ export default function AuditPage() {
             <div className="text-red-300/70 text-sm">无效题目</div>
           </div>
           <div className="bg-indigo-900/30 rounded-xl p-4 border border-indigo-700/50">
-            <div className="text-3xl font-bold text-indigo-400">{(stats.avgConfidence * 100).toFixed(0)}%</div>
+            <div className="text-3xl font-bold text-indigo-400">
+              {(stats.avgConfidence * 100).toFixed(0)}%
+            </div>
             <div className="text-indigo-300/70 text-sm">平均置信度</div>
           </div>
         </div>
@@ -140,7 +138,7 @@ export default function AuditPage() {
               : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
           }`}
         >
-          ✅ 有效 ({auditResults.filter(r => r.isValid).length})
+          ✅ 有效 ({auditResults.filter((r) => r.isValid).length})
         </button>
         <button
           onClick={() => setFilter('invalid')}
@@ -150,7 +148,7 @@ export default function AuditPage() {
               : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
           }`}
         >
-          ❌ 无效 ({auditResults.filter(r => !r.isValid).length})
+          ❌ 无效 ({auditResults.filter((r) => !r.isValid).length})
         </button>
       </div>
 
@@ -211,20 +209,32 @@ export default function AuditPage() {
         >
           <div
             className="bg-slate-800 rounded-2xl max-w-lg w-full max-h-[80vh] overflow-auto"
-            onClick={e => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6 border-b border-slate-700">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   {getStatusBadge(selectedQuestion.isValid)}
-                  <span className="text-slate-400 text-sm">{selectedQuestion.subject} - {selectedQuestion.module}</span>
+                  <span className="text-slate-400 text-sm">
+                    {selectedQuestion.subject} - {selectedQuestion.module}
+                  </span>
                 </div>
                 <button
                   onClick={() => setSelectedQuestion(null)}
                   className="p-2 rounded-lg hover:bg-slate-700"
                 >
-                  <svg className="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="w-6 h-6 text-slate-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </button>
               </div>

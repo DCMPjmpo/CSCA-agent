@@ -1,6 +1,6 @@
 /**
  * ELO Algorithm for Adaptive Learning - CSCA Pilot Agent
- * 
+ *
  * Implements ELO rating system to dynamically adjust exercise difficulty
  * based on student performance and knowledge mastery.
  */
@@ -34,14 +34,14 @@ export interface TopicMastery {
 // ==========================================
 export function calculateEloDifficulty(eloScores: number[]): number {
   if (eloScores.length === 0) return 0.5; // Default medium difficulty
-  
+
   // Calculate average ELO score
   const avgElo = eloScores.reduce((sum, elo) => sum + elo, 0) / eloScores.length;
-  
+
   // Normalize to difficulty range [0, 1]
   // Lower ELO = weaker topic = higher difficulty needed
-  const normalized = 1 - ((avgElo - MIN_ELO) / (MAX_ELO - MIN_ELO));
-  
+  const normalized = 1 - (avgElo - MIN_ELO) / (MAX_ELO - MIN_ELO);
+
   // Clamp between 0.1 and 0.9 to avoid extreme values
   return Math.max(0.1, Math.min(0.9, normalized));
 }
@@ -52,20 +52,20 @@ export function calculateEloDifficulty(eloScores: number[]): number {
 export function updateEloScore(
   currentElo: number,
   wasCorrect: boolean,
-  difficulty: number
+  difficulty: number,
 ): number {
   // Expected score based on difficulty (higher difficulty = higher expected score for correct)
-  const expectedScore = wasCorrect ? difficulty : (1 - difficulty);
-  
+  const expectedScore = wasCorrect ? difficulty : 1 - difficulty;
+
   // Actual score
   const actualScore = wasCorrect ? 1 : 0;
-  
+
   // ELO formula
   let newElo = currentElo + K_FACTOR * (actualScore - expectedScore);
-  
+
   // Clamp to valid range
   newElo = Math.max(MIN_ELO, Math.min(MAX_ELO, newElo));
-  
+
   return Math.round(newElo);
 }
 
@@ -82,7 +82,7 @@ export function getMasteryLevel(eloScore: number): 'mastered' | 'needs_review' |
 // Generate initial topic ELO scores
 // ==========================================
 export function initializeTopicElo(subject: string, topics: string[]): TopicMastery[] {
-  return topics.map(topic => ({
+  return topics.map((topic) => ({
     subject,
     topic,
     eloScore: DEFAULT_ELO,
@@ -95,10 +95,10 @@ export function initializeTopicElo(subject: string, topics: string[]): TopicMast
 // ==========================================
 export function calculateProficiency(topics: TopicMastery[]): number {
   if (topics.length === 0) return 0;
-  
-  const mastered = topics.filter(t => t.mastery === 'mastered').length;
-  const needsReview = topics.filter(t => t.mastery === 'needs_review').length;
-  
+
+  const mastered = topics.filter((t) => t.mastery === 'mastered').length;
+  const needsReview = topics.filter((t) => t.mastery === 'needs_review').length;
+
   return (mastered * 1.0 + needsReview * 0.5) / topics.length;
 }
 

@@ -12,11 +12,7 @@ import {
 } from '@/lib/orchestration/csca-workflow';
 
 export type WorkflowStepName =
-  | 'diagnose'
-  | 'knowledge_map'
-  | 'exercises'
-  | 'score_analysis'
-  | 'university_match';
+  'diagnose' | 'knowledge_map' | 'exercises' | 'score_analysis' | 'university_match';
 
 const STEP_RUNNERS: Record<
   WorkflowStepName,

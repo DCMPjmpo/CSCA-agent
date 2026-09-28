@@ -7,10 +7,20 @@ import sharp from 'sharp';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-const EXEC_PATH = 'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
+const EXEC_PATH =
+  'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
 const BASE = 'http://localhost:3000';
 const OUT = 'brand/advisors/png';
-const IDS = ['zheng-he', 'ma-huan', 'wang-jinghong', 'fei-xin', 'hong-bao', 'hou-xian', 'zhang-da', 'li-bin'];
+const IDS = [
+  'zheng-he',
+  'ma-huan',
+  'wang-jinghong',
+  'fei-xin',
+  'hong-bao',
+  'hou-xian',
+  'zhang-da',
+  'li-bin',
+];
 
 let pass = 0;
 let fail = 0;
@@ -24,7 +34,8 @@ function check(name, cond, detail = '') {
   }
 }
 
-const GEN_500_MSG = 'Failed to load resource: the server responded with a status of 500 (Internal Server Error)';
+const GEN_500_MSG =
+  'Failed to load resource: the server responded with a status of 500 (Internal Server Error)';
 const ignoreApi = (u) => u.includes('/api/') && !u.includes('favicon');
 
 /* =========================== 1. PNG 文件检查 =========================== */
@@ -45,7 +56,11 @@ for (const [file, [w, h]] of Object.entries(EXPECTED)) {
   check(`${file} 存在`, existsSync(path), `(missing ${path})`);
   if (!existsSync(path)) continue;
   const meta = await sharp(path).metadata();
-  check(`${file} 尺寸 ${w}×${h}`, meta.width === w && meta.height === h, `(实测 ${meta.width}×${meta.height})`);
+  check(
+    `${file} 尺寸 ${w}×${h}`,
+    meta.width === w && meta.height === h,
+    `(实测 ${meta.width}×${meta.height})`,
+  );
   check(`${file} 含 alpha 通道`, meta.channels === 4, `(channels=${meta.channels})`);
   alphaChecks.push([file, path]);
 }
@@ -75,7 +90,9 @@ const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } })
 const page = await ctx.newPage();
 const consoleErrors = [];
 const httpBad = [];
-page.on('console', (msg) => { if (msg.type() === 'error') consoleErrors.push(msg.text()); });
+page.on('console', (msg) => {
+  if (msg.type() === 'error') consoleErrors.push(msg.text());
+});
 page.on('pageerror', (err) => consoleErrors.push('pageerror: ' + err.message));
 page.on('response', (res) => {
   if (res.status() >= 400 && !res.url().includes('favicon')) {
@@ -96,7 +113,11 @@ const card = await page.evaluate(() => {
   const r = el.getBoundingClientRect();
   return { w: r.width, h: r.height };
 });
-check(`角色卡 64px 实测 ${card?.w}×${card?.h}`, card?.w === 64 && card?.h === 64, JSON.stringify(card));
+check(
+  `角色卡 64px 实测 ${card?.w}×${card?.h}`,
+  card?.w === 64 && card?.h === 64,
+  JSON.stringify(card),
+);
 
 const keyframes = await page.evaluate(() => {
   const out = [];
@@ -133,11 +154,24 @@ check('prefers-reduced-motion 降级', reduced);
 
 /* =========================== 3. 汇总 =========================== */
 const allErrors = consoleErrors.filter(
-  (m) => !m.includes('scene-outlines-stream') && !m.startsWith(GEN_500_MSG) && !m.startsWith('Error sending message') && !m.startsWith('Error parsing SSE chunk') && !m.startsWith('Voice input error'),
+  (m) =>
+    !m.includes('scene-outlines-stream') &&
+    !m.startsWith(GEN_500_MSG) &&
+    !m.startsWith('Error sending message') &&
+    !m.startsWith('Error parsing SSE chunk') &&
+    !m.startsWith('Voice input error'),
 );
 const httpBadClean = httpBad.filter((b) => !ignoreApi(b));
-check('无 console 错误 / 页面异常', allErrors.length === 0, `\n  → ${allErrors.slice(0, 6).join('\n  → ')}`);
-check('无 4xx/5xx 资源（除 LLM API）', httpBadClean.length === 0, `\n  → ${httpBadClean.slice(0, 6).join('\n  → ')}`);
+check(
+  '无 console 错误 / 页面异常',
+  allErrors.length === 0,
+  `\n  → ${allErrors.slice(0, 6).join('\n  → ')}`,
+);
+check(
+  '无 4xx/5xx 资源（除 LLM API）',
+  httpBadClean.length === 0,
+  `\n  → ${httpBadClean.slice(0, 6).join('\n  → ')}`,
+);
 
 console.log(`\n${pass} passed, ${fail} failed`);
 await browser.close();

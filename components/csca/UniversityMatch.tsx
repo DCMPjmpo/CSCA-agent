@@ -5,7 +5,13 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Loader2, Building2, Award, MapPin, TrendingUp, Target, AlertTriangle } from 'lucide-react';
 
 interface UniversityMatchProps {
@@ -21,7 +27,11 @@ interface UniversityMatchResult {
   scholarships: Array<{ name: string; description: string; requirements: string[] }>;
 }
 
-export function UniversityMatch({ score, targetMajor: initialMajor, nationality }: UniversityMatchProps) {
+export function UniversityMatch({
+  score,
+  targetMajor: initialMajor,
+  nationality,
+}: UniversityMatchProps) {
   const [targetMajor, setTargetMajor] = useState(initialMajor || 'Computer Science');
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<UniversityMatchResult | null>(null);
@@ -126,7 +136,9 @@ export function UniversityMatch({ score, targetMajor: initialMajor, nationality 
                         <Building2 className="w-5 h-5 text-green-600" />
                         <span className="font-medium">{school.name}</span>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getProbabilityColor(school.probability)}`}>
+                      <span
+                        className={`px-2 py-1 rounded-full text-xs font-medium ${getProbabilityColor(school.probability)}`}
+                      >
                         {getProbabilityIcon(school.probability)}
                         {Math.round(school.probability * 100)}%
                       </span>
@@ -153,7 +165,9 @@ export function UniversityMatch({ score, targetMajor: initialMajor, nationality 
                         <Building2 className="w-5 h-5 text-yellow-600" />
                         <span className="font-medium">{school.name}</span>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getProbabilityColor(school.probability)}`}>
+                      <span
+                        className={`px-2 py-1 rounded-full text-xs font-medium ${getProbabilityColor(school.probability)}`}
+                      >
                         {getProbabilityIcon(school.probability)}
                         {Math.round(school.probability * 100)}%
                       </span>
@@ -180,7 +194,9 @@ export function UniversityMatch({ score, targetMajor: initialMajor, nationality 
                         <Building2 className="w-5 h-5 text-red-600" />
                         <span className="font-medium">{school.name}</span>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getProbabilityColor(school.probability)}`}>
+                      <span
+                        className={`px-2 py-1 rounded-full text-xs font-medium ${getProbabilityColor(school.probability)}`}
+                      >
                         {getProbabilityIcon(school.probability)}
                         {Math.round(school.probability * 100)}%
                       </span>

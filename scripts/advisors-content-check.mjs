@@ -11,7 +11,16 @@ import { join } from 'node:path';
 const ROOT = process.cwd();
 const JSON_PATH = join(ROOT, 'brand', 'advisors-content.json');
 const LOCALES_DIR = join(ROOT, 'lib', 'i18n', 'locales');
-const EXPECTED_IDS = ['zheng-he', 'ma-huan', 'wang-jinghong', 'fei-xin', 'hong-bao', 'hou-xian', 'zhang-da', 'li-bin'];
+const EXPECTED_IDS = [
+  'zheng-he',
+  'ma-huan',
+  'wang-jinghong',
+  'fei-xin',
+  'hong-bao',
+  'hou-xian',
+  'zhang-da',
+  'li-bin',
+];
 
 let pass = 0;
 let fail = 0;
@@ -36,7 +45,11 @@ try {
   process.exit(1);
 }
 
-check('meta.schema 存在', content.meta?.schema === 'advisors-content@1', JSON.stringify(content.meta?.schema));
+check(
+  'meta.schema 存在',
+  content.meta?.schema === 'advisors-content@1',
+  JSON.stringify(content.meta?.schema),
+);
 
 const advisors = content.advisors ?? {};
 check(`8 位幕僚（实测 ${Object.keys(advisors).length}）`, Object.keys(advisors).length === 8);
@@ -53,7 +66,11 @@ for (const id of EXPECTED_IDS) {
   if (!a) continue;
   check(`${id}.id 与 key 一致`, a.id === id, `(id=${a.id})`);
   for (const f of ['name', 'role', 'dialogueStyle', 'persona']) {
-    check(`${id}.${f} 非空`, typeof a[f] === 'string' && a[f].trim().length > 0, `(length=${String(a[f]).length})`);
+    check(
+      `${id}.${f} 非空`,
+      typeof a[f] === 'string' && a[f].trim().length > 0,
+      `(length=${String(a[f]).length})`,
+    );
   }
   for (const [lib, [min, max]] of Object.entries(LIBRARY_SIZES)) {
     const arr = a[lib];
@@ -89,7 +106,9 @@ check(
 );
 check(
   'locales 块含全部 11 个覆盖位',
-  Object.keys(content.locales ?? {}).sort().join(',') === localeFiles.sort().join(','),
+  Object.keys(content.locales ?? {})
+    .sort()
+    .join(',') === localeFiles.sort().join(','),
 );
 
 /* ================= 3. i18n 深合并继承（tsx loader） ================= */

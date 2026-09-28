@@ -46,8 +46,7 @@ import { restartVoyage } from '@/lib/voyage-progress';
 import type { LucideIcon } from 'lucide-react';
 
 type StageId =
-  | 'stage1' | 'stage2' | 'stage3' | 'stage4'
-  | 'stage5' | 'stage6' | 'stage7' | 'stage8' | 'stage9';
+  'stage1' | 'stage2' | 'stage3' | 'stage4' | 'stage5' | 'stage6' | 'stage7' | 'stage8' | 'stage9';
 
 type TopLevelId = 'home' | 'voyage' | 'studio' | 'case-study' | 'assistant';
 
@@ -134,17 +133,39 @@ function pathIsOnCscaRoute(pathname: string | null): boolean {
 function deriveStageStates(
   currentStepKey: string | null | undefined,
 ): Record<StageId, 'done' | 'current' | 'unlocked' | 'locked'> {
-  const order: StageId[] = ['stage1','stage2','stage3','stage4','stage5','stage6','stage7','stage8','stage9'];
+  const order: StageId[] = [
+    'stage1',
+    'stage2',
+    'stage3',
+    'stage4',
+    'stage5',
+    'stage6',
+    'stage7',
+    'stage8',
+    'stage9',
+  ];
   const stepToIndex: Record<string, number> = {
     diagnosis: 0,
-    knowledge_map: 1, 'knowledge-map': 1,
-    adaptive_learning: 2, 'adaptive-learning': 2,
-    exam_center: 3, exam: 3, mock_exam: 3, 'mock-exam': 3,
-    result: 4, score_analysis: 4, 'score-analysis': 4,
-    error_review: 5, 'error-review': 5, 'error-analysis': 5,
-    study_plan: 6, 'study-plan': 6,
-    ai_tutor: 7, 'ai-tutor': 7,
-    university_match: 8, 'university-match': 8,
+    knowledge_map: 1,
+    'knowledge-map': 1,
+    adaptive_learning: 2,
+    'adaptive-learning': 2,
+    exam_center: 3,
+    exam: 3,
+    mock_exam: 3,
+    'mock-exam': 3,
+    result: 4,
+    score_analysis: 4,
+    'score-analysis': 4,
+    error_review: 5,
+    'error-review': 5,
+    'error-analysis': 5,
+    study_plan: 6,
+    'study-plan': 6,
+    ai_tutor: 7,
+    'ai-tutor': 7,
+    university_match: 8,
+    'university-match': 8,
   };
   const idx = currentStepKey ? (stepToIndex[currentStepKey] ?? -1) : -1;
   const result = {} as Record<StageId, 'done' | 'current' | 'unlocked' | 'locked'>;
@@ -203,15 +224,23 @@ export function VoyageNavigation() {
 
   const voy = t.nav.voyage;
   const stagesMeta = [
-    voy.stage1, voy.stage2, voy.stage3, voy.stage4,
-    voy.stage5, voy.stage6, voy.stage7, voy.stage8, voy.stage9,
+    voy.stage1,
+    voy.stage2,
+    voy.stage3,
+    voy.stage4,
+    voy.stage5,
+    voy.stage6,
+    voy.stage7,
+    voy.stage8,
+    voy.stage9,
   ];
 
   const activeTop = (() => {
     if (!pathname) return null;
     if (pathname === '/') return 'home';
     if (pathname.startsWith('/csca-multi-agent')) return 'assistant';
-    if (pathname === '/csca/case-study' || pathname.startsWith('/csca/case-study/')) return 'case-study';
+    if (pathname === '/csca/case-study' || pathname.startsWith('/csca/case-study/'))
+      return 'case-study';
     // Studio 有**自己的** active 语义：在 /csca/studio 上高亮「AI Learning Studio」，
     // 而不是让用户以为自己还在「学习航程」（这是最小必要修正，不改动 9 段航线）。
     if (pathname === '/csca/studio' || pathname.startsWith('/csca/studio/')) return 'studio';
@@ -223,11 +252,7 @@ export function VoyageNavigation() {
   // 而 pushState 不触发 hashchange —— CSCAVoyageApp 的「hash → step」监听会收不到信号，
   // 表现为"点了侧栏但页面不动"。这里对同路径点击改走原生 fragment 导航（会触发
   // hashchange），跨路由点击仍交给 Next 处理（那时组件会重新 mount 并读 hash）。
-  const handleStageClick = (
-    e: { preventDefault: () => void },
-    href: string,
-    locked: boolean,
-  ) => {
+  const handleStageClick = (e: { preventDefault: () => void }, href: string, locked: boolean) => {
     if (locked) {
       e.preventDefault();
       return;
@@ -261,7 +286,8 @@ export function VoyageNavigation() {
             collapsed ? 'justify-center px-0 py-4' : 'px-5 py-4',
           )}
         >
-          <div className="relative w-9 h-9 shrink-0 rounded-[10px] flex items-center justify-center"
+          <div
+            className="relative w-9 h-9 shrink-0 rounded-[10px] flex items-center justify-center"
             style={{
               background:
                 'linear-gradient(135deg, var(--color-deep-ocean-700) 0%, var(--color-deep-ocean-800) 100%)',
@@ -269,7 +295,10 @@ export function VoyageNavigation() {
               border: '1px solid rgba(255,255,255,0.06)',
             }}
           >
-            <GraduationCap className="w-4.5 h-4.5 text-[color:var(--color-muted-gold)]" style={{ width: 18, height: 18 }} />
+            <GraduationCap
+              className="w-4.5 h-4.5 text-[color:var(--color-muted-gold)]"
+              style={{ width: 18, height: 18 }}
+            />
           </div>
           {!collapsed && (
             <div className="min-w-0 flex-1">
@@ -361,7 +390,8 @@ export function VoyageNavigation() {
                   isActive
                     ? 'bg-[color:var(--color-voyage-blue)]/16 text-white'
                     : 'text-[color:var(--color-sidebar-foreground)]/80 hover:bg-white/5 hover:text-white',
-                  locked && 'opacity-55 cursor-not-allowed hover:bg-transparent hover:text-[color:var(--color-sidebar-foreground)]/60',
+                  locked &&
+                    'opacity-55 cursor-not-allowed hover:bg-transparent hover:text-[color:var(--color-sidebar-foreground)]/60',
                 )}
               >
                 {isActive && (
@@ -376,7 +406,9 @@ export function VoyageNavigation() {
                     {/* 图标 + 文字主体 */}
                     <Icon className="w-[17px] h-[17px] shrink-0 text-white/75 group-hover:text-white" />
                     <div className="min-w-0 flex-1 flex flex-col justify-center">
-                      <span className="text-[13px] leading-none font-medium truncate">{m.title}</span>
+                      <span className="text-[13px] leading-none font-medium truncate">
+                        {m.title}
+                      </span>
                       {/* eyebrow / metadata 行：英文小标签 + 二级中文 subtitle */}
                       <div className="mt-1 flex items-center gap-2 text-[10px] text-[color:var(--color-sidebar-foreground)]/50 truncate">
                         <span className="uppercase tracking-[0.14em] font-semibold truncate">
@@ -388,7 +420,10 @@ export function VoyageNavigation() {
                     {/* 状态图标：done / locked / 空 */}
                     <div className="shrink-0 w-4 flex items-center justify-center">
                       {state === 'done' && (
-                        <CheckCircle2 className="w-4 h-4 text-[color:var(--color-status-success)]" aria-label="completed" />
+                        <CheckCircle2
+                          className="w-4 h-4 text-[color:var(--color-status-success)]"
+                          aria-label="completed"
+                        />
                       )}
                       {state === 'locked' && (
                         <Lock className="w-3.5 h-3.5 text-white/40" aria-label="locked" />
@@ -413,21 +448,25 @@ export function VoyageNavigation() {
         </nav>
 
         {/* -------- 底部：语言切换 + 折叠按钮 -------- */}
-        <div className={cn(
-          'flex flex-col gap-2 px-2 pb-3 pt-2 border-t border-[color:var(--color-sidebar-border)]',
-          collapsed && 'px-1.5 items-stretch',
-        )}>
+        <div
+          className={cn(
+            'flex flex-col gap-2 px-2 pb-3 pt-2 border-t border-[color:var(--color-sidebar-border)]',
+            collapsed && 'px-1.5 items-stretch',
+          )}
+        >
           {!collapsed && <CscaLanguageSwitcher dropUp />}
-          {(!collapsed && (progress?.completedCount ?? 0) > 0) && (
+          {!collapsed && (progress?.completedCount ?? 0) > 0 && (
             <button
               type="button"
               onClick={() => {
                 const isZh = locale?.startsWith('zh') ?? false;
-                if (window.confirm(
-                  isZh
-                    ? '将从第 1 段重新开始航程。你的答题记录、诊断结果、考试成绩等学习数据不会被删除。确认重新开始？'
-                    : 'Restart voyage from Stage 1? Your answer history, diagnosis results, exam scores, and other learning data will be preserved.'
-                )) {
+                if (
+                  window.confirm(
+                    isZh
+                      ? '将从第 1 段重新开始航程。你的答题记录、诊断结果、考试成绩等学习数据不会被删除。确认重新开始？'
+                      : 'Restart voyage from Stage 1? Your answer history, diagnosis results, exam scores, and other learning data will be preserved.',
+                  )
+                ) {
                   restartVoyage();
                   window.location.reload();
                 }
@@ -483,7 +522,9 @@ export function VoyageNavigation() {
                   className={cn(
                     'relative flex flex-col items-center gap-1 py-2 min-h-[52px] justify-center min-w-0',
                     'text-[11px] transition-colors',
-                    isActive ? 'text-[color:var(--color-deep-ocean-800)]' : 'text-[color:var(--color-ink-500)] hover:text-[color:var(--color-ink-700)]',
+                    isActive
+                      ? 'text-[color:var(--color-deep-ocean-800)]'
+                      : 'text-[color:var(--color-ink-500)] hover:text-[color:var(--color-ink-700)]',
                   )}
                 >
                   {isActive && (
@@ -496,7 +537,10 @@ export function VoyageNavigation() {
             })}
             <button
               type="button"
-              onClick={() => { setMobileOpen?.(false); setDrawerMore(true); }}
+              onClick={() => {
+                setMobileOpen?.(false);
+                setDrawerMore(true);
+              }}
               aria-label={t.nav.learningVoyage ?? 'More'}
               className={cn(
                 'relative flex flex-col items-center gap-1 py-2 min-h-[52px] justify-center min-w-0 text-[11px] transition-colors',
@@ -506,7 +550,9 @@ export function VoyageNavigation() {
               )}
             >
               <Compass className="w-5 h-5" />
-              <span className="w-full truncate px-1 text-center">{t.nav.learningVoyage ?? 'Voyage'}</span>
+              <span className="w-full truncate px-1 text-center">
+                {t.nav.learningVoyage ?? 'Voyage'}
+              </span>
             </button>
           </div>
         </nav>
@@ -554,7 +600,10 @@ export function VoyageNavigation() {
                     <Link
                       key={stg.id}
                       href={locked ? '#' : stg.href}
-                      onClick={(e) => { handleStageClick(e, stg.href, locked); setDrawerMore(false); }}
+                      onClick={(e) => {
+                        handleStageClick(e, stg.href, locked);
+                        setDrawerMore(false);
+                      }}
                       className={cn(
                         'relative flex items-center gap-3 rounded-[10px] px-3 py-2.5',
                         'border border-transparent transition-colors',
@@ -569,15 +618,23 @@ export function VoyageNavigation() {
                       </span>
                       <Icon className="w-4 h-4 text-[color:var(--color-ink-500)] shrink-0" />
                       <div className="flex-1 min-w-0">
-                        <div className="text-[13px] font-semibold text-[color:var(--color-ink-900)] truncate">{m.title}</div>
+                        <div className="text-[13px] font-semibold text-[color:var(--color-ink-900)] truncate">
+                          {m.title}
+                        </div>
                         <div className="mt-0.5 text-[11px] text-[color:var(--color-ink-500)] truncate">
-                          <span className="uppercase tracking-[0.14em] font-semibold">{m.eyebrow}</span>
+                          <span className="uppercase tracking-[0.14em] font-semibold">
+                            {m.eyebrow}
+                          </span>
                           <span className="opacity-80"> · {m.subtitle}</span>
                         </div>
                       </div>
                       <div className="shrink-0 w-4 flex items-center justify-center">
-                        {state === 'done' && <CheckCircle2 className="w-4 h-4 text-[color:var(--color-status-success)]" />}
-                        {state === 'locked' && <Lock className="w-3.5 h-3.5 text-[color:var(--color-ink-300)]" />}
+                        {state === 'done' && (
+                          <CheckCircle2 className="w-4 h-4 text-[color:var(--color-status-success)]" />
+                        )}
+                        {state === 'locked' && (
+                          <Lock className="w-3.5 h-3.5 text-[color:var(--color-ink-300)]" />
+                        )}
                       </div>
                     </Link>
                   );

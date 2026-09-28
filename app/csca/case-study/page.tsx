@@ -3,7 +3,15 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Brain, Target, BookOpen, TrendingUp, GraduationCap, Award, ChevronRight } from 'lucide-react';
+import {
+  Brain,
+  Target,
+  BookOpen,
+  TrendingUp,
+  GraduationCap,
+  Award,
+  ChevronRight,
+} from 'lucide-react';
 import { useTranslation } from '@/lib/i18n/hooks';
 import { BrandShell } from '@/components/brand/BrandShell';
 
@@ -13,16 +21,18 @@ const testimonials = [
     country: '泰国',
     countryColor: '#2E9E6F',
     avatar: 'S',
-    quote: '通过CSCA备考系统，我的数学成绩从65分提升到了85分！AI讲解功能帮助我理解了很多以前不懂的概念。',
-    scoreImprovement: '+20分'
+    quote:
+      '通过CSCA备考系统，我的数学成绩从65分提升到了85分！AI讲解功能帮助我理解了很多以前不懂的概念。',
+    scoreImprovement: '+20分',
   },
   {
     name: 'Nguyen',
     country: '越南',
     countryColor: '#B82222',
     avatar: 'N',
-    quote: '智能诊断功能让我清楚地知道自己的薄弱环节在哪里，学习计划非常个性化，很适合我这样的国际学生。',
-    scoreImprovement: '+15分'
+    quote:
+      '智能诊断功能让我清楚地知道自己的薄弱环节在哪里，学习计划非常个性化，很适合我这样的国际学生。',
+    scoreImprovement: '+15分',
   },
   {
     name: 'Dewi',
@@ -30,8 +40,8 @@ const testimonials = [
     countryColor: '#1A9A9A',
     avatar: 'D',
     quote: '多语言支持对我帮助很大，可以用母语学习中文课程。错题复习功能让我进步很快！',
-    scoreImprovement: '+18分'
-  }
+    scoreImprovement: '+18分',
+  },
 ];
 
 const features = [
@@ -39,38 +49,38 @@ const features = [
     icon: Brain,
     title: '智能学情诊断',
     description: '基于AI的学习状态分析，精准定位薄弱环节',
-    stats: '准确率95%'
+    stats: '准确率95%',
   },
   {
     icon: Target,
     title: '考点自适应学习',
     description: '根据你的水平动态调整题目难度',
-    stats: '个性化路径'
+    stats: '个性化路径',
   },
   {
     icon: BookOpen,
     title: '专项模考训练',
     description: '模拟真实考试环境，提升应试能力',
-    stats: '1000+题库'
+    stats: '1000+题库',
   },
   {
     icon: TrendingUp,
     title: '成绩深度分析',
     description: '全面的成绩报告和趋势分析',
-    stats: '可视化报告'
+    stats: '可视化报告',
   },
   {
     icon: GraduationCap,
     title: '院校精准匹配',
     description: '根据成绩推荐适合的中国大学',
-    stats: '500+院校'
+    stats: '500+院校',
   },
   {
     icon: Award,
     title: '奖学金评估',
     description: '评估奖学金申请可能性',
-    stats: '成功率预测'
-  }
+    stats: '成功率预测',
+  },
 ];
 
 const successStory = {
@@ -92,10 +102,11 @@ const successStory = {
     { full: '物理', seal: '物' },
     { full: '中文', seal: '文' },
   ],
-  story: '阿努查是来自泰国曼谷的一名高中生，梦想是到中国顶尖大学学习工程专业。然而，CSCA考试的难度让他感到压力巨大。',
+  story:
+    '阿努查是来自泰国曼谷的一名高中生，梦想是到中国顶尖大学学习工程专业。然而，CSCA考试的难度让他感到压力巨大。',
   challenges: '语言障碍、知识体系差异、备考资源匮乏',
   solution: '通过CSCA备考系统的多语言支持、AI智能辅导和个性化学习计划，阿努查克服了重重困难。',
-  results: '在三个月内，阿努查的综合成绩从58分提升到82分，成功获得了上海交通大学的录取通知书！'
+  results: '在三个月内，阿努查的综合成绩从58分提升到82分，成功获得了上海交通大学的录取通知书！',
 };
 
 export default function CaseStudyPage() {
@@ -106,38 +117,52 @@ export default function CaseStudyPage() {
   const storyByLocale: Record<string, typeof successStory> = {
     zh: {
       ...successStory,
-      story: '阿努查是来自泰国曼谷的高中生，梦想进入中国顶尖大学学习工科，但 CSCA 考试的难度曾让他倍感压力。',
+      story:
+        '阿努查是来自泰国曼谷的高中生，梦想进入中国顶尖大学学习工科，但 CSCA 考试的难度曾让他倍感压力。',
       challenges: '语言障碍、课程体系差异、备考资源有限',
       solution: '借助 CSCA 系统的多语言支持、AI 智能辅导与个性化学习计划，他逐步攻克了这些难题。',
       results: '三个月内，综合成绩从 58 分提升至 82 分，并收到上海交通大学录取通知！',
     },
     th: {
       ...successStory,
-      story: 'อนุชาเป็นนักเรียนมัธยมจากกรุงเทพฯ ที่มีความฝันเรียนวิศวกรรมที่มหาวิทยาลัยชั้นนำในจีน แต่ความยากของ CSCA ทำให้เขารู้สึกกดดัน',
+      story:
+        'อนุชาเป็นนักเรียนมัธยมจากกรุงเทพฯ ที่มีความฝันเรียนวิศวกรรมที่มหาวิทยาลัยชั้นนำในจีน แต่ความยากของ CSCA ทำให้เขารู้สึกกดดัน',
       challenges: 'อุปสรรคด้านภาษา ความแตกต่างของหลักสูตร และทรัพยากรเตรียมสอบที่จำกัด',
-      solution: 'ด้วยการสนับสนุนหลายภาษา AI ติวเตอร์ และแผนการเรียนรู้ส่วนบุคคลของระบบ CSCA อนุชาจึงเอาชนะความท้าทายได้',
-      results: 'ภายใน 3 เดือน คะแนนรวมของอนุชาเพิ่มจาก 58 เป็น 82 และได้รับการตอบรับจาก Shanghai Jiao Tong University!',
+      solution:
+        'ด้วยการสนับสนุนหลายภาษา AI ติวเตอร์ และแผนการเรียนรู้ส่วนบุคคลของระบบ CSCA อนุชาจึงเอาชนะความท้าทายได้',
+      results:
+        'ภายใน 3 เดือน คะแนนรวมของอนุชาเพิ่มจาก 58 เป็น 82 และได้รับการตอบรับจาก Shanghai Jiao Tong University!',
     },
     en: {
       ...successStory,
-      story: 'Anucha is a high school student from Bangkok who dreams of studying engineering at a top Chinese university, but found the CSCA exam overwhelming.',
+      story:
+        'Anucha is a high school student from Bangkok who dreams of studying engineering at a top Chinese university, but found the CSCA exam overwhelming.',
       challenges: 'Language barriers, curriculum differences, and limited prep resources',
-      solution: 'With multi-language support, AI tutoring, and personalized study plans from the CSCA system, Anucha overcame these challenges.',
-      results: 'In three months, Anucha raised his composite score from 58 to 82 and received an offer from Shanghai Jiao Tong University!',
+      solution:
+        'With multi-language support, AI tutoring, and personalized study plans from the CSCA system, Anucha overcame these challenges.',
+      results:
+        'In three months, Anucha raised his composite score from 58 to 82 and received an offer from Shanghai Jiao Tong University!',
     },
     ms: {
       ...successStory,
-      story: 'Anucha adalah pelajar sekolah menengah dari Bangkok yang bercita-cita belajar kejuruteraan di universiti China terkemuka, tetapi mendapati peperiksaan CSCA amat mencabar.',
+      story:
+        'Anucha adalah pelajar sekolah menengah dari Bangkok yang bercita-cita belajar kejuruteraan di universiti China terkemuka, tetapi mendapati peperiksaan CSCA amat mencabar.',
       challenges: 'Halangan bahasa, perbezaan kurikulum, dan sumber persiapan yang terhad',
-      solution: 'Dengan sokongan pelbagai bahasa, tutor AI, dan pelan belajar peribadi dari sistem CSCA, Anucha telah mengatasi cabaran ini.',
-      results: 'Dalam tempoh tiga bulan, skor gabungan Anucha meningkat dari 58 ke 82 dan beliau menerima tawaran dari Shanghai Jiao Tong University!',
+      solution:
+        'Dengan sokongan pelbagai bahasa, tutor AI, dan pelan belajar peribadi dari sistem CSCA, Anucha telah mengatasi cabaran ini.',
+      results:
+        'Dalam tempoh tiga bulan, skor gabungan Anucha meningkat dari 58 ke 82 dan beliau menerima tawaran dari Shanghai Jiao Tong University!',
     },
     tl: {
       ...successStory,
-      story: 'Si Anucha ay isang mag-aaral ng high school mula sa Bangkok na may pangarap na mag-aral ng engineering sa isang nangungunang unibersidad sa Tsina, ngunit nakita niya ang CSCA exam na napakahirap.',
-      challenges: 'Mga hadlang sa wika, pagkakaiba sa kurikulum, at limitadong mga mapagkukunan sa paghahanda',
-      solution: 'Sa tulong ng suportang multi-language, AI tutoring, at mga personalized na study plan mula sa CSCA system, nalampasan ni Anucha ang mga hamong ito.',
-      results: 'Sa loob ng tatlong buwan, tumaas ang composite score ni Anucha mula 58 hanggang 82 at nakatanggap siya ng offer mula sa Shanghai Jiao Tong University!',
+      story:
+        'Si Anucha ay isang mag-aaral ng high school mula sa Bangkok na may pangarap na mag-aral ng engineering sa isang nangungunang unibersidad sa Tsina, ngunit nakita niya ang CSCA exam na napakahirap.',
+      challenges:
+        'Mga hadlang sa wika, pagkakaiba sa kurikulum, at limitadong mga mapagkukunan sa paghahanda',
+      solution:
+        'Sa tulong ng suportang multi-language, AI tutoring, at mga personalized na study plan mula sa CSCA system, nalampasan ni Anucha ang mga hamong ito.',
+      results:
+        'Sa loob ng tatlong buwan, tumaas ang composite score ni Anucha mula 58 hanggang 82 at nakatanggap siya ng offer mula sa Shanghai Jiao Tong University!',
     },
   };
   const localizedStory = storyByLocale[locale] ?? storyByLocale.en;
@@ -146,15 +171,14 @@ export default function CaseStudyPage() {
     <BrandShell>
       <div className="brand-light min-h-screen bg-ricepaper text-ink">
         {/* 学习案例档案 · 居中角色档案 */}
-            <section className="relative py-12 px-4">
-                <div className="max-w-3xl mx-auto">
-
-	            {/* 1. 标题区 */}
-	            <div className="text-center mb-10">
-	              <div className="inline-flex mb-6">
-	                <span className="case-plaque">
-	                  <span>★</span>
-	                  <span>学习案例</span>
+        <section className="relative py-12 px-4">
+          <div className="max-w-3xl mx-auto">
+            {/* 1. 标题区 */}
+            <div className="text-center mb-10">
+              <div className="inline-flex mb-6">
+                <span className="case-plaque">
+                  <span>★</span>
+                  <span>学习案例</span>
                 </span>
               </div>
               <h2
@@ -223,26 +247,17 @@ export default function CaseStudyPage() {
             {/* 3. 三枚战功印章横排 */}
             <div className="flex items-start justify-center gap-6 mb-10 flex-wrap">
               {/* +24分：热带绿 */}
-              <div
-                className="case-merit-seal"
-                style={{ background: '#2E9E6F', color: '#F5F0E6' }}
-              >
+              <div className="case-merit-seal" style={{ background: '#2E9E6F', color: '#F5F0E6' }}>
                 <span className="case-merit-number">+24</span>
                 <span className="case-merit-label">提升</span>
               </div>
               {/* 82分：金箔黄（≥80 甲上） */}
-              <div
-                className="case-merit-seal"
-                style={{ background: '#C4A574', color: '#3B1D0C' }}
-              >
+              <div className="case-merit-seal" style={{ background: '#C4A574', color: '#3B1D0C' }}>
                 <span className="case-merit-number">82</span>
                 <span className="case-merit-label">通过</span>
               </div>
               {/* 3个月：孔雀蓝 */}
-              <div
-                className="case-merit-seal"
-                style={{ background: '#1A9A9A', color: '#F5F0E6' }}
-              >
+              <div className="case-merit-seal" style={{ background: '#1A9A9A', color: '#F5F0E6' }}>
                 <span className="case-merit-number">3</span>
                 <span className="case-merit-label">3 个月</span>
               </div>

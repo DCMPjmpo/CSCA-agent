@@ -66,8 +66,9 @@ export function getVoyageProgress(): VoyageProgressState {
   if (Array.isArray(session.completedStages)) {
     completedStages = Array.from(
       new Set(
-        (session.completedStages as unknown[])
-          .filter((n: unknown): n is number => typeof n === 'number' && n >= 0 && n < TOTAL)
+        (session.completedStages as unknown[]).filter(
+          (n: unknown): n is number => typeof n === 'number' && n >= 0 && n < TOTAL,
+        ),
       ),
     ).sort((a, b) => a - b);
   }
@@ -157,7 +158,9 @@ export function completeStage(stageIndex: number, opts?: { nextStepKey?: string 
   const session = loadCscaSession() as SessionWithProgress | null;
   if (!session) return;
 
-  const existing = Array.isArray(session.completedStages) ? (session.completedStages as number[]) : [];
+  const existing = Array.isArray(session.completedStages)
+    ? (session.completedStages as number[])
+    : [];
   let completedStages: number[] = existing;
 
   if (!completedStages.includes(stageIndex)) {

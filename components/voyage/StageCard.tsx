@@ -54,9 +54,7 @@ export function StageCard({
   const Tag = as as any;
 
   const toneClasses: Record<NonNullable<StageCardProps['tone']>, string> = {
-    default: interactive
-      ? 'bg-white border border-[color:var(--color-border)]'
-      : 'bg-transparent',
+    default: interactive ? 'bg-white border border-[color:var(--color-border)]' : 'bg-transparent',
     paper: interactive
       ? 'bg-[color:var(--color-paper-100)] border border-[color:var(--color-border)]'
       : 'bg-[color:var(--color-paper-100)]/60',
@@ -92,7 +90,10 @@ export function StageCard({
     >
       {/* Hairline rule at the very top (for non-interactive default) */}
       {!interactive && tone === 'default' && (
-        <div className="absolute left-0 right-0 top-0 h-px bg-[color:var(--color-line-200)]" aria-hidden />
+        <div
+          className="absolute left-0 right-0 top-0 h-px bg-[color:var(--color-line-200)]"
+          aria-hidden
+        />
       )}
 
       <div
@@ -120,9 +121,7 @@ export function StageCard({
                 </div>
               )}
               <div className="min-w-0 flex-1 flex flex-col gap-2">
-                {eyebrow && (
-                  <span className="voyage-eyebrow text-[11px]">{eyebrow}</span>
-                )}
+                {eyebrow && <span className="voyage-eyebrow text-[11px]">{eyebrow}</span>}
                 {title !== undefined && (
                   <h3 className="font-editorial-title text-[22px] md:text-[24px] leading-[1.25] text-[color:var(--color-ink-900)]">
                     {title}
@@ -135,15 +134,16 @@ export function StageCard({
                 )}
               </div>
             </div>
-            {actions && (
-              <div className="flex flex-wrap items-center gap-2 shrink-0">{actions}</div>
-            )}
+            {actions && <div className="flex flex-wrap items-center gap-2 shrink-0">{actions}</div>}
           </div>
         )}
 
         {/* Rule line between header and body */}
         {children !== undefined && (index || eyebrow || title || subtitle || actions) && (
-          <div className="rule-line--strong mx-0 my-1 h-px bg-[color:var(--color-line-200)]" aria-hidden />
+          <div
+            className="rule-line--strong mx-0 my-1 h-px bg-[color:var(--color-line-200)]"
+            aria-hidden
+          />
         )}
 
         {children !== undefined && (

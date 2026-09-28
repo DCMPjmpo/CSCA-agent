@@ -193,7 +193,11 @@ export function FarScene() {
       {/* 海面（下 55%），像素海浪 tile */}
       <div
         className="scene-horizon"
-        style={{ backgroundImage: SEA_BG, backgroundSize: SEA_BG_SIZE, imageRendering: 'pixelated' }}
+        style={{
+          backgroundImage: SEA_BG,
+          backgroundSize: SEA_BG_SIZE,
+          imageRendering: 'pixelated',
+        }}
       />
       {/* 落日余晖 */}
       <div className="scene-sun" />
@@ -284,7 +288,12 @@ export function SeaChartTable({ onPortClick }: { onPortClick: (id: PortId) => vo
         {Px(LAND_ROWS)}
       </svg>
       {/* 金箔航线（议事厅精修：2px 藤黄虚线，opacity 0.8） */}
-      <svg aria-hidden className="scene-table-route" viewBox={`0 0 ${MAP_W} ${MAP_H}`} preserveAspectRatio="none">
+      <svg
+        aria-hidden
+        className="scene-table-route"
+        viewBox={`0 0 ${MAP_W} ${MAP_H}`}
+        preserveAspectRatio="none"
+      >
         <polyline
           points={SEA_ROUTE}
           fill="none"

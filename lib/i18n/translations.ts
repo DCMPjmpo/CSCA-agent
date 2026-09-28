@@ -442,15 +442,60 @@ export const en: Translations = {
     learningVoyage: 'Learning Voyage',
     voyage: {
       index: 'Voyage Overview',
-      stage1: { code: '01', eyebrow: 'DEPARTURE · DIAGNOSIS', title: 'Departure', subtitle: 'Confirm your starting point' },
-      stage2: { code: '02', eyebrow: 'VOYAGE CHART', title: 'Voyage Chart', subtitle: 'Knowledge map & dependencies' },
-      stage3: { code: '03', eyebrow: 'TRAINING', title: 'Training', subtitle: 'Training ground · daily drills' },
-      stage4: { code: '04', eyebrow: 'TRIAL', title: 'Trial Voyage', subtitle: 'Mock CSCA exam practice' },
-      stage5: { code: '05', eyebrow: 'OBSERVATION', title: 'Observation', subtitle: 'Performance analysis' },
-      stage6: { code: '06', eyebrow: 'CORRECTION', title: 'Correction', subtitle: 'Close the loop on errors' },
-      stage7: { code: '07', eyebrow: 'ROUTE', title: 'Voyage Route', subtitle: 'Personalized study plan' },
-      stage8: { code: '08', eyebrow: 'AI MATE', title: 'AI Mate', subtitle: 'Context-aware AI tutor (global)' },
-      stage9: { code: '09', eyebrow: 'DESTINATION', title: 'University Port', subtitle: 'University matching' },
+      stage1: {
+        code: '01',
+        eyebrow: 'DEPARTURE · DIAGNOSIS',
+        title: 'Departure',
+        subtitle: 'Confirm your starting point',
+      },
+      stage2: {
+        code: '02',
+        eyebrow: 'VOYAGE CHART',
+        title: 'Voyage Chart',
+        subtitle: 'Knowledge map & dependencies',
+      },
+      stage3: {
+        code: '03',
+        eyebrow: 'TRAINING',
+        title: 'Training',
+        subtitle: 'Training ground · daily drills',
+      },
+      stage4: {
+        code: '04',
+        eyebrow: 'TRIAL',
+        title: 'Trial Voyage',
+        subtitle: 'Mock CSCA exam practice',
+      },
+      stage5: {
+        code: '05',
+        eyebrow: 'OBSERVATION',
+        title: 'Observation',
+        subtitle: 'Performance analysis',
+      },
+      stage6: {
+        code: '06',
+        eyebrow: 'CORRECTION',
+        title: 'Correction',
+        subtitle: 'Close the loop on errors',
+      },
+      stage7: {
+        code: '07',
+        eyebrow: 'ROUTE',
+        title: 'Voyage Route',
+        subtitle: 'Personalized study plan',
+      },
+      stage8: {
+        code: '08',
+        eyebrow: 'AI MATE',
+        title: 'AI Mate',
+        subtitle: 'Context-aware AI tutor (global)',
+      },
+      stage9: {
+        code: '09',
+        eyebrow: 'DESTINATION',
+        title: 'University Port',
+        subtitle: 'University matching',
+      },
     },
   },
   hero: {
@@ -500,9 +545,11 @@ export const en: Translations = {
   },
   features: {
     multiAgentTitle: 'AI Voyage Crew',
-    multiAgentDesc: 'AI Mate is a global intelligent layer, not an isolated chatbot — it follows your current stage context end-to-end.',
+    multiAgentDesc:
+      'AI Mate is a global intelligent layer, not an isolated chatbot — it follows your current stage context end-to-end.',
     classroomTitle: 'Custom Classroom',
-    classroomDesc: 'Diagnosis-driven custom slides, quizzes, interactive simulations — scheduled to your voyage route.',
+    classroomDesc:
+      'Diagnosis-driven custom slides, quizzes, interactive simulations — scheduled to your voyage route.',
     sectionEyebrow: 'PLATFORM DNA',
     sectionTitle: 'A maritime archive for every stage of learning',
     sectionTitleEN: 'A MARITIME ARCHIVE FOR EVERY STAGE',
@@ -534,7 +581,8 @@ export const en: Translations = {
   },
   classroomSection: {
     title: 'Custom Classroom Generation',
-    description: 'Based on your departure-point profile and current stage needs, AI customizes your course material including slides, quizzes, interactive simulations and project activities.',
+    description:
+      'Based on your departure-point profile and current stage needs, AI customizes your course material including slides, quizzes, interactive simulations and project activities.',
     hint: 'Ctrl + Enter to generate',
     generate: 'Generate Classroom',
     generateFromErrors: 'Generate Classroom from Correction Route',
@@ -594,7 +642,8 @@ export const en: Translations = {
   },
   knowledgeMap: {
     title: 'Voyage Chart Room',
-    description: 'See what you need to learn, what you are learning, and what you already mastered — with the dependencies that explain "why".',
+    description:
+      'See what you need to learn, what you are learning, and what you already mastered — with the dependencies that explain "why".',
     selectSubject: 'Select Subject',
     generate: 'Generate Voyage Chart',
     weak: 'Weak',
@@ -609,7 +658,8 @@ export const en: Translations = {
   },
   adaptiveLearning: {
     title: 'Training Ground',
-    description: 'Goal-driven daily drills: goal, questions, instant feedback, progress. Continue the voyage when you reach the daily target.',
+    description:
+      'Goal-driven daily drills: goal, questions, instant feedback, progress. Continue the voyage when you reach the daily target.',
     generate: 'Generate Today’s Drills',
     question: 'Question',
     options: 'Options',
@@ -699,7 +749,8 @@ export const en: Translations = {
   },
   studyPlan: {
     title: 'Voyage Route',
-    description: 'A personalized route built around your exam date, current ability, weak areas and available study time.',
+    description:
+      'A personalized route built around your exam date, current ability, weak areas and available study time.',
     generate: 'Generate Voyage Route',
     weeklyVoyage: 'This Week’s Voyage',
     dayN: 'Day {{n}}',
@@ -715,7 +766,8 @@ export const en: Translations = {
   },
   ai: {
     panelEyebrow: 'AI MATE · CONTEXT',
-    contextualTitleTemplate: 'You are in the {{stage}} stage. By default, AI Mate understands: {{contextHint}}',
+    contextualTitleTemplate:
+      'You are in the {{stage}} stage. By default, AI Mate understands: {{contextHint}}',
     contextModeTitle: 'Context is linked to your current voyage',
     placeholder: 'Type your question…',
     stageDiagnosis:
@@ -821,13 +873,15 @@ export const en: Translations = {
     step4Education: 'Education System',
     start: 'Start Learning',
     skipToVoyage: 'Skip — Explore freely',
-    englishFirstHint: 'All learning content is in English. The CSCA exam is bilingual (Chinese/English).',
+    englishFirstHint:
+      'All learning content is in English. The CSCA exam is bilingual (Chinese/English).',
   },
   aiMateFallback: {
     title: 'AI Mate is in fallback mode',
     body: 'The AI service is temporarily unavailable. The response below is generic. Try again in a moment for a personalized answer.',
     retry: 'Retry',
-    contextUnavailable: 'No learning data yet — complete some practice or exams to get personalized guidance.',
+    contextUnavailable:
+      'No learning data yet — complete some practice or exams to get personalized guidance.',
   },
   advisors: advisorsContent.advisors,
 };
@@ -907,19 +961,19 @@ export const th: Partial<Translations> = {
     generating: '先生正在挥毫',
     error: '信鸽迷途，请再传一次',
     success: '呈报已准，归档在案',
-    returnBanner: "Your learning voyage has been idle for a few days. Would you like to continue?",
+    returnBanner: 'Your learning voyage has been idle for a few days. Would you like to continue?',
     lang: {
-      zh: "简体中文",
-      en: "English",
-      th: "ภาษาไทย",
-      vi: "Tiếng Việt",
-      id: "Bahasa Indonesia",
-      ms: "Bahasa Malaysia",
-      tl: "Filipino",
-      my: "မြန်မာဘာသာ",
-      km: "ភាសាខ្មែរ",
-      lo: "ພາສາລາວ"
-    }
+      zh: '简体中文',
+      en: 'English',
+      th: 'ภาษาไทย',
+      vi: 'Tiếng Việt',
+      id: 'Bahasa Indonesia',
+      ms: 'Bahasa Malaysia',
+      tl: 'Filipino',
+      my: 'မြန်မာဘာသာ',
+      km: 'ភាសាខ្មែរ',
+      lo: 'ພາສາລາວ',
+    },
   },
   chat: {
     placeholder: 'Ask AI Mate to prepare a classroom module…',
@@ -1063,12 +1117,12 @@ export const vi: Partial<Translations> = {
     prepCenter: 'Trung tâm ôn thi',
     collapse: 'Cuộn lại',
     expand: 'Mở ra',
-
   },
   hero: {
     badge: 'Hệ thống Luyện thi CSCA',
     title: 'Trợ lý Luyện thi CSCA cho Du học sinh ASEAN',
-    description: 'Chuẩn bị kỳ thi CSCA toàn diện cho du học sinh ASEAN. Lộ trình học tập cá nhân hóa bằng AI giúp bạn đỗ vào các trường đại học Trung Quốc.',
+    description:
+      'Chuẩn bị kỳ thi CSCA toàn diện cho du học sinh ASEAN. Lộ trình học tập cá nhân hóa bằng AI giúp bạn đỗ vào các trường đại học Trung Quốc.',
     cta: '扬帆起航',
   },
   flow: {
@@ -1112,7 +1166,8 @@ export const vi: Partial<Translations> = {
   },
   classroomSection: {
     title: '讲学堂生成',
-    description: 'AI sẽ tùy chỉnh nội dung khóa học dựa trên chẩn đoán và nhu cầu học tập của bạn, bao gồm slide, bài kiểm tra, mô phỏng tương tác và dự án học tập.',
+    description:
+      'AI sẽ tùy chỉnh nội dung khóa học dựa trên chẩn đoán và nhu cầu học tập của bạn, bao gồm slide, bài kiểm tra, mô phỏng tương tác và dự án học tập.',
     hint: 'Ctrl + Enter để tạo',
     generate: 'Generate Classroom',
     generateFromErrors: '📚 Tạo từ lỗi sai',
@@ -1128,19 +1183,19 @@ export const vi: Partial<Translations> = {
     generating: '先生正在挥毫',
     error: '信鸽迷途，请再传一次',
     success: '呈报已准，归档在案',
-    returnBanner: "Your learning voyage has been idle for a few days. Would you like to continue?",
+    returnBanner: 'Your learning voyage has been idle for a few days. Would you like to continue?',
     lang: {
-      zh: "简体中文",
-      en: "English",
-      th: "ภาษาไทย",
-      vi: "Tiếng Việt",
-      id: "Bahasa Indonesia",
-      ms: "Bahasa Malaysia",
-      tl: "Filipino",
-      my: "မြန်မာဘာသာ",
-      km: "ភាសាខ្មែរ",
-      lo: "ພາສາລາວ"
-    }
+      zh: '简体中文',
+      en: 'English',
+      th: 'ภาษาไทย',
+      vi: 'Tiếng Việt',
+      id: 'Bahasa Indonesia',
+      ms: 'Bahasa Malaysia',
+      tl: 'Filipino',
+      my: 'မြန်မာဘာသာ',
+      km: 'ភាសាខ្មែរ',
+      lo: 'ພາສາລາວ',
+    },
   },
   chat: {
     placeholder: 'Ask AI Mate to prepare a classroom module…',
@@ -1158,7 +1213,8 @@ export const vi: Partial<Translations> = {
   },
   diagnosis: {
     title: '探航风向标',
-    description: 'Cho chúng tôi biết về kế hoạch học tập của bạn và chúng tôi sẽ đề xuất các môn học cho kỳ thi CSCA',
+    description:
+      'Cho chúng tôi biết về kế hoạch học tập của bạn và chúng tôi sẽ đề xuất các môn học cho kỳ thi CSCA',
     targetMajor: 'Ngành mục tiêu *',
     nationality: 'Quốc tịch *',
     highSchoolSystem: 'Hệ thống trung học',
@@ -1284,12 +1340,12 @@ export const id: Partial<Translations> = {
     prepCenter: 'Pusat Persiapan',
     collapse: 'Gulung',
     expand: 'Buka',
-
   },
   hero: {
     badge: 'Sistem Persiapan CSCA',
     title: 'Asisten Persiapan CSCA untuk Mahasiswa ASEAN',
-    description: 'Persiapan ujian CSCA satu atap untuk mahasiswa ASEAN. Jalur pembelajaran personal berbasis AI untuk membantu Anda sukses dalam ujian masuk universitas Tiongkok.',
+    description:
+      'Persiapan ujian CSCA satu atap untuk mahasiswa ASEAN. Jalur pembelajaran personal berbasis AI untuk membantu Anda sukses dalam ujian masuk universitas Tiongkok.',
     cta: '扬帆起航',
   },
   flow: {
@@ -1333,7 +1389,8 @@ export const id: Partial<Translations> = {
   },
   classroomSection: {
     title: '讲学堂生成',
-    description: 'AI akan menyesuaikan konten kursus berdasarkan diagnosis dan kebutuhan belajar Anda, termasuk slide, kuis, simulasi interaktif, dan kegiatan proyek.',
+    description:
+      'AI akan menyesuaikan konten kursus berdasarkan diagnosis dan kebutuhan belajar Anda, termasuk slide, kuis, simulasi interaktif, dan kegiatan proyek.',
     hint: 'Ctrl + Enter untuk membuat',
     generate: 'Generate Classroom',
     generateFromErrors: '📚 Buat dari Kesalahan',
@@ -1349,19 +1406,19 @@ export const id: Partial<Translations> = {
     generating: '先生正在挥毫',
     error: '信鸽迷途，请再传一次',
     success: '呈报已准，归档在案',
-    returnBanner: "Your learning voyage has been idle for a few days. Would you like to continue?",
+    returnBanner: 'Your learning voyage has been idle for a few days. Would you like to continue?',
     lang: {
-      zh: "简体中文",
-      en: "English",
-      th: "ภาษาไทย",
-      vi: "Tiếng Việt",
-      id: "Bahasa Indonesia",
-      ms: "Bahasa Malaysia",
-      tl: "Filipino",
-      my: "မြန်မာဘာသာ",
-      km: "ភាសាខ្មែរ",
-      lo: "ພາສາລາວ"
-    }
+      zh: '简体中文',
+      en: 'English',
+      th: 'ภาษาไทย',
+      vi: 'Tiếng Việt',
+      id: 'Bahasa Indonesia',
+      ms: 'Bahasa Malaysia',
+      tl: 'Filipino',
+      my: 'မြန်မာဘာသာ',
+      km: 'ភាសាខ្មែរ',
+      lo: 'ພາສາລາວ',
+    },
   },
   chat: {
     placeholder: 'Ask AI Mate to prepare a classroom module…',
@@ -1379,7 +1436,8 @@ export const id: Partial<Translations> = {
   },
   diagnosis: {
     title: '探航风向标',
-    description: 'Ceritakan rencana studi Anda dan kami akan merekomendasikan mata pelajaran untuk ujian CSCA',
+    description:
+      'Ceritakan rencana studi Anda dan kami akan merekomendasikan mata pelajaran untuk ujian CSCA',
     targetMajor: 'Jurusan Target *',
     nationality: 'Kewarganegaraan *',
     highSchoolSystem: 'Sistem Sekolah Menengah',
@@ -1513,15 +1571,60 @@ export const zh: Partial<Translations> = {
     learningVoyage: '学习航程',
     voyage: {
       index: '航程概览',
-      stage1: { code: '01', eyebrow: '出发 · DEPARTURE', title: '定位', subtitle: '确定你的出发点' },
-      stage2: { code: '02', eyebrow: '航图 · VOYAGE CHART', title: '航海图', subtitle: '知识地图 & 前置关系' },
-      stage3: { code: '03', eyebrow: '训练 · TRAINING', title: '演武操练', subtitle: '训练场 · 每日训练' },
-      stage4: { code: '04', eyebrow: '试航 · TRIAL', title: '试航', subtitle: '模拟考试（练习 / 正式）' },
-      stage5: { code: '05', eyebrow: '测评 · OBSERVATION', title: '观星测运', subtitle: '能力现状 / 差距 / 下一步' },
-      stage6: { code: '06', eyebrow: '修正 · CORRECTION', title: '错题修正', subtitle: '找错 → 原因 → 训练 → 再测' },
-      stage7: { code: '07', eyebrow: '航程 · ROUTE', title: '学习航程', subtitle: '每日到每周的个性化计划' },
-      stage8: { code: '08', eyebrow: 'AI 助手 · AI MATE', title: 'AI 航海助手', subtitle: '全局智能层（理解当前阶段）' },
-      stage9: { code: '09', eyebrow: '目标 · DESTINATION', title: '院校港口', subtitle: '院校与专业匹配' },
+      stage1: {
+        code: '01',
+        eyebrow: '出发 · DEPARTURE',
+        title: '定位',
+        subtitle: '确定你的出发点',
+      },
+      stage2: {
+        code: '02',
+        eyebrow: '航图 · VOYAGE CHART',
+        title: '航海图',
+        subtitle: '知识地图 & 前置关系',
+      },
+      stage3: {
+        code: '03',
+        eyebrow: '训练 · TRAINING',
+        title: '演武操练',
+        subtitle: '训练场 · 每日训练',
+      },
+      stage4: {
+        code: '04',
+        eyebrow: '试航 · TRIAL',
+        title: '试航',
+        subtitle: '模拟考试（练习 / 正式）',
+      },
+      stage5: {
+        code: '05',
+        eyebrow: '测评 · OBSERVATION',
+        title: '观星测运',
+        subtitle: '能力现状 / 差距 / 下一步',
+      },
+      stage6: {
+        code: '06',
+        eyebrow: '修正 · CORRECTION',
+        title: '错题修正',
+        subtitle: '找错 → 原因 → 训练 → 再测',
+      },
+      stage7: {
+        code: '07',
+        eyebrow: '航程 · ROUTE',
+        title: '学习航程',
+        subtitle: '每日到每周的个性化计划',
+      },
+      stage8: {
+        code: '08',
+        eyebrow: 'AI 助手 · AI MATE',
+        title: 'AI 航海助手',
+        subtitle: '全局智能层（理解当前阶段）',
+      },
+      stage9: {
+        code: '09',
+        eyebrow: '目标 · DESTINATION',
+        title: '院校港口',
+        subtitle: '院校与专业匹配',
+      },
     },
   },
   hero: {
@@ -1625,17 +1728,17 @@ export const zh: Partial<Translations> = {
     success: '已保存。',
     returnBanner: '你已连续几天没有记录航程，今天继续。',
     lang: {
-      zh: "简体中文",
-      en: "English",
-      th: "ภาษาไทย",
-      vi: "Tiếng Việt",
-      id: "Bahasa Indonesia",
-      ms: "Bahasa Malaysia",
-      tl: "Filipino",
-      my: "မြန်မာဘာသာ",
-      km: "ភាសាខ្មែរ",
-      lo: "ພາສາລາວ"
-    }
+      zh: '简体中文',
+      en: 'English',
+      th: 'ภาษาไทย',
+      vi: 'Tiếng Việt',
+      id: 'Bahasa Indonesia',
+      ms: 'Bahasa Malaysia',
+      tl: 'Filipino',
+      my: 'မြန်မာဘာသာ',
+      km: 'ភាសាខ្មែរ',
+      lo: 'ພາສາລາວ',
+    },
   },
   chat: {
     placeholder: '向 AI 航海助手提问…',
@@ -1797,10 +1900,8 @@ export const zh: Partial<Translations> = {
     placeholder: '输入你的问题...',
     stageDiagnosis:
       '学生正在确定出发点。默认帮判断目标是否合理、国家与学制对应关系、科目组合原因说明。',
-    stageKnowledgeMap:
-      '学生正在航海图室。默认解释节点的前置关系并回答「我为什么要学这个」。',
-    stageTraining:
-      '学生正在训练场。默认分步讲解错题、推荐同类训练题，不直接给答案。',
+    stageKnowledgeMap: '学生正在航海图室。默认解释节点的前置关系并回答「我为什么要学这个」。',
+    stageTraining: '学生正在训练场。默认分步讲解错题、推荐同类训练题，不直接给答案。',
     stageTrial:
       '学生正在试航。默认做试后复盘、时间分配建议、答题策略与心态提示；试航进行中绝不泄露答案。',
     stageObservation:
@@ -1867,12 +1968,12 @@ export const ms: Partial<Translations> = {
     prepCenter: 'Pusat Persiapan',
     collapse: 'Gulung',
     expand: 'Buka',
-
   },
   hero: {
     badge: 'Sistem Persediaan CSCA',
     title: 'Pembantu Persediaan CSCA untuk Pelajar ASEAN',
-    description: 'Persediaan peperiksaan CSCA sehenti untuk pelajar ASEAN. Laluan pembelajaran peribadi dipacu AI untuk membantu anda berjaya dalam ujian masuk universiti China.',
+    description:
+      'Persediaan peperiksaan CSCA sehenti untuk pelajar ASEAN. Laluan pembelajaran peribadi dipacu AI untuk membantu anda berjaya dalam ujian masuk universiti China.',
     cta: '扬帆起航',
   },
   flow: {
@@ -1916,7 +2017,8 @@ export const ms: Partial<Translations> = {
   },
   classroomSection: {
     title: '讲学堂生成',
-    description: 'AI akan menyesuaikan kandungan kursus berdasarkan diagnosis dan keperluan pembelajaran anda, termasuk slaid, kuiz, simulasi interaktif, dan aktiviti projek.',
+    description:
+      'AI akan menyesuaikan kandungan kursus berdasarkan diagnosis dan keperluan pembelajaran anda, termasuk slaid, kuiz, simulasi interaktif, dan aktiviti projek.',
     hint: 'Ctrl + Enter untuk menjana',
     generate: 'Generate Classroom',
     generateFromErrors: '📚 Jana daripada Ralat',
@@ -1932,19 +2034,19 @@ export const ms: Partial<Translations> = {
     generating: '先生正在挥毫',
     error: '信鸽迷途，请再传一次',
     success: '呈报已准，归档在案',
-    returnBanner: "Your learning voyage has been idle for a few days. Would you like to continue?",
+    returnBanner: 'Your learning voyage has been idle for a few days. Would you like to continue?',
     lang: {
-      zh: "简体中文",
-      en: "English",
-      th: "ภาษาไทย",
-      vi: "Tiếng Việt",
-      id: "Bahasa Indonesia",
-      ms: "Bahasa Malaysia",
-      tl: "Filipino",
-      my: "မြန်မာဘာသာ",
-      km: "ភាសាខ្មែរ",
-      lo: "ພາສາລາວ"
-    }
+      zh: '简体中文',
+      en: 'English',
+      th: 'ภาษาไทย',
+      vi: 'Tiếng Việt',
+      id: 'Bahasa Indonesia',
+      ms: 'Bahasa Malaysia',
+      tl: 'Filipino',
+      my: 'မြန်မာဘာသာ',
+      km: 'ភាសាខ្មែរ',
+      lo: 'ພາສາລາວ',
+    },
   },
   chat: {
     placeholder: 'Ask AI Mate to prepare a classroom module…',
@@ -1962,7 +2064,8 @@ export const ms: Partial<Translations> = {
   },
   diagnosis: {
     title: '探航风向标',
-    description: 'Beritahu kami tentang pelan pengajian anda dan kami akan mengesyorkan subjek peperiksaan CSCA',
+    description:
+      'Beritahu kami tentang pelan pengajian anda dan kami akan mengesyorkan subjek peperiksaan CSCA',
     targetMajor: 'Jurusan Sasaran *',
     nationality: 'Kewarganegaraan *',
     highSchoolSystem: 'Sistem Sekolah Menengah',
@@ -2089,12 +2192,12 @@ export const tl: Partial<Translations> = {
     prepCenter: 'Sentro ng Paghahanda',
     collapse: 'Igulong',
     expand: 'Buksan',
-
   },
   hero: {
     badge: 'Sistema ng Paghahanda sa CSCA',
     title: 'Katulong sa Paghahanda ng CSCA para sa mga Mag-aaral ng ASEAN',
-    description: 'Isang-hintuang paghahanda sa pagsusulit CSCA para sa mga mag-aaral ng ASEAN. Pinapatnubayang AI na personalized learning path upang magtagumpay sa pagsusulit para sa unibersidad sa Tsina.',
+    description:
+      'Isang-hintuang paghahanda sa pagsusulit CSCA para sa mga mag-aaral ng ASEAN. Pinapatnubayang AI na personalized learning path upang magtagumpay sa pagsusulit para sa unibersidad sa Tsina.',
     cta: '扬帆起航',
   },
   flow: {
@@ -2138,7 +2241,8 @@ export const tl: Partial<Translations> = {
   },
   classroomSection: {
     title: '讲学堂生成',
-    description: 'Ia-customize ng AI ang nilalaman ng kurso batay sa iyong diagnosis at pangangailangan, kabilang ang mga slide, pagsusulit, simulation, at mga aktibidad ng proyekto.',
+    description:
+      'Ia-customize ng AI ang nilalaman ng kurso batay sa iyong diagnosis at pangangailangan, kabilang ang mga slide, pagsusulit, simulation, at mga aktibidad ng proyekto.',
     hint: 'Ctrl + Enter upang makabuo',
     generate: 'Generate Classroom',
     generateFromErrors: '📚 Mula sa Error',
@@ -2154,19 +2258,19 @@ export const tl: Partial<Translations> = {
     generating: '先生正在挥毫',
     error: '信鸽迷途，请再传一次',
     success: '呈报已准，归档在案',
-    returnBanner: "Your learning voyage has been idle for a few days. Would you like to continue?",
+    returnBanner: 'Your learning voyage has been idle for a few days. Would you like to continue?',
     lang: {
-      zh: "简体中文",
-      en: "English",
-      th: "ภาษาไทย",
-      vi: "Tiếng Việt",
-      id: "Bahasa Indonesia",
-      ms: "Bahasa Malaysia",
-      tl: "Filipino",
-      my: "မြန်မာဘာသာ",
-      km: "ភាសាខ្មែរ",
-      lo: "ພາສາລາວ"
-    }
+      zh: '简体中文',
+      en: 'English',
+      th: 'ภาษาไทย',
+      vi: 'Tiếng Việt',
+      id: 'Bahasa Indonesia',
+      ms: 'Bahasa Malaysia',
+      tl: 'Filipino',
+      my: 'မြန်မာဘာသာ',
+      km: 'ភាសាខ្មែរ',
+      lo: 'ພາສາລາວ',
+    },
   },
   chat: {
     placeholder: 'Ask AI Mate to prepare a classroom module…',
@@ -2184,7 +2288,8 @@ export const tl: Partial<Translations> = {
   },
   diagnosis: {
     title: '探航风向标',
-    description: 'Sabihin sa amin ang tungkol sa iyong plano sa pag-aaral at irerekomenda namin ang mga paksa para sa CSCA exam',
+    description:
+      'Sabihin sa amin ang tungkol sa iyong plano sa pag-aaral at irerekomenda namin ang mga paksa para sa CSCA exam',
     targetMajor: 'Target Major *',
     nationality: 'Nasyonalidad *',
     highSchoolSystem: 'Sistema ng Mataas na Paaralan',
@@ -2217,7 +2322,8 @@ export const tl: Partial<Translations> = {
   },
   mockExam: {
     title: 'Mock Exam',
-    description: 'Kumpletuhin ang isang buong CSCA-style mock exam upang masuri ang iyong kahandaan',
+    description:
+      'Kumpletuhin ang isang buong CSCA-style mock exam upang masuri ang iyong kahandaan',
     start: 'Simulan ang Exam',
     time: 'Oras',
     answered: 'Sinagot',
@@ -2268,7 +2374,8 @@ export const tl: Partial<Translations> = {
   },
   scoreAnalysis: {
     title: '观星测运',
-    description: 'Makakuha ng detalyadong pagsusuri ng iyong pagganap at mga mungkahi sa pagpapabuti',
+    description:
+      'Makakuha ng detalyadong pagsusuri ng iyong pagganap at mga mungkahi sa pagpapabuti',
     analyze: 'Suriin ang Marka',
     totalScore: 'Kabuuan ng Marka',
     percentile: 'Ranking Percentile',
@@ -2306,7 +2413,8 @@ export const tl: Partial<Translations> = {
 export const my: Partial<Translations> = {
   brand: {
     name: 'နန်ယန် အကယ်ဒမီ',
-    slogan: 'ASEAN ကျောင်းသားများအတွက် တရုတ်နိုင်ငံ ပညာသင် ပြည့်စုံသော စာမေးပွဲ ပြင်ဆင်ရေး ပလက်ဖောင်း',
+    slogan:
+      'ASEAN ကျောင်းသားများအတွက် တရုတ်နိုင်ငံ ပညာသင် ပြည့်စုံသော စာမေးပွဲ ပြင်ဆင်ရေး ပလက်ဖောင်း',
   },
   nav: {
     home: 'ပင်လယ်ရေး ဦးစီးဌာန',
@@ -2319,7 +2427,8 @@ export const my: Partial<Translations> = {
   hero: {
     badge: 'CSCA စာမေးပွဲ ပြင်ဆင်ရေး စနစ်',
     title: 'ASEAN ကျောင်းသားများအတွက် CSCA စာမေးပွဲ ပြင်ဆင်ရေး လက်ထောက်',
-    description: 'ASEAN နိုင်ငံဆယ်နိုင်ငံကျောင်းသားများအတွက် တစ်နေရာတည်းတွင် CSCA စာမေးပွဲ ပြင်ဆင်ရေး ခရီးစဉ် စီစဉ်ခြင်း',
+    description:
+      'ASEAN နိုင်ငံဆယ်နိုင်ငံကျောင်းသားများအတွက် တစ်နေရာတည်းတွင် CSCA စာမေးပွဲ ပြင်ဆင်ရေး ခရီးစဉ် စီစဉ်ခြင်း',
     cta: 'ခရီးစဉ် စတင်ရန်',
   },
   sandbox: {
@@ -2328,23 +2437,24 @@ export const my: Partial<Translations> = {
     progress: 'ရေကြောင်း {{n}} ခု မှတ်တမ်းတင်ထားသည်',
   },
   common: {
-    welcome: 'တပ်မှူးကြီး၊ မင်္ဂလာပါ။ ကျွန်ုပ်မှာ ဇင်ဟီ ဖြစ်ပါသည်။ ယနေ့ လေပန်းကောင်းသည်၊ ဆိပ်ကမ်းမှမှ ထွက်ခွာမည်နည်း။',
+    welcome:
+      'တပ်မှူးကြီး၊ မင်္ဂလာပါ။ ကျွန်ုပ်မှာ ဇင်ဟီ ဖြစ်ပါသည်။ ယနေ့ လေပန်းကောင်းသည်၊ ဆိပ်ကမ်းမှမှ ထွက်ခွာမည်နည်း။',
     loading: 'ဇင်ဟီ ပြင်ဆင်နေသည်…',
     error: 'ပို့ဆောင်ရန် မအောင်မြင်၊ ပြန်လည်ကြိုးစားပါ',
     success: 'တင်ပြခြင်း အောင်မြင်ပါသည်',
-    returnBanner: "Your learning voyage has been idle for a few days. Would you like to continue?",
+    returnBanner: 'Your learning voyage has been idle for a few days. Would you like to continue?',
     lang: {
-      zh: "简体中文",
-      en: "English",
-      th: "ภาษาไทย",
-      vi: "Tiếng Việt",
-      id: "Bahasa Indonesia",
-      ms: "Bahasa Malaysia",
-      tl: "Filipino",
-      my: "မြန်မာဘာသာ",
-      km: "ភាសាខ្មែរ",
-      lo: "ພາສາລາວ"
-    }
+      zh: '简体中文',
+      en: 'English',
+      th: 'ภาษาไทย',
+      vi: 'Tiếng Việt',
+      id: 'Bahasa Indonesia',
+      ms: 'Bahasa Malaysia',
+      tl: 'Filipino',
+      my: 'မြန်မာဘာသာ',
+      km: 'ភាសាខ្មែរ',
+      lo: 'ພາສາລາວ',
+    },
   },
   diagnosis: {
     title: 'ရေကြောင်း စစ်ဆေးရေး ရုံး',
@@ -2387,19 +2497,19 @@ export const km: Partial<Translations> = {
     loading: 'ចេងហូកំពុងរៀបចំ…',
     error: 'ការផ្ញើបរាជ័យ សូមព្យាយាមម្តងទៀត',
     success: 'បានដាក់ស្នើដោយជោគជ័យ',
-    returnBanner: "Your learning voyage has been idle for a few days. Would you like to continue?",
+    returnBanner: 'Your learning voyage has been idle for a few days. Would you like to continue?',
     lang: {
-      zh: "简体中文",
-      en: "English",
-      th: "ภาษาไทย",
-      vi: "Tiếng Việt",
-      id: "Bahasa Indonesia",
-      ms: "Bahasa Malaysia",
-      tl: "Filipino",
-      my: "မြန်မာဘာသာ",
-      km: "ភាសាខ្មែរ",
-      lo: "ພາສາລາວ"
-    }
+      zh: '简体中文',
+      en: 'English',
+      th: 'ภาษาไทย',
+      vi: 'Tiếng Việt',
+      id: 'Bahasa Indonesia',
+      ms: 'Bahasa Malaysia',
+      tl: 'Filipino',
+      my: 'မြန်မာဘာသာ',
+      km: 'ភាសាខ្មែរ',
+      lo: 'ພາສາລາວ',
+    },
   },
   diagnosis: {
     title: 'ផ្នែកស្ទង់ផ្លូវទឹក',
@@ -2442,19 +2552,19 @@ export const lo: Partial<Translations> = {
     loading: 'ເຈິ້ນເຮີກຳລັງກະກຽມ…',
     error: 'ສົ່ງບໍ່ສຳເລັດ, ກະລຸນາລອງໃໝ່',
     success: 'ສົ່ງສຳເລັດແລ້ວ',
-    returnBanner: "Your learning voyage has been idle for a few days. Would you like to continue?",
+    returnBanner: 'Your learning voyage has been idle for a few days. Would you like to continue?',
     lang: {
-      zh: "简体中文",
-      en: "English",
-      th: "ภาษาไทย",
-      vi: "Tiếng Việt",
-      id: "Bahasa Indonesia",
-      ms: "Bahasa Malaysia",
-      tl: "Filipino",
-      my: "မြန်မာဘာသာ",
-      km: "ភាសាខ្មែរ",
-      lo: "ພາສາລາວ"
-    }
+      zh: '简体中文',
+      en: 'English',
+      th: 'ภาษาไทย',
+      vi: 'Tiếng Việt',
+      id: 'Bahasa Indonesia',
+      ms: 'Bahasa Malaysia',
+      tl: 'Filipino',
+      my: 'မြန်မာဘာသာ',
+      km: 'ភាសាខ្មែរ',
+      lo: 'ພາສາລາວ',
+    },
   },
   diagnosis: {
     title: 'ກົມສຳຫຼວດເສັນທາງ',
@@ -2613,27 +2723,31 @@ export const ja: Partial<Translations> = {
     title: 'AIメイトはフォールバックモードです',
     body: 'AIサービスは一時的に利用できません。以下の回答は一般的なものです。個別回答は後ほど再試行してください。',
     retry: '再試行',
-    contextUnavailable: '学習データがまだありません — 練習や試験を完了すると、個別ガイダンスが得られます。',
+    contextUnavailable:
+      '学習データがまだありません — 練習や試験を完了すると、個別ガイダンスが得られます。',
   },
 };
 
 export const fr: Partial<Translations> = {
-  brand: { name: 'Académie Nanyang', slogan: 'Plateforme de préparation CSCA pour les étudiants de l\'ASEAN' },
+  brand: {
+    name: 'Académie Nanyang',
+    slogan: "Plateforme de préparation CSCA pour les étudiants de l'ASEAN",
+  },
   nav: {
-    tagline: 'Voyage d\'apprentissage CSCA',
+    tagline: "Voyage d'apprentissage CSCA",
     home: 'Aperçu du voyage',
-    caseStudy: 'Témoignages d\'étudiants',
+    caseStudy: "Témoignages d'étudiants",
     aiAssistant: 'Hall du compagnon IA',
     classroom: 'Salle de classe Nanyang',
-    prepCenter: 'Voyage d\'apprentissage',
+    prepCenter: "Voyage d'apprentissage",
     collapse: 'Réduire',
     expand: 'Développer',
-    learningVoyage: 'Voyage d\'apprentissage',
+    learningVoyage: "Voyage d'apprentissage",
   },
   hero: {
     badge: 'VOTRE VOYAGE CSCA',
-    title: 'Votre voyage d\'apprentissage CSCA',
-    description: 'De la définition du cap à la maîtrise de la carte jusqu\'à la réussite du CSCA.',
+    title: "Votre voyage d'apprentissage CSCA",
+    description: "De la définition du cap à la maîtrise de la carte jusqu'à la réussite du CSCA.",
     cta: 'Commencer mon voyage',
     secondaryCta: 'Voir la carte du voyage',
   },
@@ -2666,7 +2780,7 @@ export const fr: Partial<Translations> = {
     mastered: 'Maîtrisé',
   },
   adaptiveLearning: {
-    title: 'Terrain d\'entraînement',
+    title: "Terrain d'entraînement",
     description: 'Exercices quotidiens avec feedback instantané',
     question: 'Question',
     options: 'Options',
@@ -2685,14 +2799,14 @@ export const fr: Partial<Translations> = {
     completed: 'Terminé',
     selectSubjects: 'Choisir les matières',
     correct: 'Correct',
-    examScore: 'Score d\'examen',
+    examScore: "Score d'examen",
   },
   scoreAnalysis: {
     title: 'Analyse des résultats',
-    description: 'Analyse de performance et plan d\'amélioration',
+    description: "Analyse de performance et plan d'amélioration",
     totalScore: 'Score total',
     weakPoints: 'Points faibles',
-    improvement: 'Plan d\'amélioration',
+    improvement: "Plan d'amélioration",
   },
   steps: {
     diagnosis: 'Diagnostic',
@@ -2704,7 +2818,7 @@ export const fr: Partial<Translations> = {
     aiTutor: 'Tuteur IA',
   },
   flow: {
-    title: 'Voyage d\'apprentissage',
+    title: "Voyage d'apprentissage",
     progress: 'Progression',
     errorReview: 'Parcours de correction',
     studyPlan: 'Plan de voyage',
@@ -2712,8 +2826,8 @@ export const fr: Partial<Translations> = {
     languageHint: 'Vous parlez français ? Changez de langue en haut à droite.',
   },
   dashboard: {
-    title: 'Tableau de bord d\'apprentissage',
-    subtitle: 'Votre voyage d\'apprentissage personnalisé',
+    title: "Tableau de bord d'apprentissage",
+    subtitle: "Votre voyage d'apprentissage personnalisé",
     welcome: 'Bon retour',
     resumeWhere: 'Reprendre à',
     startVoyage: 'Commencer votre voyage',
@@ -2734,7 +2848,7 @@ export const fr: Partial<Translations> = {
   wrongAnswerCenter: {
     title: 'Centre des erreurs',
     subtitle: 'Révisez et corrigez vos erreurs',
-    empty: 'Aucune erreur pour l\'instant — terminez d\'abord un examen blanc',
+    empty: "Aucune erreur pour l'instant — terminez d'abord un examen blanc",
     filterAll: 'Toutes',
     filterSubject: 'Matière',
     filterDifficulty: 'Difficulté',
@@ -2749,20 +2863,22 @@ export const fr: Partial<Translations> = {
   },
   onboarding: {
     title: 'Bienvenue au CSCA',
-    welcome: 'Parlez-nous de vous pour personnaliser votre voyage d\'apprentissage',
+    welcome: "Parlez-nous de vous pour personnaliser votre voyage d'apprentissage",
     step1Country: 'Votre pays',
     step2Hsk: 'Niveau HSK',
     step3Major: 'Spécialité cible',
     step4Education: 'Système éducatif',
-    start: 'Commencer l\'apprentissage',
+    start: "Commencer l'apprentissage",
     skipToVoyage: 'Passer — Explorer librement',
-    englishFirstHint: 'Tout le contenu d\'apprentissage est en anglais. L\'examen CSCA est bilingue (chinois/anglais).',
+    englishFirstHint:
+      "Tout le contenu d'apprentissage est en anglais. L'examen CSCA est bilingue (chinois/anglais).",
   },
   aiMateFallback: {
     title: 'Le compagnon IA est en mode secours',
     body: 'Le service IA est temporairement indisponible. La réponse ci-dessous est générique. Réessayez dans un instant pour une réponse personnalisée.',
     retry: 'Réessayer',
-    contextUnavailable: 'Pas encore de données d\'apprentissage — complétez des exercices ou examens pour obtenir des conseils personnalisés.',
+    contextUnavailable:
+      "Pas encore de données d'apprentissage — complétez des exercices ou examens pour obtenir des conseils personnalisés.",
   },
 };
 
@@ -2782,18 +2898,18 @@ export const translations: Record<string, Partial<Translations>> = {
 };
 
 export const LANGUAGES = [
-  { code: 'zh', name:'简体中文', flag: 'CN' },
-  { code: 'en', name:'English', flag: 'US' },
-  { code: 'th', name:'ภาษาไทย', flag: 'TH' },
-  { code: 'vi', name:'Tiếng Việt', flag: 'VN' },
-  { code: 'id', name:'Bahasa Indonesia', flag: 'ID' },
-  { code: 'ms', name:'Bahasa Malaysia', flag: 'MY' },
-  { code: 'tl', name:'Filipino', flag: 'PH' },
-  { code: 'my', name:'မြန်မာဘာသာ', flag: 'MM' },
-  { code: 'km', name:'ភាសាខ្មែរ', flag: 'KH' },
-  { code: 'lo', name:'ພາສາລາວ', flag: 'LA' },
-  { code: 'ja', name:'日本語', flag: 'JP' },
-  { code: 'fr', name:'Français', flag: 'FR' },
+  { code: 'zh', name: '简体中文', flag: 'CN' },
+  { code: 'en', name: 'English', flag: 'US' },
+  { code: 'th', name: 'ภาษาไทย', flag: 'TH' },
+  { code: 'vi', name: 'Tiếng Việt', flag: 'VN' },
+  { code: 'id', name: 'Bahasa Indonesia', flag: 'ID' },
+  { code: 'ms', name: 'Bahasa Malaysia', flag: 'MY' },
+  { code: 'tl', name: 'Filipino', flag: 'PH' },
+  { code: 'my', name: 'မြန်မာဘာသာ', flag: 'MM' },
+  { code: 'km', name: 'ភាសាខ្មែរ', flag: 'KH' },
+  { code: 'lo', name: 'ພາສາລາວ', flag: 'LA' },
+  { code: 'ja', name: '日本語', flag: 'JP' },
+  { code: 'fr', name: 'Français', flag: 'FR' },
 ];
 
 export function getTranslation(locale: string): Translations {
@@ -2810,7 +2926,14 @@ function deepMerge<T extends object>(source: T, override: Partial<T> | undefined
     const ov = override[key];
     if (ov === undefined) continue;
     const src = result[key];
-    if (ov && typeof ov === 'object' && !Array.isArray(ov) && src && typeof src === 'object' && !Array.isArray(src)) {
+    if (
+      ov &&
+      typeof ov === 'object' &&
+      !Array.isArray(ov) &&
+      src &&
+      typeof src === 'object' &&
+      !Array.isArray(src)
+    ) {
       result[key] = deepMerge(src as any, ov as any);
     } else {
       result[key] = ov;

@@ -53,8 +53,7 @@ const PALETTE: Record<string, string> = {
 };
 
 /** 行构造器：c 连续 n 像素从 o 起，右补齐到 32 */
-const r = (c: string, o: number, n: number) =>
-  '.'.repeat(o) + c.repeat(n) + '.'.repeat(32 - o - n);
+const r = (c: string, o: number, n: number) => '.'.repeat(o) + c.repeat(n) + '.'.repeat(32 - o - n);
 
 /** 把 prop 图层盖到 base 上（非 '.' 覆盖），返回新 32×32 网格 */
 function blit(base: string[], prop: string[], ox: number, oy: number): string[] {
@@ -359,37 +358,17 @@ const FEI_XIN_PROPS = [
   {
     ox: 24,
     oy: 12,
-    rows: [
-      '......GG',
-      '.....GPP',
-      '....GPP.',
-      '...GPP..',
-      '..GPP...',
-      '.GPP....',
-    ],
+    rows: ['......GG', '.....GPP', '....GPP.', '...GPP..', '..GPP...', '.GPP....'],
   },
   {
     ox: 2,
     oy: 9,
-    rows: [
-      '...GWWW.',
-      '..WWWWWW',
-      '.WWWWWWW',
-      '.WPPPPWW',
-      '..K...K.',
-    ],
+    rows: ['...GWWW.', '..WWWWWW', '.WWWWWWW', '.WPPPPWW', '..K...K.'],
   },
   {
     ox: 0,
     oy: 16,
-    rows: [
-      '...PPPP..',
-      '...PPPP..',
-      '..PPPPPP.',
-      '..PPPPPP.',
-      '.PPVPPPP.',
-      '.PPPPPPPP',
-    ],
+    rows: ['...PPPP..', '...PPPP..', '..PPPPPP.', '..PPPPPP.', '.PPVPPPP.', '.PPPPPPPP'],
   },
 ];
 
@@ -434,14 +413,7 @@ const HOU_XIAN_PROPS = [
   {
     ox: 21,
     oy: 13,
-    rows: [
-      'GGGGGGGGGG',
-      '.VVVVVVVV.',
-      'GGGGGGGGGG',
-      '.VVVVVVVV.',
-      '.VVVVVVVV.',
-      'GGGGGGGGGG',
-    ],
+    rows: ['GGGGGGGGGG', '.VVVVVVVV.', 'GGGGGGGGGG', '.VVVVVVVV.', '.VVVVVVVV.', 'GGGGGGGGGG'],
   },
   {
     ox: 1,
@@ -465,14 +437,7 @@ const ZHANG_DA_PROPS = [
   {
     ox: 22,
     oy: 8,
-    rows: [
-      '.PPPPPPP.',
-      '.PIIPPIP.',
-      '.PPPPPPP.',
-      '.PPIPIIP.',
-      '.PPPPPPP.',
-      '.PPPPPPP.',
-    ],
+    rows: ['.PPPPPPP.', '.PIIPPIP.', '.PPPPPPP.', '.PPIPIIP.', '.PPPPPPP.', '.PPPPPPP.'],
   },
   {
     ox: 27,
@@ -530,16 +495,7 @@ const LI_BIN_PROPS = [
   {
     ox: 25,
     oy: 15,
-    rows: [
-      '....GG',
-      '...GGG',
-      '...GGS',
-      '..GSS.',
-      '..GSS.',
-      '.GSS..',
-      '.SS...',
-      'K.....',
-    ],
+    rows: ['....GG', '...GGG', '...GGS', '..GSS.', '..GSS.', '.GSS..', '.SS...', 'K.....'],
   },
   {
     ox: 2,
@@ -621,9 +577,7 @@ function P(rows: string[], ox = 0, oy = 0): ReactNode {
       if (c === '.' || c === ' ') continue;
       const fill = PALETTE[c];
       if (!fill) throw new Error(`[advisors] 未知颜色 "${c}" @${x},${y}`);
-      rects.push(
-        <rect key={`${x},${y}`} x={x + ox} y={y + oy} width={1} height={1} fill={fill} />,
-      );
+      rects.push(<rect key={`${x},${y}`} x={x + ox} y={y + oy} width={1} height={1} fill={fill} />);
     }
   });
   return rects;
@@ -675,9 +629,7 @@ export function PixelAdvisor({
       </g>
       {/* 拱手/抱拳叠层（独立于呼吸身，随 motion 淡入） */}
       {handsVisible && (
-        <g className="advisor-hands">
-          {P(GREET_HANDS.rows, GREET_HANDS.ox, GREET_HANDS.oy)}
-        </g>
+        <g className="advisor-hands">{P(GREET_HANDS.rows, GREET_HANDS.ox, GREET_HANDS.oy)}</g>
       )}
       {/* 身旁道具静止（独立于呼吸身） */}
       {(PROPS[id] ?? []).map((p, i) => (

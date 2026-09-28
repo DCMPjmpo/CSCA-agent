@@ -1,12 +1,20 @@
 import { describe, it, expect } from 'vitest';
 
-import { computeForceLayout, type ForceLayoutNodeInput, type ForceLayoutEdgeInput } from '@/lib/csca/knowledge-graph-layout';
+import {
+  computeForceLayout,
+  type ForceLayoutNodeInput,
+  type ForceLayoutEdgeInput,
+} from '@/lib/csca/knowledge-graph-layout';
 
 const WIDTH = 640;
 const HEIGHT = 320;
 
 function chainNodes(count: number, prefix = 'n'): ForceLayoutNodeInput[] {
-  return Array.from({ length: count }, (_, i) => ({ id: `${prefix}${i}`, category: 0, symbolSize: 28 }));
+  return Array.from({ length: count }, (_, i) => ({
+    id: `${prefix}${i}`,
+    category: 0,
+    symbolSize: 28,
+  }));
 }
 
 function chainEdges(nodes: ForceLayoutNodeInput[]): ForceLayoutEdgeInput[] {
@@ -56,12 +64,12 @@ describe('computeForceLayout', () => {
 
   it('pulls edge-connected nodes closer than unrelated pairs', () => {
     // 6-node chain + 6 isolated nodes
-    const nodes: ForceLayoutNodeInput[] = [
-      ...chainNodes(6, 'chain'),
-      ...chainNodes(6, 'iso'),
-    ];
+    const nodes: ForceLayoutNodeInput[] = [...chainNodes(6, 'chain'), ...chainNodes(6, 'iso')];
     const edges = chainEdges(nodes.filter((n) => n.id.startsWith('chain')));
-    const positions = computeForceLayout(nodes, edges, WIDTH, HEIGHT, { edgeLength: 60, iterations: 200 });
+    const positions = computeForceLayout(nodes, edges, WIDTH, HEIGHT, {
+      edgeLength: 60,
+      iterations: 200,
+    });
 
     const byId = new Map(positions.map((p) => [p.id, p]));
     const dist = (a: string, b: string) => {
@@ -88,7 +96,12 @@ describe('computeForceLayout', () => {
   });
 
   it('single node sits at center within bounds', () => {
-    const positions = computeForceLayout([{ id: 'only', category: 0, symbolSize: 28 }], [], WIDTH, HEIGHT);
+    const positions = computeForceLayout(
+      [{ id: 'only', category: 0, symbolSize: 28 }],
+      [],
+      WIDTH,
+      HEIGHT,
+    );
     expect(positions).toHaveLength(1);
     expect(positions[0].id).toBe('only');
     expect(Number.isFinite(positions[0].x)).toBe(true);

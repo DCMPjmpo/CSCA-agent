@@ -22,7 +22,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['李白', '杜甫', '白居易', '王维'],
     correctAnswer: 0,
     explanation: '这是唐代诗人李白的《静夜思》，表达了诗人的思乡之情。',
-    englishTerm: 'Jing Ye Si'
+    englishTerm: 'Jing Ye Si',
   },
   {
     id: 'lit-002',
@@ -31,16 +31,17 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['春季', '夏季', '秋季', '冬季'],
     correctAnswer: 0,
     explanation: '诗中"春眠"、"花落"等词语表明这是春天。',
-    englishTerm: 'Spring Morning'
+    englishTerm: 'Spring Morning',
   },
   {
     id: 'lit-003',
     module: '古诗词',
-    question: '"独在异乡为异客，每逢佳节倍思亲。遥知兄弟登高处，遍插茱萸少一人。"这首诗中的"佳节"指的是：',
+    question:
+      '"独在异乡为异客，每逢佳节倍思亲。遥知兄弟登高处，遍插茱萸少一人。"这首诗中的"佳节"指的是：',
     options: ['春节', '中秋节', '重阳节', '端午节'],
     correctAnswer: 2,
     explanation: '重阳节有登高、插茱萸的习俗，诗中"登高处"、"遍插茱萸"点明了这是重阳节。',
-    englishTerm: 'Double Ninth Festival'
+    englishTerm: 'Double Ninth Festival',
   },
   {
     id: 'lit-004',
@@ -49,7 +50,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['五言绝句', '七言绝句', '五言律诗', '七言律诗'],
     correctAnswer: 3,
     explanation: '这首杜甫的《绝句》是七言律诗，每句七个字，共四句。',
-    englishTerm: 'Seven-character Quatrain'
+    englishTerm: 'Seven-character Quatrain',
   },
   {
     id: 'lit-005',
@@ -58,7 +59,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['封建礼教', '国民劣根性', '帝国主义', '官僚主义'],
     correctAnswer: 1,
     explanation: '《阿Q正传》通过阿Q这个人物形象，批判了国民的劣根性，如精神胜利法等。',
-    englishTerm: 'The True Story of Ah Q'
+    englishTerm: 'The True Story of Ah Q',
   },
   {
     id: 'lit-006',
@@ -67,7 +68,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['抗日战争时期', '解放战争时期', '民国初年', '20世纪30年代'],
     correctAnswer: 3,
     explanation: '《子夜》描写了20世纪30年代中国社会的黑暗现实，展现了民族资本家的悲剧命运。',
-    englishTerm: 'Midnight'
+    englishTerm: 'Midnight',
   },
   {
     id: 'lit-007',
@@ -76,7 +77,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['鲁迅', '朱自清', '巴金', '老舍'],
     correctAnswer: 1,
     explanation: '《荷塘月色》是朱自清的著名散文，描写了清华园荷塘的月色美景。',
-    englishTerm: 'Moonlight over the Lotus Pond'
+    englishTerm: 'Moonlight over the Lotus Pond',
   },
   {
     id: 'lit-008',
@@ -85,7 +86,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['《红楼梦》', '《三国演义》', '《水浒传》', '《聊斋志异》'],
     correctAnswer: 3,
     explanation: '中国古代四大名著是《红楼梦》、《三国演义》、《水浒传》和《西游记》。',
-    englishTerm: 'Four Great Classical Novels'
+    englishTerm: 'Four Great Classical Novels',
   },
   {
     id: 'lit-009',
@@ -94,7 +95,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['《大学》', '《中庸》', '《论语》', '《诗经》'],
     correctAnswer: 3,
     explanation: '四书包括《大学》、《中庸》、《论语》和《孟子》。《诗经》属于五经。',
-    englishTerm: 'Four Books'
+    englishTerm: 'Four Books',
   },
   {
     id: 'lit-010',
@@ -103,7 +104,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['李白', '杜甫', '屈原', '陶渊明'],
     correctAnswer: 2,
     explanation: '屈原是中国文学史上第一位伟大的诗人，代表作《离骚》是中国古代最长的抒情诗。',
-    englishTerm: 'Qu Yuan'
+    englishTerm: 'Qu Yuan',
   },
   {
     id: 'lit-011',
@@ -112,7 +113,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['李白', '杜甫', '陆游', '苏轼'],
     correctAnswer: 2,
     explanation: '这是陆游《游山西村》中的名句，表达了困境中可能出现转机的哲理。',
-    englishTerm: 'A New Village'
+    englishTerm: 'A New Village',
   },
   {
     id: 'lit-012',
@@ -121,7 +122,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['思乡之情', '爱国情怀', '山水之乐', '爱情相思'],
     correctAnswer: 1,
     explanation: '这是文天祥的名句，表达了诗人视死如归的爱国情怀。',
-    englishTerm: 'Loyalty'
+    englishTerm: 'Loyalty',
   },
   {
     id: 'lit-013',
@@ -130,7 +131,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['《家》', '《春》', '《秋》', '《雾》'],
     correctAnswer: 3,
     explanation: '巴金的"激流三部曲"是《家》、《春》、《秋》。《雾》是"爱情三部曲"之一。',
-    englishTerm: 'Torrent Trilogy'
+    englishTerm: 'Torrent Trilogy',
   },
   {
     id: 'lit-014',
@@ -139,7 +140,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['一个茶馆的兴衰', '一个家族的变迁', '一个人的命运', '一个城市的发展'],
     correctAnswer: 0,
     explanation: '《茶馆》通过一个茶馆在不同时代的变化，反映了中国近代社会的变迁。',
-    englishTerm: 'Teahouse'
+    englishTerm: 'Teahouse',
   },
   {
     id: 'lit-015',
@@ -148,7 +149,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['孔子', '孟子', '屈原', '宋玉'],
     correctAnswer: 2,
     explanation: '屈原是"楚辞"的创立者和代表作家，其作品具有独特的浪漫主义风格。',
-    englishTerm: 'Chu Ci'
+    englishTerm: 'Chu Ci',
   },
   {
     id: 'lit-016',
@@ -157,7 +158,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['美人', '月亮', '花朵', '美酒'],
     correctAnswer: 1,
     explanation: '"婵娟"在这里指月亮，表达了对亲人的思念和美好祝愿。',
-    englishTerm: 'Moon'
+    englishTerm: 'Moon',
   },
   {
     id: 'lit-017',
@@ -166,7 +167,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['积极进取', '归隐田园', '追求功名', '忧国忧民'],
     correctAnswer: 1,
     explanation: '这是陶渊明的诗句，表现了诗人归隐田园、悠然自得的生活态度。',
-    englishTerm: 'Retirement'
+    englishTerm: 'Retirement',
   },
   {
     id: 'lit-018',
@@ -175,7 +176,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['小说', '散文', '诗歌', '戏剧'],
     correctAnswer: 2,
     explanation: '《女神》是郭沫若的诗歌集，是中国现代诗歌的代表作之一。',
-    englishTerm: 'Goddess'
+    englishTerm: 'Goddess',
   },
   {
     id: 'lit-019',
@@ -184,7 +185,7 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     options: ['《楚辞》', '《诗经》', '《唐诗三百首》', '《乐府诗集》'],
     correctAnswer: 1,
     explanation: '《诗经》是中国最早的诗歌总集，收录了西周至春秋时期的诗歌。',
-    englishTerm: 'The Book of Songs'
+    englishTerm: 'The Book of Songs',
   },
   {
     id: 'lit-020',
@@ -192,8 +193,9 @@ const literatureQuestions: ArtsChineseQuestion[] = [
     question: '"建安文学"的代表人物不包括：',
     options: ['曹操', '曹丕', '曹植', '陶渊明'],
     correctAnswer: 3,
-    explanation: '建安文学的代表人物是"三曹"（曹操、曹丕、曹植）和"建安七子"。陶渊明是东晋时期的诗人。',
-    englishTerm: 'Jian\'an Literature'
+    explanation:
+      '建安文学的代表人物是"三曹"（曹操、曹丕、曹植）和"建安七子"。陶渊明是东晋时期的诗人。',
+    englishTerm: "Jian'an Literature",
   },
 ];
 
@@ -206,7 +208,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['夏朝', '商朝', '周朝', '秦朝'],
     correctAnswer: 3,
     explanation: '秦朝是中国历史上第一个统一的中央集权制封建王朝，由秦始皇建立。',
-    englishTerm: 'Qin Dynasty'
+    englishTerm: 'Qin Dynasty',
   },
   {
     id: 'hist-002',
@@ -215,7 +217,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['李渊', '李世民', '李隆基', '李治'],
     correctAnswer: 0,
     explanation: '李渊是唐朝的开国皇帝，庙号唐高祖。李世民是第二位皇帝。',
-    englishTerm: 'Tang Dynasty'
+    englishTerm: 'Tang Dynasty',
   },
   {
     id: 'hist-003',
@@ -224,7 +226,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['1905年', '1911年', '1919年', '1921年'],
     correctAnswer: 1,
     explanation: '辛亥革命发生于1911年，推翻了清朝的统治，结束了中国两千多年的封建帝制。',
-    englishTerm: 'Xinhai Revolution'
+    englishTerm: 'Xinhai Revolution',
   },
   {
     id: 'hist-004',
@@ -233,7 +235,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['秦朝', '汉朝', '明朝', '春秋战国时期'],
     correctAnswer: 3,
     explanation: '长城最早修建于春秋战国时期，秦始皇统一后将各国的长城连接起来。',
-    englishTerm: 'Great Wall'
+    englishTerm: 'Great Wall',
   },
   {
     id: 'hist-005',
@@ -242,7 +244,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['造纸术', '印刷术', '蒸汽机', '指南针'],
     correctAnswer: 2,
     explanation: '中国古代四大发明是造纸术、印刷术、火药和指南针。蒸汽机是西方发明的。',
-    englishTerm: 'Four Great Inventions'
+    englishTerm: 'Four Great Inventions',
   },
   {
     id: 'hist-006',
@@ -251,7 +253,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['美索不达米亚', '古埃及', '古印度', '古中国'],
     correctAnswer: 0,
     explanation: '美索不达米亚（两河流域）是世界上最早的文明发源地，位于今天的伊拉克地区。',
-    englishTerm: 'Mesopotamia'
+    englishTerm: 'Mesopotamia',
   },
   {
     id: 'hist-007',
@@ -260,7 +262,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['1912年', '1914年', '1916年', '1918年'],
     correctAnswer: 1,
     explanation: '第一次世界大战爆发于1914年，以奥匈帝国皇储弗朗茨·斐迪南大公遇刺为导火索。',
-    englishTerm: 'World War I'
+    englishTerm: 'World War I',
   },
   {
     id: 'hist-008',
@@ -269,7 +271,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['17世纪', '18世纪', '19世纪', '20世纪'],
     correctAnswer: 1,
     explanation: '美国独立战争发生在18世纪（1775-1783年），最终美国赢得独立。',
-    englishTerm: 'American Revolution'
+    englishTerm: 'American Revolution',
   },
   {
     id: 'hist-009',
@@ -278,7 +280,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['春节', '清明节', '端午节', '中秋节'],
     correctAnswer: 1,
     explanation: '中国四大传统节日是春节、清明节、端午节和中秋节。清明节是二十四节气之一。',
-    englishTerm: 'Traditional Festivals'
+    englishTerm: 'Traditional Festivals',
   },
   {
     id: 'hist-010',
@@ -287,7 +289,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['牡丹', '梅花', '菊花', '兰花'],
     correctAnswer: 0,
     explanation: '牡丹是中国的国花，象征着富贵和吉祥。',
-    englishTerm: 'National Flower'
+    englishTerm: 'National Flower',
   },
   {
     id: 'hist-011',
@@ -296,7 +298,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['张骞', '班超', '卫青', '霍去病'],
     correctAnswer: 0,
     explanation: '张骞是汉武帝时期著名的外交家，两次出使西域，开辟了丝绸之路。',
-    englishTerm: 'Zhang Qian'
+    englishTerm: 'Zhang Qian',
   },
   {
     id: 'hist-012',
@@ -305,7 +307,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['留学生', '遣唐使', '学问僧', '使节'],
     correctAnswer: 1,
     explanation: '遣唐使是日本派遣到唐朝学习的外交使团和留学生，对日本文化影响深远。',
-    englishTerm: 'Japanese Envoys to Tang'
+    englishTerm: 'Japanese Envoys to Tang',
   },
   {
     id: 'hist-013',
@@ -314,7 +316,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['宋朝', '元朝', '明朝', '清朝'],
     correctAnswer: 2,
     explanation: '郑和下西洋发生在明朝永乐年间，是世界历史上规模最大的海上探险活动之一。',
-    englishTerm: 'Zheng He\'s Voyages'
+    englishTerm: "Zheng He's Voyages",
   },
   {
     id: 'hist-014',
@@ -323,7 +325,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['1776年', '1789年', '1799年', '1804年'],
     correctAnswer: 1,
     explanation: '法国大革命爆发于1789年7月14日，攻占巴士底狱是其标志性事件。',
-    englishTerm: 'French Revolution'
+    englishTerm: 'French Revolution',
   },
   {
     id: 'hist-015',
@@ -332,7 +334,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['诺曼底登陆', '斯大林格勒战役', '珍珠港事件', '柏林战役'],
     correctAnswer: 1,
     explanation: '斯大林格勒战役（1942-1943年）是第二次世界大战的转折点，苏联军队击败了德军。',
-    englishTerm: 'Battle of Stalingrad'
+    englishTerm: 'Battle of Stalingrad',
   },
   {
     id: 'hist-016',
@@ -341,7 +343,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['龙', '蛇', '猫', '狗'],
     correctAnswer: 2,
     explanation: '十二生肖是鼠、牛、虎、兔、龙、蛇、马、羊、猴、鸡、狗、猪，不包括猫。',
-    englishTerm: 'Chinese Zodiac'
+    englishTerm: 'Chinese Zodiac',
   },
   {
     id: 'hist-017',
@@ -350,7 +352,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['全部都是', '只有《三国演义》', '只有《红楼梦》', '只有《水浒传》'],
     correctAnswer: 0,
     explanation: '中国四大名著《红楼梦》、《三国演义》、《水浒传》、《西游记》都是章回体小说。',
-    englishTerm: 'Chapter Novel'
+    englishTerm: 'Chapter Novel',
   },
   {
     id: 'hist-018',
@@ -359,7 +361,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['汉朝', '隋朝', '唐朝', '宋朝'],
     correctAnswer: 1,
     explanation: '科举制度创立于隋朝，完善于唐朝，是中国古代重要的选官制度。',
-    englishTerm: 'Imperial Examination'
+    englishTerm: 'Imperial Examination',
   },
   {
     id: 'hist-019',
@@ -368,7 +370,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['幼发拉底河', '底格里斯河', '尼罗河', '印度河'],
     correctAnswer: 2,
     explanation: '古埃及文明发源于尼罗河流域，尼罗河的定期泛滥为农业发展提供了条件。',
-    englishTerm: 'Nile River'
+    englishTerm: 'Nile River',
   },
   {
     id: 'hist-020',
@@ -377,7 +379,7 @@ const historyQuestions: ArtsChineseQuestion[] = [
     options: ['白色', '红色', '蓝色', '绿色'],
     correctAnswer: 1,
     explanation: '在中国传统文化中，红色象征吉祥和喜庆，新娘通常穿红色礼服。',
-    englishTerm: 'Traditional Wedding'
+    englishTerm: 'Traditional Wedding',
   },
 ];
 
@@ -390,7 +392,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['论点', '论据', '论证', '描写'],
     correctAnswer: 3,
     explanation: '议论文的三要素是论点、论据和论证。描写是记叙文的表达方式。',
-    englishTerm: 'Argumentative Essay'
+    englishTerm: 'Argumentative Essay',
   },
   {
     id: 'essay-002',
@@ -399,7 +401,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['记叙文', '说明文', '议论文', '散文'],
     correctAnswer: 2,
     explanation: '议论文通常采用"提出问题-分析问题-解决问题"的结构，即引论、本论、结论。',
-    englishTerm: 'Essay Structure'
+    englishTerm: 'Essay Structure',
   },
   {
     id: 'essay-003',
@@ -408,7 +410,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['举例论证', '对比论证', '夸张手法', '引用论证'],
     correctAnswer: 2,
     explanation: '夸张手法是修辞手法，不是论证方法。论证方法包括举例、对比、引用、比喻等。',
-    englishTerm: 'Argumentation Methods'
+    englishTerm: 'Argumentation Methods',
   },
   {
     id: 'essay-004',
@@ -417,7 +419,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['书信类', '条据类', '告启类', '契约类'],
     correctAnswer: 1,
     explanation: '请假条属于条据类应用文，用于说明请假原因和时间。',
-    englishTerm: 'Leave Application'
+    englishTerm: 'Leave Application',
   },
   {
     id: 'essay-005',
@@ -426,7 +428,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['个人兴趣爱好', '个人能力和经验', '家庭背景', '外貌特征'],
     correctAnswer: 1,
     explanation: '求职信应重点突出个人的专业能力、工作经验和应聘优势，以展示自己适合该职位。',
-    englishTerm: 'Cover Letter'
+    englishTerm: 'Cover Letter',
   },
   {
     id: 'essay-006',
@@ -435,7 +437,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['标题', '称呼', '正文', '结尾语'],
     correctAnswer: 3,
     explanation: '通知的格式包括标题、称呼、正文和落款。结尾语是书信的组成部分。',
-    englishTerm: 'Notice'
+    englishTerm: 'Notice',
   },
   {
     id: 'essay-007',
@@ -444,7 +446,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['得出结论', '寻找关键词', '写文章', '引用名人名言'],
     correctAnswer: 1,
     explanation: '分析材料首先要阅读材料，找出关键词和中心思想，理解材料的含义。',
-    englishTerm: 'Material Analysis'
+    englishTerm: 'Material Analysis',
   },
   {
     id: 'essay-008',
@@ -453,7 +455,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['归纳法', '演绎法', '因果分析法', '本质分析法'],
     correctAnswer: 3,
     explanation: '透过现象看本质是一种本质分析法，要求从表面现象深入到事物的本质。',
-    englishTerm: 'Essence Analysis'
+    englishTerm: 'Essence Analysis',
   },
   {
     id: 'essay-009',
@@ -462,7 +464,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['模糊不清', '明确具体', '模棱两可', '长篇大论'],
     correctAnswer: 1,
     explanation: '议论文的论点应该明确、具体，让读者清楚作者的观点和立场。',
-    englishTerm: 'Thesis Statement'
+    englishTerm: 'Thesis Statement',
   },
   {
     id: 'essay-010',
@@ -471,7 +473,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['个人观点', '道听途说', '权威数据', '主观臆断'],
     correctAnswer: 2,
     explanation: '权威数据是最有说服力的论据，因为它具有客观性和可信度。',
-    englishTerm: 'Evidence'
+    englishTerm: 'Evidence',
   },
   {
     id: 'essay-011',
@@ -480,7 +482,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['此致敬礼', '敬请光临', '谢谢阅读', '顺颂时祺'],
     correctAnswer: 1,
     explanation: '邀请函的结尾通常用"敬请光临"、"恭候光临"等敬语，表示邀请对方参加。',
-    englishTerm: 'Invitation'
+    englishTerm: 'Invitation',
   },
   {
     id: 'essay-012',
@@ -489,7 +491,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['叙述故事', '提出建议', '抒发感情', '说明事实'],
     correctAnswer: 1,
     explanation: '倡议书的主要目的是提出倡议和建议，号召大家共同行动。',
-    englishTerm: 'Proposal'
+    englishTerm: 'Proposal',
   },
   {
     id: 'essay-013',
@@ -498,7 +500,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['只看表面数字', '忽略单位', '分析变化趋势', '主观猜测'],
     correctAnswer: 2,
     explanation: '分析图表数据时应注意数据的变化趋势、对比关系和背后的原因。',
-    englishTerm: 'Data Analysis'
+    englishTerm: 'Data Analysis',
   },
   {
     id: 'essay-014',
@@ -507,7 +509,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['举例论证', '道理论证', '对比论证', '比喻论证'],
     correctAnswer: 0,
     explanation: '"摆事实"就是举例论证，通过具体事例来证明论点。',
-    englishTerm: 'Example Argument'
+    englishTerm: 'Example Argument',
   },
   {
     id: 'essay-015',
@@ -516,7 +518,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['提出新问题', '总结论点', '添加新论据', '详细描述'],
     correctAnswer: 1,
     explanation: '议论文的结论应总结全文，重申论点，给读者留下深刻印象。',
-    englishTerm: 'Conclusion'
+    englishTerm: 'Conclusion',
   },
   {
     id: 'essay-016',
@@ -525,7 +527,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['自己', '家人', '帮助过自己的人', '陌生人'],
     correctAnswer: 2,
     explanation: '感谢信是写给帮助过自己的人，表达感激之情。',
-    englishTerm: 'Thank You Letter'
+    englishTerm: 'Thank You Letter',
   },
   {
     id: 'essay-017',
@@ -534,7 +536,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['真实性', '时效性', '虚构性', '准确性'],
     correctAnswer: 2,
     explanation: '报告要求真实、准确、及时，不能虚构。虚构性是小说等文学作品的特点。',
-    englishTerm: 'Report'
+    englishTerm: 'Report',
   },
   {
     id: 'essay-018',
@@ -543,7 +545,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['颜色搭配', '画面细节', '作者签名', '纸张质量'],
     correctAnswer: 1,
     explanation: '分析漫画应关注画面细节、人物表情、背景等，理解漫画的寓意。',
-    englishTerm: 'Cartoon Analysis'
+    englishTerm: 'Cartoon Analysis',
   },
   {
     id: 'essay-019',
@@ -552,7 +554,7 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['谈读书', '随便写写', '不知道写什么', '无题'],
     correctAnswer: 0,
     explanation: '好的议论文标题应明确、简洁，能够概括文章的中心论点。',
-    englishTerm: 'Essay Title'
+    englishTerm: 'Essay Title',
   },
   {
     id: 'essay-020',
@@ -561,20 +563,16 @@ const essayQuestions: ArtsChineseQuestion[] = [
     options: ['论据支持论点', '论点支持论据', '互不相关', '相互矛盾'],
     correctAnswer: 0,
     explanation: '论据是用来证明论点的材料，应该支持论点，使论点更有说服力。',
-    englishTerm: 'Argument Support'
+    englishTerm: 'Argument Support',
   },
 ];
 
 // 获取所有文科中文题目
 export function getAllArtsChineseQuestions(): ArtsChineseQuestion[] {
-  return [
-    ...literatureQuestions,
-    ...historyQuestions,
-    ...essayQuestions
-  ];
+  return [...literatureQuestions, ...historyQuestions, ...essayQuestions];
 }
 
 // 根据模块获取题目
 export function getArtsChineseQuestionsByModule(module: string): ArtsChineseQuestion[] {
-  return getAllArtsChineseQuestions().filter(q => q.module === module);
+  return getAllArtsChineseQuestions().filter((q) => q.module === module);
 }

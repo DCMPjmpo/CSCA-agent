@@ -39,7 +39,13 @@ function whiteNoise(n, rng) {
 
 /** Paul Kellet 粉噪（-3dB/oct） */
 function pinkNoise(n, rng) {
-  let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+  let b0 = 0,
+    b1 = 0,
+    b2 = 0,
+    b3 = 0,
+    b4 = 0,
+    b5 = 0,
+    b6 = 0;
   const out = new Float32Array(n);
   for (let i = 0; i < n; i++) {
     const w = rng() * 2 - 1;
@@ -89,22 +95,40 @@ function biquad(data, type, fc, q = 0.707) {
   const alpha = sinw / (2 * q);
   let b0, b1, b2, a0, a1, a2;
   if (type === 'lowpass') {
-    b0 = (1 - cosw) / 2; b1 = 1 - cosw; b2 = (1 - cosw) / 2;
+    b0 = (1 - cosw) / 2;
+    b1 = 1 - cosw;
+    b2 = (1 - cosw) / 2;
   } else if (type === 'highpass') {
-    b0 = (1 + cosw) / 2; b1 = -(1 + cosw); b2 = (1 + cosw) / 2;
+    b0 = (1 + cosw) / 2;
+    b1 = -(1 + cosw);
+    b2 = (1 + cosw) / 2;
   } else if (type === 'bandpass') {
-    b0 = alpha; b1 = 0; b2 = -alpha;
+    b0 = alpha;
+    b1 = 0;
+    b2 = -alpha;
   } else {
     throw new Error('unknown filter ' + type);
   }
-  a0 = 1 + alpha; a1 = -2 * cosw; a2 = 1 - alpha;
-  b0 /= a0; b1 /= a0; b2 /= a0; a1 /= a0; a2 /= a0;
-  let x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+  a0 = 1 + alpha;
+  a1 = -2 * cosw;
+  a2 = 1 - alpha;
+  b0 /= a0;
+  b1 /= a0;
+  b2 /= a0;
+  a1 /= a0;
+  a2 /= a0;
+  let x1 = 0,
+    x2 = 0,
+    y1 = 0,
+    y2 = 0;
   const out = new Float32Array(data.length);
   for (let i = 0; i < data.length; i++) {
     const x0 = data[i];
     const y0 = b0 * x0 + b1 * x1 + b2 * x2 - a1 * y1 - a2 * y2;
-    x2 = x1; x1 = x0; y2 = y1; y1 = y0;
+    x2 = x1;
+    x1 = x0;
+    y2 = y1;
+    y1 = y0;
     out[i] = y0;
   }
   return out;
@@ -207,11 +231,11 @@ const recipes = {
     // 烛火噼啪：24 个稀疏高通短脉冲（2.5kHz+，快速衰减）
     for (let k = 0; k < 24; k++) {
       const pos = Math.floor(rng() * N * 0.82);
-      const len = Math.floor((8 + rng() * 10) * SR / 1000);
+      const len = Math.floor(((8 + rng() * 10) * SR) / 1000);
       const burst = biquad(whiteNoise(len, rng), 'highpass', 2500 + rng() * 2000, 0.7);
       const env = expDecay(len, 0.012 + rng() * 0.01);
       for (let i = 0; i < len; i++) burst[i] *= env[i];
-      addAt(out, burst, pos, 0.10 + rng() * 0.12);
+      addAt(out, burst, pos, 0.1 + rng() * 0.12);
     }
     // 房间底噪：棕噪 → 低通 150Hz，极弱
     const room = biquad(brownNoise(N, rng), 'lowpass', 150, 0.7);
@@ -227,7 +251,7 @@ const recipes = {
     // 竹节咔嗒：间隔 60→140ms 渐疏，3kHz+ tick
     let t = 0.03 * SR;
     for (let i = 0; i < 14; i++) {
-      const len = Math.floor(6 * SR / 1000);
+      const len = Math.floor((6 * SR) / 1000);
       const tick = biquad(whiteNoise(len, rng), 'highpass', 3000, 0.7);
       const env = expDecay(len, 0.012);
       for (let k = 0; k < len; k++) tick[k] *= env[k];
@@ -266,7 +290,7 @@ const recipes = {
     const env3 = expDecay(sec.length, 0.16);
     for (let i = 0; i < sec.length; i++) sec[i] *= env3[i];
     addAt(out, sec, Math.floor(0.02 * SR), 0.35);
-    const click = biquad(whiteNoise(Math.floor(10 * SR / 1000), rng), 'highpass', 4000, 0.7);
+    const click = biquad(whiteNoise(Math.floor((10 * SR) / 1000), rng), 'highpass', 4000, 0.7);
     addAt(out, click, 0, 0.3);
     return normalize(out, 0.92);
   },
@@ -276,7 +300,10 @@ const recipes = {
     const N = SR * 0.9;
     const out = new Float32Array(N);
     const rng = mulberry32(0x4d4d);
-    for (const [off, g] of [[0, 0.5], [0.14, 0.38]]) {
+    for (const [off, g] of [
+      [0, 0.5],
+      [0.14, 0.38],
+    ]) {
       const d = tri(130, 0.4, 1);
       const e = expDecay(d.length, 0.18);
       for (let i = 0; i < d.length; i++) d[i] *= e[i];
@@ -313,7 +340,7 @@ const recipes = {
     }
     // 轻 flutter：4 个极轻 tick
     for (let i = 0; i < 4; i++) {
-      const len = Math.floor(4 * SR / 1000);
+      const len = Math.floor((4 * SR) / 1000);
       const tk = biquad(whiteNoise(len, rng), 'highpass', 2500, 0.7);
       const e = expDecay(len, 0.01);
       for (let k = 0; k < len; k++) tk[k] *= e[k];
@@ -337,7 +364,7 @@ const recipes = {
     }
     // 水泡咕嘟
     for (let k = 0; k < 3; k++) {
-      const len = Math.floor(60 * SR / 1000);
+      const len = Math.floor((60 * SR) / 1000);
       const fc = 500 + rng() * 700;
       const g = biquad(whiteNoise(len, rng), 'bandpass', fc, 3);
       const e = expDecay(len, 0.07);
@@ -365,7 +392,7 @@ const recipes = {
       }
       addAt(out, part, 0, 1);
     }
-    const click = biquad(whiteNoise(Math.floor(5 * SR / 1000), rng), 'highpass', 5000, 0.7);
+    const click = biquad(whiteNoise(Math.floor((5 * SR) / 1000), rng), 'highpass', 5000, 0.7);
     addAt(out, click, 0, 0.5);
     return normalize(out, 0.9);
   },
@@ -383,7 +410,7 @@ const recipes = {
     const e2 = expDecay(res.length, 0.055);
     for (let i = 0; i < res.length; i++) res[i] *= e2[i];
     addAt(out, res, 0, 1);
-    const click = biquad(whiteNoise(Math.floor(3 * SR / 1000), rng), 'highpass', 5000, 0.7);
+    const click = biquad(whiteNoise(Math.floor((3 * SR) / 1000), rng), 'highpass', 5000, 0.7);
     addAt(out, click, 0, 0.25);
     return normalize(out, 0.85);
   },
@@ -447,7 +474,9 @@ for (const [name, make] of Object.entries(recipes)) {
   const so = statSync(ogg).size;
   total += sm + so;
   rows.push({ name, mp3: sm, ogg: so, both: sm + so });
-  console.log(`  ${name.padEnd(14)} mp3 ${String(sm).padStart(6)}B  ogg ${String(so).padStart(6)}B  = ${sm + so}B`);
+  console.log(
+    `  ${name.padEnd(14)} mp3 ${String(sm).padStart(6)}B  ogg ${String(so).padStart(6)}B  = ${sm + so}B`,
+  );
 }
 
 console.log('\n总包（mp3+ogg 合计）:', Math.round(total / 1024) + 'KB');

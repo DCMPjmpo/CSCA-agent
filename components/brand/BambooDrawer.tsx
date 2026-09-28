@@ -11,12 +11,7 @@
  * bg-indigo-deep / text-ricepaper / font-brand-body；竹简纹经 inline style。
  */
 import { useEffect, type CSSProperties, type ReactNode } from 'react';
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogTitle,
-} from '@/components/ui/dialog';
+import { Dialog, DialogClose, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 import { useTranslation } from '@/lib/i18n/hooks';
 import { PixelRollUp } from '@/components/brand/scroll-icons';
@@ -58,7 +53,13 @@ export function BambooDrawer({
           'data-closed:animate-out data-closed:fade-out-0 data-closed:slide-out-to-right data-closed:zoom-out-100',
           className,
         )}
-        style={{ backgroundImage: BAMBOO_BG, backgroundSize: BAMBOO_BG_SIZE, imageRendering: 'pixelated' } as CSSProperties}
+        style={
+          {
+            backgroundImage: BAMBOO_BG,
+            backgroundSize: BAMBOO_BG_SIZE,
+            imageRendering: 'pixelated',
+          } as CSSProperties
+        }
       >
         {/* 上轴头 */}
         <div className="scroll-roller" />

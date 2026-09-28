@@ -19,9 +19,7 @@
  */
 
 import { NextResponse } from 'next/server';
-import {
-  selectQuestionsForSubjects,
-} from '@/lib/csca/question-selection';
+import { selectQuestionsForSubjects } from '@/lib/csca/question-selection';
 import {
   enrichContextWithHistory,
   extractWeakKnowledgePoints,
@@ -76,7 +74,8 @@ export async function POST(request: Request) {
     }
 
     // 构建基础 LearningContext
-    const baseCtx: Pick<LearningContext, 'requiredSubjects' | 'currentStage'> & Partial<LearningContext> = {
+    const baseCtx: Pick<LearningContext, 'requiredSubjects' | 'currentStage'> &
+      Partial<LearningContext> = {
       targetMajor,
       countryCode,
       requiredSubjects: subjects,
@@ -112,16 +111,14 @@ export async function POST(request: Request) {
     }));
 
     // 聚合 fallbackReason
-    const fallbackReasons = results
-      .map((r) => r.fallbackReason)
-      .filter(Boolean) as string[];
+    const fallbackReasons = results.map((r) => r.fallbackReason).filter(Boolean) as string[];
 
     // 诚实标注来源
     const realTotal =
       aggregatedStats.real_exam + aggregatedStats.science_chinese + aggregatedStats.arts_chinese;
     const basicTotal = aggregatedStats.basic_practice + aggregatedStats.fallback_mock;
-    const usedFallback = aggregatedStats.fallback_mock > 0 || basicTotal > 0 ||
-      results.some((r) => r.fallbackReason);
+    const usedFallback =
+      aggregatedStats.fallback_mock > 0 || basicTotal > 0 || results.some((r) => r.fallbackReason);
     const sourceLabel: 'real_exam' | 'mixed' | 'basic_practice' =
       realTotal > 0 && basicTotal === 0
         ? 'real_exam'
@@ -152,9 +149,10 @@ export async function POST(request: Request) {
         wrongQuestionCount: ctx.wrongQuestionCount,
         recentAccuracy: ctx.recentAccuracy,
       },
-      message: adaptedData.length > 0
-        ? '已生成错题修正题目'
-        : '错题知识点题目不足，无法生成新题（题库瓶颈）',
+      message:
+        adaptedData.length > 0
+          ? '已生成错题修正题目'
+          : '错题知识点题目不足，无法生成新题（题库瓶颈）',
     });
   } catch (error) {
     console.error('[CSCA Wrong Answer Practice API] Error:', error);

@@ -304,7 +304,7 @@ function extractPromptFromParams(params: StreamTextParams): string {
   if (p.prompt) return String(p.prompt);
   if (p.messages && Array.isArray(p.messages)) {
     const msgs = p.messages as { role?: string; content?: string }[];
-    const lastUser = msgs.filter(m => m.role === 'user').pop();
+    const lastUser = msgs.filter((m) => m.role === 'user').pop();
     if (lastUser?.content) return String(lastUser.content);
     const lastMsg = msgs[msgs.length - 1];
     if (lastMsg?.content) return String(lastMsg.content);
@@ -316,7 +316,7 @@ async function* generateMockStream(text: string) {
   const chunkSize = 4;
   for (let i = 0; i < text.length; i += chunkSize) {
     yield text.slice(i, i + chunkSize);
-    await new Promise(resolve => setTimeout(resolve, 8));
+    await new Promise((resolve) => setTimeout(resolve, 8));
   }
 }
 
@@ -326,12 +326,14 @@ function createMockStreamResult(prompt: string): StreamTextResult<any, any> {
   const asyncIterable = {
     [Symbol.asyncIterator]() {
       return generateMockStream(text);
-    }
+    },
   };
 
   return {
     textStream: asyncIterable,
-    get text() { return text; },
+    get text() {
+      return text;
+    },
     finishReason: 'mock' as const,
     usage: { promptTokens: 0, completionTokens: 0, totalTokens: 0 },
     experimental_providerMetadata: {},
@@ -488,7 +490,10 @@ export function streamLLM<T extends StreamTextParams>(
     const result = thinkingContext.run(effectiveThinking, () => streamText(injectedParams));
     return result;
   } catch (error) {
-    log.warn(`[${source}] streamText failed, returning mock stream:`, error instanceof Error ? error.message : error);
+    log.warn(
+      `[${source}] streamText failed, returning mock stream:`,
+      error instanceof Error ? error.message : error,
+    );
     const prompt = extractPromptFromParams(params);
     return createMockStreamResult(prompt);
   }

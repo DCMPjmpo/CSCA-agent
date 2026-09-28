@@ -11,7 +11,14 @@
  */
 'use client';
 
-import { useCallback, useEffect, useRef, useState, type CSSProperties, type DragEvent } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type DragEvent,
+} from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { ArrowRight } from 'lucide-react';
@@ -194,7 +201,8 @@ export function AdvisorHall() {
       setTeams(next);
       setDraggingId(null);
       // 触发成队反馈：以拖入后所在的簇为准
-      const affected = next.find((team) => team.includes(src)) ?? next.find((team) => team.includes(target));
+      const affected =
+        next.find((team) => team.includes(src)) ?? next.find((team) => team.includes(target));
       if (affected) celebrateTeam(affected);
     },
     [teams, teamOf, celebrateTeam],
@@ -221,12 +229,9 @@ export function AdvisorHall() {
     [teams, teamOf],
   );
 
-  const dissolveTeam = useCallback(
-    (idx: number) => {
-      setTeams((prev) => prev.filter((_, i) => i !== idx));
-    },
-    [],
-  );
+  const dissolveTeam = useCallback((idx: number) => {
+    setTeams((prev) => prev.filter((_, i) => i !== idx));
+  }, []);
 
   /* ---- 点击「领命」---- */
   const handleClick = useCallback(
@@ -252,13 +257,7 @@ export function AdvisorHall() {
   );
 
   const motionFor = (id: AdvisorId): AdvisorMotion =>
-    celebrating[id]
-      ? 'cheer'
-      : bowingId === id
-        ? 'bow'
-        : hoveredId === id
-          ? 'hover'
-          : 'idle';
+    celebrating[id] ? 'cheer' : bowingId === id ? 'bow' : hoveredId === id ? 'hover' : 'idle';
 
   /* 落地欢迎：郑和一句开场 */
   useEffect(() => {
@@ -380,9 +379,7 @@ export function AdvisorHall() {
       {dialogue && (
         <div className="hall-dialogue" aria-live="polite">
           <div className="hall-speaker-badge">
-            <div className="hall-speaker-avatar">
-              {dialogue.speaker.charAt(0)}
-            </div>
+            <div className="hall-speaker-avatar">{dialogue.speaker.charAt(0)}</div>
             <span className="hall-speaker-name">{dialogue.speaker}</span>
           </div>
           <div className="dialogue-bubble">

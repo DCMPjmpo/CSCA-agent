@@ -118,9 +118,7 @@ export async function pollHtmlTask(
 ): Promise<{ poll: PollClassroomJobResult; task: PilarCoreTaskRecord }> {
   const taskId = typeof task === 'string' ? task : task.taskId;
   const openmaicJobId =
-    typeof task === 'string'
-      ? (await lookupJobIdByTaskId(task)) ?? ''
-      : task.openmaicJobId;
+    typeof task === 'string' ? ((await lookupJobIdByTaskId(task)) ?? '') : task.openmaicJobId;
 
   if (!openmaicJobId) {
     throw new Error('pollHtmlTask: 任务缺少 openmaicJobId，无法轮询');

@@ -16,10 +16,7 @@
  */
 
 import { NextResponse } from 'next/server';
-import {
-  buildKnowledgeMap,
-  type AnswerRecord,
-} from '@/lib/csca/knowledge-data';
+import { buildKnowledgeMap, type AnswerRecord } from '@/lib/csca/knowledge-data';
 
 export async function POST(request: Request) {
   try {
@@ -37,9 +34,7 @@ export async function POST(request: Request) {
     const safeAnswers: AnswerRecord[] = Array.isArray(answerHistory)
       ? answerHistory.filter(
           (a): a is AnswerRecord =>
-            !!a &&
-            typeof a.subject === 'string' &&
-            typeof a.isCorrect === 'boolean',
+            !!a && typeof a.subject === 'string' && typeof a.isCorrect === 'boolean',
         )
       : [];
 

@@ -100,9 +100,7 @@ async function parseJsonResponse<T extends { success: true }>(
   try {
     body = (await res.json()) as T | ApiErrorBody;
   } catch {
-    throw new Error(
-      `${fallbackMessage}: 响应不是合法 JSON (HTTP ${res.status} ${res.statusText})`,
-    );
+    throw new Error(`${fallbackMessage}: 响应不是合法 JSON (HTTP ${res.status} ${res.statusText})`);
   }
 
   if (!res.ok) {
@@ -145,10 +143,7 @@ export async function createClassroomJob(
     signal,
   });
 
-  const body = await parseJsonResponse<OpenMAICJobCreateResponse>(
-    res,
-    '创建生成任务失败',
-  );
+  const body = await parseJsonResponse<OpenMAICJobCreateResponse>(res, '创建生成任务失败');
 
   return {
     jobId: body.jobId,
@@ -183,10 +178,7 @@ export async function pollClassroomJob(
     signal,
   });
 
-  const body = await parseJsonResponse<OpenMAICJobPollResponse>(
-    res,
-    '查询生成任务状态失败',
-  );
+  const body = await parseJsonResponse<OpenMAICJobPollResponse>(res, '查询生成任务状态失败');
 
   return {
     jobId: body.jobId,

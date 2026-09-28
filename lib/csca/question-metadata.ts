@@ -58,12 +58,12 @@ const CHEMISTRY_MODULE_MAP: Record<string, string> = {
  * metadataSource = 'mapped'
  */
 const MODULE_SYNONYMS: Record<string, string> = {
-  '力学基础': '力学',
-  '牛顿定律': '力学',
-  '功和能': '能量',
-  '机械能': '能量',
-  '物质性质': '物质',
-  '汉语基础知识': '基础',
+  力学基础: '力学',
+  牛顿定律: '力学',
+  功和能: '能量',
+  机械能: '能量',
+  物质性质: '物质',
+  汉语基础知识: '基础',
 };
 
 /**

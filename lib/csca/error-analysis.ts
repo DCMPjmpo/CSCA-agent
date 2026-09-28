@@ -13,10 +13,12 @@ const generateMockExplanation = (
   userAnswer: string | number,
   correctAnswer: string | number,
   subject: string,
-  module: string
+  module: string,
 ): string => {
-  const answerText = typeof correctAnswer === 'number' ? String.fromCharCode(65 + correctAnswer) : correctAnswer;
-  const userAnswerText = typeof userAnswer === 'number' ? String.fromCharCode(65 + userAnswer) : userAnswer;
+  const answerText =
+    typeof correctAnswer === 'number' ? String.fromCharCode(65 + correctAnswer) : correctAnswer;
+  const userAnswerText =
+    typeof userAnswer === 'number' ? String.fromCharCode(65 + userAnswer) : userAnswer;
 
   return `📌 错误分析
 - 你的答案「${userAnswerText}」与正确答案「${answerText}」不符
@@ -51,7 +53,7 @@ export async function getAIErrorExplanation(
   correctAnswer: string | number,
   subject: string,
   module: string,
-  _locale?: string
+  _locale?: string,
 ): Promise<string> {
   const prompt = `你是一位专业的${subject}学科AI辅导老师，擅长为国际学生讲解知识点。请帮我详细分析这道错题：
 

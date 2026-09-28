@@ -4,7 +4,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 // [TRA-FIX] 按需引入 echarts，替代全量 import * as echarts from 'echarts'（全量约 1MB）
 import * as echarts from 'echarts/core'; // [TRA-FIX]
 import { GraphChart } from 'echarts/charts'; // [TRA-FIX]
-import { TitleComponent, TooltipComponent, GridComponent, LegendComponent } from 'echarts/components'; // [TRA-FIX]
+import {
+  TitleComponent,
+  TooltipComponent,
+  GridComponent,
+  LegendComponent,
+} from 'echarts/components'; // [TRA-FIX]
 import { CanvasRenderer } from 'echarts/renderers'; // [TRA-FIX]
 import { masteryToLevel } from '@/lib/csca/knowledge-data';
 // [WORKER] 力导向布局在 Web Worker 中执行（computeForceLayout 用于主线程兜底）

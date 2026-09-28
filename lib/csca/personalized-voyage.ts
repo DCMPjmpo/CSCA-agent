@@ -209,7 +209,10 @@ export function resolveNextLearningAction(model: StudentModel): NextLearningActi
   if (!model.hasDiagnosis && !completed.has(ACTION_STAGE.diagnosis)) {
     return makeAction(
       'diagnosis',
-      { zh: '还没有完成起点定位，先测出你的真实水平。', en: 'You have not taken the placement test yet — measure your real starting level first.' },
+      {
+        zh: '还没有完成起点定位，先测出你的真实水平。',
+        en: 'You have not taken the placement test yet — measure your real starting level first.',
+      },
       'no_data',
       ['hasDiagnosis=false'],
     );
@@ -219,7 +222,10 @@ export function resolveNextLearningAction(model: StudentModel): NextLearningActi
   if (model.weakKnowledgePointCount > 0 && !completed.has(ACTION_STAGE.adaptive_learning)) {
     return makeAction(
       'adaptive_learning',
-      { zh: `检测到 ${model.weakKnowledgePointCount} 个薄弱知识点，先针对性练习。`, en: `${model.weakKnowledgePointCount} weak knowledge point(s) detected — practice those first.` },
+      {
+        zh: `检测到 ${model.weakKnowledgePointCount} 个薄弱知识点，先针对性练习。`,
+        en: `${model.weakKnowledgePointCount} weak knowledge point(s) detected — practice those first.`,
+      },
       'derived',
       [`weakKnowledgePointCount=${model.weakKnowledgePointCount}`],
     );
@@ -229,7 +235,10 @@ export function resolveNextLearningAction(model: StudentModel): NextLearningActi
   if (!hasScore && !completed.has(ACTION_STAGE.mock_exam)) {
     return makeAction(
       'mock_exam',
-      { zh: '还没有考试成绩，先跑一次试航演练定位真实水平。', en: 'No exam score yet — take a mock exam to establish your level.' },
+      {
+        zh: '还没有考试成绩，先跑一次试航演练定位真实水平。',
+        en: 'No exam score yet — take a mock exam to establish your level.',
+      },
       'no_data',
       ['examScore=none'],
     );
@@ -239,7 +248,10 @@ export function resolveNextLearningAction(model: StudentModel): NextLearningActi
   if (hasScore && !completed.has(ACTION_STAGE.score_analysis)) {
     return makeAction(
       'score_analysis',
-      { zh: '考试成绩已就绪，先看成绩分析了解失分结构。', en: 'Your score is in — review the score analysis to see where you lost points.' },
+      {
+        zh: '考试成绩已就绪，先看成绩分析了解失分结构。',
+        en: 'Your score is in — review the score analysis to see where you lost points.',
+      },
       'derived',
       [`examScore=${model.examScore}`],
     );
@@ -249,7 +261,10 @@ export function resolveNextLearningAction(model: StudentModel): NextLearningActi
   if (model.errorRecordCount > 0 && !completed.has(ACTION_STAGE.error_review)) {
     return makeAction(
       'error_review',
-      { zh: `错题本还有 ${model.errorRecordCount} 道题待修正，逐一攻克。`, en: `${model.errorRecordCount} question(s) still unresolved in your error log.` },
+      {
+        zh: `错题本还有 ${model.errorRecordCount} 道题待修正，逐一攻克。`,
+        en: `${model.errorRecordCount} question(s) still unresolved in your error log.`,
+      },
       'derived',
       [`errorRecordCount=${model.errorRecordCount}`],
     );
@@ -264,7 +279,10 @@ export function resolveNextLearningAction(model: StudentModel): NextLearningActi
       'study_plan',
       model.hasStudyPlan
         ? { zh: '按学习计划推进今日目标。', en: 'Work through today’s goals in your study plan.' }
-        : { zh: '薄弱点尚未形成计划，先生成学习计划。', en: 'Your weak areas have no plan yet — generate a study plan.' },
+        : {
+            zh: '薄弱点尚未形成计划，先生成学习计划。',
+            en: 'Your weak areas have no plan yet — generate a study plan.',
+          },
       'derived',
       [
         `weakKnowledgePointCount=${model.weakKnowledgePointCount}`,
@@ -277,7 +295,10 @@ export function resolveNextLearningAction(model: StudentModel): NextLearningActi
   if (!completed.has(ACTION_STAGE.university_match)) {
     return makeAction(
       'university_match',
-      { zh: '学习数据已就绪，可以开始匹配目标院校。', en: 'Your learning data is ready — start matching target universities.' },
+      {
+        zh: '学习数据已就绪，可以开始匹配目标院校。',
+        en: 'Your learning data is ready — start matching target universities.',
+      },
       'derived',
       [`completedCount=${completed.size}`],
     );
@@ -302,7 +323,10 @@ export function resolveNextLearningAction(model: StudentModel): NextLearningActi
     const kind = canonicalKindForStage(gap);
     return makeAction(
       kind,
-      { zh: '航程中还有未完成的阶段，先补上它。', en: 'A stage is still open — finish it to keep your voyage complete.' },
+      {
+        zh: '航程中还有未完成的阶段，先补上它。',
+        en: 'A stage is still open — finish it to keep your voyage complete.',
+      },
       'derived',
       [`firstIncompleteStage=${gap}`],
     );

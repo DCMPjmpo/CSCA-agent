@@ -193,8 +193,4 @@ export interface Visualization3DConfig {
 // ==================== Union Types ====================
 
 export type WidgetConfig =
-  | SimulationConfig
-  | DiagramConfig
-  | CodeConfig
-  | GameConfig
-  | Visualization3DConfig;
+  SimulationConfig | DiagramConfig | CodeConfig | GameConfig | Visualization3DConfig;

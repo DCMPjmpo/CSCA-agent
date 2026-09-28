@@ -4,9 +4,21 @@ import { useEffect, useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
-  ArrowRight, Target, BookOpen, AlertCircle, TrendingUp,
-  Calendar, Clock, ChevronRight, Compass, GraduationCap,
-  BarChart3, Zap, Code2, Sparkles, FileText,
+  ArrowRight,
+  Target,
+  BookOpen,
+  AlertCircle,
+  TrendingUp,
+  Calendar,
+  Clock,
+  ChevronRight,
+  Compass,
+  GraduationCap,
+  BarChart3,
+  Zap,
+  Code2,
+  Sparkles,
+  FileText,
 } from 'lucide-react';
 import { BrandShell } from '@/components/brand/BrandShell';
 import { VoyageProgressTracker } from '@/components/csca/VoyageProgressTracker';
@@ -14,10 +26,7 @@ import { useTranslation } from '@/lib/i18n/hooks';
 import { useCscaSession } from '@/lib/hooks/use-csca-session';
 import { loadCscaSession, type AnswerRecord } from '@/lib/csca/session';
 import { getErrorRecords, getStudyPlan, analyzeWeakAreas } from '@/lib/csca/error-analysis-core';
-import {
-  VOYAGE_STAGE_ORDER,
-  getCurrentStageIndex,
-} from '@/lib/voyage-stages';
+import { VOYAGE_STAGE_ORDER, getCurrentStageIndex } from '@/lib/voyage-stages';
 import { Button } from '@/components/ui/button';
 import {
   AlertDialog,
@@ -67,32 +76,36 @@ export default function CSCADashboardPage() {
         ]);
         if (cancelled) return;
         // 只需要最新的一条，不做列表、不做筛选、不做统计。
-        const latest = [...ppt, ...html].sort(
-          (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
-        )[0] ?? null;
+        const latest =
+          [...ppt, ...html].sort(
+            (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+          )[0] ?? null;
         setLatestCreation(latest);
       } catch {
         // IndexedDB 不可用时静默降级（不影响主页面）
       }
     })();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Compute stats from answerHistory
   const stats = useMemo(() => {
     const hist = session?.answerHistory ?? [];
     const total = hist.length;
-    const correct = hist.filter(r => r.isCorrect).length;
+    const correct = hist.filter((r) => r.isCorrect).length;
     const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
-    
+
     // Days active: distinct days from timestamps
-    const days = new Set(hist.map(r => new Date(r.timestamp).toDateString())).size;
-    
+    const days = new Set(hist.map((r) => new Date(r.timestamp).toDateString())).size;
+
     // Recent accuracy: last 10
     const recent = hist.slice(-10);
-    const recentCorrect = recent.filter(r => r.isCorrect).length;
-    const recentAccuracy = recent.length > 0 ? Math.round((recentCorrect / recent.length) * 100) : 0;
-    
+    const recentCorrect = recent.filter((r) => r.isCorrect).length;
+    const recentAccuracy =
+      recent.length > 0 ? Math.round((recentCorrect / recent.length) * 100) : 0;
+
     return { total, correct, accuracy, days, recentAccuracy };
   }, [session?.answerHistory]);
 
@@ -100,7 +113,7 @@ export default function CSCADashboardPage() {
   const weakPoints = useMemo(() => {
     if (errorRecords.length === 0) return [];
     const byKp: Record<string, number> = {};
-    errorRecords.forEach(e => {
+    errorRecords.forEach((e) => {
       const kp = e.module || e.subject || 'Unknown';
       byKp[kp] = (byKp[kp] || 0) + 1;
     });
@@ -140,8 +153,28 @@ export default function CSCADashboardPage() {
   const w = (t as any).wrongAnswerCenter || {};
 
   const stageLabels = isZh
-    ? ['出发诊断', '航海图', '训练场', '模拟试航', '观测分析', '纠错航线', '航线规划', 'AI助手', '大学港口']
-    : ['Diagnosis', 'Knowledge Map', 'Training', 'Mock Exam', 'Analysis', 'Correction', 'Study Plan', 'AI Mate', 'University'];
+    ? [
+        '出发诊断',
+        '航海图',
+        '训练场',
+        '模拟试航',
+        '观测分析',
+        '纠错航线',
+        '航线规划',
+        'AI助手',
+        '大学港口',
+      ]
+    : [
+        'Diagnosis',
+        'Knowledge Map',
+        'Training',
+        'Mock Exam',
+        'Analysis',
+        'Correction',
+        'Study Plan',
+        'AI Mate',
+        'University',
+      ];
 
   return (
     <BrandShell>
@@ -155,19 +188,19 @@ export default function CSCADashboardPage() {
                   {isZh ? 'CSCA 学习航海' : 'CSCA Learning Voyage'}
                 </p>
                 <h1 className="mt-1 text-2xl font-bold">
-                  {isNewUser
-                    ? (d.title || 'Learning Dashboard')
-                    : `${d.welcome || 'Welcome back'}`}
+                  {isNewUser ? d.title || 'Learning Dashboard' : `${d.welcome || 'Welcome back'}`}
                 </h1>
                 <p className="mt-1 text-sm text-[var(--muted-foreground)]">
                   {isNewUser
-                    ? (d.empty || 'Begin your voyage — start with a quick diagnosis')
-                    : (d.subtitle || 'Your personalized learning voyage')}
+                    ? d.empty || 'Begin your voyage — start with a quick diagnosis'
+                    : d.subtitle || 'Your personalized learning voyage'}
                 </p>
               </div>
               <div className="hidden sm:block">
                 <div className="flex items-center gap-2 text-sm">
-                  <span className="text-[var(--muted-foreground)]">{isZh ? '进度' : 'Progress'}</span>
+                  <span className="text-[var(--muted-foreground)]">
+                    {isZh ? '进度' : 'Progress'}
+                  </span>
                   <span className="text-lg font-bold text-[var(--primary)]">
                     {progress?.progressPercent ?? 0}%
                   </span>
@@ -182,9 +215,7 @@ export default function CSCADashboardPage() {
           {isNewUser ? (
             <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 text-center">
               <Compass className="mx-auto h-12 w-12 text-[var(--primary)]" />
-              <h2 className="mt-4 text-xl font-semibold">
-                {d.startVoyage || 'Begin Your Voyage'}
-              </h2>
+              <h2 className="mt-4 text-xl font-semibold">{d.startVoyage || 'Begin Your Voyage'}</h2>
               <p className="mt-2 text-sm text-[var(--muted-foreground)]">
                 {d.empty || 'Begin your voyage — start with a quick diagnosis'}
               </p>
@@ -197,16 +228,18 @@ export default function CSCADashboardPage() {
                     </Link>
                   </Button>
                 )}
-                <Button asChild size="lg" variant={session?.selectedCountryCode ? 'default' : 'outline'}>
+                <Button
+                  asChild
+                  size="lg"
+                  variant={session?.selectedCountryCode ? 'default' : 'outline'}
+                >
                   <Link href="/csca/voyage#diagnosis">
                     <Compass className="mr-2 h-5 w-5" />
                     {d.ctaDiagnosis || 'Start Diagnosis'}
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="/csca/voyage">
-                    {isZh ? '自由探索' : 'Explore Freely'}
-                  </Link>
+                  <Link href="/csca/voyage">{isZh ? '自由探索' : 'Explore Freely'}</Link>
                 </Button>
               </div>
             </div>
@@ -226,7 +259,11 @@ export default function CSCADashboardPage() {
                   <div className="flex items-center gap-2">
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
-                        <Button variant="ghost" size="sm" className="text-[var(--muted-foreground)]">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-[var(--muted-foreground)]"
+                        >
                           <RotateCcw className="mr-1.5 h-3.5 w-3.5" />
                           {isZh ? '重新开始' : 'Restart'}
                         </Button>
@@ -285,7 +322,7 @@ export default function CSCADashboardPage() {
                   icon={<AlertCircle className="h-5 w-5" />}
                   label={d.statsErrors || 'Errors to Review'}
                   value={String(errorRecords.length)}
-                  sub={errorRecords.length > 0 ? (w.title || 'Wrong Answer Center') : ''}
+                  sub={errorRecords.length > 0 ? w.title || 'Wrong Answer Center' : ''}
                   link="/csca/wrong-answer"
                 />
                 <StatCard
@@ -316,14 +353,18 @@ export default function CSCADashboardPage() {
                         </p>
                         <p className="mt-0.5 text-2xl font-bold text-[var(--foreground)]">
                           {session.examScore}
-                          <span className="ml-1 text-sm font-normal text-[var(--muted-foreground)]">/ 100</span>
+                          <span className="ml-1 text-sm font-normal text-[var(--muted-foreground)]">
+                            / 100
+                          </span>
                         </p>
                         <p className="mt-0.5 text-xs text-[var(--muted-foreground)]">
                           {studyPlan
-                            ? (isZh
+                            ? isZh
                               ? `已生成 ${studyPlan.weakAreas?.length ?? 0} 个薄弱航段和 ${studyPlan.dailyGoals?.length ?? 0} 项今日任务`
-                              : `${studyPlan.weakAreas?.length ?? 0} weak segments and ${studyPlan.dailyGoals?.length ?? 0} tasks generated`)
-                            : (isZh ? '完成诊断后生成个性化学习计划' : 'Complete diagnosis to generate a personalized plan')}
+                              : `${studyPlan.weakAreas?.length ?? 0} weak segments and ${studyPlan.dailyGoals?.length ?? 0} tasks generated`
+                            : isZh
+                              ? '完成诊断后生成个性化学习计划'
+                              : 'Complete diagnosis to generate a personalized plan'}
                         </p>
                       </div>
                     </div>
@@ -356,7 +397,9 @@ export default function CSCADashboardPage() {
                     </ul>
                   ) : (
                     <p className="text-sm text-[var(--muted-foreground)]">
-                      {isZh ? '暂无任务。完成一次诊断或练习后生成。' : 'No tasks yet. Complete a diagnosis or practice to generate tasks.'}
+                      {isZh
+                        ? '暂无任务。完成一次诊断或练习后生成。'
+                        : 'No tasks yet. Complete a diagnosis or practice to generate tasks.'}
                     </p>
                   )}
                 </div>
@@ -400,33 +443,70 @@ export default function CSCADashboardPage() {
                 {recentActivity.length > 0 ? (
                   <div className="space-y-2">
                     {recentActivity.map((r, i) => (
-                      <div key={i} className="flex items-center justify-between border-b border-[var(--border)] py-1.5 text-sm last:border-0">
+                      <div
+                        key={i}
+                        className="flex items-center justify-between border-b border-[var(--border)] py-1.5 text-sm last:border-0"
+                      >
                         <div className="flex items-center gap-2">
-                          <span className={cn('h-2 w-2 rounded-full', r.isCorrect ? 'bg-green-500' : 'bg-red-500')} />
+                          <span
+                            className={cn(
+                              'h-2 w-2 rounded-full',
+                              r.isCorrect ? 'bg-green-500' : 'bg-red-500',
+                            )}
+                          />
                           <span className="text-[var(--muted-foreground)]">{r.subject}</span>
-                          <span className="truncate text-xs">{r.knowledgePoint || r.module || ''}</span>
+                          <span className="truncate text-xs">
+                            {r.knowledgePoint || r.module || ''}
+                          </span>
                         </div>
-                        <span className={cn('text-xs font-medium', r.isCorrect ? 'text-green-600' : 'text-red-600')}>
-                          {r.isCorrect ? (isZh ? '正确' : 'Correct') : (isZh ? '错误' : 'Wrong')}
+                        <span
+                          className={cn(
+                            'text-xs font-medium',
+                            r.isCorrect ? 'text-green-600' : 'text-red-600',
+                          )}
+                        >
+                          {r.isCorrect ? (isZh ? '正确' : 'Correct') : isZh ? '错误' : 'Wrong'}
                         </span>
                       </div>
                     ))}
                   </div>
                 ) : (
                   <p className="text-sm text-[var(--muted-foreground)]">
-                    {isZh ? '暂无活动记录。开始练习或考试。' : 'No activity yet. Start practicing or take an exam.'}
+                    {isZh
+                      ? '暂无活动记录。开始练习或考试。'
+                      : 'No activity yet. Start practicing or take an exam.'}
                   </p>
                 )}
               </div>
 
               {/* Quick Actions */}
               <div className="grid gap-3 sm:grid-cols-4">
-                <QuickAction icon={<Compass className="h-5 w-5" />} label={d.ctaDiagnosis || 'Start Diagnosis'} href="/csca/voyage#diagnosis" />
-                <QuickAction icon={<Target className="h-5 w-5" />} label={d.ctaPractice || 'Practice'} href="/csca/voyage#adaptive-learning" />
-                <QuickAction icon={<AlertCircle className="h-5 w-5" />} label={d.ctaWrongAnswer || 'Review Errors'} href="/csca/wrong-answer" />
-                <QuickAction icon={<BookOpen className="h-5 w-5" />} label={d.ctaExam || 'Mock Exam'} href="/csca/voyage#mock-exam" />
+                <QuickAction
+                  icon={<Compass className="h-5 w-5" />}
+                  label={d.ctaDiagnosis || 'Start Diagnosis'}
+                  href="/csca/voyage#diagnosis"
+                />
+                <QuickAction
+                  icon={<Target className="h-5 w-5" />}
+                  label={d.ctaPractice || 'Practice'}
+                  href="/csca/voyage#adaptive-learning"
+                />
+                <QuickAction
+                  icon={<AlertCircle className="h-5 w-5" />}
+                  label={d.ctaWrongAnswer || 'Review Errors'}
+                  href="/csca/wrong-answer"
+                />
+                <QuickAction
+                  icon={<BookOpen className="h-5 w-5" />}
+                  label={d.ctaExam || 'Mock Exam'}
+                  href="/csca/voyage#mock-exam"
+                />
                 {studyPlan && (
-                  <QuickAction icon={<Calendar className="h-5 w-5" />} label={isZh ? '学习计划' : 'Learning Plan'} href="/csca/voyage#study-plan" />
+                  <QuickAction
+                    icon={<Calendar className="h-5 w-5" />}
+                    label={isZh ? '学习计划' : 'Learning Plan'}
+                    href="/csca/voyage#study-plan"
+                  />
                 )}
               </div>
 
@@ -436,8 +516,12 @@ export default function CSCADashboardPage() {
                   <div className="flex items-center gap-3">
                     <GraduationCap className="h-5 w-5 text-[var(--primary)]" />
                     <div>
-                      <p className="text-xs text-[var(--muted-foreground)]">{d.nextMilestone || 'Next Milestone'}</p>
-                      <p className="text-sm font-medium">{stageLabels[nextMilestone] || `Stage ${nextMilestone + 1}`}</p>
+                      <p className="text-xs text-[var(--muted-foreground)]">
+                        {d.nextMilestone || 'Next Milestone'}
+                      </p>
+                      <p className="text-sm font-medium">
+                        {stageLabels[nextMilestone] || `Stage ${nextMilestone + 1}`}
+                      </p>
                     </div>
                   </div>
                   <Button asChild variant="ghost" size="sm">
@@ -511,7 +595,13 @@ export default function CSCADashboardPage() {
   );
 }
 
-function StatCard({ icon, label, value, sub, link }: {
+function StatCard({
+  icon,
+  label,
+  value,
+  sub,
+  link,
+}: {
   icon: React.ReactNode;
   label: string;
   value: string;
@@ -519,7 +609,12 @@ function StatCard({ icon, label, value, sub, link }: {
   link?: string;
 }) {
   const content = (
-    <div className={cn('rounded-xl border border-[var(--border)] bg-[var(--card)] p-4', link && 'cursor-pointer transition-colors hover:bg-[var(--muted)]')}>
+    <div
+      className={cn(
+        'rounded-xl border border-[var(--border)] bg-[var(--card)] p-4',
+        link && 'cursor-pointer transition-colors hover:bg-[var(--muted)]',
+      )}
+    >
       <div className="flex items-center justify-between">
         <span className="text-[var(--muted-foreground)]">{icon}</span>
       </div>
@@ -534,7 +629,11 @@ function StatCard({ icon, label, value, sub, link }: {
   return content;
 }
 
-function QuickAction({ icon, label, href }: {
+function QuickAction({
+  icon,
+  label,
+  href,
+}: {
   icon: React.ReactNode;
   label: string;
   href: string;

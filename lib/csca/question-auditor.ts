@@ -31,7 +31,26 @@ const AUDIT_RULES = {
   maxQuestionLength: 500,
   minOptionLength: 2,
   maxOptionLength: 200,
-  allowedSpecialChars: ['？', '？', '！', '。', ',', '.', ':', '：', ';', '；', '(', ')', '（', '）', '[', ']', '【', '】'],
+  allowedSpecialChars: [
+    '？',
+    '？',
+    '！',
+    '。',
+    ',',
+    '.',
+    ':',
+    '：',
+    ';',
+    '；',
+    '(',
+    ')',
+    '（',
+    '）',
+    '[',
+    ']',
+    '【',
+    '】',
+  ],
 };
 
 /**
@@ -49,7 +68,7 @@ function hasEncodingIssues(text: string): boolean {
     /\|\|/g, // 双竖线（可能是分隔符残留）
   ];
 
-  return garbagePatterns.some(pattern => pattern.test(text));
+  return garbagePatterns.some((pattern) => pattern.test(text));
 }
 
 /**
@@ -68,8 +87,23 @@ function isValidQuestion(question: string): boolean {
   }
 
   // 是否包含问题词
-  const questionWords = ['什么', '哪个', '哪项', '哪些', '属于', '正确', '错误', '是', '为', '等于', '满足', '成立', '取值', '范围'];
-  return questionWords.some(word => trimmed.includes(word));
+  const questionWords = [
+    '什么',
+    '哪个',
+    '哪项',
+    '哪些',
+    '属于',
+    '正确',
+    '错误',
+    '是',
+    '为',
+    '等于',
+    '满足',
+    '成立',
+    '取值',
+    '范围',
+  ];
+  return questionWords.some((word) => trimmed.includes(word));
 }
 
 /**
@@ -78,9 +112,11 @@ function isValidQuestion(question: string): boolean {
 function isValidOptions(options: string[]): boolean {
   if (!options || options.length < 2) return false;
 
-  return options.every(opt => {
+  return options.every((opt) => {
     const trimmed = opt.trim();
-    return trimmed.length >= AUDIT_RULES.minOptionLength && trimmed.length <= AUDIT_RULES.maxOptionLength;
+    return (
+      trimmed.length >= AUDIT_RULES.minOptionLength && trimmed.length <= AUDIT_RULES.maxOptionLength
+    );
   });
 }
 
@@ -92,22 +128,35 @@ function isEssayQuestion(question: Question): boolean {
   const essayKeywords = ['问答', '简述', '论述', '分析', '说明', '解释', '写作'];
 
   // 检查题目类型或模块是否包含问答题关键词
-  if (essayKeywords.some(keyword => type.includes(keyword))) {
+  if (essayKeywords.some((keyword) => type.includes(keyword))) {
     return true;
   }
 
   // 检查题目内容是否以"什么是"、"简述"、"论述"等开头
   const questionText = question.question || '';
   const essayPrefixes = ['什么是', '简述', '论述', '分析', '说明', '解释', '请', '试'];
-  return essayPrefixes.some(prefix => questionText.startsWith(prefix));
+  return essayPrefixes.some((prefix) => questionText.startsWith(prefix));
 }
 
 /**
  * 检查是否包含考试须知类内容（不是题目）
  */
 function isInstructionText(text: string): boolean {
-  const instructionKeywords = ['考生', '姓名', '准考证', '答题', '试卷', '注意', '要求', '务必', '填写', '写好', '步骤', '计算'];
-  return instructionKeywords.some(keyword => text.includes(keyword));
+  const instructionKeywords = [
+    '考生',
+    '姓名',
+    '准考证',
+    '答题',
+    '试卷',
+    '注意',
+    '要求',
+    '务必',
+    '填写',
+    '写好',
+    '步骤',
+    '计算',
+  ];
+  return instructionKeywords.some((keyword) => text.includes(keyword));
 }
 
 /**
@@ -115,7 +164,7 @@ function isInstructionText(text: string): boolean {
  */
 function hasFormatMarkers(text: string): boolean {
   const markers = ['###', '####', '---', '===', '**', '*', '_', '~~', '[', ']', '|', '`', '$'];
-  return markers.some(marker => text.includes(marker));
+  return markers.some((marker) => text.includes(marker));
 }
 
 /**
@@ -185,19 +234,19 @@ function generateSuggestion(issues: string[]): string {
 
   const suggestions: string[] = [];
 
-  if (issues.some(i => i.includes('乱码'))) {
+  if (issues.some((i) => i.includes('乱码'))) {
     suggestions.push('请检查原始题库的编码格式，确保使用UTF-8编码');
   }
 
-  if (issues.some(i => i.includes('格式标记'))) {
+  if (issues.some((i) => i.includes('格式标记'))) {
     suggestions.push('请移除题目中的Markdown格式标记（如###、**等）');
   }
 
-  if (issues.some(i => i.includes('考试须知'))) {
+  if (issues.some((i) => i.includes('考试须知'))) {
     suggestions.push('请将考试须知与实际题目分开存放');
   }
 
-  if (issues.some(i => i.includes('有效问题'))) {
+  if (issues.some((i) => i.includes('有效问题'))) {
     suggestions.push('题目应以问号或句号结尾，并包含疑问词（如：什么、哪个、正确等）');
   }
 
@@ -225,7 +274,7 @@ export function auditQuestions(questions: Question[]): {
   questions.forEach((q, index) => {
     const result = auditQuestion(q);
     result.correctedQuestion = q.question;
-    result.correctedOptions = q.options?.map(opt => typeof opt === 'string' ? opt : opt.value);
+    result.correctedOptions = q.options?.map((opt) => (typeof opt === 'string' ? opt : opt.value));
 
     auditResults.push(result);
 
@@ -236,9 +285,10 @@ export function auditQuestions(questions: Question[]): {
     }
   });
 
-  const avgConfidence = auditResults.length > 0
-    ? auditResults.reduce((sum, r) => sum + r.confidence, 0) / auditResults.length
-    : 0;
+  const avgConfidence =
+    auditResults.length > 0
+      ? auditResults.reduce((sum, r) => sum + r.confidence, 0) / auditResults.length
+      : 0;
 
   return {
     validQuestions,
@@ -290,10 +340,10 @@ export function fixQuestion(question: Question): Question {
   };
 
   if (cleaned.options) {
-    cleaned.options = cleaned.options.map(opt => 
-      typeof opt === 'string' 
-        ? cleanQuestionContent(opt) 
-        : { ...opt, value: cleanQuestionContent(opt.value) }
+    cleaned.options = cleaned.options.map((opt) =>
+      typeof opt === 'string'
+        ? cleanQuestionContent(opt)
+        : { ...opt, value: cleanQuestionContent(opt.value) },
     ) as typeof cleaned.options;
   }
 

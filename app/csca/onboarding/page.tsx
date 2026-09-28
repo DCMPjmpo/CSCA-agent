@@ -3,8 +3,14 @@
 import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import {
-  Globe, GraduationCap, BookOpen, CheckCircle2, ArrowRight,
-  ArrowLeft, Compass, Sparkles,
+  Globe,
+  GraduationCap,
+  BookOpen,
+  CheckCircle2,
+  ArrowRight,
+  ArrowLeft,
+  Compass,
+  Sparkles,
 } from 'lucide-react';
 import { BrandShell } from '@/components/brand/BrandShell';
 import { useTranslation } from '@/lib/i18n/hooks';
@@ -35,23 +41,28 @@ export default function OnboardingPage() {
 
   const majors = useMemo(() => {
     const set = new Set<string>();
-    UNIVERSITIES.forEach(u => u.majors.forEach(m => set.add(m)));
+    UNIVERSITIES.forEach((u) => u.majors.forEach((m) => set.add(m)));
     return Array.from(set).sort();
   }, []);
 
   const recommendedHsk = useMemo(() => {
-    const c = ASEAN_COUNTRIES.find(x => x.code === country);
+    const c = ASEAN_COUNTRIES.find((x) => x.code === country);
     return c?.hskRequirement ?? null;
   }, [country]);
 
   const totalSteps = 4;
   const canProceed = useMemo(() => {
     switch (step) {
-      case 0: return !!country;
-      case 1: return typeof hsk === 'number';
-      case 2: return !!major;
-      case 3: return !!education;
-      default: return false;
+      case 0:
+        return !!country;
+      case 1:
+        return typeof hsk === 'number';
+      case 2:
+        return !!major;
+      case 3:
+        return !!education;
+      default:
+        return false;
     }
   }, [step, country, hsk, major, education]);
 
@@ -108,13 +119,18 @@ export default function OnboardingPage() {
                       ? 'border-[var(--primary)] bg-[var(--primary)] text-[var(--primary-foreground)]'
                       : i < step
                         ? 'border-[var(--status-success)] bg-[var(--status-success-bg)] text-[var(--status-success)]'
-                        : 'border-[var(--border)] text-[var(--muted-foreground)]'
+                        : 'border-[var(--border)] text-[var(--muted-foreground)]',
                   )}
                 >
                   {i < step ? <CheckCircle2 className="h-4 w-4" /> : i + 1}
                 </div>
                 {i < totalSteps - 1 && (
-                  <div className={cn('h-px w-8', i < step ? 'bg-[var(--status-success)]' : 'bg-[var(--border)]')} />
+                  <div
+                    className={cn(
+                      'h-px w-8',
+                      i < step ? 'bg-[var(--status-success)]' : 'bg-[var(--border)]',
+                    )}
+                  />
                 )}
               </div>
             ))}
@@ -123,7 +139,8 @@ export default function OnboardingPage() {
           {step === 0 && (
             <div className="mb-6 rounded-lg border border-[var(--muted-gold)]/30 bg-[var(--status-warning-bg)] px-4 py-3">
               <p className="text-xs leading-relaxed text-[var(--gold-ink)]">
-                {o.englishFirstHint || 'All learning content is in English. The CSCA exam is bilingual (Chinese/English).'}
+                {o.englishFirstHint ||
+                  'All learning content is in English. The CSCA exam is bilingual (Chinese/English).'}
               </p>
             </div>
           )}
@@ -141,7 +158,7 @@ export default function OnboardingPage() {
 
             {step === 0 && (
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                {ASEAN_COUNTRIES.map(c => (
+                {ASEAN_COUNTRIES.map((c) => (
                   <button
                     key={c.code}
                     onClick={() => setCountry(c.code)}
@@ -149,7 +166,7 @@ export default function OnboardingPage() {
                       'rounded-lg border p-3 text-left transition-colors',
                       country === c.code
                         ? 'border-[var(--primary)] bg-[var(--primary)]/5'
-                        : 'border-[var(--border)] hover:bg-[var(--muted)]'
+                        : 'border-[var(--border)] hover:bg-[var(--muted)]',
                     )}
                   >
                     <p className="text-sm font-medium">{isZh ? c.name : c.nameEn}</p>
@@ -171,7 +188,7 @@ export default function OnboardingPage() {
                   </p>
                 )}
                 <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
-                  {HSK_LEVELS.map(lvl => (
+                  {HSK_LEVELS.map((lvl) => (
                     <button
                       key={lvl}
                       onClick={() => setHsk(lvl)}
@@ -179,7 +196,7 @@ export default function OnboardingPage() {
                         'rounded-lg border p-3 text-center text-sm font-medium transition-colors',
                         hsk === lvl
                           ? 'border-[var(--primary)] bg-[var(--primary)]/5 text-[var(--primary)]'
-                          : 'border-[var(--border)] hover:bg-[var(--muted)]'
+                          : 'border-[var(--border)] hover:bg-[var(--muted)]',
                       )}
                     >
                       HSK {lvl}
@@ -196,7 +213,7 @@ export default function OnboardingPage() {
 
             {step === 2 && (
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                {majors.map(m => (
+                {majors.map((m) => (
                   <button
                     key={m}
                     onClick={() => setMajor(m)}
@@ -204,7 +221,7 @@ export default function OnboardingPage() {
                       'rounded-lg border p-3 text-left text-sm transition-colors',
                       major === m
                         ? 'border-[var(--primary)] bg-[var(--primary)]/5'
-                        : 'border-[var(--border)] hover:bg-[var(--muted)]'
+                        : 'border-[var(--border)] hover:bg-[var(--muted)]',
                     )}
                   >
                     {m}
@@ -215,7 +232,7 @@ export default function OnboardingPage() {
 
             {step === 3 && (
               <div className="space-y-2">
-                {EDUCATION_SYSTEMS.map(e => (
+                {EDUCATION_SYSTEMS.map((e) => (
                   <button
                     key={e.id}
                     onClick={() => setEducation(e.id)}
@@ -223,13 +240,13 @@ export default function OnboardingPage() {
                       'flex w-full items-center justify-between rounded-lg border p-4 text-left transition-colors',
                       education === e.id
                         ? 'border-[var(--primary)] bg-[var(--primary)]/5'
-                        : 'border-[var(--border)] hover:bg-[var(--muted)]'
+                        : 'border-[var(--border)] hover:bg-[var(--muted)]',
                     )}
                   >
-                    <span className="text-sm font-medium">
-                      {isZh ? e.labelZh : e.labelEn}
-                    </span>
-                    {education === e.id && <CheckCircle2 className="h-4 w-4 text-[var(--primary)]" />}
+                    <span className="text-sm font-medium">{isZh ? e.labelZh : e.labelEn}</span>
+                    {education === e.id && (
+                      <CheckCircle2 className="h-4 w-4 text-[var(--primary)]" />
+                    )}
                   </button>
                 ))}
               </div>
@@ -239,7 +256,7 @@ export default function OnboardingPage() {
           <div className="mt-6 flex items-center justify-between">
             <div>
               {step > 0 ? (
-                <Button variant="ghost" onClick={() => setStep(s => s - 1)}>
+                <Button variant="ghost" onClick={() => setStep((s) => s - 1)}>
                   <ArrowLeft className="mr-1.5 h-4 w-4" />
                   {isZh ? '上一步' : 'Back'}
                 </Button>
@@ -254,7 +271,7 @@ export default function OnboardingPage() {
                 {step + 1} / {totalSteps}
               </span>
               {step < totalSteps - 1 ? (
-                <Button onClick={() => setStep(s => s + 1)} disabled={!canProceed}>
+                <Button onClick={() => setStep((s) => s + 1)} disabled={!canProceed}>
                   {isZh ? '下一步' : 'Next'}
                   <ArrowRight className="ml-1.5 h-4 w-4" />
                 </Button>

@@ -74,7 +74,9 @@ describe('middleware — inbound identity headers are never trusted', () => {
     vi.stubEnv('ACCESS_CODE', '');
 
     const { token, identity } = await mintSessionToken(SECRET);
-    const res = await middleware(makeRequest('/api/csca/ask-tutor', { sessionCookie: token, forged: true }));
+    const res = await middleware(
+      makeRequest('/api/csca/ask-tutor', { sessionCookie: token, forged: true }),
+    );
 
     expect(overridden(res, SESSION_ID_HEADER)).toBe(identity.sessionId);
     expect(overridden(res, USER_ID_HEADER)).toBe(identity.userId);
@@ -211,13 +213,17 @@ describe('middleware — access-gate semantics unchanged', () => {
 
   it('rejects a forged access token', async () => {
     vi.stubEnv('ACCESS_CODE', ACCESS);
-    const res = await middleware(makeRequest('/api/csca/ask-tutor', { accessCookie: '123.not-a-signature' }));
+    const res = await middleware(
+      makeRequest('/api/csca/ask-tutor', { accessCookie: '123.not-a-signature' }),
+    );
     expect(res.status).toBe(401);
   });
 
   it('passes /api/* with a valid access cookie', async () => {
     vi.stubEnv('ACCESS_CODE', ACCESS);
-    const res = await middleware(makeRequest('/api/csca/ask-tutor', { accessCookie: accessToken(ACCESS) }));
+    const res = await middleware(
+      makeRequest('/api/csca/ask-tutor', { accessCookie: accessToken(ACCESS) }),
+    );
     expect(res.status).toBe(200);
   });
 

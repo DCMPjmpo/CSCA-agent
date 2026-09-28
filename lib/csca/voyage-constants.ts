@@ -35,8 +35,18 @@ export const TARGET_MAJORS: TargetMajor[] = [
   { id: 'education', name: '教育学', nameEn: 'Education', category: 'social' },
   { id: 'psychology', name: '心理学', nameEn: 'Psychology', category: 'social' },
   { id: 'sociology', name: '社会学', nameEn: 'Sociology', category: 'social' },
-  { id: 'english', name: '英语语言文学', nameEn: 'English Language & Literature', category: 'humanities' },
-  { id: 'chinese', name: '中国语言文学', nameEn: 'Chinese Language & Literature', category: 'humanities' },
+  {
+    id: 'english',
+    name: '英语语言文学',
+    nameEn: 'English Language & Literature',
+    category: 'humanities',
+  },
+  {
+    id: 'chinese',
+    name: '中国语言文学',
+    nameEn: 'Chinese Language & Literature',
+    category: 'humanities',
+  },
   { id: 'history', name: '历史学', nameEn: 'History', category: 'humanities' },
   { id: 'art', name: '艺术设计', nameEn: 'Art & Design', category: 'humanities' },
   { id: 'mathematics', name: '数学', nameEn: 'Mathematics', category: 'science' },
@@ -65,84 +75,84 @@ import type { ExamQuestionLike } from '@/lib/csca/exam-scoring';
 // ===== Types extracted from CSCAVoyageApp.tsx (to keep main file under Turbopack 151KB limit) =====
 
 export interface ScoreAnalysisResult {
-    totalScore: number;
-    moduleScores: Record<string, number>;
-    rankingPercentile?: number;
-    weakPoints: string[];
-    improvementPlan: string;
+  totalScore: number;
+  moduleScores: Record<string, number>;
+  rankingPercentile?: number;
+  weakPoints: string[];
+  improvementPlan: string;
 }
 
 export interface DiagnosisResult {
-    requiredSubjects: string[];
-    recommendedSubjects: string[];
-    subjectPriorities: Record<string, number>;
-    estimatedDays: number;
+  requiredSubjects: string[];
+  recommendedSubjects: string[];
+  subjectPriorities: Record<string, number>;
+  estimatedDays: number;
 }
 
 export interface AdaptiveExercise {
-    id: string;
-    question: string;
-    options: string[];
-    answer: number;
-    difficulty: number;
-    topic: string;
-    subject: string;
-    explanation?: string;
-    knowledgePoint?: string;
+  id: string;
+  question: string;
+  options: string[];
+  answer: number;
+  difficulty: number;
+  topic: string;
+  subject: string;
+  explanation?: string;
+  knowledgePoint?: string;
 }
 
 export interface ExamQuestion {
-    id: string;
-    question: string;
-    options: string[];
-    correctAnswer: number;
-    difficulty: string;
-    module: string;
-    subject: string;
-    type?: string;
-    answerExplanation?: string;
-    englishTerm?: string;
-    knowledgePoint?: string;
+  id: string;
+  question: string;
+  options: string[];
+  correctAnswer: number;
+  difficulty: string;
+  module: string;
+  subject: string;
+  type?: string;
+  answerExplanation?: string;
+  englishTerm?: string;
+  knowledgePoint?: string;
 }
 
 export interface ExamResult {
-    score: number;
-    total: number;
-    breakdown: Record<string, number>;
-    correctCount: number;
-    answers: Record<string, number | string>;
-    wrongQuestions: ExamQuestionLike[];
+  score: number;
+  total: number;
+  breakdown: Record<string, number>;
+  correctCount: number;
+  answers: Record<string, number | string>;
+  wrongQuestions: ExamQuestionLike[];
 }
 
 export interface UniversityMatch {
-    name: string;
-    nameZh: string;
-    rank?: number;
-    matchScore: number;
-    probability: number;
-    requirements: string[];
-    location: string;
-    type: string;
-    description: string;
+  name: string;
+  nameZh: string;
+  rank?: number;
+  matchScore: number;
+  probability: number;
+  requirements: string[];
+  location: string;
+  type: string;
+  description: string;
 }
 
 export interface UniversityCategory {
-    title: string;
-    description: string;
-    color: string;
-    bgColor: string;
-    borderColor: string;
-    universities: UniversityMatch[];
+  title: string;
+  description: string;
+  color: string;
+  bgColor: string;
+  borderColor: string;
+  universities: UniversityMatch[];
 }
 
 export type Step =
-    | 'diagnosis'
-    | 'knowledge_map'
-    | 'adaptive_learning'
-    | 'exam_center'
-    | 'exam'
-    | 'result'
-    | 'error_review'
-    | 'study_plan'
-    | 'university_match'
-    | 'ai_tutor';
+  | 'diagnosis'
+  | 'knowledge_map'
+  | 'adaptive_learning'
+  | 'exam_center'
+  | 'exam'
+  | 'result'
+  | 'error_review'
+  | 'study_plan'
+  | 'university_match'
+  | 'ai_tutor';

@@ -4,7 +4,8 @@
 //       点击领命鞠躬+欢迎 Toast+跳转功能面板 / university-match 深链 / 导出页回归
 import { chromium } from '@playwright/test';
 
-const EXEC_PATH = 'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
+const EXEC_PATH =
+  'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
 const BASE = 'http://localhost:3000';
 
 let pass = 0;
@@ -37,7 +38,10 @@ try {
   await page.waitForSelector('[data-advisor-seat]', { timeout: 15000 });
   const seats = await page.locator('[data-advisor-seat]').count();
   check('8 席渲染', seats === 8, `(count=${seats})`);
-  check('idle 呼吸（8 个 .advisor-breathe）', (await page.locator('.advisor-breathe').count()) === 8);
+  check(
+    'idle 呼吸（8 个 .advisor-breathe）',
+    (await page.locator('.advisor-breathe').count()) === 8,
+  );
 
   /* ---- 2. hover：姓名牌 + Tooltip + 转头 + 拱手 ---- */
   console.log('========== hover 交互 ==========');

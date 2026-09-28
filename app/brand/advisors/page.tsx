@@ -88,7 +88,8 @@ export default function BrandAdvisorsPage() {
           {/* 设计说明 */}
           <section className="text-center">
             <p className="text-sm text-sandalwood">
-              呼吸动画：身随脚底轴微上浮（3 帧循环），身旁道具保持静止 · 透明背景 PNG / Sprite Sheet 由
+              呼吸动画：身随脚底轴微上浮（3 帧循环），身旁道具保持静止 · 透明背景 PNG / Sprite Sheet
+              由
               <code className="font-brand-pixel text-vermilion"> scripts/export-advisors.mjs </code>
               导出至
               <code className="font-brand-pixel text-vermilion"> brand/advisors/png/</code>

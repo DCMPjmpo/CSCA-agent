@@ -30,7 +30,6 @@ const getSnapshot = () => sound.getState();
 const SSR_DEFAULT_STATE: SoundState = { ambient: true, sfx: true };
 const getServerSnapshot = () => SSR_DEFAULT_STATE;
 
-
 export function SoundProvider({ children }: { children: ReactNode }) {
   const state = useSyncExternalStore<SoundState>(subscribe, getSnapshot, getServerSnapshot);
   return (

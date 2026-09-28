@@ -24,7 +24,16 @@ import { useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import {
-  Archive, ArrowRight, ChevronRight, Code2, FileText, History, ListChecks, Loader2, RotateCcw, Sparkles,
+  Archive,
+  ArrowRight,
+  ChevronRight,
+  Code2,
+  FileText,
+  History,
+  ListChecks,
+  Loader2,
+  RotateCcw,
+  Sparkles,
 } from 'lucide-react';
 import { BrandShell } from '@/components/brand/BrandShell';
 import { Button } from '@/components/ui/button';
@@ -137,7 +146,9 @@ export default function StudioPage() {
     }
   }, []);
 
-  useEffect(() => { loadTasks(); }, [loadTasks]);
+  useEffect(() => {
+    loadTasks();
+  }, [loadTasks]);
 
   /** 创建 PPT 任务 → 任务工作台 */
   const handleCreatePptTask = async () => {
@@ -187,7 +198,10 @@ export default function StudioPage() {
 
   return (
     <BrandShell>
-      <div data-testid="studio-page" className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <div
+        data-testid="studio-page"
+        className="min-h-screen bg-[var(--background)] text-[var(--foreground)]"
+      >
         {/* Header — 与 /csca 同构的版面，但内容属于创作空间，不是学习仪表盘 */}
         <div className="border-b border-[var(--border)] bg-[var(--card)]">
           <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
@@ -207,9 +221,7 @@ export default function StudioPage() {
           <section className="mt-2">
             <div className="mb-3 flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-[var(--accent)]" />
-              <h2 className="text-sm font-semibold">
-                {isZh ? '创建' : 'Create'}
-              </h2>
+              <h2 className="text-sm font-semibold">{isZh ? '创建' : 'Create'}</h2>
             </div>
 
             {/* 两个独立入口，视觉权重相同：同样的卡片类、同样的图标容器、同样的排版权重。
@@ -234,9 +246,7 @@ export default function StudioPage() {
                     )}
                   />
                 </div>
-                <h3 className="mt-3 text-base font-semibold">
-                  {isZh ? 'AI PPT' : 'AI PPT'}
-                </h3>
+                <h3 className="mt-3 text-base font-semibold">{isZh ? 'AI PPT' : 'AI PPT'}</h3>
                 <p className="mt-1 text-xs text-[var(--muted-foreground)]">
                   {isZh
                     ? '根据学习需求生成教学 PPT，可在课堂页导出 PPTX'
@@ -275,7 +285,10 @@ export default function StudioPage() {
 
             {/* Inline 表单：输入 PPT 需求 → createPptTask → 任务工作台 */}
             {pptFormOpen && (
-              <div data-testid="ai-ppt-form" className="mt-3 rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+              <div
+                data-testid="ai-ppt-form"
+                className="mt-3 rounded-xl border border-[var(--border)] bg-[var(--card)] p-4"
+              >
                 <label className="text-xs font-medium uppercase tracking-widest text-[var(--muted-foreground)]">
                   {isZh ? 'PPT 主题 / 需求' : 'Slide topic / requirement'}
                 </label>
@@ -328,7 +341,10 @@ export default function StudioPage() {
 
             {/* Inline 表单：输入学习主题 → createHtmlTask → 任务工作台 */}
             {htmlFormOpen && (
-              <div data-testid="ai-html-form" className="mt-3 rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+              <div
+                data-testid="ai-html-form"
+                className="mt-3 rounded-xl border border-[var(--border)] bg-[var(--card)] p-4"
+              >
                 <label className="text-xs font-medium uppercase tracking-widest text-[var(--muted-foreground)]">
                   {isZh ? '学习主题 / 需求' : 'Learning topic / requirement'}
                 </label>
@@ -386,9 +402,7 @@ export default function StudioPage() {
             <div className="mb-3 flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 <ListChecks className="h-4 w-4 text-[var(--accent)]" />
-                <h2 className="text-sm font-semibold">
-                  {isZh ? '进行中的任务' : 'Active Tasks'}
-                </h2>
+                <h2 className="text-sm font-semibold">{isZh ? '进行中的任务' : 'Active Tasks'}</h2>
                 {activeTasks.length > 0 && (
                   <span className="text-xs text-[var(--muted-foreground)]">
                     {activeTasks.length}
@@ -425,9 +439,14 @@ export default function StudioPage() {
               <ul className="space-y-2">
                 {activeTasks.map((task) => {
                   const isPpt = task.capability === 'ppt';
-                  const statusLabel = task.status === 'pending'
-                    ? (isZh ? '排队中' : 'Queued')
-                    : (isZh ? '生成中' : 'Generating');
+                  const statusLabel =
+                    task.status === 'pending'
+                      ? isZh
+                        ? '排队中'
+                        : 'Queued'
+                      : isZh
+                        ? '生成中'
+                        : 'Generating';
                   const progress = typeof task.lastProgress === 'number' ? task.lastProgress : null;
                   const scenes = task.scenesGenerated ?? 0;
                   const updated = formatRelative(task.updatedAt, isZh);
@@ -452,7 +471,7 @@ export default function StudioPage() {
                                   : 'bg-[var(--accent)]/15 text-[var(--accent)]',
                               )}
                             >
-                              {isPpt ? 'AI PPT' : (isZh ? '互动课程' : 'Interactive Lesson')}
+                              {isPpt ? 'AI PPT' : isZh ? '互动课程' : 'Interactive Lesson'}
                             </span>
                             <span className="text-xs font-medium text-[var(--primary)]">
                               {statusLabel}
@@ -468,9 +487,11 @@ export default function StudioPage() {
                           </p>
 
                           <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[var(--muted-foreground)]">
-                            {progress !== null
-                              ? <span>{isZh ? `进度 ${progress}%` : `Progress ${progress}%`}</span>
-                              : <span>{isZh ? '等待进度回报' : 'Awaiting progress'}</span>}
+                            {progress !== null ? (
+                              <span>{isZh ? `进度 ${progress}%` : `Progress ${progress}%`}</span>
+                            ) : (
+                              <span>{isZh ? '等待进度回报' : 'Awaiting progress'}</span>
+                            )}
                             {scenes > 0 && (
                               <span>{isZh ? `${scenes} 个场景` : `${scenes} scenes`}</span>
                             )}
@@ -490,8 +511,16 @@ export default function StudioPage() {
                         </div>
 
                         {/* 右：独立按钮，不把整行做成一个大 Link */}
-                        <Button asChild variant="outline" size="sm" data-testid="active-task-continue">
-                          <Link href={`/csca/tasks/${task.taskId}`} className="flex-shrink-0 self-start sm:self-center">
+                        <Button
+                          asChild
+                          variant="outline"
+                          size="sm"
+                          data-testid="active-task-continue"
+                        >
+                          <Link
+                            href={`/csca/tasks/${task.taskId}`}
+                            className="flex-shrink-0 self-start sm:self-center"
+                          >
                             {isZh ? '继续任务' : 'Continue'}
                             <ArrowRight className="ml-2 h-3.5 w-3.5" />
                           </Link>
@@ -511,13 +540,9 @@ export default function StudioPage() {
           <section data-testid="recent-tasks" className="mt-8">
             <div className="mb-3 flex items-center gap-2">
               <History className="h-4 w-4 text-[var(--accent)]" />
-              <h2 className="text-sm font-semibold">
-                {isZh ? '最近任务' : 'Recent Tasks'}
-              </h2>
+              <h2 className="text-sm font-semibold">{isZh ? '最近任务' : 'Recent Tasks'}</h2>
               {recentTasks.length > 0 && (
-                <span className="text-xs text-[var(--muted-foreground)]">
-                  {recentTasks.length}
-                </span>
+                <span className="text-xs text-[var(--muted-foreground)]">{recentTasks.length}</span>
               )}
             </div>
 
@@ -567,7 +592,7 @@ export default function StudioPage() {
                                   : 'bg-[var(--accent)]/15 text-[var(--accent)]',
                               )}
                             >
-                              {isPpt ? 'AI PPT' : (isZh ? '互动课程' : 'Interactive Lesson')}
+                              {isPpt ? 'AI PPT' : isZh ? '互动课程' : 'Interactive Lesson'}
                             </span>
                             <span
                               className={cn(
@@ -576,8 +601,12 @@ export default function StudioPage() {
                               )}
                             >
                               {isSucceeded
-                                ? (isZh ? '已完成' : 'Completed')
-                                : (isZh ? '生成失败' : 'Failed')}
+                                ? isZh
+                                  ? '已完成'
+                                  : 'Completed'
+                                : isZh
+                                  ? '生成失败'
+                                  : 'Failed'}
                             </span>
                           </div>
 
@@ -612,7 +641,12 @@ export default function StudioPage() {
                         {/* 右：两个独立动作。右起为「向前」的动作（打开课堂），
                             与 Active 区的「继续任务」保持同一方向感。 */}
                         <div className="flex flex-shrink-0 items-center gap-2 self-start sm:self-center">
-                          <Button asChild variant="outline" size="sm" data-testid="recent-task-view">
+                          <Button
+                            asChild
+                            variant="outline"
+                            size="sm"
+                            data-testid="recent-task-view"
+                          >
                             <Link href={`/csca/tasks/${task.taskId}`}>
                               {isZh ? '查看任务' : 'View task'}
                             </Link>
@@ -641,9 +675,7 @@ export default function StudioPage() {
           <section data-testid="creation-history" className="mt-8">
             <div className="mb-3 flex items-center gap-2">
               <Archive className="h-4 w-4 text-[var(--accent)]" />
-              <h2 className="text-sm font-semibold">
-                {isZh ? '创作历史' : 'Creation History'}
-              </h2>
+              <h2 className="text-sm font-semibold">{isZh ? '创作历史' : 'Creation History'}</h2>
               {historyTasks.length > 0 && (
                 <span className="text-xs text-[var(--muted-foreground)]">
                   {historyTasks.length}
@@ -673,7 +705,9 @@ export default function StudioPage() {
                   <span className="min-w-0 flex-1">{isZh ? '主题' : 'Topic'}</span>
                   <span className="w-20 flex-shrink-0">{isZh ? '状态' : 'Status'}</span>
                   <span className="w-24 flex-shrink-0">{isZh ? '时间' : 'Time'}</span>
-                  <span className="w-[176px] flex-shrink-0 text-right">{isZh ? '操作' : 'Actions'}</span>
+                  <span className="w-[176px] flex-shrink-0 text-right">
+                    {isZh ? '操作' : 'Actions'}
+                  </span>
                 </div>
 
                 <ul className="divide-y divide-[var(--border)]">
@@ -702,7 +736,7 @@ export default function StudioPage() {
                                 : 'bg-[var(--accent)]/15 text-[var(--accent)]',
                             )}
                           >
-                            {isPpt ? 'AI PPT' : (isZh ? '互动课程' : 'Interactive Lesson')}
+                            {isPpt ? 'AI PPT' : isZh ? '互动课程' : 'Interactive Lesson'}
                           </span>
                         </div>
 
@@ -732,7 +766,12 @@ export default function StudioPage() {
 
                         {/* 两个**独立动作**：查看任务 / 打开课堂。整行不是 Link。 */}
                         <div className="flex flex-shrink-0 items-center gap-1.5 sm:w-[176px] sm:justify-end">
-                          <Button asChild variant="outline" size="xs" data-testid="history-task-view">
+                          <Button
+                            asChild
+                            variant="outline"
+                            size="xs"
+                            data-testid="history-task-view"
+                          >
                             <Link href={`/csca/tasks/${task.taskId}`}>
                               {isZh ? '查看任务' : 'View task'}
                             </Link>

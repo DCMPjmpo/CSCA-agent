@@ -1,6 +1,6 @@
 /**
  * CSCA Multi-Agent System - Agent Definitions
- * 
+ *
  * Specialized agents for CSCA exam preparation with distinct roles
  */
 
@@ -68,7 +68,7 @@ export const CSCA_AGENTS: CscaAgent[] = [
 - Provide clear explanations
 - Highlight common mistakes
 - Encourage learning from errors
-- Focus on Chinese university admission requirements`
+- Focus on Chinese university admission requirements`,
   },
   {
     id: 'tutor',

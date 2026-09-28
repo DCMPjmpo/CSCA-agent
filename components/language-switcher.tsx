@@ -62,7 +62,9 @@ export function LanguageSwitcher({ onOpen }: LanguageSwitcherProps) {
       {open && (
         <div className="absolute top-full mt-2 right-0 bg-slate-800 border border-slate-600 rounded-xl shadow-xl overflow-hidden z-50 min-w-[180px]">
           <div className="p-2 border-b border-slate-700">
-            <span className="text-xs text-slate-400 px-2">Select Language / Chọn Ngôn ngữ / Pilih Bahasa</span>
+            <span className="text-xs text-slate-400 px-2">
+              Select Language / Chọn Ngôn ngữ / Pilih Bahasa
+            </span>
           </div>
           {supportedLocales.map((l) => (
             <button
@@ -73,8 +75,7 @@ export function LanguageSwitcher({ onOpen }: LanguageSwitcherProps) {
               }}
               className={cn(
                 'w-full flex items-center gap-3 px-4 py-3 text-left text-sm hover:bg-slate-700/50 transition-all',
-                locale === l.code &&
-                'bg-indigo-600/30 text-indigo-300',
+                locale === l.code && 'bg-indigo-600/30 text-indigo-300',
               )}
             >
               <span className="w-6 h-6 flex items-center justify-center bg-slate-600 rounded text-xs font-bold">

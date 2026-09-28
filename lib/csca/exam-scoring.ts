@@ -59,7 +59,7 @@ export function gradeExam(params: GradeExamParams): ExamGradeResult {
   const userAnswers: UserAnswer[] = [];
   const newErrorRecords: ErrorRecord[] = [];
 
-  examQuestions.forEach(q => {
+  examQuestions.forEach((q) => {
     if (!subjectScores[q.subject]) {
       subjectScores[q.subject] = { correct: 0, total: 0 };
     }
@@ -99,7 +99,8 @@ export function gradeExam(params: GradeExamParams): ExamGradeResult {
     }
   });
 
-  const score = examQuestions.length > 0 ? Math.round((correctCount / examQuestions.length) * 100) : 0;
+  const score =
+    examQuestions.length > 0 ? Math.round((correctCount / examQuestions.length) * 100) : 0;
   const breakdown: Record<string, number> = {};
 
   Object.entries(subjectScores).forEach(([subject, stats]) => {

@@ -592,8 +592,7 @@ export function TTSSettings({ selectedProviderId }: TTSSettingsProps) {
             onAdd={(voiceId, voiceName) => {
               const voices = [
                 ...((providerConfig?.customVoices as
-                  | Array<{ id: string; name: string }>
-                  | undefined) || []),
+                  Array<{ id: string; name: string }> | undefined) || []),
                 { id: voiceId, name: voiceName },
               ];
               setTTSProviderConfig(selectedProviderId, {

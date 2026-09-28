@@ -33,7 +33,8 @@ export const maxDuration = 60;
  * 新调用方一律走原始 answerHistory 适配层（见 POST 内的分支顺序）。
  */
 function legacyLearningContext(body: Record<string, unknown>): LearningContext {
-  const completed = typeof body.completedQuestionCount === 'number' ? body.completedQuestionCount : 0;
+  const completed =
+    typeof body.completedQuestionCount === 'number' ? body.completedQuestionCount : 0;
   const wrong = typeof body.wrongQuestionCount === 'number' ? body.wrongQuestionCount : 0;
   return {
     ...emptyLearningContext(),
@@ -73,10 +74,7 @@ export async function POST(request: Request) {
     locale = body.locale;
 
     if (!question) {
-      return NextResponse.json(
-        { success: false, error: 'Question is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ success: false, error: 'Question is required' }, { status: 400 });
     }
 
     const systemPrompt = `你是一位专业的CSCA（中国国际学生标准化考试）备考导师。

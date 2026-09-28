@@ -13,12 +13,7 @@ import { createLogger } from '@/lib/logger';
 const log = createLogger('ImportClassroom');
 
 export type ImportPhase =
-  | 'idle'
-  | 'parsing'
-  | 'validating'
-  | 'writingMedia'
-  | 'writingCourse'
-  | 'done';
+  'idle' | 'parsing' | 'validating' | 'writingMedia' | 'writingCourse' | 'done';
 
 export function useImportClassroom(onSuccess?: () => void) {
   const [importing, setImporting] = useState(false);

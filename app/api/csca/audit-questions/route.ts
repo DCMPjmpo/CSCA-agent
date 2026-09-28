@@ -5,7 +5,12 @@
 
 import { NextResponse } from 'next/server';
 import { getExamQuestions, getAllSubjects } from '@/lib/csca/question-bank';
-import { auditQuestions, auditQuestion, fixQuestion, AuditResult } from '@/lib/csca/question-auditor';
+import {
+  auditQuestions,
+  auditQuestion,
+  fixQuestion,
+  AuditResult,
+} from '@/lib/csca/question-auditor';
 
 export async function GET(request: Request) {
   try {
@@ -21,7 +26,7 @@ export async function GET(request: Request) {
     const { validQuestions, invalidQuestions, stats } = auditQuestions(questions);
 
     // 获取详细的审核结果
-    const detailedResults = questions.map(q => {
+    const detailedResults = questions.map((q) => {
       const audit = auditQuestion(q);
       const fixed = fixQuestion(q);
       return {
@@ -81,7 +86,7 @@ export async function POST(request: Request) {
       });
     } else if (action === 'fix') {
       // 修复题目
-      const fixedQuestions = questions.map(q => fixQuestion(q));
+      const fixedQuestions = questions.map((q) => fixQuestion(q));
       return NextResponse.json({
         success: true,
         data: {
@@ -91,7 +96,7 @@ export async function POST(request: Request) {
     } else if (action === 'audit_and_fix') {
       // 审核并修复
       const { validQuestions, invalidQuestions, stats, auditResults } = auditQuestions(questions);
-      const fixedQuestions = questions.map(q => ({
+      const fixedQuestions = questions.map((q) => ({
         ...q,
         fixed: fixQuestion(q),
         audit: auditQuestion(q),

@@ -288,17 +288,15 @@ export interface ReferAction {
 }
 
 export type CapabilityDecision =
-  | AnswerDecision
-  | PptAction
-  | LessonAction
-  | ClarifyAction
-  | ReferAction;
+  AnswerDecision | PptAction | LessonAction | ClarifyAction | ReferAction;
 
 export const askClarificationInputSchema = z.object({
   question: z
     .string()
     .min(2)
-    .describe('向学生提出的澄清问题，例如「你是想要一份 PPT 课件，还是一个可以动手操作的交互式学习页面？」'),
+    .describe(
+      '向学生提出的澄清问题，例如「你是想要一份 PPT 课件，还是一个可以动手操作的交互式学习页面？」',
+    ),
 });
 
 export const referToStageInputSchema = z.object({
@@ -308,7 +306,8 @@ export const referToStageInputSchema = z.object({
   reason: z.string().min(2).describe('为什么需要转介，用一句话说明'),
 });
 
-export type ClarifySubmission = { ok: true; kind: 'clarify'; question: string } | { ok: false; error: string };
+export type ClarifySubmission =
+  { ok: true; kind: 'clarify'; question: string } | { ok: false; error: string };
 
 /** 纯函数，无副作用。校验失败时**返回**失败而非抛出（抛出会中断 agentic 循环）。 */
 export function buildClarifySubmission(question: unknown): ClarifySubmission {
@@ -319,8 +318,7 @@ export function buildClarifySubmission(question: unknown): ClarifySubmission {
 }
 
 export type ReferSubmission =
-  | { ok: true; kind: 'refer'; stage: ReferStage; reason: string }
-  | { ok: false; error: string };
+  { ok: true; kind: 'refer'; stage: ReferStage; reason: string } | { ok: false; error: string };
 
 /** 纯函数，无副作用。同上，返回而非抛出。 */
 export function buildReferSubmission(stage: unknown, reason: unknown): ReferSubmission {

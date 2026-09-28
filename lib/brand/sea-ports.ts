@@ -11,14 +11,7 @@
 import type { AdvisorId } from '@/components/brand/advisors';
 
 export type PortId =
-  | 'champa'
-  | 'siam'
-  | 'melaka'
-  | 'palembang'
-  | 'semarang'
-  | 'java'
-  | 'sumatra'
-  | 'ceylon';
+  'champa' | 'siam' | 'melaka' | 'palembang' | 'semarang' | 'java' | 'sumatra' | 'ceylon';
 
 export interface SeaPort {
   id: PortId;

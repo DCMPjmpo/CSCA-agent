@@ -1222,7 +1222,9 @@ export function getModel(config: ModelConfig): ModelWithInfo {
 
   // Validate model ID is not empty
   if (!config.modelId || config.modelId.trim() === '') {
-    throw new Error(`Model ID is required. Please provide a valid model ID for provider: ${config.providerId}`);
+    throw new Error(
+      `Model ID is required. Please provide a valid model ID for provider: ${config.providerId}`,
+    );
   }
 
   if (!providerType) {
@@ -1275,8 +1277,7 @@ export function getModel(config: ModelConfig): ModelWithInfo {
             : undefined;
           // Read thinking config from globalThis (set by thinking-context.ts)
           const thinkingCtx = (globalThis as Record<string, unknown>).__thinkingContext as
-            | { getStore?: () => unknown }
-            | undefined;
+            { getStore?: () => unknown } | undefined;
           const thinkingFromContext = thinkingCtx?.getStore?.() as ThinkingConfig | undefined;
           const thinking =
             thinkingFromContext ??
@@ -1301,9 +1302,7 @@ export function getModel(config: ModelConfig): ModelWithInfo {
           // Merge the timeout in last so the thinking-body rewrite above is
           // preserved (the signal must not be attached to a stale init).
           const finalInit: RequestInit | undefined =
-            timeoutSignal && !init?.signal
-              ? { ...init, signal: timeoutSignal }
-              : init;
+            timeoutSignal && !init?.signal ? { ...init, signal: timeoutSignal } : init;
           const response = await globalThis.fetch(url, finalInit);
 
           if (providerId !== 'lemonade') {
@@ -1415,12 +1414,14 @@ export function parseModelString(modelString: string): {
   if (colonIndex > 0) {
     const providerId = modelString.slice(0, colonIndex);
     const modelId = modelString.slice(colonIndex + 1);
-    
+
     // Validate modelId is not empty
     if (!modelId || modelId.trim() === '') {
-      throw new Error(`Invalid model string format: "${modelString}". Model ID cannot be empty. Expected format: "providerId:modelId" or just "modelId".`);
+      throw new Error(
+        `Invalid model string format: "${modelString}". Model ID cannot be empty. Expected format: "providerId:modelId" or just "modelId".`,
+      );
     }
-    
+
     return {
       providerId: providerId as ProviderId,
       modelId,

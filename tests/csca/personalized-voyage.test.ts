@@ -66,7 +66,9 @@ describe('resolveNextLearningAction — 阶梯', () => {
   });
 
   it('有错题且未修正 → 推荐错题修正（stage 5）', () => {
-    const a = resolveNextLearningAction(base({ examScore: 72, completedStages: [4], errorRecordCount: 7 }));
+    const a = resolveNextLearningAction(
+      base({ examScore: 72, completedStages: [4], errorRecordCount: 7 }),
+    );
     expect(a.kind).toBe('error_review');
     expect(a.stageIndex).toBe(5);
     expect(a.signals).toContain('errorRecordCount=7');
@@ -188,8 +190,15 @@ describe('resolveNextLearningAction — 输出契约', () => {
 
   it('stepKey 只产出规范的 Step 成员（stage 4 是 result，不是历史别名 exam-analysis）', () => {
     const CANONICAL = new Set([
-      'diagnosis', 'knowledge_map', 'adaptive_learning', 'exam_center', 'result',
-      'error_review', 'study_plan', 'ai_tutor', 'university_match',
+      'diagnosis',
+      'knowledge_map',
+      'adaptive_learning',
+      'exam_center',
+      'result',
+      'error_review',
+      'study_plan',
+      'ai_tutor',
+      'university_match',
     ]);
     for (const m of ALL) {
       const a = resolveNextLearningAction(m);
@@ -232,10 +241,38 @@ describe('buildStudentModel — 禁止伪造', () => {
 
   it('从 answerHistory 派生统计与薄弱点（复用 learning-context 的纯函数）', () => {
     const history = [
-      { questionId: 'q1', subject: '数学', knowledgePoint: '代数', isCorrect: false, mode: 'practice' as const, timestamp: 1 },
-      { questionId: 'q2', subject: '数学', knowledgePoint: '代数', isCorrect: false, mode: 'practice' as const, timestamp: 2 },
-      { questionId: 'q3', subject: '数学', knowledgePoint: '代数', isCorrect: false, mode: 'practice' as const, timestamp: 3 },
-      { questionId: 'q4', subject: '数学', knowledgePoint: '几何', isCorrect: true, mode: 'practice' as const, timestamp: 4 },
+      {
+        questionId: 'q1',
+        subject: '数学',
+        knowledgePoint: '代数',
+        isCorrect: false,
+        mode: 'practice' as const,
+        timestamp: 1,
+      },
+      {
+        questionId: 'q2',
+        subject: '数学',
+        knowledgePoint: '代数',
+        isCorrect: false,
+        mode: 'practice' as const,
+        timestamp: 2,
+      },
+      {
+        questionId: 'q3',
+        subject: '数学',
+        knowledgePoint: '代数',
+        isCorrect: false,
+        mode: 'practice' as const,
+        timestamp: 3,
+      },
+      {
+        questionId: 'q4',
+        subject: '数学',
+        knowledgePoint: '几何',
+        isCorrect: true,
+        mode: 'practice' as const,
+        timestamp: 4,
+      },
     ];
     const m = buildStudentModel({ answerHistory: history });
     expect(m.completedQuestionCount).toBe(4);

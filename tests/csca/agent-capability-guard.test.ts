@@ -26,9 +26,7 @@ import {
 } from '@/lib/csca/agent/tools';
 
 /** 造一个含若干 tool call 的 callLLM 结果形状。 */
-function steps(
-  ...calls: { toolName: string; input?: unknown }[]
-): AgentStepsLike {
+function steps(...calls: { toolName: string; input?: unknown }[]): AgentStepsLike {
   return { steps: [{ toolCalls: calls }] };
 }
 
@@ -37,7 +35,10 @@ const VALID_LESSON = {
   toolName: 'create_interactive_lesson',
   input: { topic: '牛顿第二定律' },
 };
-const VALID_CLARIFY = { toolName: 'ask_clarification', input: { question: '要 PPT 还是交互式页面？' } };
+const VALID_CLARIFY = {
+  toolName: 'ask_clarification',
+  input: { question: '要 PPT 还是交互式页面？' },
+};
 const VALID_REFER = {
   toolName: 'refer_to_stage',
   input: { stage: 'error_review', reason: '学生问的是某道具体错题' },
@@ -45,7 +46,9 @@ const VALID_REFER = {
 
 describe('askClarificationInputSchema', () => {
   it('接受一个正常的澄清问题', () => {
-    expect(askClarificationInputSchema.safeParse({ question: '要 PPT 还是交互式页面？' }).success).toBe(true);
+    expect(
+      askClarificationInputSchema.safeParse({ question: '要 PPT 还是交互式页面？' }).success,
+    ).toBe(true);
   });
 
   it('拒绝空问题与过短问题', () => {
@@ -58,7 +61,8 @@ describe('askClarificationInputSchema', () => {
 describe('referToStageInputSchema', () => {
   it('只接受 error_review 这一个 stage', () => {
     expect(
-      referToStageInputSchema.safeParse({ stage: 'error_review', reason: '需要题目上下文' }).success,
+      referToStageInputSchema.safeParse({ stage: 'error_review', reason: '需要题目上下文' })
+        .success,
     ).toBe(true);
     // 刻意只有一个取值：没有第二个被证实的转介场景之前不开放。
     expect(
@@ -67,7 +71,9 @@ describe('referToStageInputSchema', () => {
   });
 
   it('拒绝空 reason', () => {
-    expect(referToStageInputSchema.safeParse({ stage: 'error_review', reason: '' }).success).toBe(false);
+    expect(referToStageInputSchema.safeParse({ stage: 'error_review', reason: '' }).success).toBe(
+      false,
+    );
   });
 });
 
@@ -97,8 +103,14 @@ describe('buildReferSubmission', () => {
   });
 
   it('非法 stage / reason 返回失败而非抛出', () => {
-    expect(buildReferSubmission('error_review', '')).toEqual({ ok: false, error: 'reason 不能为空' });
-    expect(buildReferSubmission('anything_else', 'x')).toEqual({ ok: false, error: 'stage 不受支持' });
+    expect(buildReferSubmission('error_review', '')).toEqual({
+      ok: false,
+      error: 'reason 不能为空',
+    });
+    expect(buildReferSubmission('anything_else', 'x')).toEqual({
+      ok: false,
+      error: 'stage 不受支持',
+    });
   });
 });
 
@@ -126,9 +138,13 @@ describe('extractClarifyAction / extractReferAction', () => {
   });
 
   it('入参非法时跳过该调用（不产出半成品 action）', () => {
-    expect(extractClarifyAction(steps({ toolName: 'ask_clarification', input: {} }))).toBeUndefined();
     expect(
-      extractReferAction(steps({ toolName: 'refer_to_stage', input: { stage: 'nope', reason: 'x' } })),
+      extractClarifyAction(steps({ toolName: 'ask_clarification', input: {} })),
+    ).toBeUndefined();
+    expect(
+      extractReferAction(
+        steps({ toolName: 'refer_to_stage', input: { stage: 'nope', reason: 'x' } }),
+      ),
     ).toBeUndefined();
   });
 });
@@ -186,7 +202,13 @@ describe('resolveCapabilityDecision —— 优先级矩阵', () => {
   });
 
   it('裁决结果永远在五类契约之内', () => {
-    const allowed = new Set(['answer', 'create_ppt', 'create_interactive_lesson', 'clarify', 'refer']);
+    const allowed = new Set([
+      'answer',
+      'create_ppt',
+      'create_interactive_lesson',
+      'clarify',
+      'refer',
+    ]);
     const cases: AgentStepsLike[] = [
       steps(),
       steps(VALID_PPT),

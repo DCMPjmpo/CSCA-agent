@@ -5,11 +5,10 @@
 //         领命→bow、去办差→ship）/ 音效关态不请求
 import { chromium } from '@playwright/test';
 
-const EXEC_PATH = 'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
+const EXEC_PATH =
+  'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
 const BASE = 'http://localhost:3000';
-const SFX = [
-  'bow', 'gong', 'hall', 'scroll-open', 'scroll-unroll', 'seal', 'ship', 'woodfish',
-];
+const SFX = ['bow', 'gong', 'hall', 'scroll-open', 'scroll-unroll', 'seal', 'ship', 'woodfish'];
 
 let pass = 0;
 let fail = 0;
@@ -73,14 +72,14 @@ try {
   console.log('========== 环境音 ==========');
   sfxRequests.clear();
   await freshHall();
-  await page.waitForFunction(
-    () =>
-      [...document.querySelectorAll('script')].length >= 0,
-    { timeout: 1000 },
-  );
+  await page.waitForFunction(() => [...document.querySelectorAll('script')].length >= 0, {
+    timeout: 1000,
+  });
   // 等待 hall 资产请求（startAmbient 异步解码链路）
   await page
-    .waitForRequest((r) => /\/sfx\/hall\.(ogg|mp3)$/.test(new URL(r.url()).pathname), { timeout: 10000 })
+    .waitForRequest((r) => /\/sfx\/hall\.(ogg|mp3)$/.test(new URL(r.url()).pathname), {
+      timeout: 10000,
+    })
     .catch(() => {});
   check(
     'hall 视图挂载后拉取环境音资产',
@@ -98,7 +97,9 @@ try {
     const s = JSON.parse(window.localStorage.getItem('csca_sound_v1') || '{}');
     return s.ambient;
   });
-  const pressedAmbient = await page.locator('[data-testid="sound-ambient"]').getAttribute('aria-pressed');
+  const pressedAmbient = await page
+    .locator('[data-testid="sound-ambient"]')
+    .getAttribute('aria-pressed');
   check('点环境音 → 持久化 ambient=false', storedAmbient === false, `(stored=${storedAmbient})`);
   check('aria-pressed=false', pressedAmbient === 'false', `(pressed=${pressedAmbient})`);
   // 刷新后仍为关
@@ -123,7 +124,9 @@ try {
   /* ---- 4. 交互接线 ---- */
   console.log('========== 交互接线 ==========');
   // 4a. 卷轴弹窗 → scroll-unroll
-  const unrollReq = page.waitForRequest((r) => r.url().includes('/sfx/scroll-unroll.')).catch(() => null);
+  const unrollReq = page
+    .waitForRequest((r) => r.url().includes('/sfx/scroll-unroll.'))
+    .catch(() => null);
   await page.locator('[data-port="melaka"]').click();
   await page.waitForSelector('[data-testid="port-dispatch"]', { timeout: 5000 });
   const unroll = await unrollReq;
@@ -145,13 +148,19 @@ try {
   check('传令 → seal 印章声', !!seal);
 
   // 4d. 竹简抽屉 → scroll-open（chat 视图 roster）
-  const openReq = page.waitForRequest((r) => r.url().includes('/sfx/scroll-open.')).catch(() => null);
+  const openReq = page
+    .waitForRequest((r) => r.url().includes('/sfx/scroll-open.'))
+    .catch(() => null);
   await page.locator('[data-testid="roster-btn"]').click();
   await page.waitForTimeout(800);
   const scrollOpen = await openReq;
   check('花名册竹简 → scroll-open', !!scrollOpen);
   // 收起抽屉（点关闭按钮）
-  await page.locator('.scroll-close').first().click({ timeout: 5000 }).catch(() => {});
+  await page
+    .locator('.scroll-close')
+    .first()
+    .click({ timeout: 5000 })
+    .catch(() => {});
   await page.waitForTimeout(300);
 
   // 4e. 领命 → bow（hall 视图点幕僚）
@@ -179,7 +188,11 @@ try {
     `(new=${newReqs.join(',')})`,
   );
   // 收起港口卷轴弹窗（其遮罩会拦截后续点击），再恢复开关
-  await page.locator('.scroll-close').first().click({ timeout: 5000 }).catch(() => {});
+  await page
+    .locator('.scroll-close')
+    .first()
+    .click({ timeout: 5000 })
+    .catch(() => {});
   await page.waitForTimeout(400); // 关闭动画 300ms
   await page.locator('[data-testid="sound-sfx"]').click();
   await page.evaluate(() => window.localStorage.removeItem('csca_sound_v1'));

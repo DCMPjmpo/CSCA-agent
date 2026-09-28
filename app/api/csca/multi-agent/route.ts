@@ -1,6 +1,6 @@
 /**
  * CSCA Multi-Agent Chat API
- * 
+ *
  * Optimized for speed with streaming support
  */
 
@@ -16,10 +16,7 @@ export async function POST(request: Request) {
     const { message, messages = [], stream = false } = body;
 
     if (!message) {
-      return NextResponse.json(
-        { error: 'Message is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Message is required' }, { status: 400 });
     }
 
     // Streaming mode - faster response
@@ -30,11 +27,7 @@ export async function POST(request: Request) {
           try {
             // Stream response
             for await (const chunk of runCscaMultiAgentStream(message, messages)) {
-              controller.enqueue(
-                encoder.encode(
-                  `data: ${JSON.stringify(chunk)}\n\n`
-                )
-              );
+              controller.enqueue(encoder.encode(`data: ${JSON.stringify(chunk)}\n\n`));
             }
             controller.close();
           } catch (error) {
@@ -44,8 +37,8 @@ export async function POST(request: Request) {
                 `data: ${JSON.stringify({
                   type: 'error',
                   error: 'Stream error',
-                })}\n\n`
-              )
+                })}\n\n`,
+              ),
             );
             controller.close();
           }
@@ -56,7 +49,7 @@ export async function POST(request: Request) {
         headers: {
           'Content-Type': 'text/event-stream',
           'Cache-Control': 'no-cache',
-          'Connection': 'keep-alive',
+          Connection: 'keep-alive',
         },
       });
     }
@@ -65,7 +58,7 @@ export async function POST(request: Request) {
     const result = await runCscaMultiAgent(message, messages);
 
     const assistantMessages = result.messages.filter(
-      (m: any) => m.role === 'assistant' && m.agentId
+      (m: any) => m.role === 'assistant' && m.agentId,
     );
 
     return NextResponse.json({
@@ -75,9 +68,6 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error('[CSCA Multi-Agent API] Error:', error);
-    return NextResponse.json(
-      { success: false, error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
   }
 }

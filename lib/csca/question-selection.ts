@@ -31,16 +31,9 @@ import {
   type QuestionSource,
   type QuestionEnrichment,
 } from './question-bank';
-import {
-  getAllScienceChineseQuestions,
-} from './science-chinese-questions';
-import {
-  getAllArtsChineseQuestions,
-} from './arts-chinese-questions';
-import {
-  deriveKnowledgePoint,
-  type MetadataSource,
-} from './question-metadata';
+import { getAllScienceChineseQuestions } from './science-chinese-questions';
+import { getAllArtsChineseQuestions } from './arts-chinese-questions';
+import { deriveKnowledgePoint, type MetadataSource } from './question-metadata';
 import type { LearningContext, LearningMode } from './learning-context';
 
 /** 将题库中的 difficulty（number 0-1 或 string）归一化为三级难度 */
@@ -117,21 +110,40 @@ export interface SelectionResult {
  * 标准化题目（兼容 question-bank / science-chinese / arts-chinese）
  */
 export function normalizeQuestion(
-  q: Question | ReturnType<typeof getAllScienceChineseQuestions>[0] | ReturnType<typeof getAllArtsChineseQuestions>[0],
+  q:
+    | Question
+    | ReturnType<typeof getAllScienceChineseQuestions>[0]
+    | ReturnType<typeof getAllArtsChineseQuestions>[0],
   fallbackSubject?: string,
 ): NormalizedQuestion | null {
   // 理科中文 / 文科中文
   if (
-    'options' in q && Array.isArray(q.options) && q.options.length > 0 &&
+    'options' in q &&
+    Array.isArray(q.options) &&
+    q.options.length > 0 &&
     typeof q.options[0] === 'string' &&
-    'correctAnswer' in q && typeof q.correctAnswer === 'number'
+    'correctAnswer' in q &&
+    typeof q.correctAnswer === 'number'
   ) {
-    const sci = q as { id?: string; subject?: string; question: string; options: string[]; correctAnswer: number; module?: string; difficulty?: string | number; source?: string; answerExplanation?: string; explanation?: string };
+    const sci = q as {
+      id?: string;
+      subject?: string;
+      question: string;
+      options: string[];
+      correctAnswer: number;
+      module?: string;
+      difficulty?: string | number;
+      source?: string;
+      answerExplanation?: string;
+      explanation?: string;
+    };
     return {
       id: sci.id || `sci_${Math.random().toString(36).slice(2, 8)}`,
       subject: sci.subject || fallbackSubject || '理科中文',
       question: sci.question,
-      options: sci.options.map((opt: string, i: number) => `${String.fromCharCode(65 + i)}. ${opt}`),
+      options: sci.options.map(
+        (opt: string, i: number) => `${String.fromCharCode(65 + i)}. ${opt}`,
+      ),
       correctAnswer: sci.correctAnswer,
       module: sci.module || '其他',
       knowledgePoint: sci.module || '其他',
@@ -173,7 +185,10 @@ export function normalizeQuestion(
     module: bankQ.module || bankQ.partTitle || '其他',
     knowledgePoint,
     knowledgePointSource: kpSource,
-    difficulty: (bankQ.difficulty as 'easy' | 'medium' | 'hard') || (enrichment?.difficulty as 'easy' | 'medium' | 'hard') || 'medium',
+    difficulty:
+      (bankQ.difficulty as 'easy' | 'medium' | 'hard') ||
+      (enrichment?.difficulty as 'easy' | 'medium' | 'hard') ||
+      'medium',
     source: (bankQ.source as QuestionSource) || 'unknown',
     type: bankQ.type,
     answerExplanation,
@@ -218,11 +233,23 @@ export function buildBlueprint(
           hard: count - Math.round(count * 0.33) - Math.round(count * 0.34),
         };
       } else if (ability < 0.4) {
-        difficulty = { easy: Math.round(count * 0.5), medium: Math.round(count * 0.35), hard: Math.round(count * 0.15) };
+        difficulty = {
+          easy: Math.round(count * 0.5),
+          medium: Math.round(count * 0.35),
+          hard: Math.round(count * 0.15),
+        };
       } else if (ability < 0.7) {
-        difficulty = { easy: Math.round(count * 0.3), medium: Math.round(count * 0.5), hard: Math.round(count * 0.2) };
+        difficulty = {
+          easy: Math.round(count * 0.3),
+          medium: Math.round(count * 0.5),
+          hard: Math.round(count * 0.2),
+        };
       } else {
-        difficulty = { easy: Math.round(count * 0.15), medium: Math.round(count * 0.45), hard: Math.round(count * 0.4) };
+        difficulty = {
+          easy: Math.round(count * 0.15),
+          medium: Math.round(count * 0.45),
+          hard: Math.round(count * 0.4),
+        };
       }
       break;
     case 'exam':
@@ -280,8 +307,7 @@ function scoreCandidate(
   let score = 0;
 
   // 1. knowledgeNeedScore (0-10): practice/wrong-answer 模式优先薄弱知识点
-  if (blueprint.knowledgeAreas.length > 0 &&
-      (blueprint.abilityAdaptive || false)) {
+  if (blueprint.knowledgeAreas.length > 0 && (blueprint.abilityAdaptive || false)) {
     const isWeak = blueprint.knowledgeAreas.includes(q.knowledgePoint);
     score += isWeak ? 10 : 0;
   } else {
@@ -357,7 +383,11 @@ export function selectQuestions(
       .map((q) => normalizeQuestion(q, subject))
       .filter((q): q is NormalizedQuestion => q !== null);
     // 合并 question-bank 中的 V1 理科中文题
-    const { questions: bankPicked, realCount, basicCount } = getQuestionsWithFallback(subject, Math.max(count * 3, 20));
+    const {
+      questions: bankPicked,
+      realCount,
+      basicCount,
+    } = getQuestionsWithFallback(subject, Math.max(count * 3, 20));
     const fromBank = bankPicked
       .map((q) => normalizeQuestion(q, subject))
       .filter((q): q is NormalizedQuestion => q !== null);
@@ -372,7 +402,11 @@ export function selectQuestions(
       .map((q) => normalizeQuestion(q, subject))
       .filter((q): q is NormalizedQuestion => q !== null);
     // 合并 question-bank 中的 V1 文科中文题
-    const { questions: bankPicked, realCount, basicCount } = getQuestionsWithFallback(subject, Math.max(count * 3, 20));
+    const {
+      questions: bankPicked,
+      realCount,
+      basicCount,
+    } = getQuestionsWithFallback(subject, Math.max(count * 3, 20));
     const fromBank = bankPicked
       .map((q) => normalizeQuestion(q, subject))
       .filter((q): q is NormalizedQuestion => q !== null);
@@ -381,7 +415,11 @@ export function selectQuestions(
     sourceStats.real_exam += realCount;
     sourceStats.basic_practice += basicCount;
   } else {
-    const { questions: picked, realCount, basicCount } = getQuestionsWithFallback(subject, Math.max(count * 3, 20));
+    const {
+      questions: picked,
+      realCount,
+      basicCount,
+    } = getQuestionsWithFallback(subject, Math.max(count * 3, 20));
     sourceStats.real_exam = realCount;
     sourceStats.basic_practice = basicCount;
 
@@ -472,7 +510,11 @@ export function selectQuestions(
   const basicTotal = sourceStats.basic_practice + sourceStats.fallback_mock;
   const usedFallback = sourceStats.fallback_mock > 0 || basicTotal > 0 || !!fallbackReason;
   const sourceLabel: 'real_exam' | 'mixed' | 'basic_practice' =
-    realTotal > 0 && basicTotal === 0 ? 'real_exam' : realTotal > 0 && basicTotal > 0 ? 'mixed' : 'basic_practice';
+    realTotal > 0 && basicTotal === 0
+      ? 'real_exam'
+      : realTotal > 0 && basicTotal > 0
+        ? 'mixed'
+        : 'basic_practice';
 
   // Phase F: 计算实际取到的难度分布
   const actualDifficulty = {

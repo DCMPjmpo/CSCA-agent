@@ -56,7 +56,9 @@ export function saveCscaSession(data: Partial<CscaSessionData>): void {
     if (typeof window !== 'undefined') {
       try {
         window.dispatchEvent(new CustomEvent('cscaSessionSaved', { detail: merged }));
-      } catch { /* old browsers may lack CustomEvent */ }
+      } catch {
+        /* old browsers may lack CustomEvent */
+      }
     }
   } catch {
     /* ignore quota errors */

@@ -29,56 +29,54 @@ export interface FingerprintInput {
  * 文本归一化：处理全角/半角、空格、换行、HTML、Markdown、标点差异、大小写
  */
 export function normalizeText(s: unknown): string {
-  if (s == null) return "";
+  if (s == null) return '';
   let t = String(s);
 
   // 1. HTML 标签
-  t = t.replace(/<[^>]+>/g, "");
+  t = t.replace(/<[^>]+>/g, '');
 
   // 2. Markdown 常见标记（` * _ ~ # >）
-  t = t.replace(/[`*_~#>]/g, "");
+  t = t.replace(/[`*_~#>]/g, '');
 
   // 3. 全角→半角（U+FF01..U+FF5E → U+0021..U+007E）
-  t = t.replace(/[\uFF01-\uFF5E]/g, (ch) =>
-    String.fromCharCode(ch.charCodeAt(0) - 0xFEE0),
-  );
+  t = t.replace(/[\uFF01-\uFF5E]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0));
 
   // 4. 中文括号 → 英文括号
   t = t
-    .replace(/【/g, "(")
-    .replace(/】/g, ")")
-    .replace(/「/g, "(")
-    .replace(/」/g, ")")
-    .replace(/《/g, "(")
-    .replace(/》/g, ")")
-    .replace(/〈/g, "(")
-    .replace(/〉/g, ")")
-    .replace(/〔/g, "(")
-    .replace(/〕/g, ")")
-    .replace(/［/g, "[")
-    .replace(/］/g, "]");
+    .replace(/【/g, '(')
+    .replace(/】/g, ')')
+    .replace(/「/g, '(')
+    .replace(/」/g, ')')
+    .replace(/《/g, '(')
+    .replace(/》/g, ')')
+    .replace(/〈/g, '(')
+    .replace(/〉/g, ')')
+    .replace(/〔/g, '(')
+    .replace(/〕/g, ')')
+    .replace(/［/g, '[')
+    .replace(/］/g, ']');
 
   // 5. 选项前缀格式统一：A. / A． / A、 / A) / a. / a) → A
   //    序号统一：1. / 1． / 1、 / 1) → 1
-  t = t.replace(/([A-Da-d])\s*[.．、)]\s*/g, "$1");
-  t = t.replace(/(\d+)\s*[.．、)]\s*/g, "$1");
+  t = t.replace(/([A-Da-d])\s*[.．、)]\s*/g, '$1');
+  t = t.replace(/(\d+)\s*[.．、)]\s*/g, '$1');
 
   // 6. 标点差异归一（中文标点 → 英文标点）
   t = t
-    .replace(/，/g, ",")
-    .replace(/。/g, ".")
-    .replace(/：/g, ":")
-    .replace(/；/g, ";")
-    .replace(/？/g, "?")
-    .replace(/！/g, "!")
-    .replace(/“/g, "\"")
-    .replace(/”/g, "\"")
+    .replace(/，/g, ',')
+    .replace(/。/g, '.')
+    .replace(/：/g, ':')
+    .replace(/；/g, ';')
+    .replace(/？/g, '?')
+    .replace(/！/g, '!')
+    .replace(/“/g, '"')
+    .replace(/”/g, '"')
     .replace(/‘/g, "'")
     .replace(/’/g, "'")
-    .replace(/、/g, ",");
+    .replace(/、/g, ',');
 
   // 7. 空白归一（换行/制表符/连续空格 → 单空格）
-  t = t.replace(/\s+/g, " ").trim();
+  t = t.replace(/\s+/g, ' ').trim();
 
   // 8. 大小写归一（指纹比对统一小写）
   t = t.toLowerCase();
@@ -89,19 +87,17 @@ export function normalizeText(s: unknown): string {
 /**
  * 选项数组归一化（兼容 {key,value} 对象和纯字符串）
  */
-export function normalizeOptions(
-  options: FingerprintInput["options"],
-): string {
-  if (!Array.isArray(options) || options.length === 0) return "";
+export function normalizeOptions(options: FingerprintInput['options']): string {
+  if (!Array.isArray(options) || options.length === 0) return '';
   return options
     .map((opt) => {
-      if (opt == null) return "";
-      if (typeof opt === "object" && !Array.isArray(opt)) {
-        return normalizeText((opt as { value: string }).value || "");
+      if (opt == null) return '';
+      if (typeof opt === 'object' && !Array.isArray(opt)) {
+        return normalizeText((opt as { value: string }).value || '');
       }
       return normalizeText(String(opt));
     })
-    .join("|");
+    .join('|');
 }
 
 /**
@@ -109,9 +105,9 @@ export function normalizeOptions(
  * 完全相同的题目（含选项）必须得到相同 fingerprint。
  */
 export function makeFingerprint(q: FingerprintInput): string {
-  const subject = normalizeText(q.subject || "");
-  const track = normalizeText(q.track || "");
-  const stem = normalizeText(q.question || "");
+  const subject = normalizeText(q.subject || '');
+  const track = normalizeText(q.track || '');
+  const stem = normalizeText(q.question || '');
   const options = normalizeOptions(q.options);
   return `${subject}::${track}::${stem}::${options}`;
 }
@@ -121,7 +117,7 @@ export function makeFingerprint(q: FingerprintInput): string {
  * 用于检测"不同 ID 但题干相同"的高度重复。
  */
 export function makeStemFingerprint(q: FingerprintInput): string {
-  const subject = normalizeText(q.subject || "");
-  const stem = normalizeText(q.question || "");
+  const subject = normalizeText(q.subject || '');
+  const stem = normalizeText(q.question || '');
   return `${subject}::${stem}`;
 }

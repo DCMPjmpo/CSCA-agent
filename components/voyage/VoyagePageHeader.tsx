@@ -24,12 +24,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
-import {
-  CheckCircle2,
-  ChevronRight,
-  Compass,
-  Lock,
-} from 'lucide-react';
+import { CheckCircle2, ChevronRight, Compass, Lock } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n/hooks';
 import { useCscaSession } from '@/lib/hooks/use-csca-session';
 import { cn } from '@/lib/utils';
@@ -64,22 +59,25 @@ export function BreadcrumbVoyage({
     items.push({ label: t.nav.aiAssistant ?? 'AI 航海助手' });
   else if (pathname?.startsWith('/csca/case-study'))
     items.push({ label: t.nav.caseStudy ?? '上岸故事' });
-  else if (pathname?.startsWith('/csca'))
-    items.push({ label: t.nav.learningVoyage ?? '学习航程' });
-  else if (pathname?.startsWith('/classroom'))
-    items.push({ label: t.nav.classroom ?? '讲学堂' });
+  else if (pathname?.startsWith('/csca')) items.push({ label: t.nav.learningVoyage ?? '学习航程' });
+  else if (pathname?.startsWith('/classroom')) items.push({ label: t.nav.classroom ?? '讲学堂' });
   else if (pathname?.startsWith('/brand/advisors'))
     items.push({ label: t.nav.prepCenter ?? 'AI 航海助手全景大厅' });
 
   return (
-    <nav aria-label="breadcrumb" className="flex flex-wrap items-center gap-1.5 text-[12px] text-[color:var(--color-muted-foreground)]">
+    <nav
+      aria-label="breadcrumb"
+      className="flex flex-wrap items-center gap-1.5 text-[12px] text-[color:var(--color-muted-foreground)]"
+    >
       {items.map((it, i) => {
         const last = i === items.length - 1;
         const inner = (
           <span
             className={cn(
               'transition-colors duration-200',
-              last ? 'text-[color:var(--color-ink-900)] font-medium' : 'hover:text-[color:var(--color-deep-ocean-700)]',
+              last
+                ? 'text-[color:var(--color-ink-900)] font-medium'
+                : 'hover:text-[color:var(--color-deep-ocean-700)]',
             )}
           >
             {it.label}
@@ -88,9 +86,7 @@ export function BreadcrumbVoyage({
         return (
           <span key={i} className="flex items-center gap-1.5">
             {!last && it.href ? <Link href={it.href}>{inner}</Link> : inner}
-            {!last && (
-              <ChevronRight className="w-3 h-3 opacity-50" strokeWidth={2.2} aria-hidden />
-            )}
+            {!last && <ChevronRight className="w-3 h-3 opacity-50" strokeWidth={2.2} aria-hidden />}
           </span>
         );
       })}
@@ -205,9 +201,15 @@ export function VoyageProgress({
         <div className="flex items-center gap-2 min-w-0">
           <div className="w-7 h-7 shrink-0 rounded-[6px] border border-[color:var(--color-border)] bg-white/60 flex items-center justify-center">
             {nextStage ? (
-              <ChevronRight className="w-3.5 h-3.5 text-[color:var(--color-muted-gold)]" strokeWidth={2.4} />
+              <ChevronRight
+                className="w-3.5 h-3.5 text-[color:var(--color-muted-gold)]"
+                strokeWidth={2.4}
+              />
             ) : (
-              <CheckCircle2 className="w-3.5 h-3.5 text-[color:var(--color-success)]" strokeWidth={2.2} />
+              <CheckCircle2
+                className="w-3.5 h-3.5 text-[color:var(--color-success)]"
+                strokeWidth={2.2}
+              />
             )}
           </div>
           <div className="flex flex-col min-w-0">
@@ -295,9 +297,15 @@ export function VoyageStageRibbon({ forceStageIndex }: { forceStageIndex?: numbe
             </div>
             <div className="flex items-center gap-1.5 min-w-0">
               {status === 'done' ? (
-                <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-[color:var(--color-success)]" strokeWidth={2.4} />
+                <CheckCircle2
+                  className="w-3.5 h-3.5 shrink-0 text-[color:var(--color-success)]"
+                  strokeWidth={2.4}
+                />
               ) : status === 'locked' ? (
-                <Lock className="w-3.5 h-3.5 shrink-0 text-[color:var(--color-muted-foreground)] opacity-70" strokeWidth={2} />
+                <Lock
+                  className="w-3.5 h-3.5 shrink-0 text-[color:var(--color-muted-foreground)] opacity-70"
+                  strokeWidth={2}
+                />
               ) : (
                 <div
                   className={cn(
@@ -311,7 +319,9 @@ export function VoyageStageRibbon({ forceStageIndex }: { forceStageIndex?: numbe
               <span
                 className={cn(
                   'text-[13px] font-semibold truncate min-w-0',
-                  isCurrent ? 'text-[color:var(--color-deep-ocean)]' : 'text-[color:var(--color-ink-900)]',
+                  isCurrent
+                    ? 'text-[color:var(--color-deep-ocean)]'
+                    : 'text-[color:var(--color-ink-900)]',
                 )}
               >
                 {meta?.title ?? sid}
@@ -363,14 +373,12 @@ export function VoyagePageHeader({
         : undefined;
 
   return (
-    <header
-      className={cn(
-        'editorial-section relative mb-10 md:mb-14',
-        className,
-      )}
-    >
+    <header className={cn('editorial-section relative mb-10 md:mb-14', className)}>
       {/* Hairline separator */}
-      <div className="absolute left-0 right-0 -top-6 h-px bg-[color:var(--color-border)]/70" aria-hidden />
+      <div
+        className="absolute left-0 right-0 -top-6 h-px bg-[color:var(--color-border)]/70"
+        aria-hidden
+      />
 
       <div className="flex flex-col gap-6">
         <BreadcrumbVoyage extra={breadcrumbExtra} currentLabel={currentBreadcrumb} />
@@ -387,9 +395,7 @@ export function VoyagePageHeader({
               </p>
             )}
           </div>
-          {actions && (
-            <div className="flex flex-wrap items-center gap-2 shrink-0">{actions}</div>
-          )}
+          {actions && <div className="flex flex-wrap items-center gap-2 shrink-0">{actions}</div>}
         </div>
 
         {showProgress && <VoyageProgress forceStageIndex={forceStageIndex} />}

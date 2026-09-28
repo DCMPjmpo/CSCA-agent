@@ -1,10 +1,16 @@
 import { chromium } from '@playwright/test';
 let browser;
-try { browser = await chromium.launch(); } catch { browser = await chromium.launch({ channel: 'msedge' }); }
+try {
+  browser = await chromium.launch();
+} catch {
+  browser = await chromium.launch({ channel: 'msedge' });
+}
 const page = await browser.newPage();
 const errors = [];
 const sonnerUsed = [];
-page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text().slice(0, 160)); });
+page.on('console', (m) => {
+  if (m.type() === 'error') errors.push(m.text().slice(0, 160));
+});
 page.on('pageerror', (e) => errors.push('PAGEERROR: ' + e.message.slice(0, 160)));
 await page.goto('http://localhost:3099/csca', { waitUntil: 'load' });
 await page.waitForTimeout(800);
@@ -19,10 +25,24 @@ if (btnCount > 0) {
   await page.waitForTimeout(4000);
 }
 const url = page.url();
-console.log('step after diagnosis: knowledge map content visible =', await page.getByText('知识图谱', { exact: false }).first().isVisible().catch(() => false));
+console.log(
+  'step after diagnosis: knowledge map content visible =',
+  await page
+    .getByText('知识图谱', { exact: false })
+    .first()
+    .isVisible()
+    .catch(() => false),
+);
 // 2) check echarts chunk loaded
 const echartsLoaded = await page.evaluate(() =>
-  performance.getEntriesByType('resource').some(r => r.name.includes('_next/static') && /\.js$/.test(r.name) && (r.name.includes('b0ef93535421443a') || r.name.includes('8a045f941e8e1e70')))
+  performance
+    .getEntriesByType('resource')
+    .some(
+      (r) =>
+        r.name.includes('_next/static') &&
+        /\.js$/.test(r.name) &&
+        (r.name.includes('b0ef93535421443a') || r.name.includes('8a045f941e8e1e70')),
+    ),
 );
 console.log('echarts chunk loaded after entering knowledge map:', echartsLoaded);
 // 3) check canvas element rendered (echarts mounts a canvas)

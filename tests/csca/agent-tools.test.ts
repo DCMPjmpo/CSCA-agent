@@ -102,7 +102,9 @@ describe('extractPptAction', () => {
 
   it('纯问答（无 tool call）返回 undefined', () => {
     expect(extractPptAction({ steps: [{ toolCalls: [] }] })).toBeUndefined();
-    expect(extractPptAction({ steps: [{ toolCalls: [{ toolName: 'other_tool', input: {} }] }] })).toBeUndefined();
+    expect(
+      extractPptAction({ steps: [{ toolCalls: [{ toolName: 'other_tool', input: {} }] }] }),
+    ).toBeUndefined();
   });
 
   it('steps / toolCalls 缺失或为 null 时不抛错', () => {
@@ -114,13 +116,21 @@ describe('extractPptAction', () => {
   });
 
   it('忽略 input 非法（缺失 / 非对象 / 空字符串）的 create_ppt 调用', () => {
-    expect(extractPptAction({ steps: [{ toolCalls: [{ toolName: 'create_ppt' }] }] })).toBeUndefined();
-    expect(extractPptAction({ steps: [{ toolCalls: [{ toolName: 'create_ppt', input: 'nope' }] }] })).toBeUndefined();
     expect(
-      extractPptAction({ steps: [{ toolCalls: [{ toolName: 'create_ppt', input: { requirement: '' } }] }] }),
+      extractPptAction({ steps: [{ toolCalls: [{ toolName: 'create_ppt' }] }] }),
     ).toBeUndefined();
     expect(
-      extractPptAction({ steps: [{ toolCalls: [{ toolName: 'create_ppt', input: { requirement: 7 } }] }] }),
+      extractPptAction({ steps: [{ toolCalls: [{ toolName: 'create_ppt', input: 'nope' }] }] }),
+    ).toBeUndefined();
+    expect(
+      extractPptAction({
+        steps: [{ toolCalls: [{ toolName: 'create_ppt', input: { requirement: '' } }] }],
+      }),
+    ).toBeUndefined();
+    expect(
+      extractPptAction({
+        steps: [{ toolCalls: [{ toolName: 'create_ppt', input: { requirement: 7 } }] }],
+      }),
     ).toBeUndefined();
   });
 

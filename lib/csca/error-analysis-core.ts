@@ -95,7 +95,7 @@ export function getErrorRecords(): ErrorRecord[] {
 
     // 清理重复记录（根据id去重）
     const seen = new Set<string>();
-    const uniqueRecords = records.filter(record => {
+    const uniqueRecords = records.filter((record) => {
       if (seen.has(record.id)) {
         console.warn(`[ErrorAnalysis] Found duplicate record id: ${record.id}, removing`);
         return false;
@@ -130,25 +130,25 @@ function generateUniqueId(): string {
 export function mergeErrorRecords(
   existing: ErrorRecord[],
   newRecords: ErrorRecord[],
-  now?: number
+  now?: number,
 ): ErrorRecord[] {
   const nowMs = now ?? Date.now();
   const merged = [...existing];
 
   for (const record of newRecords) {
-    const existingIndex = merged.findIndex(r => r.questionId === record.questionId);
+    const existingIndex = merged.findIndex((r) => r.questionId === record.questionId);
 
     if (existingIndex >= 0) {
       merged[existingIndex] = {
         ...merged[existingIndex],
         reviewCount: merged[existingIndex].reviewCount + 1,
-        lastReviewTime: nowMs
+        lastReviewTime: nowMs,
       };
     } else {
       merged.push({
         ...record,
         id: generateUniqueId(),
-        reviewCount: 0
+        reviewCount: 0,
       });
     }
   }
@@ -159,21 +159,21 @@ export function mergeErrorRecords(
 // 保存错题记录
 export function saveErrorRecord(record: ErrorRecord): void {
   const records = getErrorRecords();
-  const existingIndex = records.findIndex(r => r.questionId === record.questionId);
+  const existingIndex = records.findIndex((r) => r.questionId === record.questionId);
 
   if (existingIndex >= 0) {
     // 更新现有记录
     records[existingIndex] = {
       ...records[existingIndex],
       reviewCount: records[existingIndex].reviewCount + 1,
-      lastReviewTime: Date.now()
+      lastReviewTime: Date.now(),
     };
   } else {
     // 添加新记录
     records.push({
       ...record,
       id: generateUniqueId(),
-      reviewCount: 0
+      reviewCount: 0,
     });
   }
 
@@ -200,7 +200,7 @@ export function writeErrorRecords(records: ErrorRecord[]): void {
 // 删除错题记录
 export function deleteErrorRecord(recordId: string): void {
   const records = getErrorRecords();
-  const filtered = records.filter(r => r.id !== recordId);
+  const filtered = records.filter((r) => r.id !== recordId);
   localStorage.setItem(ERROR_RECORDS_KEY, JSON.stringify(filtered));
 }
 
@@ -211,14 +211,14 @@ export function clearAllErrorRecords(): void {
 
 // 获取某科目的错题
 export function getErrorRecordsBySubject(subject: string): ErrorRecord[] {
-  return getErrorRecords().filter(r => r.subject === subject);
+  return getErrorRecords().filter((r) => r.subject === subject);
 }
 
 // 分析薄弱环节
 export function analyzeWeakAreas(userAnswers: UserAnswer[]): WeakArea[] {
   const subjectModules: Record<string, Record<string, { total: number; correct: number }>> = {};
 
-  userAnswers.forEach(answer => {
+  userAnswers.forEach((answer) => {
     if (!subjectModules[answer.subject]) {
       subjectModules[answer.subject] = {};
     }
@@ -249,7 +249,7 @@ export function analyzeWeakAreas(userAnswers: UserAnswer[]): WeakArea[] {
           module,
           errorCount,
           accuracy,
-          priority
+          priority,
         });
       }
     });
@@ -267,16 +267,18 @@ export function generateStudyPlan(
   userId: string,
   targetSubjects: string[],
   weakAreas: WeakArea[],
-  examDate?: Date
+  examDate?: Date,
 ): StudyPlan {
   const now = Date.now();
-  const daysUntilExam = examDate ? Math.ceil((examDate.getTime() - now) / (1000 * 60 * 60 * 24)) : 30;
+  const daysUntilExam = examDate
+    ? Math.ceil((examDate.getTime() - now) / (1000 * 60 * 60 * 24))
+    : 30;
 
   // 生成每日目标
   const dailyGoals: DailyGoal[] = [];
 
   // 优先安排薄弱环节
-  const highPriorityAreas = weakAreas.filter(a => a.priority === 'high');
+  const highPriorityAreas = weakAreas.filter((a) => a.priority === 'high');
 
   // 为高优先级薄弱环节创建任务
   let taskCounter = 0;
@@ -286,15 +288,15 @@ export function generateStudyPlan(
         id: `task-${Date.now()}-${areaIndex}-${taskCounter++}`,
         type: 'review',
         description: `复习${area.module}知识点`,
-        completed: false
+        completed: false,
       },
       {
         id: `task-${Date.now()}-${areaIndex}-${taskCounter++}`,
         type: 'practice',
         description: `完成${area.module}练习题10道`,
         questionCount: 10,
-        completed: false
-      }
+        completed: false,
+      },
     ];
 
     dailyGoals.push({
@@ -302,26 +304,26 @@ export function generateStudyPlan(
       subject: area.subject,
       module: area.module,
       tasks,
-      completed: false
+      completed: false,
     });
   });
 
   // 生成每周目标
   const weeklyGoals: WeeklyGoal[] = [];
   for (let week = 1; week <= Math.ceil(daysUntilExam / 7); week++) {
-    const goals: Goal[] = targetSubjects.map(subject => ({
+    const goals: Goal[] = targetSubjects.map((subject) => ({
       id: `goal-${week}-${subject}`,
       description: `${subject}本周学习目标`,
       subject,
       targetScore: week * 10, // 每周进步10分
-      completed: false
+      completed: false,
     }));
 
     weeklyGoals.push({
       id: `week-${week}`,
       weekNumber: week,
       goals,
-      completed: false
+      completed: false,
     });
   }
 
@@ -333,7 +335,7 @@ export function generateStudyPlan(
     weakAreas,
     dailyGoals,
     weeklyGoals,
-    progress: 0
+    progress: 0,
   };
 }
 
@@ -365,14 +367,14 @@ export function updateStudyPlanProgress(planId: string, progress: number): void 
 export function markTaskCompleted(taskId: string): void {
   const plan = getStudyPlan();
   if (plan) {
-    plan.dailyGoals.forEach(goal => {
-      goal.tasks.forEach(task => {
+    plan.dailyGoals.forEach((goal) => {
+      goal.tasks.forEach((task) => {
         if (task.id === taskId) {
           task.completed = true;
         }
       });
       // 检查是否所有任务都完成
-      goal.completed = goal.tasks.every(t => t.completed);
+      goal.completed = goal.tasks.every((t) => t.completed);
     });
     saveStudyPlan(plan);
   }

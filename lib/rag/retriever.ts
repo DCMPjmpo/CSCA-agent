@@ -11,7 +11,7 @@ import { generateWithFallback } from '@/lib/ai/model-router';
 
 export async function retrieveCscaKnowledge(query: string, subject?: string, topK: number = 5) {
   const mockKnowledge: Record<string, string[]> = {
-    '数学': [
+    数学: [
       '集合与常用逻辑用语：集合的概念、表示方法、运算',
       '函数：函数的概念、性质、基本初等函数',
       '三角函数：三角函数的定义、图像、恒等变换',
@@ -23,21 +23,21 @@ export async function retrieveCscaKnowledge(query: string, subject?: string, top
       '概率统计：排列组合、概率、统计',
       '导数：导数的概念、运算、应用',
     ],
-    '物理': [
+    物理: [
       '力学：运动学、牛顿运动定律、功和能',
       '电磁学：电场、磁场、电磁感应',
       '热学：分子动理论、热力学定律',
       '光学：几何光学、物理光学',
       '原子物理：原子结构、原子核',
     ],
-    '化学': [
+    化学: [
       '物质结构：原子结构、化学键、晶体结构',
       '化学反应原理：化学反应速率、化学平衡',
       '有机化学：烃类、烃的衍生物、生物大分子',
       '无机化学：元素及其化合物',
       '化学实验：实验操作、实验设计',
     ],
-    '中文': [
+    中文: [
       '语言知识：字音、字形、词语、句子',
       '文学常识：中国古代文学、现代文学',
       '文言文阅读：实词、虚词、句式',
@@ -46,7 +46,11 @@ export async function retrieveCscaKnowledge(query: string, subject?: string, top
     ],
   };
 
-  const results: Array<{ id: string; content: string; metadata: { subject: string; topic: string; source: string; relevanceScore: number } }> = [];
+  const results: Array<{
+    id: string;
+    content: string;
+    metadata: { subject: string; topic: string; source: string; relevanceScore: number };
+  }> = [];
   const subjects = subject ? [subject] : Object.keys(mockKnowledge);
 
   for (const subj of subjects) {
@@ -60,7 +64,7 @@ export async function retrieveCscaKnowledge(query: string, subject?: string, top
         relevanceScore = 0.9;
       } else if (queryLower) {
         const queryWords = queryLower.split(' ');
-        const matchedWords = queryWords.filter(word => contentLower.includes(word)).length;
+        const matchedWords = queryWords.filter((word) => contentLower.includes(word)).length;
         relevanceScore = 0.5 + (matchedWords / queryWords.length) * 0.4;
       }
 

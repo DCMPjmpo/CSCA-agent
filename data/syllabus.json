@@ -237,7 +237,10 @@
       "type": "topic",
       "difficulty": 3,
       "parents": ["chinese_science_reading"],
-      "children": ["chinese_science_reading_science_comprehend", "chinese_science_reading_science_infer"]
+      "children": [
+        "chinese_science_reading_science_comprehend",
+        "chinese_science_reading_science_infer"
+      ]
     },
     {
       "id": "chinese_science_reading_tech",
@@ -246,7 +249,10 @@
       "type": "topic",
       "difficulty": 4,
       "parents": ["chinese_science_reading"],
-      "children": ["chinese_science_reading_tech_terminology", "chinese_science_reading_tech_analysis"]
+      "children": [
+        "chinese_science_reading_tech_terminology",
+        "chinese_science_reading_tech_analysis"
+      ]
     },
     {
       "id": "chinese_science_reading_science_comprehend",
@@ -291,7 +297,10 @@
       "type": "topic",
       "difficulty": 4,
       "parents": ["chinese_science_writing"],
-      "children": ["chinese_science_writing_essay_structure", "chinese_science_writing_essay_argument"]
+      "children": [
+        "chinese_science_writing_essay_structure",
+        "chinese_science_writing_essay_argument"
+      ]
     },
     {
       "id": "chinese_science_writing_report",
@@ -300,7 +309,10 @@
       "type": "topic",
       "difficulty": 3,
       "parents": ["chinese_science_writing"],
-      "children": ["chinese_science_writing_report_clarity", "chinese_science_writing_report_accuracy"]
+      "children": [
+        "chinese_science_writing_report_clarity",
+        "chinese_science_writing_report_accuracy"
+      ]
     },
     {
       "id": "chinese_science_writing_essay_structure",
@@ -426,7 +438,10 @@
       "type": "topic",
       "difficulty": 2,
       "parents": ["chemistry_inorganic"],
-      "children": ["chemistry_inorganic_elements_periodic", "chemistry_inorganic_elements_properties"]
+      "children": [
+        "chemistry_inorganic_elements_periodic",
+        "chemistry_inorganic_elements_properties"
+      ]
     },
     {
       "id": "chemistry_inorganic_elements_periodic",

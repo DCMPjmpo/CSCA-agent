@@ -53,14 +53,73 @@ interface OutpostConfig {
 }
 
 const OUTPOSTS: OutpostConfig[] = [
-  { id: 'diagnosis', icon: PixelCompass, route: '/csca', area: 'weather', name: (t) => t.steps.diagnosis, desc: (t) => t.diagnosis.description, aux: '验看出身，点将出兵' },
-  { id: 'knowledge-map', icon: PixelScroll, route: '/csca#knowledge-map', area: 'chart', name: (t) => t.steps.knowledgeMap, desc: (t) => t.knowledgeMap.description, aux: '查阅海图，知己知彼' },
-  { id: 'adaptive-learning', icon: PixelWeaponRack, route: '/csca#adaptive-learning', area: 'drill', name: (t) => t.steps.adaptiveLearning, desc: (t) => t.adaptiveLearning.description, aux: '练兵备战，每日精进' },
-  { id: 'mock-exam', icon: PixelTreasureShip, route: '/csca#mock-exam', area: 'trial', name: (t) => t.steps.mockExam, desc: (t) => t.mockExam.description },
-  { id: 'score-analysis', icon: PixelAstrolabe, route: '/csca#score-analysis', area: 'observatory', name: (t) => t.steps.scoreAnalysis, desc: (t) => t.scoreAnalysis.description },
-  { id: 'study-plan', icon: PixelSundial, route: '/csca#study-plan', area: 'schedule', name: (t) => t.flow.studyPlan, desc: (t) => t.mockExam.studyPlanAuto },
-  { id: 'multi-agent', icon: PixelAgentBust, route: '/csca-multi-agent', area: 'council', name: (t) => t.steps.aiTutor, desc: (t) => t.features.multiAgentDesc },
-  { id: 'classroom', icon: PixelLectern, route: '', area: 'lectern', name: (t) => t.features.classroomTitle, desc: (t) => t.classroomSection.description },
+  {
+    id: 'diagnosis',
+    icon: PixelCompass,
+    route: '/csca',
+    area: 'weather',
+    name: (t) => t.steps.diagnosis,
+    desc: (t) => t.diagnosis.description,
+    aux: '验看出身，点将出兵',
+  },
+  {
+    id: 'knowledge-map',
+    icon: PixelScroll,
+    route: '/csca#knowledge-map',
+    area: 'chart',
+    name: (t) => t.steps.knowledgeMap,
+    desc: (t) => t.knowledgeMap.description,
+    aux: '查阅海图，知己知彼',
+  },
+  {
+    id: 'adaptive-learning',
+    icon: PixelWeaponRack,
+    route: '/csca#adaptive-learning',
+    area: 'drill',
+    name: (t) => t.steps.adaptiveLearning,
+    desc: (t) => t.adaptiveLearning.description,
+    aux: '练兵备战，每日精进',
+  },
+  {
+    id: 'mock-exam',
+    icon: PixelTreasureShip,
+    route: '/csca#mock-exam',
+    area: 'trial',
+    name: (t) => t.steps.mockExam,
+    desc: (t) => t.mockExam.description,
+  },
+  {
+    id: 'score-analysis',
+    icon: PixelAstrolabe,
+    route: '/csca#score-analysis',
+    area: 'observatory',
+    name: (t) => t.steps.scoreAnalysis,
+    desc: (t) => t.scoreAnalysis.description,
+  },
+  {
+    id: 'study-plan',
+    icon: PixelSundial,
+    route: '/csca#study-plan',
+    area: 'schedule',
+    name: (t) => t.flow.studyPlan,
+    desc: (t) => t.mockExam.studyPlanAuto,
+  },
+  {
+    id: 'multi-agent',
+    icon: PixelAgentBust,
+    route: '/csca-multi-agent',
+    area: 'council',
+    name: (t) => t.steps.aiTutor,
+    desc: (t) => t.features.multiAgentDesc,
+  },
+  {
+    id: 'classroom',
+    icon: PixelLectern,
+    route: '',
+    area: 'lectern',
+    name: (t) => t.features.classroomTitle,
+    desc: (t) => t.classroomSection.description,
+  },
 ];
 
 /** 航线据点在 16:10 沙盘上的中心点（% 坐标，对应 3×3 网格中心） */
@@ -108,7 +167,7 @@ function ModuleOutpost({
       className={cn(
         'sandbox-outpost group border bg-black/25 text-ricepaper/90',
         progress.isCurrent ? 'border-gold-leaf/60 bg-gold-leaf/5' : 'border-white/10',
-        locked ? 'is-locked' : 'is-unlocked'
+        locked ? 'is-locked' : 'is-unlocked',
       )}
       style={{ gridArea: cfg.area }}
     >
@@ -123,9 +182,7 @@ function ModuleOutpost({
         /* 未解锁据点：灰色方块 + 🔒 + 未探索 */
         <>
           <Lock className="relative z-[4] h-8 w-8 shrink-0 text-white/40" />
-          <span
-            className="relative z-[4] px-1 text-xs font-brand-pixel leading-tight text-white/30"
-          >
+          <span className="relative z-[4] px-1 text-xs font-brand-pixel leading-tight text-white/30">
             未探索
           </span>
         </>
@@ -220,9 +277,7 @@ export function SeaChartSandbox() {
       router.push(`/csca/tasks/${task.taskId}`);
     } catch (err) {
       setIsSubmitting(false);
-      toast.error(
-        `创建生成任务失败：${err instanceof Error ? err.message : String(err)}`,
-      );
+      toast.error(`创建生成任务失败：${err instanceof Error ? err.message : String(err)}`);
     }
   };
 
@@ -251,7 +306,11 @@ export function SeaChartSandbox() {
 
       <div
         className="sandbox-grid relative z-[2]"
-        style={{ backgroundImage: SEA_BG, backgroundSize: SEA_BG_SIZE, imageRendering: 'pixelated' }}
+        style={{
+          backgroundImage: SEA_BG,
+          backgroundSize: SEA_BG_SIZE,
+          imageRendering: 'pixelated',
+        }}
       >
         {OUTPOSTS.map((cfg) => (
           <ModuleOutpost
@@ -301,17 +360,21 @@ export function SeaChartSandbox() {
       </span>
 
       {/* 装饰小帆船（缓慢巡航，营造海图生机） */}
-      <span className="sandbox-sail pointer-events-none absolute z-20 hidden lg:block" style={{ top: '58%' }}>
+      <span
+        className="sandbox-sail pointer-events-none absolute z-20 hidden lg:block"
+        style={{ top: '58%' }}
+      >
         <PixelShip className="h-5 w-5 opacity-60" />
       </span>
-      <span className="sandbox-sail pointer-events-none absolute z-20 hidden lg:block" style={{ top: '26%', animationDelay: '-12s', animationDuration: '34s' }}>
+      <span
+        className="sandbox-sail pointer-events-none absolute z-20 hidden lg:block"
+        style={{ top: '26%', animationDelay: '-12s', animationDuration: '34s' }}
+      >
         <PixelShip className="h-4 w-4 opacity-40" />
       </span>
 
       {/* 底部中央像素宝船（纯 SVG：檀木棕船身 + 宣纸白帆 + 纯黑描边，2 秒漂浮） */}
-      <span
-        className="pointer-events-none absolute bottom-2 left-1/2 z-20 hidden -translate-x-1/2 lg:block"
-      >
+      <span className="pointer-events-none absolute bottom-2 left-1/2 z-20 hidden -translate-x-1/2 lg:block">
         <span className="sandbox-treasure-ship block">
           <svg
             aria-hidden
@@ -322,12 +385,25 @@ export function SeaChartSandbox() {
             style={{ imageRendering: 'pixelated' }}
           >
             {/* 桅杆 */}
-            <rect x="58" y="6" width="3" height="34" fill="#8B5A2B" stroke="#020b10" strokeWidth="1" />
+            <rect
+              x="58"
+              y="6"
+              width="3"
+              height="34"
+              fill="#8B5A2B"
+              stroke="#020b10"
+              strokeWidth="1"
+            />
             {/* 宣纸白帆 */}
             <polygon points="61,8 96,20 61,32" fill="#F5F0E6" stroke="#020b10" strokeWidth="1.5" />
             <polygon points="58,8 30,20 58,32" fill="#F5F0E6" stroke="#020b10" strokeWidth="1.5" />
             {/* 檀木棕船身 */}
-            <polygon points="10,40 110,40 96,56 24,56" fill="#8B5A2B" stroke="#020b10" strokeWidth="1.5" />
+            <polygon
+              points="10,40 110,40 96,56 24,56"
+              fill="#8B5A2B"
+              stroke="#020b10"
+              strokeWidth="1.5"
+            />
             {/* 船身高光线 */}
             <rect x="20" y="44" width="80" height="2" fill="#A06A33" />
             {/* 旗帜 */}
@@ -343,7 +419,11 @@ export function SeaChartSandbox() {
           const p = progress.outposts[openOutpost];
           const status = p.completed ? 'explored' : p.isCurrent ? 'current' : 'unexplored';
           const statusText =
-            status === 'explored' ? t.sandbox.explored : status === 'current' ? t.sandbox.current : t.sandbox.unexplored;
+            status === 'explored'
+              ? t.sandbox.explored
+              : status === 'current'
+                ? t.sandbox.current
+                : t.sandbox.unexplored;
           const statusClass =
             status === 'explored'
               ? 'border-bamboo/40 bg-bamboo/10 text-bamboo'
@@ -364,7 +444,11 @@ export function SeaChartSandbox() {
               }
               description={
                 <span className="flex flex-wrap items-center gap-2">
-                  <span className={cn('shrink-0 rounded-full border px-2 py-0.5 text-xs', statusClass)}>{statusText}</span>
+                  <span
+                    className={cn('shrink-0 rounded-full border px-2 py-0.5 text-xs', statusClass)}
+                  >
+                    {statusText}
+                  </span>
                   <span>{cfg.desc(t)}</span>
                 </span>
               }
@@ -377,7 +461,11 @@ export function SeaChartSandbox() {
                     onChange={(e) => setRequirement(e.target.value)}
                     onFocus={() => setInputFocused(true)}
                     onBlur={() => setInputFocused(false)}
-                    placeholder={inputFocused ? t.classroomSection.placeholderFocus : t.classroomSection.placeholder}
+                    placeholder={
+                      inputFocused
+                        ? t.classroomSection.placeholderFocus
+                        : t.classroomSection.placeholder
+                    }
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' && e.ctrlKey) handleGenerateClassroom();
                     }}

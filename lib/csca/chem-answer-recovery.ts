@@ -57,12 +57,10 @@ function parseAnswerKeys(): {
   if (ak1Start < 0) return { key1: {}, key2: {} };
   const ak2SearchStart = ak1Start + 5;
   const ak2Start =
-    lines.slice(ak2SearchStart).findIndex((l) => l.includes('Answer Key')) +
-    ak2SearchStart;
+    lines.slice(ak2SearchStart).findIndex((l) => l.includes('Answer Key')) + ak2SearchStart;
 
   const ak1Text = lines.slice(ak1Start, ak1Start + 5).join(' ');
-  const ak2Text =
-    ak2Start >= 0 ? lines.slice(ak2Start).join(' ') : '';
+  const ak2Text = ak2Start >= 0 ? lines.slice(ak2Start).join(' ') : '';
 
   const parseKey = (t: string): Record<number, string> => {
     const r: Record<number, string> = {};

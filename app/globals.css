@@ -39,12 +39,14 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-  --font-brand-title: var(--font-brand-title), 'Source Han Serif SC', 'Noto Serif SC', serif;  /* only used in hero eyebrow / editorial titles · 极少量 */
-  --font-brand-eng: var(--font-sans), 'Inter', system-ui, sans-serif;   /* UI sans — pixel Press Start 2P removed in Batch 1 */
-  --radius-sm: 2px;   /* subtle · eyebrow badge / tag */
-  --radius-md: 6px;   /* input / ghost button */
-  --radius-lg: 12px;  /* card / secondary button */
-  --radius-xl: 20px;  /* hero pill / editorial panel */
+  --font-brand-title:
+    var(--font-brand-title), 'Source Han Serif SC', 'Noto Serif SC', serif; /* only used in hero eyebrow / editorial titles · 极少量 */
+  --font-brand-eng:
+    var(--font-sans), 'Inter', system-ui, sans-serif; /* UI sans — pixel Press Start 2P removed in Batch 1 */
+  --radius-sm: 2px; /* subtle · eyebrow badge / tag */
+  --radius-md: 6px; /* input / ghost button */
+  --radius-lg: 12px; /* card / secondary button */
+  --radius-xl: 20px; /* hero pill / editorial panel */
   --radius-2xl: 28px;
   --radius-3xl: 36px;
   --radius-4xl: 48px;
@@ -57,34 +59,34 @@
    ============================================================ */
 @theme {
   /* ---- Core: Deep Ocean (#071C26 / #0B2834) ---- */
-  --color-deep-ocean: #071C26;    /* sidebar dark base */
-  --color-deep-ocean-800: #0B2834;/* primary button bg · sidebar hover */
-  --color-deep-ocean-700: #123A4A;/* primary button hover */
-  --color-deep-ocean-600: #1E4D5F;/* ring / activated accent */
-  --color-voyage-blue: #0B4F8C;   /* Primary CTA on dark sidebar / important links (docs spec) */
+  --color-deep-ocean: #071c26; /* sidebar dark base */
+  --color-deep-ocean-800: #0b2834; /* primary button bg · sidebar hover */
+  --color-deep-ocean-700: #123a4a; /* primary button hover */
+  --color-deep-ocean-600: #1e4d5f; /* ring / activated accent */
+  --color-voyage-blue: #0b4f8c; /* Primary CTA on dark sidebar / important links (docs spec) */
   /* ---- Paper (#FAF8F2 light / #F5F0E6 editorial section) ---- */
-  --color-paper-50: #FAF8F2;      /* page content background */
-  --color-paper-100: #F5F0E6;     /* editorial section · card tier-2 bg */
-  --color-paper-200: #EFE8D9;     /* hover / divider layer */
+  --color-paper-50: #faf8f2; /* page content background */
+  --color-paper-100: #f5f0e6; /* editorial section · card tier-2 bg */
+  --color-paper-200: #efe8d9; /* hover / divider layer */
   /* ---- Muted Gold (Accent) #C7A54A ---- */
-  --color-muted-gold: #C7A54A;    /* eyebrow text · progress done · accent */
-  --color-muted-gold-400: #D4B76A;/* gold hover tint */
-  --color-gold-ink: #8E752C;      /* gold body-text readable on paper */
+  --color-muted-gold: #c7a54a; /* eyebrow text · progress done · accent */
+  --color-muted-gold-400: #d4b76a; /* gold hover tint */
+  --color-gold-ink: #8e752c; /* gold body-text readable on paper */
   /* ---- Status (muted, restrained) ---- */
-  --color-status-success: #3E6F5E; /* muted green */
-  --color-status-success-bg: #EEF4F1;
-  --color-status-warning: #B08035; /* muted amber */
-  --color-status-warning-bg: #FAF4E7;
-  --color-status-error: #A83232;   /* restrained red (朱砂降饱和) */
-  --color-status-error-bg: #F7EBEB;
+  --color-status-success: #3e6f5e; /* muted green */
+  --color-status-success-bg: #eef4f1;
+  --color-status-warning: #b08035; /* muted amber */
+  --color-status-warning-bg: #faf4e7;
+  --color-status-error: #a83232; /* restrained red (朱砂降饱和) */
+  --color-status-error-bg: #f7ebeb;
   /* ---- Ink (text, based on deep-ocean family) ---- */
-  --color-ink-900: #121C22;        /* primary text (非纯黑 · 档案墨调) */
-  --color-ink-700: #36464F;        /* secondary text */
-  --color-ink-500: #5C6F7A;        /* tertiary / eyebrow */
-  --color-ink-300: #8FA1AB;        /* disabled / placeholder */
+  --color-ink-900: #121c22; /* primary text (非纯黑 · 档案墨调) */
+  --color-ink-700: #36464f; /* secondary text */
+  --color-ink-500: #5c6f7a; /* tertiary / eyebrow */
+  --color-ink-300: #8fa1ab; /* disabled / placeholder */
   /* ---- Lines ---- */
-  --color-line-200: #D9D2C1;       /* thin divider */
-  --color-line-300: #C8BFA8;       /* strong divider / rule */
+  --color-line-200: #d9d2c1; /* thin divider */
+  --color-line-300: #c8bfa8; /* strong divider / rule */
   /* ---- Legacy tokens preserved for compatibility (do NOT use in new UI) ---- */
   --color-vermilion: var(--color-status-error);
   --color-archive-green: var(--color-status-success);
@@ -99,17 +101,19 @@
   --color-bronze: var(--color-gold-ink);
   --color-warning: var(--color-status-warning);
   /* ---- Fonts: modern sans first; LXGW WenKai secondary editorial; NO pixel font ---- */
-  --font-brand-body: 'PingFang SC', 'Microsoft YaHei', 'HarmonyOS Sans SC', 'Noto Sans SC', 'LXGW WenKai', sans-serif;
-  --font-brand-serif: 'Noto Serif SC', 'Source Han Serif SC', 'LXGW WenKai', serif;  /* hero eyebrow / editorial titles only · rare */
+  --font-brand-body:
+    'PingFang SC', 'Microsoft YaHei', 'HarmonyOS Sans SC', 'Noto Sans SC', 'LXGW WenKai', sans-serif;
+  --font-brand-serif:
+    'Noto Serif SC', 'Source Han Serif SC', 'LXGW WenKai', serif; /* hero eyebrow / editorial titles only · rare */
   --font-brand-display: var(--font-brand-title), 'Noto Serif SC', 'Source Han Serif SC', serif;
 
   /* ---- Resolved shadcn semantic tokens (@theme inline vars above resolve here) ---- */
   /* Default / dark-theme fallback: sidebar as Deep Ocean, content as paper-50 */
   --background: var(--color-paper-50);
   --foreground: var(--color-ink-900);
-  --card: #FFFFFF;
+  --card: #ffffff;
   --card-foreground: var(--color-ink-900);
-  --popover: #FFFFFF;
+  --popover: #ffffff;
   --popover-foreground: var(--color-ink-900);
   --primary: var(--color-deep-ocean-800);
   --primary-foreground: var(--color-paper-50);
@@ -129,7 +133,7 @@
   --chart-4: var(--color-deep-ocean-600);
   --chart-5: var(--color-status-warning);
   --sidebar: var(--color-deep-ocean);
-  --sidebar-foreground: #EDE7D7;
+  --sidebar-foreground: #ede7d7;
   --sidebar-primary: var(--color-voyage-blue);
   --sidebar-primary-foreground: var(--color-paper-50);
   --sidebar-accent: rgba(199, 165, 74, 0.16);
@@ -142,23 +146,23 @@
    东盟十国语言字体适配（批次 18）
    html[lang] 选择器按语言切换字体，避免 tofu 方框
    ============================================================ */
-html[lang="th"],
-html[lang="th-TH"] {
+html[lang='th'],
+html[lang='th-TH'] {
   font-family: var(--font-thai), var(--font-brand-body), sans-serif;
 }
 
-html[lang="my"],
-html[lang="my-MM"] {
+html[lang='my'],
+html[lang='my-MM'] {
   font-family: var(--font-myanmar), var(--font-brand-body), sans-serif;
 }
 
-html[lang="km"],
-html[lang="km-KH"] {
+html[lang='km'],
+html[lang='km-KH'] {
   font-family: var(--font-khmer), var(--font-brand-body), sans-serif;
 }
 
-html[lang="lo"],
-html[lang="lo-LA"] {
+html[lang='lo'],
+html[lang='lo-LA'] {
   font-family: var(--font-lao), var(--font-brand-body), sans-serif;
 }
 
@@ -168,19 +172,19 @@ html[lang="lo-LA"] {
    Deep Ocean + Paper + Muted Gold. NO pixel texture, NO hard shadow.
    ============================================================ */
 .brand-light {
-  --background: var(--color-paper-50);          /* page: #FAF8F2 */
-  --foreground: var(--color-ink-900);            /* primary ink */
-  --card: var(--color-paper-100);                /* editorial section tier */
+  --background: var(--color-paper-50); /* page: #FAF8F2 */
+  --foreground: var(--color-ink-900); /* primary ink */
+  --card: var(--color-paper-100); /* editorial section tier */
   --card-foreground: var(--color-ink-900);
-  --popover: #FFFFFF;
+  --popover: #ffffff;
   --popover-foreground: var(--color-ink-900);
-  --primary: var(--color-deep-ocean-800);        /* primary CTA = deep ocean #0B2834 */
-  --primary-foreground: var(--color-paper-50);   /* paper-50 米白 on primary */
-  --secondary: var(--color-paper-200);           /* Editorial Section 底色 */
+  --primary: var(--color-deep-ocean-800); /* primary CTA = deep ocean #0B2834 */
+  --primary-foreground: var(--color-paper-50); /* paper-50 米白 on primary */
+  --secondary: var(--color-paper-200); /* Editorial Section 底色 */
   --secondary-foreground: var(--color-ink-900);
   --muted: var(--color-paper-200);
   --muted-foreground: var(--color-ink-500);
-  --accent: var(--color-muted-gold);             /* eyebrow / data mark */
+  --accent: var(--color-muted-gold); /* eyebrow / data mark */
   --accent-foreground: var(--color-gold-ink);
   --destructive: var(--color-status-error);
   --border: var(--color-line-200);
@@ -218,23 +222,23 @@ html[lang="lo-LA"] {
 [data-testid='brand-shell'] {
   font-size: 16px;
   line-height: 1.6;
-  --text-caption: 0.75rem;     /* 12px eyebrow / captions */
+  --text-caption: 0.75rem; /* 12px eyebrow / captions */
   --text-caption--lh: 1.4;
-  --text-xs: 0.8rem;           /* 12.8px meta */
+  --text-xs: 0.8rem; /* 12.8px meta */
   --text-xs--line-height: 1.5;
-  --text-sm: 0.9rem;           /* 14.4px secondary */
+  --text-sm: 0.9rem; /* 14.4px secondary */
   --text-sm--line-height: 1.6;
-  --text-base: 1rem;           /* 16px body */
+  --text-base: 1rem; /* 16px body */
   --text-base--line-height: 1.6;
-  --text-lg: 1.125rem;         /* 18px */
+  --text-lg: 1.125rem; /* 18px */
   --text-lg--line-height: 1.65;
-  --text-xl: 1.375rem;         /* 22px subsection */
+  --text-xl: 1.375rem; /* 22px subsection */
   --text-xl--line-height: 1.4;
-  --text-2xl: 1.75rem;         /* 28px section title */
+  --text-2xl: 1.75rem; /* 28px section title */
   --text-2xl--line-height: 1.3;
-  --text-3xl: 2.125rem;        /* 34px page title cap */
+  --text-3xl: 2.125rem; /* 34px page title cap */
   --text-3xl--line-height: 1.2;
-  --text-4xl: 2.75rem;         /* 44px hero */
+  --text-4xl: 2.75rem; /* 44px hero */
   --text-4xl--line-height: 1.15;
 }
 
@@ -266,7 +270,7 @@ html[lang="lo-LA"] {
    primary UI still sans). 用于 VoyagePageHeader 的页面大标题。 */
 .font-editorial-title {
   font-family: var(--font-sans), var(--font-brand-body), sans-serif;
-  font-feature-settings: "ss01", "cv11";
+  font-feature-settings: 'ss01', 'cv11';
   font-weight: 600;
   letter-spacing: -0.012em;
   color: var(--color-ink-900);
@@ -320,7 +324,9 @@ html[lang="lo-LA"] {
   background: var(--color-line-200);
   margin: 1.5rem 0;
 }
-.rule-line--strong { background: var(--color-line-300); }
+.rule-line--strong {
+  background: var(--color-line-300);
+}
 
 /* ============================================================
    Batch 5 · Legacy Game Classes reinterpreted as Maritime Editorial.
@@ -340,12 +346,17 @@ html[lang="lo-LA"] {
    - animate-game-banner   → 禁用（实际 JSX 已拆，保险兜底）
    ============================================================ */
 .card-brand {
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid var(--color-line-200);
   border-radius: var(--radius-lg, 12px);
-  box-shadow: 0 1px 2px rgba(7, 28, 38, 0.04), 0 1px 3px rgba(7, 28, 38, 0.03);
+  box-shadow:
+    0 1px 2px rgba(7, 28, 38, 0.04),
+    0 1px 3px rgba(7, 28, 38, 0.03);
   padding: 1.5rem;
-  transition: box-shadow 200ms ease, border-color 200ms ease, transform 200ms ease;
+  transition:
+    box-shadow 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
 }
 .card-brand:hover {
   border-color: var(--color-line-300);
@@ -355,11 +366,13 @@ html[lang="lo-LA"] {
   background: var(--color-paper-100);
   border: 1px solid var(--color-line-200);
   border-radius: var(--radius-md, 6px);
-  transition: border-color 200ms ease, background-color 200ms ease;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease;
 }
 .card-brand-tint:hover {
   border-color: var(--color-deep-ocean-700);
-  background: #FFFFFF;
+  background: #ffffff;
 }
 .card-brand-selected {
   background: var(--color-paper-100);
@@ -376,7 +389,7 @@ html[lang="lo-LA"] {
   color: var(--color-ink-700);
 }
 .csca-sidebar {
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid var(--color-line-200);
   border-radius: var(--radius-lg, 12px);
   box-shadow: 0 1px 3px rgba(7, 28, 38, 0.05);
@@ -411,38 +424,84 @@ html[lang="lo-LA"] {
   animation: csca-step-in 240ms ease-out both;
 }
 @keyframes csca-step-in {
-  from { opacity: 0; transform: translateY(4px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 /* Legacy "battle" banners removed in JSX; ensure any leftover has no pixel flash */
-.animate-game-banner { animation: none !important; display: none !important; }
+.animate-game-banner {
+  animation: none !important;
+  display: none !important;
+}
 
 /* Legacy game color utilities reinterpreted to restrained status palette */
-.bg-vermilion\/10 { background: color-mix(in srgb, var(--color-status-error) 10%, transparent); }
-.text-vermilion { color: var(--color-status-error); }
-.bg-gold-leaf\/15, .bg-gold-leaf\/10 { background: color-mix(in srgb, var(--color-muted-gold) 14%, transparent); }
-.text-gold-leaf { color: var(--color-gold-ink); }
-.bg-bamboo\/10, .bg-bamboo\/15 { background: color-mix(in srgb, var(--color-status-success) 12%, transparent); }
-.text-bamboo { color: var(--color-status-success); }
-.border-bamboo\/40 { border-color: color-mix(in srgb, var(--color-status-success) 40%, transparent); }
-.bg-warning\/10, .bg-warning\/15 { background: color-mix(in srgb, var(--color-status-warning) 14%, transparent); }
-.text-warning { color: var(--color-status-warning-amber, #A96B23); }
-.bg-sandalwood\/25 { background: color-mix(in srgb, var(--color-ink-700) 22%, transparent); }
-.text-sandalwood { color: var(--color-ink-700); }
-.border-sandalwood\/25, .border-sandalwood\/40 { border-color: color-mix(in srgb, var(--color-ink-700) 30%, transparent); }
-.bg-bamboo\/40 { background: color-mix(in srgb, var(--color-status-success) 38%, transparent); }
-.bg-indigo-deep\/10 { background: color-mix(in srgb, var(--color-deep-ocean-700) 10%, transparent); }
-.border-gold-leaf\/60 { border-color: color-mix(in srgb, var(--color-muted-gold) 55%, transparent); }
-.bg-gold-leaf { background: var(--color-muted-gold); color: #1a1407; }
+.bg-vermilion\/10 {
+  background: color-mix(in srgb, var(--color-status-error) 10%, transparent);
+}
+.text-vermilion {
+  color: var(--color-status-error);
+}
+.bg-gold-leaf\/15,
+.bg-gold-leaf\/10 {
+  background: color-mix(in srgb, var(--color-muted-gold) 14%, transparent);
+}
+.text-gold-leaf {
+  color: var(--color-gold-ink);
+}
+.bg-bamboo\/10,
+.bg-bamboo\/15 {
+  background: color-mix(in srgb, var(--color-status-success) 12%, transparent);
+}
+.text-bamboo {
+  color: var(--color-status-success);
+}
+.border-bamboo\/40 {
+  border-color: color-mix(in srgb, var(--color-status-success) 40%, transparent);
+}
+.bg-warning\/10,
+.bg-warning\/15 {
+  background: color-mix(in srgb, var(--color-status-warning) 14%, transparent);
+}
+.text-warning {
+  color: var(--color-status-warning-amber, #a96b23);
+}
+.bg-sandalwood\/25 {
+  background: color-mix(in srgb, var(--color-ink-700) 22%, transparent);
+}
+.text-sandalwood {
+  color: var(--color-ink-700);
+}
+.border-sandalwood\/25,
+.border-sandalwood\/40 {
+  border-color: color-mix(in srgb, var(--color-ink-700) 30%, transparent);
+}
+.bg-bamboo\/40 {
+  background: color-mix(in srgb, var(--color-status-success) 38%, transparent);
+}
+.bg-indigo-deep\/10 {
+  background: color-mix(in srgb, var(--color-deep-ocean-700) 10%, transparent);
+}
+.border-gold-leaf\/60 {
+  border-color: color-mix(in srgb, var(--color-muted-gold) 55%, transparent);
+}
+.bg-gold-leaf {
+  background: var(--color-muted-gold);
+  color: #1a1407;
+}
 
 /* 像素硬角清理：所有元素最小 4px 圆角（不会影响按钮/卡原本更大的 12px/20px） */
-[class*="card-brand"],
-[class*="csca-sidebar"],
+[class*='card-brand'],
+[class*='csca-sidebar'],
 .csca-progress-track,
 .csca-progress-seg {
   border-radius: clamp(4px, var(--radius-md, 6px), 999px);
 }
-[class*="card-brand"] * {
+[class*='card-brand'] * {
   border-top-left-radius: max(4px, var(--override-tl, 0px));
   border-top-right-radius: max(4px, var(--override-tr, 0px));
   border-bottom-left-radius: max(4px, var(--override-bl, 0px));
@@ -458,4 +517,3 @@ html[lang="lo-LA"] {
    NO pixel / ZCOOL decorative fonts as primary.
    ============================================================ */
 /* (self-hosted LXGW subsets removed — total 97 @font-face blocks deleted in Batch 1) */
-

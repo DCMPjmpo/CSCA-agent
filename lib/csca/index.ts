@@ -13,9 +13,9 @@ export type { SyllabusNode, SubjectInfo } from './syllabus';
 export function getAllSubjects(): string[] {
   const bankSubjects = QuestionBank.getAllSubjects();
   const syllabusSubjects = Syllabus.getAllSubjects();
-  
+
   const allSubjects = new Set([...bankSubjects, ...syllabusSubjects]);
-  return Array.from(allSubjects).filter(s => s !== 'unknown');
+  return Array.from(allSubjects).filter((s) => s !== 'unknown');
 }
 
 // 获取题库统计信息
@@ -34,12 +34,12 @@ export function getSubjectDetail(subjectName: string) {
   const questionStats = {
     totalQuestions: QuestionBank.countQuestionsBySubject(subjectName),
     typeDistribution: QuestionBank.getTypeDistribution(subjectName),
-    difficultyDistribution: QuestionBank.getDifficultyDistribution(subjectName)
+    difficultyDistribution: QuestionBank.getDifficultyDistribution(subjectName),
   };
-  
+
   return {
     syllabus: syllabusDetail,
-    questionStats
+    questionStats,
   };
 }
 
@@ -108,7 +108,7 @@ export function getFullStats() {
   return {
     questionBank: QuestionBank.getQuestionBankStats(),
     syllabus: Syllabus.getSyllabusMetadata(),
-    subjects: getAllSubjects()
+    subjects: getAllSubjects(),
   };
 }
 
@@ -120,7 +120,7 @@ export function isQuestionUsable(question: QuestionBank.Question): boolean {
 // 获取可用题目数量
 export function getUsableQuestionCount(subject: string): number {
   const questions = QuestionBank.getQuestionsBySubject(subject);
-  return questions.filter(q => isQuestionUsable(q)).length;
+  return questions.filter((q) => isQuestionUsable(q)).length;
 }
 
 // 验证答案

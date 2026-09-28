@@ -13,10 +13,7 @@ export async function POST(request: Request) {
 
     // Validate input
     if (!mockExam || !mockExam.questions) {
-      return NextResponse.json(
-        { error: 'Mock exam data is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Mock exam data is required' }, { status: 400 });
     }
 
     // Calculate module scores
@@ -40,10 +37,7 @@ export async function POST(request: Request) {
     });
 
     // Calculate total score
-    const totalCorrect = Object.values(moduleScores).reduce(
-      (sum, s) => sum + s.correct,
-      0
-    );
+    const totalCorrect = Object.values(moduleScores).reduce((sum, s) => sum + s.correct, 0);
     const totalScore = Math.round((totalCorrect / mockExam.questions.length) * 100);
 
     // Generate analysis report using Kimi
@@ -91,7 +85,10 @@ Output Format (JSON):
       });
     } catch (parseErr) {
       // [AI-FIX] JSON parse 失败时，把 AI 原始文本作为 improvementPlan 返回（而非丢失）
-      console.warn('[Score Analysis] JSON parse failed, using AI text as improvementPlan:', parseErr);
+      console.warn(
+        '[Score Analysis] JSON parse failed, using AI text as improvementPlan:',
+        parseErr,
+      );
       return NextResponse.json({
         success: true,
         data: {
@@ -110,9 +107,6 @@ Output Format (JSON):
     }
   } catch (error) {
     console.error('[CSCA Score Analysis API] Error:', error);
-    return NextResponse.json(
-      { success: false, error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
   }
 }

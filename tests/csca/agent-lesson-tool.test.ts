@@ -106,7 +106,9 @@ describe('extractLessonAction', () => {
   it('从含 create_interactive_lesson 的 steps 中抽出 action', () => {
     const action = extractLessonAction({
       steps: [
-        { toolCalls: [{ toolName: 'create_interactive_lesson', input: { topic: '牛顿第二定律' } }] },
+        {
+          toolCalls: [{ toolName: 'create_interactive_lesson', input: { topic: '牛顿第二定律' } }],
+        },
       ],
     });
     expect(action).toMatchObject({
@@ -143,7 +145,9 @@ describe('extractLessonAction', () => {
   it('只认自己的工具名 —— create_ppt 不会被误抽成 lesson', () => {
     expect(
       extractLessonAction({
-        steps: [{ toolCalls: [{ toolName: 'create_ppt', input: { requirement: '一元二次方程' } }] }],
+        steps: [
+          { toolCalls: [{ toolName: 'create_ppt', input: { requirement: '一元二次方程' } }] },
+        ],
       }),
     ).toBeUndefined();
   });

@@ -4,7 +4,11 @@
  * 用法: npx tsx scripts/validate-selection.ts
  */
 import { selectQuestionsForSubjects } from '../lib/csca/question-selection';
-import { enrichContextWithHistory, type LearningContext, type AnswerRecord } from '../lib/csca/learning-context';
+import {
+  enrichContextWithHistory,
+  type LearningContext,
+  type AnswerRecord,
+} from '../lib/csca/learning-context';
 
 type Subject = string;
 
@@ -32,7 +36,13 @@ function makeCtx(opts: {
   return enrichContextWithHistory(base, opts.answerHistory || []);
 }
 
-function runMany(ctx: LearningContext, subjects: Subject[], count: number, rounds: number, mode: 'practice' | 'exam' | 'wrong_answer_practice' = 'practice') {
+function runMany(
+  ctx: LearningContext,
+  subjects: Subject[],
+  count: number,
+  rounds: number,
+  mode: 'practice' | 'exam' | 'wrong_answer_practice' = 'practice',
+) {
   const allIds: string[] = [];
   const subjectDist: Record<string, number> = {};
   const diffDist: Record<string, number> = {};
@@ -53,7 +63,10 @@ function runMany(ctx: LearningContext, subjects: Subject[], count: number, round
       if (r2.fallbackReason) fallbackCount++;
     }
     // 模拟 recentQuestionIds 累积
-    ctx.recentQuestionIds = [...(ctx.recentQuestionIds || []), ...totalQuestions.map((q) => q.id)].slice(-50);
+    ctx.recentQuestionIds = [
+      ...(ctx.recentQuestionIds || []),
+      ...totalQuestions.map((q) => q.id),
+    ].slice(-50);
   }
 
   const unique = new Set(allIds);
@@ -65,14 +78,18 @@ function runMany(ctx: LearningContext, subjects: Subject[], count: number, round
     overlapRate: Math.round(overlapRate * 100) / 100,
     subjectDist,
     diffDist,
-    kpDist: Object.entries(kpDist).sort((a, b) => b[1] - a[1]).slice(0, 10),
+    kpDist: Object.entries(kpDist)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 10),
     fallbackCount,
   };
 }
 
 function printReport(name: string, r: ReturnType<typeof runMany>) {
   console.log(`\n=== ${name} ===`);
-  console.log(`  total questions: ${r.total}, unique: ${r.unique}, overlap rate: ${(r.overlapRate * 100).toFixed(1)}%`);
+  console.log(
+    `  total questions: ${r.total}, unique: ${r.unique}, overlap rate: ${(r.overlapRate * 100).toFixed(1)}%`,
+  );
   console.log(`  subject: ${JSON.stringify(r.subjectDist)}`);
   console.log(`  difficulty: ${JSON.stringify(r.diffDist)}`);
   console.log(`  top kp: ${JSON.stringify(r.kpDist)}`);
@@ -93,7 +110,7 @@ printReport('T1 新用户 (Medicine)', t1);
 const t2Ctx = makeCtx({
   targetMajor: 'Medicine',
   subjects: MEDICINE_SUBJECTS,
-  currentAbility: { '基础汉语': 0.2, '数学': 0.2, '物理': 0.2 },
+  currentAbility: { 基础汉语: 0.2, 数学: 0.2, 物理: 0.2 },
 });
 const t2 = runMany(t2Ctx, MEDICINE_SUBJECTS, 5, 10);
 printReport('T2 低 mastery 用户', t2);
@@ -102,7 +119,7 @@ printReport('T2 低 mastery 用户', t2);
 const t3Ctx = makeCtx({
   targetMajor: 'Medicine',
   subjects: MEDICINE_SUBJECTS,
-  currentAbility: { '基础汉语': 0.85, '数学': 0.85, '物理': 0.85 },
+  currentAbility: { 基础汉语: 0.85, 数学: 0.85, 物理: 0.85 },
 });
 const t3 = runMany(t3Ctx, MEDICINE_SUBJECTS, 5, 10);
 printReport('T3 高 mastery 用户', t3);
@@ -111,8 +128,8 @@ printReport('T3 高 mastery 用户', t3);
 const t4Ctx = makeCtx({
   targetMajor: 'Engineering',
   subjects: ENGINEERING_SUBJECTS,
-  currentAbility: { '基础汉语': 0.7, '数学': 0.25, '物理': 0.7 },
-  weakKnowledgePoints: { '数学': ['函数与方程', '概率'] },
+  currentAbility: { 基础汉语: 0.7, 数学: 0.25, 物理: 0.7 },
+  weakKnowledgePoints: { 数学: ['函数与方程', '概率'] },
 });
 const t4 = runMany(t4Ctx, ENGINEERING_SUBJECTS, 5, 10);
 printReport('T4 数学薄弱用户', t4);
@@ -121,8 +138,8 @@ printReport('T4 数学薄弱用户', t4);
 const t5Ctx = makeCtx({
   targetMajor: 'Engineering',
   subjects: ENGINEERING_SUBJECTS,
-  currentAbility: { '基础汉语': 0.7, '数学': 0.7, '物理': 0.25 },
-  weakKnowledgePoints: { '物理': ['力学', '电磁学'] },
+  currentAbility: { 基础汉语: 0.7, 数学: 0.7, 物理: 0.25 },
+  weakKnowledgePoints: { 物理: ['力学', '电磁学'] },
 });
 const t5 = runMany(t5Ctx, ENGINEERING_SUBJECTS, 5, 10);
 printReport('T5 物理薄弱用户', t5);
@@ -148,19 +165,38 @@ const medIds = new Set<string>();
 const engIds = new Set<string>();
 const bizIds = new Set<string>();
 for (let r = 0; r < 10; r++) {
-  const { totalQuestions: mq } = selectQuestionsForSubjects(makeCtx({ targetMajor: 'Medicine', subjects: MEDICINE_SUBJECTS }), 'practice', MEDICINE_SUBJECTS, 5);
+  const { totalQuestions: mq } = selectQuestionsForSubjects(
+    makeCtx({ targetMajor: 'Medicine', subjects: MEDICINE_SUBJECTS }),
+    'practice',
+    MEDICINE_SUBJECTS,
+    5,
+  );
   mq.forEach((q) => medIds.add(q.id));
-  const { totalQuestions: eq } = selectQuestionsForSubjects(makeCtx({ targetMajor: 'Engineering', subjects: ENGINEERING_SUBJECTS }), 'practice', ENGINEERING_SUBJECTS, 5);
+  const { totalQuestions: eq } = selectQuestionsForSubjects(
+    makeCtx({ targetMajor: 'Engineering', subjects: ENGINEERING_SUBJECTS }),
+    'practice',
+    ENGINEERING_SUBJECTS,
+    5,
+  );
   eq.forEach((q) => engIds.add(q.id));
-  const { totalQuestions: bq } = selectQuestionsForSubjects(makeCtx({ targetMajor: 'Business Administration', subjects: BUSINESS_SUBJECTS }), 'practice', BUSINESS_SUBJECTS, 5);
+  const { totalQuestions: bq } = selectQuestionsForSubjects(
+    makeCtx({ targetMajor: 'Business Administration', subjects: BUSINESS_SUBJECTS }),
+    'practice',
+    BUSINESS_SUBJECTS,
+    5,
+  );
   bq.forEach((q) => bizIds.add(q.id));
 }
 const medEng = [...medIds].filter((id) => engIds.has(id)).length;
 const medBiz = [...medIds].filter((id) => bizIds.has(id)).length;
 const engBiz = [...engIds].filter((id) => bizIds.has(id)).length;
-console.log(`  Medicine unique: ${medIds.size}, Engineering unique: ${engIds.size}, Business unique: ${bizIds.size}`);
+console.log(
+  `  Medicine unique: ${medIds.size}, Engineering unique: ${engIds.size}, Business unique: ${bizIds.size}`,
+);
 console.log(`  Med∩Eng overlap: ${medEng}, Med∩Biz: ${medBiz}, Eng∩Biz: ${engBiz}`);
-console.log(`  Medicine≠Engineering : ${medIds.size + engIds.size - 2 * medEng > 0 ? 'YES (different subject set)' : 'NO'}`);
+console.log(
+  `  Medicine≠Engineering : ${medIds.size + engIds.size - 2 * medEng > 0 ? 'YES (different subject set)' : 'NO'}`,
+);
 console.log(`  Business 无物理科目 (只有 ${BUSINESS_SUBJECTS.join(',')})`);
 
 // ============ 连续 10 次请求 questionId 变化测试 ============
@@ -174,26 +210,68 @@ for (let r = 0; r < 10; r++) {
   seqIds.push(...roundIds);
 }
 const seqUnique = new Set(seqIds);
-console.log(`  10 轮共 ${seqIds.length} 题, 唯一 ${seqUnique.size} 题, 重复率 ${((1 - seqUnique.size / seqIds.length) * 100).toFixed(1)}%`);
+console.log(
+  `  10 轮共 ${seqIds.length} 题, 唯一 ${seqUnique.size} 题, 重复率 ${((1 - seqUnique.size / seqIds.length) * 100).toFixed(1)}%`,
+);
 
 // ============ 模式分离测试 ============
 console.log('\n=== Practice vs Exam 模式对比 ===');
-const practiceCtx = makeCtx({ targetMajor: 'Medicine', subjects: MEDICINE_SUBJECTS, currentAbility: { '基础汉语': 0.2, '数学': 0.2, '物理': 0.2 } });
-const { totalQuestions: pq } = selectQuestionsForSubjects(practiceCtx, 'practice', MEDICINE_SUBJECTS, 30);
+const practiceCtx = makeCtx({
+  targetMajor: 'Medicine',
+  subjects: MEDICINE_SUBJECTS,
+  currentAbility: { 基础汉语: 0.2, 数学: 0.2, 物理: 0.2 },
+});
+const { totalQuestions: pq } = selectQuestionsForSubjects(
+  practiceCtx,
+  'practice',
+  MEDICINE_SUBJECTS,
+  30,
+);
 const pDiff: Record<string, number> = {};
-pq.forEach((q) => { const d = String(q.difficulty); pDiff[d] = (pDiff[d] || 0) + 1; });
+pq.forEach((q) => {
+  const d = String(q.difficulty);
+  pDiff[d] = (pDiff[d] || 0) + 1;
+});
 console.log(`  Practice 难度分布 (低能力): ${JSON.stringify(pDiff)}`);
 
-const { totalQuestions: eq2 } = selectQuestionsForSubjects(practiceCtx, 'exam', MEDICINE_SUBJECTS, 30);
+const { totalQuestions: eq2 } = selectQuestionsForSubjects(
+  practiceCtx,
+  'exam',
+  MEDICINE_SUBJECTS,
+  30,
+);
 const eDiff: Record<string, number> = {};
-eq2.forEach((q) => { const d = String(q.difficulty); eDiff[d] = (eDiff[d] || 0) + 1; });
+eq2.forEach((q) => {
+  const d = String(q.difficulty);
+  eDiff[d] = (eDiff[d] || 0) + 1;
+});
 console.log(`  Exam 难度分布 (低能力, 应保持 25/55/20): ${JSON.stringify(eDiff)}`);
 
 // ============ 错题修正模式测试 ============
 console.log('\n=== Wrong Answer Practice 模式测试 ===');
 const wrongHistory: AnswerRecord[] = [
-  { questionId: 'math-test-1', subject: '数学', knowledgePoint: '概率', module: '概率', isCorrect: false, difficulty: 'medium', mode: 'practice', targetMajor: 'Engineering', timestamp: Date.now() },
-  { questionId: 'math-test-2', subject: '数学', knowledgePoint: '概率', module: '概率', isCorrect: false, difficulty: 'medium', mode: 'practice', targetMajor: 'Engineering', timestamp: Date.now() },
+  {
+    questionId: 'math-test-1',
+    subject: '数学',
+    knowledgePoint: '概率',
+    module: '概率',
+    isCorrect: false,
+    difficulty: 'medium',
+    mode: 'practice',
+    targetMajor: 'Engineering',
+    timestamp: Date.now(),
+  },
+  {
+    questionId: 'math-test-2',
+    subject: '数学',
+    knowledgePoint: '概率',
+    module: '概率',
+    isCorrect: false,
+    difficulty: 'medium',
+    mode: 'practice',
+    targetMajor: 'Engineering',
+    timestamp: Date.now(),
+  },
 ];
 const wapCtx = makeCtx({
   targetMajor: 'Engineering',
@@ -201,11 +279,21 @@ const wapCtx = makeCtx({
   answerHistory: wrongHistory,
   recentQuestionIds: ['math-test-1', 'math-test-2'],
 });
-const { results: wapResults, totalQuestions: wapQs } = selectQuestionsForSubjects(wapCtx, 'wrong_answer_practice', ['数学'], 5);
+const { results: wapResults, totalQuestions: wapQs } = selectQuestionsForSubjects(
+  wapCtx,
+  'wrong_answer_practice',
+  ['数学'],
+  5,
+);
 const wapKp: Record<string, number> = {};
-wapQs.forEach((q) => { const k = q.knowledgePoint || q.module || 'unknown'; wapKp[k] = (wapKp[k] || 0) + 1; });
+wapQs.forEach((q) => {
+  const k = q.knowledgePoint || q.module || 'unknown';
+  wapKp[k] = (wapKp[k] || 0) + 1;
+});
 console.log(`  Wrong Answer Practice 知识点分布: ${JSON.stringify(wapKp)}`);
-console.log(`  错题原题是否被排除 (math-test-1/2 不在结果中): ${!wapQs.some((q) => q.id === 'math-test-1' || q.id === 'math-test-2') ? 'YES' : 'NO'}`);
+console.log(
+  `  错题原题是否被排除 (math-test-1/2 不在结果中): ${!wapQs.some((q) => q.id === 'math-test-1' || q.id === 'math-test-2') ? 'YES' : 'NO'}`,
+);
 console.log(`  fallbackReason: ${wapResults.map((r) => r.fallbackReason || 'none').join(', ')}`);
 
 console.log('\n✅ 验证完成');

@@ -22,10 +22,7 @@ export type {
   CreateHtmlTaskInput,
 } from '@/lib/openmaic/types';
 
-export {
-  createClassroomJob,
-  pollClassroomJob,
-} from '@/lib/openmaic/client';
+export { createClassroomJob, pollClassroomJob } from '@/lib/openmaic/client';
 
 export type {
   CreateClassroomJobInput,
@@ -45,19 +42,8 @@ export {
   syncTaskFromPollResult,
 } from '@/lib/openmaic/session';
 
-export type {
-  CreateTaskInput,
-  TaskStatusPatch,
-} from '@/lib/openmaic/session';
+export type { CreateTaskInput, TaskStatusPatch } from '@/lib/openmaic/session';
 
-export {
-  createPptTask,
-  pollPptTask,
-  retryPptTask,
-} from '@/lib/openmaic/ppt';
+export { createPptTask, pollPptTask, retryPptTask } from '@/lib/openmaic/ppt';
 
-export {
-  createHtmlTask,
-  pollHtmlTask,
-  retryHtmlTask,
-} from '@/lib/openmaic/html';
+export { createHtmlTask, pollHtmlTask, retryHtmlTask } from '@/lib/openmaic/html';

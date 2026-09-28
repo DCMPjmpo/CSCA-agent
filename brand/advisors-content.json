@@ -5,7 +5,17 @@
     "schema": "advisors-content@1",
     "defaultLocale": "zh-CN",
     "supportedLocales": [
-      "zh-CN", "zh-TW", "en-US", "id-ID", "ja-JP", "ms-MY", "ru-RU", "th-TH", "tl-PH", "vi-VN", "ar-SA"
+      "zh-CN",
+      "zh-TW",
+      "en-US",
+      "id-ID",
+      "ja-JP",
+      "ms-MY",
+      "ru-RU",
+      "th-TH",
+      "tl-PH",
+      "vi-VN",
+      "ar-SA"
     ],
     "languagePolicy": "品牌决策选项 B：对话品牌语以中文为唯一内容写入所有语言，任何语言界面显示中文；多语言 key 已预留 per-locale 覆盖位：locales.<code>.advisors.<id>.<field>[i]"
   },

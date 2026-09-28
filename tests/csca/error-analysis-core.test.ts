@@ -36,7 +36,9 @@ import {
 
 const DAY_MS = 1000 * 60 * 60 * 24;
 
-function makeAnswer(overrides: Omit<Partial<UserAnswer>, 'module'> & { module: string }): UserAnswer {
+function makeAnswer(
+  overrides: Omit<Partial<UserAnswer>, 'module'> & { module: string },
+): UserAnswer {
   return {
     questionId: `q-${overrides.module}`,
     question: 'question',
@@ -75,7 +77,12 @@ describe('analyzeWeakAreas', () => {
 
     expect(areas).toHaveLength(2);
     const algebra = areas.find((a) => a.module === 'Algebra');
-    expect(algebra).toMatchObject({ subject: 'Math', module: 'Algebra', errorCount: 1, accuracy: 0.5 });
+    expect(algebra).toMatchObject({
+      subject: 'Math',
+      module: 'Algebra',
+      errorCount: 1,
+      accuracy: 0.5,
+    });
   });
 
   it('assigns priority by accuracy threshold (high < 0.5, medium < 0.7, low otherwise)', () => {
@@ -114,8 +121,20 @@ describe('analyzeWeakAreas', () => {
 describe('generateStudyPlan', () => {
   it('creates daily goals with review+practice tasks for high-priority weak areas', () => {
     const weakAreas = [
-      { subject: 'Math', module: 'Algebra', errorCount: 3, accuracy: 0.2, priority: 'high' as const },
-      { subject: 'Math', module: 'Geometry', errorCount: 1, accuracy: 0.9, priority: 'low' as const },
+      {
+        subject: 'Math',
+        module: 'Algebra',
+        errorCount: 3,
+        accuracy: 0.2,
+        priority: 'high' as const,
+      },
+      {
+        subject: 'Math',
+        module: 'Geometry',
+        errorCount: 1,
+        accuracy: 0.9,
+        priority: 'low' as const,
+      },
     ];
     const plan = generateStudyPlan('user-1', ['Math'], weakAreas);
 

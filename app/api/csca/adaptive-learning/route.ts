@@ -10,9 +10,7 @@
  */
 
 import { NextResponse } from 'next/server';
-import {
-  selectQuestionsForSubjects,
-} from '@/lib/csca/question-selection';
+import { selectQuestionsForSubjects } from '@/lib/csca/question-selection';
 import {
   enrichContextWithHistory,
   type LearningContext,
@@ -53,7 +51,8 @@ export async function POST(request: Request) {
         : subjects;
 
     // 构建基础 LearningContext
-    const baseCtx: Pick<LearningContext, 'requiredSubjects' | 'currentStage'> & Partial<LearningContext> = {
+    const baseCtx: Pick<LearningContext, 'requiredSubjects' | 'currentStage'> &
+      Partial<LearningContext> = {
       targetMajor,
       countryCode,
       targetUniversity,
@@ -70,19 +69,15 @@ export async function POST(request: Request) {
     const perSubject = Math.max(1, Math.min(15, perSubjectOverride ?? 5));
 
     // 调用统一 Selector（practice 模式）
-    const { results, totalQuestions, aggregatedStats, actualDifficulty } = selectQuestionsForSubjects(
-      ctx,
-      'practice',
-      subjects,
-      perSubject,
-    );
+    const { results, totalQuestions, aggregatedStats, actualDifficulty } =
+      selectQuestionsForSubjects(ctx, 'practice', subjects, perSubject);
 
     // 诚实标注来源
     const realTotal =
       aggregatedStats.real_exam + aggregatedStats.science_chinese + aggregatedStats.arts_chinese;
     const basicTotal = aggregatedStats.basic_practice + aggregatedStats.fallback_mock;
-    const usedFallback = aggregatedStats.fallback_mock > 0 || basicTotal > 0 ||
-      results.some((r) => r.fallbackReason);
+    const usedFallback =
+      aggregatedStats.fallback_mock > 0 || basicTotal > 0 || results.some((r) => r.fallbackReason);
     const sourceLabel: 'real_exam' | 'mixed' | 'basic_practice' =
       realTotal > 0 && basicTotal === 0
         ? 'real_exam'
@@ -91,9 +86,7 @@ export async function POST(request: Request) {
           : 'basic_practice';
 
     // 聚合 fallbackReason
-    const fallbackReasons = results
-      .map((r) => r.fallbackReason)
-      .filter(Boolean) as string[];
+    const fallbackReasons = results.map((r) => r.fallbackReason).filter(Boolean) as string[];
 
     // 适配前端期望字段
     const adaptedData = totalQuestions.map((q) => ({

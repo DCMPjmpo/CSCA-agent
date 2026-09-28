@@ -2,13 +2,20 @@
 // 用法：先起 dev server（localhost:3000），再 `node scripts/brand-nav-check.mjs`
 import { chromium } from '@playwright/test';
 
-const EXEC_PATH = 'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
+const EXEC_PATH =
+  'C:/Users/33181/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe';
 const BASE = 'http://localhost:3000';
 
-let pass = 0, fail = 0;
+let pass = 0,
+  fail = 0;
 function check(name, cond, detail = '') {
-  if (cond) { pass++; console.log(`  ✓ ${name}`); }
-  else { fail++; console.log(`  ✗ ${name} ${detail}`); }
+  if (cond) {
+    pass++;
+    console.log(`  ✓ ${name}`);
+  } else {
+    fail++;
+    console.log(`  ✗ ${name} ${detail}`);
+  }
 }
 
 const browser = await chromium.launch({ executablePath: EXEC_PATH });
@@ -16,7 +23,9 @@ const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } })
 const page = await ctx.newPage();
 const consoleErrors = [];
 const httpBad = [];
-page.on('console', (msg) => { if (msg.type() === 'error') consoleErrors.push(msg.text()); });
+page.on('console', (msg) => {
+  if (msg.type() === 'error') consoleErrors.push(msg.text());
+});
 page.on('pageerror', (err) => consoleErrors.push('pageerror: ' + err.message));
 page.on('response', (res) => {
   if (res.status() >= 400 && !res.url().includes('favicon')) {
@@ -30,8 +39,8 @@ const ROUTES = [
   { name: '幕僚厅', path: '/csca-multi-agent' },
   { name: '案例页', path: '/csca/case-study' },
 ];
-const VERMILION = 'rgb(184, 34, 34)';   // #B82222
-const GOLD = 'rgb(201, 162, 39)';       // #C9A227
+const VERMILION = 'rgb(184, 34, 34)'; // #B82222
+const GOLD = 'rgb(201, 162, 39)'; // #C9A227
 
 // 等待导航动画结束后取宽度（transition-[width] 300ms）
 async function navWidth() {
@@ -41,11 +50,14 @@ async function navWidth() {
   });
 }
 async function navComputed(elSel, prop) {
-  return page.evaluate(({ elSel, prop }) => {
-    const el = document.querySelector(elSel);
-    if (!el) return null;
-    return getComputedStyle(el)[prop];
-  }, { elSel, prop });
+  return page.evaluate(
+    ({ elSel, prop }) => {
+      const el = document.querySelector(elSel);
+      if (!el) return null;
+      return getComputedStyle(el)[prop];
+    },
+    { elSel, prop },
+  );
 }
 
 console.log('========== 桌面端（1280×800）==========');
@@ -60,10 +72,16 @@ for (const r of ROUTES) {
 
   // 竹简背景存在（内联 backgroundImage）
   const bg = await navComputed('[data-testid="bamboo-nav-desktop"]', 'backgroundImage');
-  check('竹简背景 data-URI 生效', (bg || '').includes('data:image/svg+xml'), `(bg=${(bg || '').slice(0, 30)}…)`);
+  check(
+    '竹简背景 data-URI 生效',
+    (bg || '').includes('data:image/svg+xml'),
+    `(bg=${(bg || '').slice(0, 30)}…)`,
+  );
 
   // 4 个像素 SVG 菜单图标（viewBox 0 0 32 32）
-  const pxCount = await page.locator('[data-testid="bamboo-nav-desktop"] svg[viewBox="0 0 32 32"]').count();
+  const pxCount = await page
+    .locator('[data-testid="bamboo-nav-desktop"] svg[viewBox="0 0 32 32"]')
+    .count();
   check(`4 个像素 SVG 图标存在（实测 ${pxCount}）`, pxCount >= 4, `(count=${pxCount})`);
 
   // 选中项 = 当前路由（限定菜单 nav 内，避开 logo 行）
@@ -77,7 +95,11 @@ for (const r of ROUTES) {
     const spans = [...document.querySelectorAll(sel)];
     return spans.map((s) => getComputedStyle(s).color);
   }, `${activeSel} > span`);
-  check(`选中文字金箔色`, labelColor.some((c) => c === GOLD), `(colors=${[...new Set(labelColor)]})`);
+  check(
+    `选中文字金箔色`,
+    labelColor.some((c) => c === GOLD),
+    `(colors=${[...new Set(labelColor)]})`,
+  );
 
   // 左侧 4px 金箔竖条（朱批）
   const barCount = await page.locator(`${activeSel} span.bg-gold-leaf`).count();
@@ -97,7 +119,11 @@ await page.waitForTimeout(500);
 await page.locator('[data-testid="nav-collapse-btn"]').click();
 await page.waitForTimeout(450);
 const wCollapsed = await navWidth();
-check(`折叠后宽度 ~80px（实测 ${wCollapsed}px）`, Math.abs(wCollapsed - 80) <= 2, `(width=${wCollapsed})`);
+check(
+  `折叠后宽度 ~80px（实测 ${wCollapsed}px）`,
+  Math.abs(wCollapsed - 80) <= 2,
+  `(width=${wCollapsed})`,
+);
 // 折叠后 label 隐藏：选中项不再有文字 span（只有图标 + 竖条）
 const hiddenLabels = await page.evaluate(() => {
   const aside = document.querySelector('[data-testid="bamboo-nav-desktop"]');
@@ -122,18 +148,27 @@ await page.waitForTimeout(400);
 // 内容区避让：桌面 pl = 240px
 const shellPad = await page.evaluate(() => {
   const el = document.querySelector('[data-testid="brand-shell"]');
-  return el ? { pl: getComputedStyle(el).paddingLeft, pb: getComputedStyle(el).paddingBottom } : null;
+  return el
+    ? { pl: getComputedStyle(el).paddingLeft, pb: getComputedStyle(el).paddingBottom }
+    : null;
 });
-check(`桌面内容区左偏 240px（实测 ${shellPad?.pl}）`, shellPad?.pl === '240px', JSON.stringify(shellPad));
+check(
+  `桌面内容区左偏 240px（实测 ${shellPad?.pl}）`,
+  shellPad?.pl === '240px',
+  JSON.stringify(shellPad),
+);
 check(`桌面内容区无底部避让`, shellPad?.pb === '0px', JSON.stringify(shellPad));
 
 console.log(`\n========== 移动端（390×844）==========`);
 const mCtx = await browser.newContext({ viewport: { width: 390, height: 844 } });
 const mPage = await mCtx.newPage();
-mPage.on('console', (msg) => { if (msg.type() === 'error') consoleErrors.push('mobile: ' + msg.text()); });
+mPage.on('console', (msg) => {
+  if (msg.type() === 'error') consoleErrors.push('mobile: ' + msg.text());
+});
 mPage.on('pageerror', (err) => consoleErrors.push('mobile pageerror: ' + err.message));
 mPage.on('response', (res) => {
-  if (res.status() >= 400 && !res.url().includes('favicon')) httpBad.push(`[mobile] ${res.status()} ${res.url().replace(BASE, '')}`);
+  if (res.status() >= 400 && !res.url().includes('favicon'))
+    httpBad.push(`[mobile] ${res.status()} ${res.url().replace(BASE, '')}`);
 });
 
 for (const r of ROUTES) {
@@ -174,7 +209,11 @@ const genNav = await page.locator('[data-testid="bamboo-nav-desktop"]').count();
 check(`/generation-preview 无竹简导航`, genNav === 0, `(count=${genNav})`);
 
 console.log(`\n========== 汇总 ==========`);
-check('无 console 错误 / 页面异常', consoleErrors.length === 0, `\n  → ${consoleErrors.slice(0, 6).join('\n  → ')}`);
+check(
+  '无 console 错误 / 页面异常',
+  consoleErrors.length === 0,
+  `\n  → ${consoleErrors.slice(0, 6).join('\n  → ')}`,
+);
 check('无 4xx/5xx 资源', httpBad.length === 0, `\n  → ${httpBad.slice(0, 6).join('\n  → ')}`);
 console.log(`\n${pass} passed, ${fail} failed`);
 await browser.close();

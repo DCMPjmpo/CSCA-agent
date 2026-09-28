@@ -9,11 +9,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import {
-  translations,
-  LANGUAGES,
-  getTranslation,
-} from './translations';
+import { translations, LANGUAGES, getTranslation } from './translations';
 import type { StrictTranslations } from './hooks';
 
 type CscaI18nContextValue = {
@@ -68,9 +64,7 @@ export function CscaI18nProvider({ children }: { children: ReactNode }) {
     [locale, changeLocale],
   );
 
-  return (
-    <CscaI18nContext.Provider value={value}>{children}</CscaI18nContext.Provider>
-  );
+  return <CscaI18nContext.Provider value={value}>{children}</CscaI18nContext.Provider>;
 }
 
 export function useCscaTranslation(): CscaI18nContextValue {

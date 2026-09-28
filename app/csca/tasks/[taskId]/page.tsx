@@ -21,7 +21,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
-import { ArrowLeft, ExternalLink, RefreshCw, AlertTriangle, CheckCircle2, Loader2 } from 'lucide-react';
+import {
+  ArrowLeft,
+  ExternalLink,
+  RefreshCw,
+  AlertTriangle,
+  CheckCircle2,
+  Loader2,
+} from 'lucide-react';
 import {
   getTask,
   pollPptTask,
@@ -124,28 +131,25 @@ export default function TaskStatusPage() {
   const pollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // 真实轮询逻辑：按 capability 选择 pollPptTask / pollHtmlTask → 同步到 IndexedDB → 更新 state
-  const pollOnce = useCallback(
-    async (current: PilarCoreTaskRecord) => {
-      const controller = new AbortController();
-      abortRef.current = controller;
-      try {
-        setPollError(null);
-        const poller = current.capability === 'html' ? pollHtmlTask : pollPptTask;
-        const { task: updated } = await poller(current, controller.signal);
-        setTask(updated);
-        return updated;
-      } catch (err) {
-        if (controller.signal.aborted) return null;
-        // 轮询失败时展示真实错误，不伪造状态
-        const msg = err instanceof Error ? err.message : String(err);
-        setPollError(msg);
-        return null;
-      } finally {
-        if (abortRef.current === controller) abortRef.current = null;
-      }
-    },
-    [],
-  );
+  const pollOnce = useCallback(async (current: PilarCoreTaskRecord) => {
+    const controller = new AbortController();
+    abortRef.current = controller;
+    try {
+      setPollError(null);
+      const poller = current.capability === 'html' ? pollHtmlTask : pollPptTask;
+      const { task: updated } = await poller(current, controller.signal);
+      setTask(updated);
+      return updated;
+    } catch (err) {
+      if (controller.signal.aborted) return null;
+      // 轮询失败时展示真实错误，不伪造状态
+      const msg = err instanceof Error ? err.message : String(err);
+      setPollError(msg);
+      return null;
+    } finally {
+      if (abortRef.current === controller) abortRef.current = null;
+    }
+  }, []);
 
   // 初始加载 + 启动轮询循环
   useEffect(() => {
@@ -181,8 +185,7 @@ export default function TaskStatusPage() {
           const controller = new AbortController();
           abortRef.current = controller;
           try {
-            const poller =
-              afterFirst.capability === 'html' ? pollHtmlTask : pollPptTask;
+            const poller = afterFirst.capability === 'html' ? pollHtmlTask : pollPptTask;
             const { task: updated } = await poller(afterFirst, controller.signal);
             if (cancelled) return;
             setTask(updated);
@@ -247,10 +250,9 @@ export default function TaskStatusPage() {
     const controller = new AbortController();
     (async () => {
       try {
-        const res = await fetch(
-          `/api/classroom?id=${encodeURIComponent(task.classroomId!)}`,
-          { signal: controller.signal },
-        );
+        const res = await fetch(`/api/classroom?id=${encodeURIComponent(task.classroomId!)}`, {
+          signal: controller.signal,
+        });
         if (!res.ok) {
           if (!cancelled) setInteractiveCheck('error');
           return;
@@ -259,9 +261,7 @@ export default function TaskStatusPage() {
         // 响应结构：{ classroom: { stage, scenes: Scene[] } }
         const scenes: Array<{ content?: { type?: string } }> =
           data?.classroom?.scenes ?? data?.scenes ?? [];
-        const hasInteractive = scenes.some(
-          (s) => s?.content?.type === 'interactive',
-        );
+        const hasInteractive = scenes.some((s) => s?.content?.type === 'interactive');
         if (!cancelled) setInteractiveCheck(hasInteractive ? 'present' : 'absent');
       } catch (err) {
         if (controller.signal.aborted || cancelled) return;
@@ -312,9 +312,7 @@ export default function TaskStatusPage() {
       >
         <AlertTriangle style={{ width: 40, height: 40, color: COLORS.restrainedRed }} />
         <h1 style={{ fontSize: 20, fontWeight: 600 }}>未找到任务</h1>
-        <p style={{ fontSize: 14, color: COLORS.inkMuted }}>
-          该任务记录不存在，或已被清理。
-        </p>
+        <p style={{ fontSize: 14, color: COLORS.inkMuted }}>该任务记录不存在，或已被清理。</p>
         <Link
           href="/csca"
           style={{
@@ -350,13 +348,13 @@ export default function TaskStatusPage() {
   //   - 'absent'             → 展示"未生成交互式场景"提示，允许重新生成
   //   - 'unknown' 且非成功   → 正常生成中
   const isHtmlCapability = task.capability === 'html';
-  const htmlInteractiveAbsent =
-    isHtmlCapability && isSucceeded && interactiveCheck === 'absent';
-  const htmlInteractivePending =
-    isHtmlCapability && isSucceeded && interactiveCheck === 'unknown';
+  const htmlInteractiveAbsent = isHtmlCapability && isSucceeded && interactiveCheck === 'absent';
+  const htmlInteractivePending = isHtmlCapability && isSucceeded && interactiveCheck === 'unknown';
   // HTML 成功 CTA 仅在检测到 interactive 或检测出错时显示（'error' 不阻塞打开）
   const htmlCanOpen =
-    isHtmlCapability && isSucceeded && (interactiveCheck === 'present' || interactiveCheck === 'error');
+    isHtmlCapability &&
+    isSucceeded &&
+    (interactiveCheck === 'present' || interactiveCheck === 'error');
   const showSuccessCta = isSucceeded && (!isHtmlCapability || htmlCanOpen);
 
   const copy = CAPABILITY_COPY[task.capability];
@@ -412,7 +410,15 @@ export default function TaskStatusPage() {
           }}
         >
           {/* Eyebrow + 标题 */}
-          <div style={{ marginBottom: 6, fontSize: 12, letterSpacing: '0.12em', color: COLORS.mutedGold, textTransform: 'uppercase' }}>
+          <div
+            style={{
+              marginBottom: 6,
+              fontSize: 12,
+              letterSpacing: '0.12em',
+              color: COLORS.mutedGold,
+              textTransform: 'uppercase',
+            }}
+          >
             {copy.eyebrow}
           </div>
           <h1 style={{ fontSize: 22, fontWeight: 600, color: COLORS.deepOcean, marginBottom: 8 }}>
@@ -438,7 +444,11 @@ export default function TaskStatusPage() {
                 border: `1px solid ${statusColor}33`,
               }}
             >
-              {isRunning && <Loader2 style={{ width: 14, height: 14, animation: 'spin 1.4s linear infinite' }} />}
+              {isRunning && (
+                <Loader2
+                  style={{ width: 14, height: 14, animation: 'spin 1.4s linear infinite' }}
+                />
+              )}
               {task.status === 'succeeded' && <CheckCircle2 style={{ width: 14, height: 14 }} />}
               {isFailed && <AlertTriangle style={{ width: 14, height: 14 }} />}
               {statusLabel}
@@ -450,7 +460,15 @@ export default function TaskStatusPage() {
 
           {/* 真实进度条 */}
           <div style={{ marginBottom: 20 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: COLORS.inkMuted, marginBottom: 6 }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                fontSize: 12,
+                color: COLORS.inkMuted,
+                marginBottom: 6,
+              }}
+            >
               <span>进度</span>
               <span>{progress}%</span>
             </div>
@@ -657,7 +675,9 @@ export default function TaskStatusPage() {
                 }}
               >
                 {isRetrying ? (
-                  <Loader2 style={{ width: 16, height: 16, animation: 'spin 1.4s linear infinite' }} />
+                  <Loader2
+                    style={{ width: 16, height: 16, animation: 'spin 1.4s linear infinite' }}
+                  />
                 ) : (
                   <RefreshCw style={{ width: 16, height: 16 }} />
                 )}
