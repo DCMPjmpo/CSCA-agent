@@ -67,4 +67,9 @@ export interface AttributeToken {
 }
 
 export type Token =
-  TagStartToken | TagEndToken | TagToken | TextToken | CommentToken | AttributeToken;
+  | TagStartToken
+  | TagEndToken
+  | TagToken
+  | TextToken
+  | CommentToken
+  | AttributeToken;

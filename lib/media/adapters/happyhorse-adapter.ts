@@ -18,7 +18,13 @@ const POLL_INTERVAL_MS = 15000;
 const MAX_POLL_ATTEMPTS = 40; // 10 minutes max
 
 type HappyHorseTaskStatus =
-  'PENDING' | 'RUNNING' | 'SUCCEEDED' | 'FAILED' | 'CANCELED' | 'UNKNOWN' | string;
+  | 'PENDING'
+  | 'RUNNING'
+  | 'SUCCEEDED'
+  | 'FAILED'
+  | 'CANCELED'
+  | 'UNKNOWN'
+  | string;
 
 interface HappyHorseOutput {
   task_id?: string;

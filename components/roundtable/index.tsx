@@ -1804,7 +1804,10 @@ export function Roundtable({
                     thinkingState.agentId === student.id;
                   const agentConfig = getAgentConfig(student.id);
                   const roleLabelKey = agentConfig?.role as
-                    'teacher' | 'assistant' | 'student' | undefined;
+                    | 'teacher'
+                    | 'assistant'
+                    | 'student'
+                    | undefined;
                   const roleLabel = roleLabelKey ? t(`settings.agentRoles.${roleLabelKey}`) : '';
                   const i18nDescription = t(`settings.agentDescriptions.${student.id}`);
                   const description =

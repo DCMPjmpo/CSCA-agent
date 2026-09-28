@@ -13,7 +13,13 @@
 'use client';
 
 export type OneShotName =
-  'scroll-open' | 'seal' | 'bow' | 'scroll-unroll' | 'ship' | 'gong' | 'woodfish';
+  | 'scroll-open'
+  | 'seal'
+  | 'bow'
+  | 'scroll-unroll'
+  | 'ship'
+  | 'gong'
+  | 'woodfish';
 
 export interface SoundState {
   ambient: boolean;

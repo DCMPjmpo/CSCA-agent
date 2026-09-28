@@ -46,7 +46,15 @@ import { restartVoyage } from '@/lib/voyage-progress';
 import type { LucideIcon } from 'lucide-react';
 
 type StageId =
-  'stage1' | 'stage2' | 'stage3' | 'stage4' | 'stage5' | 'stage6' | 'stage7' | 'stage8' | 'stage9';
+  | 'stage1'
+  | 'stage2'
+  | 'stage3'
+  | 'stage4'
+  | 'stage5'
+  | 'stage6'
+  | 'stage7'
+  | 'stage8'
+  | 'stage9';
 
 type TopLevelId = 'home' | 'voyage' | 'studio' | 'case-study' | 'assistant';
 

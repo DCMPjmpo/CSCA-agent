@@ -74,7 +74,8 @@ export function getServerVoiceList(
   if (providerId === 'browser-native-tts') return [];
   if (isCustomTTSProvider(providerId) && ttsProvidersConfig) {
     const customVoices = ttsProvidersConfig[providerId]?.customVoices as
-      Array<{ id: string }> | undefined;
+      | Array<{ id: string }>
+      | undefined;
     return customVoices?.map((v) => v.id) || [];
   }
   const provider = TTS_PROVIDERS[providerId as keyof typeof TTS_PROVIDERS];
@@ -233,7 +234,8 @@ export function findVoiceDisplayName(
 ): string {
   if (isCustomTTSProvider(providerId) && ttsProvidersConfig) {
     const customVoices = ttsProvidersConfig[providerId]?.customVoices as
-      Array<{ id: string; name: string }> | undefined;
+      | Array<{ id: string; name: string }>
+      | undefined;
     const voice = customVoices?.find((v) => v.id === voiceId);
     return voice?.name ?? voiceId;
   }

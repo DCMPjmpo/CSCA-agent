@@ -153,7 +153,10 @@ export interface TTSModelConfig {
  * Keep in sync with ASR_PROVIDERS registry in constants.ts
  */
 export type BuiltInASRProviderId =
-  'openai-whisper' | 'browser-native' | 'qwen-asr' | 'lemonade-asr';
+  | 'openai-whisper'
+  | 'browser-native'
+  | 'qwen-asr'
+  | 'lemonade-asr';
 
 export type ASRProviderId = BuiltInASRProviderId | `custom-asr-${string}`;
 

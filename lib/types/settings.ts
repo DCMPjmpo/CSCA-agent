@@ -1,7 +1,15 @@
 import type { ProviderId, ModelInfo, ProviderType } from '@/lib/types/provider';
 
 export type SettingsSection =
-  'general' | 'providers' | 'agents' | 'tts' | 'asr' | 'pdf' | 'image' | 'video' | 'web-search';
+  | 'general'
+  | 'providers'
+  | 'agents'
+  | 'tts'
+  | 'asr'
+  | 'pdf'
+  | 'image'
+  | 'video'
+  | 'web-search';
 
 /**
  * Unified provider configuration stored in JSON format

@@ -1277,7 +1277,8 @@ export function getModel(config: ModelConfig): ModelWithInfo {
             : undefined;
           // Read thinking config from globalThis (set by thinking-context.ts)
           const thinkingCtx = (globalThis as Record<string, unknown>).__thinkingContext as
-            { getStore?: () => unknown } | undefined;
+            | { getStore?: () => unknown }
+            | undefined;
           const thinkingFromContext = thinkingCtx?.getStore?.() as ThinkingConfig | undefined;
           const thinking =
             thinkingFromContext ??

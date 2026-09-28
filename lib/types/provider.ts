@@ -35,7 +35,13 @@ export type ProviderId = BuiltInProviderId | `custom-${string}`;
 export type ProviderType = 'openai' | 'anthropic' | 'google';
 
 export type ThinkingControlType =
-  'none' | 'toggle' | 'toggle-budget' | 'effort' | 'level' | 'mode' | 'budget-only';
+  | 'none'
+  | 'toggle'
+  | 'toggle-budget'
+  | 'effort'
+  | 'level'
+  | 'mode'
+  | 'budget-only';
 
 export type ThinkingMode = 'default' | 'disabled' | 'enabled' | 'auto';
 export type ThinkingEffort = 'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh' | 'max';

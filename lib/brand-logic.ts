@@ -529,7 +529,8 @@ export function getWeeklyRoutePlan(
 
   // 优先：StudyPlan.weeks[0].days
   const realDays = (plan as any)?.weeks?.[0]?.days as
-    Array<{ subject?: string; focus?: string; topics?: string[] }> | undefined;
+    | Array<{ subject?: string; focus?: string; topics?: string[] }>
+    | undefined;
 
   if (realDays?.length) {
     return realDays.slice(0, 7).map((d, i) => ({
@@ -551,7 +552,8 @@ export function getWeeklyRoutePlan(
 
   // 次优先：StudyPlan.dailySchedule
   const daily = (plan as any)?.dailySchedule as
-    Array<{ subject?: string; focus?: string }> | undefined;
+    | Array<{ subject?: string; focus?: string }>
+    | undefined;
   if (daily?.length) {
     return daily.slice(0, 7).map((d, i) => ({
       index: (i + 1) as WeeklyRouteDay['index'],
@@ -613,7 +615,8 @@ export function getCorrectionLoop(
 
   const analysis = snap.scoreAnalysis;
   const causes = (analysis as any)?.errorCauses as
-    Array<{ name: string; nameEn?: string; count?: number; percent?: number }> | undefined;
+    | Array<{ name: string; nameEn?: string; count?: number; percent?: number }>
+    | undefined;
 
   const trainingRecommended =
     ((analysis as any)?.recommendedTopics as Array<{ subject?: string; topic?: string }>) ?? [];

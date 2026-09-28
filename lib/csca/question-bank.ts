@@ -12,7 +12,12 @@ import { recoverChemAnswers } from './chem-answer-recovery';
 import p42bRecovered from '../../data/processed/p4.2_recovered_questions.json';
 
 export type QuestionSource =
-  'real_exam' | 'basic_practice' | 'science_chinese' | 'arts_chinese' | 'legacy' | 'unknown';
+  | 'real_exam'
+  | 'basic_practice'
+  | 'science_chinese'
+  | 'arts_chinese'
+  | 'legacy'
+  | 'unknown';
 
 export interface Question {
   id: string;
@@ -43,7 +48,12 @@ export interface QuestionEnrichment {
   rawQuestionId?: string;
   knowledgePoint: string;
   knowledgePointSource:
-    'NATIVE' | 'SYLLABUS_DERIVED' | 'SECTION_DERIVED' | 'PART_DERIVED' | 'SET_LEVEL' | 'UNKNOWN';
+    | 'NATIVE'
+    | 'SYLLABUS_DERIVED'
+    | 'SECTION_DERIVED'
+    | 'PART_DERIVED'
+    | 'SET_LEVEL'
+    | 'UNKNOWN';
   knowledgePointHierarchy: {
     subject: string;
     module: string;

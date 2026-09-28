@@ -651,7 +651,8 @@ export function useScaleElement(
         const newElements = elementListRef.current.map((el) => {
           if ((el.type === 'image' || el.type === 'shape') && activeElementIdList.includes(el.id)) {
             const originElement = originElementList.find((originEl) => originEl.id === el.id) as
-              PPTImageElement | PPTShapeElement;
+              | PPTImageElement
+              | PPTShapeElement;
             return {
               ...el,
               width: originElement.width * widthScale,
